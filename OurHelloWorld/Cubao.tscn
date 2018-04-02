@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Cubao.gd" type="Script" id=1]
+[ext_resource path="res://chupa_felipe.png" type="Texture" id=2]
+[ext_resource path="res://chupa_felipe_2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "moving",
+"speed": 5.0
+} ]
+
+[node name="Cubao" type="Node2D" index="0"]
+
+position = Vector2( 200, 200 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( -0.28479, -0.743288 )
+frames = SubResource( 1 )
+animation = "idle"
+
+
