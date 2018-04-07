@@ -10,13 +10,14 @@ config_version=3
 
 [application]
 
-config/name="OurHelloWorld"
-run/main_scene="res://Cubao.tscn"
+config/name="Souls of Alanis"
+run/main_scene="res://world1.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=800
+window/size/width=850
+window/size/height=800
 
 [rendering]
 

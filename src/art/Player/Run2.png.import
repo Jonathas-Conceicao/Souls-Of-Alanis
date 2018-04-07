@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chupa_felipe_2.png-d2dc94f4605faa8db0876f0d7ae794ab.stex"
+path="res://.import/Run2.png-c893d7e0d828d81398331e90b0b57fbc.stex"
 
 [deps]
 
-source_file="res://chupa_felipe_2.png"
-source_md5="7620462d199a8380222142ba04649bb4"
+source_file="res://art/Player/Run2.png"
+source_md5="cd5f4bca7ac9030ec72134fb3157d23a"
 
-dest_files=[ "res://.import/chupa_felipe_2.png-d2dc94f4605faa8db0876f0d7ae794ab.stex" ]
-dest_md5="b8d171ebd5eaefb2bd396d6ec99284f7"
+dest_files=[ "res://.import/Run2.png-c893d7e0d828d81398331e90b0b57fbc.stex" ]
+dest_md5="73e6e65bc4c6d4df9c282b19ef722d66"
 
 [params]
 
