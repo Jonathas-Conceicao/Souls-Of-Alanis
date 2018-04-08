@@ -30,5 +30,4 @@ func _physics_process(delta):
 		$sprite.play("jumping")
 		
 	motion = move_and_slide(motion, UP)
-	pass
 
