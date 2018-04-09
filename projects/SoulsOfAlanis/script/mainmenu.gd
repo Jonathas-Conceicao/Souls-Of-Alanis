@@ -16,4 +16,4 @@ func _ready():
 
 
 func _on_newgame_pressed():
-	get_tree().change_scene("res://world1.tscn")
+	get_tree().change_scene("res://scene/world1.tscn")

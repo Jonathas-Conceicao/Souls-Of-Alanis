@@ -11,14 +11,10 @@ config_version=3
 [application]
 
 config/name="Souls of Alanis"
-run/main_scene="res://mainmenu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scene/mainmenu.tscn"
+config/icon="res://art/icon.png"
 
 [display]
 
 window/size/width=900
 window/size/height=700
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
