@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Souls of Alanis"
-run/main_scene="res://world1.tscn"
+run/main_scene="res://mainmenu.tscn"
 config/icon="res://icon.png"
 
 [display]
