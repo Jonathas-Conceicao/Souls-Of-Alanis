@@ -1,3 +1,6 @@
 # Import files from Godot Egine
 *.import
 *.import/
+
+# Vim aux file
+tags
