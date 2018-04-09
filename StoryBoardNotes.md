@@ -12,5 +12,5 @@
   - Scene's objects  
   - Lore  
   - Menu  
-    - Opções configuráveis  
+    - Customisable assets
   - HUD  
