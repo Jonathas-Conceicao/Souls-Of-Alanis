@@ -1,24 +1,47 @@
 # PeC-Jogos-Projeto-1  
-Repositório inicial para a disciplina de Jogos  
+This is the initial repository for our Digital Games Curse.
 
-# Aula 2:  
-Começar o story board  
+## Class notes
 
-- Um parágrafo descrevendo o jogo  
-       **Souls of Alanis**  
-       Um roguelike plataforma em 2D com temática medieval. Nele o jogador acompanha a Alanis, uma gata guerreira cuja alma sempre reencarna em um novo corpo. Alanis está em constante busca pelo descanso eterno, mas para quebrar sua maldição ela precisa percorrer a Dungeon.  
+- Class 1:
+	- Introduction
+	- **Activities**
+		- [X] Organize groups
+		- [X] Create Github repository
+- Class 2:
+	- Tech demo
+	- **Activities**
+		- [X] Choose tools
+			- Godot Engine
+			- Aseprite
+			- Gimp
+		- [X] Make a simple "Hello World" project
+		- [X] Export to run on other machine
+		- [X] Start storyboard[storyboard](#Story Board Notes)
+			- Something bout the game
+			- Something about one stage of the game
+			- Some characters of the game
+			- Some of the itens of the game
+- Class 3:
+	- Work on the project
+	- **Activities**
+		- [X] Present a tech demo
+		- [X] Play some music
+		- [X] Have a Menu
+		- [ ] More details for story board (ongoing)
 
-- Um parágrafo descrevendo uma fase  
-       Por se tratar de um rouguelike o jogo é altamente focado no combate. Suas fases serão constituidas de obstaculos, armadilhas e inimigos gerados e distribuídos aleatoriamente. Ao progredir pela Dungeon o jogador terá que enfretar alguns chefes para concluir o jogo e conceder o desacanso eterno à Alanis.  
+## Story Board Notes
+### Introduction
+**Souls of Alanis** is a 2D platform _rouguelike_ with medieval thematic. The player takes control of Alanis, a cat-warrior whom's soul always reincarnates in a new body without the blessing of eternal rest. To be able to finally be free, Alanis must beat the Dungeon and defeat the evil wizard who casted this curse upon her.
 
-- Uma lista dos personagens  
-       Alanis - Protagonista  
-       Andre - Ferreiro  
-       O Lich - ???  
-       Mobs - Inimigos  
+Since its a _rouguelike_ the game is heavily focused in the combat. The dungeon is divided between several stages, each of differ by its theme, enemies, traps that are randomly distributed along the stage. Through each stage of the dungeon the player will have to face different bosses in order to proceed.
+### Characters
+Some of the game characters
+	- **Alanis** - The Protagonist
+	- Andre - Blacksmith
+	- The Lich - ???
+	- Mobs - Foes
 
-- Uma lista dos itens (coisas que o jogador interage)  
-       Armaduras  
-       Espadas  
-       Acessõrios  
-       Moeda de troca  
+### Itens
+Some of the game itens
+	- ???
