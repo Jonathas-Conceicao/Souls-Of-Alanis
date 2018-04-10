@@ -15,8 +15,7 @@ func _physics_process(delta):
 			$sprite.play("idle")
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -350
-			if $sprite.animation != "jumping":
-				$sprite.play("jumping")
+			$sprite.play("jumping")
 	elif $sprite.animation != "jumping" && $sprite.animation != "falling":
 		$sprite.play("falling")
 	if Input.is_action_pressed("ui_right"):
