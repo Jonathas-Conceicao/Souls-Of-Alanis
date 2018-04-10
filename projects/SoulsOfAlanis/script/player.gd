@@ -29,6 +29,8 @@ func _physics_process(delta):
 		if $sprite.animation == "idle":
 			$sprite.play("moving")
 	else:
+		if $sprite.animation == "moving":
+			$sprite.play("idle")
 		motion.x = 0
 
 	motion = move_and_slide(motion, UP)
