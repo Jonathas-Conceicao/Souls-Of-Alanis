@@ -16,7 +16,7 @@ This is the initial repository for our Digital Games Curse.
 			- Aseprite
 			- Gimp
 		- [X] Make a simple "Hello World" project
-		- [X] Export to run on other machine
+		- [X] Export to run on another machine
 		- [X] Start [storyboard](#Story Board Notes)
 			- Something bout the game
 			- Something about one stage of the game
@@ -37,10 +37,10 @@ This is the initial repository for our Digital Games Curse.
 Since its a _rouguelike_ the game is heavily focused in the combat. The dungeon is divided between several stages, each of differ by its theme, enemies, traps that are randomly distributed along the stage. Through each stage of the dungeon the player will have to face different bosses in order to proceed.
 ### Characters
 Some of the game characters
-	- **Alanis** - The Protagonist
-	- Andre - Blacksmith
-	- The Lich - ???
-	- Mobs - Foes
+	- **Alanis** - The Protagonist  
+	- Andre - Blacksmith  
+	- The Lich - ???  
+	- Mobs - Foes  
 
 ### Itens
 Some of the game itens
