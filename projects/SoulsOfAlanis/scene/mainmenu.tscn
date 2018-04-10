@@ -6,7 +6,7 @@
 [ext_resource path="res://art/main_menu/label_continue.png" type="Texture" id=4]
 [ext_resource path="res://art/main_menu/label_options.png" type="Texture" id=5]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
