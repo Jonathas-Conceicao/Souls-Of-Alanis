@@ -36,11 +36,11 @@ This is the initial repository for our Digital Games Curse.
 
 Since its a _rouguelike_ the game is heavily focused in the combat. The dungeon is divided between several stages, each of differ by its theme, enemies, traps that are randomly distributed along the stage. Through each stage of the dungeon the player will have to face different bosses in order to proceed.
 ### Characters
-Some of the game characters
-	- **Alanis** - The Protagonist  
-	- Andre - Blacksmith  
-	- The Lich - ???  
-	- Mobs - Foes  
+Some of the game characters  
+- **Alanis** - The Protagonist  
+- Andre - Blacksmith  
+- The Lich - ???  
+- Mobs - Foes  
 
 ### Itens
 Some of the game itens
