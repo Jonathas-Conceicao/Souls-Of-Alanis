@@ -1,14 +1,12 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="TileSet" id=1]
-
-_sections_unfolded = [ "Resource" ]
+[ext_resource path="res://scene/TileSet.res" type="TileSet" id=1]
 
 [node name="TileMap" type="TileMap" index="0"]
 
 mode = 0
-tile_set = SubResource( 1 )
-cell_size = Vector2( 64, 64 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -22,6 +20,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 0, 0, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 65536, 0, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 131072, 0, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 196608, 0, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 2, 0, 196613, 1, 0, 196614, 1, 0, 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0 )
+_sections_unfolded = [ "Cell" ]
 
 

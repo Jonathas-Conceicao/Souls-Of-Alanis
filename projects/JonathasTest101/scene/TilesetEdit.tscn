@@ -1,5 +1,138 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/tileset.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25.1091, 25.0306 )
 
 [node name="Node" type="Node" index="0"]
+
+[node name="SolidWall" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 50, 50 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SolidWall" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SolidWall/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ground" type="Sprite" parent="." index="1"]
+
+position = Vector2( 50, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 0, 50, 50 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="LeftRamp" type="Sprite" parent="." index="2"]
+
+position = Vector2( 100, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 0, 50, 50 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LeftRamp" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="LeftRamp/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -24.3302, 24.7718, 24.4825, 24.4324, 24.4825, -24.4369 )
+
+[node name="RightRamp" type="Sprite" parent="." index="3"]
+
+position = Vector2( 150, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 150, 0, 50, 50 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RightRamp" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="RightRamp/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -24.685, -24.5138, -25.2249, 24.5395, 24.3777, 24.5395 )
+
+[node name="BackWall" type="Sprite" parent="." index="4"]
+
+position = Vector2( 200, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 200, 0, 50, 50 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackWall" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackWall/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
 
 
