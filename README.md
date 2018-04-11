@@ -17,7 +17,7 @@ This is the initial repository for our Digital Games Curse.
 			- Gimp
 		- [X] Make a simple "Hello World" project
 		- [X] Export to run on another machine
-		- [X] Start [storyboard](#Story Board Notes)
+		- [X] Start [storyboard](#story-board-notes)
 			- Something bout the game
 			- Something about one stage of the game
 			- Some characters of the game
