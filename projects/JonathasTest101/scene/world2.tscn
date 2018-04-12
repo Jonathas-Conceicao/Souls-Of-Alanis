@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
 
 [node name="Node" type="Node"]
 
@@ -21,24 +24,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="TileMap" parent="." index="1" instance=ExtResource( 1 )]
 
-mode = 0
-tile_set = null
-cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray(  )
+[node name="player" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 74, 32 )
 
 

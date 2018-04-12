@@ -78,11 +78,13 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="LeftRamp/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -24.3302, 24.7718, 24.4825, 24.4324, 24.4825, -24.4369 )
+polygon = PoolVector2Array( -21.9218, 24.296, 24.4825, 24.4324, 24.1296, -22.2801 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="RightRamp" type="Sprite" parent="." index="3"]
 
@@ -104,11 +106,13 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="RightRamp/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -24.685, -24.5138, -25.2249, 24.5395, 24.3777, 24.5395 )
+polygon = PoolVector2Array( -24.547, -22.2647, -25.2249, 24.5395, 21.7659, 24.5696 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="BackWall" type="Sprite" parent="." index="4"]
 
@@ -120,19 +124,5 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Tr
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BackWall" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BackWall/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
 
 
