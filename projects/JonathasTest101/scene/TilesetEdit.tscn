@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 25.1091, 25.0306 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="SolidWall" type="Sprite" parent="." index="0"]
 
@@ -83,7 +83,7 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform"
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="LeftRamp/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -21.9218, 24.296, 24.4825, 24.4324, 24.1296, -22.2801 )
+polygon = PoolVector2Array( -25, 25, 25, 25, 25, -25 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="RightRamp" type="Sprite" parent="." index="3"]
@@ -111,7 +111,7 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform"
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="RightRamp/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -24.547, -22.2647, -25.2249, 24.5395, 21.7659, 24.5696 )
+polygon = PoolVector2Array( -25, -25, -25, 25, 25, 25 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="BackWall" type="Sprite" parent="." index="4"]
