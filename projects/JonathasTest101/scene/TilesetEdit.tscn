@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://art/tileset.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 25.1091, 25.0306 )
 
 [node name="Node" type="Node"]
 
@@ -29,9 +24,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SolidWall/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SolidWall/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+build_mode = 0
+polygon = PoolVector2Array( -25, -25, 25, -25, 25, 25, -25, 25 )
 
 [node name="Ground" type="Sprite" parent="." index="1"]
 
@@ -54,9 +50,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D" index="0"]
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Ground/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+build_mode = 0
+polygon = PoolVector2Array( -25, -25, 25, -25, 25, 25, -25, 25 )
 
 [node name="LeftRamp" type="Sprite" parent="." index="2"]
 

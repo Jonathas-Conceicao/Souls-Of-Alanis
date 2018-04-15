@@ -9,6 +9,7 @@ const SPEED = 150
 var motion = Vector2()
 
 func _physics_process(delta):
+	print("Delta value:", delta)
 	motion.y += GRAVITY
 	if is_on_floor():
 		if $sprite.animation != "moving":
@@ -16,10 +17,10 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -350
 			$sprite.play("jumping")
-	elif $sprite.animation != "jumping" && $sprite.animation != "falling":
-		$sprite.play("falling")
+#	elif $sprite.animation != "jumping" && $sprite.animation != "falling":
+#		$sprite.play("falling")
 	if Input.is_action_pressed("ui_right"):
-		motion.x = SPEED	
+		motion.x = SPEED
 		$sprite.flip_h = false
 		if $sprite.animation == "idle":
 			$sprite.play("moving")
