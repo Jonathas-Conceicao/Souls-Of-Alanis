@@ -9,7 +9,6 @@ const SPEED = 150
 var motion = Vector2()
 
 func _physics_process(delta):
-	print("Delta value:", delta)
 	motion.y += GRAVITY
 	if is_on_floor():
 		if $sprite.animation != "moving":
