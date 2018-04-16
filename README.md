@@ -29,6 +29,11 @@ This is the initial repository for our Digital Games Curse.
 		- [X] Play some music
 		- [X] Have a Menu
 		- [ ] More details for story board (ongoing)
+- Class 4:
+	- Work on the project
+	- **Activities**
+		- [ ] Tech demo for combat mechanics (Joanthas and Felipe)
+		- [ ] Tech demo for random map generation (Lucas and Juan)
 
 ## Story Board Notes
 ### Introduction
