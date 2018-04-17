@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="JonathasTest101"
-run/main_scene="res://scene/mainmenu.tscn"
+run/main_scene="res://scene/MainMenu.tscn"
 config/icon="res://art/icon.png"
 
 [display]
@@ -36,4 +36,6 @@ ui_up=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 ui_down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+ui_attak=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
  ]
