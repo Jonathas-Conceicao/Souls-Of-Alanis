@@ -7,6 +7,13 @@ var velocity = Vector2()
 
 var attaking = false
 
+var Sword_Animation
+var Sword_Sprite
+
+func _ready():
+	Sword_Animation = $Sword.get_node("Animation")
+	Sword_Sprite    = $Sword.get_node("Sprite")
+
 func _physics_process(delta):
 	velocity.y += GRAVITY
 	if is_on_floor():
@@ -16,34 +23,37 @@ func _physics_process(delta):
 		attaking = true
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-		$Sprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-		$Sprite.flip_h = true
 	else:
 		velocity.x = 0
-	updateAnimation()
+	update_animation()
 	move_and_slide(velocity, UP)
 
-func updateAnimation():
+func update_animation():
+	if velocity.x > 0:
+		$Sprite.flip_h = false
+		Sword_Sprite.flip_h = false
+	elif velocity.x < 0:
+		$Sprite.flip_h = true
+		Sword_Sprite.flip_h = true
 	if attaking:
-		if $Sprite.animation != "Attaking":
-			$Animation.play("Attaking")
+		set_animation("Attaking")
 	elif is_on_floor():
 		if velocity.x != 0:
-			if $Sprite.animation != "Moving":
-				$Animation.play("Moving")
+			set_animation("Moving")
 		else:
-			if $Sprite.animation != "Idle":
-				$Sword.Animation_idle()
-				$Animation.play("Idle")
+			set_animation("Idle")
 	else:
 		if velocity.y <= 0:
-			if $Sprite.animation != "Jumping":
-				$Animation.play("Jumping")
+			set_animation("Jumping")
 		else:
-			if $Sprite.animation != "Falling":
-				$Animation.play("Falling")
+			set_animation("Falling")
+
+func set_animation(animation):
+	if !$Animation.is_playing() || $Sprite.animation != animation:
+		$Animation.play(animation)
+		Sword_Animation.play(animation)
 
 func _on_Animation_animation_finished(anim_name):
 	if $Sprite.animation == "Attaking":

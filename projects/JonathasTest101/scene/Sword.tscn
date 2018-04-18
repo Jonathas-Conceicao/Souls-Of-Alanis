@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://scene/Sword.gd" type="Script" id=1]
 [ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi1.png" type="Texture" id=2]
@@ -99,12 +99,74 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=3]
+
+resource_name = "Attaking"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Attaking" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.1, 1 ),
+"update": 0,
+"values": [ 0, 10 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "Falling"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Falling" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+
 [sub_resource type="Animation" id=2]
 
 resource_name = "Idle"
 length = 3.0
 loop = true
-step = 0.14
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:animation")
 tracks/0/interp = 1
@@ -124,25 +186,75 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 0.98, 1.12, 1.26, 1.4, 1.54, 1.68, 1.82, 1.96, 2.1, 2.24, 2.38, 2.52, 2.66, 2.8, 2.94 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 20 ]
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 20 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionPolygon2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Jumping"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ "Jumping" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
 }
 
-[node name="Sword" type="Area2D"]
+[sub_resource type="Animation" id=4]
+
+resource_name = "Moving"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Moving" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 17 ]
+}
+
+[node name="Sword" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -174,7 +286,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
+anims/Attaking = SubResource( 3 )
+anims/Falling = SubResource( 6 )
 anims/Idle = SubResource( 2 )
+anims/Jumping = SubResource( 5 )
+anims/Moving = SubResource( 4 )
 blend_times = [  ]
 
 
