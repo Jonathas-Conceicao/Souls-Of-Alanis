@@ -70,7 +70,6 @@
 [ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi10.png" type="Texture" id=68]
 [ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi11.png" type="Texture" id=69]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -100,7 +99,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Attaking"
 length = 1.0
@@ -131,7 +130,7 @@ tracks/1/keys = {
 "values": [ 0, 10 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Falling"
 length = 1.0
@@ -162,9 +161,8 @@ tracks/1/keys = {
 "values": [ 0, 8 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Idle"
 length = 3.0
 loop = true
 step = 0.1
@@ -224,9 +222,8 @@ tracks/1/keys = {
 "values": [ 0, 8 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
-resource_name = "Moving"
 length = 2.0
 loop = true
 step = 0.1
@@ -255,7 +252,7 @@ tracks/1/keys = {
 "values": [ 0, 17 ]
 }
 
-[node name="Sword" type="Area2D" index="0"]
+[node name="Sword" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -270,6 +267,8 @@ script = ExtResource( 1 )
 
 frames = SubResource( 1 )
 animation = "Idle"
+offset = Vector2( 29, -43 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
@@ -287,11 +286,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Attaking = SubResource( 3 )
-anims/Falling = SubResource( 6 )
-anims/Idle = SubResource( 2 )
+anims/Attaking = SubResource( 2 )
+anims/Falling = SubResource( 3 )
+anims/Idle = SubResource( 4 )
 anims/Jumping = SubResource( 5 )
-anims/Moving = SubResource( 4 )
+anims/Moving = SubResource( 6 )
 blend_times = [  ]
 
 

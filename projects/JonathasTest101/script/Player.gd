@@ -50,6 +50,16 @@ func update_animation():
 		else:
 			set_animation("Falling")
 
+func flip_animation(b):
+	if !b:
+		scale = Vector2(1 ,1)
+		$Sprite.apply_scale(scale)
+		Sword_Sprite.apply_scale(scale)
+	else:
+		scale = Vector2(-1,1)
+		$Sprite.apply_scale(scale)
+		Sword_Sprite.apply_scale(scale)
+
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
 		$Animation.play(animation)
