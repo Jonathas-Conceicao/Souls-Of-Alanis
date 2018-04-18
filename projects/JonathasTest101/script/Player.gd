@@ -3,16 +3,12 @@ extends KinematicBody2D
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const SPEED = 150
+const FLIPPING_SCALE = Vector2(-1, 1)
 var velocity = Vector2()
 
 var attaking = false
 
-var Sword_Animation
-var Sword_Sprite
-
-func _ready():
-	Sword_Animation = $Sword.get_node("Animation")
-	Sword_Sprite    = $Sword.get_node("Sprite")
+var flipped = false
 
 func _physics_process(delta):
 	velocity.y += GRAVITY
@@ -32,11 +28,9 @@ func _physics_process(delta):
 
 func update_animation():
 	if velocity.x > 0:
-		$Sprite.flip_h = false
-		Sword_Sprite.flip_h = false
+		flip_animation(false)
 	elif velocity.x < 0:
-		$Sprite.flip_h = true
-		Sword_Sprite.flip_h = true
+		flip_animation(true)
 	if attaking:
 		set_animation("Attaking")
 	elif is_on_floor():
@@ -51,19 +45,15 @@ func update_animation():
 			set_animation("Falling")
 
 func flip_animation(b):
-	if !b:
-		scale = Vector2(1 ,1)
-		$Sprite.apply_scale(scale)
-		Sword_Sprite.apply_scale(scale)
-	else:
-		scale = Vector2(-1,1)
-		$Sprite.apply_scale(scale)
-		Sword_Sprite.apply_scale(scale)
+	if flipped != b:
+		$Sprite.apply_scale(FLIPPING_SCALE)
+		$Sword.animation_flip()
+		flipped = b
 
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
 		$Animation.play(animation)
-		Sword_Animation.play(animation)
+		$Sword.animation_play(animation)
 
 func _on_Animation_animation_finished(anim_name):
 	if $Sprite.animation == "Attaking":

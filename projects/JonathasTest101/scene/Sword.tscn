@@ -1,99 +1,99 @@
 [gd_scene load_steps=76 format=2]
 
-[ext_resource path="res://script/Sword.gd" type="Script" id=1]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi1.png" type="Texture" id=2]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi2.png" type="Texture" id=3]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi3.png" type="Texture" id=4]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi4.png" type="Texture" id=5]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi5.png" type="Texture" id=6]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi6.png" type="Texture" id=7]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi7.png" type="Texture" id=8]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi8.png" type="Texture" id=9]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi9.png" type="Texture" id=10]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi10.png" type="Texture" id=11]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi11.png" type="Texture" id=12]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi12.png" type="Texture" id=13]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi13.png" type="Texture" id=14]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi14.png" type="Texture" id=15]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi15.png" type="Texture" id=16]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi16.png" type="Texture" id=17]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi17.png" type="Texture" id=18]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi18.png" type="Texture" id=19]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi19.png" type="Texture" id=20]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi20.png" type="Texture" id=21]
-[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi21.png" type="Texture" id=22]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi1.png" type="Texture" id=23]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi2.png" type="Texture" id=24]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi3.png" type="Texture" id=25]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi4.png" type="Texture" id=26]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi5.png" type="Texture" id=27]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi6.png" type="Texture" id=28]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi7.png" type="Texture" id=29]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi8.png" type="Texture" id=30]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi9.png" type="Texture" id=31]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi10.png" type="Texture" id=32]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi11.png" type="Texture" id=33]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi12.png" type="Texture" id=34]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi13.png" type="Texture" id=35]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi14.png" type="Texture" id=36]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi15.png" type="Texture" id=37]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi16.png" type="Texture" id=38]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi17.png" type="Texture" id=39]
-[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi18.png" type="Texture" id=40]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi1.png" type="Texture" id=41]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi2.png" type="Texture" id=42]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi3.png" type="Texture" id=43]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi4.png" type="Texture" id=44]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi5.png" type="Texture" id=45]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi6.png" type="Texture" id=46]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi7.png" type="Texture" id=47]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi8.png" type="Texture" id=48]
-[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi9.png" type="Texture" id=49]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi1.png" type="Texture" id=50]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi2.png" type="Texture" id=51]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi3.png" type="Texture" id=52]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi4.png" type="Texture" id=53]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi5.png" type="Texture" id=54]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi6.png" type="Texture" id=55]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi7.png" type="Texture" id=56]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi8.png" type="Texture" id=57]
-[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi9.png" type="Texture" id=58]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi1.png" type="Texture" id=59]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi2.png" type="Texture" id=60]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi3.png" type="Texture" id=61]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi4.png" type="Texture" id=62]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi5.png" type="Texture" id=63]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi6.png" type="Texture" id=64]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi7.png" type="Texture" id=65]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi8.png" type="Texture" id=66]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi9.png" type="Texture" id=67]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi10.png" type="Texture" id=68]
-[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi11.png" type="Texture" id=69]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi1.png" type="Texture" id=1]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi2.png" type="Texture" id=2]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi3.png" type="Texture" id=3]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi4.png" type="Texture" id=4]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi5.png" type="Texture" id=5]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi6.png" type="Texture" id=6]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi7.png" type="Texture" id=7]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi8.png" type="Texture" id=8]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi9.png" type="Texture" id=9]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi10.png" type="Texture" id=10]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi11.png" type="Texture" id=11]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi12.png" type="Texture" id=12]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi13.png" type="Texture" id=13]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi14.png" type="Texture" id=14]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi15.png" type="Texture" id=15]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi16.png" type="Texture" id=16]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi17.png" type="Texture" id=17]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi18.png" type="Texture" id=18]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi19.png" type="Texture" id=19]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi20.png" type="Texture" id=20]
+[ext_resource path="res://art/Sword/Idle_Sword_RougueLegacyi21.png" type="Texture" id=21]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi1.png" type="Texture" id=22]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi2.png" type="Texture" id=23]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi3.png" type="Texture" id=24]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi4.png" type="Texture" id=25]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi5.png" type="Texture" id=26]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi6.png" type="Texture" id=27]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi7.png" type="Texture" id=28]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi8.png" type="Texture" id=29]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi9.png" type="Texture" id=30]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi10.png" type="Texture" id=31]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi11.png" type="Texture" id=32]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi12.png" type="Texture" id=33]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi13.png" type="Texture" id=34]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi14.png" type="Texture" id=35]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi15.png" type="Texture" id=36]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi16.png" type="Texture" id=37]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi17.png" type="Texture" id=38]
+[ext_resource path="res://art/Sword/Moving_Sword_RougueLegacyi18.png" type="Texture" id=39]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi1.png" type="Texture" id=40]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi2.png" type="Texture" id=41]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi3.png" type="Texture" id=42]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi4.png" type="Texture" id=43]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi5.png" type="Texture" id=44]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi6.png" type="Texture" id=45]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi7.png" type="Texture" id=46]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi8.png" type="Texture" id=47]
+[ext_resource path="res://art/Sword/Falling_Sword_RougueLegacyi9.png" type="Texture" id=48]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi1.png" type="Texture" id=49]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi2.png" type="Texture" id=50]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi3.png" type="Texture" id=51]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi4.png" type="Texture" id=52]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi5.png" type="Texture" id=53]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi6.png" type="Texture" id=54]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi7.png" type="Texture" id=55]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi8.png" type="Texture" id=56]
+[ext_resource path="res://art/Sword/Jumping_Sword_RougueLegacyi9.png" type="Texture" id=57]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi1.png" type="Texture" id=58]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi2.png" type="Texture" id=59]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi3.png" type="Texture" id=60]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi4.png" type="Texture" id=61]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi5.png" type="Texture" id=62]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi6.png" type="Texture" id=63]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi7.png" type="Texture" id=64]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi8.png" type="Texture" id=65]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi9.png" type="Texture" id=66]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi10.png" type="Texture" id=67]
+[ext_resource path="res://art/Sword/Attaking_Sword_RougueLegacyi11.png" type="Texture" id=68]
+[ext_resource path="res://script/Sword.gd" type="Script" id=69]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=7]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 3.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Moving",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
 "loop": true,
 "name": "Falling",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "Jumping",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
 "loop": true,
 "name": "Attaking",
 "speed": 5.0
@@ -104,9 +104,9 @@ animations = [ {
 resource_name = "Attaking"
 length = 1.0
 loop = false
-step = 0.1
+step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:animation")
+tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -118,16 +118,88 @@ tracks/0/keys = {
 "values": [ "Attaking" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 10 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hitbox/Sword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 0.54, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 23.371, 9.58377 ), Vector2( 29.9753, -42.676 ), Vector2( 40, -40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Hitbox/Sword:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 0.54, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -172.918, -6.01518, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Hitbox/Sword:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hitbox/Sword:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Hitbox/Trail:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.55, 0.69 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Hitbox/Trail:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.55, 0.69 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -137,7 +209,7 @@ length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:animation")
+tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -149,7 +221,7 @@ tracks/0/keys = {
 "values": [ "Falling" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -167,7 +239,7 @@ length = 3.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:animation")
+tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -179,7 +251,7 @@ tracks/0/keys = {
 "values": [ "Idle" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -198,7 +270,7 @@ length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:animation")
+tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -210,7 +282,7 @@ tracks/0/keys = {
 "values": [ "Jumping" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -228,7 +300,7 @@ length = 2.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:animation")
+tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -240,7 +312,7 @@ tracks/0/keys = {
 "values": [ "Moving" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -252,34 +324,16 @@ tracks/1/keys = {
 "values": [ 0, 17 ]
 }
 
-[node name="Sword" type="Area2D"]
+[node name="Sword" type="AnimatedSprite" index="0"]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
-
-frames = SubResource( 1 )
-animation = "Idle"
-offset = Vector2( 29, -43 )
+frames = SubResource( 7 )
+animation = "Attaking"
+frame = 6
+offset = Vector2( 39, -42 )
+script = ExtResource( 69 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
-
-visible = false
-position = Vector2( -40, -50 )
-build_mode = 0
-polygon = PoolVector2Array( 5, 45, 5, 60, 5, 70, 15, 70, 70, 55, 85, 40, 85, 35, 60, 25, 45, 35, 15, 45, 5, 45 )
-disabled = true
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="Animation" type="AnimationPlayer" parent="." index="2"]
+[node name="Animation" type="AnimationPlayer" parent="." index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -292,5 +346,33 @@ anims/Idle = SubResource( 4 )
 anims/Jumping = SubResource( 5 )
 anims/Moving = SubResource( 6 )
 blend_times = [  ]
+
+[node name="Hitbox" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sword" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+
+visible = false
+position = Vector2( 37.1358, -40.7646 )
+rotation = -0.0299956
+build_mode = 0
+polygon = PoolVector2Array( 18, 52, 18, 74, 78, 74, 92, 64, 92, 62, 78, 52 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Trail" type="CollisionPolygon2D" parent="Hitbox" index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 55, 10, 129, 7, 117, -57, 89, -89, 45, -107, 17, -107, -21, -93, -41, -75, -41, -73, -39, -73, -20, -81, -1, -81, 23, -71, 47, -43, 55, -17 )
+disabled = true
+_sections_unfolded = [ "Visibility" ]
 
 
