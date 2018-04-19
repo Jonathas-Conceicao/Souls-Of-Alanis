@@ -27,9 +27,9 @@ func _physics_process(delta):
 	move_and_slide(velocity, UP)
 
 func update_animation():
-	if velocity.x > 0:
+	if velocity.x > 0 && !attaking:
 		flip_animation(false)
-	elif velocity.x < 0:
+	elif velocity.x < 0 && !attaking:
 		flip_animation(true)
 	if attaking:
 		set_animation("Attaking")
