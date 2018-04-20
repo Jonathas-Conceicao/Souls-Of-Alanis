@@ -12,20 +12,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Dummy" type="KinematicBody2D" index="0"]
+[node name="Dummy" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "idle"
-_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
@@ -40,10 +39,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -38.0
-margin_top = -58.0
-margin_right = 39.0
-margin_bottom = -44.0
+margin_left = -40.0
+margin_top = -90.0
+margin_right = 37.0
+margin_bottom = -76.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

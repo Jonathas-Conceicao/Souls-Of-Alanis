@@ -33,4 +33,4 @@ func _on_HideTimer_timeout():
 
 func _on_meele_hit(hitter):
 	state = HITED
-	print("Hitted by:" hitter)
+	print("Hitted by:", hitter.get_name())

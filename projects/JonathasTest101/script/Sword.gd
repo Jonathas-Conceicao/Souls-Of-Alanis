@@ -11,3 +11,11 @@ func animation_play(animation):
 
 func animation_flip():
 	self.apply_scale(FLIPPING_SCALE)
+
+func _on_Hitbox_body_entered(body):
+	if body.has_method("_on_meele_hit"):
+		body._on_meele_hit($Hitbox)
+
+func _on_TrailBox_body_entered(body):
+	if body.has_method("_on_meele_hit"):
+		body._on_meele_hit($TrailBox)

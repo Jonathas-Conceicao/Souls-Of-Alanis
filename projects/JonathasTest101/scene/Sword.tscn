@@ -178,7 +178,7 @@ tracks/5/keys = {
 "values": [ false, true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Hitbox/Trail:disabled")
+tracks/6/path = NodePath("TrailBox/Trail:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -190,7 +190,7 @@ tracks/6/keys = {
 "values": [ true, false, true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hitbox/Trail:visible")
+tracks/7/path = NodePath("TrailBox/Trail:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -366,12 +366,26 @@ build_mode = 0
 polygon = PoolVector2Array( 18, 52, 18, 74, 78, 74, 92, 64, 92, 62, 78, 52 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Trail" type="CollisionPolygon2D" parent="Hitbox" index="1"]
+[node name="TrailBox" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Trail" type="CollisionPolygon2D" parent="TrailBox" index="0"]
 
 visible = false
 build_mode = 0
 polygon = PoolVector2Array( 55, 10, 129, 7, 117, -57, 89, -89, 45, -107, 17, -107, -21, -93, -41, -75, -41, -73, -39, -73, -20, -81, -1, -81, 23, -71, 47, -43, 55, -17 )
 disabled = true
 _sections_unfolded = [ "Visibility" ]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+
+[connection signal="body_entered" from="TrailBox" to="." method="_on_TrailBox_body_entered"]
 
 
