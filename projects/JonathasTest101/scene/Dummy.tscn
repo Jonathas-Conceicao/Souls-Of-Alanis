@@ -12,7 +12,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Dummy" type="KinematicBody2D"]
+[node name="Dummy" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1

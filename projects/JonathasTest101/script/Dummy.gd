@@ -12,6 +12,7 @@ var speechs = [	"Hey! You there! Come hit me!",
 				"Come at me, bro!"]
 
 func _ready():
+	state = IDLE
 	$Label.hide()
 	$WaitTimer.start()
 
@@ -30,5 +31,6 @@ func _on_HideTimer_timeout():
 	$Label.hide()
 	$WaitTimer.start()
 
-func _on_meele_hit():
+func _on_meele_hit(hitter):
 	state = HITED
+	print("Hitted by:" hitter)
