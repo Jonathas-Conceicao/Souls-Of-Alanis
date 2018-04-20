@@ -32,7 +32,7 @@ This is the initial repository for our Digital Games Curse.
 - Class 4:
 	- Work on the project
 	- **Activities**
-		- [ ] Tech demo for combat mechanics (Joanthas and Felipe)
+		- [X] Tech demo for combat mechanics (Joanthas and Felipe)
 		- [ ] Tech demo for random map generation (Lucas and Juan)
 
 ## Story Board Notes
