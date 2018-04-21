@@ -3,7 +3,7 @@
 [ext_resource path="res://art/castle/background_4.png" type="Texture" id=1]
 [ext_resource path="res://scene/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sound/03_Bloodlines (online-audio-converter.com).ogg" type="AudioStream" id=3]
-[ext_resource path="res://scene/warp world2.gd" type="Script" id=4]
+[ext_resource path="res://script/warp world2.gd" type="Script" id=4]
 [ext_resource path="res://scene/TileSet.res" type="TileSet" id=5]
 [ext_resource path="res://scene/Dummy.tscn" type="PackedScene" id=6]
 
@@ -28,7 +28,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 70, 510 )
+position = Vector2( 839.954, 516.681 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 

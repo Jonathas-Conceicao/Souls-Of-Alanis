@@ -174,4 +174,6 @@ _sections_unfolded = [ "Size Flags" ]
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/OptionsMenu/Newgame" to="." method="_on_newgame_pressed"]
 
+[connection signal="pressed" from="MainMenu/VBoxContainer/OptionsMenu/Continue" to="." method="_on_Continue_pressed"]
+
 

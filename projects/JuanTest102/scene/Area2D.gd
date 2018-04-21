@@ -1,8 +1,8 @@
 extends Area2D
 
 func _physics_process(delta):
-	var bodies = get_overlapping_areas()
-	
+	var bodies = get_overlapping_bodies()
+		
 	for body in bodies:
 		if body.name == "Player":
-			get_tree().change_scene("res://scene/World3.tscn")
+			get_tree().change_scene("res://scene/World1_1.tscn")
