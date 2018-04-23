@@ -1,24 +1,28 @@
 # Story Board Notes  
 **Topics to think about**  
 - Weappons  
-	- 
+	- ?  
 - Characters  
 	- Friends and foes  
+		- ?  
 - Spells  
+	- ?  
 - Usable itens  
+	- ?  
 - Equipaments  
+	- ?  
 - Scene  
 	- Rooms  
-		- 4 rooms size
-		- Initial room
-		- Chanlege room
-		- Hallway room
-		- Loot room
+		- 4 rooms size  
+		- Initial room  
+		- Chanlege room  
+		- Hallway room  
+		- Loot room  
 	- Dungeons' Levels  
 		- Three Levels  
 		- 1 Boss per level  
-		- 
 	- Scene's objects  
+		- ?  
 - Lore  
 	the main player, __Alanis__, is a warrior cat and she dies in the begging (tutorial), and
 	her soul comes back on a new cat body to _begin a new_/_finish her_ quest
@@ -27,7 +31,7 @@
 	- Customisable assets  
 - HUD  
 - death  
-	based on the ideia of souls to continue with her's perks, but the dungeon progress will be lost.
+	based on the ideia of souls to continue with her's perks, but the dungeon progress will be lost.  
 
 **Topics from talks**  
 	- 13.04.18  
