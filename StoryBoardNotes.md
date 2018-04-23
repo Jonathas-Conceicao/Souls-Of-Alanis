@@ -2,9 +2,9 @@
   **Topics to think about**  
   - Weappons  
   - Characters  
-    - Friedns and foes  
+    - Friends and foes  
   - Spells  
-  - Usabe itens  
+  - Usable itens  
   - Equipaments  
   - Scene  
     - Modules  
@@ -19,8 +19,8 @@
   - HUD  
   - death  
     based on the ideia of souls to continue with her's perks, now
-    the dungeon progress will be losed
-  
+    the dungeon progress will be lost
+
 **Topics from talks**  
 	- 13.04.18  
 		- some aspects for the __sotory board__:

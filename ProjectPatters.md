@@ -5,19 +5,19 @@
   - Project's name      -> CamelCase
   - Folder's name       -> camelCase
   - Nodes               -> CamelCase
-  - Methodos            -> snake_case
+  - Methods             -> snake_case
   - Signal receptors    -> _snake_case
 
 ## File's Organization
 ```
-.                # Raiz do repositório
+.                # Repo root
 ├── ProjectName  # .project
 |	├── script   # .gd files
 |	├── scene    # .tscn files
 |	├── art      # image files
 |	└── sound    # music files
-└── arte         # Non-alocated art
-    ├── ase      # Aseprite's files
+└── art        # Non-alocated art
+    ├── ase    # Aseprite's files
 	├── png      # Exported png files
 	└── gif      # Exported gif files
 ```

@@ -1,0 +1,70 @@
+[gd_resource type="TileSet" load_steps=2 format=2]
+
+[ext_resource path="res://art/terrain/tileset.png" type="Texture" id=1]
+
+[resource]
+
+0/name = "Sprite"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 50, 50 )
+0/is_autotile = false
+0/occluder_offset = Vector2( 25, 25 )
+0/navigation_offset = Vector2( 25, 25 )
+0/shapes = [  ]
+1/name = "Sprite2"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 50, 0, 50, 50 )
+1/is_autotile = false
+1/occluder_offset = Vector2( 25, 25 )
+1/navigation_offset = Vector2( 25, 25 )
+1/shapes = [  ]
+2/name = "Sprite3"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 100, 0, 100, 50 )
+2/is_autotile = false
+2/occluder_offset = Vector2( 50, 25 )
+2/navigation_offset = Vector2( 50, 25 )
+2/shapes = [  ]
+3/name = "Sprite4"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 200, 0, 50, 50 )
+3/is_autotile = false
+3/occluder_offset = Vector2( 25, 25 )
+3/navigation_offset = Vector2( 25, 25 )
+3/shapes = [  ]
+4/name = "Sprite5"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 100, 0, 50, 50 )
+4/is_autotile = false
+4/occluder_offset = Vector2( 25, 25 )
+4/navigation_offset = Vector2( 25, 25 )
+4/shapes = [  ]
+5/name = "Sprite6"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 150, 0, 50, 50 )
+5/is_autotile = false
+5/occluder_offset = Vector2( 25, 25 )
+5/navigation_offset = Vector2( 25, 25 )
+5/shapes = [  ]
+6/name = "Sprite7"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 150, 0, 50, 50 )
+6/is_autotile = false
+6/occluder_offset = Vector2( 25, 25 )
+6/navigation_offset = Vector2( 25, 25 )
+6/shapes = [  ]
+
