@@ -1,5 +1,5 @@
 # PeC-Jogos-Projeto-1  
-This is the initial repository for our Digital Games Curse.
+This is the initial repository for our Digital Games Course.
 
 ## Class notes
 
@@ -18,7 +18,7 @@ This is the initial repository for our Digital Games Curse.
 		- [X] Make a simple "Hello World" project
 		- [X] Export to run on another machine
 		- [X] Start [storyboard](#story-board-notes)
-			- Something bout the game
+			- Something about the game
 			- Something about one stage of the game
 			- Some characters of the game
 			- Some of the itens of the game
@@ -32,7 +32,7 @@ This is the initial repository for our Digital Games Curse.
 - Class 4:
 	- Work on the project
 	- **Activities**
-		- [X] Tech demo for combat mechanics (Joanthas and Felipe)
+		- [X] Tech demo for combat mechanics (Jonathas and Felipe)
 		- [ ] Tech demo for random map generation (Lucas and Juan)
 
 ## Story Board Notes
