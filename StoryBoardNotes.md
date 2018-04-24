@@ -1,28 +1,51 @@
 # Story Board Notes  
 **Topics to think about**  
-- Weappons  
-	- ?  
-- Characters  
-	- Friends and foes  
-		- ?  
-- Spells  
-	- ?  
-- Usable itens  
-	- ?  
 - Equipaments  
-	- ?  
+	- Armor
+	- Rings
+	- Weappons  
+		- Swords
+		- Axes
+		- Spears  
+- Characters
+	- Friends  
+		- Ghost
+		- Andre
+		- The Wizard
+		- Other Cat
+		- Unicorn  
+	- Foes
+		- 6 types per level
+- Usable itens  
+	- HP Potions
+	- Buffers    
 - Scene  
 	- Rooms  
-		- 4 rooms size  
-		- Initial room  
-		- Chanlege room  
-		- Hallway room  
-		- Loot room  
+		- 4 rooms size
+		  	- Big room
+				-	Screen size room
+				- Corridor room
+				-	Medium size room
+		- Room types
+				- Ordinary room
+				- Initial room  
+				- Challenge room  
+				- Hallway room  
+				- Loot room  
+				- Boss room
+				- Quest room
 	- Dungeons' Levels  
 		- Three Levels  
-		- 1 Boss per level  
-	- Scene's objects  
-		- ?  
+			-	Garden
+			-	Castle
+			-	Cript
+		- 1 Boss per level
+		 	-	Faun with halberg
+			- Beholder with magical multiple eyes
+			- The Betrayal
+		- Scene's objects  
+			- Teasure chest
+			-   
 - Lore  
 	Alanis is a paraplegic kitty who lives alone with her tutor, he helps her with all her needs.  
 
@@ -38,9 +61,18 @@
 
 	Upon first dying the kitty doesn't wake up and finds herself at the start of the dream.
 
-- Menu  
-	- Customisable assets  
-- HUD  
+- Main menu
+	- New game
+	- Continue
+	- Options
+- Menu
+	- Stats
+	- Iventory
+	- Equip
+- HUD
+  - HP bar
+	- Stamina bar
+	- XP
 - death  
 	based on the ideia of souls to continue with her's perks, but the dungeon progress will be lost.  
 
