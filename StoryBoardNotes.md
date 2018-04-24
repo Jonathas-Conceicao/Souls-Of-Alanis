@@ -7,6 +7,7 @@
 		- Swords
 		- Axes
 		- Spears  
+
 - Characters
 	- Friends  
 		- Ghost
@@ -16,9 +17,11 @@
 		- Unicorn  
 	- Foes
 		- 6 types per level
+
 - Usable itens  
 	- HP Potions
-	- Buffers    
+	- Buffs
+
 - Scene  
 	- Rooms  
 		- 4 rooms size
@@ -40,12 +43,13 @@
 			-	Castle
 			-	Cript
 		- 1 Boss per level
-		 	-	Faun with halberg
+			- Faun with halberd
 			- Beholder with magical multiple eyes
 			- The Betrayal
 		- Scene's objects  
 			- Teasure chest
-			-   
+			- ?
+
 - Lore  
 	Alanis is a paraplegic kitty who lives alone with her tutor, he helps her with all her needs.  
 
@@ -65,15 +69,18 @@
 	- New game
 	- Continue
 	- Options
+
 - Menu
 	- Stats
 	- Iventory
 	- Equip
+
 - HUD
   - HP bar
 	- Stamina bar
 	- XP
-- death  
+
+- Death  
 	based on the ideia of souls to continue with her's perks, but the dungeon progress will be lost.  
 
 **Topics from talks**  
