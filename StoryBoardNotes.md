@@ -33,8 +33,8 @@
 
 	After hearing the story Alanis falls asleep and finds herself in a strange dream,
 	in the dream she's part human and can walk, jump and run.
-	She then finds herself at the gate of a castle, a wizard by the entrance tells here
-	that that is the castle from the legend and gives her a sword so she can face the creatures inside.
+	She then finds herself at the gate of a castle, a wizard by the entrance tells her
+	that is the castle from the legend and gives her a sword so she can face the creatures inside.
 
 	Upon first dying the kitty doesn't wake up and finds herself at the start of the dream.
 
@@ -46,7 +46,7 @@
 
 **Topics from talks**  
 - 13.04.18  
-	- some aspects for the __sotory board__:
+	- some aspects for the __story board__:
 	- initially we should focus on what we can do, so then we create the lore based on that  
 	- then the lore will be used to create the game itself  
 	- aspects of the __game__
