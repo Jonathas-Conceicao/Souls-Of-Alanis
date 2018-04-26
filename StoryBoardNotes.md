@@ -1,4 +1,16 @@
 # Story Board Notes  
+**Division for writing and drawning**  
+- Main Character & Her Weappons => Jonathas  
+- Death                         => Jonathas  
+- Equipaments                   => Felipe  
+- Friends & Foes                => Felipe  
+- Usable Itens                  => Felipe  
+- Scene                         => Asaki / Bretana  
+- Lore                          => Jonathas  
+- Main Menu                     => Bretana  
+- Menu                          => Bretana  
+- HUD                           => Asaki  
+
 **Topics to think about**  
 - Equipaments  
 	- Armor
