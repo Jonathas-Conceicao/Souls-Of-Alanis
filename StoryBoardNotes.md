@@ -1,28 +1,55 @@
 # Story Board Notes  
 **Topics to think about**  
-- Weappons  
-	- ?  
-- Characters  
-	- Friends and foes  
-		- ?  
-- Spells  
-	- ?  
-- Usable itens  
-	- ?  
 - Equipaments  
-	- ?  
+	- Armor
+	- Rings
+	- Weappons  
+		- Swords
+		- Axes
+		- Spears  
+
+- Characters
+	- Friends  
+		- Ghost
+		- Andre
+		- The Wizard
+		- Other Cat
+		- Unicorn  
+	- Foes
+		- 6 types per level
+
+- Usable itens  
+	- HP Potions
+	- Buffs
+
 - Scene  
 	- Rooms  
-		- 4 rooms size  
-		- Initial room  
-		- Chanlege room  
-		- Hallway room  
-		- Loot room  
+		- 4 rooms size
+		  	- Big room
+				-	Screen size room
+				- Corridor room
+				-	Medium size room
+		- Room types
+				- Ordinary room
+				- Initial room  
+				- Challenge room  
+				- Hallway room  
+				- Loot room  
+				- Boss room
+				- Quest room
 	- Dungeons' Levels  
 		- Three Levels  
-		- 1 Boss per level  
-	- Scene's objects  
-		- ?  
+			-	Garden
+			-	Castle
+			-	Cript
+		- 1 Boss per level
+			- Faun with halberd
+			- Beholder with magical multiple eyes
+			- The Betrayal
+		- Scene's objects  
+			- Teasure chest
+			- ?
+
 - Lore  
 	Alanis is a paraplegic kitty who lives alone with her tutor, he helps her with all her needs.  
 
@@ -33,20 +60,32 @@
 
 	After hearing the story Alanis falls asleep and finds herself in a strange dream,
 	in the dream she's part human and can walk, jump and run.
-	She then finds herself at the gate of a castle, a wizard by the entrance tells here
-	that that is the castle from the legend and gives her a sword so she can face the creatures inside.
+	She then finds herself at the gate of a castle, a wizard by the entrance tells her
+	that is the castle from the legend and gives her a sword so she can face the creatures inside.
 
 	Upon first dying the kitty doesn't wake up and finds herself at the start of the dream.
 
-- Menu  
-	- Customisable assets  
-- HUD  
-- death  
+- Main menu
+	- New game
+	- Continue
+	- Options
+
+- Menu
+	- Stats
+	- Iventory
+	- Equip
+
+- HUD
+  - HP bar
+	- Stamina bar
+	- XP
+
+- Death  
 	based on the ideia of souls to continue with her's perks, but the dungeon progress will be lost.  
 
 **Topics from talks**  
 - 13.04.18  
-	- some aspects for the __sotory board__:
+	- some aspects for the __story board__:
 	- initially we should focus on what we can do, so then we create the lore based on that  
 	- then the lore will be used to create the game itself  
 	- aspects of the __game__

@@ -7,9 +7,9 @@
 A paraplegic kitty with a lovely tutor.
 
 ### 1 - Call to adventure
-	The cat's owner readding a history bout a knight whom conquers a dungeon to gain a wish.
+	The cat's owner readding a history about a knight whom conquers a dungeon to gain a wish.
 ### 2 - Departure
-	The cat fall asleep and finds it self in the story she just heard.
+	The cat fall asleep and finds herself in the story she just heard.
 
 ## Act 2 - Special World
 

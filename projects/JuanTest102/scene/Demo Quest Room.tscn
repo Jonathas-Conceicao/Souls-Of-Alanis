@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/TileSet.res" type="TileSet" id=2]
+[ext_resource path="res://scene/NPC Quest.gd" type="Script" id=3]
+[ext_resource path="res://art/icon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.79, 31.2371 )
+
+[node name="Demo Quest Room" type="Node" index="0"]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+[node name="Player" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 55, 562 )
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 50, 50 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 1610612736, 0, 1, 1610612736, 0, 2, 1610612736, 0, 3, 1610612736, 0, 4, 1610612736, 0, 5, 1610612736, 0, 6, 1610612736, 0, 7, 1610612736, 0, 8, 1610612736, 0, 9, 1610612736, 0, 10, 1610612736, 0, 11, 1610612736, 0, 12, 1610612736, 0, 13, 1610612736, 0, 14, 1610612736, 0, 15, 1610612736, 0, 16, 1610612736, 0, 17, 1610612736, 0, 65536, 1610612736, 0, 65537, 1610612736, 0, 65538, 1610612736, 0, 65539, 1610612736, 0, 65540, 1610612736, 0, 65541, 1610612736, 0, 65542, 1610612736, 0, 65543, 1610612736, 0, 65544, 1610612736, 0, 65545, 1610612736, 0, 65546, 1610612736, 0, 65547, 1610612736, 0, 65548, 1610612736, 0, 65549, 1610612736, 0, 65550, 1610612736, 0, 65551, 1610612736, 0, 65552, 1610612736, 0, 65553, 1610612736, 0, 131072, 1610612737, 0, 131073, 1610612737, 0, 131074, 1610612737, 0, 131075, 1610612737, 0, 131076, 1610612737, 0, 131077, 1610612737, 0, 131078, 1610612737, 0, 131079, 1610612737, 0, 131080, 1610612737, 0, 131081, 1610612737, 0, 131082, 1610612737, 0, 131083, 1610612737, 0, 131084, 1610612737, 0, 131085, 1610612737, 0, 131086, 1610612737, 0, 131087, 1610612737, 0, 131088, 1610612736, 0, 131089, 1610612736, 0, 196624, -1073741823, 0, 196625, -1610612736, 0, 262160, -1073741823, 0, 262161, -1610612736, 0, 327696, -1073741823, 0, 327697, -1610612736, 0, 393232, -1073741823, 0, 393233, -1610612736, 0, 458768, -1073741823, 0, 458769, -1610612736, 0, 524304, -1073741823, 0, 524305, -1610612736, 0, 589840, -1073741823, 0, 589841, -1610612736, 0, 655376, -1073741823, 0, 655377, -1610612736, 0, 720912, -1073741823, 0, 720913, -1610612736, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 0, 0, 786449, 1610612736, 0, 851968, 1610612736, 0, 851969, 1610612736, 0, 851970, 1610612736, 0, 851971, 1610612736, 0, 851972, 1610612736, 0, 851973, 1610612736, 0, 851974, 1610612736, 0, 851975, 1610612736, 0, 851976, 1610612736, 0, 851977, 1610612736, 0, 851978, 1610612736, 0, 851979, 1610612736, 0, 851980, 1610612736, 0, 851981, 1610612736, 0, 851982, 1610612736, 0, 851983, 1610612736, 0, 851984, 1610612736, 0, 851985, 1610612736, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NPC Quest" type="KinematicBody2D" parent="." index="3"]
+
+position = Vector2( 624.301, 542.442 )
+scale = Vector2( 1.69003, 1.79217 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC Quest" index="0"]
+
+position = Vector2( -2.74875, 4.64651 )
+scale = Vector2( 2.73386, 0.864284 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="NPC Quest" index="1"]
+
+position = Vector2( -2.64621, 4.26831 )
+scale = Vector2( 0.917306, 0.866615 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="NPC Quest" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -82.0
+margin_top = -38.0
+margin_right = 85.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Hello! You could help me?"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility" ]
+
+
