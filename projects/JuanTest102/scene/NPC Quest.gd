@@ -1,16 +1,23 @@
-extends KinematicBody2D
+extends Area2D
 
-enum STATE {
-	IDLE,
-	HITED
-}
+var talked = false
 
-var state = IDLE
+func _physics_process(delta):
+	
+	var bodies = get_overlapping_bodies()
+			
+	for body in bodies:
+		
+		if body.name == "Player" && Input.is_action_pressed("ui_accept") && talked == true:
+			$Label2.show()
+			$HideTimer.start()
+		
+		if body.name == "Player" && Input.is_action_pressed("ui_accept") && talked == false:
+			talked = true
+			$Label.show()
+			$LabelQuest.show()
+			$HideTimer.start()
 
-func _ready():
-	state = IDLE
-	pass
-
-func _on_meele_hit(hitter):
-	state = HITED
-	$Label.show()
+func _on_Timer_timeout():
+	$Label.hide()
+	$Label2.hide()
