@@ -26,7 +26,7 @@ A paraplegic kitty with a lovely tutor.
 ### 8 - Result
 	The Wizard's betrayal.
 ### 9 - Return
-	The cat wakes.
+	She leves the dream.
 
 ## Act 3 - Ordinary World
 

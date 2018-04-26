@@ -1,7 +1,7 @@
 ## Introdução: Gênero Roguelike
 
 _Roguelike_ trata-se de um subgênero de jogo derivado do RPG.
-Nele o jogador controla um personagem, que pode variar de diversas maneiras diferentes, desde atributos variados gerando combinações quase únicas até uma gama mais limitada de personagens pre estabelecidos.
+Nele o jogador controla um personagem, que pode variar de diversas maneiras, desde atributos variados gerando combinações quase únicas até uma gama mais limitada de personagens pre estabelecidos.
 Neste modelo o personagem começa no início de uma _dungeon_ com recursos básicos, e o jogador deve avançar até o final derrotando monstros, possivelmente melhorando seu gear.
 Os _Roguelike_ costumam seguir o padrão de _permadeath_, ou seja, uma vez que se morre o personagem é perdido e um novo deve ser criado, mas algumas vantagens podem ser obtidas ou desbloqueadas para a próxima _playthrough_.
 Normalmente o jogo faz uso da ideia de _fog of war_, _dungeons_ são exploradas às cegas, o mapa não é conhecido e o jogador é limitado apenas ao que já viu naquela _playthrough_
@@ -10,7 +10,7 @@ A história em jogos Roguelike é contada de maneira rápida, simples e sutil, s
 Eis algumas importantes características comum aos jogos _Roguelike_: 
 (1) Mapas: A _dungeon_ são geradas aleatoriamente para cada _playthrough_, assim o jogador deve explora-la com cautela sempre que começa uma nova partida;
 (2) _Permadeath_: Ao morrer o progresso do jogador pela _dungeon_ é perdido;
-(3) Combate: O combate é obrigatório.Mesmo que possam ser encontrados alguns aliados no caminho, é impossível terminar o jogo sem fazer vários combates;
+(3) Combate: O combate é obrigatório. Mesmo que possam ser encontrados alguns aliados no caminho, é impossível terminar o jogo sem fazer vários combates;
 (4) Exploração: Explorar a _dungeon_ sempre vai trazer recompensas ao jogador, de maneira que simplesmente encontrar o _Boss_ final logo de início não seria tão interessante;
 (5) Recursos: Recursos necessários costumam ser escaços, sejam eles uma tocha para ajudar a enxergar onde se pisa ou mesmo pontos de HP e Mana.
 
