@@ -1,4 +1,85 @@
 # Story Board Notes  
+
+** Atividades **
+- Programação
+	- Discutir o modelo de RPG
+	- Discutir disposição das salas
+	- Discutir disposição de mobs nas salas
+	- Discutir upgrades (Main Character e Criaturas)
+	- Discutir bonus dos itens
+	
+	- Personagem Principal
+		- Movimentação
+	- Armas
+		- Espada
+		- Lança
+		- Machado
+	- Itens consumíveis
+	- Equipamentos
+		- Armaduras
+		- Aneis
+	- Inimigos normais
+		- Jardim
+		- Castelo
+		- Cripta
+	- Mini bosses
+		- Jardim
+		- Castelo
+		- Cripta
+	- Main Bosses
+		- Fauno
+		- Beholder
+		- Mago
+	- Sistema de upgrade
+		- Personagem
+		- Itens
+		- Criaturas
+	- NPCs aliados
+		- NPCs das Quests
+		- Mago
+	- Salas
+		- Tamanho 1
+		- Tamanho 2
+		- Tamanho 3
+		- Tamanho 4
+	- Tipos de sala
+	- Disposição das salas
+	- Disposição dos itens nas salas
+	- Disposição dos inimigos nas salas
+	- Main Menu
+	- Esc Menu
+	- HUD
+
+- Arte
+	- Personagem Principal
+	- Armas
+	- Itens consumíveis
+	- Equipamentos
+		- Icone
+	- Inimigos normais
+		- Jardim
+		- Castelo
+		- Cripta
+	- Mini bosses (bichos bodybuiiiirlders)
+		- Jardim
+		- Castelo
+		- Cripta
+	- Main Bosses
+		- Fauno
+		- Beholder
+		- Mago
+	- Sistema de upgrade
+		- Árvores de talentos
+	- NPCs aliados
+		- NPCs das Quests
+		- Mago
+	- Salas
+		- Tiles
+	- Itens nas salas
+	- Main Menu
+	- Esc Menu
+	- HUD
+
 **Division for writing and drawning**  
 - Main Character & Her Weappons => Jonathas  
 - Death                         => Jonathas  
