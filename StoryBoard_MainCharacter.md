@@ -1,6 +1,7 @@
 ## Personagem Principal: Alanis
 
-![HerosJourney](art/png/Full_RougueLegacyCharacter.png)
+![HerosJourney](art/png/Full_RougueLegacyCharacter.png)  
+(Imagem não definitiva retirada do [Rougue-Legacy](http://www.cellardoorgames.com/roguelegacy/))
 
 O personagem terá uma movimentação relativamente rápida, digna de qualquer felino.
 
