@@ -1,7 +1,8 @@
 ## Personagem Principal: Alanis
 
-![Hero](art/png/Full_RougueLegacyCharacter.png)  
-(Imagem não definitiva retirada do [Rougue-Legacy](http://www.cellardoorgames.com/roguelegacy/))
+<img src="art/png/Full_RougueLegacyCharacter.png" width="40%" height="40%">
+
+(Imagem não definitiva retirada do ![Rougue-Legacy](http://www.cellardoorgames.com/roguelegacy/))
 
 O personagem terá uma movimentação relativamente rápida, digna de qualquer felino.
 
@@ -29,11 +30,8 @@ O personagem terá uma árvore de talentos para cada tipo de arma disponível no
 que ganha para melhorar o uso de qualquer tipo de arma.
 Com isso o personagem pode ficar mais forte a cada partida mas dentro do estilo de jogo que o jogador preferir.
 
-Tipos de armas disponíveis:
-- Espada
-- Lança
-- Machado
+Tipos de armas disponíveis:  
 
-![Espada ](art/png/Sword_Weappon.png)   
-![Lança  ](art/png/Spear_Weappon.png)   
-![Machado](art/png/Axe_Weappon.png  )   
+Espada | Lança | Machado
+------ | ----- | -----
+<img src="art/png/Sword_Weappon.png"> | <img src="art/png/Spear_Weappon.png"> | <img src="art/png/Axe_Weappon.png">
