@@ -2,7 +2,7 @@
 
 <img src="art/png/Full_RougueLegacyCharacter.png" width="40%" height="40%">
 
-(Imagem não definitiva retirada do ![Rougue-Legacy](http://www.cellardoorgames.com/roguelegacy/))
+(Imagem não definitiva retirada do [Rougue-Legacy](http://www.cellardoorgames.com/roguelegacy/))
 
 O personagem terá uma movimentação relativamente rápida, digna de qualquer felino.
 
