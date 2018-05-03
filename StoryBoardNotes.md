@@ -1,31 +1,44 @@
 # Story Board Notes  
 
 **Atividades para o cronograma (ongoing)**
-- Programação
+
+- 07/05 - 14/05
 	- Discutir o modelo de RPG
 	- Discutir disposição das salas
 	- Discutir disposição de mobs nas salas
 	- Discutir upgrades (Main Character e Criaturas)
 	- Discutir bonus dos itens
-	
-	- Personagem Principal
-		- Movimentação
-	- Armas
+
+- Legenda
+	- Jonathas "Thatox" Conceicao - T
+	- Juan "Asaki" Rios - A
+	- Lucas Bretana - B
+	- Felipe "OneEyedAesir" Gruendemann -  O
+
+- 07/05 - 28/05
+	- Personagem Principal => T
+	- Inimigos normais => O
+		- Jardim
+		- Castelo
+		- Cripta
+	- Armas => T
 		- Espada
 		- Lança
 		- Machado
-	- Itens consumíveis
-	- Equipamentos
-		- Armaduras
-		- Aneis
-	- Inimigos normais
-		- Jardim
-		- Castelo
-		- Cripta
-	- Mini bosses
-		- Jardim
-		- Castelo
-		- Cripta
+	- Geração do mapa => A
+	- Salas => A & B
+		- Tamanho tela
+		- Sala Longa
+	- Tipos de sala => A & B
+		- Salas ordinárias
+		- Sala inicial
+		- Sala de pilhagem
+		- Sala de corredor
+	- Main Menu & Esc Menu => B
+	- HUD => A
+	- Alpha 0.1 - 28/05
+
+- 28/05 - 25/06
 	- Main Bosses
 		- Fauno
 		- Beholder
@@ -34,52 +47,35 @@
 		- Personagem
 		- Itens
 		- Criaturas
+	- Equipamentos
+		- Armaduras
+		- Aneis
 	- NPCs aliados
 		- NPCs das Quests
 		- Mago
 	- Salas
-		- Tamanho 1
-		- Tamanho 2
 		- Tamanho 3
 		- Tamanho 4
 	- Tipos de sala
+		- Sala de desafio
+		- Sala de Boss
+		- Sala de missão
 	- Disposição das salas
+	- Menu de inventário
+	- Alpha 0.2 - 25/06
+
+- 25/06 - 16/07
+	- Entrada
+	- Encerramento
+	- Itens consumíveis
+	- Mini bosses
+		- Jardim
+		- Castelo
+		- Cripta
 	- Disposição dos itens nas salas
 	- Disposição dos inimigos nas salas
-	- Main Menu
-	- Esc Menu
-	- HUD
-
-- Arte
-	- Paleta de cores
-	- Personagem Principal
-	- Armas
-	- Itens consumíveis
-	- Equipamentos
-		- Icone
-	- Inimigos normais
-		- Jardim
-		- Castelo
-		- Cripta
-	- Mini bosses (bichos bodybuiiiirlders)
-		- Jardim
-		- Castelo
-		- Cripta
-	- Main Bosses
-		- Fauno
-		- Beholder
-		- Mago
-	- Sistema de upgrade
-		- Árvores de talentos
-	- NPCs aliados
-		- NPCs das Quests
-		- Mago
-	- Salas
-		- Tiles
-	- Itens nas salas
-	- Main Menu
-	- Esc Menu
-	- HUD
+	- Beta 0.3 - 09/07
+	- Final 1.0 - 16/07
 
 **Division for writing and drawning**  
 - Main Character & Her Weappons => Jonathas  
