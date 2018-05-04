@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg4539"
+   width="682.66669"
+   height="682.66669"
+   viewBox="0 0 682.66669 682.66669"
+   sodipodi:docname="final_project.svg"
+   inkscape:version="0.92.1 r15371"
+   inkscape:export-filename="/home/lebretana/Documents/Dropbox/Bretana/UFPel/2018/2018-1/PeC-Jogos/PeC-Jogos-Projeto-1/art/png/Menus/select_menu.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata4545">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4543">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4650">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4646" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4648" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4664"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.99999996,0,0,0.83816267,0,60.162877)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4666"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.8381627,-0.29871179,53.292509)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4668"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.8381627,-0.63366339,50.84458)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4670"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.8381627,0.26247198,46.857016)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4696"
+       cx="344.07922"
+       cy="371.74918"
+       fx="344.07922"
+       fy="371.74918"
+       r="126.59901"
+       gradientTransform="matrix(0.91363786,0,0,0.70489363,29.875137,102.31711)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     id="namedview4541"
+     showgrid="false"
+     inkscape:zoom="2.3671874"
+     inkscape:cx="250.41824"
+     inkscape:cy="309.80541"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4539"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="439.70375,330.07653"
+       orientation="1,0"
+       id="guide91"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <rect
+     style="opacity:1;fill:#999999;fill-opacity:0.45606694;stroke:url(#radialGradient4696);stroke-width:0.8832199;stroke-opacity:1"
+     id="rect4549"
+     width="230.41075"
+     height="177.63029"
+     x="229.03362"
+     y="275.54559"
+     inkscape:export-filename="/home/lebretana/rect4549.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.46973228px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4664);stroke-width:0.61174333"
+     x="253.77892"
+     y="315.81131"
+     id="text4600"
+     transform="scale(0.98128607,1.0190708)"
+     inkscape:export-filename="/home/lebretana/rect4549.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       sodipodi:role="line"
+       id="tspan4598"
+       x="253.77892"
+       y="315.81131"
+       style="stroke:url(#radialGradient4664);stroke-width:0.61174333">New Game</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.33610916px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4666);stroke-width:0.60840273"
+     x="248.40758"
+     y="359.69678"
+     id="text4604"
+     inkscape:export-filename="/home/lebretana/rect4549.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       sodipodi:role="line"
+       id="tspan4602"
+       x="248.40758"
+       y="359.69678"
+       style="stroke:url(#radialGradient4666);stroke-width:0.60840273">Continue</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.33610916px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4668);stroke-width:0.60840273"
+     x="249.10066"
+     y="397.87576"
+     id="text4604-5"
+     inkscape:export-filename="/home/lebretana/rect4549.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       sodipodi:role="line"
+       id="tspan4602-3"
+       x="249.10066"
+       y="397.87576"
+       style="stroke:url(#radialGradient4668);stroke-width:0.60840273">Options</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.33610916px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4670);stroke-width:0.60840273"
+     x="249.36314"
+     y="435.92117"
+     id="text4604-56"
+     inkscape:export-filename="/home/lebretana/rect4549.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       sodipodi:role="line"
+       id="tspan4602-2"
+       x="249.36314"
+       y="435.92117"
+       style="stroke:url(#radialGradient4670);stroke-width:0.60840273">Exit</tspan><tspan
+       sodipodi:role="line"
+       x="249.36314"
+       y="466.34131"
+       style="stroke:url(#radialGradient4670);stroke-width:0.60840273"
+       id="tspan4632" /></text>
+</svg>
