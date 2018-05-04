@@ -1,4 +1,82 @@
 # Story Board Notes  
+
+**Atividades para o cronograma (ongoing)**
+
+- 07/05 - 14/05
+	- Discutir o modelo de RPG
+	- Discutir disposição das salas
+	- Discutir disposição de mobs nas salas
+	- Discutir upgrades (Main Character e Criaturas)
+	- Discutir bonus dos itens
+
+- Legenda
+	- Jonathas "Thatox" Conceicao - T
+	- Juan "Asaki" Rios - A
+	- Lucas Bretana - B
+	- Felipe "OneEyedAesir" Gruendemann -  O
+
+- 07/05 - 28/05
+	- Personagem Principal => T
+	- Inimigos normais => O
+		- Jardim
+		- Castelo
+		- Cripta
+	- Armas => T
+		- Espada
+		- Lança
+		- Machado
+	- Geração do mapa => A
+	- Salas => A & B
+		- Tamanho tela
+		- Sala Longa
+	- Tipos de sala => A & B
+		- Salas ordinárias
+		- Sala inicial
+		- Sala de pilhagem
+		- Sala de corredor
+	- Main Menu & Esc Menu => B
+	- HUD => A
+	- Alpha 0.1 - 28/05
+
+- 28/05 - 25/06
+	- Main Bosses
+		- Fauno
+		- Beholder
+		- Mago
+	- Sistema de upgrade
+		- Personagem
+		- Itens
+		- Criaturas
+	- Equipamentos
+		- Armaduras
+		- Aneis
+	- NPCs aliados
+		- NPCs das Quests
+		- Mago
+	- Salas
+		- Tamanho 3
+		- Tamanho 4
+	- Tipos de sala
+		- Sala de desafio
+		- Sala de Boss
+		- Sala de missão
+	- Disposição das salas
+	- Menu de inventário
+	- Alpha 0.2 - 25/06
+
+- 25/06 - 16/07
+	- Entrada
+	- Encerramento
+	- Itens consumíveis
+	- Mini bosses
+		- Jardim
+		- Castelo
+		- Cripta
+	- Disposição dos itens nas salas
+	- Disposição dos inimigos nas salas
+	- Beta 0.3 - 09/07
+	- Final 1.0 - 16/07
+
 **Division for writing and drawning**  
 - Main Character & Her Weappons => Jonathas  
 - Death                         => Jonathas  
@@ -62,21 +140,6 @@
 			- Teasure chest
 			- ?
 
-- Lore  
-	Alanis is a paraplegic kitty who lives alone with her tutor, he helps her with all her needs.  
-
-	One day he tells her a tale from a long, long time ago. A courageous knight who had lost his wife
-	and is told about a magical orb that can grant one wish to whom ever holds it. It's said that after
-	getting his beloved wife back, the Knight left the orb hidden within his castle, and just the braver
-	knight with the purest hart could found it.  
-
-	After hearing the story Alanis falls asleep and finds herself in a strange dream,
-	in the dream she's part human and can walk, jump and run.
-	She then finds herself at the gate of a castle, a wizard by the entrance tells her
-	that is the castle from the legend and gives her a sword so she can face the creatures inside.
-
-	Upon first dying the kitty doesn't wake up and finds herself at the start of the dream.
-
 - Main menu
 	- New game
 	- Continue
@@ -113,3 +176,5 @@
 	- Make some basic notes for the __story board__  
 		- Use the hero's journey  
 	- Find a good model for the __story board__  
+- 27.04.18
+	- A dark day.
