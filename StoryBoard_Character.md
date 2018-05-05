@@ -13,9 +13,8 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 - Os Inimigos Comuns serão aqueles inimigos que poderão aparecer em qualquer lugar do jogo.
 
 - **Morcego**
+  <img src="art/png/Characters/bat.png">
   - __Descrição__: Os morcegos comuns são inimigos com pouca vitalidade que causam pouco dano e geralmente morrem com apenas um ataque.
-
-  <img src="art/png/bat.png">
 
   - __Ataques__:
     - Mordida: o morcego avança e ataca o jogagor se ele se aproximar.
@@ -23,9 +22,8 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
     - Vôo: o morcego fica o tempo todo voando parado ou percorrendo alguma área do cenário.
 
 - **Cavaleiro Guardião**
+  <img src="art/png/Characters/guardian-knight.png">
   - __Descrição__: Os cavaleiros guardiões são sempre inimigos mais fortes e podem ser encontrados em qualquer lugar do castelo.
-
-  <img src="art/png/guardian-knight.png">
 
   - __Ataques__
     - Golpe: O cavaleiro desfere um golpe com sua espada cobrindo uma pequena área a sua frente e parte superior.
@@ -43,7 +41,9 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
 ### Inimigos
 - **Planta**
+  <img src="art/png/Characters/plant.png">
   - __Descrição__: Uma planta aparentemente inofensiva, até que você se aproxime dela!
+
   - __Ataques__:
      - Pétala: a flor ataca o inimigo com um golpe fraco.
      - Espinho: a flor ataca o inimigo com um golpe médio.
@@ -52,6 +52,9 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
 - **Cogumelo**
   - __Descrição__: Um cogumelo inofensivo. Pode ser derrotado com um ataque ou apenas pulando em cima. Causa dano ao encostar suas toxinas no jogador.
+
+
+
   - __Movimentos__:
     - Caminhada: O cogumelo caminha de um lado para o outro no cenário.
 
@@ -127,11 +130,13 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 ## Fase 3 - Cripta
 ### Inimigos
 - **Fantasma**
+  <img src="art/png/Characters/ghost.png">
   - __Descrição__: Os fantasmas são almas penadas com a habilidade de atravessar paredes e não são afetados por ataques comuns.
   - __Movimentos__:
     - Vôo especial: os fantasmas podem voar em qualquer direção ignorando qualquer parede ou objeto.
 
 - **Esqueleto**
+  <img src="art/png/Characters/skeleton.png">
   - __Descrição__: Os esqueletos podem ser derrotados facilmente, mas causam dano alto.
   - __Ataques__:
     - Golpe: Desfere um golpe com sua espada cobrindo uma pequena área a sua frente.
