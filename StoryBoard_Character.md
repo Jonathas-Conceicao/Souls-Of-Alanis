@@ -37,72 +37,71 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 ### Distribuição por fase
 
 #### Fase 1 - Jardim
-
-     * ###**Inimigos**
-       * ###**Planta**
-       	 * **Descrição**: Uma planta aparentemente inofensiva, até que você se aproxime dela!
-	 * **Ataques**:
+     - **Inimigos**
+       - **Planta**
+       	- **Descrição**: Uma planta aparentemente inofensiva, até que você se aproxime dela!
+	- **Ataques**:
 	   - **Pétala**: a flor ataca o inimigo com um golpe fraco.
 	   - **Espinho**: a flor ataca o inimigo com um golpe médio.
-	 * **Movimentos**
+	 - **Movimentos**
 	   - **Sentinela**: Fica parada até que o jogador se aproxime e seja notado.
 	   
-       * ###**Cogumelo**
-       	 * **Descrição**: Um cogumelo inofensivo. Pode ser derrotado com um ataque ou apenas pulando em cima. Causa dano ao encostar suas toxinas no jogador.
-	 * **Movimentos**
+       - **Cogumelo**
+       	 - **Descrição**: Um cogumelo inofensivo. Pode ser derrotado com um ataque ou apenas pulando em cima. Causa dano ao encostar suas toxinas no jogador.
+	 - **Movimentos**
 	   - **Caminhada**: O cogumelo caminha de um lado para o outro no cenário.
 	   
-       * ###**Porco-espinho**
-       	 * **Descrição**: Um pequeno animal coberto por espinhos que causam dano ao jogador.
-	 * **Movimentos**
+       - **Porco-espinho**
+       	 - **Descrição**: Um pequeno animal coberto por espinhos que causam dano ao jogador.
+	 - **Movimentos**
 	   - **Caminhada**: O porco-espinho fica caminhando de um lado para o outro no cenário.
 
-       * ###**Gnomo**
-       	 * **Descrição**: Um gnomo guardião que ajuda a proteger o castelo.
-	 * **Ataques**:
+       - ###**Gnomo**
+       	 - **Descrição**: Um gnomo guardião que ajuda a proteger o castelo.
+	 - **Ataques**:
 	   - **Soco**: O gnomo desfere um golpe se o jogador estiver perto o suficiente.
 	   - **Bomba**: O gnomo lança pequenas bombas que dão dano em área.
-	 * **Movimentos**:
+	 - **Movimentos**:
 	   - **Sentinela**: Fica parado até que o jogador se aproxime e seja notado.
 	   - **Ronda**: O gnomo fica caminhando de um lado para outro até que o jogador se aproxime.
 
 
-     * _###**Aliados**_
-     * ###**O Mago**
-       	 * **Descrição**: O Mago é o Sábio que fica na porta do Jardim e é o primeiro NPC com o qual o jogador interage. Com o mago é possível trocar as almas coletadas por pontos de experiência e habilidades.
+     - **Aliados**
+     - **O Mago**
+       	 - **Descrição**: O Mago é o Sábio que fica na porta do Jardim e é o primeiro NPC com o qual o jogador interage. Com o mago é possível trocar as almas coletadas por pontos de experiência e habilidades.
 	 
-       * ###**Unicórnio**
-       	 * **Descrição**: O Unicórnio, à primeira vista é apenas um cavalo normal. Mas se o jogador usar o Cogumelo Roxo encontrado no Jardim ele desbloqueia a _quest_ do Unicórnio e consegue interagir com o mesmo.
-	 * _**Quest**_:
+       - **Unicórnio**
+       	 - **Descrição**: O Unicórnio, à primeira vista é apenas um cavalo normal. Mas se o jogador usar o Cogumelo Roxo encontrado no Jardim ele desbloqueia a _quest_ do Unicórnio e consegue interagir com o mesmo.
+	 - _**Quest**_:
 
-     * ###_**BOSS**_
-       * ###**Fauno**
+     - _**BOSS**_
+       - **Fauno**
 
 #### Fase 2 - Castelo
 
-     * **Inimigos**
-       * Armadura-sem-cabeça
-       * Serpente
-       * 
-       * 
+     - **Inimigos**
+       - Armadura-sem-cabeça
+       - Serpente
+       - 
+       - 
 
-     * _**Aliado**_
-       * Outro Gato
-       * Andre
+     - **Aliado**
+       - Outro Gato
+       - Andre
 
-     * _**BOSS**_
-       * Beholder
+     - _**BOSS**_
+       - Beholder
 
 #### Fase 3 - Cripta
 
-* **Inimigos**
-       * Fantasma
-       * Esqueleto
-       * Aranha
-       * Múmia
+- **Inimigos**
+       - Fantasma
+       - Esqueleto
+       - Aranha
+       - Múmia
 
-     * _**Aliado**_
-       * Fantasma Bill
+     - _**Aliado**_
+       - Fantasma Bill
 
-     * _**BOSS**_
-       * O Mago
+     - _**BOSS**_
+       - O Mago
