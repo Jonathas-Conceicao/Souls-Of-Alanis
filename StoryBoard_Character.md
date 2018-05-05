@@ -13,22 +13,22 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
      Os Inimigos Comuns serão aqueles inimigos que poderão aparecer em qualquer lugar do jogo.
 
-     	- **Morcego**
-	  - **Descrição**: Os morcegos comuns são inimigos com pouca vitalidade que causam pouco dano e geralmente morrem com apenas um ataque.
-	  - **Ataques**
-	    - **Mordida**: o morcego avança e ataca o jogagor se ele se aproximar.
-	  - **Movimentos**
-	    - **Vôo**: o morcego fica o tempo todo voando parado ou percorrendo alguma área do cenário.
+     	- Morcego
+	  - Descrição: Os morcegos comuns são inimigos com pouca vitalidade que causam pouco dano e geralmente morrem com apenas um ataque.
+	  - Ataques:
+	    - Mordida: o morcego avança e ataca o jogagor se ele se aproximar.
+	  - Movimentos
+	    - Vôo: o morcego fica o tempo todo voando parado ou percorrendo alguma área do cenário.
 	    
-	* **Cavaleiro Guardião**
-	  - **Descrição**: Os cavaleiros guardiões são sempre inimigos mais fortes e podem ser encontrados em qualquer lugar do castelo.
-	  - **Ataques**
-	    - **Golpe**: O cavaleiro desfere um golpe com sua espada cobrindo uma pequena área a sua frente e parte superior.
-	    - **Impulso**: Este é o golpe mais forte onde o cavaleiro ataca com um impulso para frente cobrindo uma área maior.
-	  - **Movimentos**
-	    - **Muralha**: O cavaleiro se protege com sua espada e fica imune a danos.
-	    - **Sentinela**: Fica parado até que o jogador se aproxime e seja notado.
-	    - **Ronda**: O cavaleiro fica caminhando de um lado para outro até que o jogador se aproxime.
+	- Cavaleiro Guardião
+	  - Descrição: Os cavaleiros guardiões são sempre inimigos mais fortes e podem ser encontrados em qualquer lugar do castelo.
+	  - Ataques
+	    - Golpe: O cavaleiro desfere um golpe com sua espada cobrindo uma pequena área a sua frente e parte superior.
+	    - Impulso: Este é o golpe mais forte onde o cavaleiro ataca com um impulso para frente cobrindo uma área maior.
+	  - Movimentos
+	    - Muralha: O cavaleiro se protege com sua espada e fica imune a danos.
+	    - Sentinela: Fica parado até que o jogador se aproxime e seja notado.
+	    - Ronda: O cavaleiro fica caminhando de um lado para outro até que o jogador se aproxime.
 
 ### Aliados
 
