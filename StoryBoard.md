@@ -117,6 +117,8 @@ Espada | Lança | Machado
 
 ## Menu de Iventário
 
+[Menus](https://github.com/Jonathas-Conceicao/PeC-Jogos-Projeto-1/blob/master/StoryBoard_Menus.md)
+
 ## Itens usáveis
 
 ## HUD
