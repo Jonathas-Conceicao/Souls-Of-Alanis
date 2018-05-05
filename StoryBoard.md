@@ -308,7 +308,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
 ## Salas e Seus tipos
 
-O jogo possuí diferentes tipos de salas assim como diferentes tamanhos de salas. Referente aos tamanhos, existem 4:
+O jogo possuí diferentes tipos de salas assim como diferentes tamanhos de salas. Referente aos tamanhos, existem quatro:
 
 - Grande
 - Média 
