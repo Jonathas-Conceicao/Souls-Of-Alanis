@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg4539"
+   width="682.66669"
+   height="682.66669"
+   viewBox="0 0 682.66669 682.66669"
+   sodipodi:docname="select_4EscMenu.svg"
+   inkscape:version="0.92.1 r15371"
+   inkscape:export-filename="/home/lebretana/Documents/Dropbox/Bretana/UFPel/2018/2018-1/PeC-Jogos/PeC-Jogos-Projeto-1/art/png/Menus/select_escmenu.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata4545">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4543">
+    <linearGradient
+       id="linearGradient4526"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop4522" />
+      <stop
+         style="stop-color:#333333;stop-opacity:0;"
+         offset="1"
+         id="stop4524" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4650">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4646" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4648" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4666"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0044704,0,0,0.84190962,-37.382589,35.297158)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4668"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0002381,0,0,0.83836231,-22.748485,34.104896)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4670"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0056589,0,0,0.84290576,10.833169,31.85206)"
+       cx="344.07922"
+       cy="371.74917"
+       fx="344.07922"
+       fy="371.74917"
+       r="126.59901" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4650"
+       id="radialGradient4696"
+       cx="344.07922"
+       cy="371.74918"
+       fx="344.07922"
+       fy="371.74918"
+       r="126.59901"
+       gradientTransform="matrix(0.94807948,0,0,0.59070938,-16.214475,153.07098)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     id="namedview4541"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="-118.59842"
+     inkscape:cy="240.95728"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4539"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <g
+     id="g5229"
+     inkscape:export-filename="/home/lebretana/Documents/Dropbox/Bretana/UFPel/2018/2018-1/PeC-Jogos/PeC-Jogos-Projeto-1/art/png/Menus/select_escmenu.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <rect
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/lebretana/Documents/Dropbox/Bretana/UFPel/2018/2018-1/PeC-Jogos/PeC-Jogos-Projeto-1/art/png/Menus/select_escmenu.png"
+       y="298.23849"
+       x="190.45171"
+       height="148.85634"
+       width="239.09657"
+       id="rect4549"
+       style="opacity:1;fill:#b3b3b3;fill-opacity:0.84126988;stroke:url(#radialGradient4696);stroke-width:0.82362461;stroke-opacity:1" />
+    <text
+       transform="scale(1.0045987,0.99542235)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/lebretana/rect4549.png"
+       id="text4604"
+       y="343.0712"
+       x="212.43553"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.44490242px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4666);stroke-width:0.61112255"
+       xml:space="preserve"><tspan
+         style="fill:#000000;stroke:url(#radialGradient4666);stroke-width:0.61112255"
+         y="343.0712"
+         x="212.43553"
+         id="tspan4602"
+         sodipodi:role="line">Continue</tspan></text>
+    <text
+       transform="scale(1.0002441,0.99975596)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/lebretana/rect4549.png"
+       id="text4604-5"
+       y="381.21872"
+       x="227.04532"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.34190559px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4668);stroke-width:0.60854763"
+       xml:space="preserve"><tspan
+         style="stroke:url(#radialGradient4668);stroke-width:0.60854763"
+         y="381.21872"
+         x="227.04532"
+         id="tspan4602-3"
+         sodipodi:role="line">Options</tspan></text>
+    <text
+       transform="scale(1.0058215,0.9942122)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/lebretana/rect4549.png"
+       id="text4604-56"
+       y="423.11786"
+       x="261.34348"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.47382355px;line-height:1.25;font-family:'Press Start 2P';-inkscape-font-specification:'Press Start 2P';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:url(#radialGradient4670);stroke-width:0.61184561"
+       xml:space="preserve"><tspan
+         style="stroke:url(#radialGradient4670);stroke-width:0.61184561"
+         y="423.11786"
+         x="261.34348"
+         id="tspan4602-2"
+         sodipodi:role="line">Exit</tspan><tspan
+         id="tspan4632"
+         style="stroke:url(#radialGradient4670);stroke-width:0.61184561"
+         y="453.71014"
+         x="261.34348"
+         sodipodi:role="line" /></text>
+  </g>
+</svg>
