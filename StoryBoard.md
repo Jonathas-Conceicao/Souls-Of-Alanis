@@ -125,6 +125,8 @@ Espada | Lança | Machado
 
 ## Fases
 
+[Salas e seus tipos](https://github.com/Jonathas-Conceicao/PeC-Jogos-Projeto-1/blob/master/StoryBoard_Rooms.md)
+
 ## Cronograma e Divisão das atividades
 - Legenda
 	- Jonathas "Thatox" Conceicao - T
