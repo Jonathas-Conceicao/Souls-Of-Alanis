@@ -139,6 +139,10 @@ Espada | Lança | Machado
 
 ## HUD
 
+Imagem da versão inicial do HUD:
+
+<img src="art/png/hud.png" width="40%" height="40%">
+
 ## Aliados e Inimigos
 
 No jogo, a personagem principal se deparará com vários _**NPC**_(non-player characters - personagens não jogáveis). Determinados NPC só poderão ser encontrados em determinadas áreas do jogo. Além disso, medida que o jogador avança no jogo, NPC mais poderosos aparecerão.
@@ -179,6 +183,11 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
   Os aliados também serão divididos por fase e eles oferecerão desafios, recompensas ou troca/venda de itens.
 
 ## Fase 1 - Jardim
+
+Uma arte conceitual para demonstração da ambientação da fase floresta.
+
+
+<img src="art/png/forest8.png" width="40%" height="40%">
 
 ### Inimigos
 - **Planta**
