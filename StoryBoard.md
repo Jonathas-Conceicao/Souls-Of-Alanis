@@ -139,6 +139,39 @@ Espada | Lança | Machado
 
 Ao longo de sua jornada Alanis poderá vir a encontrar diversos objetos para auxiliarem em sua aventura, um tipo bastante comum a ser encontrado é os itens consumíveis. São itens onde a personagem ao encostar no objeto recupera uma quantia de HP, estamina ou adquiri um benefício temporário.
 
+### Vida / HP
+
+<img src="art/png/pt1.png" width="100px" height="100px">
+O personagem pode utilizar itens que restaurem seus pontos de vida durante o jogo.
+
+- **Poção Pequena**
+  - A poção pequena restaura uma pequena quantidade de vida.
+
+- **Poção Grande**
+  - A poção grande, mais rara, restaura toda a vida do jogador.
+
+### Stamina
+
+<img src="art/png/pt3.png" width="100px" height="100px">
+O personagem pode utilizar itens que restaurem seus pontos de stamina durante o jogo.
+
+- **Poção Pequena**
+  - A poção pequena restaura uma pequena quantidade de stamina.
+
+- **Poção Grande**
+  - A poção grande, mais rara, restaura toda a stamina do jogador.
+
+### Bonus
+O personagem pode utilizar itens que concedam um bônus no seu poder de ataque ou defesa.
+
+<img src="art/png/pt4.png" width="100px" height="100px">
+- **Poção Poder**
+  - A poção garante um bônus no dano de ataque do jogador temporariamente.
+
+<img src="art/png/pt2.png" width="100px" height="100px">
+- **Poção Escudo**
+  - A poção garante um bônus que diminui o dano sofrido pelo do jogador temporariamente.
+
 ## HUD
 
 Imagem da versão inicial do HUD:
