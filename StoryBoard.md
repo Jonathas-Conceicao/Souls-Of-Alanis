@@ -164,11 +164,11 @@ O personagem pode utilizar itens que restaurem seus pontos de stamina durante o 
 ### Bonus
 O personagem pode utilizar itens que concedam um bônus no seu poder de ataque ou defesa.
 
-<img src="art/png/pt4.png" width="100px" height="100px">
+- <img src="art/png/pt4.png" width="100px" height="100px">
 - **Poção Poder**
   - A poção garante um bônus no dano de ataque do jogador temporariamente.
 
-<img src="art/png/pt2.png" width="100px" height="100px">
+- <img src="art/png/pt2.png" width="100px" height="100px">
 - **Poção Escudo**
   - A poção garante um bônus que diminui o dano sofrido pelo do jogador temporariamente.
 
