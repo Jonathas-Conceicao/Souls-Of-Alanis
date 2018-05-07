@@ -309,7 +309,7 @@ Uma arte conceitual para demonstração da ambientação da fase castelo.
 
 ### _BOSS_
 - **Beholder**
-  - __Descrição___: O "vigia" do castelo que guarda a entrada da Cripta.
+  - __Descrição__: O "vigia" do castelo que guarda a entrada da Cripta.
   - __Ataques__:
     - Disparo: uma rajada de disparos mágicos saem do olho do Beholder.
     - Lacaios: Beholder invoca goblins.
