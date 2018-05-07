@@ -280,7 +280,7 @@ Uma arte conceitual para demonstração da ambientação da fase jardim.
 
 Uma arte conceitual para demonstração da ambientação da fase castelo.
 
-<img src="art/png/mainmenu_backgound-NOTFREE.png" width="30%" height="30%">
+<img src="art/png/mainmenu_backgound-NOTFREE.png" width="40%" height="40%">
 
 ### Inimigos
 - **Armadura-sem-cabeça**
@@ -320,7 +320,7 @@ Uma arte conceitual para demonstração da ambientação da fase castelo.
 ## Fase 3 - Cripta
 Uma arte conceitual para demonstração da ambientação da fase cripta.
 
-<img src="art/png/dungeon.png" width="30%" height="30%">
+<img src="art/dungeon.jpg" width="50%" height="50%">
 ### Inimigos
 - **Fantasma**
   <img src="art/png/Characters/ghost.png">
