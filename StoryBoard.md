@@ -164,12 +164,12 @@ O personagem pode utilizar itens que restaurem seus pontos de stamina durante o 
 ### Bonus
 O personagem pode utilizar itens que concedam um bônus no seu poder de ataque ou defesa.
 
-- <img src="art/png/pt4.png" width="100px" height="100px">
 - **Poção Poder**
+  - <img src="art/png/pt4.png" width="100px" height="100px">
   - A poção garante um bônus no dano de ataque do jogador temporariamente.
 
-- <img src="art/png/pt2.png" width="100px" height="100px">
 - **Poção Escudo**
+  - <img src="art/png/pt2.png" width="100px" height="100px">
   - A poção garante um bônus que diminui o dano sofrido pelo do jogador temporariamente.
 
 ## HUD
@@ -219,7 +219,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
 ## Fase 1 - Jardim
 
-Uma arte conceitual para demonstração da ambientação da fase floresta.
+Uma arte conceitual para demonstração da ambientação da fase jardim.
 
 
 <img src="art/png/forest8.png" width="40%" height="40%">
@@ -277,6 +277,11 @@ Uma arte conceitual para demonstração da ambientação da fase floresta.
     - Corrida: O Fauno corre de um lado para o outro da tela.
 
 ## Fase 2 - Castelo
+
+Uma arte conceitual para demonstração da ambientação da fase castelo.
+
+<img src="art/png/mainmenu_backgound-NOTFREE.png" width="30%" height="30%">
+
 ### Inimigos
 - **Armadura-sem-cabeça**
   - __Descrição__: Uma armadura pesada que ganha vida e ataca o jogador.
@@ -313,6 +318,9 @@ Uma arte conceitual para demonstração da ambientação da fase floresta.
     - Vôo: O Beholder é capaz de voar pelo cenário.
 
 ## Fase 3 - Cripta
+Uma arte conceitual para demonstração da ambientação da fase cripta.
+
+<img src="art/png/dungeon.png" width="30%" height="30%">
 ### Inimigos
 - **Fantasma**
   <img src="art/png/Characters/ghost.png">
