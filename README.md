@@ -33,7 +33,7 @@ This is the initial repository for our Digital Games Course.
 	- Work on the project
 	- **Activities**
 		- [X] Tech demo for combat mechanics (Jonathas and Felipe)
-		- [ ] Tech demo for random map generation (Lucas and Juan)
+		- [X] Tech demo for random map generation (Lucas and Juan)
 
 ## Story Board Notes
 ### Introduction
