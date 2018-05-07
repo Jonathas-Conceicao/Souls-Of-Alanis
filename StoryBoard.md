@@ -318,9 +318,11 @@ Uma arte conceitual para demonstração da ambientação da fase castelo.
     - Vôo: O Beholder é capaz de voar pelo cenário.
 
 ## Fase 3 - Cripta
+
 Uma arte conceitual para demonstração da ambientação da fase cripta.
 
 <img src="art/dungeon.jpg" width="30%" height="30%">
+
 ### Inimigos
 - **Fantasma**
   <img src="art/png/Characters/ghost.png">
