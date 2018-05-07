@@ -36,7 +36,7 @@ Vencer o jogo deve ser um desafio a habilidade do jogador em derrotar os inimigo
 **Alanis** é uma gata paraplégica que mora sozinha com o seu tutor e ele à ajuda com todas as suas necessidades.
 
 Num certo dia ele lê para ela um antigo conto.
-Um corajoso cavaleiro havia perdido sua amada esposa e saiu numa missão de encontar uma lendária esfera
+Um corajoso cavaleiro havia perdido sua amada esposa e saiu numa missão de encontrar uma lendária esfera
 que, segundo a lenda, pode conceder qualquer desejo a quem quer que a toque.
 No conto, o bravo cavaleiro consegue a tão cobiçada esfera e consegue trazer de volta sua esposa.
 Sabendo do poder que a esfera possui, o bravo cavaleiro a esconde no seu castelo, para que apenas
@@ -46,13 +46,13 @@ Depois de ouvir o conto **Alanis** adormece, e logo se encontra num sonho estran
 Nele, ela é parte humana e pode andar, pular e correr assim como o bravo cavaleiro da história que ouvira.
 Um **Mago** então aparece e pergunta se ela esta ali para tentar tocar a **Esfera dos Desejos**.
 O **Mago** conta-lhe que há poderosas criaturas lá e que irão impedir que qualquer um entre no castelo.
-Mas ele a oferece ajuda, entrega-lhe uma espada para que ela possa enfretar os desafios que a aguarda
+Mas ele a oferece ajuda, entrega-lhe uma espada para que ela possa enfrentar os desafios que a aguarda
 com a honra de uma brava cavaleira.
 
-**Alanis** então adentra os jardins na entrada do castelo, enfretando criatura após criatura, armadilha após armadilha.
+**Alanis** então adentra os jardins na entrada do castelo, enfrentando criatura após criatura, armadilha após armadilha.
 Mas ela nunca foi preparada para aquilo, não é rápida e forte como o herói do conto lido pelo seu tutor,
 e ela é eventualmente derrotada em combate.
-Porém, mesmo com o impácto da última pancada que recebera ela não acorda, e se encontra novamente na entrada do jardim ao lado do **Mago**.
+Porém, mesmo com o impacto da última pancada que recebera ela não acorda, e se encontra novamente na entrada do jardim ao lado do **Mago**.
 
 O **Mago** então pergunta-lhe se ela busca a **Esfera dos Desejos** novamente, como se não se lembrasse dela.
 Ela parece ter voltado para o início do sonho.
@@ -67,10 +67,10 @@ Ela então corre em direção a esfera para que possa finalmente realizar seu de
 O **Mago** então afirma que ajudou a **Alanis** apenas para que ela encontrasse a esfera, mas que não pretendia deixar que ninguém
 além dele realizasse desejos e começa a atacar a gata.
 Mas a **Alanis** não é mais aquela gata despreparada e medrosa, ela agora é forte e ágil como o herói do conto que a inspirou.
-Ela derrota o **Mago** traidor e prosegue para pegar à esfera.
+Ela derrota o **Mago** traidor e prossegue para pegar à esfera.
 
 Logo que a gata toca a **Esfera dos Desejos** ela acorda.
-Seu tutor ainda dormindo numa poltrona com o livro fechado ao lado de seu assento, o fogo ainda queimando na lareira, a neve ainda caíndo do lado de fora da casa, e ela deitada na sua cama no chão, como ficava a maior parte do tempo, como se apenas alguns minutos tivessem se passado.
+Seu tutor ainda dormindo numa poltrona com o livro fechado ao lado de seu assento, o fogo ainda queimando na lareira, a neve ainda caindo do lado de fora da casa, e ela deitada na sua cama no chão, como ficava a maior parte do tempo, como se apenas alguns minutos tivessem se passado.
 Eis que a gata levanta, vai até o seu tutor, deita em seu colo e adormece novamente.
 
 ## Main Menu
@@ -142,7 +142,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
   - __Descrição__: Os morcegos comuns são inimigos com pouca vitalidade que causam pouco dano e geralmente morrem com apenas um ataque.
 
   - __Ataques__:
-    - Mordida: o morcego avança e ataca o jogagor se ele se aproximar.
+    - Mordida: o morcego avança e ataca o jogador se ele se aproximar.
   - __Movimentos__
     - Vôo: o morcego fica o tempo todo voando parado ou percorrendo alguma área do cenário.
 
@@ -266,7 +266,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
   - __Ataques__:
     - Golpe: Desfere um golpe com sua espada cobrindo uma pequena área a sua frente.
     - Impulso: Este é o golpe mais forte onde o esqueleto ataca com um impulso para frente cobrindo uma área maior.
-    - Disparo: Esqueltos podem ter um arco e disparar flechas à distância.
+    - Disparo: Esqueletos podem ter um arco e disparar flechas à distância.
   - __Movimentos__:
     - Sentinela: O esqueleto fica parado até que o jogador se aproxime e seja notado.
     - Ronda: Fica caminhando de um lado para outro até que o jogador se aproxime.
@@ -351,7 +351,7 @@ Essa sala possuí tamanho fixo de tamanho tela de visão. A sala não possuí in
 	- Discutir disposição das salas
 	- Discutir disposição de mobs nas salas
 	- Discutir upgrades (Main Character e Criaturas)
-	- Discutir bonus dos itens
+	- Discutir bônus dos itens
 
 - 07/05 - 28/05
 	- Personagem Principal => T
@@ -387,7 +387,7 @@ Essa sala possuí tamanho fixo de tamanho tela de visão. A sala não possuí in
 		- Criaturas
 	- Equipamentos
 		- Armaduras
-		- Aneis
+		- Anéis
 	- NPCs aliados
 		- NPCs das Quests
 		- Mago
