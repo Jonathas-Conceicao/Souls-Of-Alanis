@@ -147,7 +147,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
     - Vôo: o morcego fica o tempo todo voando parado ou percorrendo alguma área do cenário.
 
 - **Cavaleiro Guardião**
-  <img src="art/png/Characters/guardian-knight.png">
+  <img src="art/png/Characters/guardian-knight.png" width="100px" height="100px">
   - __Descrição__: Os cavaleiros guardiões são sempre inimigos mais fortes e podem ser encontrados em qualquer lugar do castelo.
 
   - __Ataques__
@@ -166,9 +166,8 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 
 ### Inimigos
 - **Planta**
-  <img src="art/png/Characters/plant.png">
+  <img src="art/png/Characters/plant.png" width="100px" height="100px">
   - __Descrição__: Uma planta aparentemente inofensiva, até que você se aproxime dela!
-
   - __Ataques__:
      - Pétala: a flor ataca o inimigo com um golpe fraco.
      - Espinho: a flor ataca o inimigo com um golpe médio.
@@ -176,19 +175,19 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
      - Sentinela: Fica parada até que o jogador se aproxime e seja notado.
 
 - **Cogumelo**
+  <img src="art/png/Characters/mushroom.png" width="100px" height="100px">
   - __Descrição__: Um cogumelo inofensivo. Pode ser derrotado com um ataque ou apenas pulando em cima. Causa dano ao encostar suas toxinas no jogador.
-
-
-
   - __Movimentos__:
     - Caminhada: O cogumelo caminha de um lado para o outro no cenário.
 
 - **Porco-espinho**
+  <img src="art/png/Characters/hedgehog.png" width="100px" height="100px">
   - __Descrição__: Um pequeno animal coberto por espinhos que causam dano ao jogador.
   - __Movimentos__:
     - Caminhada: O porco-espinho caminha de um lado para o outro no cenário.
 
 - **Gnomo**
+  <img src="art/png/Characters/gnome.png">
   - __Descrição__: Um gnomo guardião que ajuda a proteger o castelo.
   - __Ataques__:
     - Soco: O gnomo desfere um golpe se o jogador estiver perto o suficiente.
@@ -203,6 +202,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
   - __Descrição__: O Mago é o Sábio que fica na porta do Jardim e é o primeiro NPC com o qual o jogador interage. Com o mago é possível trocar as almas coletadas por pontos de experiência e habilidades.
 
 - **Unicórnio**
+  <img src="art/png/Characters/unicorn.png">
   - __Descrição__: O Unicórnio, à primeira vista é apenas um cavalo normal. Mas se o jogador usar o Cogumelo Roxo encontrado no Jardim ele desbloqueia a _quest_ do Unicórnio e consegue interagir com o mesmo.
 
 ### _BOSS_
@@ -311,7 +311,7 @@ No jogo, a personagem principal se deparará com vários _**NPC**_(non-player ch
 O jogo possuí diferentes tipos de salas assim como diferentes tamanhos de salas. Referente aos tamanhos, existem quatro:
 
 - Grande
-- Média 
+- Média
 - Campo de visão do personagem
 - Corredor
 
@@ -319,24 +319,24 @@ Esses tamanhos podem ser misturados com os tipos de salas presentes no jogo, sen
 
 ## Sala Desafio
    Sala onde o jogador deverá cumprir um determinado desafio para ganhar uma recompensa. Esses desafios podem variar de matar uma quantidade de monstros, não poder usar a ação de atacar, não poder pular, não receber qualquer tipo de dano e etc. O tamanho dessa sala varia entre grande, médio e campo de visão do personagem. Podendo ou não ter inimigos assim como objetos de interação(coisas para quebrar e etc).
-   
+
 ## Sala de Conexão
    Sala de conexão com as outras salas, podendo ter orientação de saída ou entrada para direita, esquerda, cima, baixo ou todas elas ao mesmo tempo. Pode haver inimigos assim como objetos de interação. Tamanhos variando entre médio, corredor e campo de visão do personagem.
-   
+
 ## Sala de Espólios
   Sala onde o jogador receberá uma recompensa ao final da sala. Podendo ter tamanhos variados entre médio, grande ou tamanho tela de visão. Podendo haver ou não inimigos, bem como objetos de interação.
-  
+
 ## Sala de Chefe
   Sala onde o jogador enfrentará um determinado chefe ao final de cada fase, onde essa sala não possuí inimigos(a não ser inimigos invocados pelo próprio chefe) pode ou não possuir objetos de interação e o tamanho da sala varia de chefe para chefe, não tendo um tamanho a ser fixado.
-  
+
 ## Sala Ordinária
   Sala comum onde o jogador pode encontrar inimigos para serem derrotados e objetos para interagir. Podendo variar seus tamanhos de médio, grande e campo de visão do personagem.
-  
+
 ## Sala de Missão
-   Sala onde o jogador irá encontrar um NPC que irá lhe fornecer uma missão, e após completar receberá uma recompensa. Os tipos de missões oferecidas por esses NPC são: 
-   - Caçada: onde o jogador precisa derrotar uma quantidade determinada de criaturas. 
-   - Coleta de itens: onde o jogador precisa coletar um item requerido pelo NPC. 
-   
+   Sala onde o jogador irá encontrar um NPC que irá lhe fornecer uma missão, e após completar receberá uma recompensa. Os tipos de missões oferecidas por esses NPC são:
+   - Caçada: onde o jogador precisa derrotar uma quantidade determinada de criaturas.
+   - Coleta de itens: onde o jogador precisa coletar um item requerido pelo NPC.
+
 Essa sala possuí tamanho fixo de tamanho tela de visão. A sala não possuí inimigos nem objetos de interação.
 
 ## Cronograma e Divisão das atividades
