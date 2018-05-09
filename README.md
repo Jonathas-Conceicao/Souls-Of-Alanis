@@ -5,7 +5,7 @@ This is our repository for our Digital Games Course.
 
 The game we are developing is called **Souls of Alanis**, in this README you will find some information about it.  
 
-The [Storyboard](Storyboard.md) has most of the games aspects and features that we propose to implement.  
+The [Storyboard](StoryBoard.md) has most of the games aspects and features that we propose to implement.  
 
 The [Hero's Journey](The_Monomyth.md) has some quick notes about the story structure we followed for the game's Lore.  
 
