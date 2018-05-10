@@ -10,8 +10,8 @@ Modelo de RPG:
 	- Estamina
 	- Capacidade de carga
 	- Tipos de Ataque e Defesa
-		- Impacto
 		- Corte
+		- Impacto
 		- Perfuração
 	- Escalas Mágicas
 		- Fogo
@@ -21,6 +21,9 @@ Modelo de RPG:
 
 Modelo de Combate:  
 - Ataque único
+- Tomar um ataque deixa a protagonista invulnerável por 2 segundos
+- Danos altos desestabilizam
+	- Cancelam ações como pulos e ataques
 - Cada classe de arma num tipo de dano físico
 	- Espada - Corte
 	- Martelos - Impacto
@@ -30,14 +33,16 @@ Modelo de Combate:
 	- Alguns meeles com diferentes tipos de arma
 	- Dano por contato direto
 
-Métricas:  
-- Basear as métricas na quantidade de hits necessária para matar cada criatura, variar por fase
+Modelo para as Métricas:  
+- Basear as métricas na quantidade de hits necessária para matar cada criatura, variar nível necessário por fase
+- Criaturas tem nível fixo
+- Dano tem valores fixos
 - 4 Classificações de poder de criaturas:
 	- Killers, baixo HP e dano médio
 	- Tankers, alto HP e dano baixo
 	- Mini bosses, bastante HP e dano médio
 	- Bosses, bastante HP e dano alto
-- Valores para fase 1: Valor para o player num nível base para passar
+- Valores para qualquer fase com jogador no nível base:
 	- Killers:
 		- Matar o jogador: 20 hits
 		- Morrer: 1 hit
@@ -48,5 +53,64 @@ Métricas:
 		- Matar o jogador: 20 hits
 		- Morrer: 15 hits
 	- Booses:
-		- Matar o jogador: 15 hits
-		- Morrer: 20 hits
+		- Matar o jogador: 10 hits
+		- Morrer: 25 hist
+- Nível base para cada fase:
+	- 10
+	- 20
+	- 30
+
+Métricas:
+- Estamina
+	- +? HP
+	- +? Estamina
+	- Defesa
+		- +1 Corte
+		- +1 Impacto
+		- +1 Perfuração
+- Agilidade
+	- +? Estamina
+	- Ataque
+		- +2 Corte
+		- +1 Perfuração
+	- Defesa
+		- +1 Corte
+		- +2 Perfuração
+- Força
+	- +? Capacidade de carga
+	- Ataque
+		- +2 Impacto
+		- +1 Perfuração
+	- Defesa
+		- +1 Corte
+		- +2 Impacto
+- Inteligencia
+	- Defesa && Ataque
+		- +2 Fogo
+		- +2 Água
+		- +2 Terra
+		- +2 Ar
+
+Exemplo:
+- Alanis at lvl 10:
+	- Estamina: 6
+	- Agilidade: 4
+	- Força: 2
+	- Inteligencia: 2
+- Poder Base
+	- HP: 
+	- Estamina: 
+	- Capacidade de carga: 
+	- Ataque
+		- Corte: 8
+		- Impacto: 4
+		- Perfuração: 6
+	- Defesa
+		- Corte: 12
+		- Impacto: 10
+		- Perfuração: 14
+		- Fogo: 
+		- Água: 
+		- Terra: 
+		- Ar: 
+
