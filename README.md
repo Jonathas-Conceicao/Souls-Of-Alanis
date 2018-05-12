@@ -148,6 +148,9 @@ Combate e Modelo RPG:
 	- 1 ponto de atributo por lvl
 	- 1 ponto de perk     por lvl
 
+Coisas que ainda falta ser decididas:
+	- Métricas
+	- Quantidades de criaturas por sala
 
 ## Activities schedule
 
