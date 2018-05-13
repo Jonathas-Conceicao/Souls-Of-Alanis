@@ -93,64 +93,95 @@ Topics discussed in ~some of~ our meetings.
 	- Foes
 	- NPCs
 	- Mini bosses
-### 11.05.18 - ~not supposed to be, but it was~ Online (This will be translated and organized later)
-Notas fixas:
 
-Mapa:  
-O mapa do jogo é dividido entre salas, salas tem diferentes tipos e tamanhos e o mapa é gerado aleatoriamente no início da partida.  
-Salas são cenas, cada cena tem um tamanho e seu conteúdo, que podem ser estáticos ou dinâmicos.  
-Conteúdo estático é fixo, nunca munda.  
-Conteúdo dinâmico é gerado quando a partida (playthrough) começa, e se houverem duas salas iguais geradas eles podem variar de uma para outra.  
-Os conteúdos são:  
-- Estáticos:
-	- Chão
-	- Paredes
-	- Posição das passagens
-	- Posição dos objetos de cenário
-	- Posição das criaturas
-- Dinâmicos:
-	- Quais criaturas estão em cada posição
-	- Quais itens estão em cada posição
-	- Quais entradas/saídas estão 'abertas' e quais salas levam.
+### 11.05.18 + 12.05.18 Online
+#### RPG Model
+There are two layers of characteristics that any character has, **attributes** and **power**.  
+**Power** are what defines a character's fighting power, they are:
+- HP
+- Stamina
+- Carry load
+- Attack and Defense
+	- Slash
+	- Impact
+	- Thrust
+ - XP gain
+**Attributes** are used to calculated the character's **power**:
+- Vitality
+	- + HP
+	- + Slash Defense
+	- + Impact Defense
+	- + Thrust Defense
+- Agility
+	- + Stamina
+	- + Slash Attack
+	- + Thrust Attack
+	- + Slash Defense
+	- + Thrust Defense
+- Strength
+	- + Carry load
+	- + Impact Attack
+	- + Thrust Attack
+	- + Slash Defense
+	- + Impact Defense
+- Wisdom
+	- + XP gain
 
-Combate e Modelo RPG:  
-- Única ação de ataque.
-- Atributos
-	- Vitalidade
-	- Agilidade
-	- Força
-	- Sabedoria
-- Poder Base
-	- HP
-	- Estamina
-	- Capacidade de carga
-	- Tipos de Ataque e Defesa
-		- Corte
-		- Impacto
-		- Perfuração
-	 - Ganho de XP
-- Equipamentos alteram o 'Poder' diretamente, e não os atributos
-- Criaturas podem ter equipamentos que vem aleatoriamente
-- Armas
-	- Espada: Dano médio, custo (de estamina) médio, velocidade média.
-	- Machado: Dano alto, costumo alto, velocidade baixa.
-	- Lança: Dano baixo, costumo baixo, velocidade alta.
-	- Perks especializam os pontos positivos de cada arma.
-	- Ataque = dano base da arma + bonus calculado com atributo do personagem.
-	- Defesa = defesa base da armadura + bonus calculado com atributo do personagem
-	- Dano = defesa - ataque
-	- Armas tem dano base e peso.
-- Armaduras
-	- Tem peso e bônus de defesa
-- Anéis
-	- Tem bônus de 'poderes base'
-- Alanis
-	- 1 ponto de atributo por lvl
-	- 1 ponto de perk     por lvl
+#### Main character:
+There is only one combat action, but there are three different type of weapons that the hero can use.
+Each of them changes a little bit the game style.
+The hero also has access to a specialization tree for each type, to make them more unique.
+The weapons type and characteristics:  
+|       | Damage | Stamina cost |  Speed |
+|:-----:|:------:|:------------:|:------:|
+| Sword | Medium |    Medium    | Medium |
+|  Axe  |  High  |     High     |  Slow  |
+| Spear |   Low  |      Low     |  High  |
 
-Coisas que ainda falta ser decididas:
-	- Métricas
-	- Quantidades de criaturas por sala
+In total there are three classes of equipment the hero can use.  
+1. Weapons - They have base **damage** and **weight**.
+2. Armors  - They have base **defense** and **weight**.
+3. Rings   - They have only bonus **power**.
+
+On each level the main character gains 1 attribute point and one specialization point, to use for both attributes and weapon specialization.
+
+#### Foes
+All creatures have a minimum level for the phase they are.
+They have no max level and they level up as the player, but always in a slower scale.
+Their attributes are incremented in circle on each level up.
+Each game phase has a minimum level for the creatures, a recommended level for the player and a scaling factor of the player's level.  
+|        | Minimal Level | Player recommend level | Creature Level Proportion |
+|:------:|:-------------:|:----------------------:|:-------------------------:|
+| Garden |       1       |            5           |            1/4            |
+| Castle |       5       |           10           |            1/3            |
+|  Crypt |       10      |           15           |            1/2            |
+
+There are 4 great groups of creatures the player can find, Killers, Tankers, Mini Bosses and Bosses.
+Each has different ranges of HP and damage.
+The table below shows the average strength of the creatures for a player on the recommended level.  
+|              | Killer | Tanker | Mini Boss | Boss |
+|:------------:|:------:|:------:|:---------:|:----:|
+|    To Kill   |   15   |   25   |     15    |  10  |
+| To Be Killed |    1   |    3   |     10    |  25  |
+
+#### Rooms
+Each phase of the game is divided in rooms,
+rooms have different types and sizes and the map is randomly generated at the start of the playthrough.
+A room size is given in multiples of the screen size, and
+the rooms can have from 0 to 4 creatures for each unit of size it has.
+Each room has some static and some dynamic aspects; static content never change;
+dynamic content can change for each generated room.
+They are:
+- Static:
+	- Floor
+	- Walls
+	- Passage positions
+	- Scene objects positions
+	- Creature positions
+- Dynamics:
+	- Which creatures are in each position
+	- Which items are in each position
+	- Which passages are "open" and where they take you.
 
 ## Activities schedule
 
