@@ -198,11 +198,11 @@ Dynamic activities schedule
 	- Felipe "OneEyedAesir" Gruendemann -  O
 
 - 07/05 - 14/05
-	- [ ] Decide RPG model
+	- [X] Decide RPG model
 	- [ ] Decide random rooms disposition
-	- [ ] Decide mobs and items and quantity
-	- [ ] Decide upgrade system (Main character and foes)
-	- [ ] Decide items bonus
+	- [X] Decide mobs and items and quantity
+	- [X] Decide upgrade system (Main character and foes)
+	- [X] Decide items bonus
 
 - 07/05 - 28/05
 	- [ ] Main character development => T
