@@ -137,7 +137,7 @@ The weapons type and characteristics:
 |       | Damage | Stamina cost |  Speed |
 |:-----:|:------:|:------------:|:------:|
 | Sword | Medium |    Medium    | Medium |
-|  Axe  |  High  |     High     |  Slow  |
+|  Axe  |  High  |     High     |  Low   |
 | Spear |   Low  |      Low     |  High  |
 
 In total there are three classes of equipment the hero can use.  
