@@ -105,7 +105,8 @@ There are two layers of characteristics that any character has, **attributes** a
 	- Slash
 	- Impact
 	- Thrust
- - XP gain
+- XP gain
+
 **Attributes** are used to calculated the character's **power**:
 - Vitality
 	- + HP
@@ -132,6 +133,7 @@ There is only one combat action, but there are three different type of weapons t
 Each of them changes a little bit the game style.
 The hero also has access to a specialization tree for each type, to make them more unique.
 The weapons type and characteristics:  
+
 |       | Damage | Stamina cost |  Speed |
 |:-----:|:------:|:------------:|:------:|
 | Sword | Medium |    Medium    | Medium |
@@ -150,6 +152,7 @@ All creatures have a minimum level for the phase they are.
 They have no max level and they level up as the player, but always in a slower scale.
 Their attributes are incremented in circle on each level up.
 Each game phase has a minimum level for the creatures, a recommended level for the player and a scaling factor of the player's level.  
+
 |        | Minimal Level | Player recommend level | Creature Level Proportion |
 |:------:|:-------------:|:----------------------:|:-------------------------:|
 | Garden |       1       |            5           |            1/4            |
@@ -159,6 +162,7 @@ Each game phase has a minimum level for the creatures, a recommended level for t
 There are 4 great groups of creatures the player can find, Killers, Tankers, Mini Bosses and Bosses.
 Each has different ranges of HP and damage.
 The table below shows the average strength of the creatures for a player on the recommended level.  
+
 |              | Killer | Tanker | Mini Boss | Boss |
 |:------------:|:------:|:------:|:---------:|:----:|
 |    To Kill   |   15   |   25   |     15    |  10  |
