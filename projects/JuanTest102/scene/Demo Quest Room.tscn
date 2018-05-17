@@ -2,7 +2,8 @@
 
 [ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/TileSet.res" type="TileSet" id=2]
-[ext_resource path="res://scene/NPC_Quest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/MageNPC.tscn" type="PackedScene" id=3]
+
 
 [node name="Demo Quest Room" type="Node" index="0"]
 

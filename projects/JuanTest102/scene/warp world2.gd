@@ -12,4 +12,4 @@ func _physics_process(delta):
 		if body.name == "Player":
 			rand_map = randi() % 4 + 2
 					
-			get_tree().change_scene("res://scene/World" +str(rand_map)+".tscn")
+			get_tree().change_scene("res://scene/World" +str(rand_map)+".tscn")		
