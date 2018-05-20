@@ -25,6 +25,8 @@ func _physics_process(delta):
 		velocity.x = 0
 	update_animation()
 	move_and_slide(velocity, UP)
+	if is_on_ceiling():
+		velocity.y = 0
 
 func update_animation():
 	if velocity.x > 0 && !attaking:
