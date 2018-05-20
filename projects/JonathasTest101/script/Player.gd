@@ -19,7 +19,6 @@ func _physics_process(delta):
 	move_and_slide(velocity, UP)
 
 func update_velocity():
-	print (velocity.y)
 	if is_on_floor():
 		velocity.y = 40
 		leeping = false
