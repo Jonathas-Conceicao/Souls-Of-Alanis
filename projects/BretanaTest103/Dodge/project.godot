@@ -1,0 +1,23 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="Dodge"
+run/main_scene="res://Main/Main.tscn"
+config/icon="res://icon.png"
+
+[global]
+
+Main=false
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
