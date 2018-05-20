@@ -11,10 +11,17 @@ var attaking = false
 var flipped = false
 
 func _physics_process(delta):
+	update_velocity()
+	update_animation()
+	move_and_slide(velocity, UP)
+
+func update_velocity():
 	velocity.y += GRAVITY
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = -350
+	elif is_on_ceiling():
+		velocity.y = 0
 	if Input.is_action_just_pressed("ui_attak") && !attaking:
 		attaking = true
 	if Input.is_action_pressed("ui_right"):
@@ -23,10 +30,6 @@ func _physics_process(delta):
 		velocity.x = -SPEED
 	else:
 		velocity.x = 0
-	update_animation()
-	move_and_slide(velocity, UP)
-	if is_on_ceiling():
-		velocity.y = 0
 
 func update_animation():
 	if velocity.x > 0 && !attaking:
