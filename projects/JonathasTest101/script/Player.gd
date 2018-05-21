@@ -2,29 +2,52 @@ extends KinematicBody2D
 
 const UP = Vector2(0,-1)
 const GRAVITY = 10
-const SPEED = 150
+const SPEED = 350
 const FLIPPING_SCALE = Vector2(-1, 1)
 var velocity = Vector2()
+var energy = SPEED
+var energy_ps    = SPEED/5
 
 var attaking = false
+var leeping = false
 
 var flipped = false
 
 func _physics_process(delta):
-	velocity.y += GRAVITY
+	update_velocity()
+	update_animation()
+	move_and_slide(velocity, UP)
+
+func update_velocity():
 	if is_on_floor():
+		velocity.y = 40
+		leeping = false
 		if Input.is_action_just_pressed("ui_up"):
-			velocity.y = -350
+			velocity.y = - SPEED
+	else:
+		velocity.y += GRAVITY
+		if is_on_ceiling():
+			velocity.y = 0
+	if is_on_wall():
+		if Input.is_action_pressed("ui_up"):
+			velocity.y -= energy
+			energy = 0
 	if Input.is_action_just_pressed("ui_attak") && !attaking:
 		attaking = true
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-	else:
+	elif Input.is_action_just_pressed("ui_leep") && energy > (SPEED/2) && is_on_floor():
+		if flipped:
+			velocity.x -= energy
+		else:
+			velocity.x += energy
+		velocity.y -= energy
+		energy = 0
+		leeping = true
+	elif !leeping:
 		velocity.x = 0
-	update_animation()
-	move_and_slide(velocity, UP)
 
 func update_animation():
 	if velocity.x > 0 && !attaking:
@@ -58,3 +81,10 @@ func set_animation(animation):
 func _on_Animation_animation_finished(anim_name):
 	if $Sprite.animation == "Attaking":
 		attaking = false
+
+
+func _on_Energy_timeout():
+	energy = min(energy + energy_ps, SPEED)
+
+
+

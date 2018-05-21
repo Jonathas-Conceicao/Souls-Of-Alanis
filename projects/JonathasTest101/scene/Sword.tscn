@@ -364,6 +364,7 @@ position = Vector2( 37.1358, -40.7646 )
 rotation = -0.0299956
 build_mode = 0
 polygon = PoolVector2Array( 18, 52, 18, 74, 78, 74, 92, 64, 92, 62, 78, 52 )
+disabled = true
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="TrailBox" type="Area2D" parent="." index="2"]
