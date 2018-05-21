@@ -18,6 +18,13 @@ func _on_YesButton_pressed():
 	$VBoxContainer.hide()
 	$LabelMenu.hide()
 	$HideTimer.start()
+	$Label.show()
 
 func _on_HideTimer_timeout():
 	$NPCName.show()
+
+
+func _on_NoButton_pressed():
+	$VBoxContainer.hide()
+	$LabelMenu.hide()
+	$HideTimer.start()

@@ -5,4 +5,4 @@ func _physics_process(delta):
 		
 	for body in bodies:
 		if body.name == "Player":
-			get_tree().change_scene("res://scene/World1_1.tscn")
+			get_tree().change_scene("res://scene/World1.tscn")

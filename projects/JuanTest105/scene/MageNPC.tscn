@@ -40,10 +40,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -50.0
-margin_top = -69.0
-margin_right = -10.0
-margin_bottom = -25.0
+margin_left = -61.0
+margin_top = -72.0
+margin_right = 66.0
+margin_bottom = -19.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -61,7 +61,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
+margin_right = 127.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -74,8 +74,8 @@ action_mode = 0
 enabled_focus_mode = 0
 shortcut = null
 group = null
-text = "Yes"
-flat = true
+text = "Sim"
+flat = false
 align = 1
 items = [  ]
 
@@ -86,7 +86,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 24.0
-margin_right = 40.0
+margin_right = 127.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -99,8 +99,8 @@ action_mode = 0
 enabled_focus_mode = 0
 shortcut = null
 group = null
-text = "No"
-flat = true
+text = "Não"
+flat = false
 align = 1
 items = [  ]
 
@@ -111,38 +111,40 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -136.0
-margin_top = -84.0
-margin_right = 120.0
-margin_bottom = -46.0
+margin_left = -92.0
+margin_top = -108.0
+margin_right = 164.0
+margin_bottom = -70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Deseja forjar algo?"
+text = "Deseja receber uma missão?"
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [node name="NPCName" type="Label" parent="." index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -59.0
-margin_top = -41.0
-margin_right = 59.0
-margin_bottom = -27.0
+margin_left = -36.0
+margin_top = -44.0
+margin_right = 82.0
+margin_bottom = -26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Andre"
+text = "Quest NPC"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -154,7 +156,34 @@ wait_time = 2.0
 one_shot = true
 autostart = false
 
+[node name="Label" type="Label" parent="." index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -368.0
+margin_top = -72.0
+margin_right = -141.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Apenas uma quest teste, objetivos:
+
+- Localiza nóis!"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [connection signal="pressed" from="VBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
 
 [connection signal="timeout" from="HideTimer" to="." method="_on_HideTimer_timeout"]
 

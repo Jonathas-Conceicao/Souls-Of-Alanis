@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/TempleTIles.png" type="Texture" id=1]
 
@@ -10,9 +10,14 @@ extents = Vector2( 106.471, 10 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
+extents = Vector2( 10, 4.21452 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
 extents = Vector2( 100, 10 )
 
-[node name="sunset" type="Node"]
+[node name="sunset" type="Node" index="0"]
 
 [node name="floor" type="Sprite" parent="." index="0"]
 
@@ -147,16 +152,29 @@ __meta__ = {
 
 [node name="floor13" type="Sprite" parent="." index="9"]
 
-position = Vector2( 710, 70 )
+position = Vector2( 250.425, 766.45 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 256, 224, 192, 32 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="floor13" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor13/StaticBody2D" index="0"]
+
+position = Vector2( 95.2499, 4.63313 )
+scale = Vector2( 8.43936, 1.09264 )
+shape = SubResource( 3 )
 
 [node name="floor11" type="Sprite" parent="." index="10"]
 
@@ -180,7 +198,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor11/StaticBody2D" index="0"]
 
 position = Vector2( 100, 10 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="floor10" type="Sprite" parent="." index="11"]
 
