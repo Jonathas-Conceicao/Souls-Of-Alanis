@@ -50,7 +50,7 @@ position = Vector2( -0.0327406, 0.750846 )
 scale = Vector2( 2.31566, 2.15773 )
 shape = SubResource( 1 )
 
-[node name="RayCastRight" type="RayCast2D" parent="." index="4"]
+[node name="RayCastRightDown" type="RayCast2D" parent="." index="4"]
 
 position = Vector2( 30, 2 )
 enabled = true
@@ -59,13 +59,43 @@ cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastLeft" type="RayCast2D" parent="." index="5"]
+[node name="RayCastLeftDown" type="RayCast2D" parent="." index="5"]
 
-position = Vector2( -30, 1.76128 )
+position = Vector2( -30, 2 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="RayCastRight" type="RayCast2D" parent="." index="6"]
+
+position = Vector2( 35, 10 )
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastLeft" type="RayCast2D" parent="." index="7"]
+
+position = Vector2( -35, 10 )
+rotation = 1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCastUp" type="RayCast2D" parent="." index="8"]
+
+position = Vector2( 0, -21 )
+rotation = 3.14159
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
