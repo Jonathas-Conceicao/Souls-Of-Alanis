@@ -14,6 +14,10 @@ config/name="PlayingWithSpawn"
 run/main_scene="res://MainPlay.tscn"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "SpawnArea2D", "my_custom_node" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
