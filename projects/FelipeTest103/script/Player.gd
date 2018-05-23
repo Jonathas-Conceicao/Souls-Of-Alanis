@@ -82,9 +82,12 @@ func _on_Animation_animation_finished(anim_name):
 	if $Sprite.animation == "Attaking":
 		attaking = false
 
-
 func _on_Energy_timeout():
 	energy = min(energy + energy_ps, SPEED)
+
+func recoil():
+	if velocity.y > 0:
+		velocity.y -= 100
 
 
 

@@ -1,14 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://script/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://art/characters/mushroom.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[node name="Mushroom" type="KinematicBody2D"]
+[node name="Mushroom" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -44,11 +39,13 @@ region_enabled = true
 region_rect = Rect2( 70, 21, 52, 46 )
 _sections_unfolded = [ "Region" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="3"]
 
-position = Vector2( -0.0327406, 0.750846 )
-scale = Vector2( 2.31566, 2.15773 )
-shape = SubResource( 1 )
+position = Vector2( -0.56764, 7.79328 )
+scale = Vector2( 2.31566, 1.414 )
+build_mode = 0
+polygon = PoolVector2Array( 6.61387, 9.92177, -5.67228, 9.96104, -8.45578, 5.57142, -10.2084, 0.506495, -10.2084, -7.42857, -8.2496, -10.2987, 9.48232, -10.2987, 10.5132, -7.42857, 10.5132, 0.675324, 9.06995, 5.23377 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="RayCastRightDown" type="RayCast2D" parent="." index="4"]
 
@@ -58,6 +55,9 @@ exclude_parent = true
 cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RayCastLeftDown" type="RayCast2D" parent="." index="5"]
 
@@ -67,6 +67,9 @@ exclude_parent = true
 cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RayCastRight" type="RayCast2D" parent="." index="6"]
 
@@ -77,6 +80,9 @@ exclude_parent = true
 cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RayCastLeft" type="RayCast2D" parent="." index="7"]
 
@@ -87,11 +93,15 @@ exclude_parent = true
 cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RayCastUp" type="RayCast2D" parent="." index="8"]
 
-position = Vector2( 0, -21 )
+position = Vector2( 0, -6 )
 rotation = 3.14159
+scale = Vector2( 10, 1.5 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 5 )
