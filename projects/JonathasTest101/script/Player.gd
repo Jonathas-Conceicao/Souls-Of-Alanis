@@ -8,6 +8,19 @@ var velocity = Vector2()
 var energy = SPEED
 var energy_ps    = SPEED/5
 
+var attribute_vit
+var attribute_for
+var attribute_agi
+var attribute_wis
+
+var power_hp
+var power_stamina
+var power_carryLoad
+var power_defense_slash
+var power_defense_impact
+var power_defense_thrust
+
+
 var attaking = false
 var leeping = false
 
