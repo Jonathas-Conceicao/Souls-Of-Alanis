@@ -39,6 +39,7 @@ func takeAttack(attack):
 	var defense = genDefense()
 	var damage  = defense.calcCombat(attack)
 	attack.queue_free()
+	defense.queue_free()
 	attributes.takeDamege(damage)
 	return damage
 
