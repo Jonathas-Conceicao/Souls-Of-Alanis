@@ -26,12 +26,12 @@ var leeping = false
 
 var flipped = false
 
-const Foe    = preload("res://script/Classes/Foe.gd")
+const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 var data
 
 func _ready():
-	data = Foe.new(Attack.Slash)
+	data = Hero.new()
 	data.attributes.increment(10)
 
 func _physics_process(delta):
