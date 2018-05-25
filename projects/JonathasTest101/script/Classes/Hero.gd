@@ -20,15 +20,18 @@ func _init():
 	ring       = null
 
 func setArmor(armor):
+	self.armor.queue_free()
 	self.armor = armor
 
 func setRing(ring):
+	self.ring.queue_free()	
 	self.ring = ring
 
 func setWeapon(weapon):
+	self.weapon.queue_free()
 	self.weapon = weapon
 
-func genDefense():
+func getDefense():
 	attributes.updatePower()
 	var defense = attributes.power.defense
 	if armor != null:
@@ -43,10 +46,9 @@ func genAttack():
 	return attack
 
 func takeAttack(attack):
-	var defense = genDefense()
+	var defense = getDefense()
 	var damage  = defense.calcCombat(attack)
 	attack.queue_free()
-	defense.queue_free()
 	attributes.takeDamege(damage)
 	return damage
 
