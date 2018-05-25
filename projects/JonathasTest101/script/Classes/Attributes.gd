@@ -1,9 +1,9 @@
 extends Node
 
-var vitality = 1
-var strength = 1
-var agility  = 1
-var wisdom   = 1
+var vitality
+var strength
+var agility
+var wisdom
 
 var power
 
@@ -53,14 +53,14 @@ func genAttack(attackType):
 			damage = influence(0, 2, 2, 0)
 	return (Attack.new(attackType, damage))
 
-func takeDamege(damage):
-	self.power.hp = int(min(0.0, damage))
+func takeDamage(damage):
+	self.power.hp = min(0.0, self.power.hp - damage)
 
 func influence(v, s, a, w):
 	return ((vitality * v) +
-					(strength * s) +
-					(agility * a)  +
-					(wisdom * w))
+			(strength * s) +
+			(agility * a)  +
+			(wisdom * w))
 
 func _ready():
 	pass

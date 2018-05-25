@@ -36,7 +36,7 @@ func _on_HideTimer_timeout():
 	$Label.hide()
 	$WaitTimer.start()
 
-func _on_takeDamege(agressor, attack):
+func _on_takeDamage(agressor, attack):
 	state = HITED
 	var damage = data.takeAttack(attack)
 	print("Dummy recived ", damage, " from: ", agressor.get_name())

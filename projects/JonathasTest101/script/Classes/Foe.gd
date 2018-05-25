@@ -39,7 +39,7 @@ func takeAttack(attack):
 	var defense = getDefense()
 	var damage  = defense.calcCombat(attack)
 	attack.queue_free()
-	attributes.takeDamege(damage)
+	attributes.takeDamage(damage)
 	return damage
 
 func _ready():

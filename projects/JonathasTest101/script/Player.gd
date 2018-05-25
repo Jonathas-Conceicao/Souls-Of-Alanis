@@ -8,19 +8,6 @@ var velocity = Vector2()
 var energy = SPEED
 var energy_ps    = SPEED/5
 
-var attribute_vit
-var attribute_for
-var attribute_agi
-var attribute_wis
-
-var power_hp
-var power_stamina
-var power_carryLoad
-var power_defense_slash
-var power_defense_impact
-var power_defense_thrust
-
-
 var attaking = false
 var leeping = false
 
@@ -110,14 +97,14 @@ func _on_Animation_animation_finished(anim_name):
 func _on_Energy_timeout():
 	energy = min(energy + energy_ps, SPEED)
 
-func _on_takeDamege(agressor, attack):
+func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Player recived ", damage, " from: ", agressor.get_name())
 
 func _on_Stepping_body_entered(body):
-	if body != self && body.has_method("_on_takeDamege"):
+	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
-		body._on_takeDamege(self, attack)
+		body._on_takeDamage(self, attack)
 
 func _on_SwordHit(body, id):
 	if body != self && body.has_method("_on_takeFoot"):
