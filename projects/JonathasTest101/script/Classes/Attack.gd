@@ -9,10 +9,15 @@ func _init(type = Slash, damage = 0):
 	self.type   = type
 	self.damage = damage
 
-func increment(attack):
+func add(attack):
 	if attack.type == self.type:
 		self.damage += attack.damage
 
+func sum(attack):
+	var ret = self.new()
+	ret.add(self)
+	ret.add(attack)
+	return ret
 
 func _ready():
 	pass

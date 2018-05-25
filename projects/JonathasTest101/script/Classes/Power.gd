@@ -7,7 +7,7 @@ var xp_gain
 
 var defense
 
-const Defense = prealod("Defense.gd")
+const Defense = preload("Defense.gd")
 
 func _init(h = 1, s = 1, c = 1, x = 1):
 	self.hp        = h

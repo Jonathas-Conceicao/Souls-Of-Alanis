@@ -10,6 +10,7 @@ var power
 var update = 0
 
 const Power = preload("Power.gd")
+const Power = preload("Attack.gd")
 
 func _init(v = 1, s = 1, a = 1, w = 1):
 	self.vitality = v
@@ -36,9 +37,23 @@ func updatePower(power):
 	power.hp             = influence(10, 0, 0, 0)
 	power.carryLoad      = influence(0, 10, 0, 0)
 	power.stamina        = influence(0, 0, 10, 0)
-	power.defense.slash  = influence(6, 2, 2, 0)
-	power.defense.impact = influence(6, 4, 0, 0)
-	power.defense.thrust = influence(6, 0, 4, 0)
+	power.defense.slash  = influence(3, 1, 1, 0)
+	power.defense.impact = influence(3, 2, 0, 0)
+	power.defense.thrust = influence(3, 0, 2, 0)
+
+func genAttack(attackType):
+	damage = 0
+	match attackType:
+		Slash:
+			damege = increment(0, 0, 5, 0)
+		Impact:
+			damege = increment(0, 5, 0, 0)
+		Thrust:
+			damege = increment(0, 2, 2, 0)
+	return (Attack.new(attackType, damage))
+
+func takeDamege(damage):
+	self.hp = min(0, damage)
 
 func influence(v, s, a, w):
 	return ((vitality * v) +
