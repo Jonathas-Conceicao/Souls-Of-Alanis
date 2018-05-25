@@ -28,10 +28,13 @@ var flipped = false
 
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
+const Weapon = preload("res://script/Classes/Weapon.gd")
+
 var data
 
 func _ready():
 	data = Hero.new()
+	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
 	data.attributes.increment(10)
 
 func _physics_process(delta):
@@ -117,6 +120,5 @@ func _on_Stepping_body_entered(body):
 		body._on_takeDamege(self, attack)
 
 func _on_SwordHit(body, id):
-	if body != self && body.has_method("_on_takeDamege"):
-		var attack = data.genAttack()
-		body._on_takeDamege(self, attack)
+	if body != self && body.has_method("_on_takeFoot"):
+		body._on_takeFoot(self)
