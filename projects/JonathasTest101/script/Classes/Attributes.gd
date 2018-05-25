@@ -12,6 +12,9 @@ var update = 0
 const Power = preload("Power.gd")
 
 func _ready():
+	pass
+
+func _init():
 	power = Power.new()
 	updatePower(power)
 
