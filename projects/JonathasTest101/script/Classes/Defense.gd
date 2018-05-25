@@ -28,9 +28,9 @@ func calcCombat(attack):
 		Attack.Slash:
 			hp = attack.damage - self.slash
 		Attack.Impact:
-			hp = attack.damage - self.Impact
+			hp = attack.damage - self.impact
 		Attack.Thrust:
-			hp = attack.damage - self.Thrust
+			hp = attack.damage - self.thrust
 	return max(hp, 0)
 
 func _ready():
