@@ -2,13 +2,17 @@ extends Node
 
 enum AttackType {Slash, Impact, Thrust}
 
-var type = Slash
-var damege = 0
+var type
+var damage
+
+func _init(type = Slash, damage = 0):
+	self.type   = type
+	self.damage = damage
+
+func increment(attack):
+	if attack.type == self.type:
+		self.damage += attack.damage
+
 
 func _ready():
 	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass

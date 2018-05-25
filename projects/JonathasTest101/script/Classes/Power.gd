@@ -1,9 +1,21 @@
 extends Node
 
-var hp             = 1
-var stamina        = 1
-var carryLoad      = 0
-var defense_slash  = 0
-var defense_impact = 0
-var defense_thrust = 0
-var xp_gain        = 1
+var hp
+var stamina
+var carryLoad
+var xp_gain
+
+var defense
+
+const Defense = prealod("Defense.gd")
+
+func _init(h = 1, s = 1, c = 1, x = 1):
+	self.hp        = h
+	self.stamina   = s
+	self.carryLoad = c
+	self.xp_gain   = x
+	defense = Defense.new(0, 0, 0)
+
+func _ready():
+	pass
+
