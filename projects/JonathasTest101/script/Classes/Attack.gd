@@ -2,6 +2,9 @@ extends Node
 
 enum AttackType {Slash, Impact, Thrust}
 
+var type = Slash
+var damege = 0
+
 func _ready():
 	pass
 
