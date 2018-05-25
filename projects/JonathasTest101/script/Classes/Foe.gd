@@ -11,7 +11,7 @@ const Ring       = preload("Ring.gd")
 const Defense    = preload("Defense.gd")
 const Attack     = preload("Attack.gd")
 
-func _init(at = Slash):
+func _init(at = Attack.Slash):
 	attributes = Attributes.new()
 	armor      = null
 	ring       = null
@@ -25,18 +25,22 @@ func setRing(ring):
 
 func genDefense():
 	attributes.updatePower()
-	var defenseAux = attributes.power.defense.sum(armor.defense)
-	var defense = defense.sum(ring.power.defense)
-	defenseAux.queue_free()
+	var defense = attributes.power.defense
+	if armor != null:
+		defense = defense.sum(armor.defense)
+	if ring  != null:
+		defense = defense.sum(ring.power.defense)
 	return defense
 
 func genAttack():
-	return attributes.genAttack()
+	return attributes.genAttack(attackType)
 
 func takeAttack(attack):
-	defense = genDefense()
-	damage  = defense.calcCombat(attack)
+	var defense = genDefense()
+	var damage  = defense.calcCombat(attack)
+	attack.queue_free()
 	attributes.takeDamege(damage)
+	return damage
 
 func _ready():
 	pass

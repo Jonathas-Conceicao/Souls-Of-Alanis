@@ -26,6 +26,14 @@ var leeping = false
 
 var flipped = false
 
+const Foe    = preload("res://script/Classes/Foe.gd")
+const Attack = preload("res://script/Classes/Attack.gd")
+var data
+
+func _ready():
+	data = Foe.new(Attack.Slash)
+	data.attributes.increment(10)
+
 func _physics_process(delta):
 	update_velocity()
 	update_animation()
@@ -99,5 +107,16 @@ func _on_Animation_animation_finished(anim_name):
 func _on_Energy_timeout():
 	energy = min(energy + energy_ps, SPEED)
 
+func _on_takeDamege(agressor, attack):
+	var damage = data.takeAttack(attack)
+	print("Player recived ", damage, " from: ", agressor.get_name())
 
+func _on_Stepping_body_entered(body):
+	if body != self && body.has_method("_on_takeDamege"):
+		var attack = data.genAttack()
+		body._on_takeDamege(self, attack)
 
+func _on_SwordHit(body, id):
+	if body != self && body.has_method("_on_takeDamege"):
+		var attack = data.genAttack()
+		body._on_takeDamege(self, attack)

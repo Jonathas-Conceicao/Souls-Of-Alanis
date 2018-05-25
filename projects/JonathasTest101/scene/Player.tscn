@@ -299,8 +299,6 @@ blend_times = [  ]
 
 [node name="Sword" parent="." index="3" instance=ExtResource( 70 )]
 
-_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
-
 [node name="Energy" type="Timer" parent="." index="4"]
 
 process_mode = 1

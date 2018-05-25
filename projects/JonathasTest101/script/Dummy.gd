@@ -11,8 +11,13 @@ var speechs = [	"Hey! You there! Come hit me!",
 				"I dare you to trying killing me",
 				"Come at me, bro!"]
 
+const Foe    = preload("res://script/Classes/Foe.gd")
+const Attack = preload("res://script/Classes/Attack.gd")
+var data
+
 func _ready():
 	state = IDLE
+	data = Foe.new(Attack.Slash)
 	$Label.hide()
 	$WaitTimer.start()
 
@@ -31,6 +36,9 @@ func _on_HideTimer_timeout():
 	$Label.hide()
 	$WaitTimer.start()
 
-func _on_meele_hit(hitter):
+func _on_takeDamege(agressor, attack):
 	state = HITED
-	print("Hitted by:", hitter.get_name())
+	var damage = data.takeAttack(attack)
+	print("Dummy recived ", damage, " from: ", agressor.get_name())
+	
+

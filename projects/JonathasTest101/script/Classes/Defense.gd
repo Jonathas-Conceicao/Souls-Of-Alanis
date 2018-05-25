@@ -25,13 +25,13 @@ func sum(defense):
 func calcCombat(attack):
 	var hp = 0
 	match attack.type:
-		Slash:
-			hp = self.slash  - attack.damage
-		Impact:
-			hp = self.Impact - attack.damage
-		Thrust:
-			hp = self.Thrust - attack.damage
-	return min(hp, 0)
+		Attack.Slash:
+			hp = attack.damage - self.slash
+		Attack.Impact:
+			hp = attack.damage - self.Impact
+		Attack.Thrust:
+			hp = attack.damage - self.Thrust
+	return max(hp, 0)
 
 func _ready():
 	pass
