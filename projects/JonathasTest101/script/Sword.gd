@@ -14,9 +14,9 @@ func animation_play(animation):
 func animation_flip():
 	self.apply_scale(FLIPPING_SCALE)
 
-#func _on_Hitbox_body_entered(body):
-#	if Holder.has_method("_on_SwordHit"):
-#		Holder._on_SwordHit(body, 0)
+func _on_Hitbox_body_entered(body):
+	if Holder.has_method("_on_SwordHit"):
+		Holder._on_SwordHit(body, 0)
 
 func _on_TrailBox_body_entered(body):
 	if Holder.has_method("_on_SwordHit"):

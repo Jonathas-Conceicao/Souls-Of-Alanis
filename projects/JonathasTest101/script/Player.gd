@@ -101,11 +101,11 @@ func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Player recived ", damage, " from: ", agressor.get_name())
 
-func _on_Stepping_body_entered(body):
+func _on_SwordHit(body, id):
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
 		body._on_takeDamage(self, attack)
 
-func _on_SwordHit(body, id):
+func _on_Stepping_body_entered(body):
 	if body != self && body.has_method("_on_takeFoot"):
 		body._on_takeFoot(self)
