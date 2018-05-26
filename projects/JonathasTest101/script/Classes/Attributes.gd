@@ -54,7 +54,7 @@ func genAttack(attackType):
 	return (Attack.new(attackType, damage))
 
 func takeDamage(damage):
-	self.power.hp = min(0.0, self.power.hp - damage)
+	self.power.takeDamege(damege)
 
 func influence(v, s, a, w):
 	return ((vitality * v) +
