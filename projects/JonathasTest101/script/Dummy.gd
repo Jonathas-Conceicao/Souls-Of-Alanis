@@ -18,6 +18,7 @@ var data
 func _ready():
 	state = IDLE
 	data = Foe.new(Attack.Slash)
+	self.add_child(data)
 	$Label.hide()
 	$WaitTimer.start()
 

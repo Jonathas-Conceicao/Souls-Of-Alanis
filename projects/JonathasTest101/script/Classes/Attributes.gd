@@ -18,6 +18,7 @@ func _init(v = 1, s = 1, a = 1, w = 1):
 	self.agility  = a
 	self.wisdom   = w
 	power = Power.new()
+	self.add_child(power)
 	updatePower()
 
 func increment(n=1):

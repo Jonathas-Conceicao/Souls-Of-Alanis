@@ -21,6 +21,7 @@ var data
 
 func _ready():
 	data = Hero.new()
+	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
 	data.attributes.increment(10)
 

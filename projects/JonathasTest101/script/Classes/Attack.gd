@@ -15,6 +15,7 @@ func add(attack):
 
 func sum(attack):
 	var ret = self.new()
+	self.add_child(ret)
 	ret.add(self)
 	ret.add(attack)
 	return ret

@@ -22,6 +22,7 @@ func _init():
 	self.cur_stamina   = self.stamina
 	self.cur_carryLoad = self.carryLoad
 	defense = Defense.new(0, 0, 0)
+	self.add_child(defense)
 
 func takeDamage(damage):
 	self.cur_hp = min(0.0, self.cur_hp - damage)

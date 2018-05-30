@@ -15,7 +15,9 @@ const Attack     = preload("Attack.gd")
 
 func _init():
 	attributes = Attributes.new()
+	self.add_child(attributes)
 	weapon     = Weapon.new(0, Attack.Impact, 1) # Player must always have an weapon
+	self.add_child(weapon)
 	armor      = null
 	ring       = null
 
