@@ -26,9 +26,21 @@ func _ready():
 	data.attributes.increment(10)
 
 func _physics_process(delta):
+	switchWeapon()
 	update_velocity()
 	update_animation()
 	move_and_slide(velocity, UP)
+
+func switchWeapon():
+	if Input.is_action_just_pressed("ui_select_weapon_1"):
+		print("Holding a Sword")
+		data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+	elif Input.is_action_just_pressed("ui_select_weapon_2"):
+		print("Holding a Axe")
+		data.setWeapon(Weapon.new(0, Attack.Impact, 20))
+	elif Input.is_action_just_pressed("ui_select_weapon_3"):
+		print("Holding a Spear")
+		data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
 
 func update_velocity():
 	if is_on_floor():
