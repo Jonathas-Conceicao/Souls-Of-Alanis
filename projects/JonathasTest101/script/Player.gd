@@ -38,6 +38,7 @@ func _physics_process(delta):
 
 func runDebug():
 	data.levelUp()
+	print("Data:", data)
 	print("Current Carry Load:", data.getCarryLoad())
 	print("Max     Carry Load:", data.getMaxCarryLoad())
 

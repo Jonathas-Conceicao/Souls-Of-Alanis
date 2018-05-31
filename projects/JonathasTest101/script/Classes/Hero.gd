@@ -46,7 +46,7 @@ func getCarryLoad():
 	return self.attributes.getCarryLoad()
 
 func getMaxCarryLoad():
-	return self.attributes.getCarryLoad()
+	return self.attributes.getMaxCarryLoad()
 
 func genDefense():
 	attributes.updatePower()
