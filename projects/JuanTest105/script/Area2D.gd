@@ -16,6 +16,8 @@ func _process(delta):
 			show_menu()
 	
 func show_menu():
+	$Camera2D.zoom.x = 0.7
+	$Camera2D.zoom.y = 0.7
 	$Name.hide()
 	$QuestionLabel.show()
 	

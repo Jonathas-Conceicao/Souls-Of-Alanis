@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://script/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://art/Player/Attaking_RougueLegacyi10.png" type="Texture" id=68]
 [ext_resource path="res://art/Player/Attaking_RougueLegacyi11.png" type="Texture" id=69]
 [ext_resource path="res://scene/Sword.tscn" type="PackedScene" id=70]
+[ext_resource path="res://art/hud.png" type="Texture" id=71]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -258,7 +259,7 @@ tracks/1/keys = {
 "values": [ 0, 17 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -266,9 +267,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -300,6 +298,13 @@ blend_times = [  ]
 [node name="Sword" parent="." index="3" instance=ExtResource( 70 )]
 
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="HUD" type="Sprite" parent="." index="4"]
+
+position = Vector2( -147.621, -349.002 )
+scale = Vector2( 0.262974, 0.284672 )
+texture = ExtResource( 71 )
+_sections_unfolded = [ "Offset" ]
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 
