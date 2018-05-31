@@ -2,11 +2,8 @@ extends KinematicBody2D
 
 const UP = Vector2(0,-1)
 const GRAVITY = 10
-const SPEED = 350
 const FLIPPING_SCALE = Vector2(-1, 1)
 var velocity = Vector2()
-var energy = SPEED
-var energy_ps    = SPEED/5
 
 var attaking = false
 var leeping = false
@@ -18,6 +15,10 @@ const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
 var data
+var SPEED = 350
+
+var energy    = SPEED
+var energy_ps = SPEED/5
 
 func _ready():
 	data = Hero.new()
