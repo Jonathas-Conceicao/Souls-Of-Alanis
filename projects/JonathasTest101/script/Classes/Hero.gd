@@ -15,21 +15,38 @@ const Attack     = preload("Attack.gd")
 
 func _init():
 	attributes = Attributes.new()
+	self.add_child(attributes)
 	weapon     = Weapon.new(0, Attack.Impact, 1) # Player must always have an weapon
+	self.add_child(weapon)
 	armor      = null
 	ring       = null
 
 func setArmor(armor):
-	if armor != null: self.armor.queue_free()
-	self.armor = armor
+	var s
+	if armor != null:
+		s = trySwap(self.armor.weight, armor.weight)
+	else:
+		s = trySwap(0, armor.weight)
+	if s:
+		if armor != null: self.armor.queue_free()
+		self.armor = armor
+		return true
+	else:
+		return false
 
 func setRing(ring):
-	if ring != null: self.ring.queue_free()	
+	if ring != null: self.ring.queue_free()
 	self.ring = ring
 
 func setWeapon(weapon):
 	self.weapon.queue_free()
 	self.weapon = weapon
+
+func getCarryLoad():
+	return self.attributes.getCarryLoad()
+
+func getMaxCarryLoad():
+	return self.attributes.getMaxCarryLoad()
 
 func genDefense():
 	attributes.updatePower()
@@ -54,6 +71,9 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
+
+func levelUp():
+	self.attributes.increment()
 
 func _ready():
 	pass

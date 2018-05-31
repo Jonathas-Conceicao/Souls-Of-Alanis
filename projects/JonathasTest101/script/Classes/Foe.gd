@@ -13,6 +13,7 @@ const Attack     = preload("Attack.gd")
 
 func _init(at = Attack.Slash):
 	attributes = Attributes.new()
+	self.add_child(attributes)
 	armor      = null
 	ring       = null
 	attackType = at
@@ -28,6 +29,7 @@ func setRing(ring):
 func genDefense():
 	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
+	self.add_child(defense)
 	if armor != null:
 		defense = defense.sum(armor.defense)
 	if ring  != null:

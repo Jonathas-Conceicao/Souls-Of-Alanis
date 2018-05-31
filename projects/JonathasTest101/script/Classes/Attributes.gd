@@ -18,6 +18,7 @@ func _init(v = 1, s = 1, a = 1, w = 1):
 	self.agility  = a
 	self.wisdom   = w
 	power = Power.new()
+	self.add_child(power)
 	updatePower()
 
 func increment(n=1):
@@ -52,6 +53,22 @@ func genAttack(attackType):
 		Attack.Thrust:
 			damage = influence(0, 2, 2, 0)
 	return (Attack.new(attackType, damage))
+
+func trySwap(cur_w, new_w):
+	var tCarryLoad = self.power.cur_carryLoad
+	tCarryLoad -= cur_w
+	tCarryLoad += new_w
+	if tCarryLoad <= power.carryLoad:
+		power.cur_carryLoad = tCarryLoad
+		return true
+	else:
+		return false
+
+func getCarryLoad():
+	return self.power.cur_carryLoad
+
+func getMaxCarryLoad():
+	return self.power.carryLoad
 
 func takeDamage(damage):
 	self.power.takeDamage(damage)

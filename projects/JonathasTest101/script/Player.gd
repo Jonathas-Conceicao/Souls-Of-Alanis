@@ -2,11 +2,8 @@ extends KinematicBody2D
 
 const UP = Vector2(0,-1)
 const GRAVITY = 10
-const SPEED = 350
 const FLIPPING_SCALE = Vector2(-1, 1)
 var velocity = Vector2()
-var energy = SPEED
-var energy_ps    = SPEED/5
 
 var attaking = false
 var leeping = false
@@ -18,16 +15,43 @@ const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
 var data
+var SPEED = 350
+
+var energy    = SPEED
+var energy_ps = SPEED/5
 
 func _ready():
 	data = Hero.new()
+	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-	data.attributes.increment(10)
+	print("Current Carry Load:", data.getCarryLoad())
+	print("Max     Carry Load:", data.getMaxCarryLoad())
+
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_debug"):
+		runDebug()
+	switchWeapon()
 	update_velocity()
 	update_animation()
 	move_and_slide(velocity, UP)
+
+func runDebug():
+	data.levelUp()
+	print("Data:", data)
+	print("Current Carry Load:", data.getCarryLoad())
+	print("Max     Carry Load:", data.getMaxCarryLoad())
+
+func switchWeapon():
+	if Input.is_action_just_pressed("ui_select_weapon_1"):
+		print("Holding a Sword")
+		data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+	elif Input.is_action_just_pressed("ui_select_weapon_2"):
+		print("Holding a Axe")
+		data.setWeapon(Weapon.new(0, Attack.Impact, 20))
+	elif Input.is_action_just_pressed("ui_select_weapon_3"):
+		print("Holding a Spear")
+		data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
 
 func update_velocity():
 	if is_on_floor():
