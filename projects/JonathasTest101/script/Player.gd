@@ -24,13 +24,22 @@ func _ready():
 	data = Hero.new()
 	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-	data.attributes.increment(10)
+	print("Current Carry Load:", data.getCarryLoad())
+	print("Max     Carry Load:", data.getMaxCarryLoad())
+
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_debug"):
+		runDebug()
 	switchWeapon()
 	update_velocity()
 	update_animation()
 	move_and_slide(velocity, UP)
+
+func runDebug():
+	data.levelUp()
+	print("Current Carry Load:", data.getCarryLoad())
+	print("Max     Carry Load:", data.getMaxCarryLoad())
 
 func switchWeapon():
 	if Input.is_action_just_pressed("ui_select_weapon_1"):

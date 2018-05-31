@@ -45,6 +45,9 @@ func setWeapon(weapon):
 func getCarryLoad():
 	return self.attributes.getCarryLoad()
 
+func getMaxCarryLoad():
+	return self.attributes.getCarryLoad()
+
 func genDefense():
 	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
@@ -68,6 +71,9 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
+
+func levelUp():
+	self.attributes.increment()
 
 func _ready():
 	pass
