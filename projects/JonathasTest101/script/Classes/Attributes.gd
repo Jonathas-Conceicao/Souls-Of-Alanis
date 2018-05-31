@@ -54,6 +54,22 @@ func genAttack(attackType):
 			damage = influence(0, 2, 2, 0)
 	return (Attack.new(attackType, damage))
 
+func trySwap(cur_w, new_w):
+	var tCarryLoad = self.power.cur_carryLoad
+	tCarryLoad -= cur_w
+	tCarryLoad += new_w
+	if tCarryLoad <= power.carryLoad:
+		power.cur_carryLoad = tCarryLoad
+		return true
+	else:
+		return false
+
+func getCarryLoad():
+	return self.power.cur_carryLoad
+
+func getMaxCarryLoad():
+	return self.power.carryLoad
+
 func takeDamage(damage):
 	self.power.takeDamage(damage)
 

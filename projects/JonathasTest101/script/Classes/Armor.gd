@@ -11,5 +11,8 @@ func _init(w = 0, s = 0, i = 0, t = 0):
 	self.add_child(defense)
 	weight = 0
 
+func getWeight():
+	return self.weight
+
 func _ready():
 	pass

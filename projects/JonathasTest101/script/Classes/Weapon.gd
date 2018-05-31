@@ -17,5 +17,8 @@ func genAttack():
 func getAttackType():
 	return (self.damageType)
 
+func getWeight():
+	return self.weight
+
 func _ready():
 	pass
