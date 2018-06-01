@@ -17,6 +17,7 @@ var state_flipped = false
 var state_moving_x = false
 var state_moving_y = false
 var state_attacking = false
+var state_leeping = false
 
 var data
 
@@ -91,16 +92,19 @@ func handleAttack():
 func handleMoviment(k):
 	match k:
 		0: # ui_right
-			velocity.x = SPEED
-			state_moving_x = true
-			state_flipped = false
+			if not state_leeping:
+				velocity.x = SPEED
+				state_moving_x = true
+				state_flipped = false
 		1: # ui_left
-			velocity.x = -SPEED
-			state_moving_x = true
-			state_flipped = true
+			if not state_leeping:
+				velocity.x = -SPEED
+				state_moving_x = true
+				state_flipped = true
 		2: # not moving x
-			velocity.x = 0
-			state_moving_x = false
+			if not state_leeping:
+				velocity.x = 0
+				state_moving_x = false
 		3: # ui_up
 			if is_on_floor():
 				velocity.y = -SPEED
@@ -119,6 +123,7 @@ func handleMoviment(k):
 				energy = 0
 				state_moving_x = true
 				state_moving_y = true
+				state_leeping = true
 		5: # not moving y
 			state_moving_y = false
 
@@ -126,6 +131,10 @@ func update_velocity():
 	if is_on_floor() && velocity.y >= 0:
 		velocity.y = 40
 		state_moving_y = false
+		if state_leeping:
+			velocity.x = 0
+			state_moving_x = false
+			state_leeping = false
 	else:
 		velocity.y += GRAVITY
 		if is_on_ceiling():
