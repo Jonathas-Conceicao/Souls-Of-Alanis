@@ -53,13 +53,13 @@ func _input(event):
 		handleMoviment(0)
 	elif Input.is_action_pressed("ui_left"):
 		handleMoviment(1)
+	elif event.is_action_pressed("ui_leep"):
+		handleMoviment(4)
 	else:
 		handleMoviment(2)
 
 	if event.is_action_pressed("ui_up"):
 		handleMoviment(3)
-	elif event.is_action_pressed("ui_leep"):
-		handleMoviment(4)
 	else:
 		handleMoviment(5)
 
