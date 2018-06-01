@@ -12,6 +12,7 @@ var SPEED = 350
 var direction
 var velocity = Vector2()
 
+var flipped = false
 var state_flipped = false
 var state_moving_x = false
 var state_moving_y = false
@@ -134,28 +135,26 @@ func update_velocity():
 		velocity.x = 0
 
 func update_animation():
-	# if state_attacking:
-	# 	flip_animation(false)
-	# else:
-	# 	flip_animation(state_flipped)
 	if state_attacking:
 		set_animation("Attaking")
-	elif state_moving_y:
-		if velocity.y <= 0:
-			set_animation("Jumping")
-		else:
-			set_animation("Falling")
-	elif state_moving_x:
-		if velocity.x != 0:
-			set_animation("Moving")
 	else:
-		set_animation("Idle")
+		update_flip()
+		if state_moving_y:
+			if velocity.y <= 0:
+				set_animation("Jumping")
+			else:
+				set_animation("Falling")
+		elif state_moving_x:
+			if velocity.x != 0:
+				set_animation("Moving")
+		else:
+			set_animation("Idle")
 
-func flip_animation(b):
-	if state_flipped != b:
+func update_flip():
+	if state_flipped != flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
-		state_flipped = b
+		flipped = state_flipped
 
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
