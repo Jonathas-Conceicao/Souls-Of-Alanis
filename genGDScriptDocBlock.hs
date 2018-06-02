@@ -34,9 +34,7 @@ genSection fileName = do
   let l = lines file
   putStr $ "### " ++ takeBaseName fileName ++ "\n"
   putStr "```\n"
-  putStr " {\n"
-  putStr $ unlines $ map ("\t"++) $ map formatLine $ filterDefinitions l
-  putStr "}\n"
+  putStr $ unlines $ map formatLine $ filterDefinitions l
   putStr "```\n"
   putStr "[up](#table-of-content)\n"
 
