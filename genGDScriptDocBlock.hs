@@ -28,11 +28,25 @@ filterDefinitions (l:ls)
 
 formatLine :: Line -> Line
 formatLine [] = []
-formatLine l@('f':'u':'n':'c':' ':ws) = init l
-formatLine l = l
+formatLine l = unwords $ words $ filterEq $ formatLine' l
+  where
+    formatLine' :: Line -> Line
+    formatLine' [] = []
+    formatLine' l@('f':'u':'n':'c':' ':ws) = init l
+    formatLine' l = l
 
 takeBaseName :: FilePath -> String
 takeBaseName f = takeWhile (/='.') $ last $ splitIf (=='/') f
+
+filterAttrib :: String -> String
+filterAttrib l@('v':'a':'r':_) = filterEq l
+filterAttrib l@('c':'o':'s':'t':_) = filterEq l
+filterAttrib l@('f':'u':'n':'c':' ':_) = l
+
+filterEq :: String -> String
+filterEq [] = []
+filterEq ('=':_) = []
+filterEq (x:xs) = x:(filterEq xs)
 
 splitIf :: (Eq a) => (a -> Bool) -> [a] -> [[a]]
 splitIf p l =  case dropWhile p l of
