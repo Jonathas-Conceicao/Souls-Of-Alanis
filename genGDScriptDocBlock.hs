@@ -46,7 +46,7 @@ filterAttrib l = l
 
 filterEq :: String -> String
 filterEq [] = []
-filterEq l = (takeWhile (/='=') l) ++ (dropWhile (/='#') l)
+filterEq l = (takeWhile (\x -> (&&) (x/='=') (x/='#')) l) ++ (dropWhile (/='#') l)
 
 splitIf :: (Eq a) => (a -> Bool) -> [a] -> [[a]]
 splitIf p l =  case dropWhile p l of
