@@ -82,7 +82,7 @@ func switchWeapon(type):
 		1:
 			data.setWeapon(Weapon.new(0, Attack.Impact, 20))
 			print("Holding a Axe")
-		3:
+		2:
 			data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
 			print("Holding a Spear")
 
