@@ -8,7 +8,9 @@ const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
 
-var MAXSPEED = 350
+const MAXSPEED = 350
+const MAXENERGY = MAXSPEED * 1.5
+
 var speed = 350
 var direction
 var velocity = Vector2()
@@ -22,8 +24,8 @@ var state_leeping = false
 
 var data
 
-var energy    = speed
-var energy_ps = speed/5
+var energy    = MAXENERGY
+var energy_ps = energy / 5
 
 func _ready():
 	data = Hero.new()
@@ -111,7 +113,7 @@ func handleMoviment(k):
 				velocity.y = -speed
 				state_moving_y = true
 			elif is_on_wall():
-				velocity.y = -speed
+				velocity.y = -energy
 				energy = 0
 				state_moving_y = true
 		4: # ui_leep
@@ -178,7 +180,7 @@ func _on_Animation_animation_finished(anim_name):
 
 
 func _on_Energy_timeout():
-	energy = min(energy + energy_ps, speed)
+	energy = min(energy + energy_ps, MAXENERGY)
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
