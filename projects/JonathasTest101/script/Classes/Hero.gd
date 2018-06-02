@@ -33,9 +33,9 @@ func _init():
 func setArmor(armor):
 	var s
 	if armor != null:
-		s = trySwap(self.armor.weight, armor.weight)
+		s = self.attributes.trySwap(self.armor.weight, armor.weight)
 	else:
-		s = trySwap(0, armor.weight)
+		s = self.attributes.trySwap(0, armor.weight)
 	if s:
 		if armor != null: self.armor.queue_free()
 		self.armor = armor
@@ -56,7 +56,7 @@ func setRing(ring):
 ###
 func setWeapon(weapon):
 	var s
-	s = trySwap(self.weapon.weight, weapon.weight)
+	s = self.attributes.trySwap(self.weapon.weight, weapon.weight)
 	if s:
 		self.weapon.queue_free()
 		self.weapon = weapon
