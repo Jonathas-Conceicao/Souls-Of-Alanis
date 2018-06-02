@@ -18,7 +18,7 @@ main = do
 filterDefinitions :: [Line] -> [Line]
 filterDefinitions [] = []
 filterDefinitions (l:ls)
-  | l == ""              = (filterDefinitions ls)
+  | l == ""              = "":(filterDefinitions ls)
   | fstChar == '\t'      = (filterDefinitions ls)
   | fstWord == "extends" = (filterDefinitions ls)
   | otherwise            = l:(filterDefinitions ls)
