@@ -2,6 +2,7 @@
 
 import qualified System.Environment as Env
 import qualified Data.IORef as Ref
+import qualified Data.Char as Char
 import GDScriptHandler
 
 main = do
@@ -24,7 +25,7 @@ genIndex rId fileName = do
   id <- Ref.readIORef rId
   putStr $ (show id) ++ ". "
   putStr $ "[" ++ takeBaseName fileName ++ "]"
-  putStr $ "(#" ++ takeBaseName fileName ++ ")\n"
+  putStr $ "(#" ++ (map Char.toLower $ takeBaseName fileName) ++ ")\n"
   Ref.writeIORef rId (id+1)
 
 genSection :: FilePath -> IO ()
@@ -37,7 +38,7 @@ genSection fileName = do
   putStr $ unlines $ map ("\t"++) $ map formatLine $ filterDefinitions l
   putStr "}\n"
   putStr "```\n"
-  putStr "[up](#table-of-contents)\n"
+  putStr "[up](#table-of-content)\n"
 
 takeBaseName :: FilePath -> String
 takeBaseName f = takeWhile (/='.') $ last $ splitIf (=='/') f
