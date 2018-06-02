@@ -1,18 +1,21 @@
 extends Node
 
-var hp
-var stamina
-var carryLoad
-var xp_gain
+var hp        # Max HP
+var stamina   # Max Stamina
+var carryLoad # Max Carry Load
+var xp_gain   # XP_Gain
 
-var cur_hp
-var cur_stamina
-var cur_carryLoad
+var cur_hp        # Current HP
+var cur_stamina   # Current Stamina
+var cur_carryLoad # Current CarryLoad
 
-var defense
+var defense # Defense's instance
 
-const Defense = preload("Defense.gd")
+const Defense = preload("Defense.gd") # Class reference
 
+###
+# Constructor
+###
 func _init():
 	self.hp        = 1
 	self.stamina   = 1
@@ -24,6 +27,9 @@ func _init():
 	defense = Defense.new(0, 0, 0)
 	self.add_child(defense)
 
+###
+# Causes _damege_ to the current HP
+###
 func takeDamage(damage):
 	self.cur_hp = min(0.0, self.cur_hp - damage)
 

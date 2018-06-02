@@ -1,9 +1,9 @@
 extends Node
 
-var attributes
-var armor
-var ring
-var weapon
+var attributes # Hero's attributes
+var armor      # Hero's current Armor
+var ring       # Hero's current Ring
+var weapon     # Hero's current Weapon
 #var trails
 
 const Weapon     = preload("Weapon.gd")
@@ -13,6 +13,9 @@ const Ring       = preload("Ring.gd")
 const Defense    = preload("Defense.gd")
 const Attack     = preload("Attack.gd")
 
+###
+# Constructor
+###
 func _init():
 	attributes = Attributes.new()
 	self.add_child(attributes)
@@ -21,6 +24,12 @@ func _init():
 	armor      = null
 	ring       = null
 
+###
+# Equips a new Armor if the weight allows it and
+# frees the old Armor if needed
+# return: True if successful
+#---------False otherwise
+###
 func setArmor(armor):
 	var s
 	if armor != null:
@@ -30,24 +39,46 @@ func setArmor(armor):
 	if s:
 		if armor != null: self.armor.queue_free()
 		self.armor = armor
-		return true
-	else:
-		return false
+	return s
 
+###
+# Equips a new Ring and
+# frees the old one if needed
+###
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
-
+###
+# Equips a new Weapon if the weight allows it and
+# frees the old Weapon
+# return: True if successful
+#---------False otherwise
+###
 func setWeapon(weapon):
-	self.weapon.queue_free()
-	self.weapon = weapon
+	var s
+	s = trySwap(self.weapon.weight, weapon.weight)
+	if s:
+		self.weapon.queue_free()
+		self.weapon = weapon
+	return s
 
+###
+# return: current carry load
+###
 func getCarryLoad():
 	return self.attributes.getCarryLoad()
 
+###
+# return: max carryload
+###
 func getMaxCarryLoad():
 	return self.attributes.getMaxCarryLoad()
 
+###
+# Calculates the real defense of the Hero
+# based on requipaments and attributes
+# return: new Defense's instance
+###
 func genDefense():
 	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
@@ -57,6 +88,11 @@ func genDefense():
 		defense = defense.sum(ring.power.defense)
 	return defense
 
+###
+# Generates a new instance of Attack base on
+# attributes and the current weapon
+# return: new Attack's instance
+###
 func genAttack():
 	var attack = weapon.genAttack()
 	var attAttack = attributes.genAttack(weapon.getAttackType())
@@ -64,6 +100,12 @@ func genAttack():
 	attAttack.queue_free()
 	return attack
 
+###
+# Calculates the damege of the _attack_,
+# discounts from the current HP and
+# returns the damege taken
+# return: damege take
+###
 func takeAttack(attack):
 	var defense = getDefense()
 	var damage  = defense.calcCombat(attack)
@@ -72,6 +114,9 @@ func takeAttack(attack):
 	attributes.takeDamage(damage)
 	return damage
 
+###
+# Increace Hero's level by one
+###
 func levelUp():
 	self.attributes.increment()
 

@@ -6,16 +6,28 @@ var thrust
 
 const Attack = preload("Attack.gd")
 
+###
+# Construcotr
+###
 func _init(s = 0, i = 0, t = 0):
 	self.slash  = s
 	self.impact = i
 	self.thrust = t
 
+###
+# Sums this instance with another
+# defense -> another instance
+###
 func add(defense):
 	self.slash  += defense.slash
 	self.impact += defense.impact
 	self.thrust += defense.thrust
 
+###
+# Returns a new instance that the some of this with the other
+# defense -> another innstance
+# return: new instance
+###
 func sum(defense):
 	var ret = self.new()
 	self.add_child(ret)
@@ -23,16 +35,22 @@ func sum(defense):
 	ret.add(defense)
 	return ret
 
+
+###
+# Calculates the damege caused by a attack to this defense
+# attack -> Attack instance
+# return: damege (>=0)
+###
 func calcCombat(attack):
-	var hp = 0
+	var damege = 0
 	match attack.type:
 		Attack.Slash:
-			hp = attack.damage - self.slash
+			damege = attack.damage - self.slash
 		Attack.Impact:
-			hp = attack.damage - self.impact
+			damege = attack.damage - self.impact
 		Attack.Thrust:
-			hp = attack.damage - self.thrust
-	return max(hp, 0)
+			damege = attack.damage - self.thrust
+	return max(damege, 0)
 
 func _ready():
 	pass
