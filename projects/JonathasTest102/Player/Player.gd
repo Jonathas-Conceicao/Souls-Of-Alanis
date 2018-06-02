@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const Hero = preload("Classes/Hero.gd")
-const Attack = preload("Classes/Attack.gd")
-const Weapon = preload("Classes/Weapon.gd")
+const Hero = preload("res://script/Classes/Hero.gd")
+const Attack = preload("res://script/Classes/Attack.gd")
+const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const UP = Vector2(0,-1)
 const GRAVITY = 10
