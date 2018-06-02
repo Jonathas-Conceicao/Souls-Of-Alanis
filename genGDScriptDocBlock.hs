@@ -28,7 +28,7 @@ filterDefinitions (l:ls)
 
 formatLine :: Line -> Line
 formatLine [] = []
-formatLine l = unwords $ words $ filterEq $ formatLine' l
+formatLine l = unwords $ words $ filterAttrib $ formatLine' l
   where
     formatLine' :: Line -> Line
     formatLine' [] = []
@@ -39,9 +39,10 @@ takeBaseName :: FilePath -> String
 takeBaseName f = takeWhile (/='.') $ last $ splitIf (=='/') f
 
 filterAttrib :: String -> String
+filterAttrib [] = []
 filterAttrib l@('v':'a':'r':_) = filterEq l
 filterAttrib l@('c':'o':'s':'t':_) = filterEq l
-filterAttrib l@('f':'u':'n':'c':' ':_) = l
+filterAttrib l = l
 
 filterEq :: String -> String
 filterEq [] = []
