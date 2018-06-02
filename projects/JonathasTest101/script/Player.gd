@@ -8,7 +8,8 @@ const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
 
-var SPEED = 350
+var MAXSPEED = 350
+var speed = 350
 var direction
 var velocity = Vector2()
 
@@ -21,8 +22,8 @@ var state_leeping = false
 
 var data
 
-var energy    = SPEED
-var energy_ps = SPEED/5
+var energy    = speed
+var energy_ps = speed/5
 
 func _ready():
 	data = Hero.new()
@@ -53,13 +54,13 @@ func _input(event):
 		handleMoviment(0)
 	elif Input.is_action_pressed("ui_left"):
 		handleMoviment(1)
-	elif event.is_action_pressed("ui_leep"):
-		handleMoviment(4)
 	else:
 		handleMoviment(2)
 
 	if event.is_action_pressed("ui_up"):
 		handleMoviment(3)
+	elif event.is_action_pressed("ui_leep"):
+		handleMoviment(4)
 	else:
 		handleMoviment(5)
 
@@ -93,12 +94,12 @@ func handleMoviment(k):
 	match k:
 		0: # ui_right
 			if not state_leeping:
-				velocity.x = SPEED
+				velocity.x = speed
 				state_moving_x = true
 				state_flipped = false
 		1: # ui_left
 			if not state_leeping:
-				velocity.x = -SPEED
+				velocity.x = -speed
 				state_moving_x = true
 				state_flipped = true
 		2: # not moving x
@@ -107,18 +108,18 @@ func handleMoviment(k):
 				state_moving_x = false
 		3: # ui_up
 			if is_on_floor():
-				velocity.y = -SPEED
+				velocity.y = -speed
 				state_moving_y = true
 			elif is_on_wall():
-				velocity.y = -SPEED
+				velocity.y = -speed
 				energy = 0
 				state_moving_y = true
 		4: # ui_leep
-			if is_on_floor() && energy > (SPEED/2):
+			if is_on_floor() && energy > (speed/2):
 				if state_flipped:
-					velocity.x -= energy
+					velocity.x = - energy
 				else:
-					velocity.x += energy
+					velocity.x = energy
 				velocity.y = -energy
 				energy = 0
 				state_moving_x = true
@@ -131,6 +132,7 @@ func update_velocity():
 	if is_on_floor() && velocity.y >= 0:
 		velocity.y = 40
 		state_moving_y = false
+		state_leeping = false
 		if state_leeping:
 			velocity.x = 0
 			state_moving_x = false
@@ -176,7 +178,7 @@ func _on_Animation_animation_finished(anim_name):
 
 
 func _on_Energy_timeout():
-	energy = min(energy + energy_ps, SPEED)
+	energy = min(energy + energy_ps, speed)
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
