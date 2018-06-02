@@ -40,8 +40,8 @@ takeBaseName f = takeWhile (/='.') $ last $ splitIf (=='/') f
 
 filterAttrib :: String -> String
 filterAttrib [] = []
-filterAttrib l@('v':'a':'r':_) = filterEq l
-filterAttrib l@('c':'o':'s':'t':_) = filterEq l
+filterAttrib l@('v':'a':'r':ls) = filterEq l
+filterAttrib l@('c':'o':'n':'s':'t':ls) = filterEq l
 filterAttrib l = l
 
 filterEq :: String -> String
