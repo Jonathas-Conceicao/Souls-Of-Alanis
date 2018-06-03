@@ -4,22 +4,31 @@
 [ext_resource path="res://Player/art/HUD/HP_HUD.png" type="Texture" id=2]
 [ext_resource path="res://Player/art/HUD/Stamina_HUD.png" type="Texture" id=3]
 
-[node name="HUD" type="Sprite" index="0"]
+[node name="HUD" type="CanvasLayer" index="0"]
 
-texture = ExtResource( 1 )
-offset = Vector2( 0.490692, 0.516601 )
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="HealthBar" type="TextureProgress" parent="." index="0"]
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 37.5, 20.5 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="HealthBar" type="TextureProgress" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -17.0
-margin_top = 5.0
-margin_right = 39.0
-margin_bottom = 8.0
+margin_left = 20.0
+margin_top = 25.0
+margin_right = 76.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -41,16 +50,16 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Textures", "Visibility" ]
 
-[node name="StaminaBar" type="TextureProgress" parent="." index="1"]
+[node name="StaminaBar" type="TextureProgress" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -17.0
-margin_top = 9.0
-margin_right = 26.0
-margin_bottom = 12.0
+margin_left = 20.0
+margin_top = 29.0
+margin_right = 63.0
+margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -72,16 +81,16 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Textures", "Visibility" ]
 
-[node name="SoulsCount" type="Label" parent="." index="2"]
+[node name="SoulsCount" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -33.0
-margin_top = 4.0
-margin_right = -19.0
-margin_bottom = 18.0
+margin_left = 4.0
+margin_top = 24.0
+margin_right = 18.0
+margin_bottom = 38.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

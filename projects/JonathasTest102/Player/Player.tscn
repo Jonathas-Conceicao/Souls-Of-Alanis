@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://Player/art/Player/Attaking_RougueLegacyi10.png" type="Texture" id=68]
 [ext_resource path="res://Player/art/Player/Attaking_RougueLegacyi11.png" type="Texture" id=69]
 [ext_resource path="res://Player/Sword.tscn" type="PackedScene" id=70]
+[ext_resource path="res://Player/HUD.tscn" type="PackedScene" id=71]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -323,6 +324,34 @@ audio_bus_name = "Master"
 position = Vector2( 0, 39 )
 shape = SubResource( 8 )
 one_way_collision = true
+
+[node name="HUD" parent="." index="6" instance=ExtResource( 71 )]
+
+[node name="Camera2D" type="Camera2D" parent="." index="7"]
+
+position = Vector2( 0, -90 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 
