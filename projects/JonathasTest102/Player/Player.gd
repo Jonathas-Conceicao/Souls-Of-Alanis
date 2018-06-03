@@ -24,9 +24,6 @@ var state_leeping = false
 
 var data
 
-var energy    = MAXENERGY
-var energy_ps = energy / 5
-
 func _ready():
 	data = Hero.new()
 	self.add_child(data)
@@ -67,15 +64,16 @@ func _input(event):
 		handleMoviment(5)
 
 func _physics_process(delta):
+	update_hud()
 	update_velocity()
 	update_animation()
 	move_and_slide(velocity, UP)
 
 func processDebug():
-	data.levelUp()
-	print("Data:", data)
-	print("Current Carry Load:", data.getCarryLoad())
-	print("Max     Carry Load:", data.getMaxCarryLoad())
+	data.attributes.power.stamina += 10
+	data.attributes.power.updateCurrent()
+	print("Current Stamina:", data.getStamina())
+	print("Max     Stamina:", data.getMaxStamina())
 
 func switchWeapon(type):
 	match type:
@@ -113,17 +111,18 @@ func handleMoviment(k):
 				velocity.y = -speed
 				state_moving_y = true
 			elif is_on_wall():
-				velocity.y = -energy
-				energy = 0
+				velocity.y = -data.getStamina()
+				data.setStamina(0)
 				state_moving_y = true
 		4: # ui_leep
-			if is_on_floor() && energy > (speed/2):
+			var energy = data.getStamina()
+			if is_on_floor():
 				if state_flipped:
 					velocity.x = - energy
 				else:
 					velocity.x = energy
 				velocity.y = -energy
-				energy = 0
+				data.setStamina(0)
 				state_moving_x = true
 				state_moving_y = true
 				state_leeping = true
@@ -169,6 +168,19 @@ func update_flip():
 		$Sword.animation_flip()
 		flipped = state_flipped
 
+func update_hud():
+	var hpMax = data.getMaxHP()
+	var hpCur = data.getHP()
+	var hpP = calcPercentage(hpMax, hpCur)
+	var stMax = data.getMaxStamina()
+	var stCur = data.getStamina()
+	var staminaP = calcPercentage(stMax, stCur)
+	$HUD.setHP(hpP)
+	$HUD.setStamina(staminaP)
+
+func calcPercentage(h, l):
+	return (l*100)/h
+
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
 		$Animation.play(animation)
@@ -179,7 +191,9 @@ func _on_Animation_animation_finished(anim_name):
 		state_attacking = false
 
 func _on_Energy_timeout():
-	energy = min(energy + energy_ps, MAXENERGY)
+	var energy = data.getStamina()
+	var energy_per_tick = max(1, data.getMaxStamina() / 30)
+	data.setStamina(energy + energy_per_tick)
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)

@@ -264,7 +264,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 28, 1 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -305,7 +305,7 @@ blend_times = [  ]
 [node name="Energy" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 0.05
 one_shot = false
 autostart = true
 
