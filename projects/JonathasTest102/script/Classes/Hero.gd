@@ -25,6 +25,13 @@ func _init():
 	ring       = null
 
 ###
+# Set stamina tu value
+# st -> stamina value
+###
+func setStamina(st):
+	self.attributes.setStamina(st)
+
+###
 # Equips a new Armor if the weight allows it and
 # frees the old Armor if needed
 # return: True if successful
@@ -48,6 +55,7 @@ func setArmor(armor):
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
+
 ###
 # Equips a new Weapon if the weight allows it and
 # frees the old Weapon
@@ -75,6 +83,30 @@ func getMaxCarryLoad():
 	return self.attributes.getMaxCarryLoad()
 
 ###
+# return: current HP
+###
+func getHP():
+	return self.attributes.getHP()
+
+###
+# return: max HP
+###
+func getMaxHP():
+	return self.attributes.getMaxHP()
+
+###
+# return: current Stamina
+###
+func getStamina():
+	return self.attributes.getStamina()
+
+###
+# return: max Stamina
+###
+func getMaxStamina():
+	return self.attributes.getMaxStamina()
+
+
 # Calculates the real defense of the Hero
 # based on requipaments and attributes
 # return: new Defense's instance

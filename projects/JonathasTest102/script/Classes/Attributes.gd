@@ -55,6 +55,8 @@ func updatePower():
 	power.defense.slash  = influence(3, 1, 1, 0)
 	power.defense.impact = influence(3, 2, 0, 0)
 	power.defense.thrust = influence(3, 0, 2, 0)
+	power.updateCurrent()
+
 
 ###
 # Returns a new instance of attack based on the attributes
@@ -88,6 +90,14 @@ func trySwap(cur_w, new_w):
 		return true
 	else:
 		return false
+
+###
+# Set stamina tu value
+# st -> stamina value
+###
+func setStamina(st):
+	self.power.setStamina(st)
+
 ###
 # return: the current carry load
 ###
@@ -99,6 +109,31 @@ func getCarryLoad():
 ###
 func getMaxCarryLoad():
 	return self.power.carryLoad
+
+###
+# return: current HP
+###
+func getHP():
+	return self.power.getHP()
+
+###
+# return: max HP
+###
+func getMaxHP():
+	return self.power.getMaxHP()
+
+###
+# return: current Stamina
+###
+func getStamina():
+	return self.power.getStamina()
+
+###
+# return: max Stamina
+###
+func getMaxStamina():
+	return self.power.getMaxStamina()
+
 
 ###
 # Discounts a value from the HP

@@ -27,6 +27,41 @@ func _init():
 	defense = Defense.new(0, 0, 0)
 	self.add_child(defense)
 
+func updateCurrent():
+	self.cur_hp = self.hp
+	self.cur_stamina = self.stamina
+###
+# Set stamina tu value
+# st -> stamina value
+###
+func setStamina(st):
+	self.cur_stamina = max(1, min(st, stamina))
+
+###
+# return: current HP
+###
+func getHP():
+	return self.cur_hp
+
+###
+# return: max HP
+###
+func getMaxHP():
+	return self.hp
+
+###
+# return: current Stamina
+###
+func getStamina():
+	return self.cur_stamina
+
+###
+# return: max Stamina
+###
+func getMaxStamina():
+	return self.stamina
+
+
 ###
 # Causes _damege_ to the current HP
 ###
