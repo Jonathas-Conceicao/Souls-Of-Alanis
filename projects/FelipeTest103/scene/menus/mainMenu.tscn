@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://script/mainMenu.gd" type="Script" id=1]
+[ext_resource path="res://script/menus/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://art/mainMenu/title.png" type="Texture" id=2]
 [ext_resource path="res://art/mainMenu/label_new_game.png" type="Texture" id=3]
 [ext_resource path="res://art/mainMenu/label_continue.png" type="Texture" id=4]

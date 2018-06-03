@@ -5,5 +5,9 @@
 # Vim aux file
 tags
 
+# Emacs
+*~
+\#*\#
+
 *.zip
 *.pdf

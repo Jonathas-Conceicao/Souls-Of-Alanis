@@ -4,7 +4,7 @@
 [ext_resource path="res://Helpers/Prelude/art/SunsetTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 

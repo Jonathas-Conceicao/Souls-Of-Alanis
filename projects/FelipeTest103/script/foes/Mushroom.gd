@@ -6,6 +6,7 @@ const SPEED = 150
 var velocity = Vector2()
 
 enum Direction { RIGHT, LEFT }
+
 enum STATE {
 	IDLE,
 	HITED
@@ -29,7 +30,7 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 
 	if dir == Direction.RIGHT:
-		
+
 		if !ray_right.is_colliding() and ray_right_down.is_colliding():
 			velocity.x = SPEED
 		else:
@@ -39,7 +40,7 @@ func _physics_process(delta):
 					dir = Direction.LEFT
 			else:
 				dir = Direction.LEFT
-	
+
 	if dir == Direction.LEFT:
 		if !ray_left.is_colliding() and ray_left_down.is_colliding():
 			velocity.x = -SPEED
@@ -50,17 +51,21 @@ func _physics_process(delta):
 					dir = Direction.RIGHT
 			else:
 				dir = Direction.RIGHT
-	
+
 	if (ray_up.is_colliding()):
 		shape = ray_up.get_collider()
 		if (shape):
 			if (shape.get_class() != "Area2D"):
 				queue_free()
-	
+
 	move_and_slide(velocity, UP)
-	
+
 	pass
-	
+
 func _on_meele_hit(hitter):
 	state = HITED
-	print("Hitted by:", hitter.get_name())
+	pass
+
+func _on_foot(hitter):
+	queue_free()
+	pass
