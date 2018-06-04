@@ -100,6 +100,7 @@ animations = [ {
 "name": "Attaking",
 "speed": 13.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
 

@@ -14,7 +14,6 @@ enum DIRECTIONS { RIGHT, LEFT }
 
 var direction = RIGHT
 var movement = PATROL
-var attack
 var velocity = Vector2()
 
 var data
@@ -54,7 +53,7 @@ func update_velocity():
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
-	print("Player recived ", damage, " from: ", agressor.get_name())
+	print("Mushroom recived ", damage, " from: ", agressor.get_name())
 	pass
 
 func _on_takeFoot(agressor):
@@ -91,3 +90,6 @@ func act_patrol():
 		if (shape):
 			if (shape.get_class() != "Area2D"):
 				queue_free()
+
+func act_idle():
+     pass
