@@ -7,8 +7,7 @@
 [ext_resource path="res://scene/InitialDialog.gd" type="Script" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/MageNPC.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/Area2D.gd" type="Script" id=8]
-
+[ext_resource path="res://script/Area2D.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,7 +19,7 @@ extents = Vector2( 26.5149, 10.0596 )
 custom_solver_bias = 0.0
 extents = Vector2( 98.3213, 18.4483 )
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 [node name="WizardNPC" parent="." index="0" instance=ExtResource( 1 )]
 
