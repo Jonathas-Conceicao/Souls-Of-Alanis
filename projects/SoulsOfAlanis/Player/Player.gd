@@ -71,7 +71,9 @@ func _physics_process(delta):
 
 func processDebug():
 	data.attributes.power.stamina += 10
+	data.attributes.strength += 1
 	data.attributes.power.updateCurrent()
+	print("Strength       :", data.attributes.strength)
 	print("Current Stamina:", data.getStamina())
 	print("Max     Stamina:", data.getMaxStamina())
 
