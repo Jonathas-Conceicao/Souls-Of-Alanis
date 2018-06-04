@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scene/LargeRoom1.gd" type="Script" id=1]
 [ext_resource path="res://art/frogatto-cloud-example.png" type="Texture" id=2]
 [ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://scene/Switch2.gd" type="Script" id=4]
-[ext_resource path="res://art/icon.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://art/dialogI.png" type="Texture" id=6]
-[ext_resource path="res://scene/Area2D.gd" type="Script" id=7]
-[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scene/moving_platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://script/Area2D.gd" type="Script" id=7]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -63,7 +62,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Switch" type="Area2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 3703.23, 630.831 )
 scale = Vector2( 6.74234, 5.42762 )
 input_pickable = false
@@ -1084,7 +1082,7 @@ position = Vector2( 3595.78, 694.358 )
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="5"]
 
-position = Vector2( 1.51343, -22.547 )
+position = Vector2( 2773.35, 1799.58 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -1107,9 +1105,5 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-
-[node name="moving_platform" parent="." index="6" instance=ExtResource( 9 )]
-
-position = Vector2( 2773.35, 1799.58 )
 
 
