@@ -19,10 +19,10 @@ var velocity = Vector2()
 
 var data
 
-onready var ray_right      = get_node( "RayCastRight")
-onready var ray_left       = get_node( "RayCastLeft" )
+onready var ray_right = get_node( "RayCastRight")
+onready var ray_left = get_node( "RayCastLeft" )
 onready var ray_right_down = get_node( "RayCastRightDown" )
-onready var ray_left_down  = get_node( "RayCastLeftDown" )
+onready var ray_left_down = get_node( "RayCastLeftDown" )
 
 
 func _ready():
@@ -35,7 +35,6 @@ func _physics_process(delta):
 	update_velocity()
 	act()
 	pass
-
 
 func act():
 	if movement == PATROL:
@@ -54,11 +53,7 @@ func update_velocity():
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
-	print("Mushroom recived ", damage, " from: ", agressor.get_name())
-	pass
-
-func _on_takeFoot(agressor):
-	queue_free()
+	print("Gnome recived ", damage, " from: ", agressor.get_name())
 	pass
 
 func act_patrol():
