@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scene/LargeRoom1.gd" type="Script" id=1]
 [ext_resource path="res://art/frogatto-cloud-example.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://art/icon.png" type="Texture" id=5]
 [ext_resource path="res://art/dialogI.png" type="Texture" id=6]
 [ext_resource path="res://scene/Area2D.gd" type="Script" id=7]
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/moving_platform.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,7 +30,7 @@ extents = Vector2( 11.3518, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="BigFuckingRoom" type="Node" index="0"]
+[node name="BigFuckingRoom" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -814,7 +816,28 @@ position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D19" type="StaticBody2D" parent="FloorCollision" index="9"]
+[node name="StaticBody2D20" type="StaticBody2D" parent="FloorCollision" index="9"]
+
+position = Vector2( 2919.01, 1386.3 )
+scale = Vector2( 2.5101, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FloorCollision/StaticBody2D20" index="0"]
+
+position = Vector2( 335.639, 0 )
+scale = Vector2( 30.945, 1 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="FloorCollision" index="10"]
 
 position = Vector2( 2184.55, 745.719 )
 scale = Vector2( 2.5101, 1 )
@@ -835,7 +858,7 @@ position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="FloorCollision" index="10"]
+[node name="StaticBody2D10" type="StaticBody2D" parent="FloorCollision" index="11"]
 
 position = Vector2( 1155.71, 1865.11 )
 scale = Vector2( 2.5101, 1 )
@@ -856,7 +879,7 @@ position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D18" type="StaticBody2D" parent="FloorCollision" index="11"]
+[node name="StaticBody2D18" type="StaticBody2D" parent="FloorCollision" index="12"]
 
 position = Vector2( 1155.71, 1865.11 )
 scale = Vector2( 2.5101, 1 )
@@ -877,7 +900,7 @@ position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="FloorCollision" index="12"]
+[node name="StaticBody2D7" type="StaticBody2D" parent="FloorCollision" index="13"]
 
 position = Vector2( 2065.87, 1109.44 )
 scale = Vector2( 2.5101, 1 )
@@ -898,7 +921,7 @@ position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="FloorCollision" index="13"]
+[node name="StaticBody2D8" type="StaticBody2D" parent="FloorCollision" index="14"]
 
 position = Vector2( 2289.38, 1237.2 )
 scale = Vector2( 2.5101, 1 )
@@ -919,7 +942,7 @@ position = Vector2( 18.7616, 0 )
 scale = Vector2( 3.25732, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="FloorCollision" index="14"]
+[node name="StaticBody2D6" type="StaticBody2D" parent="FloorCollision" index="15"]
 
 position = Vector2( 1873.92, 1141.4 )
 scale = Vector2( 2.5101, 1 )
@@ -940,7 +963,7 @@ position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="FloorCollision" index="15"]
+[node name="StaticBody2D5" type="StaticBody2D" parent="FloorCollision" index="16"]
 
 position = Vector2( 1681.71, 1108.83 )
 scale = Vector2( 2.5101, 1 )
@@ -961,7 +984,7 @@ position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="FloorCollision" index="16"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="FloorCollision" index="17"]
 
 position = Vector2( 1490.36, 1077.07 )
 scale = Vector2( 2.5101, 1 )
@@ -982,7 +1005,7 @@ position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="FloorCollision" index="17"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="FloorCollision" index="18"]
 
 position = Vector2( 1298.26, 1077.95 )
 scale = Vector2( 2.5101, 1 )
@@ -1054,5 +1077,40 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Player" parent="." index="5" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+position = Vector2( 2481.46, 1341.09 )
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="5"]
+
+position = Vector2( 1.51343, -22.547 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="moving_platform" parent="." index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 2773.35, 1799.58 )
 
 
