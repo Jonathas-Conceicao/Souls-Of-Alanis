@@ -1,17 +1,23 @@
 extends Node
 
-var vitality
+var vitality  
 var strength
 var agility
 var wisdom
+var update = 0 # Used for the clock lvl up
 
-var power
+var power # Attribute's Power instance
 
-var update = 0
+const Power  = preload("Power.gd")  # Class reference
+const Attack = preload("Attack.gd") # Class reference
 
-const Power  = preload("Power.gd")
-const Attack = preload("Attack.gd")
-
+###
+# Constructor
+# v -> vitalidade
+# s -> strength
+# a -> agility
+# w -> wisdom
+###
 func _init(v = 1, s = 1, a = 1, w = 1):
 	self.vitality = v
 	self.strength = s
@@ -21,6 +27,10 @@ func _init(v = 1, s = 1, a = 1, w = 1):
 	self.add_child(power)
 	updatePower()
 
+###
+# Increments the attributes in clock
+# n -> number of level ups
+###
 func increment(n=1):
 	for i in range(n):
 		match update:
@@ -35,6 +45,9 @@ func increment(n=1):
 		update = (update+1) % 4
 	updatePower()
 
+###
+# Update de power values
+###
 func updatePower():
 	power.hp             = influence(10, 0, 0, 0)
 	power.carryLoad      = influence(0, 10, 0, 0)
@@ -43,6 +56,11 @@ func updatePower():
 	power.defense.impact = influence(3, 2, 0, 0)
 	power.defense.thrust = influence(3, 0, 2, 0)
 
+###
+# Returns a new instance of attack based on the attributes
+# attackType -> Attack's type
+# return: new Attack instance
+###
 func genAttack(attackType):
 	var damage = 0
 	match attackType:
@@ -54,6 +72,13 @@ func genAttack(attackType):
 			damage = influence(0, 2, 2, 0)
 	return (Attack.new(attackType, damage))
 
+###
+# Tries to change an item based on it's weight
+# cur_w -> weight of the currently equipped item
+# new_w -> weight of the item to be equipped
+# return: True if successeful
+#          False otherwise
+###
 func trySwap(cur_w, new_w):
 	var tCarryLoad = self.power.cur_carryLoad
 	tCarryLoad -= cur_w
@@ -63,22 +88,37 @@ func trySwap(cur_w, new_w):
 		return true
 	else:
 		return false
-
+###
+# return: the current carry load
+###
 func getCarryLoad():
 	return self.power.cur_carryLoad
 
+###
+# return: the maximum carry load
+###
 func getMaxCarryLoad():
 	return self.power.carryLoad
 
+###
+# Discounts a value from the HP
+# return:
+###
 func takeDamage(damage):
 	self.power.takeDamage(damage)
 
+###
+# Internally used to calculate influence of each attribute
+###
 func influence(v, s, a, w):
 	return ((vitality * v) +
 			(strength * s) +
 			(agility * a)  +
 			(wisdom * w))
 
+###
+# Empty
+###
 func _ready():
 	pass
 

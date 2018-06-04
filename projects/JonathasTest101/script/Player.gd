@@ -1,112 +1,173 @@
 extends KinematicBody2D
 
-const UP = Vector2(0,-1)
-const GRAVITY = 10
-const FLIPPING_SCALE = Vector2(-1, 1)
-var velocity = Vector2()
-
-var attaking = false
-var leeping = false
-
-var flipped = false
-
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
-var data
-var SPEED = 350
+const UP = Vector2(0,-1)
+const GRAVITY = 10
+const FLIPPING_SCALE = Vector2(-1, 1)
 
-var energy    = SPEED
-var energy_ps = SPEED/5
+const MAXSPEED = 350
+const MAXENERGY = MAXSPEED * 1.5
+
+var speed = 350
+var direction
+var velocity = Vector2()
+
+var flipped = false
+var state_flipped = false
+var state_moving_x = false
+var state_moving_y = false
+var state_attacking = false
+var state_leeping = false
+
+var data
+
+var energy    = MAXENERGY
+var energy_ps = energy / 5
 
 func _ready():
 	data = Hero.new()
 	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-	print("Current Carry Load:", data.getCarryLoad())
-	print("Max     Carry Load:", data.getMaxCarryLoad())
+	set_process(true)
+	set_process_input(true)
 
+func _input(event):
+	# Handle test actions
+	if event.is_action_pressed("ui_debug"):
+		processDebug()
+
+	# Handle weapon swaping
+	if   event.is_action_pressed("ui_select_weapon_0"):
+		switchWeapon(0)
+	elif event.is_action_pressed("ui_select_weapon_1"):
+		switchWeapon(1)
+	elif event.is_action_pressed("ui_select_weapon_2"):
+		switchWeapon(2)
+
+	# Handle attack
+	if event.is_action_pressed("ui_attack"):
+		handleAttack()
+
+	# Handle moviment
+	if   Input.is_action_pressed("ui_right"):
+		handleMoviment(0)
+	elif Input.is_action_pressed("ui_left"):
+		handleMoviment(1)
+	else:
+		handleMoviment(2)
+
+	if event.is_action_pressed("ui_up"):
+		handleMoviment(3)
+	elif event.is_action_pressed("ui_leep"):
+		handleMoviment(4)
+	else:
+		handleMoviment(5)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_debug"):
-		runDebug()
-	switchWeapon()
 	update_velocity()
 	update_animation()
 	move_and_slide(velocity, UP)
 
-func runDebug():
+func processDebug():
 	data.levelUp()
 	print("Data:", data)
 	print("Current Carry Load:", data.getCarryLoad())
 	print("Max     Carry Load:", data.getMaxCarryLoad())
 
-func switchWeapon():
-	if Input.is_action_just_pressed("ui_select_weapon_1"):
-		print("Holding a Sword")
-		data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-	elif Input.is_action_just_pressed("ui_select_weapon_2"):
-		print("Holding a Axe")
-		data.setWeapon(Weapon.new(0, Attack.Impact, 20))
-	elif Input.is_action_just_pressed("ui_select_weapon_3"):
-		print("Holding a Spear")
-		data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
+func switchWeapon(type):
+	match type:
+		0:
+			data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+			print("Holding a Sword")
+		1:
+			data.setWeapon(Weapon.new(0, Attack.Impact, 20))
+			print("Holding a Axe")
+		2:
+			data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
+			print("Holding a Spear")
+
+func handleAttack():
+	state_attacking = true
+
+func handleMoviment(k):
+	match k:
+		0: # ui_right
+			if not state_leeping:
+				velocity.x = speed
+				state_moving_x = true
+				state_flipped = false
+		1: # ui_left
+			if not state_leeping:
+				velocity.x = -speed
+				state_moving_x = true
+				state_flipped = true
+		2: # not moving x
+			if not state_leeping:
+				velocity.x = 0
+				state_moving_x = false
+		3: # ui_up
+			if is_on_floor():
+				velocity.y = -speed
+				state_moving_y = true
+			elif is_on_wall():
+				velocity.y = -energy
+				energy = 0
+				state_moving_y = true
+		4: # ui_leep
+			if is_on_floor() && energy > (speed/2):
+				if state_flipped:
+					velocity.x = - energy
+				else:
+					velocity.x = energy
+				velocity.y = -energy
+				energy = 0
+				state_moving_x = true
+				state_moving_y = true
+				state_leeping = true
+		5: # not moving y
+			state_moving_y = false
 
 func update_velocity():
-	if is_on_floor():
+	if is_on_floor() && velocity.y >= 0:
 		velocity.y = 40
-		leeping = false
-		if Input.is_action_just_pressed("ui_up"):
-			velocity.y = - SPEED
+		state_moving_y = false
+		state_leeping = false
+		if state_leeping:
+			velocity.x = 0
+			state_moving_x = false
+			state_leeping = false
 	else:
 		velocity.y += GRAVITY
 		if is_on_ceiling():
 			velocity.y = 0
-	if is_on_wall():
-		if Input.is_action_pressed("ui_up"):
-			velocity.y -= energy
-			energy = 0
-	if Input.is_action_just_pressed("ui_attak") && !attaking:
-		attaking = true
-	if Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
-	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED
-	elif Input.is_action_just_pressed("ui_leep") && energy > (SPEED/2) && is_on_floor():
-		if flipped:
-			velocity.x -= energy
-		else:
-			velocity.x += energy
-		velocity.y -= energy
-		energy = 0
-		leeping = true
-	elif !leeping:
+		state_moving_y = true
+	if not state_moving_x:
 		velocity.x = 0
 
 func update_animation():
-	if velocity.x > 0 && !attaking:
-		flip_animation(false)
-	elif velocity.x < 0 && !attaking:
-		flip_animation(true)
-	if attaking:
+	if state_attacking:
 		set_animation("Attaking")
-	elif is_on_floor():
-		if velocity.x != 0:
-			set_animation("Moving")
+	else:
+		update_flip()
+		if state_moving_y:
+			if velocity.y <= 0:
+				set_animation("Jumping")
+			else:
+				set_animation("Falling")
+		elif state_moving_x:
+			if velocity.x != 0:
+				set_animation("Moving")
 		else:
 			set_animation("Idle")
-	else:
-		if velocity.y <= 0:
-			set_animation("Jumping")
-		else:
-			set_animation("Falling")
 
-func flip_animation(b):
-	if flipped != b:
+func update_flip():
+	if state_flipped != flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
-		flipped = b
+		flipped = state_flipped
 
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
@@ -115,11 +176,11 @@ func set_animation(animation):
 
 func _on_Animation_animation_finished(anim_name):
 	if $Sprite.animation == "Attaking":
-		attaking = false
+		state_attacking = false
 
 
 func _on_Energy_timeout():
-	energy = min(energy + energy_ps, SPEED)
+	energy = min(energy + energy_ps, MAXENERGY)
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)

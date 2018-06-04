@@ -4,7 +4,6 @@
 [ext_resource path="res://scene/TileSet.res" type="TileSet" id=2]
 [ext_resource path="res://scene/MageNPC.tscn" type="PackedScene" id=3]
 
-
 [node name="Demo Quest Room" type="Node" index="0"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
