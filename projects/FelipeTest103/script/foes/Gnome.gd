@@ -6,7 +6,7 @@ const Attack = preload ("res://script/classes/Attack.gd")
 
 const UP = Vector2(0,-1)
 const GRAVITY = 20
-const SPEED = 150
+const SPEED = 100
 const MAXSPEED = 300
 const FLIPPING_SCALE = Vector2(-1, 1)
 
@@ -19,10 +19,10 @@ var velocity = Vector2()
 
 var data
 
-onready var ray_right = get_node( "RayCastRight")
-onready var ray_left = get_node( "RayCastLeft" )
+onready var ray_right      = get_node( "RayCastRight")
+onready var ray_left       = get_node( "RayCastLeft" )
 onready var ray_right_down = get_node( "RayCastRightDown" )
-onready var ray_left_down = get_node( "RayCastLeftDown" )
+onready var ray_left_down  = get_node( "RayCastLeftDown" )
 
 
 func _ready():
@@ -64,9 +64,10 @@ func act_patrol():
 		else:
 			if ray_right.is_colliding():
 				shape = ray_right.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.LEFT
-					$Sprite.apply_scale(FLIPPING_SCALE)
+				if (shape):
+					if (shape.get_class() != "Area2D"):
+						direction = DIRECTIONS.LEFT
+						$Sprite.apply_scale(FLIPPING_SCALE)
 			else:
 				direction = DIRECTIONS.LEFT
 				$Sprite.apply_scale(FLIPPING_SCALE)
@@ -77,9 +78,10 @@ func act_patrol():
 		else:
 			if ray_left.is_colliding():
 				shape = ray_left.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.RIGHT
-					$Sprite.apply_scale(FLIPPING_SCALE)
+				if (shape):
+					if (shape.get_class() != "Area2D"):
+						direction = DIRECTIONS.RIGHT
+						$Sprite.apply_scale(FLIPPING_SCALE)
 			else:
 				direction = DIRECTIONS.RIGHT
 				$Sprite.apply_scale(FLIPPING_SCALE)
