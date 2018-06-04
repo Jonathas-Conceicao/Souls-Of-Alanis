@@ -13,11 +13,12 @@ const Attack = preload("Attack.gd") # Class reference
 
 ###
 # Constructor
-# v -> vitalidade
+# v -> vitality
 # s -> strength
 # a -> agility
 # w -> wisdom
 ###
+
 func _init(v = 1, s = 1, a = 1, w = 1):
 	self.vitality = v
 	self.strength = s
