@@ -88,3 +88,10 @@ func act_patrol():
 
 func act_idle():
      pass
+
+
+func _on_CollisionShape2D_tree_entered(body):
+	if body != self && body.has_method("_on_takeDamage"):
+		var attack = data.genAttack()
+		body._on_takeDamage(self, attack)
+	pass # replace with function body
