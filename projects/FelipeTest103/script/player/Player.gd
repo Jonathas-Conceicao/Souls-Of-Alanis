@@ -206,4 +206,5 @@ func _on_SwordHit(body, id):
 
 func _on_Stepping_body_entered(body):
 	if body != self && body.has_method("_on_takeFoot"):
-		body._on_takeFoot(self)
+		if velocity.y > 0:
+			body._on_takeFoot(self)

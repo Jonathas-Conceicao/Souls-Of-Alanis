@@ -3,7 +3,7 @@
 [ext_resource path="res://script/foes/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://art/characters/mushroom.png" type="Texture" id=2]
 
-[node name="Mushroom" type="KinematicBody2D"]
+[node name="Mushroom" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -101,7 +101,7 @@ __meta__ = {
 
 position = Vector2( 0, -6 )
 rotation = 3.14159
-scale = Vector2( 10, 1.5 )
+scale = Vector2( 15, 1.5 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 5 )
