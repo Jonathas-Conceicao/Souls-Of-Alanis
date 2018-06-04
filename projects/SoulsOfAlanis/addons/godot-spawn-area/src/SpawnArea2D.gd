@@ -13,11 +13,14 @@ func _ready():
 	randomize()
 
 	place_mob(pick_rand())
+	place_mob(pick_rand())
+	place_mob(pick_rand())
+	place_mob(pick_rand())
 
 	pass
 
 func pick_rand():
-	return self.MobList[0]
+	return self.MobList[rand_range(0, self.MobList.size() -1)]
 #	return self.Mob
 	pass
 
@@ -35,8 +38,14 @@ func place_mob(mobClass):
 	var mob = mobClass.instance()
 	add_child(mob)
 
-	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))
-	var l_y = rand_range(0,                        (rect_size.y) - (mob.get_size().y/2))
+	
+
+#	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))
+#	var l_y = rand_range(0,                        (rect_size.y) - (mob.get_size().y/2))
+
+	var l_x = rand_range(0, rect_size.x)
+	var l_y = rand_range(0, rect_size.y)
+
 
 	# no specification means the mob can fly
 	if (self.FlyEnabled && (!mob.has_method("is_ranger") || !mob.is_ranger())):

@@ -75,7 +75,7 @@ func takeAttack(attack):
 	return damage
 
 func get_size():
-	get_parent().get_node("Pivot").get_node("Sprite").regio_rect.size
+	get_parent().get_node("Pivot").get_node("Body").region_rect.size
 
 func _ready():
 	pass

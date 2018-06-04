@@ -67,10 +67,10 @@ func act_patrol():
 				if (shape):
 					if (shape.get_class() != "Area2D"):
 						direction = DIRECTIONS.LEFT
-						$Sprite.apply_scale(FLIPPING_SCALE)
+						$Pivot/Body.apply_scale(FLIPPING_SCALE)
 			else:
 				direction = DIRECTIONS.LEFT
-				$Sprite.apply_scale(FLIPPING_SCALE)
+				$Pivot/Body.apply_scale(FLIPPING_SCALE)
 
 	if direction == DIRECTIONS.LEFT:
 		if !ray_left.is_colliding() and ray_left_down.is_colliding():
@@ -81,10 +81,10 @@ func act_patrol():
 				if (shape):
 					if (shape.get_class() != "Area2D"):
 						direction = DIRECTIONS.RIGHT
-						$Sprite.apply_scale(FLIPPING_SCALE)
+						$Pivot/Body.apply_scale(FLIPPING_SCALE)
 			else:
 				direction = DIRECTIONS.RIGHT
-				$Sprite.apply_scale(FLIPPING_SCALE)
+				$Pivot/Body.apply_scale(FLIPPING_SCALE)
 
 func act_idle():
      pass

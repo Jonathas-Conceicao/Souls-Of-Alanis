@@ -5,13 +5,12 @@
 [ext_resource path="res://Gnome/gnome2.png" type="Texture" id=3]
 [ext_resource path="res://Gnome/gnome3.png" type="Texture" id=4]
 
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -21,7 +20,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Gnome" type="KinematicBody2D" index="0"]
+[node name="Gnome" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -52,7 +51,7 @@ blend_times = [  ]
 
 position = Vector2( 0, 2.06761 )
 scale = Vector2( 1, 1.38069 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="RayCastRightDown" type="RayCast2D" parent="." index="3"]
 
@@ -94,11 +93,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Pivot" type="Position2D" parent="." index="7"]
 
-[node name="Sprite" type="AnimatedSprite" parent="Pivot" index="0"]
+[node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
 
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://script/foes/Mushroom.gd" type="Script" id=1]
-[ext_resource path="res://art/characters/mushroom.png" type="Texture" id=2]
+[ext_resource path="res://Mushroom/Mushroom.gd" type="Script" id=1]
+[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=2]
 
 [node name="Mushroom" type="KinematicBody2D"]
 

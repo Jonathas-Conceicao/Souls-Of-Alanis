@@ -1,8 +1,8 @@
 # Bat - Foe
 extends KinematicBody2D
 
-const Foe = preload("res://script/classes/Foe.gd")
-const Attack = preload("res://script/classes/Attack.gd")
+const Foe = preload("res://script/Classes/Foe.gd")
+const Attack = preload("res://script/Classes/Attack.gd")
 
 const MAXSPEED = 350
 const UP = Vector2(0, 0)

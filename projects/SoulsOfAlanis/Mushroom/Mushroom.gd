@@ -1,8 +1,8 @@
 # MUSHROOM - FOE
 extends KinematicBody2D
 
-const Foe = preload ("res://script/classes/Foe.gd")
-const Attack = preload ("res://script/classes/Attack.gd")
+const Foe = preload ("res://script/Classes/Foe.gd")
+const Attack = preload ("res://script/Classes/Attack.gd")
 
 const UP = Vector2(0,-1)
 const GRAVITY = 20
@@ -88,11 +88,11 @@ func act_patrol():
 func act_idle():
      pass
 
-func _on_CollisionShape2D_tree_entered(body):
-	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
-		body._on_takeDamage(self, attack)
-	pass # replace with function body
+#func _on_CollisionShape2D_tree_entered(body):
+#	if body != self && body.has_method("_on_takeDamage"):
+#		var attack = data.genAttack()
+#		body._on_takeDamage(self, attack)
+#	pass # replace with function body
 
-func _
-
+func get_size():
+	return data.get_size()
