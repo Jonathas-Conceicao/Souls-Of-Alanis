@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://script/foes/Gnome.gd" type="Script" id=1]
-[ext_resource path="res://art/foes/gnome1.png" type="Texture" id=2]
-[ext_resource path="res://art/foes/gnome2.png" type="Texture" id=3]
-[ext_resource path="res://art/foes/gnome3.png" type="Texture" id=4]
+[ext_resource path="res://Gnome/Gnome.gd" type="Script" id=1]
+[ext_resource path="res://Gnome/gnome1.png" type="Texture" id=2]
+[ext_resource path="res://Gnome/gnome2.png" type="Texture" id=3]
+[ext_resource path="res://Gnome/gnome3.png" type="Texture" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=2]
 
