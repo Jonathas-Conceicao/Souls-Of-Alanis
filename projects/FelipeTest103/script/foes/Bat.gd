@@ -23,6 +23,7 @@ func _ready():
 	self.add_child(data)
 	set_process(true)
 	$WaitTimer.start()
+	$WaitTimer2.start()
 	pass
 
 func _physics_process(delta):
@@ -62,13 +63,13 @@ func act_sentinel():
 func update_velocity():
 	match direction:
 		RIGHT:
-			velocity.x =  5
+			velocity.x =  1
 		LEFT:
-			velocity.x = -5
+			velocity.x = -1
 		UP:
-			velocity.y = -5
+			velocity.y = -1
 		DOWN:
-			velocity.y =  5
+			velocity.y =  1
  
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
@@ -94,7 +95,11 @@ func _on_CollisionShape2D_tree_entered():
 
 func _on_WaitTimer_timeout():
 	update_velocity()
-	act()
 	update_position()
 	$WaitTimer.start()
+	pass # replace with function body
+
+
+func _on_WaitTimer2_timeout():
+	act()
 	pass # replace with function body

@@ -20,7 +20,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Bat" type="KinematicBody2D"]
+[node name="Bat" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -50,7 +50,7 @@ blend_times = [  ]
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
@@ -62,12 +62,21 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="WaitTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 0.3
+wait_time = 0.01
+one_shot = false
+autostart = false
+
+[node name="WaitTimer2" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.5
 one_shot = false
 autostart = false
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]
 
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
+
+[connection signal="timeout" from="WaitTimer2" to="." method="_on_WaitTimer2_timeout"]
 
 
