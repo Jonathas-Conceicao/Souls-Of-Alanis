@@ -6,7 +6,12 @@
 [ext_resource path="res://art/foes/bat3.png" type="Texture" id=4]
 [ext_resource path="res://art/foes/bat4.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
@@ -15,12 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 10.0
-
-[node name="Bat" type="KinematicBody2D"]
+[node name="Bat" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -46,32 +46,33 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 blend_times = [  ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
-
-frames = SubResource( 1 )
-animation = "default"
-frame = 3
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 scale = Vector2( 2, 1.5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="WaitTimer" type="Timer" parent="." index="4"]
+[node name="WaitTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 0.01
 one_shot = false
 autostart = false
 
-[node name="WaitTimer2" type="Timer" parent="." index="5"]
+[node name="WaitTimer2" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = false
+
+[node name="Pivot" type="Position2D" parent="." index="5"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot" index="0"]
+
+frames = SubResource( 2 )
+animation = "default"
+playing = true
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]
 
