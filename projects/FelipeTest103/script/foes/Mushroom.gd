@@ -85,11 +85,5 @@ func act_patrol():
 			else:
 				direction = DIRECTIONS.RIGHT
 
-	if (ray_up.is_colliding()):
-		shape = ray_up.get_collider()
-		if (shape):
-			if (shape.get_class() != "Area2D"):
-				queue_free()
-
 func act_idle():
      pass

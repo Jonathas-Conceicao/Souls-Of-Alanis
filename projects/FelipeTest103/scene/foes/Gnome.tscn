@@ -20,7 +20,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Gnome" type="KinematicBody2D" index="0"]
+[node name="Gnome" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -51,7 +51,6 @@ blend_times = [  ]
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
