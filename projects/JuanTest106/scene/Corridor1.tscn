@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Corridor1" type="Node" index="0"]
+[node name="Corridor1" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -42,6 +42,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 99.5287, 276.561 )
 scale = Vector2( 9.29293, 1.18723 )
 input_pickable = false
@@ -63,6 +64,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 834.943, 274.963 )
 scale = Vector2( 9.29293, 1.2524 )
 input_pickable = false
@@ -84,6 +86,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 289.002, 148.029 )
 scale = Vector2( 9.29293, 1.18723 )
 input_pickable = false

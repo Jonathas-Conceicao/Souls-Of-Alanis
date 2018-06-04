@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene/Corridor2.gd" type="Script" id=1]
 [ext_resource path="res://art/frogatto-cloud-example.png" type="Texture" id=2]
 [ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=3]
-[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=4]
 
-[node name="Corridor2" type="Node" index="0"]
+[node name="Corridor2" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -35,7 +34,5 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 458779, 1610612738, 0, 589828, 13, 0, 589849, 13, 0, 655364, 14, 0, 655385, 14, 0, 720900, 14, 0, 720911, 13, 0, 720921, 14, 0, 786436, 14, 0, 786447, 14, 0, 786453, 9, 0, 786457, 14, 0, 851972, 11, 0, 851983, 11, 0, 851993, 11, 0, 917511, 5, 0, 1048576, 10, 0, 1048581, 4, 0, 1048582, 10, 0, 1048586, 4, 0, 1048588, 10, 0, 1048593, 4, 0, 1048594, 10, 0, 1048599, 4, 0, 1048600, 10, 0 )
 _sections_unfolded = [ "Cell" ]
-
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 

@@ -1,6 +1,6 @@
 extends Node
 
-var directions = [RIGHT, LEFT]
+var directions
 
 func _ready():
 	pass
