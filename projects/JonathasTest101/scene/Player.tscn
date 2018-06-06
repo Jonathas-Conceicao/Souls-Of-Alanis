@@ -1,0 +1,333 @@
+[gd_scene load_steps=79 format=2]
+
+[ext_resource path="res://script/Player.gd" type="Script" id=1]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi2.png" type="Texture" id=3]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi3.png" type="Texture" id=4]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi4.png" type="Texture" id=5]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi5.png" type="Texture" id=6]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi6.png" type="Texture" id=7]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi7.png" type="Texture" id=8]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi8.png" type="Texture" id=9]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi9.png" type="Texture" id=10]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi10.png" type="Texture" id=11]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi11.png" type="Texture" id=12]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi12.png" type="Texture" id=13]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi13.png" type="Texture" id=14]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi14.png" type="Texture" id=15]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi15.png" type="Texture" id=16]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi16.png" type="Texture" id=17]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi17.png" type="Texture" id=18]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi18.png" type="Texture" id=19]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi19.png" type="Texture" id=20]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi20.png" type="Texture" id=21]
+[ext_resource path="res://art/Player/Idle_RougueLegacyi21.png" type="Texture" id=22]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi1.png" type="Texture" id=23]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi2.png" type="Texture" id=24]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi3.png" type="Texture" id=25]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi4.png" type="Texture" id=26]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi5.png" type="Texture" id=27]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi6.png" type="Texture" id=28]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi7.png" type="Texture" id=29]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi8.png" type="Texture" id=30]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi9.png" type="Texture" id=31]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi10.png" type="Texture" id=32]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi11.png" type="Texture" id=33]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi12.png" type="Texture" id=34]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi13.png" type="Texture" id=35]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi14.png" type="Texture" id=36]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi15.png" type="Texture" id=37]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi16.png" type="Texture" id=38]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi17.png" type="Texture" id=39]
+[ext_resource path="res://art/Player/Moving_RougueLegacyi18.png" type="Texture" id=40]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi1.png" type="Texture" id=41]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi2.png" type="Texture" id=42]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi3.png" type="Texture" id=43]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi4.png" type="Texture" id=44]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi5.png" type="Texture" id=45]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi6.png" type="Texture" id=46]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi7.png" type="Texture" id=47]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi8.png" type="Texture" id=48]
+[ext_resource path="res://art/Player/Falling_RougueLegacyi9.png" type="Texture" id=49]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi1.png" type="Texture" id=50]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi2.png" type="Texture" id=51]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi3.png" type="Texture" id=52]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi4.png" type="Texture" id=53]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi5.png" type="Texture" id=54]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi6.png" type="Texture" id=55]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi7.png" type="Texture" id=56]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi8.png" type="Texture" id=57]
+[ext_resource path="res://art/Player/Jumping_RougueLegacyi9.png" type="Texture" id=58]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi1.png" type="Texture" id=59]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi2.png" type="Texture" id=60]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi3.png" type="Texture" id=61]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi4.png" type="Texture" id=62]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi5.png" type="Texture" id=63]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi6.png" type="Texture" id=64]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi7.png" type="Texture" id=65]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi8.png" type="Texture" id=66]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi9.png" type="Texture" id=67]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi10.png" type="Texture" id=68]
+[ext_resource path="res://art/Player/Attaking_RougueLegacyi11.png" type="Texture" id=69]
+[ext_resource path="res://scene/Sword.tscn" type="PackedScene" id=70]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "Moving",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"loop": false,
+"name": "Falling",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": false,
+"name": "Jumping",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "Attaking",
+"speed": 13.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27.0203, 15.5864 )
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Attaking"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Attaking" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.1, 1 ),
+"update": 0,
+"values": [ 0, 10 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Falling"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Falling" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Idle"
+length = 3.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 20 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Jumping" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Moving" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 17 ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28, 1 )
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Idle"
+offset = Vector2( 39, -43 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, -5 )
+scale = Vector2( 1.07663, 2.75881 )
+shape = SubResource( 2 )
+
+[node name="Animation" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Attaking = SubResource( 3 )
+anims/Falling = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Jumping = SubResource( 6 )
+anims/Moving = SubResource( 7 )
+blend_times = [  ]
+
+[node name="Sword" parent="." index="3" instance=ExtResource( 70 )]
+
+[node name="Energy" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[node name="Stepping" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stepping" index="0"]
+
+position = Vector2( 0, 39 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
+
+[connection signal="timeout" from="Energy" to="." method="_on_Energy_timeout"]
+
+[connection signal="body_entered" from="Stepping" to="." method="_on_Stepping_body_entered"]
+
+
