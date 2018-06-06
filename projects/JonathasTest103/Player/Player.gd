@@ -46,8 +46,10 @@ func _ready():
 	data = Hero.new()
 	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+	velocity.y = 40 # base velocity to detect "is_on_floor"
 	states_stack.push_front(state["Idle"])
 	current_state = states_stack[0]
+	current_state.enter(self)
 	emit_signal("StateChanged", states_stack)
 
 	set_process(true)
@@ -61,20 +63,20 @@ func _input(event):
 
 	var new_state = current_state.handle_input(self, event)
 	if new_state:
-		_change_state(new_state)
+		_state_change(new_state)
 	return
 
 func _physics_process(delta):
 	update_hud()
 	var new_state = current_state.update(self, delta)
 	if new_state:
-		_change_state(new_state)
+		_state_change(new_state)
 	# update_velocity()
 	# update_animation()
 	move_and_slide(velocity, UP)
 
 func processDebug():
-		_change_state("Idle")
+		_state_change("Idle")
 	# data.attributes.power.stamina += 10
 	# data.attributes.strength += 1
 	# data.attributes.power.updateCurrent()
@@ -192,7 +194,7 @@ func _state_pop():
 	states_stack.pop_front()
 	emit_signal("StateChanged", states_stack)
 
-func _change_state(state_name):
+func _state_change(state_name):
 	current_state.exit(self)
 
 	if state_name == "Pop":
@@ -201,8 +203,6 @@ func _change_state(state_name):
 		states_stack.push_front(state[state_name])
 
 	current_state = states_stack[0]
-	# if state_name != "Pop":
-	# 	current_state.enter(self)
 	current_state.enter(self)
 	emit_signal("StateChanged", states_stack)
 	return

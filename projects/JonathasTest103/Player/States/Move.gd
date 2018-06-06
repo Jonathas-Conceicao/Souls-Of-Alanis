@@ -24,6 +24,8 @@ func handle_input(host, event):
 	return
 
 func update(host, delta):
+	if !host.is_on_floor():
+		return "Fall"
 	if   Input.is_action_pressed("ui_right"):
 		host.velocity.x = host.BASE_SPEED
 	elif Input.is_action_pressed("ui_left"):
