@@ -95,13 +95,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
 "loop": true,
-"name": "Attaking",
+"name": "Attacking",
 "speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "Attaking"
+resource_name = "Attacking"
 length = 1.0
 loop = false
 step = 0.01
@@ -115,7 +115,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Attaking" ]
+"values": [ "Attacking" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:frame")
@@ -324,7 +324,7 @@ tracks/1/keys = {
 "values": [ 0, 17 ]
 }
 
-[node name="Sword" type="AnimatedSprite"]
+[node name="Sword" type="AnimatedSprite" index="0"]
 
 frames = SubResource( 1 )
 animation = "Idle"
@@ -339,7 +339,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Attaking = SubResource( 2 )
+anims/Attacking = SubResource( 2 )
 anims/Falling = SubResource( 3 )
 anims/Idle = SubResource( 4 )
 anims/Jumping = SubResource( 5 )
@@ -360,8 +360,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sword" type="CollisionPolygon2D" parent="Hitbox" index="0"]
 
 visible = false
-position = Vector2( 37.1358, -40.7646 )
-rotation = -0.0299956
+position = Vector2( 40, -40 )
 build_mode = 0
 polygon = PoolVector2Array( 18, 52, 18, 74, 78, 74, 92, 64, 92, 62, 78, 52 )
 disabled = true

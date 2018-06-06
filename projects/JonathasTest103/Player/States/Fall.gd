@@ -1,7 +1,6 @@
 extends 'State.gd'
 
 func enter(host):
-	host.velocity.y = 0
 	host.set_animation("Falling")
 	return
 
@@ -25,10 +24,12 @@ func update(host, delta):
 	else:
 		host.velocity.x = 0
 	if host.is_on_floor():
-		return "Pop"
+		self.exit(host)
+		return
 	host.velocity.y += host.GRAVITY
 	return
 
 func exit(host):
 	host.velocity.y = 40
+	host._state_pop()
 	return

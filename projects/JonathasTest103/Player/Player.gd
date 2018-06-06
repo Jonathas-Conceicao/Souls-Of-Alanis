@@ -192,16 +192,14 @@ func set_animation(animation):
 
 func _state_pop():
 	states_stack.pop_front()
+	current_state = states_stack[0]
+	current_state.enter(self)
 	emit_signal("StateChanged", states_stack)
+	return
 
 func _state_change(state_name):
 	current_state.exit(self)
-
-	if state_name == "Pop":
-		states_stack.pop_front()
-	else:
-		states_stack.push_front(state[state_name])
-
+	states_stack.push_front(state[state_name])
 	current_state = states_stack[0]
 	current_state.enter(self)
 	emit_signal("StateChanged", states_stack)
@@ -209,8 +207,9 @@ func _state_change(state_name):
 
 
 func _on_Animation_animation_finished(anim_name):
-	if $Sprite.animation == "Attaking":
-		state_attacking = false
+	var ns = current_state._on_animation_finished(self, anim_name)
+	if ns: _state_change(ns)
+	return
 
 func _on_Energy_timeout():
 	var energy = data.getStamina()

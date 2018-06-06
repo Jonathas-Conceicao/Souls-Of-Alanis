@@ -18,5 +18,5 @@ func handle_input(host, event):
 func update(host, delta):
 	return
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(host, anim_name):
 	return
