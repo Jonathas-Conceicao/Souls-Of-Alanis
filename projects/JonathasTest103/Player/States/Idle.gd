@@ -27,7 +27,7 @@ func handle_input(host, event):
 
 func update(host, delta):
 	if !host.is_on_floor():
-		return "Fall"
+		return "Jump"
 	if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left"):
 		return "Move"
 	return
