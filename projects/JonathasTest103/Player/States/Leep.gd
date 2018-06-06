@@ -1,4 +1,4 @@
 extends 'State.gd'
 
-func _ready():
-	pass
+func update(host, delta):
+	return "Idle"

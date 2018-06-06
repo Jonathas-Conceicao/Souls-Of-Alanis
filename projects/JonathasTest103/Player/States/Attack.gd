@@ -7,9 +7,9 @@ func enter(host):
 func handle_input(host, event):
 	if host.is_on_floor() && host.velocity.y >= 0:
 		if event.is_action_pressed("ui_up"):
-			host.velocity.y = -host.BASE_SPEED
+			return "Jump"
 		elif event.is_action_pressed("ui_leep"):
-			return # TODO Leep
+			return "Leep"
 	return
 
 func update(host, delta):
@@ -25,9 +25,14 @@ func update(host, delta):
 	return
 
 func _on_animation_finished(host, anim_name):
-	self.exit(host)
-	return
+	return "Idle"
 
 func exit(host):
-	host._state_pop()
+	var TrailBox = host.get_node("Sword/TrailBox/Trail")
+	var HitBox = host.get_node("Sword/Hitbox/Sword")
+
+	TrailBox.disabled = true
+	TrailBox.visible = false
+	HitBox.disabled = true
+	HitBox.visible = false
 	return

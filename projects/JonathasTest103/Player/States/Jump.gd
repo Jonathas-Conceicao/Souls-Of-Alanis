@@ -26,13 +26,11 @@ func update(host, delta):
 	else:
 		host.velocity.x = 0
 	if host.is_on_floor() && host.velocity.y >= 0:
-		self.exit(host)
-		return
+		return "Idle"
 	host.velocity.y += host.GRAVITY
 	if host.is_on_ceiling() || host.velocity.y >= 0:
 		return "Fall"
 	return
 
 func exit(host):
-	host._state_pop()
 	return

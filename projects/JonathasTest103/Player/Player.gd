@@ -24,9 +24,7 @@ var state_attacking = false
 var state_leeping = false
 
 signal StateChanged
-var states_stack = []
 var current_state = null
-
 
 onready var state = {
 	"Idle":    $States/Idle,
@@ -47,10 +45,9 @@ func _ready():
 	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
 	velocity.y = 40 # base velocity to detect "is_on_floor"
-	states_stack.push_front(state["Idle"])
-	current_state = states_stack[0]
+	current_state = state["Idle"]
 	current_state.enter(self)
-	emit_signal("StateChanged", states_stack)
+	emit_signal("StateChanged", current_state)
 
 	set_process(true)
 	set_process_input(true)
@@ -190,19 +187,11 @@ func set_animation(animation):
 		$Sword.animation_play(animation)
 	return
 
-func _state_pop():
-	states_stack.pop_front()
-	current_state = states_stack[0]
-	current_state.enter(self)
-	emit_signal("StateChanged", states_stack)
-	return
-
 func _state_change(state_name):
 	current_state.exit(self)
-	states_stack.push_front(state[state_name])
-	current_state = states_stack[0]
+	current_state = state[state_name]
 	current_state.enter(self)
-	emit_signal("StateChanged", states_stack)
+	emit_signal("StateChanged", current_state)
 	return
 
 

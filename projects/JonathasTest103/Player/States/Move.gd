@@ -31,11 +31,9 @@ func update(host, delta):
 	elif Input.is_action_pressed("ui_left"):
 		host.velocity.x = -host.BASE_SPEED
 	else:
-		self.exit(host)
-		return
+		return "Idle"
 	return
 
 func exit(host):
 	host.velocity.x = 0
-	host._state_pop()
 	return
