@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -74,11 +74,12 @@
 [ext_resource path="res://Player/States/Idle.gd" type="Script" id=72]
 [ext_resource path="res://Player/States/Move.gd" type="Script" id=73]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=74]
-[ext_resource path="res://Player/States/Leep.gd" type="Script" id=75]
-[ext_resource path="res://Player/States/Climb.gd" type="Script" id=76]
-[ext_resource path="res://Player/States/Attack.gd" type="Script" id=77]
-[ext_resource path="res://Player/States/Swap.gd" type="Script" id=78]
-[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=79]
+[ext_resource path="res://Player/States/Fall.gd" type="Script" id=75]
+[ext_resource path="res://Player/States/Leep.gd" type="Script" id=76]
+[ext_resource path="res://Player/States/Climb.gd" type="Script" id=77]
+[ext_resource path="res://Player/States/Attack.gd" type="Script" id=78]
+[ext_resource path="res://Player/States/Swap.gd" type="Script" id=79]
+[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=80]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -280,6 +281,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+BASE_SPEED = 350
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -375,25 +377,29 @@ script = ExtResource( 73 )
 
 script = ExtResource( 74 )
 
-[node name="Leep" type="Node" parent="States" index="3"]
+[node name="Fall" type="Node" parent="States" index="3"]
 
 script = ExtResource( 75 )
 
-[node name="Climb" type="Node" parent="States" index="4"]
+[node name="Leep" type="Node" parent="States" index="4"]
 
 script = ExtResource( 76 )
 
-[node name="Attack" type="Node" parent="States" index="5"]
+[node name="Climb" type="Node" parent="States" index="5"]
 
 script = ExtResource( 77 )
 
-[node name="Swap" type="Node" parent="States" index="6"]
+[node name="Attack" type="Node" parent="States" index="6"]
 
 script = ExtResource( 78 )
 
-[node name="Stagger" type="Node" parent="States" index="7"]
+[node name="Swap" type="Node" parent="States" index="7"]
 
 script = ExtResource( 79 )
+
+[node name="Stagger" type="Node" parent="States" index="8"]
+
+script = ExtResource( 80 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 

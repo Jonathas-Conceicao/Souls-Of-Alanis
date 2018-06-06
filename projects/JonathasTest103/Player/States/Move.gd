@@ -1,8 +1,5 @@
 extends 'State.gd'
 
-export(float) var BASE_SPEED = 350
-const UP = Vector2(0,-1)
-
 func enter(host):
 	host.set_animation("Moving")
 	return
@@ -28,14 +25,12 @@ func handle_input(host, event):
 
 func update(host, delta):
 	if   Input.is_action_pressed("ui_right"):
-		move(host, BASE_SPEED)
+		host.velocity.x = host.BASE_SPEED
 	elif Input.is_action_pressed("ui_left"):
-		move(host, -BASE_SPEED)
+		host.velocity.x = -host.BASE_SPEED
 	else:
 		return "Pop"
 	return
 
-func move(host, speed):
-	var velocity = Vector2(speed, 0)
-	host.move_and_slide(velocity, UP)
-	return
+func exit(host):
+	host.velocity.x = 0

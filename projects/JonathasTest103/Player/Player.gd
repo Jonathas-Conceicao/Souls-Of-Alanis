@@ -4,6 +4,7 @@ const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
+export(float) var BASE_SPEED = 350
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
@@ -31,6 +32,7 @@ onready var state = {
 	"Idle":    $States/Idle,
 	"Move":    $States/Move,
 	"Jump":    $States/Jump,
+	"Fall":    $States/Fall,
 	"Leep":    $States/Leep,
 	"Climb":   $States/Climb,
 	"Attack":  $States/Attack,
@@ -69,12 +71,9 @@ func _physics_process(delta):
 		_change_state(new_state)
 	# update_velocity()
 	# update_animation()
-	# move_and_slide(velocity, UP)
+	move_and_slide(velocity, UP)
 
 func processDebug():
-	if state_moving_x:
-		_change_state("Move")
-	else:
 		_change_state("Idle")
 	# data.attributes.power.stamina += 10
 	# data.attributes.strength += 1
@@ -187,6 +186,11 @@ func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
 		$Animation.play(animation)
 		$Sword.animation_play(animation)
+	return
+
+func _state_pop():
+	states_stack.pop_front()
+	emit_signal("StateChanged", states_stack)
 
 func _change_state(state_name):
 	current_state.exit(self)
@@ -197,9 +201,11 @@ func _change_state(state_name):
 		states_stack.push_front(state[state_name])
 
 	current_state = states_stack[0]
-	if state_name != "Pop":
-		current_state.enter(self)
+	# if state_name != "Pop":
+	# 	current_state.enter(self)
+	current_state.enter(self)
 	emit_signal("StateChanged", states_stack)
+	return
 
 
 func _on_Animation_animation_finished(anim_name):
@@ -214,7 +220,6 @@ func _on_Energy_timeout():
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Player recived ", damage, " from: ", agressor.get_name())
-
 func _on_SwordHit(body, id):
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
