@@ -13,7 +13,7 @@ const MAXSPEED = 350
 const MAXENERGY = MAXSPEED * 1.5
 
 var speed = 350
-var direction
+var direction # 0 - Right || 1 - Left
 var velocity = Vector2()
 
 var flipped = false
@@ -163,10 +163,11 @@ func update_animation():
 			set_animation("Idle")
 
 func update_flip():
-	if state_flipped != flipped:
+	direction = velocity.x >= 0
+	if direction == flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
-		flipped = state_flipped
+		flipped = !direction
 
 func update_hud():
 	var hpMax = data.getMaxHP()

@@ -28,8 +28,10 @@ func update(host, delta):
 		return "Fall"
 	if   Input.is_action_pressed("ui_right"):
 		host.velocity.x = host.BASE_SPEED
+		host.update_flip()
 	elif Input.is_action_pressed("ui_left"):
 		host.velocity.x = -host.BASE_SPEED
+		host.update_flip()
 	else:
 		return "Idle"
 	return

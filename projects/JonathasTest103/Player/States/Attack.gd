@@ -19,7 +19,10 @@ func update(host, delta):
 		host.velocity.x = -host.BASE_SPEED
 	else:
 		host.velocity.x = 0
-	host.velocity.y += host.GRAVITY
+	if host.is_on_floor() && host.velocity.y >= 0:
+		host.velocity.y = 40
+	else:
+		host.velocity.y += host.GRAVITY
 	if host.is_on_ceiling():
 		host.velocity.y = 0
 	return
