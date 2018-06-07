@@ -55,7 +55,7 @@ func _ready():
 
 func _input(event):
 	# Handle test actions
-	if event.is_action_pressed("ui_debug"):
+	if event.is_action_pressed("player_debug"):
 		processDebug()
 
 	var new_state = current_state.handle_input(self, event)
@@ -98,15 +98,15 @@ func handleAttack():
 
 func handleMoviment(k):
 	match k:
-		0: # ui_right
+		0: # player_right
 			velocity.x = speed
 			state_flipped = false
-		1: # ui_left
+		1: # player_left
 			velocity.x = -speed
 			state_flipped = true
 		2: # not moving in x
 			velocity.x = 0
-		3: # ui_up
+		3: # player_jump
 			if is_on_floor():
 				velocity.y = -speed
 				state_moving_y = true
@@ -114,7 +114,7 @@ func handleMoviment(k):
 				velocity.y = -data.getStamina()
 				data.setStamina(0)
 				state_moving_y = true
-		4: # ui_leep
+		4: # player_leep
 			var energy = data.getStamina()
 			if is_on_floor():
 				if state_flipped:

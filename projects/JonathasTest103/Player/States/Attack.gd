@@ -6,16 +6,16 @@ func enter(host):
 
 func handle_input(host, event):
 	if host.is_on_floor() && host.velocity.y >= 0:
-		if event.is_action_pressed("ui_up"):
+		if event.is_action_pressed("player_jump"):
 			return "Jump"
-		elif event.is_action_pressed("ui_leep"):
+		elif event.is_action_pressed("player_leep"):
 			return "Leep"
 	return
 
 func update(host, delta):
-	if   Input.is_action_pressed("ui_right"):
+	if   Input.is_action_pressed("player_right"):
 		host.velocity.x = host.BASE_SPEED
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("player_left"):
 		host.velocity.x = -host.BASE_SPEED
 	else:
 		host.velocity.x = 0

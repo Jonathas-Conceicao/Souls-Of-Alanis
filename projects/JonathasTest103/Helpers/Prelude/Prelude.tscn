@@ -6,7 +6,7 @@
 [ext_resource path="res://Helpers/Debug/StatesTester.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Dummy/Dummy.tscn" type="PackedScene" id=5]
 
-[node name="Prelude" type="Node" index="0"]
+[node name="Prelude" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 

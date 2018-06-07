@@ -1,28 +1,28 @@
 extends 'State.gd'
 
 func enter(host):
-	if Input.is_action_just_pressed("ui_up") && host.is_on_floor():
+	if Input.is_action_just_pressed("player_jump") && host.is_on_floor():
 		host.velocity.y = -host.BASE_SPEED
 	host.set_animation("Jumping")
 	return
 
 func handle_input(host, event):
-	if   event.is_action_pressed("ui_select_weapon_0"):
+	if   event.is_action_pressed("player_select_weapon_0"):
 		return "Swap"
-	elif event.is_action_pressed("ui_select_weapon_1"):
+	elif event.is_action_pressed("player_select_weapon_1"):
 		return "Swap"
-	elif event.is_action_pressed("ui_select_weapon_2"):
+	elif event.is_action_pressed("player_select_weapon_2"):
 		return "Swap"
 
 	# Handle attack
-	if event.is_action_pressed("ui_attack"):
+	if event.is_action_pressed("player_attack"):
 		return "Attack"
 
 func update(host, delta):
-	if   Input.is_action_pressed("ui_right"):
+	if   Input.is_action_pressed("player_right"):
 		host.velocity.x = host.BASE_SPEED
 		host.update_flip()
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("player_left"):
 		host.velocity.x = -host.BASE_SPEED
 		host.update_flip()
 	else:
