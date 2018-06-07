@@ -1,7 +1,7 @@
 extends 'State.gd'
 
 func enter(host):
-	if Input.is_action_just_pressed("player_jump") && host.is_on_floor():
+	if host.is_on_floor():
 		host.velocity.y = -host.BASE_SPEED
 	host.set_animation("Jumping")
 	return
@@ -19,7 +19,6 @@ func handle_input(host, event):
 		return "Attack"
 
 func update(host, delta):
-	print(host.energy)
 	host.velocity.y += host.GRAVITY
 	if Input.is_action_pressed("player_jump"):
 		if host.energy >= 10:
@@ -35,6 +34,7 @@ func update(host, delta):
 		host.velocity.x = 0
 
 	if host.is_on_ceiling() || host.velocity.y >= 0:
+		host.velocity.y = max(0, host.velocity.y)
 		return "Fall"
 	if host.is_on_floor() && host.velocity.y >= 0:
 		return "Idle"
@@ -42,5 +42,4 @@ func update(host, delta):
 
 func exit(host):
 	host.energy = host.BASE_ENERGY
-	host.velocity.y = max(0, host.velocity.y)
 	return

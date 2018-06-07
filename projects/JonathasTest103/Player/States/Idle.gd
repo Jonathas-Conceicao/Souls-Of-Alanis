@@ -21,7 +21,7 @@ func handle_input(host, event):
 		return "Move"
 	if event.is_action_pressed("player_jump"):
 		return "Jump"
-	if event.is_action_pressed("player_leep"):
+	if event.is_action_pressed("player_leep_right") || event.is_action_pressed("player_leep_left"):
 		return "Leep"
 	return
 

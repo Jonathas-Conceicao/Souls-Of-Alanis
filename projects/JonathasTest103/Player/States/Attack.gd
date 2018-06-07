@@ -8,7 +8,7 @@ func handle_input(host, event):
 	if host.is_on_floor() && host.velocity.y >= 0:
 		if event.is_action_pressed("player_jump"):
 			return "Jump"
-		elif event.is_action_pressed("player_leep"):
+		if event.is_action_pressed("player_leep_right") || event.is_action_pressed("player_leep_left"):
 			return "Leep"
 	return
 

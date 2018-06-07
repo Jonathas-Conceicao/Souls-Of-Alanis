@@ -15,11 +15,6 @@ var velocity = Vector2()
 
 var direction
 var flipped = false
-# var state_flipped = false
-# var state_moving_x = false
-# var state_moving_y = false
-# var state_attacking = false
-# var state_leeping = false
 
 signal StateChanged
 var current_state = null
@@ -66,51 +61,16 @@ func _physics_process(delta):
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
-	# update_velocity()
-	# update_animation()
 	move_and_slide(velocity, UP)
 
 func processDebug():
-		_state_change("Idle")
+	_state_change("Idle")
 	# data.attributes.power.stamina += 10
 	# data.attributes.strength += 1
 	# data.attributes.power.updateCurrent()
 	# print("Strength       :", data.attributes.strength)
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
-
-# func handleMoviment(k):
-# 	match k:
-# 		0: # player_right
-# 			velocity.x = speed
-# 			state_flipped = false
-# 		1: # player_left
-# 			velocity.x = -speed
-# 			state_flipped = true
-# 		2: # not moving in x
-# 			velocity.x = 0
-# 		3: # player_jump
-# 			if is_on_floor():
-# 				velocity.y = -speed
-# 				state_moving_y = true
-# 			elif is_on_wall():
-# 				velocity.y = -data.getStamina()
-# 				data.setStamina(0)
-# 				state_moving_y = true
-# 		4: # player_leep
-# 			var energy = data.getStamina()
-# 			if is_on_floor():
-# 				if state_flipped:
-# 					velocity.x = - energy
-# 				else:
-# 					velocity.x = energy
-# 				velocity.y = -energy
-# 				data.setStamina(0)
-# 				state_moving_x = true
-# 				state_moving_y = true
-# 				state_leeping = true
-# 		5: # not moving y
-# 			state_moving_y = false
 
 func update_flip():
 	direction = velocity.x >= 0
