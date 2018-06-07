@@ -19,6 +19,12 @@ func handle_input(host, event):
 		return "Attack"
 
 func update(host, delta):
+	print(host.energy)
+	host.velocity.y += host.GRAVITY
+	if Input.is_action_pressed("player_jump"):
+		if host.energy >= 10:
+			host.velocity.y -= 10
+			host.energy     -= 10
 	if   Input.is_action_pressed("player_right"):
 		host.velocity.x = host.BASE_SPEED
 		host.update_flip()
@@ -27,12 +33,14 @@ func update(host, delta):
 		host.update_flip()
 	else:
 		host.velocity.x = 0
-	if host.is_on_floor() && host.velocity.y >= 0:
-		return "Idle"
-	host.velocity.y += host.GRAVITY
+
 	if host.is_on_ceiling() || host.velocity.y >= 0:
 		return "Fall"
+	if host.is_on_floor() && host.velocity.y >= 0:
+		return "Idle"
 	return
 
 func exit(host):
+	host.energy = host.BASE_ENERGY
+	host.velocity.y = max(0, host.velocity.y)
 	return

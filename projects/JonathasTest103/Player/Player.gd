@@ -4,24 +4,22 @@ const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
-export(float) var BASE_SPEED = 350
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
+export(float) var BASE_SPEED = 350
+export(float) var BASE_ENERGY = 100
 
-const MAXSPEED = 350
-const MAXENERGY = MAXSPEED * 1.5
-
-var speed = 350
-var direction # 0 - Right || 1 - Left
+var energy = BASE_ENERGY
 var velocity = Vector2()
 
+var direction
 var flipped = false
-var state_flipped = false
-var state_moving_x = false
-var state_moving_y = false
-var state_attacking = false
-var state_leeping = false
+# var state_flipped = false
+# var state_moving_x = false
+# var state_moving_y = false
+# var state_attacking = false
+# var state_leeping = false
 
 signal StateChanged
 var current_state = null
@@ -81,86 +79,38 @@ func processDebug():
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
 
-func switchWeapon(type):
-	match type:
-		0:
-			data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-			print("Holding a Sword")
-		1:
-			data.setWeapon(Weapon.new(0, Attack.Impact, 20))
-			print("Holding a Axe")
-		2:
-			data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
-			print("Holding a Spear")
-
-func handleAttack():
-	state_attacking = true
-
-func handleMoviment(k):
-	match k:
-		0: # player_right
-			velocity.x = speed
-			state_flipped = false
-		1: # player_left
-			velocity.x = -speed
-			state_flipped = true
-		2: # not moving in x
-			velocity.x = 0
-		3: # player_jump
-			if is_on_floor():
-				velocity.y = -speed
-				state_moving_y = true
-			elif is_on_wall():
-				velocity.y = -data.getStamina()
-				data.setStamina(0)
-				state_moving_y = true
-		4: # player_leep
-			var energy = data.getStamina()
-			if is_on_floor():
-				if state_flipped:
-					velocity.x = - energy
-				else:
-					velocity.x = energy
-				velocity.y = -energy
-				data.setStamina(0)
-				state_moving_x = true
-				state_moving_y = true
-				state_leeping = true
-		5: # not moving y
-			state_moving_y = false
-
-func update_velocity():
-	if is_on_floor() && velocity.y >= 0:
-		velocity.y = 40
-		state_moving_y = false
-		state_leeping = false
-		if state_leeping:
-			velocity.x = 0
-			state_moving_x = false
-			state_leeping = false
-	else:
-		velocity.y += GRAVITY
-		if is_on_ceiling():
-			velocity.y = 0
-		state_moving_y = true
-	if not state_moving_x:
-		velocity.x = 0
-
-func update_animation():
-	if state_attacking:
-		set_animation("Attaking")
-	else:
-		update_flip()
-		if state_moving_y:
-			if velocity.y <= 0:
-				set_animation("Jumping")
-			else:
-				set_animation("Falling")
-		elif state_moving_x:
-			if velocity.x != 0:
-				set_animation("Moving")
-		else:
-			set_animation("Idle")
+# func handleMoviment(k):
+# 	match k:
+# 		0: # player_right
+# 			velocity.x = speed
+# 			state_flipped = false
+# 		1: # player_left
+# 			velocity.x = -speed
+# 			state_flipped = true
+# 		2: # not moving in x
+# 			velocity.x = 0
+# 		3: # player_jump
+# 			if is_on_floor():
+# 				velocity.y = -speed
+# 				state_moving_y = true
+# 			elif is_on_wall():
+# 				velocity.y = -data.getStamina()
+# 				data.setStamina(0)
+# 				state_moving_y = true
+# 		4: # player_leep
+# 			var energy = data.getStamina()
+# 			if is_on_floor():
+# 				if state_flipped:
+# 					velocity.x = - energy
+# 				else:
+# 					velocity.x = energy
+# 				velocity.y = -energy
+# 				data.setStamina(0)
+# 				state_moving_x = true
+# 				state_moving_y = true
+# 				state_leeping = true
+# 		5: # not moving y
+# 			state_moving_y = false
 
 func update_flip():
 	direction = velocity.x >= 0
@@ -194,7 +144,6 @@ func _state_change(state_name):
 	current_state.enter(self)
 	emit_signal("StateChanged", current_state)
 	return
-
 
 func _on_Animation_animation_finished(anim_name):
 	var ns = current_state._on_animation_finished(self, anim_name)
