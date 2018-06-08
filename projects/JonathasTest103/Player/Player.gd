@@ -7,8 +7,10 @@ const Weapon = preload("res://script/Classes/Weapon.gd")
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
-export(float) var BASE_SPEED = 350
-export(float) var BASE_ENERGY = 100
+# export(float) var BASE_SPEED = 350
+# export(float) var BASE_ENERGY = 250
+var BASE_SPEED = 350
+var BASE_ENERGY = 250
 
 var energy = BASE_ENERGY
 var velocity = Vector2()

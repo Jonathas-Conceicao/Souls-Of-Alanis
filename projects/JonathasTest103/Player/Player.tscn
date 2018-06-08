@@ -283,7 +283,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 BASE_SPEED = 350
-BASE_ENERGY = 100
+BASE_ENERGY = 250
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
