@@ -107,6 +107,12 @@ func _state_change(state_name):
 	emit_signal("StateChanged", current_state)
 	return
 
+func getData():
+	var data = []
+	data.append(["HP", self.data.getHP()])
+	data.append(["Stamina", self.data.getStamina()])
+	return data
+
 func _on_Animation_animation_finished(anim_name):
 	var ns = current_state._on_animation_finished(self, anim_name)
 	if ns: _state_change(ns)

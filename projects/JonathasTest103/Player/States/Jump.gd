@@ -22,7 +22,6 @@ func update(host, delta):
 	host.velocity.y += host.GRAVITY
 	if Input.is_action_pressed("player_jump"):
 		if host.energy >= 50:
-			print(host.energy)
 			host.velocity.y -= 50
 			host.energy     -= 50
 	if   Input.is_action_pressed("player_right"):

@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Helpers/Prelude/art/SunsetTempleBackground.png" type="Texture" id=1]
 [ext_resource path="res://Helpers/Prelude/art/SunsetTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Helpers/Debug/StatesTester.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Dummy/Dummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Helpers/Debug/DataShower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Helpers/Debug/StatesTester.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Dummy/Dummy.tscn" type="PackedScene" id=6]
 
-[node name="Prelude" type="Node" index="0"]
+[node name="Prelude" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
@@ -60,8 +61,15 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 103.632, 417.009 )
+position = Vector2( 59.7267, 413.78 )
 scale = Vector2( 1.03532, 1.01945 )
+
+[node name="DataShower" parent="Player" index="9" instance=ExtResource( 4 )]
+
+margin_left = -54.7915
+margin_top = -194.987
+margin_right = 76.2085
+margin_bottom = -79.9874
 
 [node name="WarningMessage" type="Label" parent="." index="3"]
 
@@ -88,12 +96,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="StatesTester" parent="." index="4" instance=ExtResource( 4 )]
+[node name="StatesTester" parent="." index="4" instance=ExtResource( 5 )]
 
-[node name="Dummy" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Dummy" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 1873.09, 161.06 )
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="StateChanged" from="Player" to="Player/DataShower" method="_on_Target_StateChanged"]
 
 [connection signal="StateChanged" from="Player" to="StatesTester" method="_on_Player_StateChanged"]
 
