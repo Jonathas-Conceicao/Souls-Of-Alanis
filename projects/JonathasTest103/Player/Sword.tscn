@@ -324,7 +324,7 @@ tracks/1/keys = {
 "values": [ 0, 17 ]
 }
 
-[node name="Sword" type="AnimatedSprite" index="0"]
+[node name="Sword" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "Idle"

@@ -13,6 +13,8 @@ var speechs = [	"Hey! You there! Come hit me!",
 
 const Foe    = preload("res://script/Classes/Foe.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
+const DamageShower = preload("res://HUD/Damage.tscn")
+
 var data
 
 func _ready():
@@ -40,6 +42,10 @@ func _on_HideTimer_timeout():
 func _on_takeDamage(agressor, attack):
 	state = HITED
 	var damage = data.takeAttack(attack)
+	var damegeDisplay = DamageShower.instance()
+	damegeDisplay.set_position($DamegeSpot.get_position())
+	damegeDisplay.setValue(damage)
+	self.add_child(damegeDisplay) # The label frees it self when finished
 	print("Dummy recived ", damage, " from: ", agressor.get_name())
 	
 

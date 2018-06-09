@@ -10,7 +10,7 @@ const FLIPPING_SCALE = Vector2(-1, 1)
 # export(float) var BASE_SPEED = 350
 # export(float) var BASE_ENERGY = 250
 var BASE_SPEED = 350
-var BASE_ENERGY = 250
+var BASE_ENERGY = 160
 
 var energy = BASE_ENERGY
 var velocity = Vector2()
@@ -19,6 +19,7 @@ var direction
 var flipped = false
 
 signal StateChanged
+signal DataUpdated
 var current_state = null
 
 onready var state = {
@@ -43,6 +44,7 @@ func _ready():
 	current_state = state["Idle"]
 	current_state.enter(self)
 	emit_signal("StateChanged", current_state)
+	emit_signal("DataUpdated", self)
 
 	set_process(true)
 	set_process_input(true)
@@ -59,11 +61,11 @@ func _input(event):
 	return
 
 func _physics_process(delta):
-	update_hud()
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
 	move_and_slide(velocity, UP)
+	return
 
 func processDebug():
 	_state_change("Idle")
@@ -73,6 +75,7 @@ func processDebug():
 	# print("Strength       :", data.attributes.strength)
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
+	return
 
 func update_flip():
 	direction = velocity.x >= 0
@@ -80,19 +83,7 @@ func update_flip():
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
 		flipped = !direction
-
-func update_hud():
-	var hpMax = data.getMaxHP()
-	var hpCur = data.getHP()
-	var hpP = calcPercentage(hpMax, hpCur)
-	var stMax = data.getMaxStamina()
-	var stCur = data.getStamina()
-	var staminaP = calcPercentage(stMax, stCur)
-	$HUD.setHP(hpP)
-	$HUD.setStamina(staminaP)
-
-func calcPercentage(h, l):
-	return (l*100)/h
+	return
 
 func set_animation(animation):
 	if !$Animation.is_playing() || $Sprite.animation != animation:
@@ -109,8 +100,10 @@ func _state_change(state_name):
 
 func getData():
 	var data = []
+	data.append(["State", self.current_state.get_name()])
 	data.append(["HP", self.data.getHP()])
 	data.append(["Stamina", self.data.getStamina()])
+	data.append(["Energy", self.energy])
 	return data
 
 func _on_Animation_animation_finished(anim_name):
@@ -122,15 +115,22 @@ func _on_Energy_timeout():
 	var energy = data.getStamina()
 	var energy_per_tick = max(1, data.getMaxStamina() / 30)
 	data.setStamina(energy + energy_per_tick)
+	emit_signal("DataUpdated", self)
+	return
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Player recived ", damage, " from: ", agressor.get_name())
+	return
+
 func _on_SwordHit(body, id):
+	if id == 0: return
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
 		body._on_takeDamage(self, attack)
+	return
 
 func _on_Stepping_body_entered(body):
 	if body != self && body.has_method("_on_takeFoot"):
 		body._on_takeFoot(self)
+	return

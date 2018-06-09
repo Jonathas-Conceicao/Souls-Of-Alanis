@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Player/art/HUD/Empty_HUD.png" type="Texture" id=2]
-[ext_resource path="res://Player/art/HUD/HP_HUD.png" type="Texture" id=3]
-[ext_resource path="res://Player/art/HUD/Stamina_HUD.png" type="Texture" id=4]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
+[ext_resource path="res://HUD/art/HUD/Empty_HUD.png" type="Texture" id=2]
+[ext_resource path="res://HUD/art/HUD/HP_HUD.png" type="Texture" id=3]
+[ext_resource path="res://HUD/art/HUD/Stamina_HUD.png" type="Texture" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 

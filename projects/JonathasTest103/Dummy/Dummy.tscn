@@ -70,6 +70,11 @@ wait_time = 2.0
 one_shot = true
 autostart = false
 
+[node name="DamegeSpot" type="Position2D" parent="." index="5"]
+
+position = Vector2( 20, -50 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
 
 [connection signal="timeout" from="HideTimer" to="." method="_on_HideTimer_timeout"]

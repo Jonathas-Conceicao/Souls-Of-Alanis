@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -70,16 +70,15 @@
 [ext_resource path="res://Player/art/Player/Attaking_RougueLegacyi10.png" type="Texture" id=68]
 [ext_resource path="res://Player/art/Player/Attaking_RougueLegacyi11.png" type="Texture" id=69]
 [ext_resource path="res://Player/Sword.tscn" type="PackedScene" id=70]
-[ext_resource path="res://Player/HUD.tscn" type="PackedScene" id=71]
-[ext_resource path="res://Player/States/Idle.gd" type="Script" id=72]
-[ext_resource path="res://Player/States/Move.gd" type="Script" id=73]
-[ext_resource path="res://Player/States/Jump.gd" type="Script" id=74]
-[ext_resource path="res://Player/States/Fall.gd" type="Script" id=75]
-[ext_resource path="res://Player/States/Leep.gd" type="Script" id=76]
-[ext_resource path="res://Player/States/Climb.gd" type="Script" id=77]
-[ext_resource path="res://Player/States/Attack.gd" type="Script" id=78]
-[ext_resource path="res://Player/States/Swap.gd" type="Script" id=79]
-[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=80]
+[ext_resource path="res://Player/States/Idle.gd" type="Script" id=71]
+[ext_resource path="res://Player/States/Move.gd" type="Script" id=72]
+[ext_resource path="res://Player/States/Jump.gd" type="Script" id=73]
+[ext_resource path="res://Player/States/Fall.gd" type="Script" id=74]
+[ext_resource path="res://Player/States/Leep.gd" type="Script" id=75]
+[ext_resource path="res://Player/States/Climb.gd" type="Script" id=76]
+[ext_resource path="res://Player/States/Attack.gd" type="Script" id=77]
+[ext_resource path="res://Player/States/Swap.gd" type="Script" id=78]
+[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=79]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -321,6 +320,7 @@ autostart = true
 
 [node name="Stepping" type="Area2D" parent="." index="5"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -335,71 +335,43 @@ position = Vector2( 0, 39 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="HUD" parent="." index="6" instance=ExtResource( 71 )]
-
-[node name="Camera2D" type="Camera2D" parent="." index="7"]
-
-position = Vector2( 0, -90 )
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="States" type="Node" parent="." index="8"]
+[node name="States" type="Node" parent="." index="6"]
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
-script = ExtResource( 72 )
+script = ExtResource( 71 )
 
 [node name="Move" type="Node" parent="States" index="1"]
 
-script = ExtResource( 73 )
+script = ExtResource( 72 )
 
 [node name="Jump" type="Node" parent="States" index="2"]
 
-script = ExtResource( 74 )
+script = ExtResource( 73 )
 
 [node name="Fall" type="Node" parent="States" index="3"]
 
-script = ExtResource( 75 )
+script = ExtResource( 74 )
 
 [node name="Leep" type="Node" parent="States" index="4"]
 
-script = ExtResource( 76 )
+script = ExtResource( 75 )
 
 [node name="Climb" type="Node" parent="States" index="5"]
 
-script = ExtResource( 77 )
+script = ExtResource( 76 )
 
 [node name="Attack" type="Node" parent="States" index="6"]
 
-script = ExtResource( 78 )
+script = ExtResource( 77 )
 
 [node name="Swap" type="Node" parent="States" index="7"]
 
-script = ExtResource( 79 )
+script = ExtResource( 78 )
 
 [node name="Stagger" type="Node" parent="States" index="8"]
 
-script = ExtResource( 80 )
+script = ExtResource( 79 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 

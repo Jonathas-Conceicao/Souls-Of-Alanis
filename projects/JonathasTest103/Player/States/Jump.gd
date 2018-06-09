@@ -21,9 +21,11 @@ func handle_input(host, event):
 func update(host, delta):
 	host.velocity.y += host.GRAVITY
 	if Input.is_action_pressed("player_jump"):
-		if host.energy >= 50:
-			host.velocity.y -= 50
-			host.energy     -= 50
+		if host.energy >= 20:
+			host.velocity.y -= 20
+			host.energy     -= 20
+			host.velocity.y -= host.GRAVITY
+			host.emit_signal("DataUpdated", host)
 	if   Input.is_action_pressed("player_right"):
 		host.velocity.x = host.BASE_SPEED
 		host.update_flip()
