@@ -25,6 +25,8 @@ func update(host, delta):
 		host.velocity.y += host.GRAVITY
 	if host.is_on_ceiling():
 		host.velocity.y = 0
+	# if host.get_node("Sprite").animation != "Attacking":
+	# 	return "Idle"
 	return
 
 func _on_animation_finished(host, anim_name):
