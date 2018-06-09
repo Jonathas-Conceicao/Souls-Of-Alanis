@@ -335,7 +335,11 @@ position = Vector2( 0, 39 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="States" type="Node" parent="." index="6"]
+[node name="DamageSpot" type="Position2D" parent="." index="6"]
+
+position = Vector2( -32.83, -50.6436 )
+
+[node name="States" type="Node" parent="." index="7"]
 
 [node name="Idle" type="Node" parent="States" index="0"]
 

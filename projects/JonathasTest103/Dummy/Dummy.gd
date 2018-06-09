@@ -45,6 +45,7 @@ func _on_takeDamage(agressor, attack):
 	var damegeDisplay = DamageShower.instance()
 	damegeDisplay.set_position($DamegeSpot.get_position())
 	damegeDisplay.setValue(damage)
+	damegeDisplay.set_scale(self.scale)
 	self.add_child(damegeDisplay) # The label frees it self when finished
 	print("Dummy recived ", damage, " from: ", agressor.get_name())
 	

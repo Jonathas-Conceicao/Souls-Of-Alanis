@@ -41,9 +41,9 @@ margin_top = -200.0
 margin_right = 87.0
 margin_bottom = -71.0
 
-[connection signal="DataUpdated" from="." to="DataShower" method="_on_Target_DataUpdated"]
-
 [connection signal="DataUpdated" from="." to="HUD" method="_on_Target_DataUpdated"]
+
+[connection signal="DataUpdated" from="." to="DataShower" method="_on_Target_DataUpdated"]
 
 [connection signal="StateChanged" from="." to="DataShower" method="_on_Target_DataUpdated"]
 

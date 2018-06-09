@@ -4,6 +4,8 @@ const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
+const DamageShower = preload("res://HUD/Damage.tscn")
+
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
@@ -68,13 +70,16 @@ func _physics_process(delta):
 	return
 
 func processDebug():
-	_state_change("Idle")
+	# _state_change("Idle")
 	# data.attributes.power.stamina += 10
 	# data.attributes.strength += 1
 	# data.attributes.power.updateCurrent()
 	# print("Strength       :", data.attributes.strength)
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
+	self._on_takeDamage(self, Attack.new(Attack.Slash, 10))
+	# var Cam = self.get_node("Camera2D")
+	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
 	return
 
 func update_flip():
@@ -121,8 +126,19 @@ func _on_Energy_timeout():
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
+	var damageDisplay = DamageShower.instance()
+	damageDisplay.set_position($DamageSpot.get_position())
+	damageDisplay.setValue(damage)
+	damageDisplay.set_scale(Vector2(1.5, 1.5))
+	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Player recived ", damage, " from: ", agressor.get_name())
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	self.velocity = (3 * dp * attack.direction)
+	emit_signal("DataUpdated", self)
 	return
+
+func calcPercentage(h, l):
+	return (l*100)/h
 
 func _on_SwordHit(body, id):
 	if id == 0: return
