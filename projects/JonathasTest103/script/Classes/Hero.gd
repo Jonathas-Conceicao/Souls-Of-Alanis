@@ -23,6 +23,7 @@ func _init():
 	self.add_child(weapon)
 	armor      = null
 	ring       = null
+	return self
 
 ###
 # Set stamina tu value
@@ -30,6 +31,7 @@ func _init():
 ###
 func setStamina(st):
 	self.attributes.setStamina(st)
+	return
 
 ###
 # Equips a new Armor if the weight allows it and
@@ -55,6 +57,7 @@ func setArmor(armor):
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
+	return
 
 ###
 # Equips a new Weapon if the weight allows it and
@@ -106,7 +109,6 @@ func getStamina():
 func getMaxStamina():
 	return self.attributes.getMaxStamina()
 
-
 # Calculates the real defense of the Hero
 # based on requipaments and attributes
 # return: new Defense's instance
@@ -150,6 +152,4 @@ func takeAttack(attack):
 ###
 func levelUp():
 	self.attributes.increment()
-
-func _ready():
-	pass
+	return

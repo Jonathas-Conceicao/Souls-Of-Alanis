@@ -26,16 +26,23 @@ func _init():
 	self.cur_carryLoad = self.carryLoad
 	defense = Defense.new(0, 0, 0)
 	self.add_child(defense)
+	return self
 
+###
+# Selts HP`and Stamina back to Max
+###
 func updateCurrent():
 	self.cur_hp = self.hp
 	self.cur_stamina = self.stamina
+	return
+
 ###
 # Set stamina tu value
 # st -> stamina value
 ###
 func setStamina(st):
 	self.cur_stamina = max(1, min(st, stamina))
+	return
 
 ###
 # return: current HP
@@ -61,13 +68,9 @@ func getStamina():
 func getMaxStamina():
 	return self.stamina
 
-
 ###
 # Causes _damege_ to the current HP
 ###
 func takeDamage(damage):
 	self.cur_hp = max(0.0, self.cur_hp - damage)
-
-func _ready():
-	pass
-
+	return

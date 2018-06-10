@@ -26,6 +26,7 @@ func _init(v = 1, s = 1, a = 1, w = 1):
 	power = Power.new()
 	self.add_child(power)
 	updatePower()
+	return self
 
 ###
 # Increments the attributes in clock
@@ -44,6 +45,7 @@ func increment(n=1):
 				self.wisdom   += 1
 		update = (update+1) % 4
 	updatePower()
+	return
 
 ###
 # Update de power values
@@ -56,7 +58,7 @@ func updatePower():
 	power.defense.impact = influence(3, 2, 0, 0)
 	power.defense.thrust = influence(3, 0, 2, 0)
 	power.updateCurrent()
-
+	return
 
 ###
 # Returns a new instance of attack based on the attributes
@@ -88,8 +90,7 @@ func trySwap(cur_w, new_w):
 	if tCarryLoad <= power.carryLoad:
 		power.cur_carryLoad = tCarryLoad
 		return true
-	else:
-		return false
+	return false
 
 ###
 # Set stamina tu value
@@ -97,6 +98,7 @@ func trySwap(cur_w, new_w):
 ###
 func setStamina(st):
 	self.power.setStamina(st)
+	return
 
 ###
 # return: the current carry load
@@ -134,7 +136,6 @@ func getStamina():
 func getMaxStamina():
 	return self.power.getMaxStamina()
 
-
 ###
 # Discounts a value from the HP
 # return:
@@ -150,10 +151,4 @@ func influence(v, s, a, w):
 			(strength * s) +
 			(agility * a)  +
 			(wisdom * w))
-
-###
-# Empty
-###
-func _ready():
-	pass
 

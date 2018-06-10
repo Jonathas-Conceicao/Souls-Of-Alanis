@@ -4,7 +4,7 @@ enum AttackType {Slash, Impact, Thrust}
 
 var type   # Attack's type
 var damage # Attack's damege
-var direction = Vector2()
+var direction = Vector2() # Normal vector of the Attack's direction
 
 ###
 # Constructor
@@ -23,6 +23,7 @@ func _init(type = Slash, damage = 0, dir_x = -1, dir_y = -1):
 func add(attack):
 	if attack.type == self.type:
 		self.damage += attack.damage
+	return
 
 ###
 # Returns a Attack that's the sum of this Attack with another one
@@ -35,6 +36,3 @@ func sum(attack):
 	ret.add(self)
 	ret.add(attack)
 	return ret
-
-func _ready():
-	pass

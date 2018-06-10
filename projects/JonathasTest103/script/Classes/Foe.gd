@@ -20,6 +20,7 @@ func _init(at = Attack.Slash):
 	armor      = null
 	ring       = null
 	attackType = at
+	return self
 
 ###
 # Sets a new armor and frees the old one
@@ -27,6 +28,7 @@ func _init(at = Attack.Slash):
 func setArmor(armor):
 	if armor != null: self.armor.queue_free()
 	self.armor = armor
+	return
 
 ###
 # Sets a new ring and frees the old one
@@ -34,6 +36,7 @@ func setArmor(armor):
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
+	return
 
 ###
 # Generates a new instance of defense based
@@ -68,6 +71,3 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
-
-func _ready():
-	pass
