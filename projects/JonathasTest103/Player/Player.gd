@@ -133,9 +133,10 @@ func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	emit_signal("DataUpdated", self)
 	var damageDisplay = DamageShower.instance()
-	damageDisplay.set_position($DamageSpot.get_position())
-	damageDisplay.setValue(damage)
-	damageDisplay.set_scale(Vector2(1.5, 1.5))
+	damageDisplay.init(self,
+					   $DamageSpot.get_position(),
+					   Vector2(1.5, 1.5),
+					   damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Player recived ", damage, " from: ", agressor.get_name())
 	_state_change("Stagger")

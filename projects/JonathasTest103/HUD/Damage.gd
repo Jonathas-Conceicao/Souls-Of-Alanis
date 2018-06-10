@@ -1,8 +1,15 @@
-extends Label
+extends CanvasItem
+
+func init(host, position, scale, value):
+	self.set_as_toplevel(true)
+	self.set_position(host.get_position() + position)
+	self.setValue(value)
+	self.set_scale(Vector2(1.5, 1.5))
+	return
 
 func setValue(value = 0):
-	self.text = str(value)
-	self.visible = false
+	$Label.text = str(value)
+	$Label.visible = false
 	return
 
 func _ready():

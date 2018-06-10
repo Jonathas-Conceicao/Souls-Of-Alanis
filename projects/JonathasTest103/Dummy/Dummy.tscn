@@ -70,7 +70,7 @@ wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="DamegeSpot" type="Position2D" parent="." index="5"]
+[node name="DamageSpot" type="Position2D" parent="." index="5"]
 
 position = Vector2( 20, -50 )
 _sections_unfolded = [ "Transform" ]

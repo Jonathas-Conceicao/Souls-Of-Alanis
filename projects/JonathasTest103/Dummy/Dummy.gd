@@ -42,11 +42,12 @@ func _on_HideTimer_timeout():
 func _on_takeDamage(agressor, attack):
 	state = HITED
 	var damage = data.takeAttack(attack)
-	var damegeDisplay = DamageShower.instance()
-	damegeDisplay.set_position($DamegeSpot.get_position())
-	damegeDisplay.setValue(damage)
-	damegeDisplay.set_scale(self.scale)
-	self.add_child(damegeDisplay) # The label frees it self when finished
+	var damageDisplay = DamageShower.instance()
+	damageDisplay.init(self,
+					   $DamageSpot.get_position(),
+					   Vector2(1.5, 1.5),
+					   damage)
+	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Dummy recived ", damage, " from: ", agressor.get_name())
 	
 
