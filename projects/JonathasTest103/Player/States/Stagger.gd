@@ -1,12 +1,28 @@
 extends 'State.gd'
 
+var direction
+var multiplier
+var knockedBack
+
 func enter(host):
 	host.set_animation("Staggered")
 	host.velocity.x = 0
 	host.velocity.y = 0
+	self.knockedBack = false
+	return
+
+func setKnockBack(host, itencity, direction):
+	self.multiplier = max(150, 3 * itencity)
+	self.direction = direction
 	return
 
 func update(host, delta):
+	if not knockedBack:
+		print("Mult set to:", self.multiplier)
+		print("Dir:", self.direction)
+		print("R:", multiplier * direction)
+		host.velocity = (multiplier * direction)
+		knockedBack = true
 	if host.is_on_ceiling():
 		host.velocity.y = max(0, host.velocity.y)
 		return "Fall"

@@ -69,6 +69,7 @@ func _physics_process(delta):
 	move_and_slide(velocity, UP)
 	return
 
+var control = 0
 func processDebug():
 	# _state_change("Idle")
 	# data.attributes.power.stamina += 10
@@ -77,7 +78,9 @@ func processDebug():
 	# print("Strength       :", data.attributes.strength)
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
-	self._on_takeDamage(self, Attack.new(Attack.Slash, 10))
+	self._on_takeDamage(self, Attack.new(Attack.Slash, control))
+	control += 5
+	if control >= 20: control = 0
 	# var Cam = self.get_node("Camera2D")
 	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
 	return
@@ -135,9 +138,9 @@ func _on_takeDamage(agressor, attack):
 	damageDisplay.set_scale(Vector2(1.5, 1.5))
 	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Player recived ", damage, " from: ", agressor.get_name())
-	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	_state_change("Stagger")
-	self.velocity = (3 * dp * attack.direction)
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	current_state.setKnockBack(self, dp, attack.direction)
 	return
 
 func calcPercentage(h, l):
