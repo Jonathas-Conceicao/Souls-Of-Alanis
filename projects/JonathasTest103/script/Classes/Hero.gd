@@ -139,7 +139,7 @@ func genAttack():
 # return: damege take
 ###
 func takeAttack(attack):
-	var defense = getDefense()
+	var defense = genDefense()
 	var damage  = defense.calcCombat(attack)
 	attack.queue_free()
 	defense.queue_free()
