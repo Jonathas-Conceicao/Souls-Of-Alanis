@@ -112,7 +112,6 @@ func getMaxStamina():
 # return: new Defense's instance
 ###
 func genDefense():
-	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
 	if armor != null:
 		defense = defense.sum(armor.defense)

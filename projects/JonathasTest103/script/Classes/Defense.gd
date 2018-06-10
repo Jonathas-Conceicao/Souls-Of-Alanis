@@ -15,6 +15,16 @@ func _init(s = 0, i = 0, t = 0):
 	self.thrust = t
 
 ###
+# Overload the duplicate method to copy the internal state
+###
+func duplicate():
+	var newDefense = .duplicate()
+	newDefense.slash = self.slash
+	newDefense.impact = self.impact
+	newDefense.thrust = self.thrust
+	return newDefense
+
+###
 # Sums this instance with another
 # defense -> another instance
 ###
