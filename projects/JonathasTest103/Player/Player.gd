@@ -123,9 +123,8 @@ func _on_Animation_animation_finished(anim_name):
 	return
 
 func _on_Energy_timeout():
-	var energy = data.getStamina()
 	var energy_per_tick = max(1, data.getMaxStamina() / 30)
-	data.setStamina(energy + energy_per_tick)
+	data.increaseStamina(energy_per_tick)
 	emit_signal("DataUpdated", self)
 	return
 

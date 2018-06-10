@@ -26,12 +26,32 @@ func _init():
 	return self
 
 ###
-# Set stamina tu value
-# st -> stamina value
+# Increases Stamina, bounded by the Max value
+# value -> Value to be incremented
 ###
-func setStamina(st):
-	self.attributes.setStamina(st)
-	return
+func increaseStamina(value):
+	return self.attributes.increaseStamina(value);
+
+###
+# Decreases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func decreaseStamina(value):
+	return self.attributes.decreaseStamina(value)
+
+###
+# Increases HP, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseHP(value):
+	return self.attributes.increaseHP(value)
+
+###
+# Decreases HP, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseHP(value):
+	return self.attributes.decreaseHP(value)
 
 ###
 # Equips a new Armor if the weight allows it and

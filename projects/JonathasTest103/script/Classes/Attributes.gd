@@ -93,12 +93,32 @@ func trySwap(cur_w, new_w):
 	return false
 
 ###
-# Set stamina tu value
-# st -> stamina value
+# Increases Stamina, bounded by the Max value
+# value -> Value to be incremented
 ###
-func setStamina(st):
-	self.power.setStamina(st)
-	return
+func increaseStamina(value):
+	return self.power.increaseStamina(value);
+
+###
+# Decreases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func decreaseStamina(value):
+	return self.power.decreaseStamina(value)
+
+###
+# Increases HP, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseHP(value):
+	return self.power.increaseHP(value)
+
+###
+# Decreases HP, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseHP(value):
+	return self.power.decreaseHP(value)
 
 ###
 # return: the current carry load
@@ -141,7 +161,7 @@ func getMaxStamina():
 # return:
 ###
 func takeDamage(damage):
-	self.power.takeDamage(damage)
+	self.power.decreaseHP(damage)
 
 ###
 # Internally used to calculate influence of each attribute

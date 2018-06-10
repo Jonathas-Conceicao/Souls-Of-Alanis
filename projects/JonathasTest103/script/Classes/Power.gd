@@ -37,11 +37,51 @@ func updateCurrent():
 	return
 
 ###
-# Set stamina tu value
+# Set stamina to value
 # st -> stamina value
 ###
 func setStamina(st):
 	self.cur_stamina = max(1, min(st, stamina))
+	return
+
+###
+# Set HP to value
+# st -> stamina value
+###
+func setHP(st):
+	self.cur_hp = max(0, min(st, hp))
+	return
+
+###
+# Increases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseStamina(value):
+	self.setStamina(cur_stamina + value)
+	return
+
+###
+# Decreases Stamina, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseStamina(value):
+	self.setStamina(cur_stamina - value)
+	return
+
+###
+# Increases HP, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseHP(value):
+	self.setHP(cur_hp + value)
+	return
+
+###
+# Decreases hp, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseHP(value):
+	self.setHP(cur_hp - value)
 	return
 
 ###
@@ -67,10 +107,3 @@ func getStamina():
 ###
 func getMaxStamina():
 	return self.stamina
-
-###
-# Causes _damege_ to the current HP
-###
-func takeDamage(damage):
-	self.cur_hp = max(0.0, self.cur_hp - damage)
-	return
