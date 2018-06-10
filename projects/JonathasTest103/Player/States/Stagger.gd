@@ -18,9 +18,6 @@ func setKnockBack(host, itencity, direction):
 
 func update(host, delta):
 	if not knockedBack:
-		print("Mult set to:", self.multiplier)
-		print("Dir:", self.direction)
-		print("R:", multiplier * direction)
 		host.velocity = (multiplier * direction)
 		knockedBack = true
 	if host.is_on_ceiling():
