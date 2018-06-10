@@ -66,7 +66,7 @@ func getMaxStamina():
 # Causes _damege_ to the current HP
 ###
 func takeDamage(damage):
-	self.cur_hp = min(0.0, self.cur_hp - damage)
+	self.cur_hp = max(0.0, self.cur_hp - damage)
 
 func _ready():
 	pass
