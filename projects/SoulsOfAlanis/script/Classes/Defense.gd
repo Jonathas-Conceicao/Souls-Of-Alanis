@@ -13,6 +13,17 @@ func _init(s = 0, i = 0, t = 0):
 	self.slash  = s
 	self.impact = i
 	self.thrust = t
+	return self
+
+###
+# Overload the duplicate method to copy the internal state
+###
+func duplicate():
+	var newDefense = .duplicate()
+	newDefense.slash = self.slash
+	newDefense.impact = self.impact
+	newDefense.thrust = self.thrust
+	return newDefense
 
 ###
 # Sums this instance with another
@@ -22,6 +33,7 @@ func add(defense):
 	self.slash  += defense.slash
 	self.impact += defense.impact
 	self.thrust += defense.thrust
+	return
 
 ###
 # Returns a new instance that the some of this with the other
@@ -34,7 +46,6 @@ func sum(defense):
 	ret.add(self)
 	ret.add(defense)
 	return ret
-
 
 ###
 # Calculates the damege caused by a attack to this defense
@@ -51,6 +62,3 @@ func calcCombat(attack):
 		Attack.Thrust:
 			damege = attack.damage - self.thrust
 	return max(damege, 0)
-
-func _ready():
-	pass

@@ -1,12 +1,9 @@
 extends Node
 
-enum FoeType {Air, Ground, Wall, Special} 
-
 var attributes # Creature's attributes
 var armor      # Creature's armor (can be null)
 var ring       # Creature's ring  (can be null)
 var attackType # Creature's Attack's type
-var type       # Creature's type
 
 const Attributes = preload("Attributes.gd")
 const Armor      = preload("Armor.gd")
@@ -17,14 +14,13 @@ const Attack     = preload("Attack.gd")
 ###
 # Constructor
 ###
-func _init(at = Attack.Slash, tp = Ground):
-
-	self.attributes = Attributes.new()
+func _init(at = Attack.Slash):
+	attributes = Attributes.new()
 	self.add_child(attributes)
-	self.armor      = null
-	self.ring       = null
-	self.attackType = at
-	self.type       = tp
+	armor      = null
+	ring       = null
+	attackType = at
+	return self
 
 ###
 # Sets a new armor and frees the old one
@@ -32,6 +28,7 @@ func _init(at = Attack.Slash, tp = Ground):
 func setArmor(armor):
 	if armor != null: self.armor.queue_free()
 	self.armor = armor
+	return
 
 ###
 # Sets a new ring and frees the old one
@@ -39,6 +36,7 @@ func setArmor(armor):
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
+	return
 
 ###
 # Generates a new instance of defense based
@@ -73,9 +71,3 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
-
-func get_size():
-	get_parent().get_node("Pivot").get_node("Body").region_rect.size
-
-func _ready():
-	pass

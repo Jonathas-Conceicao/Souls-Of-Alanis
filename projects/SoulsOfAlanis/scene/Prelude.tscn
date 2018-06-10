@@ -22,7 +22,7 @@ extents = Vector2( 26.5149, 10.0596 )
 custom_solver_bias = 0.0
 extents = Vector2( 98.3213, 18.4483 )
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 [node name="WizardNPC" parent="." index="0" instance=ExtResource( 1 )]
 

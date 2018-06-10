@@ -23,13 +23,35 @@ func _init():
 	self.add_child(weapon)
 	armor      = null
 	ring       = null
+	return self
 
 ###
-# Set stamina tu value
-# st -> stamina value
+# Increases Stamina, bounded by the Max value
+# value -> Value to be incremented
 ###
-func setStamina(st):
-	self.attributes.setStamina(st)
+func increaseStamina(value):
+	return self.attributes.increaseStamina(value);
+
+###
+# Decreases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func decreaseStamina(value):
+	return self.attributes.decreaseStamina(value)
+
+###
+# Increases HP, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseHP(value):
+	return self.attributes.increaseHP(value)
+
+###
+# Decreases HP, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseHP(value):
+	return self.attributes.decreaseHP(value)
 
 ###
 # Equips a new Armor if the weight allows it and
@@ -55,6 +77,7 @@ func setArmor(armor):
 func setRing(ring):
 	if ring != null: self.ring.queue_free()
 	self.ring = ring
+	return
 
 ###
 # Equips a new Weapon if the weight allows it and
@@ -106,13 +129,11 @@ func getStamina():
 func getMaxStamina():
 	return self.attributes.getMaxStamina()
 
-
 # Calculates the real defense of the Hero
 # based on requipaments and attributes
 # return: new Defense's instance
 ###
 func genDefense():
-	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
 	if armor != null:
 		defense = defense.sum(armor.defense)
@@ -139,7 +160,7 @@ func genAttack():
 # return: damege take
 ###
 func takeAttack(attack):
-	var defense = getDefense()
+	var defense = genDefense()
 	var damage  = defense.calcCombat(attack)
 	attack.queue_free()
 	defense.queue_free()
@@ -151,6 +172,4 @@ func takeAttack(attack):
 ###
 func levelUp():
 	self.attributes.increment()
-
-func _ready():
-	pass
+	return
