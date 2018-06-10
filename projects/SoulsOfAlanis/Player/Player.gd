@@ -4,23 +4,37 @@ const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
+const DamageShower = preload("res://HUD/Damage.tscn")
+
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
+# export(float) var BASE_SPEED = 350
+# export(float) var BASE_ENERGY = 250
+var BASE_SPEED = 350
+var BASE_ENERGY = 160
 
-const MAXSPEED = 350
-const MAXENERGY = MAXSPEED * 1.5
-
-var speed = 350
-var direction
+var energy = BASE_ENERGY
 var velocity = Vector2()
 
+var direction
 var flipped = false
-var state_flipped = false
-var state_moving_x = false
-var state_moving_y = false
-var state_attacking = false
-var state_leeping = false
+
+signal StateChanged
+signal DataUpdated
+var current_state = null
+
+onready var state = {
+	"Idle":    $States/Idle,
+	"Move":    $States/Move,
+	"Jump":    $States/Jump,
+	"Fall":    $States/Fall,
+	"Leep":    $States/Leep,
+	"Climb":   $States/Climb,
+	"Attack":  $States/Attack,
+	"Swap":    $States/Swap,
+	"Stagger": $States/Stagger,
+}
 
 var data
 
@@ -28,184 +42,118 @@ func _ready():
 	data = Hero.new()
 	self.add_child(data)
 	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+	velocity.y = 40 # base velocity to detect "is_on_floor"
+	current_state = state["Idle"]
+	current_state.enter(self)
+	emit_signal("StateChanged", current_state)
+	emit_signal("DataUpdated", self)
+
 	set_process(true)
 	set_process_input(true)
+	return
 
 func _input(event):
 	# Handle test actions
-	if event.is_action_pressed("ui_debug"):
+	if event.is_action_pressed("player_debug"):
 		processDebug()
 
-	# Handle weapon swaping
-	if   event.is_action_pressed("ui_select_weapon_0"):
-		switchWeapon(0)
-	elif event.is_action_pressed("ui_select_weapon_1"):
-		switchWeapon(1)
-	elif event.is_action_pressed("ui_select_weapon_2"):
-		switchWeapon(2)
-
-	# Handle attack
-	if event.is_action_pressed("ui_attack"):
-		handleAttack()
-
-	# Handle moviment
-	if   Input.is_action_pressed("ui_right"):
-		handleMoviment(0)
-	elif Input.is_action_pressed("ui_left"):
-		handleMoviment(1)
-	else:
-		handleMoviment(2)
-
-	if event.is_action_pressed("ui_up"):
-		handleMoviment(3)
-	elif event.is_action_pressed("ui_leep"):
-		handleMoviment(4)
-	else:
-		handleMoviment(5)
+	var new_state = current_state.handle_input(self, event)
+	if new_state:
+		_state_change(new_state)
+	return
 
 func _physics_process(delta):
-	update_hud()
-	update_velocity()
-	update_animation()
+	var new_state = current_state.update(self, delta)
+	if new_state:
+		_state_change(new_state)
 	move_and_slide(velocity, UP)
+	return
 
+var control = 0
 func processDebug():
-	data.attributes.power.stamina += 10
-	data.attributes.strength += 1
-	data.attributes.power.updateCurrent()
-	print("Strength       :", data.attributes.strength)
-	print("Current Stamina:", data.getStamina())
-	print("Max     Stamina:", data.getMaxStamina())
-
-func switchWeapon(type):
-	match type:
-		0:
-			data.setWeapon(Weapon.new(0, Attack.Slash, 20))
-			print("Holding a Sword")
-		1:
-			data.setWeapon(Weapon.new(0, Attack.Impact, 20))
-			print("Holding a Axe")
-		2:
-			data.setWeapon(Weapon.new(0, Attack.Thrust, 20))
-			print("Holding a Spear")
-
-func handleAttack():
-	state_attacking = true
-
-func handleMoviment(k):
-	match k:
-		0: # ui_right
-			if not state_leeping:
-				velocity.x = speed
-				state_moving_x = true
-				state_flipped = false
-		1: # ui_left
-			if not state_leeping:
-				velocity.x = -speed
-				state_moving_x = true
-				state_flipped = true
-		2: # not moving x
-			if not state_leeping:
-				velocity.x = 0
-				state_moving_x = false
-		3: # ui_up
-			if is_on_floor():
-				velocity.y = -speed
-				state_moving_y = true
-			elif is_on_wall():
-				velocity.y = -data.getStamina()
-				data.setStamina(0)
-				state_moving_y = true
-		4: # ui_leep
-			var energy = data.getStamina()
-			if is_on_floor():
-				if state_flipped:
-					velocity.x = - energy
-				else:
-					velocity.x = energy
-				velocity.y = -energy
-				data.setStamina(0)
-				state_moving_x = true
-				state_moving_y = true
-				state_leeping = true
-		5: # not moving y
-			state_moving_y = false
-
-func update_velocity():
-	if is_on_floor() && velocity.y >= 0:
-		velocity.y = 40
-		state_moving_y = false
-		state_leeping = false
-		if state_leeping:
-			velocity.x = 0
-			state_moving_x = false
-			state_leeping = false
-	else:
-		velocity.y += GRAVITY
-		if is_on_ceiling():
-			velocity.y = 0
-		state_moving_y = true
-	if not state_moving_x:
-		velocity.x = 0
-
-func update_animation():
-	if state_attacking:
-		set_animation("Attaking")
-	else:
-		update_flip()
-		if state_moving_y:
-			if velocity.y <= 0:
-				set_animation("Jumping")
-			else:
-				set_animation("Falling")
-		elif state_moving_x:
-			if velocity.x != 0:
-				set_animation("Moving")
-		else:
-			set_animation("Idle")
+	# _state_change("Idle")
+	# data.attributes.power.stamina += 10
+	# data.attributes.strength += 1
+	# data.attributes.power.updateCurrent()
+	# print("Strength       :", data.attributes.strength)
+	# print("Current Stamina:", data.getStamina())
+	# print("Max     Stamina:", data.getMaxStamina())
+	self._on_takeDamage(self, Attack.new(Attack.Slash, control))
+	control += 5
+	if control >= 20: control = 0
+	# var Cam = self.get_node("Camera2D")
+	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
+	return
 
 func update_flip():
-	if state_flipped != flipped:
+	direction = velocity.x >= 0
+	if direction == flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
-		flipped = state_flipped
+		flipped = !direction
+	return
 
-func update_hud():
-	var hpMax = data.getMaxHP()
-	var hpCur = data.getHP()
-	var hpP = calcPercentage(hpMax, hpCur)
-	var stMax = data.getMaxStamina()
-	var stCur = data.getStamina()
-	var staminaP = calcPercentage(stMax, stCur)
-	$HUD.setHP(hpP)
-	$HUD.setStamina(staminaP)
+func set_animation(animation):
+	if !$Animation.is_playing() || $Sprite.animation != animation:
+		$Sprite.animation = animation # To solve bug where the new state commes before the Animation starts
+		$Animation.play(animation)
+		$Sword.animation_play(animation)
+	return
+
+func _state_change(state_name):
+	current_state.exit(self)
+	var s = state[state_name]
+	if s:
+		current_state = s
+	current_state.enter(self)
+	emit_signal("StateChanged", current_state)
+	return
+
+func getData():
+	var data = []
+	data.append(["State", self.current_state.get_name()])
+	data.append(["HP", self.data.getHP()])
+	data.append(["Stamina", self.data.getStamina()])
+	data.append(["Energy", self.energy])
+	return data
+
+func _on_Animation_animation_finished(anim_name):
+	var ns = current_state._on_animation_finished(self, anim_name)
+	if ns: _state_change(ns)
+	return
+
+func _on_Energy_timeout():
+	var energy_per_tick = max(1, data.getMaxStamina() / 30)
+	data.increaseStamina(energy_per_tick)
+	emit_signal("DataUpdated", self)
+	return
+
+func _on_takeDamage(agressor, attack):
+	var damage = data.takeAttack(attack)
+	emit_signal("DataUpdated", self)
+	var damageDisplay = DamageShower.instance()
+	damageDisplay.init(self,
+					   $DamageSpot.get_position(),
+					   Vector2(1.5, 1.5),
+					   damage)
+	self.add_child(damageDisplay) # The label frees it self when finished
+	print("Player recived ", damage, " from: ", agressor.get_name())
+	_state_change("Stagger")
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	current_state.setKnockBack(self, dp, attack.direction)
+	return
 
 func calcPercentage(h, l):
 	return (l*100)/h
 
-func set_animation(animation):
-	if !$Animation.is_playing() || $Sprite.animation != animation:
-		$Animation.play(animation)
-		$Sword.animation_play(animation)
-
-func _on_Animation_animation_finished(anim_name):
-	if $Sprite.animation == "Attaking":
-		state_attacking = false
-
-func _on_Energy_timeout():
-	var energy = data.getStamina()
-	var energy_per_tick = max(1, data.getMaxStamina() / 30)
-	data.setStamina(energy + energy_per_tick)
-
-func _on_takeDamage(agressor, attack):
-	var damage = data.takeAttack(attack)
-	print("Player recived ", damage, " from: ", agressor.get_name())
-
 func _on_SwordHit(body, id):
+	if id == 0: return
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
 		body._on_takeDamage(self, attack)
+	return
 
 func _on_Stepping_body_entered(body):
 	if body != self && body.has_method("_on_takeFoot"):
 		body._on_takeFoot(self)
+	return
