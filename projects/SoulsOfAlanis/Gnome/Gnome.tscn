@@ -20,7 +20,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Gnome" type="KinematicBody2D"]
+[node name="Gnome" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -97,7 +97,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]

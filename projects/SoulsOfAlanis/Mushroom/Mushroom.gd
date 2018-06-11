@@ -31,10 +31,8 @@ func _ready():
 
 func _physics_process(delta):
 	update_velocity()
-	#update_animation()
 	act()
 	pass
-
 
 func act():
 	if movement == PATROL:
@@ -50,11 +48,12 @@ func update_velocity():
 		velocity.y += GRAVITY
 	move_and_slide(velocity, UP)
 
-
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Mushroom recived ", damage, " from: ", agressor.get_name())
-	pass
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	setKnockBack(self, dp, attack.direction)
+	return
 
 func _on_takeFoot(agressor):
 	queue_free()
@@ -68,9 +67,15 @@ func act_patrol():
 			velocity.x = SPEED
 		else:
 			if ray_right.is_colliding():
-				shape = ray_right.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.LEFT
+				var body = ray_right.get_collider()
+				if(body):
+					if (body.has_method("_on_takeDamage")):
+						if body != self && body.has_method("_on_takeDamage"):
+							var attack = data.genAttack()
+							body._on_takeDamage(self, attack)
+					else:
+						if (body.get_class() != "Area2D"):
+							direction = DIRECTIONS.LEFT
 			else:
 				direction = DIRECTIONS.LEFT
 
@@ -79,20 +84,28 @@ func act_patrol():
 			velocity.x = -SPEED
 		else:
 			if ray_left.is_colliding():
-				shape = ray_left.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.RIGHT
+				var body = ray_left.get_collider()
+				if(body):
+					if (body.has_method("_on_takeDamage")):
+						if body != self && body.has_method("_on_takeDamage"):
+							var attack = data.genAttack()
+							body._on_takeDamage(self, attack)
+					else:
+						if (body.get_class() != "Area2D"):
+							direction = DIRECTIONS.RIGHT
 			else:
 				direction = DIRECTIONS.RIGHT
 
+func setKnockBack(host, itencity, direction):
+	self.multiplier = max(150, 3 * itencity)
+	self.direction = direction
+	return
+
+func calcPercentage(h, l):
+	return (l*100)/h
+	
 func act_idle():
      pass
-
-#func _on_CollisionShape2D_tree_entered(body):
-#	if body != self && body.has_method("_on_takeDamage"):
-#		var attack = data.genAttack()
-#		body._on_takeDamage(self, attack)
-#	pass # replace with function body
 
 func get_size():
 	return data.get_size()

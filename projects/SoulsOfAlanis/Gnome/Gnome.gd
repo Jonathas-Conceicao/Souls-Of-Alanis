@@ -54,6 +54,8 @@ func update_velocity():
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Gnome recived ", damage, " from: ", agressor.get_name())
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	setKnockBack(self, dp, attack.direction)
 	pass
 
 func act_patrol():
@@ -89,9 +91,10 @@ func act_patrol():
 func act_idle():
      pass
 
+func setKnockBack(host, itencity, direction):
+	self.multiplier = max(150, 3 * itencity)
+	self.direction = direction
+	return
 
-func _on_CollisionShape2D_tree_entered(body):
-	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
-		body._on_takeDamage(self, attack)
-	pass # replace with function body
+func calcPercentage(h, l):
+	return (l*100)/h

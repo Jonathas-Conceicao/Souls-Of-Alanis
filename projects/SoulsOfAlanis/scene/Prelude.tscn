@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down5.png" type="Texture" id=22]
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down6.png" type="Texture" id=23]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Mushroom/Mushroom.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Bat/Bat.tscn" type="PackedScene" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -64,7 +66,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Prelude" type="Node" index="0"]
+[node name="Prelude" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -355,5 +357,17 @@ disabled = true
 [node name="Player" parent="." index="10" instance=ExtResource( 24 )]
 
 position = Vector2( 101.706, 416.018 )
+
+[node name="Mushroom" parent="." index="11" instance=ExtResource( 25 )]
+
+position = Vector2( 305, 387 )
+
+[node name="Bat" parent="." index="12" instance=ExtResource( 26 )]
+
+position = Vector2( 210, 379 )
+
+[node name="Bat2" parent="." index="13" instance=ExtResource( 26 )]
+
+position = Vector2( 174, 336 )
 
 

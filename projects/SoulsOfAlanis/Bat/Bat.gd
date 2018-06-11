@@ -27,7 +27,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-    #update_animation()
 	pass
 
 
@@ -74,24 +73,13 @@ func update_velocity():
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print ("Bat received ", damage, " from: ", agressor.get_name())
-	pass
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	setKnockBack(self, dp, attack.direction)
+	return
 
 func update_position():
 	set_position(get_position() + velocity)
 	pass
-
-func _on_CollisionShape2D_tree_entered():
-	match direction:
-			RIGHT:
-				direction = LEFT
-			LEFT:
-				direction = RIGHT
-			UP:
-				direction = DOWN
-			DOWN:
-				direction = UP
-	pass # replace with function body
-
 
 func _on_WaitTimer_timeout():
 	update_velocity()
@@ -103,3 +91,28 @@ func _on_WaitTimer_timeout():
 func _on_WaitTimer2_timeout():
 	act()
 	pass # replace with function body
+
+
+func _on_HitBox_body_entered(body):
+	match direction:
+			RIGHT:
+				direction = LEFT
+			LEFT:
+				direction = RIGHT
+			UP:
+				direction = DOWN
+			DOWN:
+				direction = UP
+	if body != self && body.has_method("_on_takeDamage"):
+		var attack = data.genAttack()
+		body._on_takeDamage(self, attack)
+	pass # replace with function body
+
+func setKnockBack(host, itencity, direction):
+	self.multiplier = max(150, 3 * itencity)
+	self.direction = direction
+	return
+
+func calcPercentage(h, l):
+	return (l*100)/h
+	

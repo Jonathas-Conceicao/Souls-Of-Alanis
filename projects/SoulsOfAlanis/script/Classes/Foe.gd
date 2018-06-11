@@ -1,9 +1,12 @@
 extends Node
 
+enum FoeType {Air, Ground, Wall, Special}
+
 var attributes # Creature's attributes
 var armor      # Creature's armor (can be null)
 var ring       # Creature's ring  (can be null)
 var attackType # Creature's Attack's type
+var type       # Creature's type
 
 const Attributes = preload("Attributes.gd")
 const Armor      = preload("Armor.gd")
@@ -14,12 +17,13 @@ const Attack     = preload("Attack.gd")
 ###
 # Constructor
 ###
-func _init(at = Attack.Slash):
+func _init(at = Attack.Slash, tp = FoeType.Ground):
 	attributes = Attributes.new()
 	self.add_child(attributes)
 	armor      = null
 	ring       = null
 	attackType = at
+	type       = tp
 	return self
 
 ###
@@ -101,6 +105,12 @@ func getStamina():
 ###
 func getMaxStamina():
 	return self.attributes.getMaxStamina()
+
+###
+# return: Foe's type
+###
+func getType():
+	return self.type
 
 ###
 # Generates a new instance of defense based

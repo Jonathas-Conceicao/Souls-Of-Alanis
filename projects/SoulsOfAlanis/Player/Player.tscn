@@ -310,7 +310,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 28, 1 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -358,7 +358,6 @@ autostart = true
 
 [node name="Stepping" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
