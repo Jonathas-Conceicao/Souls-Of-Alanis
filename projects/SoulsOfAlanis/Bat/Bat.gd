@@ -5,7 +5,7 @@ const Foe = preload("res://script/Classes/Foe.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 
 const MAXSPEED = 350
-const UP = Vector2(0, 0)
+const UPVEC = Vector2(0,-1)
 
 enum MOVEMENTS  { IDLE, PATROL, SENTINEL }
 enum DIRECTIONS { UP, DOWN, LEFT, RIGHT }
@@ -28,7 +28,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	pass
+	move_and_slide(velocity, UPVEC)
+	return
 
 
 func act():
@@ -63,13 +64,13 @@ func act_sentinel():
 func update_velocity():
 	match direction:
 		RIGHT:
-			velocity.x =  1
+			velocity.x =  130
 		LEFT:
-			velocity.x = -1
+			velocity.x = -130
 		UP:
-			velocity.y = -1
+			velocity.y = -130
 		DOWN:
-			velocity.y =  1
+			velocity.y =  130
  
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
@@ -90,8 +91,7 @@ func update_position():
 		direction = DOWN
 	if pos.y > windowsize.y:
 		direction = UP
-	set_position(get_position() + velocity)
-	pass
+	return
 
 func _on_WaitTimer_timeout():
 	update_velocity()

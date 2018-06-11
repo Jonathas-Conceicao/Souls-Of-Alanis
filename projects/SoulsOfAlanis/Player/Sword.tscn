@@ -190,7 +190,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.55, 0.69 ),
+"times": PoolRealArray( 0, 0.5, 0.69 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -202,7 +202,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.55, 0.69 ),
+"times": PoolRealArray( 0, 0.5, 0.69 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -361,10 +361,11 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[node name="Sword" type="AnimatedSprite"]
+[node name="Sword" type="AnimatedSprite" index="0"]
 
 frames = SubResource( 1 )
-animation = "Idle"
+animation = "Attacking"
+frame = 5
 offset = Vector2( 39, -42 )
 script = ExtResource( 70 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -397,11 +398,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sword" type="CollisionPolygon2D" parent="Hitbox" index="0"]
 
-visible = false
-position = Vector2( 40, -40 )
+position = Vector2( 23.371, 9.58377 )
+rotation = -3.01799
 build_mode = 0
 polygon = PoolVector2Array( 18, 52, 18, 74, 78, 74, 92, 64, 92, 62, 78, 52 )
-disabled = true
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="TrailBox" type="Area2D" parent="." index="2"]
@@ -416,10 +416,8 @@ audio_bus_name = "Master"
 
 [node name="Trail" type="CollisionPolygon2D" parent="TrailBox" index="0"]
 
-visible = false
 build_mode = 0
 polygon = PoolVector2Array( 55, 10, 129, 7, 117, -57, 89, -89, 45, -107, 17, -107, -21, -93, -41, -75, -41, -73, -39, -73, -20, -81, -1, -81, 23, -71, 47, -43, 55, -17 )
-disabled = true
 _sections_unfolded = [ "Visibility" ]
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
