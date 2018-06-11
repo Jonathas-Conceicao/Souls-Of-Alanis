@@ -8,16 +8,8 @@ func _physics_process(delta):
 	var item
 	
 	for body in bodies:
-		
+
 		if body.name == "Player" && Input.is_action_pressed("ui_attack"):
+			print("que")
 			$Closed.hide()
 			$Opened.show()
-			
-			randomize()
-			itemID = randi()%10
-			
-			item = get_item(itemID)
-			$Potion/Item.show()
-			
-func get_item(itemID):
-	return 1

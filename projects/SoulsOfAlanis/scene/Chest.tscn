@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scene/Chest.gd" type="Script" id=1]
+[ext_resource path="res://art/Chest and key.png" type="Texture" id=2]
+[ext_resource path="res://scene/Potion.gd" type="Script" id=3]
+[ext_resource path="res://art/Potions.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.2456, 9.63983 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.8713, 14.2631 )
+
+[node name="Chest" type="Area2D"]
+
+show_behind_parent = true
+position = Vector2( 223.725, 679.295 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Closed" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 55, 62 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.978455, 6.41966 )
+scale = Vector2( 2.18904, 1.87567 )
+shape = SubResource( 1 )
+
+[node name="Opened" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 0.463287, 13.6174 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 4.5, 32.75, 47, 24.5 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Potion" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion" index="0"]
+
+position = Vector2( 1.25436, -23.8328 )
+shape = SubResource( 2 )
+
+[node name="Item" type="Sprite" parent="Potion" index="1"]
+
+visible = false
+position = Vector2( 0.773788, -23.9872 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 3, 63.5, 27.5, 31 )
+_sections_unfolded = [ "Region" ]
+
+

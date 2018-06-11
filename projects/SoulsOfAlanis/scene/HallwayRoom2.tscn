@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=1]
+[ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=2]
+
+[node name="HallwayRoom2" type="Node"]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 451.218, 355.413 )
+scale = Vector2( 0.470084, 0.650075 )
+texture = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 23, 12, 0, 393239, 1, 0, 524312, 4, 0, 589842, 1, 0, 589848, 4, 0, 655384, 4, 0, 720908, 1, 0, 720915, 4, 0, 720920, 4, 0, 786451, 4, 0, 786456, 4, 0, 851974, 1, 0, 851981, 4, 0, 851987, 4, 0, 851992, 4, 0, 917517, 4, 0, 917523, 4, 0, 917528, 4, 0, 1048575, 1, 0, 983047, 4, 0, 983053, 4, 0, 983059, 4, 0, 983064, 4, 0, 1048583, 4, 0, 1048589, 4, 0, 1048595, 4, 0, 1048600, 4, 0, 1114112, 4, 0, 1114119, 4, 0, 1114125, 4, 0, 1114131, 4, 0, 1114136, 4, 0, 1179648, 4, 0, 1179655, 4, 0, 1179661, 4, 0, 1179667, 4, 0, 1179672, 4, 0, 1245184, 4, 0, 1245191, 4, 0, 1245197, 4, 0, 1245203, 4, 0, 1245208, 4, 0, 1310720, 4, 0, 1310727, 4, 0, 1310733, 4, 0, 1310739, 4, 0, 1310744, 4, 0, 1376256, 4, 0, 1376263, 4, 0, 1376269, 4, 0, 1376275, 4, 0, 1376280, 4, 0 )
+_sections_unfolded = [ "Cell" ]
+
+

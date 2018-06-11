@@ -1,20 +1,16 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scene/LargeRoom1.gd" type="Script" id=1]
 [ext_resource path="res://art/TempleTIles.png" type="Texture" id=2]
-[ext_resource path="res://scene/Chest.gd" type="Script" id=3]
-[ext_resource path="res://art/Chest and key.png" type="Texture" id=4]
-[ext_resource path="res://scene/Potion.gd" type="Script" id=5]
-[ext_resource path="res://art/Potions.png" type="Texture" id=6]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=8]
-[ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=9]
-[ext_resource path="res://scene/Switch2.gd" type="Script" id=10]
-[ext_resource path="res://art/switchRight.png" type="Texture" id=11]
-[ext_resource path="res://art/switchLeft.png" type="Texture" id=12]
-[ext_resource path="res://script/Area2D.gd" type="Script" id=13]
-[ext_resource path="res://icon.png" type="Texture" id=14]
-[ext_resource path="res://sound/enchanted tiki 86.ogg" type="AudioStream" id=15]
+[ext_resource path="res://scene/Chest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=5]
+[ext_resource path="res://scene/Switch2.gd" type="Script" id=6]
+[ext_resource path="res://art/switchRight.png" type="Texture" id=7]
+[ext_resource path="res://art/switchLeft.png" type="Texture" id=8]
+[ext_resource path="res://script/Area2D.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://sound/enchanted tiki 86.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,39 +20,29 @@ extents = Vector2( 85.5726, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.02267, 5.03189 )
-
-[sub_resource type="RectangleShape2D" id=8]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10.8713, 14.2631 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 6.29184, 1.63684 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.29184, 1.63684 )
+extents = Vector2( 11.3518, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.3518, 10 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=7]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[node name="BigFuckingRoom" type="Node" index="0"]
+[node name="BigFuckingRoom" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -88,109 +74,14 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 1077.1, 716.676 )
 shape = SubResource( 1 )
 
-[node name="Chest" type="Area2D" parent="." index="1"]
+[node name="Chest" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-show_behind_parent = true
-position = Vector2( 223.725, 679.295 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
+[node name="parallax_bg" parent="." index="2" instance=ExtResource( 4 )]
 
-[node name="Closed" type="Sprite" parent="Chest" index="0"]
-
-show_behind_parent = true
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 55, 62 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest" index="1"]
-
-position = Vector2( 0.978455, 6.41966 )
-scale = Vector2( 2.18904, 1.87567 )
-shape = SubResource( 2 )
-
-[node name="Opened" type="Sprite" parent="Chest" index="2"]
-
-visible = false
-position = Vector2( 0.463287, 13.6174 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 4.5, 32.75, 47, 24.5 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Potion" type="Area2D" parent="Chest" index="3"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Potion" index="0"]
-
-position = Vector2( 1.25436, -23.8328 )
-shape = SubResource( 8 )
-
-[node name="Item" type="Sprite" parent="Chest/Potion" index="1"]
-
-visible = false
-position = Vector2( 0.773788, -23.9872 )
-texture = ExtResource( 6 )
-region_enabled = true
-region_rect = Rect2( 3, 63.5, 27.5, 31 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Player" parent="." index="2" instance=ExtResource( 7 )]
-
-editor/display_folded = true
-position = Vector2( 1347.72, 891.215 )
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="5"]
-
-position = Vector2( 2773.35, 1799.58 )
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="parallax_bg" parent="." index="3" instance=ExtResource( 8 )]
-
-[node name="TileMap" type="TileMap" parent="." index="4"]
+[node name="TileMap" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -211,7 +102,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" type="Area2D" parent="." index="5"]
+[node name="Switch" type="Area2D" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 3735.73, 595.237 )
@@ -223,7 +114,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -233,14 +124,14 @@ __meta__ = {
 position = Vector2( 10.6591, 13.5341 )
 rotation = -1.57594
 scale = Vector2( 0.152354, 0.150345 )
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch" index="1"]
 
 position = Vector2( 10.4523, 13.5949 )
 scale = Vector2( 0.614968, 0.483733 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="on" type="Sprite" parent="Switch" index="2"]
 
@@ -248,7 +139,7 @@ visible = false
 position = Vector2( 10.7017, 13.4816 )
 rotation = -1.5779
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 12 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Platformer" type="StaticBody2D" parent="Switch" index="3"]
@@ -270,7 +161,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer" index="1"]
@@ -299,7 +190,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer2" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer2" index="1"]
@@ -328,7 +219,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer3" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer3" index="1"]
@@ -357,7 +248,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer4" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer4" index="1"]
@@ -386,7 +277,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer5" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer5" index="1"]
@@ -415,7 +306,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer6" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer6" index="1"]
@@ -426,7 +317,7 @@ region_enabled = true
 region_rect = Rect2( 448, 126.5, 64, 20.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="FloorCollision" type="Node" parent="." index="6"]
+[node name="FloorCollision" type="Node" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -449,7 +340,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="FloorCollision" index="1"]
 
@@ -470,7 +361,7 @@ __meta__ = {
 
 position = Vector2( 10.6994, 0 )
 scale = Vector2( 2.69556, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="FloorCollision" index="2"]
 
@@ -491,7 +382,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="FloorCollision" index="3"]
 
@@ -512,7 +403,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="FloorCollision" index="4"]
 
@@ -533,7 +424,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="FloorCollision" index="5"]
 
@@ -554,7 +445,7 @@ __meta__ = {
 
 position = Vector2( 10.6994, 0 )
 scale = Vector2( 2.69556, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="FloorCollision" index="6"]
 
@@ -575,7 +466,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="FloorCollision" index="7"]
 
@@ -596,7 +487,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="FloorCollision" index="8"]
 
@@ -617,7 +508,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="FloorCollision" index="9"]
 
@@ -638,7 +529,7 @@ __meta__ = {
 
 position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="FloorCollision" index="10"]
 
@@ -659,7 +550,7 @@ __meta__ = {
 
 position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="FloorCollision" index="11"]
 
@@ -680,7 +571,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="FloorCollision" index="12"]
 
@@ -701,7 +592,7 @@ __meta__ = {
 
 position = Vector2( 18.7616, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="FloorCollision" index="13"]
 
@@ -722,7 +613,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="FloorCollision" index="14"]
 
@@ -743,7 +634,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="FloorCollision" index="15"]
 
@@ -764,7 +655,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="FloorCollision" index="16"]
 
@@ -785,9 +676,9 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
-[node name="BreakableWall" type="Area2D" parent="." index="7"]
+[node name="BreakableWall" type="Area2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 426.918, 1814.15 )
@@ -798,7 +689,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 13 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -807,13 +698,13 @@ __meta__ = {
 
 position = Vector2( 4.77278, 9.53308 )
 scale = Vector2( 1.50817, 1 )
-texture = ExtResource( 14 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BreakableWall" index="1"]
 
 position = Vector2( 16.1846, 9.62512 )
 scale = Vector2( 5.59858, 3.13188 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Label" type="Label" parent="BreakableWall" index="2"]
 
@@ -839,7 +730,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="DetailWall" type="StaticBody2D" parent="." index="8"]
+[node name="DetailWall" type="StaticBody2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 1020.57, 493.031 )
@@ -859,7 +750,7 @@ __meta__ = {
 
 position = Vector2( -18.0447, 0.480896 )
 scale = Vector2( 1.70153, 1 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -873,9 +764,9 @@ region_enabled = true
 region_rect = Rect2( 267, 190.5, 171, 22 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 11 )
 volume_db = -17.0
 autoplay = true
 mix_target = 0
