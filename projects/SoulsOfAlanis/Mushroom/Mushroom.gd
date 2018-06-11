@@ -60,19 +60,19 @@ func _on_takeFoot(agressor):
 	pass
 
 func act_patrol():
-	var shape = null
+	var body = null
 	if direction == DIRECTIONS.RIGHT:
-
 		if !ray_right.is_colliding() and ray_right_down.is_colliding():
 			velocity.x = SPEED
 		else:
 			if ray_right.is_colliding():
-				var body = ray_right.get_collider()
+				body = ray_right.get_collider()
 				if(body):
-					if (body.has_method("_on_takeDamage")):
+					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
 						if body != self && body.has_method("_on_takeDamage"):
 							var attack = data.genAttack()
 							body._on_takeDamage(self, attack)
+							direction = DIRECTIONS.LEFT
 					else:
 						if (body.get_class() != "Area2D"):
 							direction = DIRECTIONS.LEFT
@@ -84,12 +84,13 @@ func act_patrol():
 			velocity.x = -SPEED
 		else:
 			if ray_left.is_colliding():
-				var body = ray_left.get_collider()
+				body = ray_left.get_collider()
 				if(body):
-					if (body.has_method("_on_takeDamage")):
+					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
 						if body != self && body.has_method("_on_takeDamage"):
 							var attack = data.genAttack()
 							body._on_takeDamage(self, attack)
+							direction = DIRECTIONS.RIGHT
 					else:
 						if (body.get_class() != "Area2D"):
 							direction = DIRECTIONS.RIGHT
@@ -97,9 +98,7 @@ func act_patrol():
 				direction = DIRECTIONS.RIGHT
 
 func setKnockBack(host, itencity, direction):
-	self.multiplier = max(150, 3 * itencity)
-	self.direction = direction
-	return
+	pass
 
 func calcPercentage(h, l):
 	return (l*100)/h
@@ -109,3 +108,6 @@ func act_idle():
 
 func get_size():
 	return data.get_size()
+	
+func foe():
+	pass

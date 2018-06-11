@@ -103,16 +103,16 @@ func _on_HitBox_body_entered(body):
 				direction = DOWN
 			DOWN:
 				direction = UP
-	if body != self && body.has_method("_on_takeDamage"):
+	if (body.has_method("_on_takeDamage") and (not body.has_method("foe"))):
 		var attack = data.genAttack()
 		body._on_takeDamage(self, attack)
 	pass # replace with function body
 
 func setKnockBack(host, itencity, direction):
-	self.multiplier = max(150, 3 * itencity)
-	self.direction = direction
-	return
+	pass
 
 func calcPercentage(h, l):
 	return (l*100)/h
 	
+func foe():
+	pass

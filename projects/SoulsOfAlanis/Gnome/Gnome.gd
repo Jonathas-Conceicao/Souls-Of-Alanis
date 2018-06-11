@@ -13,7 +13,7 @@ const FLIPPING_SCALE = Vector2(-1, 1)
 enum MOVEMENTS  { IDLE, PATROL }
 enum DIRECTIONS { RIGHT, LEFT }
 
-var direction = LEFT
+var direction = RIGHT
 var movement = PATROL
 var velocity = Vector2()
 
@@ -28,7 +28,6 @@ onready var ray_left_down  = get_node( "RayCastLeftDown" )
 func _ready():
 	data = Foe.new(Attack.Slash, Foe.Ground)
 	self.add_child(data)
-	set_process(true)
 	pass
 
 func _physics_process(delta):
@@ -39,8 +38,6 @@ func _physics_process(delta):
 func act():
 	if movement == PATROL:
 		act_patrol()
-	if movement == IDLE:
-		act_idle()
 	pass
 
 func update_velocity():
@@ -49,7 +46,6 @@ func update_velocity():
 	else:
 		velocity.y += GRAVITY
 	move_and_slide(velocity, UP)
-	pass
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
@@ -59,42 +55,36 @@ func _on_takeDamage(agressor, attack):
 	pass
 
 func act_patrol():
-	var shape = null
+	var body = null
 	if direction == DIRECTIONS.RIGHT:
 		if !ray_right.is_colliding() and ray_right_down.is_colliding():
 			velocity.x = SPEED
 		else:
-			if ray_right.is_colliding():
-				shape = ray_right.get_collider()
-				if (shape):
-					if (shape.get_class() != "Area2D"):
-						direction = DIRECTIONS.LEFT
-						$Pivot/Body.apply_scale(FLIPPING_SCALE)
-			else:
-				direction = DIRECTIONS.LEFT
-				$Pivot/Body.apply_scale(FLIPPING_SCALE)
+			if ray_right_down.is_colliding():
+				print(ray_right_down.get_collider())
+			direction = DIRECTIONS.LEFT
 
 	if direction == DIRECTIONS.LEFT:
 		if !ray_left.is_colliding() and ray_left_down.is_colliding():
 			velocity.x = -SPEED
 		else:
-			if ray_left.is_colliding():
-				shape = ray_left.get_collider()
-				if (shape):
-					if (shape.get_class() != "Area2D"):
-						direction = DIRECTIONS.RIGHT
-						$Pivot/Body.apply_scale(FLIPPING_SCALE)
-			else:
-				direction = DIRECTIONS.RIGHT
-				$Pivot/Body.apply_scale(FLIPPING_SCALE)
+			if ray_right_down.is_colliding():
+				print(ray_right_down.get_collider())
+			direction = DIRECTIONS.RIGHT
 
 func act_idle():
      pass
 
 func setKnockBack(host, itencity, direction):
-	self.multiplier = max(150, 3 * itencity)
-	self.direction = direction
-	return
+	pass
 
 func calcPercentage(h, l):
 	return (l*100)/h
+	
+func foe():
+	pass
+
+func _on_HitBox_body_entered(body):
+	if (body.has_method("_on_takeDamage") and (not(body.has_method("foe")))):
+		var attack = data.genAttack()
+		body._on_takeDamage(self, attack)
