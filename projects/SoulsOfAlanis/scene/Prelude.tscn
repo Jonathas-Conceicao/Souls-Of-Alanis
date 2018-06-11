@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Mushroom/Mushroom.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Bat/Bat.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Gnome/Gnome.tscn" type="PackedScene" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -66,7 +67,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Prelude" type="Node" index="0"]
+[node name="Prelude" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -368,24 +369,24 @@ position = Vector2( 393, 344 )
 
 position = Vector2( 875, 187 )
 
-[node name="Mushroom3" parent="." index="13" instance=ExtResource( 25 )]
-
-position = Vector2( 1417, 108 )
-
-[node name="Bat" parent="." index="14" instance=ExtResource( 26 )]
+[node name="Bat" parent="." index="13" instance=ExtResource( 26 )]
 
 position = Vector2( 295, 352 )
 
-[node name="Bat2" parent="." index="15" instance=ExtResource( 26 )]
+[node name="Bat2" parent="." index="14" instance=ExtResource( 26 )]
 
 position = Vector2( 1054, 396 )
 
-[node name="Bat4" parent="." index="16" instance=ExtResource( 26 )]
+[node name="Bat4" parent="." index="15" instance=ExtResource( 26 )]
 
 position = Vector2( 628, 301 )
 
-[node name="Bat3" parent="." index="17" instance=ExtResource( 26 )]
+[node name="Bat3" parent="." index="16" instance=ExtResource( 26 )]
 
 position = Vector2( 1718, 123 )
+
+[node name="Gnome" parent="." index="17" instance=ExtResource( 27 )]
+
+position = Vector2( 1320, 169 )
 
 
