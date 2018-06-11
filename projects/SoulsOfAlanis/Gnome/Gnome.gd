@@ -99,10 +99,11 @@ func _on_HitBox_body_entered(body):
 func _on_Timer_timeout():
 	var bomb = Bomb.instance(direction)
 	get_parent().add_child(bomb)
-	var p = $Pivot.get_global_position()
-	p.x += 15
+	var p = $Pivot.get_global_position()	
 	if direction == LEFT:
 		p.x += -20
+	else:
+		p.x += 20
 	p.y -= 10
 	bomb.set_position(p)
 	pass # replace with function body

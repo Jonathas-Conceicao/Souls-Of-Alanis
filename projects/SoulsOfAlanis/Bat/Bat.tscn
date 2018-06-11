@@ -74,6 +74,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="WaitTimer2" type="Timer" parent="." index="5"]
