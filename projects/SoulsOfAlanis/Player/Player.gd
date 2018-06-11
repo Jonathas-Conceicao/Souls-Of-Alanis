@@ -41,7 +41,7 @@ var data
 func _ready():
 	data = Hero.new()
 	self.add_child(data)
-	data.setWeapon(Weapon.new(0, Attack.Slash, 20))
+	data.setWeapon(Weapon.new(0, Attack.Slash, 5))
 	velocity.y = 40 # base velocity to detect "is_on_floor"
 	current_state = state["Idle"]
 	current_state.enter(self)
@@ -78,11 +78,13 @@ func processDebug():
 	# print("Strength       :", data.attributes.strength)
 	# print("Current Stamina:", data.getStamina())
 	# print("Max     Stamina:", data.getMaxStamina())
-	self._on_takeDamage(self, Attack.new(Attack.Slash, control))
-	control += 5
-	if control >= 20: control = 0
-	# var Cam = self.get_node("Camera2D")
+	# self._on_takeDamage(self, Attack.new(Attack.Slash, control))
+	# control += 5
+	# if control >= 20: control = 0
+	# # var Cam = self.get_node("Camera2D")
 	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
+	# for i in range(0, 4):
+	# 	self.data.levelUp()
 	return
 
 func update_flip():

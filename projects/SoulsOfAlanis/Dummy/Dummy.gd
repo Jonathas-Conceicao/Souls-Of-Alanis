@@ -49,6 +49,5 @@ func getData():
 func _on_Hand_body_entered(body):
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
-		attack.damage = 6
 		body._on_takeDamage(self, attack)
 	return
