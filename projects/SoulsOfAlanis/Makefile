@@ -15,8 +15,11 @@ SCENE+=
 testScene: $(SCENE)
 	$(GD) $(GD_FLAG)
 
-debugConlision: GD_FLAG := --debug-collisions
+debugConlision: GD_FLAG += --debug-collisions
 debugConlision: testScene
+
+updateImports: GD_FLAG += --quit
+updateImports: editor
 
 editor:
 	$(GD) $(GD_FLAG) $(GD_EDITOR)
