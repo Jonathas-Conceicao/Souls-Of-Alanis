@@ -23,6 +23,34 @@ func _init(at = Attack.Slash):
 	return self
 
 ###
+# Increases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseStamina(value):
+	return self.attributes.increaseStamina(value);
+
+###
+# Decreases Stamina, bounded by the Max value
+# value -> Value to be incremented
+###
+func decreaseStamina(value):
+	return self.attributes.decreaseStamina(value)
+
+###
+# Increases HP, bounded by the Max value
+# value -> Value to be incremented
+###
+func increaseHP(value):
+	return self.attributes.increaseHP(value)
+
+###
+# Decreases HP, bounded by the Max value
+# value -> Value to be decremented
+###
+func decreaseHP(value):
+	return self.attributes.decreaseHP(value)
+
+###
 # Sets a new armor and frees the old one
 ###
 func setArmor(armor):
@@ -39,12 +67,47 @@ func setRing(ring):
 	return
 
 ###
+# return: current carry load
+###
+func getCarryLoad():
+	return self.attributes.getCarryLoad()
+
+###
+# return: max carryload
+###
+func getMaxCarryLoad():
+	return self.attributes.getMaxCarryLoad()
+
+###
+# return: current HP
+###
+func getHP():
+	return self.attributes.getHP()
+
+###
+# return: max HP
+###
+func getMaxHP():
+	return self.attributes.getMaxHP()
+
+###
+# return: current Stamina
+###
+func getStamina():
+	return self.attributes.getStamina()
+
+###
+# return: max Stamina
+###
+func getMaxStamina():
+	return self.attributes.getMaxStamina()
+
+###
 # Generates a new instance of defense based
 # on the sum of creature's power and equipaments bonus
 # return: new Defense instance
 ###
 func genDefense():
-	attributes.updatePower()
 	var defense = attributes.power.defense.duplicate()
 	self.add_child(defense)
 	if armor != null:
