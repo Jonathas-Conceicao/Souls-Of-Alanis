@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/scroll_bg_sky.png" type="Texture" id=1]
+[ext_resource path="res://art/Clouds.png" type="Texture" id=2]
+
+[node name="parallax_bg" type="ParallaxBackground"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 0.7, 0 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="sky" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 800, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="sky" index="0"]
+
+position = Vector2( 2141.13, 1243.66 )
+scale = Vector2( 140.044, 5.20793 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Clouds" type="ParallaxLayer" parent="." index="1"]
+
+position = Vector2( -21.6301, 36.0504 )
+motion_scale = Vector2( 1.8, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 800, 0 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="cloud1" type="Sprite" parent="Clouds" index="0"]
+
+position = Vector2( 162.714, 116.083 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -6.5, 96, 72, 34.5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud2" type="Sprite" parent="Clouds" index="1"]
+
+position = Vector2( 390.172, 395.658 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 2, 66.375, 132, 29.875 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud3" type="Sprite" parent="Clouds" index="2"]
+
+light_mask = 0
+position = Vector2( 685.973, 276.44 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 66, 96.625, 60.25, 30.75 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+

@@ -7,7 +7,7 @@
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 show_behind_parent = true
-position = Vector2( 294.259, 580.14 )
+position = Vector2( 108.082, 582.03 )
 scale = Vector2( 0.832778, 0.458571 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
