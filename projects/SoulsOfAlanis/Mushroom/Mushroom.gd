@@ -53,6 +53,8 @@ func _on_takeDamage(agressor, attack):
 	print("Mushroom recived ", damage, " from: ", agressor.get_name())
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	setKnockBack(self, dp, attack.direction)
+	if data.getHP() <= 0:
+		queue_free()
 	return
 
 func _on_takeFoot(agressor):

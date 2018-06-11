@@ -26,37 +26,37 @@ extents = Vector2( 85.5726, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 6.02267, 5.03189 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.8713, 14.2631 )
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.29184, 1.63684 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.3518, 10 )
+extents = Vector2( 6.29184, 1.63684 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 11.3518, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="BigFuckingRoom" type="Node" index="0"]
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="BigFuckingRoom" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -143,7 +143,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Potion" index="0"]
 
 position = Vector2( 1.25436, -23.8328 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
 [node name="Item" type="Sprite" parent="Chest/Potion" index="1"]
 
@@ -240,7 +240,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 10.4523, 13.5949 )
 scale = Vector2( 0.614968, 0.483733 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="on" type="Sprite" parent="Switch" index="2"]
 
@@ -270,7 +270,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer" index="1"]
@@ -299,7 +299,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer2" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer2" index="1"]
@@ -328,7 +328,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer3" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer3" index="1"]
@@ -357,7 +357,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer4" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer4" index="1"]
@@ -386,7 +386,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer5" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer5" index="1"]
@@ -415,7 +415,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Platformer6" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Switch/Platformer6" index="1"]
@@ -449,7 +449,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="FloorCollision" index="1"]
 
@@ -470,7 +470,7 @@ __meta__ = {
 
 position = Vector2( 10.6994, 0 )
 scale = Vector2( 2.69556, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="FloorCollision" index="2"]
 
@@ -491,7 +491,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="FloorCollision" index="3"]
 
@@ -512,7 +512,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="FloorCollision" index="4"]
 
@@ -533,7 +533,7 @@ __meta__ = {
 
 position = Vector2( 13.0742, 0 )
 scale = Vector2( 2.86104, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="FloorCollision" index="5"]
 
@@ -554,7 +554,7 @@ __meta__ = {
 
 position = Vector2( 10.6994, 0 )
 scale = Vector2( 2.69556, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="FloorCollision" index="6"]
 
@@ -575,7 +575,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="FloorCollision" index="7"]
 
@@ -596,7 +596,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="FloorCollision" index="8"]
 
@@ -617,7 +617,7 @@ __meta__ = {
 
 position = Vector2( 335.639, 0 )
 scale = Vector2( 30.945, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="FloorCollision" index="9"]
 
@@ -638,7 +638,7 @@ __meta__ = {
 
 position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="FloorCollision" index="10"]
 
@@ -659,7 +659,7 @@ __meta__ = {
 
 position = Vector2( 110.343, 0 )
 scale = Vector2( 50.8416, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="FloorCollision" index="11"]
 
@@ -680,7 +680,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="FloorCollision" index="12"]
 
@@ -701,7 +701,7 @@ __meta__ = {
 
 position = Vector2( 18.7616, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="FloorCollision" index="13"]
 
@@ -722,7 +722,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="FloorCollision" index="14"]
 
@@ -743,7 +743,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="FloorCollision" index="15"]
 
@@ -764,7 +764,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="FloorCollision" index="16"]
 
@@ -785,7 +785,7 @@ __meta__ = {
 
 position = Vector2( 18.7617, 0 )
 scale = Vector2( 3.25732, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="BreakableWall" type="Area2D" parent="." index="7"]
 
@@ -813,7 +813,7 @@ texture = ExtResource( 14 )
 
 position = Vector2( 16.1846, 9.62512 )
 scale = Vector2( 5.59858, 3.13188 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Label" type="Label" parent="BreakableWall" index="2"]
 
@@ -859,7 +859,7 @@ __meta__ = {
 
 position = Vector2( -18.0447, 0.480896 )
 scale = Vector2( 1.70153, 1 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }

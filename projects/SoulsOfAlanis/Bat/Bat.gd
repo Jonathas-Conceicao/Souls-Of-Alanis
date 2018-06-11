@@ -16,6 +16,7 @@ var direction = RIGHT
 var movement = PATROL
 var velocity = Vector2(0, 0)
 
+onready var windowsize = OS.get_window_size()
 var data
 
 func _ready():
@@ -75,9 +76,20 @@ func _on_takeDamage(agressor, attack):
 	print ("Bat received ", damage, " from: ", agressor.get_name())
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	setKnockBack(self, dp, attack.direction)
+	if data.getHP() <= 0:
+		queue_free()
 	return
 
 func update_position():
+	var pos = get_position()
+	if pos.x < 0:
+		direction = RIGHT
+	if pos.x > windowsize.x:
+		direction = LEFT
+	if pos.y < 0:
+		direction = DOWN
+	if pos.y > windowsize.y:
+		direction = UP
 	set_position(get_position() + velocity)
 	pass
 

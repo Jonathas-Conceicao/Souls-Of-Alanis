@@ -6,12 +6,12 @@
 [ext_resource path="res://Bat/bat3.png" type="Texture" id=4]
 [ext_resource path="res://Bat/bat4.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
@@ -49,7 +49,7 @@ playback/speed = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 scale = Vector2( 2, 1.5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
@@ -65,16 +65,16 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Pivot" type="Position2D" parent="." index="4"]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
 
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 
 [node name="WaitTimer2" type="Timer" parent="." index="5"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -24,7 +24,8 @@
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down5.png" type="Texture" id=22]
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down6.png" type="Texture" id=23]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Gnome/Gnome.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Mushroom/Mushroom.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Bat/Bat.tscn" type="PackedScene" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -65,12 +66,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -98,7 +100,7 @@ texture = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
-position = Vector2( 5.62612, 9.18161 )
+position = Vector2( -125.374, 9.18161 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
@@ -292,6 +294,7 @@ disabled = true
 
 [node name="AreaMarkToucanDown" type="Area2D" parent="." index="9"]
 
+editor/display_folded = true
 position = Vector2( 1736.99, 209.069 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -357,8 +360,32 @@ disabled = true
 
 position = Vector2( 101.706, 416.018 )
 
-[node name="Gnome" parent="." index="11" instance=ExtResource( 25 )]
+[node name="Mushroom" parent="." index="11" instance=ExtResource( 25 )]
 
-position = Vector2( 404, 399 )
+position = Vector2( 393, 344 )
+
+[node name="Mushroom2" parent="." index="12" instance=ExtResource( 25 )]
+
+position = Vector2( 875, 187 )
+
+[node name="Mushroom3" parent="." index="13" instance=ExtResource( 25 )]
+
+position = Vector2( 1417, 108 )
+
+[node name="Bat" parent="." index="14" instance=ExtResource( 26 )]
+
+position = Vector2( 295, 352 )
+
+[node name="Bat2" parent="." index="15" instance=ExtResource( 26 )]
+
+position = Vector2( 1054, 396 )
+
+[node name="Bat4" parent="." index="16" instance=ExtResource( 26 )]
+
+position = Vector2( 628, 301 )
+
+[node name="Bat3" parent="." index="17" instance=ExtResource( 26 )]
+
+position = Vector2( 1718, 123 )
 
 
