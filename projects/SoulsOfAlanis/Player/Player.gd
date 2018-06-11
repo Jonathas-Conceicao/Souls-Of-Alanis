@@ -41,7 +41,7 @@ var data
 func _ready():
 	data = Hero.new()
 	self.add_child(data)
-	data.setWeapon(Weapon.new(0, Attack.Slash, 5))
+	data.setWeapon(Weapon.new(0, Attack.Slash, 15))
 	velocity.y = 40 # base velocity to detect "is_on_floor"
 	current_state = state["Idle"]
 	current_state.enter(self)
