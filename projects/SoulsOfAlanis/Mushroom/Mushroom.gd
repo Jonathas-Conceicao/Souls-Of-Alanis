@@ -31,10 +31,8 @@ func _ready():
 
 func _physics_process(delta):
 	update_velocity()
-	#update_animation()
 	act()
 	pass
-
 
 func act():
 	if movement == PATROL:
@@ -50,27 +48,36 @@ func update_velocity():
 		velocity.y += GRAVITY
 	move_and_slide(velocity, UP)
 
-
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print("Mushroom recived ", damage, " from: ", agressor.get_name())
-	pass
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	setKnockBack(self, dp, attack.direction)
+	if data.getHP() <= 0:
+		queue_free()
+	return
 
 func _on_takeFoot(agressor):
 	queue_free()
 	pass
 
 func act_patrol():
-	var shape = null
+	var body = null
 	if direction == DIRECTIONS.RIGHT:
-
 		if !ray_right.is_colliding() and ray_right_down.is_colliding():
 			velocity.x = SPEED
 		else:
 			if ray_right.is_colliding():
-				shape = ray_right.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.LEFT
+				body = ray_right.get_collider()
+				if(body):
+					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
+						if body != self && body.has_method("_on_takeDamage"):
+							var attack = data.genAttack()
+							body._on_takeDamage(self, attack)
+							direction = DIRECTIONS.LEFT
+					else:
+						if (body.get_class() != "Area2D"):
+							direction = DIRECTIONS.LEFT
 			else:
 				direction = DIRECTIONS.LEFT
 
@@ -79,20 +86,30 @@ func act_patrol():
 			velocity.x = -SPEED
 		else:
 			if ray_left.is_colliding():
-				shape = ray_left.get_collider()
-				if (shape.get_class() != "Area2D"):
-					direction = DIRECTIONS.RIGHT
+				body = ray_left.get_collider()
+				if(body):
+					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
+						if body != self && body.has_method("_on_takeDamage"):
+							var attack = data.genAttack()
+							body._on_takeDamage(self, attack)
+							direction = DIRECTIONS.RIGHT
+					else:
+						if (body.get_class() != "Area2D"):
+							direction = DIRECTIONS.RIGHT
 			else:
 				direction = DIRECTIONS.RIGHT
 
+func setKnockBack(host, itencity, direction):
+	pass
+
+func calcPercentage(h, l):
+	return (l*100)/h
+	
 func act_idle():
      pass
 
-#func _on_CollisionShape2D_tree_entered(body):
-#	if body != self && body.has_method("_on_takeDamage"):
-#		var attack = data.genAttack()
-#		body._on_takeDamage(self, attack)
-#	pass # replace with function body
-
 func get_size():
 	return data.get_size()
+	
+func foe():
+	pass

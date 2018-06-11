@@ -16,6 +16,7 @@ var direction = RIGHT
 var movement = PATROL
 var velocity = Vector2(0, 0)
 
+onready var windowsize = OS.get_window_size()
 var data
 
 func _ready():
@@ -27,7 +28,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-    #update_animation()
 	pass
 
 
@@ -74,24 +74,24 @@ func update_velocity():
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
 	print ("Bat received ", damage, " from: ", agressor.get_name())
-	pass
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	setKnockBack(self, dp, attack.direction)
+	if data.getHP() <= 0:
+		queue_free()
+	return
 
 func update_position():
+	var pos = get_position()
+	if pos.x < 0:
+		direction = RIGHT
+	if pos.x > windowsize.x:
+		direction = LEFT
+	if pos.y < 0:
+		direction = DOWN
+	if pos.y > windowsize.y:
+		direction = UP
 	set_position(get_position() + velocity)
 	pass
-
-func _on_CollisionShape2D_tree_entered():
-	match direction:
-			RIGHT:
-				direction = LEFT
-			LEFT:
-				direction = RIGHT
-			UP:
-				direction = DOWN
-			DOWN:
-				direction = UP
-	pass # replace with function body
-
 
 func _on_WaitTimer_timeout():
 	update_velocity()
@@ -103,3 +103,28 @@ func _on_WaitTimer_timeout():
 func _on_WaitTimer2_timeout():
 	act()
 	pass # replace with function body
+
+
+func _on_HitBox_body_entered(body):
+	match direction:
+			RIGHT:
+				direction = LEFT
+			LEFT:
+				direction = RIGHT
+			UP:
+				direction = DOWN
+			DOWN:
+				direction = UP
+	if (body.has_method("_on_takeDamage") and (not body.has_method("foe"))):
+		var attack = data.genAttack()
+		body._on_takeDamage(self, attack)
+	pass # replace with function body
+
+func setKnockBack(host, itencity, direction):
+	pass
+
+func calcPercentage(h, l):
+	return (l*100)/h
+	
+func foe():
+	pass
