@@ -38,8 +38,8 @@ editor_draw_drag_margin = false
 
 script = ExtResource( 3 )
 
-[connection signal="DataUpdated" from="." to="HUD" method="_on_Target_DataUpdated"]
-
 [connection signal="DataUpdated" from="." to="DIE" method="die"]
+
+[connection signal="DataUpdated" from="." to="HUD" method="_on_Target_DataUpdated"]
 
 
