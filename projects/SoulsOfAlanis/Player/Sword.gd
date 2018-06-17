@@ -16,8 +16,5 @@ func animation_flip():
 
 func _on_Hitbox_body_entered(body):
 	if Holder.has_method("_on_SwordHit"):
-		Holder._on_SwordHit(body, 0)
+		Holder._on_SwordHit(body)
 
-func _on_TrailBox_body_entered(body):
-	if Holder.has_method("_on_SwordHit"):
-		Holder._on_SwordHit(body, 1)

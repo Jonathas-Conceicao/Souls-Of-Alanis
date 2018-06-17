@@ -148,8 +148,7 @@ func _on_takeDamage(agressor, attack):
 func calcPercentage(h, l):
   return (l*100)/h
 
-func _on_SwordHit(body, id):
-  if id == 0: return
+func _on_SwordHit(body):
   if body != self && body.has_method("_on_takeDamage"):
     var attack = data.genAttack()
     body._on_takeDamage(self, attack)
