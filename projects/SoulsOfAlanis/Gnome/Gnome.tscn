@@ -20,7 +20,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Gnome" type="KinematicBody2D"]
+[node name="Gnome" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -75,7 +75,6 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
