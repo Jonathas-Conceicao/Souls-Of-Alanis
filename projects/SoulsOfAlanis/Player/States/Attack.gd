@@ -33,11 +33,8 @@ func _on_animation_finished(host, anim_name):
 	return "Idle"
 
 func exit(host):
-	var TrailBox = host.get_node("Sword/TrailBox/Trail")
 	var HitBox = host.get_node("Sword/Hitbox/Sword")
 
-	TrailBox.disabled = true
-	TrailBox.visible = false
 	HitBox.disabled = true
 	HitBox.visible = false
 	return
