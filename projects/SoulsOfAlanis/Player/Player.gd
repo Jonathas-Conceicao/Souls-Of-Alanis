@@ -95,6 +95,11 @@ func update_flip():
     flipped = !direction
   return
 
+func update_speed(nspeed):
+	$Animation.set_speed_scale(nspeed)
+	$Sword/Animation.set_speed_scale(nspeed)
+	return
+
 func set_animation(animation):
   if !$Animation.is_playing() || $Sprite.animation != animation:
     $Sprite.animation = animation # To solve bug where the new state commes before the Animation starts
