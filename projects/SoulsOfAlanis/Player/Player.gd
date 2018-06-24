@@ -95,10 +95,16 @@ func update_flip():
     flipped = !direction
   return
 
-func update_speed(nspeed):
+func update_speed():
+	var carryPerc = calcPercentage(data.getMaxCarryLoad(), data.getCarryLoad())
+	var nspeed = calcSpeed(carryPerc)
 	$Animation.set_speed_scale(nspeed)
 	$Sword/Animation.set_speed_scale(nspeed)
 	return
+
+func calcSpeed(percentage):
+	var x = 1 + (1 - (percentage/100.0))
+	return x
 
 func set_animation(animation):
   if !$Animation.is_playing() || $Sprite.animation != animation:
