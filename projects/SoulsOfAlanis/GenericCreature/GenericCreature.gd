@@ -12,14 +12,12 @@ const FLIPPING_SCALE = Vector2(-1, 1)
 var BASE_SPEED = 200
 var BASE_ENERGY = 80
 
-var energy = BASE_ENERGY
 var velocity = Vector2()
-
 var direction
 var flipped = false
 
-signal StateChanged
-signal DataUpdated
+var
+
 var current_state = null
 
 enum STATE { IDLE, MOVE, STAGGER }
@@ -40,13 +38,37 @@ func _process(delta):
     return
 	
 func _physics_process(delta):
+    move_and_slide(velocity, UP)
 	return
 
-func update_flip():
+func update_flip(flip):
 	return
 
 func updateState():
+    if current_state == IDLE
+	    stateIdle()
+	if current_state == MOVE
+	    stateMove()
+	if current_state == STAGGER
+	    stateStagger()
+	return
 
+func stateIdle():
+    pass
+
+func stateMove():
+    pass
+
+func stateStagger():
+    pass
+
+func set_animation(animation):
+  if !$Animation.is_playing() || $Sprite.animation != animation:
+    $Sprite.animation = animation # To solve bug where the new state commes before the Animation starts
+    $Animation.play(animation)
+    $Sword.animation_play(animation)
+  return
+		
 func getData():
 	var data = []
 	data.append(["State", self.current_state.get_name()])
@@ -62,7 +84,6 @@ func getData():
 
 func _on_takeDamage(agressor, attack):
 	var damage = data.takeAttack(attack)
-	emit_signal("DataUpdated", self)
 	var damageDisplay = DamageShower.instance()
 	damageDisplay.init(self,
 					   $DamageSpot.get_position(),
@@ -70,10 +91,30 @@ func _on_takeDamage(agressor, attack):
 					   damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Creature recived ", damage, " from: ", agressor.get_name())
-	_state_change("Stagger")
+	state = STAGGER
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
-	current_state.setKnockBack(self, dp, attack.direction)
+	setKnockBack(self, dp, attack.direction)
 	return
+
+func setKnockBack(host, itencity, direction):
+	var multiplier = max(150, 3 * itencity)
+	var direction = direction
+
+	return
+
+func update(host, delta):
+	if not knockedBack:
+		velocity = (multiplier * direction)
+		knockedBack = true
+	if host.is_on_ceiling():
+		velocity.y = max(0, host.velocity.y)
+	if host.is_on_floor() && host.velocity.y >= 0:
+		current_state = IDLE
+	if host.is_on_wall() && host.velocity.x != 0:
+		current_state = IDLE
+	host.velocity.y += host.GRAVITY
+	return
+
 
 func calcPercentage(h, l):
 	return (l*100)/h
