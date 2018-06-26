@@ -73,7 +73,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

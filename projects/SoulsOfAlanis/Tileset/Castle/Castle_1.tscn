@@ -4,7 +4,6 @@
 [ext_resource path="res://art/project-art/png/rooms/castle/soa_bricks_1-32x32.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/png/rooms/castle/soa_pilar-32x64.png" type="Texture" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -15,22 +14,22 @@ extents = Vector2( 16, 16 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 48, 8 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 45 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 48, 48 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -162,7 +161,6 @@ polygon = PoolVector2Array( -55, 106, 49, 106, 49, -6, 57, -30, 57, -70, 57, -11
 
 [node name="CastleRock" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( -8, 176 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -184,7 +182,30 @@ bounce = 0.0
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CastleRock2" type="Sprite" parent="." index="7"]
+[node name="CastleRockBackground" type="Sprite" parent="." index="7"]
+
+position = Vector2( -8, 176 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 192, 16, 16 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CastleRockBackground" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CastleRockBackground/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CastleRock2" type="Sprite" parent="." index="8"]
 
 position = Vector2( 376, 0 )
 texture = ExtResource( 1 )
@@ -204,10 +225,10 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CastleRock2/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MWall_1" type="Sprite" parent="." index="8"]
+[node name="MWall_1" type="Sprite" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 56, 112 )
@@ -231,7 +252,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -48, -40, -40, -40, -32, -48, -24, -40, -8, -40, 0, -48, 8, -40, 24, -40, 32, -48, 40, -40, 48, -40, 48, 56, -48, 56 )
 
-[node name="BOpenGate" type="Sprite" parent="." index="9"]
+[node name="BOpenGate" type="Sprite" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( 152, 120 )
@@ -255,7 +276,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -48, 64, -32, 64, -32, 8, 0, -8, 32, 8, 32, 64, 48, 64, 48, -48, 40, -48, 40, -64, 24, -64, 24, -48, 8, -48, 0, -56, -8, -48, -24, -48, -24, -64, -40, -64, -40, -48, -48, -48 )
 
-[node name="MCloseGate" type="Sprite" parent="." index="10"]
+[node name="MCloseGate" type="Sprite" parent="." index="11"]
 
 editor/display_folded = true
 position = Vector2( 376, 136 )
@@ -279,7 +300,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -48, -48, 48, -48, 48, 48, -48, 48, -48, -48 )
 
-[node name="MOpenGate" type="Sprite" parent="." index="11"]
+[node name="MOpenGate" type="Sprite" parent="." index="12"]
 
 editor/display_folded = true
 position = Vector2( 472, 136 )
@@ -303,7 +324,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -48, 48, -32, 48, -32, -8, 0, -16, 32, -8, 32, 48, 48, 48, 48, -48, -48, -48 )
 
-[node name="MWall" type="Sprite" parent="." index="12"]
+[node name="MWall" type="Sprite" parent="." index="13"]
 
 editor/display_folded = true
 position = Vector2( 472, 40 )
@@ -324,9 +345,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MWall/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="SColumn" type="Sprite" parent="." index="13"]
+[node name="SColumn" type="Sprite" parent="." index="14"]
 
 editor/display_folded = true
 position = Vector2( 376, 360 )
@@ -350,7 +371,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -48, 8, -48, 16, -40, 16, 40, 8, 48, -8, 48, -16, 40, -16, -40, -8, -48 )
 
-[node name="SExit" type="Sprite" parent="." index="14"]
+[node name="SExit" type="Sprite" parent="." index="15"]
 
 editor/display_folded = true
 position = Vector2( 184, 216 )
@@ -374,7 +395,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -16, -8, 0, -24, 16, -8, 16, -32, -16, -32, -16, -8 )
 
-[node name="MExit" type="Sprite" parent="." index="15"]
+[node name="MExit" type="Sprite" parent="." index="16"]
 
 editor/display_folded = true
 position = Vector2( 392, 280 )
@@ -398,7 +419,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 16, 32, 16, -16, 0, -24, -16, -16, -16, 32, -32, 32 )
 
-[node name="BExit" type="Sprite" parent="." index="16"]
+[node name="BExit" type="Sprite" parent="." index="17"]
 
 position = Vector2( 472, 248 )
 texture = ExtResource( 1 )
@@ -406,7 +427,7 @@ region_enabled = true
 region_rect = Rect2( 432, 224, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="MRockFloor" type="Sprite" parent="." index="17"]
+[node name="MRockFloor" type="Sprite" parent="." index="18"]
 
 editor/display_folded = true
 position = Vector2( 248, 360 )
@@ -427,9 +448,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MRockFloor/StaticBody2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="SRockFloor" type="Sprite" parent="." index="18"]
+[node name="SRockFloor" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
 position = Vector2( 328, 344 )
@@ -450,9 +471,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SRockFloor/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
-[node name="Bench" type="Sprite" parent="." index="19"]
+[node name="Bench" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
 position = Vector2( 488, 320 )
@@ -476,7 +497,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -24, -16, 32, -16, 32, 19, -29, 19, -29, -16 )
 
-[node name="Barrel" type="Sprite" parent="." index="20"]
+[node name="Barrel" type="Sprite" parent="." index="21"]
 
 editor/display_folded = true
 position = Vector2( 312, 456 )
@@ -500,7 +521,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -12, 0, -9, -7, -4, -12, 5, -12, 11, -5, 13, 2, 11, 8, 6, 14, 5, 15, -4, 15, -8, 12, -11, 6 )
 
-[node name="LigthPost" type="Sprite" parent="." index="21"]
+[node name="LigthPost" type="Sprite" parent="." index="22"]
 
 position = Vector2( 472, 248 )
 texture = ExtResource( 1 )
@@ -508,7 +529,7 @@ region_enabled = true
 region_rect = Rect2( 432, 224, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="BannerShield" type="Sprite" parent="." index="22"]
+[node name="BannerShield" type="Sprite" parent="." index="23"]
 
 position = Vector2( 88, 216 )
 texture = ExtResource( 1 )
@@ -516,7 +537,7 @@ region_enabled = true
 region_rect = Rect2( 64, 192, 32, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="BannerBomb" type="Sprite" parent="." index="23"]
+[node name="BannerBomb" type="Sprite" parent="." index="24"]
 
 position = Vector2( 56, 208 )
 texture = ExtResource( 1 )
@@ -524,7 +545,7 @@ region_enabled = true
 region_rect = Rect2( 32, 192, 32, 40 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Anvil_1" type="Sprite" parent="." index="24"]
+[node name="Anvil_1" type="Sprite" parent="." index="25"]
 
 editor/display_folded = true
 position = Vector2( 184, 264 )
@@ -548,7 +569,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -1, 9, 7, 9, 7, 8, 9, 8, 9, 6, 8, 5, 12, 5, 12, 4, 15, 4, 16, 2, 16, -6, 13, -6, 12, -8, -7, -8, -8, -6, -16, -6, -16, -2, -13, 1, -11, 1, -11, 2, -8, 2, -7, 4, -3, 5, -3, 8 )
 
-[node name="Anvil_2" type="Sprite" parent="." index="25"]
+[node name="Anvil_2" type="Sprite" parent="." index="26"]
 
 editor/display_folded = true
 position = Vector2( 136, 296 )
