@@ -2,6 +2,8 @@ extends 'State.gd'
 
 func enter(host):
 	host.set_animation("Idle")
+	if host.is_on_floor():
+		host.energy = host.BASE_ENERGY
 	return
 
 func handle_input(host, event):
@@ -28,6 +30,8 @@ func handle_input(host, event):
 func update(host, delta):
 	if !host.is_on_floor():
 		return "Jump"
+	else:
+		host.velocity.y = 40
 	if Input.is_action_pressed("player_right") || Input.is_action_pressed("player_left"):
 		return "Move"
 	return

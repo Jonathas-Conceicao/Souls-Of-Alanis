@@ -43,5 +43,4 @@ func update(host, delta):
 	return
 
 func exit(host):
-	host.energy = host.BASE_ENERGY
 	return

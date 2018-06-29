@@ -31,5 +31,4 @@ func update(host, delta):
 	return
 
 func exit(host):
-	host.velocity.y = 40
 	return
