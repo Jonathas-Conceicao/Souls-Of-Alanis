@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/BigFRoom.gd" type="Script" id=1]
 [ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=2]
@@ -7,12 +7,14 @@
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=5]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/Chest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=8]
 
 [node name="BigFRoom" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_vertical_guides_": [ 2710.0 ]
+"_edit_horizontal_guides_": [ 0.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0, 1800.0, 2700.0, 3600.0 ]
 }
 
 [node name="Floor" type="TileMap" parent="." index="0"]
@@ -231,5 +233,7 @@ position = Vector2( -43, 266 )
 [node name="Chest" parent="." index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 2560, -410 )
+
+[node name="CameraLimit" parent="." index="7" instance=ExtResource( 8 )]
 
 

@@ -16,7 +16,9 @@ func _ready():
 	$Toucan4/AnimatedSprite.play()
 	$Toucan5/AnimatedSprite.play()
 	$Toucan6/AnimatedSprite.play()
-		
+	$CameraLimit.set_limits(2,4)
+	$Player/Camera.set_limits()
+
 func randomize_path():
 	
 	var temp_path = []
