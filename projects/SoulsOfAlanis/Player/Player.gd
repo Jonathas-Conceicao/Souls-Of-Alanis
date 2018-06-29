@@ -9,7 +9,7 @@ const DamageShower = preload("res://HUD/Damage.tscn")
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
-const BASE_SPEED = 250
+const BASE_SPEED = 300
 var SPEED = BASE_SPEED
 var BASE_ENERGY = 180
 
@@ -102,7 +102,7 @@ func update_speed():
 	return
 
 func calcSpeed(percentage):
-	var x = 1 + (1 - (percentage/100.0))
+	var x = 1 + (1 - (percentage/100.0)) / 2
 	return x
 
 func set_animation(animation):
