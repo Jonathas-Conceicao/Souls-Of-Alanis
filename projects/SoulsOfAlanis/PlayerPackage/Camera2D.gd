@@ -1,10 +1,10 @@
 extends Camera2D
 
 func _ready():
-	self.set_limits()
+	self.update_limits()
 	return
 
-func set_limits():
+func update_limits():
 	var parent = self.get_parent().get_parent()
 	if parent:
 		var limits = parent.get_node("CameraLimit")

@@ -2,7 +2,7 @@ extends Node
 
 func _ready():
 	$CameraLimit.set_limits(1.5, 4.2)
-	$Player/Camera.set_limits()
+	$Player/Camera.update_limits()
 	return
 
 func _input(event):
