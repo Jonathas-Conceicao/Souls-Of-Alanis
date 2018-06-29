@@ -18,10 +18,10 @@ func handle_input(host, event):
 
 func update(host, delta):
 	if   Input.is_action_pressed("player_right"):
-		host.velocity.x = host.BASE_SPEED
+		host.velocity.x = host.SPEED
 		host.update_flip()
 	elif Input.is_action_pressed("player_left"):
-		host.velocity.x = -host.BASE_SPEED
+		host.velocity.x = -host.SPEED
 		host.update_flip()
 	else:
 		host.velocity.x = 0
