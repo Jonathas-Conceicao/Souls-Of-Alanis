@@ -5,7 +5,8 @@
 
 [node name="Node2D" type="Node2D" index="0"]
 
-position = Vector2( 39.7505, 71.551 )
+editor/display_folded = true
+position = Vector2( 503, 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ 700.114, 4.88054, 1400.39 ],
