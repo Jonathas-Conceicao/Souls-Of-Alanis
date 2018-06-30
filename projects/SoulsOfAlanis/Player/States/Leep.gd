@@ -1,11 +1,11 @@
 extends 'State.gd'
 
 func enter(host):
-	host.velocity.y = -host.BASE_SPEED/3
+	host.velocity.y = -host.SPEED/3
 	if Input.is_action_pressed("player_leep_right"):
-		host.velocity.x = host.BASE_SPEED * 1.2
+		host.velocity.x = host.SPEED * 1.2
 	else:
-		host.velocity.x = -host.BASE_SPEED * 1.2
+		host.velocity.x = -host.SPEED * 1.2
 	# host.update_flip()
 	host.set_animation("Jumping")
 	return

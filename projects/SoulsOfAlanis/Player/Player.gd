@@ -9,9 +9,8 @@ const DamageShower = preload("res://HUD/Damage.tscn")
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
-# export(float) var BASE_SPEED = 350
-# export(float) var BASE_ENERGY = 250
-var BASE_SPEED = 350
+const BASE_SPEED = 300
+var SPEED = BASE_SPEED
 var BASE_ENERGY = 180
 
 var energy = BASE_ENERGY
@@ -53,7 +52,6 @@ func _ready():
   return
 
 func _input(event):
-  # Handle test actions
   if event.is_action_pressed("player_debug"):
     processDebug()
 
@@ -94,6 +92,18 @@ func update_flip():
     $Sword.animation_flip()
     flipped = !direction
   return
+
+func update_speed():
+	var carryPerc = calcPercentage(data.getMaxCarryLoad(), data.getCarryLoad())
+	var nspeed = calcSpeed(carryPerc)
+	$Animation.set_speed_scale(nspeed)
+	$Sword/Animation.set_speed_scale(nspeed)
+	self.SPEED = self.BASE_SPEED * nspeed;
+	return
+
+func calcSpeed(percentage):
+	var x = 1 + (1 - (percentage/100.0)) / 2
+	return x
 
 func set_animation(animation):
   if !$Animation.is_playing() || $Sprite.animation != animation:

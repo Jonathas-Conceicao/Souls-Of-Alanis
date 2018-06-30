@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/BigFRoom.gd" type="Script" id=1]
 [ext_resource path="res://art/sunsetTileSet.tres" type="TileSet" id=2]
-[ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=3]
-[ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=4]
+[ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=3]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=4]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=5]
+[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/Chest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=8]
 
 [node name="BigFRoom" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_vertical_guides_": [ 2710.0 ]
+"_edit_horizontal_guides_": [ 0.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0, 1800.0, 2700.0, 3600.0 ]
 }
 
 [node name="Default" type="TileMap" parent="." index="0"]
@@ -240,5 +245,7 @@ _sections_unfolded = [ "Material", "Motion", "Pause", "Transform", "Visibility",
 
 position = Vector2( 833, 32 )
 texture = ExtResource( 4 )
+
+[node name="CameraLimit" parent="." index="7" instance=ExtResource( 8 )]
 
 

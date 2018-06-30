@@ -9,14 +9,16 @@ var path_vector = ["res://scene/HallwayRoom1.tscn",
           "res:://scene/LargeRoom1.tscn"]
 
 func _ready():
-                
-  $Toucan/AnimatedSprite.play()
-  $Toucan2/AnimatedSprite.play()
-  $Toucan3/AnimatedSprite.play()
-  $Toucan4/AnimatedSprite.play()
-  $Toucan5/AnimatedSprite.play()
-  $Toucan6/AnimatedSprite.play()
-    
+								
+	$Toucan/AnimatedSprite.play()
+	$Toucan2/AnimatedSprite.play()
+	$Toucan3/AnimatedSprite.play()
+	$Toucan4/AnimatedSprite.play()
+	$Toucan5/AnimatedSprite.play()
+	$Toucan6/AnimatedSprite.play()
+	$CameraLimit.set_limits(2,4)
+	$Player/Camera.update_limits()
+
 func randomize_path():
   
   var temp_path = []
@@ -33,9 +35,9 @@ func randomize_path():
   return temp_path
 
 func _on_WarpToNextArea_body_entered(body):
-  
-  var temp_path
-  temp_path = randomize_path()
-  
-  if body.name == "Player":
-    get_tree().change_scene(temp_path.pop_front())
+	
+	var temp_path
+	temp_path = randomize_path()
+	
+	if body.name == "Player":
+		get_tree().change_scene(temp_path.pop_front())

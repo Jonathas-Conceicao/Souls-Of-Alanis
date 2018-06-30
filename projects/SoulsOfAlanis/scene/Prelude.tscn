@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=26]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=27]
 [ext_resource path="res://scene/ChangeScene.gd" type="Script" id=28]
+[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -76,6 +77,10 @@ extents = Vector2( 10, 10 )
 [node name="Prelude" type="Node" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0, 700.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0, 1900.0, 2700.0, 3600.0 ]
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
@@ -130,6 +135,7 @@ _sections_unfolded = [ "Cell" ]
 
 stream = ExtResource( 4 )
 volume_db = -17.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -394,5 +400,7 @@ MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 4
 FlyEnabled = false
+
+[node name="CameraLimit" parent="." index="14" instance=ExtResource( 29 )]
 
 

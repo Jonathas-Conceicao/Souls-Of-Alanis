@@ -14,9 +14,9 @@ func handle_input(host, event):
 
 func update(host, delta):
 	if   Input.is_action_pressed("player_right"):
-		host.velocity.x = host.BASE_SPEED
+		host.velocity.x = host.SPEED
 	elif Input.is_action_pressed("player_left"):
-		host.velocity.x = -host.BASE_SPEED
+		host.velocity.x = -host.SPEED
 	else:
 		host.velocity.x = 0
 	if host.is_on_floor() && host.velocity.y >= 0:
@@ -25,8 +25,6 @@ func update(host, delta):
 		host.velocity.y += host.GRAVITY
 	if host.is_on_ceiling():
 		host.velocity.y = 0
-	# if host.get_node("Sprite").animation != "Attacking":
-	# 	return "Idle"
 	return
 
 func _on_animation_finished(host, anim_name):

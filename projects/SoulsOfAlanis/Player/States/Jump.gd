@@ -2,7 +2,7 @@ extends 'State.gd'
 
 func enter(host):
 	if host.is_on_floor():
-		host.velocity.y = -host.BASE_SPEED / 2
+		host.velocity.y = -host.SPEED / 2
 	host.set_animation("Jumping")
 	return
 
@@ -27,10 +27,10 @@ func update(host, delta):
 			host.velocity.y -= host.GRAVITY
 			host.emit_signal("DataUpdated", host)
 	if   Input.is_action_pressed("player_right"):
-		host.velocity.x = host.BASE_SPEED
+		host.velocity.x = host.SPEED
 		host.update_flip()
 	elif Input.is_action_pressed("player_left"):
-		host.velocity.x = -host.BASE_SPEED
+		host.velocity.x = -host.SPEED
 		host.update_flip()
 	else:
 		host.velocity.x = 0
@@ -43,5 +43,4 @@ func update(host, delta):
 	return
 
 func exit(host):
-	host.energy = host.BASE_ENERGY
 	return
