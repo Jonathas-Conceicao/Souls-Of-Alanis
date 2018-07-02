@@ -1,9 +1,9 @@
 extends Node
 
 func _ready():
-	$CameraLimit.set_limits(1.5, 4.2)
-	$Player/Camera.update_limits()
-	return
+  $CameraLimit.set_limits(1.5, 4.2)
+  $Player/Camera.update_limits()
+  return
 
 func _input(event):
   if event.is_action_pressed("ui_cancel"):
