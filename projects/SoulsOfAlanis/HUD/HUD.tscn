@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://HUD/art/Empty_HUD.png" type="Texture" id=2]
 [ext_resource path="res://HUD/art/HP_HUD.png" type="Texture" id=3]
 [ext_resource path="res://HUD/art/Stamina_HUD.png" type="Texture" id=4]
+[ext_resource path="res://art/font/Joystix.tres" type="DynamicFont" id=5]
 
 [node name="HUD" type="CanvasLayer" index="0"]
 
@@ -99,12 +100,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
 text = "5"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
 
