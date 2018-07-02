@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/Castle/Ordinary/NewBigFRoom.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
@@ -6,12 +6,6 @@
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
-[ext_resource path="res://scene/Castle/Ordinary/FakeRock.gd" type="Script" id=7]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 46.0723
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -273,23 +267,5 @@ MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 3
 FlyEnabled = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="8"]
-
-position = Vector2( 1899.19, 374.623 )
-input_pickable = true
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-script = ExtResource( 7 )
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-
-position = Vector2( -5.7002, -3.80002 )
-shape = SubResource( 1 )
 
 
