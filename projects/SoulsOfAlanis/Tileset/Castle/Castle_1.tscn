@@ -86,6 +86,7 @@ _sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Pilar" index="0"]
 
+visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
