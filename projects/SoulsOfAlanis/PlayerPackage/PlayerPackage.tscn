@@ -37,6 +37,9 @@ _sections_unfolded = [ "Limit" ]
 
 [node name="HUD" parent="." index="8" instance=ExtResource( 3 )]
 
+scale = Vector2( 1.2, 1.2 )
+transform = Transform2D( 1.2, 0, 0, 1.2, 0, 0 )
+
 [node name="DIE" type="Node" parent="." index="10"]
 
 script = ExtResource( 4 )
