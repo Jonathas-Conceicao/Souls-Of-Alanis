@@ -19,10 +19,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 700.0, 0.0 ],
 "_edit_vertical_guides_": [ 900.0, 0.0 ]
 }
-Position = 0
+Position = 1
 HIGHT = 180
 NUMBER_CHAR = 305
-MARGIN = 50
+MARGIN = 10
 
 [node name="NPPainel" type="NinePatchRect" parent="." index="0"]
 
