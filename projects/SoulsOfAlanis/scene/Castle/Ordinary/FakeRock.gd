@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends StaticBody2D #Area2D
 
 var is_cracked = false
 
@@ -7,9 +7,8 @@ func _ready():
 
 func _on_takeDamage(agressor, attack):
   if (agressor.get_name() == "Player") && (!is_cracked):
-    print("The rock is now craked!")
+    # Change tile to broken rock
+    # Drop some random potion
     is_cracked = true
+    print("The rock is now craked!")
   return
-  
-    
-    
