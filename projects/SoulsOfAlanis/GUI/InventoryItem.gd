@@ -2,18 +2,28 @@ extends Control
 
 enum Type {Sword, Armor, Ring, Usable}
 
-const Armor  = preload("res://script/Classes/Armor.gd")
-const DataWeapon = preload("res://script/Classes/Weapon.gd")
-const Ring   = preload("res://script/Classes/Ring.gd")
+## const Armor  = preload("res://script/Classes/Armor.gd")
+## const DataWeapon = preload("res://script/Classes/Weapon.gd")
+## const Ring   = preload("res://script/Classes/Ring.gd")
 
 export(Type)   var type = Type.Sword
 export(String) var description = ""
 export(int)    var SpriteID = 0
+
+var selected = false
+var used = false
 var data
 
 func _ready():
-	var texture = load(self.gen_texture_res())
+	var texture = self.gen_texture_res()
 	$Texture.set_texture(texture)
+	return
+
+func init(t, desc, sid, data):
+	self.set_type(t)
+	self.set_description(desc)
+	self.set_sprite_id(sid)
+	self.data = data
 	return
 
 func gen_texture_res():
@@ -30,11 +40,12 @@ func gen_texture_res():
 	var check = File.new()
 	var ok = check.file_exists(res)
 	if ok:
-		return res
+		return load(res)
 	else:
-		return "res://GUI/art/NotFound_Icon_GUI.png"
-func init(data):
-	self.data = data
+		return load("res://GUI/art/NotFound_Icon_GUI.png")
+
+func set_sprite_id(sid):
+	self.SpriteID = sid
 	return
 
 func set_description(desc):
