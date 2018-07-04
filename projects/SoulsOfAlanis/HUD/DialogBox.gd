@@ -27,7 +27,7 @@ func next_text():
 	if next:
 		set_text(next)
 	else:
-		emit_signal("finished_dialog")
+		emit_signal("finished_dialog", self)
 	return
 
 func set_text(text):
