@@ -94,7 +94,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 position = Vector2( 27, 126 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ItemSelection" type="TextureRect" parent="Background" index="3"]
+[node name="Selector" type="TextureRect" parent="Background" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0

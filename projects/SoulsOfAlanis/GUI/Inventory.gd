@@ -3,9 +3,24 @@ extends "MenuItem.gd"
 const InventoryItem  = preload("InventoryItem.tscn")
 const InventoryItemS = preload("InventoryItem.gd")
 
-const COLUMS = 5
+enum Direction {Left, Right, Up, Down}
 
-var itemList = []
+const COLUMNS = 5
+const LINES   = 3
+
+var selected = [0, 0]
+var itemList
+
+func _input(event):
+	if   event.is_action_pressed("ui_right"):
+		self.selector_move(Right)
+	elif event.is_action_pressed("ui_left"):
+		self.selector_move(Left)
+	elif event.is_action_pressed("ui_up"):
+		self.selector_move(Up)
+	elif event.is_action_pressed("ui_down"):
+		self.selector_move(Down)
+	return
 
 func test_ready():
 	var i1 = InventoryItem.instance()
@@ -35,15 +50,31 @@ func init(itemList):
 	self.display_items()
 	return
 
+func selector_move(direction):
+	match direction:
+		Up:
+			selected[0] += LINES   - 1
+		Down:
+			selected[0] += 1
+		Left:
+			selected[1] += COLUMNS - 1
+		Right:
+			selected[1] += 1
+	selected[0] %= LINES
+	selected[1] %= COLUMNS
+	set_item_pos($Background/Selector, selected[0], selected[1])
+	print(selected)
+	return
+
 func display_items():
 	var i = 0
 	var j = 0
 	for item in itemList:
 		$Background.add_child_below_node($Background/InitialPosition, item)
 		self.set_item_pos(item, i, j)
-		i = (i + 1)
-		j = int(i /  5)
-		i %= COLUMS
+		j = (j + 1)
+		i = int(j /  5)
+		j %= COLUMNS
 	return
 
 const CELL_SIZE  = 16 * 3
@@ -51,7 +82,7 @@ const CELL_SPACE = 1  * 3
 
 func set_item_pos(obj, i, j):
 	var basePosition = $Background/InitialPosition.get_position()
-	basePosition.x += (i * (CELL_SIZE + CELL_SPACE))
-	basePosition.y += (j * (CELL_SIZE + CELL_SPACE))
+	basePosition.x += (j * (CELL_SIZE + CELL_SPACE))
+	basePosition.y += (i * (CELL_SIZE + CELL_SPACE))
 	obj.set_position(basePosition)
 	return
