@@ -58,7 +58,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="ItemDescription" type="RichTextLabel" parent="Background" index="1"]
+[node name="Description" type="RichTextLabel" parent="Background" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0

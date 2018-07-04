@@ -9,6 +9,7 @@ const COLUMNS = 5
 const LINES   = 3
 
 var selected = [0, 0]
+var itemSelected
 var itemList
 
 func _input(event):
@@ -48,6 +49,8 @@ func _ready():
 func init(itemList):
 	self.itemList = itemList
 	self.display_items()
+	self.update_selected()
+	self.update_description()
 	return
 
 func selector_move(direction):
@@ -63,7 +66,22 @@ func selector_move(direction):
 	selected[0] %= LINES
 	selected[1] %= COLUMNS
 	set_item_pos($Background/Selector, selected[0], selected[1])
-	print(selected)
+	self.update_selected()
+	self.update_description()
+	return
+
+func update_selected():
+	var index = selected[1] + (selected[0] * COLUMNS)
+	self.itemSelected = null if index >= itemList.size() else itemList[index]
+	return
+
+func update_description():
+	var text
+	if self.itemSelected == null:
+		text = ""
+	else:
+		text = itemSelected.get_description()
+	$Background/Description.set_text(text)
 	return
 
 func display_items():
