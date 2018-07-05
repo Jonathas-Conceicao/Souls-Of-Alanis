@@ -226,3 +226,31 @@ Dynamic activities schedule
 	- [ ] Main Menu & Esc Menu => B
 	- [ ] HUD => A
 	- [ ] Alpha 0.1 - 28/05
+
+## Unallocated Jobs
+- Inimigos
+	- Cavaleiro Guardião
+	- Planta
+	- Armadura-sem-cabeça
+	- Serpente
+	- Fantasma
+	- Aranha
+	- Múmia
+
+- Armas
+	- Lança
+	- Machado
+
+- Main Menu & Esc Menu
+
+- Main Bosses
+	- Fauno
+	- Beholder
+	- Mago
+
+- Sistema de upgrade
+	- Personagem
+	- Itens
+	- Criaturas
+
+- Itens consumíveis
