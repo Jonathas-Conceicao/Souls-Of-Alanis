@@ -10,11 +10,14 @@ func _ready():
 
 func animation_play(animation):
 	$Animation.play(animation)
+	return
 
 func animation_flip():
 	self.apply_scale(FLIPPING_SCALE)
+	return
 
 func _on_Hitbox_body_entered(body):
 	if Holder.has_method("_on_SwordHit"):
 		Holder._on_SwordHit(body)
+	return
 
