@@ -1,4 +1,4 @@
-extends "res://HUD/TextBox.gd"
+extends "res://GUI/TextBox.gd"
 
 var texts = []
 

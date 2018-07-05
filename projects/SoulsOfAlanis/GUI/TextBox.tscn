@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://HUD/TextBox.gd" type="Script" id=1]
-[ext_resource path="res://HUD/art/DialogBox.png" type="Texture" id=2]
-[ext_resource path="res://HUD/art/Circular_Green_Buttom.png" type="Texture" id=3]
-[ext_resource path="res://HUD/art/Circular_Red_Buttom.png" type="Texture" id=4]
+[ext_resource path="res://GUI/TextBox.gd" type="Script" id=1]
+[ext_resource path="res://GUI/art/DialogBox.png" type="Texture" id=2]
+[ext_resource path="res://GUI/art/Circular_Green_Buttom.png" type="Texture" id=3]
+[ext_resource path="res://GUI/art/Circular_Red_Buttom.png" type="Texture" id=4]
 [ext_resource path="res://art/font/Joystix_large.tres" type="DynamicFont" id=5]
 
 [node name="TextBox" type="CanvasLayer" index="0"]

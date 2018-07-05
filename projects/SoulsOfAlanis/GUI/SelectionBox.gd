@@ -1,4 +1,4 @@
-extends "res://HUD/DialogBox.gd"
+extends "res://GUI/DialogBox.gd"
 
 const ItemSelection = preload("ItemSelection.tscn")
 
