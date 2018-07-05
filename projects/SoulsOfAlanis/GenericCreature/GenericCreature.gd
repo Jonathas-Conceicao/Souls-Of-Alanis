@@ -98,16 +98,18 @@ func _state_change(state_name):
     return
 
 func _on_takeDamage(agressor, attack):
-    var damage = data.takeAttack(attack)
-    emit_signal("DataUpdated", self)
-    var damageDisplay = DamageShower.instance()
-    damageDisplay.init(self, $DamageSpot.get_position(), Vector2(1.5, 1.5), damage)
-    self.add_child(damageDisplay)
-    print("Creature recieved ", damage, " from: ", agressor.get_name())
-    _state_change("Stagger")
-    var dp = calcPercentage(self.data.getMaxHP(), damage)
-    current_state.setKnockBack(self, dp, attack.direction)
-    return
+	var damage = data.takeAttack(attack)
+	emit_signal("DataUpdated", self)
+	var damageDisplay = DamageShower.instance()
+	damageDisplay.init(self, $DamageSpot.get_position(), Vector2(1.5, 1.5), damage)
+	self.add_child(damageDisplay)
+	print("Creature recieved ", damage, " from: ", agressor.get_name())
+	_state_change("Stagger")
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	current_state.setKnockBack(self, dp, attack.direction)
+	if data.getHP() <= 0:
+		queue_free()
+	return
 
 func _on_Animation_animation_finished(anim_name):
   var ns = current_state._on_animation_finished(self, anim_name)
