@@ -43,6 +43,10 @@ func gen_texture_res():
 		return load(res)
 	return load("res://GUI/art/NotFound_Icon_GUI.png")
 
+func disabled(b):
+	$Texture.visible = !b
+	return
+
 func set_sprite_id(sid):
 	self.SpriteID = sid
 	return
