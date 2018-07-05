@@ -2,14 +2,12 @@ extends KinematicBody2D
 # Preload classes
 const Foe = preload ("res://script/Classes/Foe.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
-const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
 # Define constants
 const UP = Vector2(0,-1)
 const GRAVITY = 10
-const FLIPPING_SCALE = Vector2(-1, 1)
 
 # Define signals
 signal StateChanged
@@ -20,12 +18,12 @@ var current_state = null
 var BASE_SPEED = 150
 var velocity = Vector2()
 var direction
-var flipped = false
 var data
 
 onready var state = {
     "Idle":    $States/Idle,
     "Stagger": $States/Stagger,
+	"Walk":  $States/Walk,
 }
 
 func _ready():
@@ -62,13 +60,6 @@ func inputAI():
         _state_change(new_state)
     return
 
-func update_flip():
-    direction = velocity.x >= 0
-    if direction == flipped:
-        $Pivot/Body.apply_scale(FLIPPING_SCALE)
-        flipped = !direction
-    return
-
 func set_animation(animation):
 	if !$Animation.is_playing() || $Pivot/Body.animation != animation:
     	$Pivot/Body.animation = animation # To solve bug where the new state commes before the Animation starts
@@ -103,7 +94,7 @@ func _on_takeDamage(agressor, attack):
     var damageDisplay = DamageShower.instance()
     damageDisplay.init(self, $DamageSpot.get_position(), Vector2(1.5, 1.5), damage)
     self.add_child(damageDisplay)
-    print("Creature recieved ", damage, " from: ", agressor.get_name())
+    print("Mushroom recieved ", damage, " from: ", agressor.get_name())
     _state_change("Stagger")
     var dp = calcPercentage(self.data.getMaxHP(), damage)
     current_state.setKnockBack(self, dp, attack.direction)

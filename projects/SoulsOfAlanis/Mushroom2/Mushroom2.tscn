@@ -1,22 +1,54 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://GenericCreature/GenericCreature.gd" type="Script" id=1]
-[ext_resource path="res://GenericCreature/States/Idle.gd" type="Script" id=2]
-[ext_resource path="res://GenericCreature/States/Stagger.gd" type="Script" id=3]
+[ext_resource path="res://Mushroom2/Mushroom2.gd" type="Script" id=1]
+[ext_resource path="res://Mushroom2/mushroom.png" type="Texture" id=2]
+[ext_resource path="res://GenericCreature/States/Idle.gd" type="Script" id=3]
+[ext_resource path="res://GenericCreature/States/Stagger.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "Idle"
-length = 1.0
+length = 0.8
 loop = false
 step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Stagger"
+length = 0.8
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="GenericCreature" type="KinematicBody2D" index="0"]
+[node name="Mushroom2" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -41,6 +73,7 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Idle = SubResource( 1 )
+anims/Stagger = SubResource( 3 )
 blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
@@ -58,17 +91,24 @@ autostart = false
 
 [node name="Body" type="Sprite" parent="Pivot" index="0"]
 
+texture = ExtResource( 2 )
+hframes = 2
+region_rect = Rect2( 178.863, 21.5775, 50.625, 43.625 )
+_sections_unfolded = [ "Animation" ]
+
 [node name="DamageSpot" type="Position2D" parent="." index="5"]
 
 [node name="States" type="Node" parent="." index="6"]
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Stagger" type="Node" parent="States" index="1"]
 
-script = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Walk" type="Node" parent="States" index="2"]
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 
