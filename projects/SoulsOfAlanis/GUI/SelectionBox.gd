@@ -1,4 +1,4 @@
-extends "res://HUD/DialogBox.gd"
+extends "res://GUI/DialogBox.gd"
 
 const ItemSelection = preload("ItemSelection.tscn")
 
@@ -7,7 +7,8 @@ var selected
 
 func _ready():
 	self.itemList = $NPPainel/ItemList.get_children()
-	self.itemList[0].selected(true)
+	if self.itemList:
+		self.itemList[0].selected(true)
 	self.selected = 0
 	return
 
@@ -22,6 +23,8 @@ func _input(event):
 
 func select_next_item():
 	var limit = itemList.size()
+	if limit == 0:
+		return
 	var n = (selected + 1) % limit
 	itemList[self.selected].selected(false)
 	itemList[n].selected(true)
@@ -30,6 +33,8 @@ func select_next_item():
 
 func select_prev_item():
 	var limit = itemList.size()
+	if limit == 0:
+		return
 	var n = (selected - 1 + limit) % limit
 	itemList[self.selected].selected(false)
 	itemList[n].selected(true)
