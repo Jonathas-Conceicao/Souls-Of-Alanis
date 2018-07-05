@@ -12,7 +12,7 @@ const LINES   = 3
 var state = Browse
 var selected = [0, 0]
 var itemSelected
-var itemList
+var itemList = []
 
 var bSelected = 0
 
@@ -74,7 +74,7 @@ func _ready():
 	self.selection_reset()
 	self.buttom_reset()
 
-	self.test_ready()
+	# self.test_ready()
 	return
 
 func init(invList, equipList):
