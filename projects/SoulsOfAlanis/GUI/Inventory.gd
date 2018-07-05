@@ -54,27 +54,30 @@ func test_ready():
 	var i4 = InventoryItem.instance()
 	var i5 = InventoryItem.instance()
 	var i6 = InventoryItem.instance()
+	var i7 = InventoryItem.instance()
 
 	var e1 = InventoryItem.instance()
 
 	i1.init(InventoryItemS.Type.Sword , "A basic sword"  , 0, null)
 	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0, null)
 	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3, null)
-	i4.init(InventoryItemS.Type.Sword , "A prety Potion" , 4, null)
+	i4.init(InventoryItemS.Type.Sword , "A prety Sword" , 4, null)
 	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1, null)
 	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0, null)
+	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4, null)
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2, null)
 
-	var exItemList = [i1, i2, i3, i4, i5, i6]
+	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
 	self.init(exItemList, [null, e1, null, null])
 	return
 
 func _ready():
 	self.selection_reset()
 	self.buttom_reset()
+	$Animation.play("Intro")
 
-	# self.test_ready()
+	self.test_ready()
 	return
 
 func init(invList, equipList):
@@ -169,7 +172,7 @@ func update_description():
 func display_items():
 	var i = 0
 	var j = 0
-	for item in itemList:
+	for item in self.itemList:
 		$Background.add_child_below_node($Background/InitialPosition, item)
 		self.set_item_pos(item, i, j)
 		j = (j + 1)

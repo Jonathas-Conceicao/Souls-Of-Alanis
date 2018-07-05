@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-enum Type {Sword, Armor, Ring, Usable}
+enum Type {Sword, Armor, Ring, Consumable}
 
 const UP = Vector2(0, 1)
 const GRAVITY = 10
@@ -20,7 +20,7 @@ func _ready():
 	self.disabled(true)
 	return
 
-func _physics_process(delta): # TODO make item stop moving after earching the floor
+func _physics_process(delta): # TODO: BUG: make item stop moving after earching the floor
 	if !is_on_floor():
 		velocity.y += self.GRAVITY
 	else:
@@ -48,7 +48,7 @@ func gen_texture_res():
 		Type.Ring:
 			res += "Ring_ItemBody_" + String(self.sprite_id) + ".png"
 		Type.Usable:
-			res += "Usable_ItemBody_" + String(self.sprite_id) + ".png"
+			res += "Consumable_ItemBody_" + String(self.sprite_id) + ".png"
 	var check = File.new()
 	var ok = check.file_exists(res)
 	if ok:

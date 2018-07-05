@@ -1,6 +1,6 @@
 extends Node
 
-enum Type {Sword, Armor, Ring, Usable}
+enum Type {Sword, Armor, Ring, Consumable}
 
 var InventoryView
 var ItemBody
