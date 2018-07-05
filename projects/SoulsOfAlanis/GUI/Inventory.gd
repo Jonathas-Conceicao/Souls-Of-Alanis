@@ -12,7 +12,7 @@ const LINES   = 3
 var state = Browse
 var selected = [0, 0]
 var itemSelected
-var itemList
+var itemList = []
 
 var bSelected = 0
 
