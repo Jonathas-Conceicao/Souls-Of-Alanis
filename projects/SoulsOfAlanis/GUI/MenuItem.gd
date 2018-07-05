@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var Player
 
+signal finished_interaction
+
 func _ready():
 	return
 
