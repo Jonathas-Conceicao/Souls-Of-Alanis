@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GUI/InventoryItem.gd" type="Script" id=1]
 
-[node name="InventoryItem" type="Control"]
+[node name="InventoryItem" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -18,7 +18,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
-type = 2
+type = null
 description = ""
 SpriteID = 0
 

@@ -8,7 +8,7 @@ enum Type {Sword, Armor, Ring, Usable}
 
 export(Type)   var type = Type.Sword
 export(String) var description = ""
-export(int)    var SpriteID = 0
+export(int, 0, 4)    var SpriteID = 0
 
 var selected = false
 var used = false
@@ -41,8 +41,7 @@ func gen_texture_res():
 	var ok = check.file_exists(res)
 	if ok:
 		return load(res)
-	else:
-		return load("res://GUI/art/NotFound_Icon_GUI.png")
+	return load("res://GUI/art/NotFound_Icon_GUI.png")
 
 func set_sprite_id(sid):
 	self.SpriteID = sid
