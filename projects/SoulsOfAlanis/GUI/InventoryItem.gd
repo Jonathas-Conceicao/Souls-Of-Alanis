@@ -12,18 +12,16 @@ export(int, 0, 4)    var SpriteID = 0
 
 var selected = false
 var used = false
-var data
 
 func _ready():
 	var texture = self.gen_texture_res()
 	$Texture.set_texture(texture)
 	return
 
-func init(t, desc, sid, data):
+func init(t, desc, sid):
 	self.set_type(t)
 	self.set_description(desc)
 	self.set_sprite_id(sid)
-	self.data = data
 	return
 
 func gen_texture_res():

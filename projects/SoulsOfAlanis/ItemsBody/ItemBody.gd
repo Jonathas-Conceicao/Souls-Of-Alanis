@@ -55,7 +55,7 @@ func gen_texture_res():
 		return load(res)
 	return load("res://ItemsBody/art/NotFound_ItemBody.png")
 
-func drop():
+func spawn():
 	var texture = self.gen_texture_res()
 	$Sprite.set_texture(texture)
 	var dir = randi() % 2

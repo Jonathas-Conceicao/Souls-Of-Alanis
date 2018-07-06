@@ -58,18 +58,27 @@ func test_ready():
 
 	var e1 = InventoryItem.instance()
 
-	i1.init(InventoryItemS.Type.Sword , "A basic sword"  , 0, null)
-	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0, null)
-	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3, null)
-	i4.init(InventoryItemS.Type.Sword , "A prety Sword" , 4, null)
-	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1, null)
+	i1.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
+	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0)
+	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
+	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
+	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
 	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0, null)
-	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4, null)
+	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4)
 
-	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2, null)
+	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
 	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
 	self.init(exItemList, [null, e1, null, null])
+	return
+
+func test_ready_2():
+	var item = load("res://Items/Item.tscn").instance()
+	item.set_type(item.Type.Sword)
+	item.set_sprite_id(4)
+	item.set_description("Magestic Sword")
+	var iv   = item.gen_InventoryView()
+	self.init([iv])
 	return
 
 func _ready():
@@ -77,10 +86,10 @@ func _ready():
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	self.test_ready()
+	self.test_ready_2()
 	return
 
-func init(invList, equipList):
+func init(invList, equipList = [null, null, null, null]):
 	self.itemList = invList
 	self.display_items()
 	self.display_equipaments(equipList)

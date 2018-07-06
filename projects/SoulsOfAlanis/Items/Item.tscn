@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
-[ext_resource path="res://GUI/InventoryItem.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ItemsBody/ItemBody.tscn" type="PackedScene" id=3]
 
 [node name="Item" type="Node" index="0"]
 
@@ -14,13 +12,5 @@ __meta__ = {
 type = null
 Sprite_Id = null
 Item_Description = null
-
-[node name="InventoryView" parent="." index="0" instance=ExtResource( 2 )]
-
-visible = false
-
-[node name="ItemBody" parent="." index="1" instance=ExtResource( 3 )]
-
-[connection signal="picked_up" from="ItemBody" to="." method="_on_ItemBody_picked_up"]
 
 

@@ -2,41 +2,42 @@ extends Node
 
 enum Type {Sword, Armor, Ring, Consumable}
 
-var InventoryView
-var ItemBody
+const InventoryView = preload("res://GUI/InventoryItem.tscn")
+const ItemBody = preload("res://ItemsBody/ItemBody.tscn")
+
 var ItemData
 
 export (Type) var type
 export (int, 0, 4) var Sprite_Id
 export (String) var Item_Description
 
-func _ready():
-	self.set_type(self.type)
-	self.set_sprite_id(Sprite_Id)
-	$InventoryView.set_description(Item_Description)
-	return
+func gen_InventoryView():
+	var nIV = InventoryView.instance()
+	nIV.set_type(self.type)
+	nIV.set_sprite_id(self.Sprite_Id)
+	nIV.set_description(self.Item_Description)
+	return nIV
 
-func init(data):
-	self.ItemData = data
-	return
-
-func drop():
-	$ItemBody.drop()
-	return
-
-func disabled(b):
-	self.InventoryView.disabled(b)
-	self.ItemBody.disabled(b)
-	return
+func gen_ItemBody():
+	var nIB = ItemBody.instance()
+	nIB.set_type(self.type)
+	nIB.set_sprite_id(self.Sprite_Id)
+	return nIB
 
 func set_type(t):
-	$InventoryView.set_type(t)
-	$ItemBody.set_type(t)
+	self.type = t
 	return
 
 func set_sprite_id(i):
-	$InventoryView.set_sprite_id(i)
-	$ItemBody.set_sprite_id(i + 1)
+	self.Sprite_Id = i
+	return
+
+func set_description(d):
+	self.Item_Description = d
+	return
+
+func set_data(data):
+	self.ItemData = data
 	return
 
 func get_data():
