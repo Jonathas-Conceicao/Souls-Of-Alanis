@@ -81,12 +81,33 @@ func test_ready_2():
 	self.init([iv])
 	return
 
-func _ready():
+func test_ready_3():
+	randomize()
+	var item = load("res://script/tools/RandomItemGenerator.gd").generateEquipament(1)
+	var iv   = item.gen_InventoryView()
+	self.init([iv])
+	return
+
+func test_ready_4():
+	randomize()
+	var item = load("res://script/tools/RandomItemGenerator.gd").generateConsumable(1)
+	var iv   = item.gen_InventoryView()
+	self.init([iv])
+	return
+
+func test_ready_5():
+	randomize()
+	var item = load("res://script/tools/RandomItemGenerator.gd").generateAny(1)
+	var iv   = item.gen_InventoryView()
+	self.init([iv])
+	return
+
+func _ready(): # TODO: #Jonathas Delete old ready tests
 	self.selection_reset()
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	self.test_ready_2()
+	# self.test_ready_5()
 	return
 
 func init(invList, equipList = [null, null, null, null]):
