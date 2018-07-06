@@ -46,7 +46,7 @@ static func generateEquipament(playerLevel = 1):
 	var data
 	type = randi() % Equipaments_size
 	description = NO_DESCRIPTION
-	sprite = randi() % N_SPRITES
+	sprite = randi() % 4
 	data = genData(type, playerLevel)
 	newEquip.set_type(type)
 	newEquip.set_sprite_id(sprite)

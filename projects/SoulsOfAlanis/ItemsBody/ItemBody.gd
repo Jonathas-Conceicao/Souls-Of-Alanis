@@ -47,7 +47,7 @@ func gen_texture_res():
 			res += "Armor_ItemBody_" + String(self.sprite_id) + ".png"
 		Type.Ring:
 			res += "Ring_ItemBody_" + String(self.sprite_id) + ".png"
-		Type.Usable:
+		Type.Consumable:
 			res += "Consumable_ItemBody_" + String(self.sprite_id) + ".png"
 	var check = File.new()
 	var ok = check.file_exists(res)

@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/Castle/Ordinary/NewBigFRoom.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
+[ext_resource path="res://scene/Castle/Ordinary/RandomItemDrop.gd" type="Script" id=3]
+[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 22.5, 24 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -104,6 +110,25 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 458771, 22, 0, 458795, 22, 0, 458819, 22, 0, 458843, 22, 0, 524403, 23, 0, 524426, 23, 0, 852139, 31, 0, 1114241, 31, 0, 1114246, 31, 0, 1179773, 31, 0, 1179774, 31, 0, 1245347, 30, 0, 1310835, 29, 0, 1441910, 536870941, 0, 1638370, 536870941, 0, 1573031, 31, 0, 1638400, 46, 0, 1638416, 46, 0, 1638424, 46, 0, 1638440, 46, 0, 1638448, 46, 0, 1638464, 46, 0, 1638472, 46, 0, 1638488, 46, 0, 1638496, 46, 0, 1638512, 46, 0, 1704107, 39, 0, 1704108, 39, 0, 1769644, 39, 0, 1769645, 39, 0, 1835178, 39, 0, 1835179, 39, 0, 1835180, 39, 0, 1835182, 39, 0, 1835183, 39, 0, 1900713, 39, 0, 1900714, 39, 0, 1900715, 39, 0, 1900719, 39, 0, 1966250, 39, 0, 1966251, 39, 0, 1966252, 39, 0, 1966253, 39, 0, 1966254, 39, 0, 1966255, 39, 0, 2031636, 31, 0, 2031637, 31, 0, 2097326, 24, 0, 2228338, 31, 0 )
 _sections_unfolded = [ "Collision" ]
+
+[node name="RandomItemDrop" type="Area2D" parent="Walls16_background/Details8_background" index="0"]
+
+position = Vector2( 948.973, 183.508 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls16_background/Details8_background/RandomItemDrop" index="0"]
+
+shape = SubResource( 1 )
 
 [node name="Exits" type="TileMap" parent="Walls16_background" index="1"]
 
@@ -211,9 +236,9 @@ format = 1
 tile_data = PoolIntArray( 196608, 2, 0, 196613, 2, 0, 196618, 2, 0, 196624, 2, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="CameraLimit" parent="." index="4" instance=ExtResource( 3 )]
+[node name="CameraLimit" parent="." index="4" instance=ExtResource( 4 )]
 
-[node name="Player" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 1709.36, 484.49 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -234,9 +259,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
-"_editor_icon": ExtResource( 6 )
+"_editor_icon": ExtResource( 7 )
 }
 MobList = [ "res://Gnome/Gnome.tscn" ]
 Mob = null
@@ -259,9 +284,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
-"_editor_icon": ExtResource( 6 )
+"_editor_icon": ExtResource( 7 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
