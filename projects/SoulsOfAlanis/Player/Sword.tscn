@@ -313,7 +313,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[node name="Sword" type="AnimatedSprite"]
+[node name="Sword" type="AnimatedSprite" index="0"]
 
 frames = SubResource( 1 )
 animation = "Idle"
@@ -343,9 +343,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sword" type="CollisionPolygon2D" parent="Hitbox" index="0"]
 
@@ -354,6 +356,8 @@ build_mode = 0
 polygon = PoolVector2Array( 61, 39, 121, 41, 133, 30, 131, -18, 117, -57, 89, -89, 45, -107, 17, -107, -21, -93, -41, -75, -41, -73, -39, -73, -20, -81, -1, -81, 23, -71, 47, -43, 55, -17 )
 disabled = true
 _sections_unfolded = [ "Visibility" ]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 

@@ -17,7 +17,11 @@ func animation_flip():
 	return
 
 func _on_Hitbox_body_entered(body):
-	if Holder.has_method("_on_SwordHit"):
-		Holder._on_SwordHit(body)
+	if Holder.has_method("_on_SwordHit_body"):
+		Holder._on_SwordHit_body(body)
 	return
 
+func _on_Hitbox_area_entered(area):
+	if Holder.has_method("_on_SwordHit_area"):
+		Holder._on_SwordHit_area(area)
+	return

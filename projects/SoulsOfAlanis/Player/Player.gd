@@ -158,13 +158,23 @@ func _on_takeDamage(agressor, attack):
 func calcPercentage(h, l):
 	return (l*100)/h
 
-func _on_SwordHit(body):
+func _on_SwordHit_body(body):
 	if body != self && body.has_method("_on_takeDamage"):
 		var attack = data.genAttack()
 		body._on_takeDamage(self, attack)
 	return
 
+func _on_SwordHit_area(area):
+	if area != $Stepping && area.has_method("_on_takeHit"):
+		area._on_takeHit(self)
+	return
+
 func _on_Stepping_body_entered(body):
 	if body != self && body.has_method("_on_takeFoot"):
 		body._on_takeFoot(self)
+	return
+
+func _on_Stepping_area_entered(area):
+	if area != $Stepping && area.has_method("_on_takeFoot"):
+		area._on_takeFoot(self)
 	return
