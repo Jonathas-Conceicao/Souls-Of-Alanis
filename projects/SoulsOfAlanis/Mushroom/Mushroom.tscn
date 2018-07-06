@@ -86,12 +86,20 @@ tracks/1/keys = {
 [node name="Mushroom" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
 
-[node name="Tween" type="Tween" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="0"]
+
+position = Vector2( -0.56764, 7.79328 )
+scale = Vector2( 2.31566, 1.414 )
+build_mode = 0
+polygon = PoolVector2Array( 6.61387, 9.92177, -5.67228, 9.96104, -8.45578, 5.57142, -10.2084, 0.506495, -10.2084, -7.42857, -8.91025, -9.04904, -5.87319, -17.2891, -2.44183, -20.307, 2.92025, -20.3103, 6.33732, -17.426, 9.38535, -9.00472, 10.5132, -7.42857, 10.5132, 0.675324, 9.06995, 5.23377 )
+
+[node name="Tween" type="Tween" parent="." index="1"]
 
 repeat = false
 playback_process_mode = 1
@@ -99,14 +107,6 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="1"]
-
-position = Vector2( -0.56764, 7.79328 )
-scale = Vector2( 2.31566, 1.414 )
-build_mode = 0
-polygon = PoolVector2Array( 6.61387, 9.92177, -5.67228, 9.96104, -8.45578, 5.57142, -10.2084, 0.506495, -10.2084, -7.42857, -8.91025, -9.04904, -5.87319, -17.2891, -2.44183, -20.307, 2.92025, -20.3103, 6.33732, -17.426, 9.38535, -9.00472, 10.5132, -7.42857, 10.5132, 0.675324, 9.06995, 5.23377 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Energy" type="Timer" parent="." index="2"]
 
