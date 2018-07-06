@@ -26,7 +26,6 @@ onready var ray_right      = get_node( "RayCastRight")
 onready var ray_left       = get_node( "RayCastLeft" )
 onready var ray_right_down = get_node( "RayCastRightDown" )
 onready var ray_left_down  = get_node( "RayCastLeftDown" )
-onready var ray_up         = get_node ("RayCastUp")
 
 onready var state = {
     "Stagger": $States/Stagger,
@@ -57,9 +56,9 @@ func _physics_process(delta):
 	return
 
 func set_animation(animation):
-	if !$Animation.is_playing() || $Pivot/Body.animation != animation:
+	if !$Pivot/Animation.is_playing() || $Pivot/Body.animation != animation:
     	$Pivot/Body.animation = animation
-    	$Animation.play(animation)
+    	$Pivot/Animation.play(animation)
 	return
 
 func getData():

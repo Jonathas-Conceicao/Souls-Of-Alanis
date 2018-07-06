@@ -1,22 +1,95 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Bat/Bat.gd" type="Script" id=1]
-[ext_resource path="res://Bat/bat1.png" type="Texture" id=2]
-[ext_resource path="res://Bat/bat2.png" type="Texture" id=3]
-[ext_resource path="res://Bat/bat3.png" type="Texture" id=4]
-[ext_resource path="res://Bat/bat4.png" type="Texture" id=5]
+[ext_resource path="res://Bat/batstag1.png" type="Texture" id=2]
+[ext_resource path="res://Bat/batstag2.png" type="Texture" id=3]
+[ext_resource path="res://Bat/batstag3.png" type="Texture" id=4]
+[ext_resource path="res://Bat/batstag4.png" type="Texture" id=5]
+[ext_resource path="res://Bat/bat1.png" type="Texture" id=6]
+[ext_resource path="res://Bat/bat2.png" type="Texture" id=7]
+[ext_resource path="res://Bat/bat3.png" type="Texture" id=8]
+[ext_resource path="res://Bat/bat4.png" type="Texture" id=9]
+[ext_resource path="res://Bat/States/Stagger.gd" type="Script" id=10]
+[ext_resource path="res://Bat/States/Fly.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="Animation" id=2]
+
+resource_name = "Fly"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Fly" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Stagger"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Stagger" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "default",
+"name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Fly",
 "speed": 5.0
 } ]
 
@@ -28,16 +101,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-blend_times = [  ]
-
-[node name="Tween" type="Tween" parent="." index="1"]
+[node name="Tween" type="Tween" parent="." index="0"]
 
 repeat = false
 playback_process_mode = 1
@@ -46,15 +110,60 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="Energy" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="DamageSpot" type="Position2D" parent="." index="2"]
+
+position = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 scale = Vector2( 2, 1.5 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="HitBox" type="Area2D" parent="." index="3"]
+[node name="Pivot" type="Position2D" parent="." index="4"]
 
-scale = Vector2( 2, 1.5 )
+[node name="Animation" type="AnimationPlayer" parent="Pivot" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fly = SubResource( 2 )
+anims/Stagger = SubResource( 3 )
+blend_times = [  ]
+
+[node name="Body" type="AnimatedSprite" parent="Pivot" index="1"]
+
+frames = SubResource( 4 )
+animation = "Fly"
+
+[node name="States" type="Node" parent="." index="5"]
+
+[node name="Stagger" type="Node" parent="States" index="0"]
+
+script = ExtResource( 10 )
+
+[node name="Fly" type="Node" parent="States" index="1"]
+
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." index="7"]
+
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -63,38 +172,16 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+scale = Vector2( 2, 1.5 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="Pivot" type="Position2D" parent="." index="4"]
+[connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 
-[node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
-frames = SubResource( 2 )
-animation = "default"
-frame = 1
-playing = true
-
-[node name="WaitTimer2" type="Timer" parent="." index="5"]
-
-process_mode = 1
-wait_time = 0.5
-one_shot = false
-autostart = false
-
-[node name="WaitTimer" type="Timer" parent="." index="6"]
-
-process_mode = 1
-wait_time = 0.01
-one_shot = false
-autostart = false
-
-[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
-
-[connection signal="timeout" from="WaitTimer2" to="." method="_on_WaitTimer2_timeout"]
-
-[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 

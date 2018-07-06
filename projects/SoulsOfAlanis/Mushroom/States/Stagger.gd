@@ -5,7 +5,7 @@ var multiplier
 var knockedBack
 
 func enter(host):
-	host.set_animation("Staggered")
+	host.set_animation("Stagger")
 	host.velocity.x = 0
 	host.velocity.y = 0
 	self.knockedBack = false

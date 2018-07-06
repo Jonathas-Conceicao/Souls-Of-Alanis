@@ -12,7 +12,7 @@ func enter(host):
 	return
 
 func setKnockBack(host, itencity, direction):
-	self.multiplier = max(150, 3 * itencity)
+	self.multiplier = max(150, 2 * itencity)
 	self.direction = direction
 	return
 
@@ -22,11 +22,11 @@ func update(host, delta):
 		knockedBack = true
 	if host.is_on_ceiling():
 		host.velocity.y = max(0, host.velocity.y)
-		return "Idle"
+		return "Fly"
 	if host.is_on_floor() && host.velocity.y >= 0:
-		return "Idle"
+		return "Fly"
 	if host.is_on_wall() && host.velocity.x != 0:
-		return "Idle"
+		return "Fly"
 	host.velocity.y += host.GRAVITY
 	return
 
