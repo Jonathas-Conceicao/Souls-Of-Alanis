@@ -1,4 +1,4 @@
-extends "res://Mushroom2/States/State.gd"
+extends "res://Mushroom/States/State.gd"
 
 func enter(host):
 	host.set_animation("Walk")
@@ -16,7 +16,7 @@ func update(host, delta):
 					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
 						if body != self && body.has_method("_on_takeDamage"):
 							var attack = host.data.genAttack()
-							body._on_takeDamage(self, attack)
+							body._on_takeDamage(host, attack)
 							host.direction = host.DIRECTIONS.LEFT
 					else:
 						if (body.get_class() != "Area2D"):
@@ -34,7 +34,7 @@ func update(host, delta):
 					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
 						if body != self && body.has_method("_on_takeDamage"):
 							var attack = host.data.genAttack()
-							body._on_takeDamage(self, attack)
+							body._on_takeDamage(host, attack)
 							host.direction = host.DIRECTIONS.RIGHT
 					else:
 						if (body.get_class() != "Area2D"):

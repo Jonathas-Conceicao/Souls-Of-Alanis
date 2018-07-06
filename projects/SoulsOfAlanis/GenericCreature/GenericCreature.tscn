@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GenericCreature/GenericCreature.gd" type="Script" id=1]
 [ext_resource path="res://GenericCreature/States/Idle.gd" type="Script" id=2]
 [ext_resource path="res://GenericCreature/States/Stagger.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [sub_resource type="Animation" id=1]
 
@@ -11,18 +16,23 @@ length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="GenericCreature" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="Tween" type="Tween" parent="." index="0"]
 
@@ -33,7 +43,20 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Animation" type="AnimationPlayer" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Energy" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Pivot" type="Position2D" parent="." index="3"]
+
+[node name="Animation" type="AnimationPlayer" parent="Pivot" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -43,24 +66,14 @@ playback_speed = 1.0
 anims/Idle = SubResource( 1 )
 blend_times = [  ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="Body" type="AnimatedSprite" parent="Pivot" index="1"]
 
-shape = SubResource( 2 )
+frames = SubResource( 3 )
+animation = "default"
 
-[node name="Energy" type="Timer" parent="." index="3"]
+[node name="DamageSpot" type="Position2D" parent="." index="4"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="Pivot" type="Position2D" parent="." index="4"]
-
-[node name="Body" type="Sprite" parent="Pivot" index="0"]
-
-[node name="DamageSpot" type="Position2D" parent="." index="5"]
-
-[node name="States" type="Node" parent="." index="6"]
+[node name="States" type="Node" parent="." index="5"]
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
@@ -70,6 +83,6 @@ script = ExtResource( 2 )
 
 script = ExtResource( 3 )
 
-[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
+[connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 
 
