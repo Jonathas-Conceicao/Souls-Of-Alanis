@@ -10,7 +10,7 @@ extents = Vector2( 15, 15 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 21, 21 )
+extents = Vector2( 24, 24 )
 
 [node name="ItemBody" type="KinematicBody2D" index="0"]
 
@@ -19,7 +19,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 MIN_Y_LAUNCH = 250
 MAX_Y_LAUNCH = 450
 X_LAUNCH = 100

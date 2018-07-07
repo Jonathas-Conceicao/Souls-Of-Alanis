@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/Castle/Ordinary/NewBigFRoom.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
+[ext_resource path="res://scene/Castle/Ordinary/RandomItemDrop.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 44.1838, 42.4335 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -267,5 +273,24 @@ MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 3
 FlyEnabled = true
+
+[node name="RandomItemDrop" type="Area2D" parent="." index="8"]
+
+position = Vector2( 1897.95, 367.016 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomItemDrop" index="0"]
+
+shape = SubResource( 1 )
 
 

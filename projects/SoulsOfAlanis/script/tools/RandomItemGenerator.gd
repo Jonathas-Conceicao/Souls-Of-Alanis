@@ -4,7 +4,7 @@ enum Equipaments {Sword, Armor, Ring, Equipaments_size}
 enum Consumables {Damege, Stamina, Defense, HP, Speed, Consumables_size}
 
 const NO_DESCRIPTION = "No description"
-const N_SPRITES = 4
+const N_SPRITES = 5
 const CONSUMABLE_DES = [
 	"Temporary damege bonus",
 	"Stamina regeneration potion",
