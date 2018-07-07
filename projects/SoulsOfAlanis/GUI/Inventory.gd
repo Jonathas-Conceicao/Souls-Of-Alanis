@@ -112,6 +112,8 @@ func _ready(): # TODO: #Jonathas Delete old ready tests
 
 func init(invList, equipList = [null, null, null, null]):
 	self.itemList = invList
+	self.display_clean_items()
+	self.display_clean_equipaments()
 	self.display_items()
 	self.display_equipaments(equipList)
 	self.update_selected()
@@ -148,7 +150,7 @@ func browse_move(direction):
 			selected[1] += 1
 	selected[0] %= LINES
 	selected[1] %= COLUMNS
-	set_item_pos($Background/ItemSelector, selected[0], selected[1])
+	set_item_pos($Background/SelectorContainer/ItemSelector, selected[0], selected[1])
 	self.update_selected()
 	self.update_description()
 	return
@@ -169,7 +171,7 @@ func buttom_move(direction):
 func selection_reset():
 	self.selected[0] = 0
 	self.selected[1] = 0
-	self.set_item_pos($Background/ItemSelector, selected[0], selected[1])
+	self.set_item_pos($Background/SelectorContainer/ItemSelector, selected[0], selected[1])
 	return
 
 func buttom_reset():
@@ -179,7 +181,7 @@ func buttom_reset():
 	return
 
 func selection_visible(b):
-	$Background/ItemSelector.visible = b
+	$Background/SelectorContainer/ItemSelector.visible = b
 	return
 
 func get_selected_as_index():
@@ -199,15 +201,29 @@ func update_description():
 	$Background/Description.set_text(text)
 	return
 
+
+func display_clean_items():
+	for item in $Background/ItemsContainer.get_children():
+		item.visible = false
+		item.queue_free()
+	return
+
 func display_items():
 	var i = 0
 	var j = 0
 	for item in self.itemList:
-		$Background.add_child_below_node($Background/InitialPosition, item)
+		$Background/ItemsContainer.add_child(item)
 		self.set_item_pos(item, i, j)
 		j = (j + 1)
 		i = int(j /  5)
 		j %= COLUMNS
+	return
+
+func display_clean_equipaments():
+	for item in $Background/EquipContainer.get_children():
+		item.visible = false
+		item.queue_free()
+	return
 	return
 
 func display_equipaments(list):
@@ -226,7 +242,7 @@ const CELL_SIZE  = 16 * 3
 const CELL_SPACE = 1  * 3
 
 func set_item_pos(obj, i, j):
-	var basePosition = $Background/InitialPosition.get_position()
+	var basePosition = Vector2(0, 0)
 	basePosition.x += (j * (CELL_SIZE + CELL_SPACE))
 	basePosition.y += (i * (CELL_SIZE + CELL_SPACE))
 	obj.set_position(basePosition)

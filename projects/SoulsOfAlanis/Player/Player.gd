@@ -9,6 +9,8 @@ const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
+const Item = preload("res://Items/Item.gd")
+
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
@@ -27,20 +29,20 @@ var current_state = null
 const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allow for showing more items.
 var Backpack = []
 
-# Sould be used as a mutable list of reference to Backpack's items
-var Equiped = [null, null, null, null] # Ring, Sword, Armor, Ring
+# Sould be used as a mutable list of reference (index) to Backpack's items
+const Equiped = [null, null, null, null] # Ring, Sword, Armor, Ring
 
 onready var state = {
-	"Idle":    $States/Idle,
-	"Move":    $States/Move,
-	"Jump":    $States/Jump,
-	"Fall":    $States/Fall,
-	"Leep":    $States/Leep,
-	"Climb":   $States/Climb,
-	"Attack":  $States/Attack,
-	# "Swap":    $States/Swap,
-	"Stagger": $States/Stagger,
-	"PlayerMenu":    $States/PlayerMenu,
+	"Idle":       $States/Idle,
+	"Move":       $States/Move,
+	"Jump":       $States/Jump,
+	"Fall":       $States/Fall,
+	"Leep":       $States/Leep,
+	"Climb":      $States/Climb,
+	"Attack":     $States/Attack,
+	# "Swap":     $States/Swap,
+	"Stagger":    $States/Stagger,
+	"PlayerMenu": $States/PlayerMenu,
 }
 
 var data
@@ -52,6 +54,7 @@ func _ready():
 	velocity.y = 40 # base velocity to detect "is_on_floor"
 	current_state = state["Idle"]
 	current_state.enter(self)
+	update_speed()
 	emit_signal("StateChanged", current_state)
 	emit_signal("DataUpdated", self)
 
@@ -75,7 +78,7 @@ func _physics_process(delta):
 	move_and_slide(velocity, UP)
 	return
 
-func get_Backpack_views():
+func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
 	var views = []
 	for item in self.Backpack:
 		views.push_back(item.gen_InventoryView())
@@ -83,7 +86,24 @@ func get_Backpack_views():
 
 func get_Equipament_views():
 	var views = [null, null, null, null]
+	for i in range(0, 4): # Equiped.size() should aways be 4
+		if self.Equiped[i] != null:
+			views[i] = self.Equiped[i].gen_InventoryView()
 	return views
+
+func use_from_Backpack(index):
+	if index > (self.Backpack.size() - 1):
+		return
+	var item = self.Backpack[index]
+	return
+
+func drop_from_Backpack(index):
+	if index > (self.Backpack.size() - 1):
+		return
+	self.Backpack.remove(index)
+	print(self.Backpack)
+	return
+
 
 # var control = 0
 func processDebug():
