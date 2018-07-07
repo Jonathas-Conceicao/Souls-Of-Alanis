@@ -5,20 +5,20 @@ enum Half { first, second, any }
 
 func _ready():
 #	self.set_script(load("res://script/Classes/DummyRoom.gd"))
-	pass
+  pass
 
 func getSceneType():
-	printerr("(DB) Inside DummyTree -> getSceneType")
-	return randi() % connection
+  printerr("(DB) Inside DummyTree -> getSceneType")
+  return connection
 
 func getSceneHalf():
-	printerr("(DB) Inside DummyTree -> getSceneHalf")
-	return randi() % second
+  printerr("(DB) Inside DummyTree -> getSceneHalf")
+  return randi() % second
 
 func getMaxRep():
-	printerr("(DB) Inside DummyTree -> getMaxRep")
-	return randi() % 5
+  printerr("(DB) Inside DummyTree -> getMaxRep")
+  return randi() % 10
 
 func getNumExit():
-	printerr("(DB) Inside DummyTree -> getNumExit")
-	return randi() % 2
+  printerr("(DB) Inside DummyTree -> getNumExit")
+  return 2# randi() % 4
