@@ -60,13 +60,10 @@ func decreaseHP(value):
 #---------False otherwise
 ###
 func setArmor(armor):
-	var s
-	if armor != null:
-		s = self.attributes.trySwap(self.armor.weight, armor.weight)
-	else:
-		s = self.attributes.trySwap(0, armor.weight)
+	var ok
+	var curW = 0 if armor == null else self.armor.weight
+	ok = self.attributes.trySwap(curW, armor.weight)
 	if s:
-		if armor != null: self.armor.queue_free()
 		self.armor = armor
 	return s
 
@@ -75,7 +72,6 @@ func setArmor(armor):
 # frees the old one if needed
 ###
 func setRing(ring):
-	if ring != null: self.ring.queue_free()
 	self.ring = ring
 	return
 
@@ -89,7 +85,6 @@ func setWeapon(weapon):
 	var s
 	s = self.attributes.trySwap(self.weapon.weight, weapon.weight)
 	if s:
-		self.weapon.queue_free()
 		self.weapon = weapon
 	return s
 

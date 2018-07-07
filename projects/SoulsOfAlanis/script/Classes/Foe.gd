@@ -58,7 +58,6 @@ func decreaseHP(value):
 # Sets a new armor and frees the old one
 ###
 func setArmor(armor):
-	if armor != null: self.armor.queue_free()
 	self.armor = armor
 	return
 
@@ -66,7 +65,6 @@ func setArmor(armor):
 # Sets a new ring and frees the old one
 ###
 func setRing(ring):
-	if ring != null: self.ring.queue_free()
 	self.ring = ring
 	return
 
