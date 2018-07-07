@@ -50,7 +50,6 @@ static func generateEquipament(playerLevel = 1):
 	data = genData(type, playerLevel)
 	newEquip.set_type(type)
 	newEquip.set_sprite_id(sprite)
-	print(N_SPRITES)
 	newEquip.set_description(description)
 	return newEquip
 
