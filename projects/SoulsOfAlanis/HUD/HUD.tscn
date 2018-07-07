@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
-[ext_resource path="res://HUD/art/HUD/Empty_HUD.png" type="Texture" id=2]
-[ext_resource path="res://HUD/art/HUD/HP_HUD.png" type="Texture" id=3]
-[ext_resource path="res://HUD/art/HUD/Stamina_HUD.png" type="Texture" id=4]
+[ext_resource path="res://HUD/art/Empty_HUD.png" type="Texture" id=2]
+[ext_resource path="res://HUD/art/HP_HUD.png" type="Texture" id=3]
+[ext_resource path="res://HUD/art/Stamina_HUD.png" type="Texture" id=4]
+[ext_resource path="res://art/font/Joystix_large.tres" type="DynamicFont" id=5]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -17,9 +18,9 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 37.5, 20.5 )
+position = Vector2( 115.5, 64.5 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="HealthBar" type="TextureProgress" parent="." index="1"]
 
@@ -27,10 +28,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 25.0
-margin_right = 76.0
-margin_bottom = 28.0
+margin_left = 65.0
+margin_top = 78.0
+margin_right = 225.0
+margin_bottom = 85.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -58,10 +59,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 29.0
-margin_right = 63.0
-margin_bottom = 32.0
+margin_left = 65.0
+margin_top = 97.0
+margin_right = 177.0
+margin_bottom = 104.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -83,28 +84,48 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Textures", "Visibility" ]
 
-[node name="SoulsCount" type="Label" parent="." index="3"]
+[node name="CenterContainer" type="CenterContainer" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 24.0
-margin_right = 18.0
-margin_bottom = 38.0
+margin_left = 5.0
+margin_top = 76.0
+margin_right = 59.0
+margin_bottom = 102.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="SoulsCount" type="Label" parent="CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 39.0
+margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+
+[node name="Item" type="Node" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0 ]
+}
+type = null
+Sprite_Id = null
+Item_Description = null
+
+

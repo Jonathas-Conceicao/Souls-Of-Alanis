@@ -16,11 +16,11 @@ const Defense = preload("Defense.gd") # Class reference
 ###
 # Constructor
 ###
-func _init():
-	self.hp        = 1
-	self.stamina   = 1
-	self.carryLoad = 1
-	self.xp_gain   = 1
+func _init(hp = 1, stamina = 1, carryLoad =1, xp_gain = 1):
+	self.hp        = hp
+	self.stamina   = stamina
+	self.carryLoad = carryLoad
+	self.xp_gain   = xp_gain
 	self.cur_hp        = self.hp
 	self.cur_stamina   = self.stamina
 	self.cur_carryLoad = self.carryLoad
