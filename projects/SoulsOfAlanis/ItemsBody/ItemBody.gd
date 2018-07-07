@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 enum Type {Sword, Armor, Ring, Consumable}
 
-const UP = Vector2(0, 1)
+const UP = Vector2(0,-1)
 const GRAVITY = 10
 
 var velocity = Vector2(0, 0)
@@ -20,7 +20,7 @@ func _ready():
 	self.disabled(true)
 	return
 
-func _physics_process(delta): # TODO: BUG: make item stop moving after earching the floor
+func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += self.GRAVITY
 	else:
@@ -35,7 +35,7 @@ func set_type(t):
 	return
 
 func set_sprite_id(i):
-	self.sprite_id = 1
+	self.sprite_id = i
 	return
 
 func gen_texture_res():

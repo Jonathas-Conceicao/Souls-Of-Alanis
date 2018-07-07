@@ -4,7 +4,7 @@ enum Equipaments {Sword, Armor, Ring, Equipaments_size}
 enum Consumables {Damege, Stamina, Defense, HP, Speed, Consumables_size}
 
 const NO_DESCRIPTION = "No description"
-const N_SPRITES = 4
+const N_SPRITES = 5
 const CONSUMABLE_DES = [
 	"Temporary damege bonus",
 	"Stamina regeneration potion",
@@ -46,10 +46,11 @@ static func generateEquipament(playerLevel = 1):
 	var data
 	type = randi() % Equipaments_size
 	description = NO_DESCRIPTION
-	sprite = randi() % 4
+	sprite = randi() % N_SPRITES
 	data = genData(type, playerLevel)
 	newEquip.set_type(type)
 	newEquip.set_sprite_id(sprite)
+	print(N_SPRITES)
 	newEquip.set_description(description)
 	return newEquip
 
