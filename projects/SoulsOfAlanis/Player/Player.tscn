@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://Player/States/Attack.gd" type="Script" id=78]
 [ext_resource path="res://Player/States/Swap.gd" type="Script" id=79]
 [ext_resource path="res://Player/States/Stagger.gd" type="Script" id=80]
+[ext_resource path="res://Player/States/PlayerMenu.gd" type="Script" id=81]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -375,7 +376,8 @@ one_way_collision = true
 
 [node name="DamageSpot" type="Position2D" parent="." index="6"]
 
-position = Vector2( -32.83, -50.6436 )
+position = Vector2( -32, -50 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="States" type="Node" parent="." index="7"]
 
@@ -414,6 +416,10 @@ script = ExtResource( 79 )
 [node name="Stagger" type="Node" parent="States" index="8"]
 
 script = ExtResource( 80 )
+
+[node name="PlayerMenu" type="Node" parent="States" index="9"]
+
+script = ExtResource( 81 )
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 

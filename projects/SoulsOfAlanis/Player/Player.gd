@@ -38,8 +38,9 @@ onready var state = {
 	"Leep":    $States/Leep,
 	"Climb":   $States/Climb,
 	"Attack":  $States/Attack,
-	"Swap":    $States/Swap,
+	# "Swap":    $States/Swap,
 	"Stagger": $States/Stagger,
+	"PlayerMenu":    $States/PlayerMenu,
 }
 
 var data
@@ -74,7 +75,17 @@ func _physics_process(delta):
 	move_and_slide(velocity, UP)
 	return
 
-var control = 0
+func get_Backpack_views():
+	var views = []
+	for item in self.Backpack:
+		views.push_back(item.gen_InventoryView())
+	return views
+
+func get_Equipament_views():
+	var views = [null, null, null, null]
+	return views
+
+# var control = 0
 func processDebug():
 	# _state_change("Idle")
 	# data.attributes.power.stamina += 10

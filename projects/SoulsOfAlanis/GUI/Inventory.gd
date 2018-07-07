@@ -38,7 +38,7 @@ func _input(event):
 		else:
 			self.buttom_move(Down)
 	elif event.is_action_pressed("ui_accept"):
-		if state == Action && (bSelected == 0 || bSelected == 1):
+		if state == Action && (bSelected == 0 || bSelected == 1): # 0 == Use, 1 == Drop
 			emit_signal("finished_interaction", self, bSelected, self.get_selected_as_index())
 		self.state_change()
 	elif event.is_action_pressed("ui_cancel"):
