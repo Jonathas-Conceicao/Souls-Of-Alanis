@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal StateChanged
+signal DataUpdated
+
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
@@ -19,9 +22,13 @@ var velocity = Vector2()
 var direction
 var flipped = false
 
-signal StateChanged
-signal DataUpdated
 var current_state = null
+
+const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allow for showing more items.
+var Backpack = []
+
+# Sould be used as a mutable list of reference to Backpack's items
+var Equiped = [null, null, null, null] # Ring, Sword, Armor, Ring
 
 onready var state = {
 	"Idle":    $States/Idle,
@@ -159,7 +166,10 @@ func calcPercentage(h, l):
 	return (l*100)/h
 
 func _on_item_pickUp(I):
-	return true
+	if self.Backpack.size() < self.BACKPACK_LIMIT:
+		self.Backpack.push_back(I)
+		return true
+	return false
 
 func _on_SwordHit_body(body):
 	if body != self && body.has_method("_on_takeDamage"):
