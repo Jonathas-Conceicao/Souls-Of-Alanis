@@ -63,9 +63,9 @@ func setArmor(armor):
 	var ok
 	var curW = 0 if armor == null else self.armor.weight
 	ok = self.attributes.trySwap(curW, armor.weight)
-	if s:
+	if ok:
 		self.armor = armor
-	return s
+	return ok
 
 ###
 # Equips a new Ring and
@@ -82,11 +82,11 @@ func setRing(ring):
 #---------False otherwise
 ###
 func setWeapon(weapon):
-	var s
-	s = self.attributes.trySwap(self.weapon.weight, weapon.weight)
-	if s:
+	var ok
+	ok = self.attributes.trySwap(self.weapon.weight, weapon.weight)
+	if ok:
 		self.weapon = weapon
-	return s
+	return ok
 
 ###
 # return: current carry load
