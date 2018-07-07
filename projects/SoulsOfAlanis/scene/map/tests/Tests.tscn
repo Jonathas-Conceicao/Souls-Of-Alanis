@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://script/Classes/LvlGen.gd" type="Script" id=1]
+[ext_resource path="res://script/map/generation/LvlGen.gd" type="Script" id=1]
 
-[node name="Control" type="Button" index="0"]
+[node name="Control" type="Button"]
 
 anchor_left = 0.0
 anchor_top = 0.0

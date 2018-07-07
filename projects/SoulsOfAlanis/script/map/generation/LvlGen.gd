@@ -1,10 +1,10 @@
 extends Button
 
-const TreeMap = preload("res://script/Classes/TreeMap.gd")
+const TreeMap = preload("res://script/map/generation/TreeMap.gd")
 
 const MAX_TRY = 5
 const N_ROOM  = 15
-const DEF_ROOM = "res://script/Classes/DummyRoom.tscn"
+const DEF_ROOM = "res://scene/map/tests/DummyRoom.tscn"
 
 enum RoomType {loot, ordinary, connection, mission, challange, final, any, avoid}
 enum Half { first, second , any }
@@ -24,8 +24,8 @@ func init_rooms(rooms_path = []):
   # validation
   for c_room in rooms_path:
     if !f.file_exists(c_room):
-      printerr(c_room + " does not exists.")
-      exit(1)
+      printerr("(EE) " + c_room + " does not exists.")
+      continue
 
     var scene = load(c_room).instance()
 
@@ -133,9 +133,9 @@ func printTree(node, recursive = false):
 
 func _on_Button_pressed():
   printerr("(DB) Pressed")
-  var s = PoolStringArray(["res://script/Classes/DummyRoom.tscn", "res://script/Classes/DummyRoom.tscn"])
+  var s = PoolStringArray([DEF_ROOM, DEF_ROOM])
   self.init_rooms(s)
-  self.root = createTree(self, "res://script/Classes/DummyRoom.tscn", self.i_rooms)
+  self.root = createTree(self, DEF_ROOM, self.i_rooms)
   printTree(self.root, true)
   printerr("(DB) Succefully generated a #%s rooms map" % self.count)
   pass # replace with function body

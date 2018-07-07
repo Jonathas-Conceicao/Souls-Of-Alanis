@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scene/Castle/Connection/Conn.gd" type="Script" id=1]
+[ext_resource path="res://scene/castle/Connection/Conn.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=4]
+
 
 [node name="Node2D" type="Node2D"]
 
