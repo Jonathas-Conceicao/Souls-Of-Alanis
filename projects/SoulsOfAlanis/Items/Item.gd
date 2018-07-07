@@ -22,6 +22,7 @@ func gen_ItemBody():
 	var nIB = ItemBody.instance()
 	nIB.set_type(self.type)
 	nIB.set_sprite_id(self.Sprite_Id)
+	nIB.connect("picked_up", self, "_on_ItemBody_picked_up")
 	return nIB
 
 func set_type(t):
@@ -43,8 +44,9 @@ func set_data(data):
 func get_data():
 	return self.ItemData
 
-func _on_ItemBody_picked_up(body):
-	if body.has_method("_on_item_pickUp"):
-		body._on_item_pickUp(self)
-		self.disabled(true)
+func _on_ItemBody_picked_up(ItemBody, body):
+	var ok = body._on_item_pickUp(self)
+	if ok:
+		ItemBody.disabled(true)
+		ItemBody.queue_free()
 	return

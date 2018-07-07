@@ -10,7 +10,7 @@ extents = Vector2( 15, 15 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 21, 21 )
+extents = Vector2( 24, 24 )
 
 [node name="ItemBody" type="KinematicBody2D" index="0"]
 
