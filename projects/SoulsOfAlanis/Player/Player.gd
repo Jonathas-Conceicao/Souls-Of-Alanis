@@ -30,7 +30,7 @@ const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allo
 var Backpack = []
 
 # Sould be used as a mutable list of reference (index) to Backpack's items
-const Equiped = [null, null, null, null] # Ring, Sword, Armor, Ring
+var Equiped = [null, null, null] # Sword, Armor, Ring
 
 onready var state = {
 	"Idle":       $States/Idle,
@@ -85,8 +85,8 @@ func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7t
 	return views
 
 func get_Equipament_views():
-	var views = [null, null, null, null]
-	for i in range(0, 4): # Equiped.size() should aways be 4
+	var views = [null, null, null]
+	for i in range(0, 3): # Equiped.size() should aways be 3
 		if self.Equiped[i] != null:
 			views[i] = self.Equiped[i].gen_InventoryView()
 	return views
@@ -95,15 +95,34 @@ func use_from_Backpack(index):
 	if index > (self.Backpack.size() - 1):
 		return
 	var item = self.Backpack[index]
+	var i
+	var ok
+	match item.type:
+		item.Type.Sword:
+			ok = self.data.setWeapon(item.get_data())
+			i = 0 # Sword Slot
+		item.Type.Armor:
+			ok = self.data.setArmor(item.get_data())
+			i = 1 # Armor Slot
+		item.Type.Ring:
+			ok = self.data.setRing(item.get_data())
+			i = 2 # Ring Slot
+		item.Type.Consumable:
+			ok = false
+	if ok: # If data swap was made, update internal state
+		self.Backpack.remove(index)
+		var target = self.Equiped[i]
+		if target != null:
+			self.Backpack.push_back(target)
+		self.Equiped[i] = item
 	return
 
 func drop_from_Backpack(index):
 	if index > (self.Backpack.size() - 1):
 		return
+	self.Backpack[index].queue_free()
 	self.Backpack.remove(index)
-	print(self.Backpack)
 	return
-
 
 # var control = 0
 func processDebug():
@@ -199,6 +218,7 @@ func calcPercentage(h, l):
 func _on_item_pickUp(I):
 	if self.Backpack.size() < self.BACKPACK_LIMIT:
 		self.Backpack.push_back(I)
+		self.add_child(I)
 		return true
 	return false
 

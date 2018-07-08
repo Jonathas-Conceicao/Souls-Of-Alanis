@@ -2,6 +2,7 @@ extends "MenuItem.gd"
 
 const InventoryItem  = preload("InventoryItem.tscn")
 const InventoryItemS = preload("InventoryItem.gd")
+const Item = preload("res://Items/Item.gd")
 
 enum Direction {Left, Right, Up, Down}
 enum States {Browse, Action}
@@ -63,17 +64,17 @@ func test_ready():
 	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
 	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
 	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
-	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0, null)
+	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0)
 	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4)
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
 	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
-	self.init(exItemList, [null, e1, null, null])
+	self.init(exItemList, [e1, null, null])
 	return
 
 func test_ready_2():
-	var item = load("res://Items/Item.tscn").instance()
+	var item = Item.new()
 	item.set_type(item.Type.Sword)
 	item.set_sprite_id(4)
 	item.set_description("Magestic Sword")
@@ -107,10 +108,10 @@ func _ready(): # TODO: #Jonathas Delete old ready tests
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	# self.test_ready_5()
+	# self.test_ready()
 	return
 
-func init(invList, equipList = [null, null, null, null]):
+func init(invList, equipList = [null, null, null]):
 	self.itemList = invList
 	self.display_clean_items()
 	self.display_clean_equipaments()
@@ -203,9 +204,9 @@ func update_description():
 
 
 func display_clean_items():
-	for item in $Background/ItemsContainer.get_children():
-		item.visible = false
-		item.queue_free()
+	for itemView in $Background/ItemsContainer.get_children():
+		itemView.visible = false
+		itemView.queue_free()
 	return
 
 func display_items():
@@ -220,10 +221,9 @@ func display_items():
 	return
 
 func display_clean_equipaments():
-	for item in $Background/EquipContainer.get_children():
-		item.visible = false
-		item.queue_free()
-	return
+	for itemView in $Background/EquipContainer.get_children():
+		itemView.visible = false
+		itemView.queue_free()
 	return
 
 func display_equipaments(list):
@@ -234,8 +234,8 @@ func display_equipaments(list):
 		item = list[i]
 		pos  = posList[i]
 		if item != null:
-			$Background.add_child_below_node($Background/EquipPositions, item)
-			item.set_position(pos.get_position())
+			$Background/EquipContainer.add_child(item)
+			item.set_global_position(pos.get_global_position())
 	return
 
 const CELL_SIZE  = 16 * 3

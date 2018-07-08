@@ -12,8 +12,7 @@ const CONSUMABLE_DES = [
 	"HP regeneration potion",
 	"Temporary speed bonus"]
 
-const Item = preload("res://Items/Item.tscn")
-const ItemGd = preload("res://Items/Item.gd")
+const Item = preload("res://Items/Item.gd")
 
 # const Consumable = preload("res://script/Classes/Consumable.gd")
 const Weapon     = preload("res://script/Classes/Weapon.gd")
@@ -39,7 +38,7 @@ static func generateAny(playerLevel = 1):
 ###
 static func generateEquipament(playerLevel = 1):
 	var newEquip = null
-	newEquip = Item.instance()
+	newEquip = Item.new()
 	var type
 	var description
 	var sprite
@@ -51,17 +50,18 @@ static func generateEquipament(playerLevel = 1):
 	newEquip.set_type(type)
 	newEquip.set_sprite_id(sprite)
 	newEquip.set_description(description)
+	newEquip.set_data(data)
 	return newEquip
 
 static func generateConsumable(playerLevel = 1):
 	var newConsumable = null
-	newConsumable = Item.instance()
+	newConsumable = Item.new()
 	var type
 	var subType
 	var description
 	var sprite
 	var data
-	type = ItemGd.Type.Consumable
+	type = Item.Type.Consumable
 	subType = randi() % CONSUMABLE_DES.size()
 	description = CONSUMABLE_DES[subType]
 	sprite = subType
@@ -69,21 +69,22 @@ static func generateConsumable(playerLevel = 1):
 	newConsumable.set_type(type)
 	newConsumable.set_sprite_id(sprite)
 	newConsumable.set_description(description)
+	newConsumable.set_data(data)
 	return newConsumable
 
 static func genData(type, playerLevel, subType = 0):
 	var data = null
 	match type:
-		ItemGd.Type.Sword:
+		Item.Type.Sword:
 			var weight = (randi() % 3) + 1 # Light, Medium, Heavy
 			data = Weapon.new(weight * weightByLevel(playerLevel), 0, combatByLevel(playerLevel) / weight)
-		ItemGd.Type.Armor:
+		Item.Type.Armor:
 			var d1 = (randi() % 3) + 1
 			var d2 = (randi() % 3) + 1
 			var d3 = (randi() % 3) + 1
 			var combat = combatByLevel(playerLevel)
 			data = Armor.new(weightByLevel(playerLevel), d1 * combat, d2 * combat, d3 * combat)
-		ItemGd.Type.Ring:
+		Item.Type.Ring:
 			var bonus = [0, 0, 0, 0, 0, 0, 0] # hp, st, cl, xp, s, i, t
 			var selected = randi() % 7
 			bonus[selected] = powerByLevel(playerLevel)

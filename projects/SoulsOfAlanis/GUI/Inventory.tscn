@@ -134,9 +134,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 27.0
+margin_left = 48.0
 margin_top = 444.0
-margin_right = 279.0
+margin_right = 255.0
 margin_bottom = 492.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -162,22 +162,17 @@ size_flags_vertical = 1
 
 [node name="Pos0" type="Position2D" parent="Background/EquipPositions" index="0"]
 
-position = Vector2( 27, 444 )
+position = Vector2( 48, 444 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Pos1" type="Position2D" parent="Background/EquipPositions" index="1"]
 
-position = Vector2( 93, 444 )
+position = Vector2( 129, 444 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Pos2" type="Position2D" parent="Background/EquipPositions" index="2"]
 
-position = Vector2( 165, 444 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Pos3" type="Position2D" parent="Background/EquipPositions" index="3"]
-
-position = Vector2( 231, 444 )
+position = Vector2( 210, 444 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SelectorContainer" type="Container" parent="Background" index="5"]
