@@ -1,12 +1,12 @@
 extends Node
 
 enum Equipaments {Sword, Armor, Ring, Equipaments_size}
-enum Consumables {Damege, Stamina, Defense, HP, Speed, Consumables_size}
+enum Consumables {Damage, Stamina, Defense, HP, Speed, Consumables_size}
 
 const NO_DESCRIPTION = "No description"
 const N_SPRITES = 5
 const CONSUMABLE_DES = [
-	"Temporary damege bonus",
+	"Temporary damage bonus",
 	"Stamina regeneration potion",
 	"Temporary defense bonus",
 	"HP regeneration potion",
@@ -14,7 +14,7 @@ const CONSUMABLE_DES = [
 
 const Item = preload("res://Items/Item.gd")
 
-# const Consumable = preload("res://script/Classes/Consumable.gd")
+const Consumable = preload("res://script/Classes/Consumable.gd")
 const Weapon     = preload("res://script/Classes/Weapon.gd")
 const Armor      = preload("res://script/Classes/Armor.gd")
 const Ring       = preload("res://script/Classes/Ring.gd")
@@ -90,9 +90,9 @@ static func genData(type, playerLevel, subType = 0):
 			bonus[selected] = powerByLevel(playerLevel)
 			data = Ring.new(bonus[0], bonus[1], bonus[2], bonus[3], bonus[4], bonus[5], bonus[6])
 		_:
-			var bonus = [0, 0, 0, 0, 0] # Damege, Stamina, Defense, HP, Speed
-			bonus[subType] = usableByLevel(playerLevel, subType)
-			data = null # TODO: Implement data for consumable items
+			var value
+			value = usableByLevel(playerLevel, subType)
+			data = Consumable.new(subType, value, 60)
 	return data
 
 static func weightByLevel(playerLevel):
@@ -107,14 +107,14 @@ static func powerByLevel(playerLevel):
 static func usableByLevel(playerLevel, type):
 	var bonus
 	match type:
-		Consumables.Damege:
+		Consumables.Damage:
 			bonus = 10
 		Consumables.Stamina:
-			bonus = 10
+			bonus = 25
 		Consumables.Defense:
 			bonus = 10
 		Consumables.HP:
-			bonus = 10
+			bonus = 25
 		Consumables.Speed:
 			bonus = 100
 	return bonus * playerLevel

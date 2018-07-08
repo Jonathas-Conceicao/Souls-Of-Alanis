@@ -6,6 +6,8 @@ var ring       # Hero's current Ring
 var weapon     # Hero's current Weapon
 #var trails
 
+var damageBonus = null # Attack instance for direct damage bonus to all attacks
+
 const Weapon     = preload("Weapon.gd")
 const Attributes = preload("Attributes.gd")
 const Armor      = preload("Armor.gd")
@@ -147,14 +149,24 @@ func genAttack():
 	var attack = weapon.genAttack()
 	var attAttack = attributes.genAttack(weapon.getAttackType())
 	attack.add(attAttack)
+	if damageBonus != null:
+		attack.forceAdd(damageBonus)
 	attAttack.queue_free()
 	return attack
 
 ###
-# Calculates the damege of the _attack_,
+# Sets damage bonus instance
+# attack -> Attack instance, null for disabled
+###
+func set_damageBonus(attack):
+	self.damageBonus = attack
+	return
+
+###
+# Calculates the damage of the _attack_,
 # discounts from the current HP and
-# returns the damege taken
-# return: damege take
+# returns the damage taken
+# return: damage take
 ###
 func takeAttack(attack):
 	var defense = genDefense()

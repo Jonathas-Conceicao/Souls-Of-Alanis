@@ -1,8 +1,8 @@
 extends Node
 
 var weight # Weapon's weight
-var damage # Weapon's base damege
-var damageType #Weapons damege type
+var damage # Weapon's base damage
+var damageType #Weapons damage type
 
 const Attack = preload("Attack.gd")
 

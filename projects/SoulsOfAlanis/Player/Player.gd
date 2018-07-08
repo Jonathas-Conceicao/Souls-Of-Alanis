@@ -54,7 +54,6 @@ func _ready():
 	velocity.y = 40 # base velocity to detect "is_on_floor"
 	current_state = state["Idle"]
 	current_state.enter(self)
-	update_speed()
 	emit_signal("StateChanged", current_state)
 	emit_signal("DataUpdated", self)
 
@@ -77,6 +76,9 @@ func _physics_process(delta):
 		_state_change(new_state)
 	move_and_slide(velocity, UP)
 	return
+
+func get_data():
+	return self.data
 
 func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
 	var views = []
@@ -108,13 +110,16 @@ func use_from_Backpack(index):
 			ok = self.data.setRing(item.get_data())
 			i = 2 # Ring Slot
 		item.Type.Consumable:
+			item.get_data().apply(self.data)
 			ok = false
+			self.Backpack.remove(index)
 	if ok: # If data swap was made, update internal state
 		self.Backpack.remove(index)
 		var target = self.Equiped[i]
 		if target != null:
 			self.Backpack.push_back(target)
 		self.Equiped[i] = item
+	emit_signal("DataUpdated", self)
 	return
 
 func drop_from_Backpack(index):
@@ -241,4 +246,8 @@ func _on_Stepping_body_entered(body):
 func _on_Stepping_area_entered(area):
 	if area != $Stepping && area.has_method("_on_takeFoot"):
 		area._on_takeFoot(self)
+	return
+
+func _on_Player_DataUpdated(host):
+	self.update_speed()
 	return

@@ -131,9 +131,9 @@ func genAttack():
 	return attributes.genAttack(attackType)
 
 ###
-# Calculates the damege taken, discounts the current HP
-# and returns the total damege taken
-# return: damege recived
+# Calculates the damage taken, discounts the current HP
+# and returns the total damage taken
+# return: damage recived
 ###
 func takeAttack(attack):
 	var defense = genDefense()

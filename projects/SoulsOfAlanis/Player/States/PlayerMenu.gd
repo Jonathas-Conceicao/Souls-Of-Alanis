@@ -8,9 +8,9 @@ var readyToLeave = false
 func enter(host):
 	readyToLeave = false
 	self.inv = Inventory.instance()
+	host.add_child(self.inv)
 	self.update_inventory(host)
 	self.inv.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
-	host.add_child(self.inv)
 	return
 
 func exit(host):
