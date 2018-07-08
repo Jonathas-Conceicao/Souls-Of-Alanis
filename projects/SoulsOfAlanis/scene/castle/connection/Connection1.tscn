@@ -13,7 +13,6 @@ __meta__ = {
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-visible = false
 scale = Vector2( 2, 2 )
 mode = 0
 tile_set = ExtResource( 2 )
