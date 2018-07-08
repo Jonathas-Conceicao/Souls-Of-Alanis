@@ -6,6 +6,7 @@ signal DataUpdated
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
+const Armor  = preload("res://script/Classes/Armor.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
@@ -50,8 +51,9 @@ var data
 func _ready():
 	data = Hero.new()
 	self.add_child(data)
-	data.setWeapon(Weapon.new(0, Attack.Slash, 15))
 	velocity.y = 40 # base velocity to detect "is_on_floor"
+	self.give_starting_items()
+
 	current_state = state["Idle"]
 	current_state.enter(self)
 	emit_signal("StateChanged", current_state)
@@ -79,6 +81,83 @@ func _physics_process(delta):
 
 func get_data():
 	return self.data
+
+func get_data_for_display():
+	var attributes = []
+	var powers = []
+
+	attributes.push_back(self.data.attributes.vitality)
+	attributes.push_back(self.data.attributes.strength)
+	attributes.push_back(self.data.attributes.agility)
+	attributes.push_back(self.data.attributes.wisdom)
+
+	powers.push_back(self.data.attributes.power.cur_hp)
+	powers.push_back(self.data.attributes.power.cur_stamina)
+	powers.push_back(self.data.attributes.power.cur_carryLoad)
+	powers.push_back(self.data.attributes.power.xp_gain)
+
+	var attack  = self.data.genAttack()
+	var defense = self.data.genDefense()
+	powers.push_back(attack.damage)
+	powers.push_back(defense.slash)
+	powers.push_back(defense.impact)
+	powers.push_back(defense.thrust)
+	attack.queue_free()
+	defense.queue_free()
+	return [attributes, powers]
+
+func give_starting_items():
+	var ss = gen_StarterSword()
+	var sa = gen_StarterArmor()
+	self.add_child(ss)
+	self.add_child(sa)
+	self.Equiped[0] = ss
+	self.Equiped[1] = sa
+	self.data.setWeapon(ss.get_data())
+	self.data.setArmor(sa.get_data())
+	return
+
+func gen_StarterArmor():
+	var newEquip = null
+	newEquip = Item.new()
+	var type
+	var description
+	var sprite
+	var equipData
+	type = Item.Type.Armor
+	description = "A basic armor"
+	sprite = 0
+	equipData = gen_StarterArmor_data()
+	newEquip.set_type(type)
+	newEquip.set_sprite_id(sprite)
+	newEquip.set_description(description)
+	newEquip.set_data(equipData)
+	return newEquip
+
+func gen_StarterSword():
+	var newEquip = null
+	newEquip = Item.new()
+	var type
+	var description
+	var sprite
+	var equipData
+	type = Item.Type.Sword
+	description = "A basic sword"
+	sprite = 0
+	equipData = gen_StarterSword_data()
+	newEquip.set_type(type)
+	newEquip.set_sprite_id(sprite)
+	newEquip.set_description(description)
+	newEquip.set_data(equipData)
+	return newEquip
+
+func gen_StarterArmor_data():
+	var equipData = Armor.new(1, 5, 5, 5)
+	return equipData
+
+func gen_StarterSword_data():
+	var equipData = Weapon.new(1, 0, 5)
+	return equipData
 
 func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
 	var views = []
