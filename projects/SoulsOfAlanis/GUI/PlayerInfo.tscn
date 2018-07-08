@@ -11,20 +11,32 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "Intro"
-length = 0.3
+length = 0.2
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Background:rect_position")
+tracks/0/path = NodePath("Background:margin_left")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 906, 177 ), Vector2( 534, 177 ) ]
+"values": [ 6.0, -366.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background:margin_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 366.0, -6.0 ]
 }
 
 [node name="PlayerInfo" index="0" instance=ExtResource( 1 )]
@@ -38,9 +50,9 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -366.0
+margin_left = 6.0
 margin_top = 177.0
-margin_right = -6.0
+margin_right = 366.0
 margin_bottom = -7.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -105,14 +117,15 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="AttributesContainer" type="VBoxContainer" parent="Background" index="2"]
 
-anchor_left = 0.0
+editor/display_folded = true
+anchor_left = 1.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 81.0
-margin_top = 126.0
-margin_right = 339.0
-margin_bottom = 327.0
+margin_left = -285.0
+margin_top = 120.0
+margin_right = -21.0
+margin_bottom = 330.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -120,35 +133,42 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Vitality" parent="Background/AttributesContainer" index="0" instance=ExtResource( 5 )]
 
-margin_right = 258.0
-margin_bottom = 48.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 261.0
+margin_bottom = 51.0
 
 [node name="Strength" parent="Background/AttributesContainer" index="1" instance=ExtResource( 5 )]
 
-margin_top = 52.0
-margin_right = 258.0
-margin_bottom = 100.0
+margin_left = 3.0
+margin_top = 55.0
+margin_right = 261.0
+margin_bottom = 103.0
 Name = "Strength"
 
 [node name="Agility" parent="Background/AttributesContainer" index="2" instance=ExtResource( 5 )]
 
-margin_top = 104.0
-margin_right = 258.0
-margin_bottom = 152.0
+margin_left = 3.0
+margin_top = 107.0
+margin_right = 261.0
+margin_bottom = 155.0
 Name = "Agility"
 
 [node name="Wisdom" parent="Background/AttributesContainer" index="3" instance=ExtResource( 5 )]
 
-margin_top = 156.0
-margin_right = 258.0
-margin_bottom = 204.0
+margin_left = 3.0
+margin_top = 159.0
+margin_right = 261.0
+margin_bottom = 207.0
 Name = "Wisdom"
 
 [node name="PowersContainer" type="Container" parent="Background" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
