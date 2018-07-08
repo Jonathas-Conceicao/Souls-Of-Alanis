@@ -3,7 +3,7 @@ extends Node
 enum Type {Sword, Armor, Ring, Consumable}
 
 const InventoryView = preload("res://GUI/InventoryItem.tscn")
-const ItemBody = preload("res://ItemsBody/ItemBody.tscn")
+const ItemBody = preload("res://Items/ItemBody.tscn")
 
 var ItemData
 
