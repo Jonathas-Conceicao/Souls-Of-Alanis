@@ -11,6 +11,6 @@ func _input(event):
     $Player/Camera2D2/PopupPanel.show()
 
 func _on_Button_pressed():
-  $Player/Camera2D/PopupPanel.hide()  
+  $Player/Camera2D/PopupPanel.hide()
   get_tree().paused = false
   pass # replace with function body
