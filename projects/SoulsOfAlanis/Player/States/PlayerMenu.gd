@@ -38,4 +38,4 @@ func _on_Inventory_finished_interaction(inv, action, index):
 	else:
 		host.drop_from_Backpack(index)
 	self.update_inventory(host)
-	return # TODO: @Jonathas make item drop and item swap
+	return
