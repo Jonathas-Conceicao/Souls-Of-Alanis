@@ -1,15 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/forest/spoils/fspoils_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/forest/spoils/Area_exited.gd" type="Script" id=5]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
 
 [node name="fspoils_1" type="Node" index="0"]
 
@@ -50,6 +45,8 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="fchest" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
+
 [node name="Open_chest_area" parent="fchest" index="0"]
 
 position = Vector2( 1073.93, 395.726 )
@@ -58,50 +55,9 @@ position = Vector2( 1073.93, 395.726 )
 
 position = Vector2( 48.3844, 351.345 )
 
-[node name="Area_exited" type="Area2D" parent="." index="4"]
+[node name="AreaExitLeft" parent="." index="4" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-position = Vector2( 73.5, 38.5 )
-scale = Vector2( 3.29688, 2.20312 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_exited" index="0"]
-
-position = Vector2( 2.42654, 180.652 )
-scale = Vector2( 2.53153, 1 )
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="Area_exited" index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -22.0
-margin_top = 102.0
-margin_right = 137.0
-margin_bottom = 116.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Balãozinho aparece aqui!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 5.03506, -191.333 )
 
 
 [editable path="fchest"]

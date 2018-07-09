@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=3]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
+[ext_resource path="res://scene/control/AreaExitRight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
 
 [node name="fordinary_1" type="Node" index="0"]
 
@@ -67,5 +69,13 @@ _sections_unfolded = [ "Motion" ]
 position = Vector2( 451.384, 412.627 )
 scale = Vector2( 2.34958, 3.43784 )
 texture = ExtResource( 4 )
+
+[node name="AreaExitRight" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 1748.52, -47.2521 )
+
+[node name="AreaExitLeft" parent="." index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 3.09088, -46.3632 )
 
 

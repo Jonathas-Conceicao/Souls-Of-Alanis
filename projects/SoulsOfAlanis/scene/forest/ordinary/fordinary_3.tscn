@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_3.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/AreaExitRight.tscn" type="PackedScene" id=6]
 
 [node name="fordinary_3" type="Node" index="0"]
 
@@ -104,5 +106,13 @@ volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="AreaExitLeft" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 3.09087, -265.815 )
+
+[node name="AreaExitRight" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1925.19, 575.419 )
 
 

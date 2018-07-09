@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/forest/challenge/fchallenge_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/forest/challenge/Area2D.gd" type="Script" id=5]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/forest/challenge/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -52,14 +53,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="fchest" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="Open_chest_area" parent="fchest" index="0"]
-
-position = Vector2( 2013.74, 1645.73 )
-
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
-
+editor/display_folded = true
 position = Vector2( 85.596, 98.1837 )
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="8"]
@@ -89,7 +85,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Smoothing" ]
 
-[node name="Label" type="Label" parent="." index="3"]
+[node name="Label" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -113,7 +109,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Area2D" type="Area2D" parent="." index="4"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -122,7 +118,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -136,7 +132,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="fchest" parent="Area2D" index="1" instance=ExtResource( 5 )]
+
+[node name="Open_chest_area" parent="Area2D/fchest" index="0"]
+
+editor/display_folded = true
+position = Vector2( 2013.74, 1645.73 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
@@ -144,5 +147,14 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
+[node name="AreaExitLeft" parent="." index="5" instance=ExtResource( 6 )]
 
-[editable path="fchest"]
+position = Vector2( -5.57904, -479.797 )
+
+[node name="AreaExitLeft2" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 8.07465, 1797.78 )
+
+
+[editable path="Area2D/fchest"]
+[editable path="AreaExitLeft"]

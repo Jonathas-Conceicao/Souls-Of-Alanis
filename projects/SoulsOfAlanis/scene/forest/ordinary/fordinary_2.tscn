@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
 
 [node name="fordinary_2" type="Node" index="0"]
 
@@ -39,4 +40,18 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
+[node name="AreaExitLeft" parent="." index="3" instance=ExtResource( 5 )]
 
+position = Vector2( 0, -35.2455 )
+
+[node name="AreaExitLeft2" parent="." index="4" instance=ExtResource( 5 )]
+
+editor/display_folded = false
+position = Vector2( 3.4248, -511.293 )
+
+[node name="Sprite2" parent="AreaExitLeft2" index="1"]
+
+position = Vector2( 50.3624, 549.83 )
+
+
+[editable path="AreaExitLeft2"]

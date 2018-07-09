@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/forest/challenge/fchallenge_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
 
 [node name="fchallenge_2" type="Node" index="0"]
 
@@ -55,9 +56,15 @@ bus = "Master"
 
 [node name="fchest" parent="." index="4" instance=ExtResource( 5 )]
 
+editor/display_folded = true
+
 [node name="Open_chest_area" parent="fchest" index="0"]
 
 position = Vector2( 1068.1, 344.874 )
+
+[node name="AreaExitLeft" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 0, -184.549 )
 
 
 [editable path="fchest"]

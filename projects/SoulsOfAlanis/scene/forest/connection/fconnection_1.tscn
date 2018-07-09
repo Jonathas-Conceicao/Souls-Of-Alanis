@@ -4,15 +4,10 @@
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/forest/connection/Area_exited.gd" type="Script" id=5]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/AreaExitRight.tscn" type="PackedScene" id=6]
 
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[node name="fconnection_1" type="Node"]
+[node name="fconnection_1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -76,85 +71,12 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="Area_exited" type="Area2D" parent="." index="3"]
+[node name="AreaExitLeft" parent="." index="3" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-position = Vector2( 73.9957, 588.492 )
-scale = Vector2( 6.85307, 1.52035 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
+position = Vector2( 0, -53.0007 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_exited" index="0"]
+[node name="AreaExitRight" parent="." index="4" instance=ExtResource( 6 )]
 
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="Area_exited" index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -11.0
-margin_top = -98.0
-margin_right = 125.0
-margin_bottom = -45.0
-rect_scale = Vector2( 0.7, 0.7 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Balãozinho aparece aqui!"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="Area_exited2" type="Area2D" parent="." index="4"]
-
-editor/display_folded = true
-position = Vector2( 1130.73, 592.193 )
-scale = Vector2( 6.85307, 1.52035 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_exited2" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="Area_exited2" index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Balãozinho aparece aqui!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 1135.24, -59.0905 )
 
 
