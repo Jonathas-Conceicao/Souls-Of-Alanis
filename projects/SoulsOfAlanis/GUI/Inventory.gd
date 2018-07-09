@@ -69,7 +69,7 @@ func test_ready():
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
-	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
+	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: @Jonathas Last item in lsit seams to be invisible
 	self.init(exItemList, [e1, null, null])
 	return
 
@@ -108,7 +108,7 @@ func _ready(): # TODO: #Jonathas Delete old ready tests
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	self.test_ready()
+	# self.test_ready()
 	return
 
 func init(invList, equipList = [null, null, null]):

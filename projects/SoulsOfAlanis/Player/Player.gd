@@ -164,7 +164,7 @@ func use_from_Backpack(index):
   emit_signal("DataUpdated", self)
   return
 
-func drop_from_Backpack(index):
+func drop_from_Backpack(index): # TODO: BUG: @Jonathas Items order semas stranger after a few removes, might be related to invisible items bug
   if index > (self.Backpack.size() - 1):
     return
   self.Backpack[index].queue_free()
