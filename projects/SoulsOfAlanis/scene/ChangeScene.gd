@@ -8,3 +8,6 @@ func _physics_process(delta):
   for b in bodies:
     if b.name == "Player":
       get_tree().change_scene(newScene)
+
+func _get_exit():
+  return 0

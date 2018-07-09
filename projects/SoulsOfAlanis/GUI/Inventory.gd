@@ -59,17 +59,17 @@ func test_ready():
 
 	var e1 = InventoryItem.instance()
 
-	i1.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
+	i1.init(InventoryItemS.Type.Scroll, "Quest: find meaning in life", 0)
 	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0)
 	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
 	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
 	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
 	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0)
-	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4)
+	i7.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
-	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
+	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: @Jonathas Last item in lsit seams to be invisible
 	self.init(exItemList, [e1, null, null])
 	return
 
@@ -254,4 +254,9 @@ func _on_Inventory_finished_interaction(obj, action, index):
 		print(ac, " item", index)
 	else:
 		print("Inventory should close now")
+	return
+
+
+func _on_Close_pressed():
+	emit_signal("finished_interaction", self, -1, -1)
 	return

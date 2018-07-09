@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -24,11 +24,9 @@
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down4.png" type="Texture" id=22]
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down5.png" type="Texture" id=23]
 [ext_resource path="res://art/toucan/toucan_down/Toucan_down6.png" type="Texture" id=24]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=25]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=26]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=27]
-[ext_resource path="res://scene/ChangeScene.gd" type="Script" id=28]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=29]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=25]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=26]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -68,11 +66,6 @@ animations = [ {
 "name": "fly",
 "speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [node name="Prelude" type="Node" index="0"]
 
@@ -135,7 +128,6 @@ _sections_unfolded = [ "Cell" ]
 
 stream = ExtResource( 4 )
 volume_db = -17.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -329,11 +321,7 @@ position = Vector2( -2.85602, -2.38116 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="Player" parent="." index="10" instance=ExtResource( 25 )]
-
-position = Vector2( 93.7392, 416.473 )
-
-[node name="SpawnArea2D" type="Container" parent="." index="11"]
+[node name="SpawnArea2D" type="Container" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -349,34 +337,20 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 __meta__ = {
-"_editor_icon": ExtResource( 27 )
+"_editor_icon": ExtResource( 26 )
 }
 MobList = [ "res://Mushroom/Mushroom.tscn", "res://Gnome/Gnome.tscn" ]
 Mob = null
 TotMobCap = 5
 FlyEnabled = false
 
-[node name="Area2D" type="Area2D" parent="." index="12"]
+[node name="EntryPoint" parent="." index="11" instance=ExtResource( 27 )]
 
-position = Vector2( 3620, 210 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 28 )
+position = Vector2( 99.4902, 360 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( 30, 30 )
-scale = Vector2( 1, 2.42308 )
-shape = SubResource( 5 )
-
-[node name="SpawnArea2D2" type="Container" parent="." index="13"]
+[node name="SpawnArea2D2" type="Container" parent="." index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -392,15 +366,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 __meta__ = {
-"_editor_icon": ExtResource( 27 )
+"_editor_icon": ExtResource( 26 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 4
 FlyEnabled = false
-
-[node name="CameraLimit" parent="." index="14" instance=ExtResource( 29 )]
 
 

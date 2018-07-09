@@ -1,6 +1,6 @@
 extends Node
 
-var vitality  
+var vitality
 var strength
 var agility
 var wisdom

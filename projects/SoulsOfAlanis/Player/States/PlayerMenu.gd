@@ -1,20 +1,27 @@
 extends 'State.gd'
 
-const Inventory = preload("res://GUI/Inventory.tscn")
+const Inventory  = preload("res://GUI/Inventory.tscn")
+const PlayerInfo = preload("res://GUI/PlayerInfo.tscn")
 
 var inv
+var info
 var readyToLeave = false
 
 func enter(host):
 	readyToLeave = false
 	self.inv = Inventory.instance()
-	self.update_inventory(host)
-	self.inv.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
+	self.info = PlayerInfo.instance()
 	host.add_child(self.inv)
+	host.add_child(self.info)
+	self.update_all(host)
+	self.inv.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
+	# No need for info signal if focused == false
+	# self.info.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
 	return
 
 func exit(host):
 	self.inv.queue_free()
+	self.info.queue_free()
 	return
 
 func update(host, delta):
@@ -22,10 +29,21 @@ func update(host, delta):
 		return "Idle"
 	return
 
+func update_all(host):
+	self.update_inventory(host)
+	self.update_info(host)
+	return
+
 func update_inventory(host):
 	var invViews = host.get_Backpack_views()
 	var eqpViews = host.get_Equipament_views()
 	self.inv.init(invViews, eqpViews)
+	return
+
+func update_info(host):
+	var data = host.get_data_for_display()
+	self.info.focused(false)
+	self.info.init(data[0], data[1])
 	return
 
 func _on_Inventory_finished_interaction(inv, action, index):
@@ -37,5 +55,5 @@ func _on_Inventory_finished_interaction(inv, action, index):
 		host.use_from_Backpack(index)
 	else:
 		host.drop_from_Backpack(index)
-	self.update_inventory(host)
-	return # TODO: @Jonathas make item drop and item swap
+	self.update_all(host)
+	return

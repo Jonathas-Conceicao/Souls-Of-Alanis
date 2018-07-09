@@ -421,6 +421,8 @@ script = ExtResource( 80 )
 
 script = ExtResource( 81 )
 
+[connection signal="DataUpdated" from="." to="." method="_on_Player_DataUpdated"]
+
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 
 [connection signal="timeout" from="Energy" to="." method="_on_Energy_timeout"]
