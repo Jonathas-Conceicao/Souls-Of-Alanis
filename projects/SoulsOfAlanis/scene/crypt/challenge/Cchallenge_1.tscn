@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Area2D.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -22,7 +23,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Cchallenge_1" type="Node"]
+[node name="Cchallenge_1" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -97,8 +98,6 @@ position = Vector2( 40.7137, 629.212 )
 
 [node name="fchest" parent="." index="4" instance=ExtResource( 4 )]
 
-editor/display_folded = true
-
 [node name="Open_chest_area" parent="fchest" index="0"]
 
 position = Vector2( 129.904, 106.942 )
@@ -106,6 +105,10 @@ position = Vector2( 129.904, 106.942 )
 [node name="AnimatedSprite" parent="fchest/Open_chest_area" index="0"]
 
 flip_h = true
+
+[node name="AreaExitLeft" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 0, 57.3694 )
 
 
 [editable path="fchest"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/crypt/quest/Cquest_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://art/project-art/crypt/tileset/parallaxBG-interior1.png" type="Texture" id=5]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -76,10 +77,6 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts" ]
 text = "I'm Bill, you can call me Ghost."
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="ItemList" parent="GhostBill/Area2D/TextBox/DialogPainel" index="2"]
-
-_sections_unfolded = [ "Columns", "Icon", "Theme" ]
-
 [node name="AnimatedSprite" parent="GhostBill/Area2D" index="2"]
 
 flip_h = true
@@ -96,6 +93,10 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 8, 109, 128, 118 )
 _sections_unfolded = [ "Region", "Transform" ]
+
+[node name="AreaExitLeft" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 4.1011, -227.612 )
 
 
 [editable path="GhostBill"]
