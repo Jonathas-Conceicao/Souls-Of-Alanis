@@ -8,6 +8,9 @@ const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 const Armor  = preload("res://script/Classes/Armor.gd")
 
+const StarterSword = preload("res://Items/predefined/StarterSword.gd")
+const StarterArmor = preload("res://Items/predefined/StarterArmor.gd")
+
 const DamageShower = preload("res://HUD/Damage.tscn")
 
 const Item = preload("res://Items/Item.gd")
@@ -107,8 +110,8 @@ func get_data_for_display():
 	return [attributes, powers]
 
 func give_starting_items():
-	var ss = gen_StarterSword()
-	var sa = gen_StarterArmor()
+	var ss = StarterSword.new()
+	var sa = StarterArmor.new()
 	self.add_child(ss)
 	self.add_child(sa)
 	self.Equiped[0] = ss
@@ -116,48 +119,6 @@ func give_starting_items():
 	self.data.setWeapon(ss.get_data())
 	self.data.setArmor(sa.get_data())
 	return
-
-func gen_StarterArmor():
-	var newEquip = null
-	newEquip = Item.new()
-	var type
-	var description
-	var sprite
-	var equipData
-	type = Item.Type.Armor
-	description = "A basic armor"
-	sprite = 0
-	equipData = gen_StarterArmor_data()
-	newEquip.set_type(type)
-	newEquip.set_sprite_id(sprite)
-	newEquip.set_description(description)
-	newEquip.set_data(equipData)
-	return newEquip
-
-func gen_StarterSword():
-	var newEquip = null
-	newEquip = Item.new()
-	var type
-	var description
-	var sprite
-	var equipData
-	type = Item.Type.Sword
-	description = "A basic sword"
-	sprite = 0
-	equipData = gen_StarterSword_data()
-	newEquip.set_type(type)
-	newEquip.set_sprite_id(sprite)
-	newEquip.set_description(description)
-	newEquip.set_data(equipData)
-	return newEquip
-
-func gen_StarterArmor_data():
-	var equipData = Armor.new(1, 5, 5, 5)
-	return equipData
-
-func gen_StarterSword_data():
-	var equipData = Weapon.new(1, 0, 5)
-	return equipData
 
 func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
 	var views = []
