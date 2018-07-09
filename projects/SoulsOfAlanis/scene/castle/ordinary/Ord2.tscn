@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/castle/ordinary/Ord2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=4]
 
-[node name="2x2" type="Node2D"]
+[node name="Ord2" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -186,5 +187,9 @@ tile_data = PoolIntArray( 0, 32, 0, 1, 32, 0, 2, 32, 0, 3, 32, 0, 4, 32, 0, 5, 3
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 120, 600 )
+
+[node name="Exit" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 1690.71, 627.447 )
 
 

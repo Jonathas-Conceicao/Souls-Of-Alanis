@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/control/root.gd" type="Script" id=1]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=3]
+[ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=2]
+[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/map/Map.gd" type="Script" id=4]
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
 
@@ -11,18 +11,12 @@
 script = ExtResource( 1 )
 InitialRoom = "res://scene/Prelude.tscn"
 InitialRoomSize = Vector2( 2, 4 )
-BoosRoomGarden = "res://scene/garden/connection/Connection1.tscn"
-GardenRooms = null
-BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"
-CastleRooms = null
-BoosRoomCript = "res://scene/cript/connection/Connection1.tscn"
-CriptRooms = null
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="CurrentScene" type="Node2D" parent="." index="0"]
 
-[node name="CurrentScene" type="Node2D" parent="." index="1"]
+script = ExtResource( 2 )
 
-script = ExtResource( 3 )
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 [node name="Map" type="Node2D" parent="." index="2"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scene/Prelude.gd" type="Script" id=1]
 [ext_resource path="res://art/SunsetTempleBackground.png" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=25]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=26]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=27]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -128,6 +129,7 @@ _sections_unfolded = [ "Cell" ]
 
 stream = ExtResource( 4 )
 volume_db = -17.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -374,5 +376,9 @@ MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 4
 FlyEnabled = false
+
+[node name="Exit" parent="." index="13" instance=ExtResource( 28 )]
+
+position = Vector2( 3424.36, 209.655 )
 
 

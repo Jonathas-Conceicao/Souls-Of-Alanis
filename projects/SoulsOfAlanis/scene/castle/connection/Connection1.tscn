@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/castle/connection/Connection1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=4]
 
-
-[node name="Node2D" type="Node2D"]
+[node name="Connection1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -117,5 +118,13 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell" ]
+
+[node name="EntryPoint" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 84.069, 441.261 )
+
+[node name="Exit" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 1728.15, 466.726 )
 
 
