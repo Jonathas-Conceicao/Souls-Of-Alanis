@@ -1,16 +1,35 @@
 extends "res://GUI/TextBox.gd"
 
 var texts = []
+var enabled = false
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		self.next_text()
 	return
 
+func _ready():
+	self.update()
+	return
+
+func update():
+	$NPPainel.visible = self.enabled
+	set_process_input(self.enabled)
+	return
+
+func enabeled(b):
+	self.enabled = b
+	self.update()
+	return
+
 func set_dialog(name, text):
 	self.set_speaker(name)
 	self.gen_list(text)
 	self.next_text()
+	return
+
+func add_dialog(text):
+	self.gen_list(text)
 	return
 
 func gen_list(text):
