@@ -11,32 +11,32 @@
 [ext_resource path="res://Goblin/art/attack_5.png" type="Texture" id=9]
 [ext_resource path="res://Goblin/art/attack_6.png" type="Texture" id=10]
 [ext_resource path="res://Goblin/art/attack_7.png" type="Texture" id=11]
-[ext_resource path="res://Goblin/art/walk_1.png" type="Texture" id=12]
-[ext_resource path="res://Goblin/art/walk_2.png" type="Texture" id=13]
-[ext_resource path="res://Goblin/art/walk_3.png" type="Texture" id=14]
-[ext_resource path="res://Goblin/art/walk_4.png" type="Texture" id=15]
-[ext_resource path="res://Goblin/art/walk_5.png" type="Texture" id=16]
-[ext_resource path="res://Goblin/art/walk_6.png" type="Texture" id=17]
-[ext_resource path="res://Goblin/art/death_1.png" type="Texture" id=18]
-[ext_resource path="res://Goblin/art/death_2.png" type="Texture" id=19]
-[ext_resource path="res://Goblin/art/death_3.png" type="Texture" id=20]
-[ext_resource path="res://Goblin/art/death_4.png" type="Texture" id=21]
-[ext_resource path="res://Goblin/art/death_5.png" type="Texture" id=22]
-[ext_resource path="res://Goblin/art/death_6.png" type="Texture" id=23]
-[ext_resource path="res://Goblin/art/death_7.png" type="Texture" id=24]
-[ext_resource path="res://Goblin/art/death_8.png" type="Texture" id=25]
+[ext_resource path="res://Goblin/art/death_1.png" type="Texture" id=12]
+[ext_resource path="res://Goblin/art/death_2.png" type="Texture" id=13]
+[ext_resource path="res://Goblin/art/death_3.png" type="Texture" id=14]
+[ext_resource path="res://Goblin/art/death_4.png" type="Texture" id=15]
+[ext_resource path="res://Goblin/art/death_5.png" type="Texture" id=16]
+[ext_resource path="res://Goblin/art/death_6.png" type="Texture" id=17]
+[ext_resource path="res://Goblin/art/death_7.png" type="Texture" id=18]
+[ext_resource path="res://Goblin/art/death_8.png" type="Texture" id=19]
+[ext_resource path="res://Goblin/art/walk_1.png" type="Texture" id=20]
+[ext_resource path="res://Goblin/art/walk_2.png" type="Texture" id=21]
+[ext_resource path="res://Goblin/art/walk_3.png" type="Texture" id=22]
+[ext_resource path="res://Goblin/art/walk_4.png" type="Texture" id=23]
+[ext_resource path="res://Goblin/art/walk_5.png" type="Texture" id=24]
+[ext_resource path="res://Goblin/art/walk_6.png" type="Texture" id=25]
 [ext_resource path="res://Goblin/States/Idle.gd" type="Script" id=26]
 [ext_resource path="res://Goblin/States/Stagger.gd" type="Script" id=27]
 [ext_resource path="res://Goblin/States/Walk.gd" type="Script" id=28]
 [ext_resource path="res://Goblin/States/Death.gd" type="Script" id=29]
 [ext_resource path="res://Goblin/States/Attack.gd" type="Script" id=30]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20.1198, 30.1164 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Attack"
 length = 0.5
@@ -67,7 +67,7 @@ tracks/1/keys = {
 "values": [ 0, 7 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Death"
 length = 1.0
@@ -98,7 +98,7 @@ tracks/1/keys = {
 "values": [ 0, 8 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 
 resource_name = "Idle"
 length = 1.0
@@ -129,7 +129,7 @@ tracks/1/keys = {
 "values": [ 0, 3 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 resource_name = "Stagger"
 length = 0.5
@@ -160,7 +160,7 @@ tracks/1/keys = {
 "values": [ 0, 2 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource_name = "Walk"
 length = 1.5
@@ -191,7 +191,7 @@ tracks/1/keys = {
 "values": [ 0, 6 ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=7]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ) ],
@@ -204,17 +204,17 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Stagg",
 "speed": 5.0
@@ -241,7 +241,7 @@ playback/speed = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0, 12 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Pivot" type="Position2D" parent="." index="2"]
@@ -255,17 +255,17 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Attack = SubResource( 10 )
-anims/Death = SubResource( 9 )
-anims/Idle = SubResource( 6 )
-anims/Stagger = SubResource( 8 )
-anims/Walk = SubResource( 7 )
+anims/Attack = SubResource( 2 )
+anims/Death = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Stagger = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 blend_times = [  ]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="1"]
 
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 3 )
+frames = SubResource( 7 )
 animation = "Attack"
 frame = 7
 _sections_unfolded = [ "Transform" ]

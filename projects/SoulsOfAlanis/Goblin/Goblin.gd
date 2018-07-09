@@ -8,7 +8,7 @@ const DamageShower = preload("res://HUD/Damage.tscn")
 
 # Define constants
 const UPVEC = Vector2(0,-1)
-const GRAVITY = 200
+const GRAVITY = 500
 const FLIPPING_SCALE = Vector2(-1, 1)
 
 # Define signals

@@ -36,3 +36,8 @@ func exit(host):
 	var CSprite = host.get_node("Pivot/Body")
 	CSprite.set_modulate(Color(1, 1, 1, 1))
 	return
+
+func _on_animation_finished(host, anim_name):
+	if anim_name == "Stagger":
+		host._state_change("Walk")
+	return
