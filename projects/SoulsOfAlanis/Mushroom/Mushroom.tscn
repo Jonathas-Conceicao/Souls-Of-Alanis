@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Mushroom/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://Mushroom/mushroom2.png" type="Texture" id=2]
-[ext_resource path="res://Mushroom/death_1.png" type="Texture" id=3]
-[ext_resource path="res://Mushroom/death_2.png" type="Texture" id=4]
-[ext_resource path="res://Mushroom/death_3.png" type="Texture" id=5]
-[ext_resource path="res://Mushroom/death_4.png" type="Texture" id=6]
-[ext_resource path="res://Mushroom/death_5.png" type="Texture" id=7]
-[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=8]
-[ext_resource path="res://Mushroom/States/Stagger.gd" type="Script" id=9]
-[ext_resource path="res://Mushroom/States/Walk.gd" type="Script" id=10]
-[ext_resource path="res://Mushroom/States/Death.gd" type="Script" id=11]
+[ext_resource path="res://Mushroom/death_2.png" type="Texture" id=3]
+[ext_resource path="res://Mushroom/death_3.png" type="Texture" id=4]
+[ext_resource path="res://Mushroom/death_4.png" type="Texture" id=5]
+[ext_resource path="res://Mushroom/death_5.png" type="Texture" id=6]
+[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=7]
+[ext_resource path="res://Mushroom/States/Stagger.gd" type="Script" id=8]
+[ext_resource path="res://Mushroom/States/Walk.gd" type="Script" id=9]
+[ext_resource path="res://Mushroom/States/Death.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -20,12 +19,12 @@ animations = [ {
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
@@ -35,7 +34,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="Animation" id=2]
 
 resource_name = "Death"
-length = 1.0
+length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -57,7 +56,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 5 ]
@@ -158,8 +157,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
 
 frames = SubResource( 1 )
-animation = "Stagger"
-frame = 1
+animation = "Death"
 
 [node name="Animation" type="AnimationPlayer" parent="Pivot" index="1"]
 
@@ -177,15 +175,15 @@ blend_times = [  ]
 
 [node name="Stagger" type="Node" parent="States" index="0"]
 
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="Walk" type="Node" parent="States" index="1"]
 
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="Death" type="Node" parent="States" index="2"]
 
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="RayCastRightDown" type="RayCast2D" parent="." index="5"]
 

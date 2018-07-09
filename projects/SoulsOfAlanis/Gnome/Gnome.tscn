@@ -1,44 +1,184 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Gnome/Gnome.gd" type="Script" id=1]
-[ext_resource path="res://Gnome/gnome1.png" type="Texture" id=2]
-[ext_resource path="res://Gnome/gnome2.png" type="Texture" id=3]
-[ext_resource path="res://Gnome/gnome3.png" type="Texture" id=4]
+[ext_resource path="res://Gnome/art/walk_1.png" type="Texture" id=2]
+[ext_resource path="res://Gnome/art/walk_2.png" type="Texture" id=3]
+[ext_resource path="res://Gnome/art/stagger_1.png" type="Texture" id=4]
+[ext_resource path="res://Gnome/art/death_1.png" type="Texture" id=5]
+[ext_resource path="res://Gnome/art/death_2.png" type="Texture" id=6]
+[ext_resource path="res://Gnome/art/death_3.png" type="Texture" id=7]
+[ext_resource path="res://Gnome/art/death_4.png" type="Texture" id=8]
+[ext_resource path="res://Gnome/art/death_5.png" type="Texture" id=9]
+[ext_resource path="res://Gnome/art/walk_3.png" type="Texture" id=10]
+[ext_resource path="res://Gnome/States/Stagger.gd" type="Script" id=11]
+[ext_resource path="res://Gnome/States/Walk.gd" type="Script" id=12]
+[ext_resource path="res://Gnome/States/Death.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10, 16.0517 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="Animation" id=9]
+
+resource_name = "Death"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Death" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "Idle"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Stagger"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Stagger" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "Walk"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
 [node name="Gnome" type="KinematicBody2D"]
 
+scale = Vector2( 1.3, 1.3 )
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 5
+collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-blend_times = [  ]
-
-[node name="Tween" type="Tween" parent="." index="1"]
+[node name="Tween" type="Tween" parent="." index="0"]
 
 repeat = false
 playback_process_mode = 1
@@ -47,58 +187,56 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
-scale = Vector2( 1.8, 2.4 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="HitBox" type="Area2D" parent="." index="3"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Pivot" type="Position2D" parent="." index="4"]
+[node name="Pivot" type="Position2D" parent="." index="2"]
 
-[node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
-
-scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 2 )
-animation = "default"
-playing = true
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastRightDown" type="RayCast2D" parent="." index="5"]
+[node name="Animation" type="AnimationPlayer" parent="Pivot" index="0"]
 
-position = Vector2( 25, 5 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 25 )
-collision_mask = 1
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Death = SubResource( 9 )
+anims/Idle = SubResource( 7 )
+anims/Stagger = SubResource( 4 )
+anims/Walk = SubResource( 8 )
+blend_times = [  ]
+
+[node name="Body" type="AnimatedSprite" parent="Pivot" index="1"]
+
+frames = SubResource( 6 )
+animation = "Idle"
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastLeftDown" type="RayCast2D" parent="." index="6"]
+[node name="DamageSpot" type="Position2D" parent="." index="3"]
 
-position = Vector2( -25, 5 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 25 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
+[node name="States" type="Node" parent="." index="4"]
 
-[node name="RayCastLeft" type="RayCast2D" parent="." index="7"]
+editor/display_folded = true
 
-position = Vector2( -17, 2 )
+[node name="Stagger" type="Node" parent="States" index="0"]
+
+script = ExtResource( 11 )
+
+[node name="Walk" type="Node" parent="States" index="1"]
+
+script = ExtResource( 12 )
+
+[node name="Death" type="Node" parent="States" index="2"]
+
+script = ExtResource( 13 )
+
+[node name="Left" type="RayCast2D" parent="." index="5"]
+
+position = Vector2( -12, 0 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true
@@ -106,9 +244,9 @@ cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastRight" type="RayCast2D" parent="." index="8"]
+[node name="Right" type="RayCast2D" parent="." index="6"]
 
-position = Vector2( 18.4272, 2 )
+position = Vector2( 12, 0 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -116,14 +254,32 @@ cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
+[node name="LeftDown" type="RayCast2D" parent="." index="7"]
+
+position = Vector2( -15, 2 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightDown" type="RayCast2D" parent="." index="8"]
+
+position = Vector2( 15, 2 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
 [node name="Timer" type="Timer" parent="." index="9"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 0.5
 one_shot = false
 autostart = true
 
-[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

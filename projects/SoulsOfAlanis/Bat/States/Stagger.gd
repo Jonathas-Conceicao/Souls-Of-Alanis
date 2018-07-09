@@ -27,7 +27,7 @@ func update(host, delta):
 		return "Fly"
 	if host.is_on_wall() && host.velocity.x != 0:
 		return "Fly"
-	host.velocity.y += host.GRAVITY
+	host.velocity.y += 10
 	return
 
 func exit(host):
@@ -36,3 +36,10 @@ func exit(host):
 	var CSprite = host.get_node("Pivot/Body")
 	CSprite.set_modulate(Color(1, 1, 1, 1))
 	return
+
+func _on_animation_finished(host, anim_name):
+	if anim_name == "Stagger":
+		host._state_change("Fly")
+		host.velocity.y = 0
+	return
+
