@@ -28,6 +28,8 @@ var velocity = Vector2()
 var direction
 var flipped = false
 
+# ADDED
+signal scene_exit(exit_idx)
 var current_state = null
 
 const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allow for showing more items.
@@ -276,6 +278,9 @@ func _on_SwordHit_body(body):
 func _on_SwordHit_area(area):
   if area != $Stepping && area.has_method("_on_takeHit"):
     area._on_takeHit(self)
+  if area.has_method("_get_exit"):
+    var x = area._get_exit()
+    emit_signal("scene_exit", x)
   return
 
 func _on_Stepping_body_entered(body):
