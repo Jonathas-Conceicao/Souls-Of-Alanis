@@ -19,7 +19,7 @@ onready var GardenTree = null #TreeMap
 onready var CastleTree = null #TreeMap
 onready var CriptTree  = null #TreeMap
 
-onready var current_tree = null #TreeMap
+onready var current_tree = CastleTree #TreeMap
 
 onready var current_node = null #TreeMap
 
@@ -46,8 +46,8 @@ func _ready():
   # TODO: randomly chose one
   ## this.one.child[closed].child = boss_room
 
-  #CHANGE!
   self.current_tree = self.CastleTree
+
   pass
 
 # TODO: connect trees
