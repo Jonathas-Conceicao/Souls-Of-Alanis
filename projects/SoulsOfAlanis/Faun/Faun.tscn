@@ -22,23 +22,23 @@
 [ext_resource path="res://Faun/art/attack_13.png" type="Texture" id=20]
 [ext_resource path="res://Faun/art/attack_14.png" type="Texture" id=21]
 [ext_resource path="res://Faun/art/attack_15.png" type="Texture" id=22]
-[ext_resource path="res://Faun/art/walk_1.png" type="Texture" id=23]
-[ext_resource path="res://Faun/art/walk_2.png" type="Texture" id=24]
-[ext_resource path="res://Faun/art/walk_3.png" type="Texture" id=25]
-[ext_resource path="res://Faun/art/walk_4.png" type="Texture" id=26]
-[ext_resource path="res://Faun/art/walk_5.png" type="Texture" id=27]
-[ext_resource path="res://Faun/art/walk_6.png" type="Texture" id=28]
-[ext_resource path="res://Faun/art/walk_7.png" type="Texture" id=29]
-[ext_resource path="res://Faun/art/walk_8.png" type="Texture" id=30]
-[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=31]
-[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=32]
-[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=33]
-[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=34]
-[ext_resource path="res://Faun/art/death_5.png" type="Texture" id=35]
-[ext_resource path="res://Faun/art/death_6.png" type="Texture" id=36]
-[ext_resource path="res://Faun/art/death_7.png" type="Texture" id=37]
-[ext_resource path="res://Faun/art/death_8.png" type="Texture" id=38]
-[ext_resource path="res://Faun/art/death_9.png" type="Texture" id=39]
+[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=23]
+[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=24]
+[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=25]
+[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=26]
+[ext_resource path="res://Faun/art/death_5.png" type="Texture" id=27]
+[ext_resource path="res://Faun/art/death_6.png" type="Texture" id=28]
+[ext_resource path="res://Faun/art/death_7.png" type="Texture" id=29]
+[ext_resource path="res://Faun/art/death_8.png" type="Texture" id=30]
+[ext_resource path="res://Faun/art/death_9.png" type="Texture" id=31]
+[ext_resource path="res://Faun/art/walk_1.png" type="Texture" id=32]
+[ext_resource path="res://Faun/art/walk_2.png" type="Texture" id=33]
+[ext_resource path="res://Faun/art/walk_3.png" type="Texture" id=34]
+[ext_resource path="res://Faun/art/walk_4.png" type="Texture" id=35]
+[ext_resource path="res://Faun/art/walk_5.png" type="Texture" id=36]
+[ext_resource path="res://Faun/art/walk_6.png" type="Texture" id=37]
+[ext_resource path="res://Faun/art/walk_7.png" type="Texture" id=38]
+[ext_resource path="res://Faun/art/walk_8.png" type="Texture" id=39]
 [ext_resource path="res://Faun/States/Idle.gd" type="Script" id=40]
 [ext_resource path="res://Faun/States/Stagger.gd" type="Script" id=41]
 [ext_resource path="res://Faun/States/Walk.gd" type="Script" id=42]
@@ -245,19 +245,19 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "Stagger",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "Death",
 "speed": 5.0
 } ]
 
@@ -266,7 +266,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 25.3634, 30.194 )
 
-[node name="Faun" type="KinematicBody2D" index="0"]
+[node name="Faun" type="KinematicBody2D"]
 
 scale = Vector2( 5, 5 )
 input_pickable = false
@@ -316,7 +316,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( 0, 28 )
+position = Vector2( 0, 23 )
 shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
@@ -348,7 +348,7 @@ script = ExtResource( 45 )
 
 [node name="Right" type="RayCast2D" parent="." index="5"]
 
-position = Vector2( 25, 0 )
+position = Vector2( 26, 30 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -358,7 +358,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Right2" type="RayCast2D" parent="." index="6"]
 
-position = Vector2( 25, 6 )
+position = Vector2( 25, 40 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -368,7 +368,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left" type="RayCast2D" parent="." index="7"]
 
-position = Vector2( -25, 0 )
+position = Vector2( -26, 30 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true
@@ -378,7 +378,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left2" type="RayCast2D" parent="." index="8"]
 
-position = Vector2( -25, 5 )
+position = Vector2( -25, 40 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true

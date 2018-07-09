@@ -5,18 +5,18 @@
 [ext_resource path="res://LivingArmor/art/attack_1.png" type="Texture" id=3]
 [ext_resource path="res://LivingArmor/art/attack_2.png" type="Texture" id=4]
 [ext_resource path="res://LivingArmor/art/attack_3.png" type="Texture" id=5]
-[ext_resource path="res://LivingArmor/art/death_1.png" type="Texture" id=6]
-[ext_resource path="res://LivingArmor/art/death_2.png" type="Texture" id=7]
-[ext_resource path="res://LivingArmor/art/death_3.png" type="Texture" id=8]
-[ext_resource path="res://LivingArmor/art/death_4.png" type="Texture" id=9]
-[ext_resource path="res://LivingArmor/art/stagg_1.png" type="Texture" id=10]
-[ext_resource path="res://LivingArmor/art/stagg_2.png" type="Texture" id=11]
-[ext_resource path="res://LivingArmor/art/walk_1.png" type="Texture" id=12]
-[ext_resource path="res://LivingArmor/art/walk_2.png" type="Texture" id=13]
-[ext_resource path="res://LivingArmor/art/walk_3.png" type="Texture" id=14]
-[ext_resource path="res://LivingArmor/art/walk_4.png" type="Texture" id=15]
-[ext_resource path="res://LivingArmor/art/walk_5.png" type="Texture" id=16]
-[ext_resource path="res://LivingArmor/art/block_1.png" type="Texture" id=17]
+[ext_resource path="res://LivingArmor/art/block_1.png" type="Texture" id=6]
+[ext_resource path="res://LivingArmor/art/death_1.png" type="Texture" id=7]
+[ext_resource path="res://LivingArmor/art/death_2.png" type="Texture" id=8]
+[ext_resource path="res://LivingArmor/art/death_3.png" type="Texture" id=9]
+[ext_resource path="res://LivingArmor/art/death_4.png" type="Texture" id=10]
+[ext_resource path="res://LivingArmor/art/walk_1.png" type="Texture" id=11]
+[ext_resource path="res://LivingArmor/art/walk_2.png" type="Texture" id=12]
+[ext_resource path="res://LivingArmor/art/walk_3.png" type="Texture" id=13]
+[ext_resource path="res://LivingArmor/art/walk_4.png" type="Texture" id=14]
+[ext_resource path="res://LivingArmor/art/walk_5.png" type="Texture" id=15]
+[ext_resource path="res://LivingArmor/art/stagg_1.png" type="Texture" id=16]
+[ext_resource path="res://LivingArmor/art/stagg_2.png" type="Texture" id=17]
 [ext_resource path="res://LivingArmor/States/Idle.gd" type="Script" id=18]
 [ext_resource path="res://LivingArmor/States/Stagger.gd" type="Script" id=19]
 [ext_resource path="res://LivingArmor/States/Walk.gd" type="Script" id=20]
@@ -224,24 +224,24 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Block",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Stagger",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "Block",
+"name": "Stagger",
 "speed": 5.0
 } ]
 
@@ -250,14 +250,14 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 55.2207, 72.9397 )
 
-[node name="LivingArmor" type="KinematicBody2D" index="0"]
+[node name="LivingArmor" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 5
 collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Tween" type="Tween" parent="." index="0"]
 
@@ -334,7 +334,7 @@ script = ExtResource( 24 )
 
 [node name="Right" type="RayCast2D" parent="." index="5"]
 
-position = Vector2( 25, 0 )
+position = Vector2( 60, 0 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -344,7 +344,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Right2" type="RayCast2D" parent="." index="6"]
 
-position = Vector2( 25, 6 )
+position = Vector2( 60, 6 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -354,7 +354,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left" type="RayCast2D" parent="." index="7"]
 
-position = Vector2( -25, 0 )
+position = Vector2( -60, 0 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true
@@ -364,7 +364,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left2" type="RayCast2D" parent="." index="8"]
 
-position = Vector2( -25, 5 )
+position = Vector2( -60, 5 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true
@@ -374,7 +374,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LeftDown" type="RayCast2D" parent="." index="9"]
 
-position = Vector2( -25, 8 )
+position = Vector2( -60, 60 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 50 )
@@ -383,7 +383,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RightDown" type="RayCast2D" parent="." index="10"]
 
-position = Vector2( 25, 10 )
+position = Vector2( 60, 60 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 50 )
