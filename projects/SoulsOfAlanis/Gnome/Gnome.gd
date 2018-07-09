@@ -32,7 +32,6 @@ onready var ray_right_down = get_node( "RightDown" )
 onready var ray_left_down  = get_node( "LeftDown" )
 
 onready var state = {
-	"Idle":    $States/Idle,
     "Walk":    $States/Walk,
     "Stagger": $States/Stagger,
 	"Death":   $States/Death,
