@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/forest/ordinary/fordinary_2.gd" type="Script" id=1]
+[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+
+[node name="fordinary_2" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 573.838, 359.675 )
+scale = Vector2( 3.00201, 3.01851 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+scale = Vector2( 3, 3 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 8, 74, 0, 9, -1073741823, 0, 10, 19, 0, 11, 19, 0, 12, 19, 0, 13, 19, 0, 14, 19, 0, 15, 19, 0, 16, 19, 0, 17, 19, 0, 18, 19, 0, 19, 19, 0, 20, 19, 0, 21, 19, 0, 22, 19, 0, 23, 1610612758, 0, 65559, 1610612758, 0, 131074, 4, 0, 131095, 1610612758, 0, 196608, 28, 0, 196609, 53, 0, 196610, 53, 0, 196631, 1610612758, 0, 262149, 58, 0, 262150, 56, 0, 262151, 57, 0, 262167, 1610612758, 0, 327703, 1610612758, 0, 393228, 5, 0, 393239, 1610612758, 0, 458763, 53, 0, 458764, 53, 0, 458765, 53, 0, 458775, 1610612758, 0, 524311, 1610612758, 0, 589845, 63, 0, 589846, 65, 0, 589847, 1610612758, 0, 655378, 5, 0, 655381, 64, 0, 655382, 66, 0, 655383, 1610612758, 0, 720914, 59, 0, 720915, 61, 0, 720919, 1610612758, 0, 786433, 4, 0, 786438, 4, 0, 786441, 5, 0, 786442, 4, 0, 786448, 4, 0, 786450, 60, 0, 786451, 62, 0, 786453, 73, 0, 786455, 1610612758, 0, 851968, 3, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 3, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851987, 6, 0, 851988, 4, 0, 851989, 4, 0, 851990, 4, 0, 851991, 1610612758, 0, 917504, 9, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 9, 0, 917514, 9, 0, 917515, 9, 0, 917516, 9, 0, 917517, 9, 0, 917518, 9, 0, 917519, 9, 0, 917520, 9, 0, 917521, 9, 0, 917522, 9, 0, 917523, 20, 0, 917524, -1073741802, 0, 917525, -1073741802, 0, 917526, -1073741802, 0, 917527, 1610612758, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+
