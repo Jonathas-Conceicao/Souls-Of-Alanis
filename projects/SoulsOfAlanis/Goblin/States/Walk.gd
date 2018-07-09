@@ -1,4 +1,4 @@
-extends "res://Mushroom/States/State.gd"
+extends 'State.gd'
 
 func enter(host):
 	host.set_animation("Walk")
@@ -7,17 +7,22 @@ func enter(host):
 func update(host, delta):
 	var body = null
 	if host.direction == host.DIRECTIONS.RIGHT:
+		if host.flipped:
+			host.flipped = false
+			host.get_node("Pivot").apply_scale(host.FLIPPING_SCALE)
 		if !host.ray_right.is_colliding() and host.ray_right_down.is_colliding():
 			host.velocity.x = host.BASE_SPEED
 		else:
 			host.direction = host.DIRECTIONS.LEFT
 
 	if host.direction == host.DIRECTIONS.LEFT:
+		if not host.flipped:
+			host.flipped = true
+			host.get_node("Pivot").apply_scale(host.FLIPPING_SCALE)
 		if !host.ray_left.is_colliding() and host.ray_left_down.is_colliding():
 			host.velocity.x = -host.BASE_SPEED
 		else:
 			host.direction = host.DIRECTIONS.RIGHT
-	return
 
 func exit(host):
 	host.velocity.x = 0

@@ -2,12 +2,14 @@ extends KinematicBody2D
 # Preload classes
 const Foe = preload ("res://script/Classes/Foe.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
+const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
 # Define constants
-const UP = Vector2(0,-1)
-const GRAVITY = 10
+const UPVEC = Vector2(0,-1)
+const GRAVITY = 200
+const FLIPPING_SCALE = Vector2(-1, 1)
 
 # Define signals
 signal StateChanged
@@ -18,18 +20,22 @@ var current_state = null
 var BASE_SPEED = 150
 var velocity = Vector2()
 var direction = DIRECTIONS.RIGHT
+var flipped = false
 var data
 
-enum DIRECTIONS { RIGHT, LEFT }
+enum DIRECTIONS { LEFT, RIGHT }
 
-onready var ray_right      = get_node( "RayCastRight")
-onready var ray_left       = get_node( "RayCastLeft" )
-onready var ray_right_down = get_node( "RayCastRightDown" )
-onready var ray_left_down  = get_node( "RayCastLeftDown" )
+onready var ray_right      = get_node( "Right")
+onready var ray_left       = get_node( "Left" )
+onready var ray_right_down = get_node( "RightDown" )
+onready var ray_left_down  = get_node( "LeftDown" )
 
 onready var state = {
+	"Idle":    $States/Idle,
+    "Walk":    $States/Walk,
     "Stagger": $States/Stagger,
-	"Walk":  $States/Walk,
+	"Death":   $States/Death,
+	"Attack":  $States/Attack,
 }
 
 func _ready():
@@ -48,16 +54,46 @@ func _physics_process(delta):
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
-	if is_on_floor() && velocity.y >= 0:
-		velocity.y = 40
-	else:
-		velocity.y += GRAVITY
-	move_and_slide(velocity, UP)
+	velocity.y += delta * GRAVITY
+	var motion = velocity * delta
+	var collision = move_and_collide(motion)
+	if collision:
+		velocity = velocity.slide(collision.normal)
+		if collision.collider.has_method("_on_takeDamage"):
+			_state_change("Attack")
+			if direction == DIRECTIONS.LEFT:
+				direction = DIRECTIONS.RIGHT
+			else:
+				direction = DIRECTIONS.LEFT
+			var attack = data.genAttack()
+			collision.collider._on_takeDamage(self, attack)
 	return
+	
+#  Function to generate artificial inputs to change states
+#  This function will be called according to the Creature's AI,
+# for instance, it can be called everytime a Timer ends up
+func inputAI():
+    #  Here goes the generation of an input
+    # and the insertion of this input on the
+    # event variable
+    # << BEGIN
+    var event
+    # END >>
+    var new_state = current_state.handle_inputIA(self, event)
+    if new_state:
+        _state_change(new_state)
+    return
+
+func update_flip():
+    var d = velocity.x >= 0
+    if d == flipped:
+        $Pivot/Body.apply_scale(FLIPPING_SCALE)
+        flipped = !d
+    return
 
 func set_animation(animation):
 	if !$Pivot/Animation.is_playing() || $Pivot/Body.animation != animation:
-    	$Pivot/Body.animation = animation
+    	$Pivot/Body.animation = animation # To solve bug where the new state commes before the Animation starts
     	$Pivot/Animation.play(animation)
 	return
 
@@ -89,26 +125,15 @@ func _on_takeDamage(agressor, attack):
 	var damageDisplay = DamageShower.instance()
 	damageDisplay.init(self, $DamageSpot.get_position(), Vector2(1.5, 1.5), damage)
 	self.add_child(damageDisplay)
-	print("Mushroom recieved ", damage, " from: ", agressor.get_name())
+	print("Goblin recieved ", damage, " from: ", agressor.get_name())
 	_state_change("Stagger")
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	current_state.setKnockBack(self, dp, attack.direction)
 	if data.getHP() <= 0:
-		queue_free()
+		_state_change("Death")
 	return
-
-func _on_takeFoot(agressor):
-	queue_free()
-	pass
 
 func _on_Animation_animation_finished(anim_name):
   var ns = current_state._on_animation_finished(self, anim_name)
   if ns: _state_change(ns)
   return
-
-
-func _on_HitBox_body_entered(body):
-	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
-		body._on_takeDamage(self, attack)
-	pass # replace with function body

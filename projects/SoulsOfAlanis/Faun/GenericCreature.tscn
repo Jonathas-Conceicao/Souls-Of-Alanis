@@ -24,7 +24,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="GenericCreature" type="KinematicBody2D"]
+[node name="GenericCreature" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 2
@@ -48,6 +48,7 @@ shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

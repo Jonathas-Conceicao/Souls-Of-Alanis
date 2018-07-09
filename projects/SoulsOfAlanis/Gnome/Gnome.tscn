@@ -20,7 +20,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Gnome" type="KinematicBody2D" index="0"]
+[node name="Gnome" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1

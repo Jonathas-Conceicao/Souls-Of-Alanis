@@ -86,8 +86,8 @@ tracks/1/keys = {
 [node name="Mushroom" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 2
-collision_mask = 1
+collision_layer = 5
+collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
@@ -168,7 +168,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RayCastRight" type="RayCast2D" parent="." index="8"]
 
-position = Vector2( 19, 5 )
+position = Vector2( 35, 5 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -178,7 +178,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RayCastLeft" type="RayCast2D" parent="." index="9"]
 
-position = Vector2( -20, 5 )
+position = Vector2( -35, 5 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true
@@ -186,6 +186,25 @@ cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
+[node name="HitBox" type="Area2D" parent="." index="10"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="HitBox" index="0"]
+
+position = Vector2( -0.56764, 7.79328 )
+scale = Vector2( 2.31566, 1.414 )
+build_mode = 0
+polygon = PoolVector2Array( 6.61387, 9.92177, -5.67228, 9.96104, -8.45578, 5.57142, -10.2084, 0.506495, -10.2084, -7.42857, -8.91025, -9.04904, -5.87319, -17.2891, -2.44183, -20.307, 2.92025, -20.3103, 6.33732, -17.426, 9.38535, -9.00472, 10.5132, -7.42857, 10.5132, 0.675324, 9.06995, 5.23377 )
+
 [connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 
 
