@@ -1,10 +1,6 @@
 extends Control
 
-enum Type {Sword, Armor, Ring, Consumable}
-
-## const Armor  = preload("res://script/Classes/Armor.gd")
-## const DataWeapon = preload("res://script/Classes/Weapon.gd")
-## const Ring   = preload("res://script/Classes/Ring.gd")
+enum Type {Sword, Armor, Ring, Consumable, Scroll}
 
 export(Type)   var type = Type.Sword
 export(String) var description = ""
@@ -25,16 +21,18 @@ func init(t, desc, sid):
 	return
 
 func gen_texture_res():
-	var res = "res://GUI/"
+	var res = "res://GUI/art/"
 	match self.type:
 		Type.Sword:
-			res += "art/Sword_" + str(self.SpriteID) + "_Icon_GUI.png"
+			res += "Sword_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Armor:
-			res += "art/Armor_" + str(self.SpriteID) + "_Icon_GUI.png"
+			res += "Armor_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Ring:
-			res += "art/Ring_" + str(self.SpriteID) + "_Icon_GUI.png"
+			res += "Ring_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Consumable:
-			res += "art/Consumable_" + str(self.SpriteID) + "_Icon_GUI.png"
+			res += "Consumable_" + str(self.SpriteID) + "_Icon_GUI.png"
+		Type.Scroll:
+			res += "Scroll_Icon_GUI.png"
 	var check = File.new()
 	var ok = check.file_exists(res)
 	if ok:
