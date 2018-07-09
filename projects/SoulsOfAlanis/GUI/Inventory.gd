@@ -59,13 +59,13 @@ func test_ready():
 
 	var e1 = InventoryItem.instance()
 
-	i1.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
+	i1.init(InventoryItemS.Type.Scroll, "Quest: find meaning in life", 0)
 	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0)
 	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
 	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
 	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
 	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0)
-	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4)
+	i7.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
@@ -108,7 +108,7 @@ func _ready(): # TODO: #Jonathas Delete old ready tests
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	# self.test_ready()
+	self.test_ready()
 	return
 
 func init(invList, equipList = [null, null, null]):
