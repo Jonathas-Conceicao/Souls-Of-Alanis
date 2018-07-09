@@ -2,6 +2,7 @@ extends "MenuItem.gd"
 
 const InventoryItem  = preload("InventoryItem.tscn")
 const InventoryItemS = preload("InventoryItem.gd")
+const Item = preload("res://Items/Item.gd")
 
 enum Direction {Left, Right, Up, Down}
 enum States {Browse, Action}
@@ -38,7 +39,7 @@ func _input(event):
 		else:
 			self.buttom_move(Down)
 	elif event.is_action_pressed("ui_accept"):
-		if state == Action && (bSelected == 0 || bSelected == 1):
+		if state == Action && (bSelected == 0 || bSelected == 1): # 0 == Use, 1 == Drop
 			emit_signal("finished_interaction", self, bSelected, self.get_selected_as_index())
 		self.state_change()
 	elif event.is_action_pressed("ui_cancel"):
@@ -63,17 +64,17 @@ func test_ready():
 	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
 	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
 	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
-	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0, null)
+	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0)
 	i7.init(InventoryItemS.Type.Consumable, "A sexy potion", 4)
 
 	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
 
 	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: Last item in lsit seams to be invisible
-	self.init(exItemList, [null, e1, null, null])
+	self.init(exItemList, [e1, null, null])
 	return
 
 func test_ready_2():
-	var item = load("res://Items/Item.tscn").instance()
+	var item = Item.new()
 	item.set_type(item.Type.Sword)
 	item.set_sprite_id(4)
 	item.set_description("Magestic Sword")
@@ -107,11 +108,13 @@ func _ready(): # TODO: #Jonathas Delete old ready tests
 	self.buttom_reset()
 	$Animation.play("Intro")
 
-	# self.test_ready_5()
+	# self.test_ready()
 	return
 
-func init(invList, equipList = [null, null, null, null]):
+func init(invList, equipList = [null, null, null]):
 	self.itemList = invList
+	self.display_clean_items()
+	self.display_clean_equipaments()
 	self.display_items()
 	self.display_equipaments(equipList)
 	self.update_selected()
@@ -148,7 +151,7 @@ func browse_move(direction):
 			selected[1] += 1
 	selected[0] %= LINES
 	selected[1] %= COLUMNS
-	set_item_pos($Background/ItemSelector, selected[0], selected[1])
+	set_item_pos($Background/SelectorContainer/ItemSelector, selected[0], selected[1])
 	self.update_selected()
 	self.update_description()
 	return
@@ -169,7 +172,7 @@ func buttom_move(direction):
 func selection_reset():
 	self.selected[0] = 0
 	self.selected[1] = 0
-	self.set_item_pos($Background/ItemSelector, selected[0], selected[1])
+	self.set_item_pos($Background/SelectorContainer/ItemSelector, selected[0], selected[1])
 	return
 
 func buttom_reset():
@@ -179,7 +182,7 @@ func buttom_reset():
 	return
 
 func selection_visible(b):
-	$Background/ItemSelector.visible = b
+	$Background/SelectorContainer/ItemSelector.visible = b
 	return
 
 func get_selected_as_index():
@@ -199,15 +202,28 @@ func update_description():
 	$Background/Description.set_text(text)
 	return
 
+
+func display_clean_items():
+	for itemView in $Background/ItemsContainer.get_children():
+		itemView.visible = false
+		itemView.queue_free()
+	return
+
 func display_items():
 	var i = 0
 	var j = 0
 	for item in self.itemList:
-		$Background.add_child_below_node($Background/InitialPosition, item)
+		$Background/ItemsContainer.add_child(item)
 		self.set_item_pos(item, i, j)
 		j = (j + 1)
 		i = int(j /  5)
 		j %= COLUMNS
+	return
+
+func display_clean_equipaments():
+	for itemView in $Background/EquipContainer.get_children():
+		itemView.visible = false
+		itemView.queue_free()
 	return
 
 func display_equipaments(list):
@@ -218,15 +234,15 @@ func display_equipaments(list):
 		item = list[i]
 		pos  = posList[i]
 		if item != null:
-			$Background.add_child_below_node($Background/EquipPositions, item)
-			item.set_position(pos.get_position())
+			$Background/EquipContainer.add_child(item)
+			item.set_global_position(pos.get_global_position())
 	return
 
 const CELL_SIZE  = 16 * 3
 const CELL_SPACE = 1  * 3
 
 func set_item_pos(obj, i, j):
-	var basePosition = $Background/InitialPosition.get_position()
+	var basePosition = Vector2(0, 0)
 	basePosition.x += (j * (CELL_SIZE + CELL_SPACE))
 	basePosition.y += (i * (CELL_SIZE + CELL_SPACE))
 	obj.set_position(basePosition)
@@ -238,4 +254,9 @@ func _on_Inventory_finished_interaction(obj, action, index):
 		print(ac, " item", index)
 	else:
 		print("Inventory should close now")
+	return
+
+
+func _on_Close_pressed():
+	emit_signal("finished_interaction", self, -1, -1)
 	return

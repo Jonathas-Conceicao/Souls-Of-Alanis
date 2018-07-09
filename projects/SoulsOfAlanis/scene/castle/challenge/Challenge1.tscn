@@ -3,6 +3,7 @@
 [ext_resource path="res://scene/castle/challenge/Challenge1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
 
+
 [node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )

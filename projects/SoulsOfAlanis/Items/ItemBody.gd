@@ -39,7 +39,7 @@ func set_sprite_id(i):
 	return
 
 func gen_texture_res():
-	var res = "res://ItemsBody/art/"
+	var res = "res://Items/art/"
 	match self.type:
 		Type.Sword:
 			res += "Sword_ItemBody_" + String(self.sprite_id) + ".png"
@@ -53,7 +53,7 @@ func gen_texture_res():
 	var ok = check.file_exists(res)
 	if ok:
 		return load(res)
-	return load("res://ItemsBody/art/NotFound_ItemBody.png")
+	return load("res://Items/art/NotFound_ItemBody.png")
 
 func spawn():
 	var texture = self.gen_texture_res()

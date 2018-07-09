@@ -28,13 +28,13 @@ func gen_texture_res():
 	var res = "res://GUI/"
 	match self.type:
 		Type.Sword:
-			res += "art/Sword_" + String(self.SpriteID) + "_Icon_GUI.png"
+			res += "art/Sword_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Armor:
-			res += "art/Armor_" + String(self.SpriteID) + "_Icon_GUI.png"
+			res += "art/Armor_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Ring:
-			res += "art/Ring_" + String(self.SpriteID) + "_Icon_GUI.png"
+			res += "art/Ring_" + str(self.SpriteID) + "_Icon_GUI.png"
 		Type.Consumable:
-			res += "art/Consumable_" + String(self.SpriteID) + "_Icon_GUI.png"
+			res += "art/Consumable_" + str(self.SpriteID) + "_Icon_GUI.png"
 	var check = File.new()
 	var ok = check.file_exists(res)
 	if ok:

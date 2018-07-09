@@ -3,7 +3,7 @@ extends Node
 enum Type {Sword, Armor, Ring, Consumable}
 
 const InventoryView = preload("res://GUI/InventoryItem.tscn")
-const ItemBody = preload("res://ItemsBody/ItemBody.tscn")
+const ItemBody = preload("res://Items/ItemBody.tscn")
 
 var ItemData
 
@@ -39,6 +39,7 @@ func set_description(d):
 
 func set_data(data):
 	self.ItemData = data
+	add_child(data)
 	return
 
 func get_data():

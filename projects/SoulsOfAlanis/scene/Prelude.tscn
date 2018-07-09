@@ -67,7 +67,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Prelude" type="Node"]
+[node name="Prelude" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {

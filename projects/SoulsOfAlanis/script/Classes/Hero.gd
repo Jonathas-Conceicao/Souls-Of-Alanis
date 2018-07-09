@@ -6,6 +6,8 @@ var ring       # Hero's current Ring
 var weapon     # Hero's current Weapon
 #var trails
 
+var damageBonus = null # Attack instance for direct damage bonus to all attacks
+
 const Weapon     = preload("Weapon.gd")
 const Attributes = preload("Attributes.gd")
 const Armor      = preload("Armor.gd")
@@ -60,24 +62,21 @@ func decreaseHP(value):
 #---------False otherwise
 ###
 func setArmor(armor):
-	var s
-	if armor != null:
-		s = self.attributes.trySwap(self.armor.weight, armor.weight)
-	else:
-		s = self.attributes.trySwap(0, armor.weight)
-	if s:
-		if armor != null: self.armor.queue_free()
+	var ok
+	var curW = 0 if self.armor == null else self.armor.weight
+	ok = self.attributes.trySwap(curW, armor.weight)
+	if ok:
 		self.armor = armor
-	return s
+	return ok
 
 ###
 # Equips a new Ring and
 # frees the old one if needed
+# return: True (Always)
 ###
 func setRing(ring):
-	if ring != null: self.ring.queue_free()
 	self.ring = ring
-	return
+	return true
 
 ###
 # Equips a new Weapon if the weight allows it and
@@ -86,12 +85,12 @@ func setRing(ring):
 #---------False otherwise
 ###
 func setWeapon(weapon):
-	var s
-	s = self.attributes.trySwap(self.weapon.weight, weapon.weight)
-	if s:
-		self.weapon.queue_free()
+	var ok
+	var curW = 0 if self.weapon == null else self.weapon.weight
+	ok = self.attributes.trySwap(self.weapon.weight, weapon.weight)
+	if ok:
 		self.weapon = weapon
-	return s
+	return ok
 
 ###
 # return: current carry load
@@ -150,14 +149,24 @@ func genAttack():
 	var attack = weapon.genAttack()
 	var attAttack = attributes.genAttack(weapon.getAttackType())
 	attack.add(attAttack)
+	if damageBonus != null:
+		attack.forceAdd(damageBonus)
 	attAttack.queue_free()
 	return attack
 
 ###
-# Calculates the damege of the _attack_,
+# Sets damage bonus instance
+# attack -> Attack instance, null for disabled
+###
+func set_damageBonus(attack):
+	self.damageBonus = attack
+	return
+
+###
+# Calculates the damage of the _attack_,
 # discounts from the current HP and
-# returns the damege taken
-# return: damege take
+# returns the damage taken
+# return: damage take
 ###
 func takeAttack(attack):
 	var defense = genDefense()

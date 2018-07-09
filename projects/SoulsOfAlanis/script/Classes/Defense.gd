@@ -36,29 +36,29 @@ func add(defense):
 	return
 
 ###
-# Returns a new instance that the some of this with the other
+# Returns a new instance that is the sum of this with the other
 # defense -> another innstance
 # return: new instance
 ###
 func sum(defense):
-	var ret = self.new()
+	var ret = self.duplicate() # This dosn't copy internal state
 	self.add_child(ret)
 	ret.add(self)
 	ret.add(defense)
 	return ret
 
 ###
-# Calculates the damege caused by a attack to this defense
+# Calculates the damage caused by a attack to this defense
 # attack -> Attack instance
-# return: damege (>=0)
+# return: damage (>=0)
 ###
 func calcCombat(attack):
-	var damege = 0
+	var damage = 0
 	match attack.type:
 		Attack.Slash:
-			damege = attack.damage - self.slash
+			damage = attack.damage - self.slash
 		Attack.Impact:
-			damege = attack.damage - self.impact
+			damage = attack.damage - self.impact
 		Attack.Thrust:
-			damege = attack.damage - self.thrust
-	return max(damege, 0)
+			damage = attack.damage - self.thrust
+	return max(damage, 0)
