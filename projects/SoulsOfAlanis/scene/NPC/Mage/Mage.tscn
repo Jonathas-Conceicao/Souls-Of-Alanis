@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://art/project-art/png/Characters/Mage/orc spritesheet calciumtrice.png" type="Texture" id=1]
+[ext_resource path="res://scene/NPC/Mage/Area2D.gd" type="Script" id=2]
+[ext_resource path="res://scene/NPC/GhostBill/DialogPainel.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.149, 51.6791 )
+
+[node name="Mage" type="Node" index="0"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -0.25, 160.5, 27.75, 32.75 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 7.5282, 1.43394 )
+shape = SubResource( 1 )
+
+[node name="TextBox" parent="Area2D" index="1" instance=ExtResource( 3 )]
+
+[node name="SaleItemList" parent="Area2D/TextBox" index="0"]
+
+visible = false
+
+[node name="DialogPainel" parent="Area2D/TextBox" index="1"]
+
+visible = false
+
+[node name="SpeakerName" parent="Area2D/TextBox/DialogPainel" index="0"]
+
+text = "Mage:"
+
+[node name="Text" parent="Area2D/TextBox/DialogPainel" index="1"]
+
+text = "Hmm, maybe you can be useful to help me in my quest. I can't hurt the monsters inside the dungeon, only a brave warrior like you can! Would like to help me?"
+
+[node name="ItemList" parent="Area2D/TextBox/DialogPainel" index="2"]
+
+items = [ "Yes", null, false, "          No", null, false ]
+
+
+[editable path="Area2D/TextBox"]

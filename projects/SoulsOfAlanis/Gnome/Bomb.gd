@@ -1,43 +1,28 @@
 extends Area2D
 
+const Attack = preload("res://script/Classes/Attack.gd")
+const Foe = preload ("res://script/Classes/Foe.gd")
+
 const SPEED = 250
 var motion = Vector2(1, 0)
-var damage = 10
-var attack
+var damage = 45
+var atck = null
+var data = null
 
-enum DIRECTIONS { LEFT, RIGHT }
-
-const Attack = preload ("res://script/Classes/Attack.gd")
-
+# Inicialização
 func _ready(direction):
-	match direction:
-		RIGHT:
-			motion.x = 1
-		LEFT:
-			motion.x = -1
-	pass
+	data = Foe.new()
+	self.add_child(data)
+	atck = data.genAttack()
+	print(atck)
+	motion.x = direction
 
+# Movimenta a bala
 func _process(delta):
 	translate(motion * SPEED * delta)
 	pass
 
 func _on_Bomb_body_entered(body):
-	create_explosion(body)
-	$Body.play("boom")
-	yield($AnimationPlayer, "animation_finished")
-	queue_free()
-	pass # replace with function body
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-	pass # replace with function body
-
-func create_explosion(body):
-	attack = Attack.new(Attack.Impact, damage, motion.x, -1)
-	self.add_child(attack)
-	if body.has_method("_on_SwordHit"):
-		body._on_takeDamage(self, attack)
-	pass
-
-func _on_AnimationPlayer_animation_finished(anim_name):
+	if body.has_method("_on_takeDamage"):
+		body._on_takeDamage(self, atck)
 	pass # replace with function body

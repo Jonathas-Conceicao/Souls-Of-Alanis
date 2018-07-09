@@ -10,37 +10,13 @@ func update(host, delta):
 		if !host.ray_right.is_colliding() and host.ray_right_down.is_colliding():
 			host.velocity.x = host.BASE_SPEED
 		else:
-			if host.ray_right.is_colliding():
-				body = host.ray_right.get_collider()
-				if(body):
-					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
-						if body != self && body.has_method("_on_takeDamage"):
-							var attack = host.data.genAttack()
-							body._on_takeDamage(host, attack)
-							host.direction = host.DIRECTIONS.LEFT
-					else:
-						if (body.get_class() != "Area2D"):
-							host.direction = host.DIRECTIONS.LEFT
-			else:
-				host.direction = host.DIRECTIONS.LEFT
+			host.direction = host.DIRECTIONS.LEFT
 
 	if host.direction == host.DIRECTIONS.LEFT:
 		if !host.ray_left.is_colliding() and host.ray_left_down.is_colliding():
-			host.velocity.x = -1 * host.BASE_SPEED
+			host.velocity.x = -host.BASE_SPEED
 		else:
-			if host.ray_left.is_colliding():
-				body = host.ray_left.get_collider()
-				if(body):
-					if (body.has_method("_on_takeDamage") && (!(body.has_method("foe")))):
-						if body != self && body.has_method("_on_takeDamage"):
-							var attack = host.data.genAttack()
-							body._on_takeDamage(host, attack)
-							host.direction = host.DIRECTIONS.RIGHT
-					else:
-						if (body.get_class() != "Area2D"):
-							host.direction = host.DIRECTIONS.RIGHT
-			else:
-				host.direction = host.DIRECTIONS.RIGHT
+			host.direction = host.DIRECTIONS.RIGHT
 	return
 
 func exit(host):

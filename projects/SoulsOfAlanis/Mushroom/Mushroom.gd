@@ -7,7 +7,7 @@ const DamageShower = preload("res://HUD/Damage.tscn")
 
 # Define constants
 const UP = Vector2(0,-1)
-const GRAVITY = 10
+const GRAVITY = 500
 
 # Define signals
 signal StateChanged
@@ -28,6 +28,7 @@ onready var ray_right_down = get_node( "RayCastRightDown" )
 onready var ray_left_down  = get_node( "RayCastLeftDown" )
 
 onready var state = {
+    "Death":   $States/Death,
     "Stagger": $States/Stagger,
 	"Walk":  $States/Walk,
 }
@@ -48,11 +49,18 @@ func _physics_process(delta):
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
-	if is_on_floor() && velocity.y >= 0:
-		velocity.y = 40
-	else:
-		velocity.y += GRAVITY
-	move_and_slide(velocity, UP)
+	velocity.y += delta * GRAVITY
+	var motion = velocity * delta
+	var collision = move_and_collide(motion)
+	if collision:
+		velocity = velocity.slide(collision.normal)
+		if collision.collider.has_method("_on_takeDamage"):
+			if direction == DIRECTIONS.LEFT:
+				direction = DIRECTIONS.RIGHT
+			else:
+				direction = DIRECTIONS.LEFT
+			var attack = data.genAttack()
+			collision.collider._on_takeDamage(self, attack)
 	return
 
 func set_animation(animation):
@@ -94,11 +102,11 @@ func _on_takeDamage(agressor, attack):
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	current_state.setKnockBack(self, dp, attack.direction)
 	if data.getHP() <= 0:
-		queue_free()
+		_state_change("Death")
 	return
 
 func _on_takeFoot(agressor):
-	queue_free()
+	_state_change("Death")
 	pass
 
 func _on_Animation_animation_finished(anim_name):

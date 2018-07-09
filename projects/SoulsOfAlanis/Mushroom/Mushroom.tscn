@@ -1,20 +1,30 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Mushroom/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://Mushroom/mushroom2.png" type="Texture" id=2]
-[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=3]
-[ext_resource path="res://Mushroom/States/Stagger.gd" type="Script" id=4]
-[ext_resource path="res://Mushroom/States/Walk.gd" type="Script" id=5]
+[ext_resource path="res://Mushroom/death_2.png" type="Texture" id=3]
+[ext_resource path="res://Mushroom/death_3.png" type="Texture" id=4]
+[ext_resource path="res://Mushroom/death_4.png" type="Texture" id=5]
+[ext_resource path="res://Mushroom/death_5.png" type="Texture" id=6]
+[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=7]
+[ext_resource path="res://Mushroom/States/Stagger.gd" type="Script" id=8]
+[ext_resource path="res://Mushroom/States/Walk.gd" type="Script" id=9]
+[ext_resource path="res://Mushroom/States/Death.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
@@ -23,8 +33,38 @@ _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "Stagger"
-length = 1.0
+resource_name = "Death"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Death" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -46,15 +86,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0, 0 ]
+"values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Walk"
 length = 1.0
 loop = false
 step = 0.1
@@ -86,8 +125,8 @@ tracks/1/keys = {
 [node name="Mushroom" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 2
-collision_mask = 1
+collision_layer = 5
+collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
@@ -108,24 +147,17 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Energy" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="DamageSpot" type="Position2D" parent="." index="3"]
+[node name="DamageSpot" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0, -23 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Pivot" type="Position2D" parent="." index="4"]
+[node name="Pivot" type="Position2D" parent="." index="3"]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
 
 frames = SubResource( 1 )
-animation = "Walk"
+animation = "Death"
 
 [node name="Animation" type="AnimationPlayer" parent="Pivot" index="1"]
 
@@ -134,21 +166,26 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Stagger = SubResource( 2 )
-anims/Walk = SubResource( 3 )
+anims/Death = SubResource( 2 )
+anims/Stagger = SubResource( 3 )
+anims/Walk = SubResource( 4 )
 blend_times = [  ]
 
-[node name="States" type="Node" parent="." index="5"]
+[node name="States" type="Node" parent="." index="4"]
 
 [node name="Stagger" type="Node" parent="States" index="0"]
 
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="Walk" type="Node" parent="States" index="1"]
 
-script = ExtResource( 5 )
+script = ExtResource( 9 )
 
-[node name="RayCastRightDown" type="RayCast2D" parent="." index="6"]
+[node name="Death" type="Node" parent="States" index="2"]
+
+script = ExtResource( 10 )
+
+[node name="RayCastRightDown" type="RayCast2D" parent="." index="5"]
 
 position = Vector2( 30, 2 )
 enabled = true
@@ -157,7 +194,7 @@ cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastLeftDown" type="RayCast2D" parent="." index="7"]
+[node name="RayCastLeftDown" type="RayCast2D" parent="." index="6"]
 
 position = Vector2( -30, 2 )
 enabled = true
@@ -166,9 +203,9 @@ cast_to = Vector2( 0, 25 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastRight" type="RayCast2D" parent="." index="8"]
+[node name="RayCastRight" type="RayCast2D" parent="." index="7"]
 
-position = Vector2( 19, 5 )
+position = Vector2( 35, 5 )
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -176,9 +213,9 @@ cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="RayCastLeft" type="RayCast2D" parent="." index="9"]
+[node name="RayCastLeft" type="RayCast2D" parent="." index="8"]
 
-position = Vector2( -20, 5 )
+position = Vector2( -35, 5 )
 rotation = 1.5708
 enabled = true
 exclude_parent = true

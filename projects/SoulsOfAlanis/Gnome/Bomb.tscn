@@ -1,70 +1,53 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Gnome/Bomb.gd" type="Script" id=1]
-[ext_resource path="res://Gnome/bomba1.png" type="Texture" id=2]
-[ext_resource path="res://Gnome/bomba2.png" type="Texture" id=3]
-[ext_resource path="res://Gnome/bomba3.png" type="Texture" id=4]
+[ext_resource path="res://Gnome/art/bomb_1.png" type="Texture" id=2]
+[ext_resource path="res://Gnome/art/bomb_2.png" type="Texture" id=3]
+[ext_resource path="res://Gnome/art/bomb_3.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "boom",
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Explosion",
 "speed": 5.0
 } ]
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 9.52083
 
-[node name="Bomb" type="Area2D"]
+[node name="Bomb" type="Area2D" index="0"]
 
-input_pickable = true
+input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+linear_damp = -1.0
+angular_damp = -1.0
+collision_layer = 4
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Linear" ]
 
-[node name="Body" type="AnimatedSprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "default"
+animation = "Idle"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
-
-rect = Rect2( -10, -10, 20, 20 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-
-root_node = NodePath("../Body")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]
-
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 

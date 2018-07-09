@@ -6,11 +6,6 @@ const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
-# Define constants
-const UPVEC = Vector2(0,-1)
-const GRAVITY = 10
-const FLIPPING_SCALE = Vector2(-1, 1)
-
 # Define signals
 signal StateChanged
 signal DataUpdated
@@ -19,15 +14,15 @@ signal DataUpdated
 var current_state = null
 var BASE_SPEED = 50
 var velocity = Vector2()
-var direction
 var flipped = false
 var data
 
 enum INPUTS { UP, DOWN, LEFT, RIGHT }
 
 onready var state = {
-    "Fly":    $States/Fly,
+    "Fly":     $States/Fly,
     "Stagger": $States/Stagger,
+    "Death":   $States/Death,
 }
 
 func _ready():
@@ -43,11 +38,27 @@ func _ready():
     return
 
 func _physics_process(delta):
-    var new_state = current_state.update(self, delta)
-    if new_state:
-        _state_change(new_state)
-    move_and_slide(velocity, UPVEC)
-    return
+	var new_state = current_state.update(self, delta)
+	if new_state:
+		_state_change(new_state)
+	var motion = velocity * delta
+	var collision = move_and_collide(motion)
+	if collision:
+		if collision.collider.has_method("_on_takeDamage"):
+			var attack = data.genAttack()
+			collision.collider._on_takeDamage(self, attack)
+			var event
+			if velocity.x > 0:
+				event = INPUTS.LEFT
+			else:
+				event = INPUTS.RIGHT
+			current_state.handle_inputIA(self, event)
+			if velocity.y > 0:
+				event = INPUTS.UP
+			else:
+				event = INPUTS.DOWN
+			current_state.handle_inputIA(self, event)
+	return
 
 #  Function to generate artificial inputs to change states
 #  This function will be called according to the Creature's AI,
@@ -113,7 +124,7 @@ func _on_takeDamage(agressor, attack):
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	current_state.setKnockBack(self, dp, attack.direction)
 	if data.getHP() <= 0:
-		queue_free()
+		_state_change("Death")
 	return
 
 func _on_Animation_animation_finished(anim_name):
@@ -124,10 +135,4 @@ func _on_Animation_animation_finished(anim_name):
 
 func _on_Timer_timeout():
 	inputAI()
-	pass # replace with function body
-
-func _on_Area2D_body_entered(body):
-	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
-		body._on_takeDamage(self, attack)
 	pass # replace with function body

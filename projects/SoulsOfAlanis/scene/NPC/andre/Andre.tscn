@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scene/NPC/andre/Area2D.gd" type="Script" id=1]
+[ext_resource path="res://scene/NPC/GhostBill/DialogPainel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/project-art/png/Characters/Andre/bearded-idle-1.png" type="Texture" id=3]
+[ext_resource path="res://art/project-art/png/Characters/Andre/bearded-idle-2.png" type="Texture" id=4]
+[ext_resource path="res://art/project-art/png/Characters/Andre/bearded-idle-3.png" type="Texture" id=5]
+[ext_resource path="res://art/project-art/png/Characters/Andre/bearded-idle-4.png" type="Texture" id=6]
+[ext_resource path="res://art/project-art/png/Characters/Andre/bearded-idle-5.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 56.5402 )
+
+[sub_resource type="DynamicFontData" id=2]
+
+font_path = "res://art/fonts/joystix/ot/joystix monospace.otf"
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 10
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.526955, 10 )
+
+[node name="Andre" type="Node"]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="TextBox" parent="Area2D" index="0" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
+
+position = Vector2( -0.901968, 6.16188 )
+scale = Vector2( 4.27769, 1.17933 )
+shape = SubResource( 1 )
+
+[node name="LabelName" type="Label" parent="Area2D" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -85.0
+margin_top = -80.0
+margin_right = 125.0
+margin_bottom = -63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Andre, the Blacksmith"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D" index="3"]
+
+scale = Vector2( 3, 3 )
+frames = SubResource( 4 )
+animation = "idle"
+frame = 2
+_sections_unfolded = [ "Transform" ]
+
+[node name="MarkLimitDialogRight" type="Area2D" parent="Area2D" index="4"]
+
+editor/display_folded = true
+position = Vector2( 224.415, -67.0143 )
+scale = Vector2( 0.112006, 8.85238 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/MarkLimitDialogRight" index="0"]
+
+position = Vector2( -21.7724, -6.20766 )
+scale = Vector2( 5.55597, 2.24175 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MarkLimitDialogLeft" type="Area2D" parent="Area2D" index="5"]
+
+editor/display_folded = true
+position = Vector2( -212.108, 63 )
+scale = Vector2( 0.496615, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/MarkLimitDialogLeft" index="0"]
+
+position = Vector2( -35.2804, -183.099 )
+scale = Vector2( 1.98666, 20.3708 )
+shape = SubResource( 5 )
+
+[connection signal="animation_finished" from="Area2D/AnimatedSprite" to="Area2D" method="_on_AnimatedSprite_animation_finished"]
+
+[connection signal="body_entered" from="Area2D/MarkLimitDialogRight" to="Area2D" method="_on_MarkLimitDialog_body_entered"]
+
+[connection signal="body_entered" from="Area2D/MarkLimitDialogLeft" to="Area2D" method="_on_MarkLimitDialog_body_entered"]
+
+

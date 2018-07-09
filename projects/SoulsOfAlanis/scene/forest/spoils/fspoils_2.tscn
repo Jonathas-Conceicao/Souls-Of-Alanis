@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scene/forest/spoils/fspoils_2.gd" type="Script" id=1]
+[ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/forest/spoils/Area_exited.gd" type="Script" id=6]
+[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 58.8331, 10 )
+
+[node name="fspoils_2" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 519.126, 289.449 )
+scale = Vector2( 6.34317, 3.45147 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( 0, -1415 )
+scale = Vector2( 3, 3 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1900544, -1610612727, 0, 1900545, -1610612727, 0, 1900546, -1610612727, 0, 1900547, -1610612727, 0, 1900548, -1610612727, 0, 1900549, -1610612727, 0, 1900550, -1610612727, 0, 1900551, -1610612727, 0, 1900552, -1610612727, 0, 1900553, -1610612727, 0, 1900554, -1610612727, 0, 1900555, -1610612727, 0, 1900556, -1610612727, 0, 1900557, -1610612727, 0, 1900558, -1610612727, 0, 1900559, -1610612727, 0, 1900560, -1610612727, 0, 1900561, -1610612727, 0, 1900562, -1610612727, 0, 1900563, -1610612727, 0, 1900564, -1610612727, 0, 1900565, -1610612727, 0, 1900566, -1610612727, 0, 1900567, -1610612727, 0, 1966080, -1610612714, 0, 1966081, -1610612714, 0, 1966082, -1610612714, 0, 1966083, -1610612714, 0, 1966084, -1610612714, 0, 1966085, -1610612714, 0, 1966086, -1610612714, 0, 1966087, -1610612714, 0, 1966088, -1610612714, 0, 1966089, -1610612714, 0, 1966090, -1610612714, 0, 1966091, -1610612714, 0, 1966092, -1610612714, 0, 1966093, -1610612714, 0, 1966094, -1610612714, 0, 1966095, -1610612714, 0, 1966096, -1610612714, 0, 1966097, -1610612714, 0, 1966098, -1610612714, 0, 1966099, -1610612714, 0, 1966100, -1610612714, 0, 1966101, -1610612714, 0, 1966102, -1610612714, 0, 1966103, -1610612714, 0, 2424844, 5, 0, 2490376, 4, 0, 2490379, 59, 0, 2490380, 61, 0, 2490389, 53, 0, 2490390, 53, 0, 2490391, 54, 0, 2555911, 63, 0, 2555912, 65, 0, 2555915, 60, 0, 2555916, 62, 0, 2621447, 64, 0, 2621448, 66, 0, 2686976, 3, 0, 2686977, 3, 0, 2686978, 3, 0, 2686979, 3, 0, 2686980, 2, 0, 2686981, 6, 0, 2752512, 9, 0, 2752513, 9, 0, 2752514, 14, 0, 2752515, 9, 0, 2752516, 8, 0, 2752517, 20, 0, 2752518, 25, 0, 2818048, 9, 0, 2818049, 9, 0, 2818050, 9, 0, 2818051, 9, 0, 2818052, 9, 0, 2818053, 22, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fchest" parent="." index="2" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+
+[node name="Open_chest_area" parent="fchest" index="0"]
+
+position = Vector2( 1090.6, 372.224 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 40.1813, 513.084 )
+
+[node name="Area_exited" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_exited" index="0"]
+
+position = Vector2( 57.2789, 556.208 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Area_exited" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 433.0
+margin_right = 165.0
+margin_bottom = 447.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Balãozinho aparece aqui!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="AreaExitLeft" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 6.18175, -43.2723 )
+
+
+[editable path="fchest"]

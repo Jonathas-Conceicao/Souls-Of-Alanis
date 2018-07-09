@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=11 format=2]
 
-[ext_resource path="res://art/forest_sunny/tileset.png" type="Texture" id=1]
-[ext_resource path="res://art/forest_sunny/props.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/forest/tileset.png" type="Texture" id=1]
+[ext_resource path="res://art/project-art/forest/props.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=8]
 
