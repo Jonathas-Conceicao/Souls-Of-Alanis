@@ -6,7 +6,7 @@ extends Node
 # Initialize the state
 func enter(host):
 	if host.data.getHP() <= 0:
-		host._state_change("Death")
+		_state_change("Death")
 		return
 	host.set_animation("Attack")
 	host.velocity.x = 0

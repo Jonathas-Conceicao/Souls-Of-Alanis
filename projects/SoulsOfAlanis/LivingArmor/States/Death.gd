@@ -1,10 +1,7 @@
 extends 'State.gd'
 
 func enter(host):
-	if host.data.getHP() <= 0:
-		host._state_change("Death")
-		return
-	host.set_animation("Block")
+	host.set_animation("Death")
 	host.velocity.x = 0
 	host.velocity.y = 0
 	return
@@ -12,4 +9,9 @@ func enter(host):
 func update(host, delta):
 	host.velocity.x = 0
 	host.velocity.y = 0
+	return
+
+func _on_animation_finished(host, anim_name):
+	if anim_name == "Death":
+		host.queue_free()
 	return

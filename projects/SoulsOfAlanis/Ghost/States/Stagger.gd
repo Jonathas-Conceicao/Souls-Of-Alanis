@@ -12,7 +12,7 @@ func enter(host):
 	return
 
 func setKnockBack(host, itencity, direction):
-	self.multiplier = max(150, 3 * itencity)
+	self.multiplier = max(150, 2 * itencity)
 	self.direction = direction
 	return
 
@@ -22,12 +22,12 @@ func update(host, delta):
 		knockedBack = true
 	if host.is_on_ceiling():
 		host.velocity.y = max(0, host.velocity.y)
-		return "Idle"
+		return "Fly"
 	if host.is_on_floor() && host.velocity.y >= 0:
-		return "Idle"
+		return "Fly"
 	if host.is_on_wall() && host.velocity.x != 0:
-		return "Idle"
-	host.velocity.y += host.GRAVITY
+		return "Fly"
+	host.velocity.y += 10
 	return
 
 func exit(host):
@@ -36,3 +36,10 @@ func exit(host):
 	var CSprite = host.get_node("Pivot/Body")
 	CSprite.set_modulate(Color(1, 1, 1, 1))
 	return
+
+func _on_animation_finished(host, anim_name):
+	if anim_name == "Stagger":
+		host._state_change("Fly")
+		host.velocity.y = 0
+	return
+

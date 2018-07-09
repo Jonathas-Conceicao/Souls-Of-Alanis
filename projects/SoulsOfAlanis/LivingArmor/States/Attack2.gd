@@ -4,7 +4,7 @@ var vel = Vector2(0, 0)
 
 func enter(host):
 	if host.data.getHP() <= 0:
-		host._state_change("Death")
+		_state_change("Death")
 		return
 	host.set_animation("Attack")
 	vel.x += 1.5*host.thrust*host.BASE_SPEED

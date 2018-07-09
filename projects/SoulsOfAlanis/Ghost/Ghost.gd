@@ -5,10 +5,6 @@ const Attack = preload("res://script/Classes/Attack.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
-
-# Define constants
-const UP = Vector2(0,-1)
-const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
 
 # Define signals
@@ -17,22 +13,24 @@ signal DataUpdated
 
 # Define variables
 var current_state = null
-var BASE_SPEED = 150
+var BASE_SPEED = 50
 var velocity = Vector2()
-var direction
 var flipped = false
 var data
 
+enum INPUTS { UP, DOWN, LEFT, RIGHT }
+
 onready var state = {
-    "Idle":    $States/Idle,
+    "Fly":     $States/Fly,
     "Stagger": $States/Stagger,
+    "Death":   $States/Death,
 }
 
 func _ready():
     data = Foe.new()
     self.add_child(data)
     velocity.y = 40 # base velocity to detect "is_on_floor"
-    current_state = state["Idle"]
+    current_state = state["Fly"]
     current_state.enter(self)
     emit_signal("StateChanged", current_state)
     emit_signal("DataUpdated", self)
@@ -41,38 +39,63 @@ func _ready():
     return
 
 func _physics_process(delta):
-    var new_state = current_state.update(self, delta)
-    if new_state:
-        _state_change(new_state)
-    move_and_slide(velocity, UP)
-    return
+	var new_state = current_state.update(self, delta)
+	if new_state:
+		_state_change(new_state)
+	var motion = velocity * delta
+	var collision = move_and_collide(motion)
+	if collision:
+		if collision.collider.has_method("_on_takeDamage"):
+			var attack = data.genAttack()
+			collision.collider._on_takeDamage(self, attack)
+			var event
+			if velocity.x > 0:
+				event = INPUTS.LEFT
+			else:
+				event = INPUTS.RIGHT
+			current_state.handle_inputIA(self, event)
+			if velocity.y > 0:
+				event = INPUTS.UP
+			else:
+				event = INPUTS.DOWN
+			current_state.handle_inputIA(self, event)
+	if velocity.x > 0 && flipped:
+		flipped = false
+		get_node("Pivot").apply_scale(FLIPPING_SCALE)
+	if velocity.x < 0 && !flipped:
+		flipped = true
+		get_node("Pivot").apply_scale(FLIPPING_SCALE)
+	return
 
 #  Function to generate artificial inputs to change states
 #  This function will be called according to the Creature's AI,
 # for instance, it can be called everytime a Timer ends up
 func inputAI():
-    #  Here goes the generation of an input
-    # and the insertion of this input on the
-    # event variable
-    # << BEGIN
-    var event
+	#  Here goes the generation of an input
+	# and the insertion of this input on the
+	# event variable
+	# << BEGIN
+	var event
+	event = randi()%5+1
+	match event:
+		1:
+			event = INPUTS.RIGHT
+		2:
+			event = INPUTS.LEFT
+		3:
+			event = INPUTS.UP
+		4:
+			event = INPUTS.DOWN
     # END >>
-    var new_state = current_state.handle_inputIA(self, event)
-    if new_state:
-        _state_change(new_state)
-    return
-
-func update_flip():
-    direction = velocity.x >= 0
-    if direction == flipped:
-        $Pivot/Body.apply_scale(FLIPPING_SCALE)
-        flipped = !direction
-    return
+	var new_state = current_state.handle_inputIA(self, event)
+	if new_state:
+		_state_change(new_state)
+	return
 
 func set_animation(animation):
-	if !$Animation.is_playing() || $Pivot/Body.animation != animation:
+	if !$Pivot/Animation.is_playing() || $Pivot/Body.animation != animation:
     	$Pivot/Body.animation = animation # To solve bug where the new state commes before the Animation starts
-    	$Animation.play(animation)
+    	$Pivot/Animation.play(animation)
 	return
 
 func getData():
@@ -103,15 +126,20 @@ func _on_takeDamage(agressor, attack):
 	var damageDisplay = DamageShower.instance()
 	damageDisplay.init(self, $DamageSpot.get_position(), Vector2(1.5, 1.5), damage)
 	self.add_child(damageDisplay)
-	print("Creature recieved ", damage, " from: ", agressor.get_name())
+	print("Bat recieved ", damage, " from: ", agressor.get_name())
 	_state_change("Stagger")
 	var dp = calcPercentage(self.data.getMaxHP(), damage)
 	current_state.setKnockBack(self, dp, attack.direction)
 	if data.getHP() <= 0:
-		queue_free()
+		_state_change("Death")
 	return
 
 func _on_Animation_animation_finished(anim_name):
   var ns = current_state._on_animation_finished(self, anim_name)
   if ns: _state_change(ns)
   return
+
+
+func _on_Timer_timeout():
+	inputAI()
+	pass # replace with function body
