@@ -6,11 +6,10 @@
 [ext_resource path="res://script/map/Map.gd" type="Script" id=4]
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 script = ExtResource( 1 )
 InitialRoom = "res://scene/Prelude.tscn"
-InitialRoomSize = Vector2( 2, 4 )
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
@@ -21,8 +20,12 @@ script = ExtResource( 2 )
 [node name="Map" type="Node2D" parent="." index="2"]
 
 script = ExtResource( 4 )
+P_BoosRoomForest = "res://scene/castle/connection/forest/connection/fconnection_1.tscn"
+P_ForestRooms = null
 P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"
 P_CastleRooms = null
+P_BoosRoomCript = "res://scene/castle/connection/crypt/connection/Cconnection_1.tscn"
+P_CriptRooms = null
 
 [node name="CameraLimit" parent="." index="3" instance=ExtResource( 5 )]
 

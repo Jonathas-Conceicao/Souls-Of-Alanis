@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/forest/corridor/fcorridor_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=5]
+[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
 
-[node name="fcorridor_1" type="Node" index="0"]
+[node name="fcorridor_1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+NumExit = 1
 
 [node name="background" type="Sprite" parent="." index="0"]
 
@@ -16,16 +19,12 @@ position = Vector2( 594.008, 385.746 )
 scale = Vector2( 6.35923, 3.55662 )
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 63.2385, 477.541 )
-
-[node name="TileMap" type="TileMap" parent="." index="2"]
+[node name="TileMap" type="TileMap" parent="." index="1"]
 
 position = Vector2( 0, -47.0023 )
 scale = Vector2( 3, 3 )
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -43,11 +42,19 @@ format = 1
 tile_data = PoolIntArray( 458767, 54, 0, 458768, 3, 0, 458769, 6, 0, 524304, 14, 0, 524305, 21, 0, 589835, 54, 0, 589836, 53, 0, 589837, 53, 0, 589838, 55, 0, 589840, 14, 0, 589841, 22, 0, 589842, 25, 0, 655368, 59, 0, 655369, 61, 0, 655376, 14, 0, 655377, 22, 0, 655382, 4, 0, 655384, 5, 0, 720898, 5, 0, 720902, 4, 0, 720904, 60, 0, 720905, 62, 0, 720912, 14, 0, 720913, 22, 0, 720914, 27, 0, 720916, 1, 0, 720917, 2, 0, 720918, 3, 0, 720919, 3, 0, 720920, 3, 0, 786432, 1, 0, 786433, 2, 0, 786434, 3, 0, 786435, 2, 0, 786436, 3, 0, 786437, 2, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 2, 0, 786442, 6, 0, 786448, 14, 0, 786449, 22, 0, 786451, 24, 0, 786452, 16, 0, 786453, 8, 0, 786454, 13, 0, 786455, 8, 0, 786456, 13, 0, 851968, 536870934, 0, 851969, 8, 0, 851970, 9, 0, 851971, 8, 0, 851972, 14, 0, 851973, 8, 0, 851974, 9, 0, 851975, 9, 0, 851976, 9, 0, 851977, 8, 0, 851978, 22, 0, 851979, 25, 0, 851984, 14, 0, 851985, 22, 0, 851988, 16, 0, 851989, 16, 0, 851990, 11, 0, 851991, 11, 0, 851992, 11, 0, 917504, 536870934, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 9, 0, 917514, 22, 0, 917515, 25, 0, 917524, 16, 0, 917525, 18, 0, 917526, 11, 0, 917527, 11, 0, 917528, 11, 0, 983040, 536870934, 0, 983041, 9, 0, 983042, 9, 0, 983043, 13, 0, 983044, 9, 0, 983045, 9, 0, 983046, 9, 0, 983047, 13, 0, 983048, 9, 0, 983049, 9, 0, 983050, 22, 0, 983059, 26, 0, 983060, 16, 0, 983061, 18, 0, 983062, 11, 0, 983063, 11, 0, 983064, 11, 0, 1048596, 16, 0, 1048597, 18, 0, 1048598, 14, 0, 1048599, 11, 0, 1048600, 15, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="middle_background" type="Sprite" parent="." index="3"]
+[node name="middle_background" type="Sprite" parent="." index="2"]
 
 position = Vector2( 599.702, 386.384 )
 scale = Vector2( 3.19355, 3.55428 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1155.55, 372.595 )
+
+[node name="EntryPoint" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 60.4993, 521.172 )
 
 

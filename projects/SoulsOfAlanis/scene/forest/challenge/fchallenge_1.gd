@@ -1,18 +1,9 @@
 extends Node
 
-var NumExit = 2
+export var NumExit = 2
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
-func _ready():
-	
-	var challenge_label = get_tree().get_current_scene().get_node("Label").duplicate()
-	
-	get_tree().get_current_scene().remove_child($Label)
-	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").add_child(challenge_label)
-	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_LEFT, 0)
-	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_RIGHT, 2493)
-		
 func getNumExit():
 	return NumExit
 	
@@ -20,4 +11,7 @@ func getSceneType():
 	return RoomType.challenge
 	
 func getSceneHalf():
-	return 
+	return Half.first
+
+func getSize():
+	return Vector2(4.5, 2.8)

@@ -2,8 +2,7 @@ extends Node2D
 
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-export (String)  var InitialRoom     = "res://scene/Prelude.tscn"
-export (Vector2) var InitialRoomSize =  Vector2(2,4)
+export (String) var InitialRoom = "res://scene/Prelude.tscn"
 
 func _ready():
 	randomize()
@@ -19,20 +18,19 @@ func _ready():
 
 	pass
 
-#  $CameraLimit.set_limits(x, y)
-#  $Player/Camera.update_limits()
 func _adjust_view(pos, sz):
 	var player = $Player
-	#self.remove_child(player)
 	var camera = $CameraLimit
+	
+	# TODO: solved the problem of player behind scene background
+	#self.remove_child(player)
 	#self.remove_child(camera)
-
+	
 	player.position = pos
 	camera.set_limits(sz.x, sz.y)
 
 	#self.add_child(player)
 	#self.add_child(camera)
 	$Player/Camera.update_limits()
+	
 	return
-
-

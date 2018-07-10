@@ -1,33 +1,51 @@
 extends Node2D
-#
-#const InfoRoom  = preload("res://script/map/InfoRoom.gd")
+
 const LvlGen = preload("res://script/map/generation/LvlGen.gd")
 const TreeMap = preload("res://script/map/generation/TreeMap.gd")
 
-#export (String) onready var P_InitialRoom    = "res://scene/Prelude.tscn"
-
-#export (String) onready var P_BoosRoomGarden = "res://scene/garden/connection/conn1.tscn"
-#export (PoolStringArray) onready var P_GardenRooms    = ["res://scene/garden/ordinary/ordinary1.tscn", "res://scene/garden/ordinary/ordinary2.tscn"]
+export (String) onready var P_BoosRoomForest = 	"res://scene/castle/connection/forest/connection/fconnection_1.tscn"
+export (PoolStringArray) onready var P_ForestRooms = [
+"res://scene/forest/challenge/fchallenge_1.tscn",
+"res://scene/forest/challenge/fchallenge_2.tscn",
+"res://scene/forest/connection/fconnection_1.tscn",
+"res://scene/forest/corridor/fcorridor_1.tscn",
+"res://scene/forest/objects/fchest.tscn",
+"res://scene/forest/ordinary/fordinary_1.tscn",
+"res://scene/forest/ordinary/fordinary_2.tscn",
+"res://scene/forest/ordinary/fordinary_3.tscn",
+"res://scene/forest/quest/fquest_1.tscn",
+"res://scene/forest/spoils/fspoils_1.tscn",
+"res://scene/forest/spoils/fspoils_2.tscn"
+]
 
 export (String) onready var P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"
-export (PoolStringArray) onready var P_CastleRooms    = [
-		"res://scene/castle/ordinary/Ord1.tscn",
-		"res://scene/castle/ordinary/Ord2.tscn",
-		"res://scene/castle/connection/Connection1.tscn",
-		"res://scene/castle/lute/Lute1.tscn",
-		"res://scene/castle/challenge/Challenge1.tscn",
-		"res://scene/castle/challenge/Challenge2.tscn",
-		]
+export (PoolStringArray) onready var P_CastleRooms = [
+"res://scene/castle/challenge/Challenge1.tscn",
+"res://scene/castle/challenge/Challenge2.tscn",
+"res://scene/castle/connection/Connection1.tscn",
+"res://scene/castle/lute/Lute1.tscn",
+"res://scene/castle/ordinary/Ord1.tscn",
+"res://scene/castle/ordinary/Ord2.tscn"
+]
 
-#export (String) onready var P_BoosRoomCript  = "res://scene/cript/connection/conn1.tscn"
-#export (PoolStringArray) onready var P_CriptRooms     = ["res://scene/cript/ordinary/ordinary1.tscn", "res://scene/cript/ordinary/ordinary2.tscn"]
+export (String) onready var P_BoosRoomCript = 	"res://scene/castle/connection/crypt/connection/Cconnection_1.tscn"
+export (PoolStringArray) onready var P_CriptRooms= [
+"res://scene/crypt/challenge/Cchallenge_1.tscn",
+"res://scene/crypt/connection/Cconnection_1.tscn",
+"res://scene/crypt/connection/Cconnection_2.tscn",
+"res://scene/crypt/connection/Cconnection_3.tscn",
+"res://scene/crypt/corridor/Ccorridor_1.tscn",
+"res://scene/crypt/ordinary/Cordinary_1.tscn",
+"res://scene/crypt/quest/Cquest_1.tscn",
+"res://scene/crypt/spoils/Cspoils_1.tscn"
+]
 
 
-onready var GardenTree = null #TreeMap
+onready var ForestTree = null #TreeMap
 onready var CastleTree = null #TreeMap
 onready var CriptTree  = null #TreeMap
 
-onready var current_tree = CastleTree #TreeMap
+onready var current_tree = null #TreeMap
 
 onready var current_node = null #TreeMap
 
@@ -35,9 +53,9 @@ signal moved(idx) #Indicates player moved on map
 
 func _ready():
 	var gen = null
-	## GARDEN
-	#gen = LvlGen.new(self.P_GardenRooms)
-	#self.GardenTree = gen.createTree(P_InitialRoom)
+	## FOREST
+	gen = LvlGen.new(self.P_ForestRooms)
+	self.ForestTree = gen.createTree(null, true)
 	# TODO: randomly chose one
 	## this.one.child[closed].child = boss_room
 
@@ -54,7 +72,7 @@ func _ready():
 	# TODO: randomly chose one
 	## this.one.child[closed].child = boss_room
 
-	self.current_tree = self.CastleTree
+	self.current_tree = self.ForestTree
 
 	pass
 
@@ -82,7 +100,7 @@ func walk(to = 0):
 func start(id_tree = 0):
 	match id_tree:
 		1:
-			self.current_node = self.GardenTree
+			self.current_node = self.ForestTree
 		2:
 			self.current_node = self.CastleTree
 		3:

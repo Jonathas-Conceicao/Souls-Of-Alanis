@@ -4,18 +4,23 @@
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/forest/spoils/Area_exited.gd" type="Script" id=6]
-[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/forest/spoils/Area_exited.gd" type="Script" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 58.8331, 10 )
 
-[node name="fspoils_2" type="Node" index="0"]
+[node name="fspoils_2" type="Node"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 700 ],
+"_edit_vertical_guides_": [ 900, 1800 ]
+}
+NumExit = 1
 
 [node name="background" type="Sprite" parent="." index="0"]
 
@@ -57,11 +62,11 @@ editor/display_folded = true
 
 position = Vector2( 1090.6, 372.224 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
 
-position = Vector2( 40.1813, 513.084 )
+pitch_scale = 1.0
 
-[node name="Area_exited" type="Area2D" parent="." index="4"]
+[node name="Area_exited" type="Area2D" parent="." index="3"]
 
 editor/display_folded = true
 input_pickable = true
@@ -71,7 +76,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_exited" index="0"]
 
@@ -99,17 +104,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="AreaExitLeft" parent="." index="6" instance=ExtResource( 7 )]
+[node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 6.18175, -43.2723 )
+position = Vector2( 584.07, 360.009 )
+
+[node name="EntryPoint" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 41.8826, 447.609 )
 
 
 [editable path="fchest"]

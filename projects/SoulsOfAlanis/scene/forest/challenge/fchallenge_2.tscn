@@ -3,13 +3,18 @@
 [ext_resource path="res://scene/forest/challenge/fchallenge_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 
 [node name="fchallenge_2" type="Node" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 700 ],
+"_edit_vertical_guides_": [ 900, 1800 ]
+}
+NumExit = 1
 
 [node name="middle_background" type="Sprite" parent="." index="0"]
 
@@ -42,19 +47,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 30.0632, 437.587 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="fchest" parent="." index="4" instance=ExtResource( 5 )]
+[node name="fchest" parent="." index="3" instance=ExtResource( 4 )]
 
 editor/display_folded = true
 
@@ -62,9 +64,17 @@ editor/display_folded = true
 
 position = Vector2( 1068.1, 344.874 )
 
-[node name="AreaExitLeft" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
 
-position = Vector2( 0, -184.549 )
+pitch_scale = 1.0
+
+[node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 33.3535, 487.513 )
+
+[node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1061.06, 493.04 )
 
 
 [editable path="fchest"]

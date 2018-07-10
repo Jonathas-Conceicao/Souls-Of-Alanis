@@ -18,4 +18,7 @@ func getSceneType():
 	return RoomType.connection
 	
 func getSceneHalf():
-	return 
+	return Half.first
+
+func getSize():
+	return Vector2(1, 1.2)

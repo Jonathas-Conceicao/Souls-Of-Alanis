@@ -3,17 +3,23 @@
 [ext_resource path="res://scene/forest/spoils/fspoils_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 
-[node name="fspoils_1" type="Node" index="0"]
+[node name="fspoils_1" type="Node"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 700 ],
+"_edit_vertical_guides_": [ 900, 1800 ]
+}
+NumExit = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="0"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
@@ -51,13 +57,17 @@ editor/display_folded = true
 
 position = Vector2( 1073.93, 395.726 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
 
-position = Vector2( 48.3844, 351.345 )
+pitch_scale = 1.0
 
-[node name="AreaExitLeft" parent="." index="4" instance=ExtResource( 5 )]
+[node name="EntryPoint" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 5.03506, -191.333 )
+position = Vector2( 58.5732, 344.552 )
+
+[node name="Exit" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 916.385, 375.114 )
 
 
 [editable path="fchest"]

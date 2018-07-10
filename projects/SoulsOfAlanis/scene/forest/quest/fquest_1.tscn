@@ -4,18 +4,23 @@
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=3]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/forest/quest/Enter_house.gd" type="Script" id=6]
-[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/forest/quest/Enter_house.gd" type="Script" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="fquest_1" type="Node" index="0"]
+[node name="fquest_1" type="Node"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 700 ],
+"_edit_vertical_guides_": [ 900 ]
+}
+NumExit = 1
 
 [node name="background" type="Sprite" parent="." index="0"]
 
@@ -54,11 +59,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 89.0444, 599.338 )
-
-[node name="Enter_house" type="Area2D" parent="." index="4"]
+[node name="Enter_house" type="Area2D" parent="." index="3"]
 
 position = Vector2( 709.606, 585.703 )
 input_pickable = true
@@ -68,7 +69,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter_house" index="0"]
 
@@ -98,8 +99,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="AreaExitLeft" parent="." index="5" instance=ExtResource( 7 )]
+[node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 6.18176, 55.6357 )
+position = Vector2( 1112.23, 592.2 )
+
+[node name="EntryPoint" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 45.959, 554.79 )
 
 

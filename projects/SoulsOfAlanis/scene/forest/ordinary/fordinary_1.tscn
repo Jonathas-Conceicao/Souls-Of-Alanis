@@ -4,12 +4,17 @@
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=3]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
-[ext_resource path="res://scene/control/AreaExitRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/control/AreaExitLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 
-[node name="fordinary_1" type="Node" index="0"]
+[node name="fordinary_1" type="Node2D"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 700 ],
+"_edit_vertical_guides_": [ 900, 1800 ]
+}
+NumExit = 1
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -32,9 +37,6 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 23, 74, 0, 24, 74, 0, 851968, 3, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 3, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851987, 3, 0, 851988, 3, 0, 851989, 3, 0, 851990, 3, 0, 851991, 3, 0, 851992, 3, 0, 851993, 3, 0, 851994, 3, 0, 851995, 3, 0, 851996, 3, 0, 851997, 3, 0, 851998, 3, 0, 851999, 3, 0, 852000, 3, 0, 852001, 3, 0, 852002, 3, 0, 852003, 3, 0, 852004, 3, 0, 852005, 3, 0, 917504, 9, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 9, 0, 917514, 9, 0, 917515, 9, 0, 917516, 9, 0, 917517, 9, 0, 917518, 9, 0, 917519, 9, 0, 917520, 9, 0, 917521, 9, 0, 917522, 9, 0, 917523, 9, 0, 917524, 9, 0, 917525, 9, 0, 917526, 9, 0, 917527, 9, 0, 917528, 9, 0, 917529, 9, 0, 917530, 9, 0, 917531, 9, 0, 917532, 9, 0, 917533, 9, 0, 917534, 9, 0, 917535, 9, 0, 917536, 9, 0, 917537, 9, 0, 917538, 9, 0, 917539, 9, 0, 917540, 9, 0, 917541, 9, 0 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
 
@@ -70,12 +72,12 @@ position = Vector2( 451.384, 412.627 )
 scale = Vector2( 2.34958, 3.43784 )
 texture = ExtResource( 4 )
 
-[node name="AreaExitRight" parent="." index="2" instance=ExtResource( 5 )]
+[node name="EntryPoint" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 1748.52, -47.2521 )
+position = Vector2( 55.8804, 475.562 )
 
-[node name="AreaExitLeft" parent="." index="3" instance=ExtResource( 6 )]
+[node name="Exit" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 3.09088, -46.3632 )
+position = Vector2( 1749.11, 524.939 )
 
 
