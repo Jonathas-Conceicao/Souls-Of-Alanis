@@ -188,7 +188,7 @@ They are:
 	- Which passages are "open" and where they take you.
 
 ### 10.07.18 Online
-Notes for Layers and Mask:
+Notes for Layers and Mask:  
 |                 | Layer |    Mask    |
 |:---------------:|:-----:|:----------:|
 |     Scenery     |   0   |      -     |
