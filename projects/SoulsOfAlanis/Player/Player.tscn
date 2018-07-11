@@ -314,11 +314,11 @@ extents = Vector2( 28, 1 )
 [node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 2
+collision_mask = 89
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -359,14 +359,16 @@ autostart = true
 
 [node name="Stepping" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 4
+collision_mask = 88
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stepping" index="0"]
 
