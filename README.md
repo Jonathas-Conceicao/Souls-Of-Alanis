@@ -187,6 +187,19 @@ They are:
 	- Which items are in each position
 	- Which passages are "open" and where they take you.
 
+### 10.07.18 Online
+Notes for Layers and Mask:
+|                 | Layer |    Mask    |
+|:---------------:|:-----:|:----------:|
+|     Scenery     |   0   |      -     |
+|      Player     |   1   | 0, 3, 4, 6 |
+|      Sword      |   2   |   3, 4, 5  |
+|       Foes      |   3   |    0, 1    |
+|      Items      |   4   |    0, 1    |
+| Items - Special |   5   |    0, 2    |
+|       NPCs      |   6   |    0, 1    |
+|  Foes - Special |   7   |      1     |
+
 ## Activities schedule
 
 Dynamic activities schedule
