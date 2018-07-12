@@ -16,8 +16,11 @@ func _ready():
 	$Map.add_to_head(start)
 	$Map.start()
 
-	pass
+	return
 
+# Used to adjust camera and its stuff
+# pos - the position to place the player
+# sz - the current room size, so it can adjust camera limits
 func _adjust_view(pos, sz):
 	var player = $Player
 	var camera = $CameraLimit

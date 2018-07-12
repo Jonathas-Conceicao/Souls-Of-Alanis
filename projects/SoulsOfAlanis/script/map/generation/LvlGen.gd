@@ -24,7 +24,7 @@ func _init(rooms_path = []):
 	var has_conn_room = false
 	# validation
 	for c_room in rooms_path:
-		if !f.file_exists(c_room):
+		if !(f.file_exists(c_room)):
 			printerr("(EE) " + c_room + " does not exists.")
 			return null
 
@@ -102,7 +102,9 @@ func pick(type = any, half = any, avoid = final, n_try = MAX_TRY, force = false)
 	return self.pick(connection, any, final, MAX_TRY, true)
 
 # Creates the map
-#
+# path_room - the room to start the tree
+# generate - wheter or not the should be pick randomlly
+# size - if the scene is passed, you probably need to pass its size as well
 func createTree(path_room, generate = true, size = null):
 	var f = File.new()
 

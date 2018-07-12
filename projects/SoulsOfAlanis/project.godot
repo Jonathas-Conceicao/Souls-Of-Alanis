@@ -14,6 +14,10 @@ config/name="Souls of Alanis"
 run/main_scene="res://scene/control/root.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+debug="*res://script/control/debug/debug.gd"
+
 [display]
 
 window/size/width=900

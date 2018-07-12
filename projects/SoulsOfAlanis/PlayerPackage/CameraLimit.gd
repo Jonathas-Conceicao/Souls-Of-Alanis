@@ -4,8 +4,8 @@ const L = 900 # Screen length
 const H = 700 # Screen hight
 
 func _ready():
-  set_limits(1,1)
-  pass
+	set_limits(1,1)
+	pass
 
 ###
 # Set the screen limits based on the units of screen size
@@ -14,12 +14,12 @@ func _ready():
 ###
 
 func set_limits(i = 1, j = 1):
-  var full_h = H * i
-  var full_l = L * j 
-  var half_h = (H * i) / 2
-  var half_l = (L * j) / 2
-  $Left.set_global_position(Vector2(0, half_h))
-  $Top.set_global_position(Vector2(half_l, 0))
-  $Right.set_global_position(Vector2(full_l, half_h))
-  $Bottom.set_global_position(Vector2(half_l, full_h))
-  return
+	var full_h = H * i
+	var full_l = L * j
+	var half_h = (H * i) / 2
+	var half_l = (L * j) / 2
+	$Left.set_global_position(Vector2(0, half_h))
+	$Top.set_global_position(Vector2(half_l, 0))
+	$Right.set_global_position(Vector2(full_l, half_h))
+	$Bottom.set_global_position(Vector2(half_l, full_h))
+	return
