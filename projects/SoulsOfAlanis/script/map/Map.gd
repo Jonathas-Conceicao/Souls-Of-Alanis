@@ -67,12 +67,12 @@ func _ready():
 	## this.one.child[closed].child = boss_room
 
 	## CRIPT
-	#gen = LvlGen.new(P_CriptRooms)
-	#self.CriptTree = gen.createTree(null, true)
+	gen = LvlGen.new(P_CriptRooms)
+	self.CriptTree = gen.createTree(null, true)
 	# TODO: randomly chose one
 	## this.one.child[closed].child = boss_room
 
-	self.current_tree = self.ForestTree
+	self.current_tree = self.CriptTree
 
 	pass
 

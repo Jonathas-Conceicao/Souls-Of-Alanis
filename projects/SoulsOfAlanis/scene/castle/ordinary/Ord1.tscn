@@ -19,8 +19,8 @@ position = Vector2( 463.055, 16.9836 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
-"_edit_horizontal_guides_": [ 700.114, 4.88054, 1400.39 ],
-"_edit_vertical_guides_": [ 900.696, 1800.43, 2700.95, 3600.9 ]
+"_edit_horizontal_guides_": [ 700.0, 1400.0 ],
+"_edit_vertical_guides_": [ 900.0, 1800.0, 2700.0, 3600.0 ]
 }
 
 [node name="Walls16_background" type="TileMap" parent="." index="0"]

@@ -4,11 +4,11 @@ enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
 func _ready():
-	$GhostBill/Area2D/AnimatedSprite.play()
+	#$GhostBill/Area2D/AnimatedSprite.play()
 	return
 
 func getNumExit():
-	return 0
+	return 1
 
 func getSceneType():
 	return RoomType.ordinary

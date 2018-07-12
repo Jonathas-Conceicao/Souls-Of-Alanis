@@ -29,4 +29,6 @@ P_CriptRooms = null
 
 [node name="CameraLimit" parent="." index="3" instance=ExtResource( 5 )]
 
+[connection signal="tree_exiting" from="." to="." method="_on_root_tree_exiting"]
+
 
