@@ -38,6 +38,15 @@ var Backpack = []
 # Sould be used as a mutable list of reference (index) to Backpack's items
 var Equiped = [null, null, null] # Sword, Armor, Ring
 
+###
+# Lists to store info related to rooms,
+# objectes added will be found by a get_uniqueID() method.
+# The lists have a add method, but remove methods are not necessary
+###
+var Chests = []         # List of opened chests
+var StartedQuests = []  # List of started quests
+var FinishedQuests = [] # List of finished quests
+
 onready var state = {
 	"Idle":       $States/Idle,
 	"Move":       $States/Move,
@@ -169,6 +178,40 @@ func drop_from_Backpack(index): # TODO: BUG: @Jonathas Items order semas strange
 		return
 	self.Backpack[index].queue_free()
 	self.Backpack.remove(index)
+	return
+
+# WARNING: Private method, see find methods below
+func find_id_in(uniqueID, list):
+	var index = 0
+	for item in list:
+		if uniqueID == item.get_uniqueID():
+			return index
+		index += 1
+		pass
+	return -1
+
+func find_in_Backpack(uniqueID):
+	return self.find_id_in(uniqueID, self.Backpack)
+
+func find_in_Chests(uniqueID):
+	return self.find_id_in(uniqueID, self.Chests)
+
+func find_in_StartedQuests(uniqueID):
+	return self.find_id_in(uniqueID, self.StartedQuests)
+
+func find_in_FinishedQuests(uniqueID):
+	return self.find_id_in(uniqueID, self.FinishedQuests)
+
+func add_to_Chests(obj):
+	self.Chests.push_front(obj)
+	return
+
+func add_to_StartedQuests(obj):
+	self.StartedQuests.push_front(obj)
+	return
+
+func add_to_FinishedQuests(obj):
+	self.FinishedQuests.push_front(obj)
 	return
 
 # var control = 0
