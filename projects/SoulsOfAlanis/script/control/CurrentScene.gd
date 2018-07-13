@@ -29,5 +29,6 @@ func changeRoom(i_room):
 	#print("(DB) Created")
 	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
 
-	emit_signal("changed_scene", room.find_node("EntryPoint").position, i_room.size)
+	var ep = room.find_node("EntryPoint")
+	self.emit_signal("changed_scene", ep.position, i_room.size)
 	return

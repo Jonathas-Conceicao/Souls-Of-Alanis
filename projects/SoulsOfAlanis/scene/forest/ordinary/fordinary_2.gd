@@ -6,15 +6,15 @@ enum Half { first, second, any }
 
 func _ready():
 	pass
-	
+
 func getNumExit():
 	return NumExit
-	
-func getSceneType():	
+
+func getSceneType():
 	return RoomType.ordinary
-	
+
 func getSceneHalf():
-	return 
+	return
 
 func getSize():
 	return Vector2(1, 1.2)

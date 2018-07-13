@@ -17,7 +17,7 @@ func _ready():
 	var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
 
 	#$Map.add_to_head(start)
-	$Map.start(2)
+	$Map.start(3)
 
 	return
 

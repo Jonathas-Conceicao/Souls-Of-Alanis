@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/forest/connection/fconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 
 [node name="fconnection_1" type="Node" index="0"]
 
@@ -42,5 +44,13 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 34.0811, 515.761 )
+
+[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1140.58, 520.305 )
 
 

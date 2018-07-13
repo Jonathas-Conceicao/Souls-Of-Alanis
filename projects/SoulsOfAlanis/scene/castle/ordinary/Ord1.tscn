@@ -316,7 +316,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-MobList = [ "res://Gnome/Gnome.tscn" ]
+MobList = [ "res://Faun/Faun.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false

@@ -2,7 +2,13 @@ extends Node2D
 
 enum msg_type { nrm = 0, dbg = 1, wrn = 2, err = 3 }
 
-func printMsg(msg, type = msg_type.wrn, debug = false, err = true):
+var debug_mode = true
+
+func _init(dbg = true):
+	self.debug_mode = dbg
+	return
+
+func printMsg(msg, type = msg_type.wrn, debug = self.debug_mode, err = true):
 	if err:
 		match type:
 			nrm:

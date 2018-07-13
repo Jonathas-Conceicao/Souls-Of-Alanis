@@ -1,8 +1,6 @@
 const TreeMap   = preload("res://script/map/generation/TreeMap.gd")
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-export (bool) var debug_mode = true
-
 const MAX_TRY   = 5
 const N_ROOM    = 15
 const DEF_ROOM  = "res://scene/map/tests/DummyRoom.tscn"
@@ -27,7 +25,7 @@ func _init(rooms_path = []):
 	# validation
 	for c_room in rooms_path:
 		if !(f.file_exists(c_room)):
-			debug.printMsg("" + c_room + " does not exists.", debug.msg_type.err, self.debug_mode)
+			debug.printMsg("" + c_room + " does not exists.", debug.msg_type.err)
 			return null
 
 		var scene = load(c_room).instance()
@@ -37,31 +35,31 @@ func _init(rooms_path = []):
 			type = scene.getSceneType()
 			if (type == connection): has_conn_room = true
 		else:
-			debug.printMsg("Couldn't getSceneType, using default", debug.msg_type.wrn, self.debug_mode)
+			debug.printMsg("Couldn't getSceneType, using default", debug.msg_type.wrn)
 
 		var half = first
 		if scene.has_method("getSceneHalf"):
 			half = scene.getSceneHalf()
 		else:
-			debug.printMsg("Couldn't getSceneHalf, using default", debug.msg_type.wrn, self.debug_mode)
+			debug.printMsg("Couldn't getSceneHalf, using default", debug.msg_type.wrn)
 
 		var mx_rep = 1
 		if scene.has_method("getMaxRep"):
 			mx_rep = scene.getMaxRep()
 		else:
-			debug.printMsg("Couldn't getMaxRep, using default", debug.msg_type.wrn, self.debug_mode)
+			debug.printMsg("Couldn't getMaxRep, using default", debug.msg_type.wrn)
 
 		var n_exit = 1
 		if scene.has_method("getNumExit"):
 			n_exit = scene.getNumExit()
 		else:
-			debug.printMsg(" Couldn't getNumExit, using default", debug.msg_type.wrn, self.debug_mode)
+			debug.printMsg(" Couldn't getNumExit, using default", debug.msg_type.wrn)
 
 		var size = Vector2(1,1)
 		if scene.has_method("getSize"):
 			size = scene.getSize()
 		else:
-			debug.printMsg(" Couldn't getSize, using default, this is probably a mistake", debug.msg_type.err, self.debug_mode)
+			debug.printMsg(" Couldn't getSize, using default, this is probably a mistake", debug.msg_type.err)
 
 
 		# fill up the deck
@@ -75,7 +73,7 @@ func _init(rooms_path = []):
 		pass
 
 	if !has_conn_room:
-		debug.printMsg(" It is probably necessary that the system have at least one connection room", debug.msg_type.wrn, self.debug_mode)
+		debug.printMsg(" It is probably necessary that the system have at least one connection room", debug.msg_type.wrn)
 	return
 
 # Randomly choosen a scene
@@ -86,7 +84,7 @@ func _init(rooms_path = []):
 # return : InfoRoom
 func pick(type = any, half = any, avoid = final, n_try = MAX_TRY, force = false):
 	if type == avoid:
-		debug.printMsg(" Cannot select and avoid the same type", debug.msg_type.err, self.debug_mode)
+		debug.printMsg(" Cannot select and avoid the same type", debug.msg_type.err)
 		avoid = final
 	pass
 
@@ -100,7 +98,7 @@ func pick(type = any, half = any, avoid = final, n_try = MAX_TRY, force = false)
 			return i_room
 	pass
 
-	debug.printMsg(" Could not find the right, requesting a connection one, and forcing", debug.msg_type.wrn, self.debug_mode)
+	debug.printMsg(" Could not find the right, requesting a connection one, and forcing", debug.msg_type.wrn)
 	return self.pick(connection, any, final, MAX_TRY, true)
 
 # Creates the map
@@ -112,10 +110,10 @@ func createTree(path_room, generate = true, size = null):
 
 	if !generate:
 		if (!f.file_exists(path_room)) || (!load(path_room).can_instance()):
-			debug.printMsg(" Invalid default initial room", debug.msg_type.err, self.debug_mode)
+			debug.printMsg(" Invalid default initial room", debug.msg_type.err)
 			exit(2)
 			return null
-		debug.printMsg(" How did you determinated the room size?", debug.msg_type.err, self.debug_mode)
+		debug.printMsg(" How did you determinated the room size?", debug.msg_type.err)
 		return TreeMap.new(self, InfoRoom.new(path_room, ordinary, first, 1, size), null)
 	else:
 		var r = self.pick(ordinary, first, final)

@@ -15,16 +15,14 @@ debug_mode = false
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
 script = ExtResource( 2 )
-debug_mode = false
+debug_mode = true
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
-
-debug_mode = true
 
 [node name="Map" type="Node2D" parent="." index="2"]
 
 script = ExtResource( 4 )
-debug = false
+debug_mode = true
 P_BoosRoomForest = "res://scene/castle/connection/forest/connection/fconnection_1.tscn"
 P_ForestRooms = null
 P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"

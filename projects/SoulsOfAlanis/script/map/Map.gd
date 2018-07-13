@@ -1,6 +1,6 @@
 extends Node2D
 
-export (bool) var debug = true
+export (bool) var debug_mode = true
 
 const LvlGen = preload("res://script/map/generation/LvlGen.gd")
 const TreeMap = preload("res://script/map/generation/TreeMap.gd")
@@ -73,7 +73,7 @@ func _ready():
 	# TODO: randomly chose one
 	## this.one.child[closed].child = boss_room
 
-	self.current_tree = self.CriptTree
+	#self.current_tree = self.FlorestTree
 
 	return
 
@@ -85,7 +85,7 @@ func _ready():
 func walk(to = 0):
 	if to == -1:
 		if !self.current_node.parent:
-			debug.printMsg("(WW) Cannot go back to null parent (this is expected on Prelude only!")
+			debug.printMsg(" Cannot go back to null parent (this is expected on Prelude only!", debug.msg_type.wrn, self.debug_mode)
 			return
 		self.current_node = self.current_node.parent
 	elif !self.current_node.children.empty():
@@ -114,6 +114,7 @@ func start(id_tree = 0):
 			debug.printMsg(" Invalid tree start", debug.msg_type.err, self.debug_mode)
 
 	emit_signal("moved", self.current_node.i_scene)
+	return
 
 # add a given room to the head to the main tree
 # i_room - the info room of the new head
