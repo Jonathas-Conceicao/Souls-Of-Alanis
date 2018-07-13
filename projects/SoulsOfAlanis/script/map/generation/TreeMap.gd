@@ -1,5 +1,7 @@
-const MIN_HIGH = 2#3
-const MAGIC_CONT = 1
+const MIN_HIGH		= 2#3
+const MAGIC_CONT	= 1
+
+export (bool) var debug_mode = false
 
 enum RoomType {loot = 0, ordinary = 1, connection = 2, mission = 3, challange = 4, final = 5, any = 6}
 enum Half { first = 0, second = 1 , any = 2 }
@@ -7,10 +9,10 @@ enum Half { first = 0, second = 1 , any = 2 }
 # The scene of this node
 var i_scene = null
 
-var parent   = null     # Its entry point
-var children = []       # Its exists points
-var high       = 0
-var any_closed = false  # if it a not fully open scene
+var parent		= null     # Its entry point
+var children	= []       # Its exists points
+var high		= 0.0
+var any_closed	= false  # if it a not fully open scene
 
 # shoud be mannually called only for the level generation
 # Creats the entire tree
@@ -23,20 +25,20 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
   #
   # scene must exists, otherwise, what is my purpose?
   if !i_sc.scene:
-    printerr("no scene. \nwhat is my purpose?")
+    debug.printMsg("no scene. \nwhat is my purpose?", debug.msg_type.err)
     return null
 
   self.i_scene  = i_sc
   self.parent   = p
   self.high     = high
 
-  #printerr("(DB) Generating node high = %s for scene = %s" % [high, i_sc.scene])
+  debug.printMsg("Generating node high = %s for scene = %s" % [high, i_sc.scene], debug.msg_type.dbg, self.debug_mode)
 
   if create_child:
     for i in range(0, n_exit):
-      #printerr("(DB)    generating child %s/%s on high %s" % [i+1, n_exit, high])
+      debug.printMsg("    generating child %s/%s on high %s" % [i+1, n_exit, high], debug.msg_type.dbg, self.debug_mode)
       if (self.high <= MIN_HIGH):
-        #printerr("(DB)    per min high (%s)" % self.high)
+        debug.printMsg("    per min high (%s)" % self.high, debug.msg_type.dbg, self.debug_mode)
         var i_new_scene = gen.pick(any, first, self.i_scene.room_type)
         self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
       else:
@@ -46,7 +48,7 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
           self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
         else:
           # TODO: added boss room here
-          #print("(DB) Closed room")
+          debug.printMsg(" Closed room", debug.msg_type.dbg, self.debug_mode)
           self.any_closed = true
           self.children = [] # closed scene
       pass

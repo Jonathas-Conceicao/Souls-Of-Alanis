@@ -1,27 +1,33 @@
 extends Node2D
 
-enum msg_type { nrm = 0, dbg = 1, err = 2, wrn = 3 }
+enum msg_type { nrm = 0, dbg = 1, wrn = 2, err = 3 }
 
-func printDbg(msg, type = nrm, err = true):
+func printMsg(msg, type = msg_type.wrn, debug = false, err = true):
 	if err:
 		match type:
 			nrm:
-				printerr("-> %s" % msg)
+				if debug:
+					printerr("-> %s" % msg)
 			dbg:
-				printerr("(DB) %s" % msg)
+				if debug:
+					printerr("(DB) %s" % msg)
+			wrn:
+				if debug:
+					printerr("(WW) %s" % msg)
 			err:
 				printerr("(EE) %s" % msg)
-			wrn:
-				printerr("(WW) %s" % msg)
 
 	else:
 		match type:
 			nrm:
-				print("-> %s" % msg)
+				if debug:
+					print("-> %s" % msg)
 			dbg:
-				print("(DB) %s" % msg)
+				if debug:
+					print("(DB) %s" % msg)
+			wrn:
+				if debug:
+					print("(WW) %s" % msg)
 			err:
 				print("(EE) %s" % msg)
-			wrn:
-				print("(WW) %s" % msg)
-	pass
+	return

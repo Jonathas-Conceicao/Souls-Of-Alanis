@@ -2,6 +2,8 @@ extends Node2D
 
 signal changed_scene #when load a new scene
 
+export (bool) var debug_mode = true
+
 func _ready():
 	pass
 
@@ -17,7 +19,7 @@ func changeRoom(i_room):
 			oldroom.queue_free()
 			#print("(DB) Removed")
 		0:
-			printerr("(WW) Generating first scene")
+			debug.printMsg("Generating first scene", debug.wrn, self.debug_mode)
 
 	# creates new scene and change
 	var room_path = i_room.scene
@@ -25,7 +27,7 @@ func changeRoom(i_room):
 	#room.position = Vector2(0,0)
 	self.add_child(room)
 	#print("(DB) Created")
-	print("(DB) Changed to scene: %s (%s)" % [room, room_path])
+	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
 
 	emit_signal("changed_scene", room.find_node("EntryPoint").position, i_room.size)
 	return

@@ -1,5 +1,7 @@
 extends Node2D
 
+export (bool) var debug = true
+
 const LvlGen = preload("res://script/map/generation/LvlGen.gd")
 const TreeMap = preload("res://script/map/generation/TreeMap.gd")
 
@@ -83,14 +85,14 @@ func _ready():
 func walk(to = 0):
 	if to == -1:
 		if !self.current_node.parent:
-			printerr("(WW) Cannot go back to null parent (this is expected on Prelude only!")
+			debug.printMsg("(WW) Cannot go back to null parent (this is expected on Prelude only!")
 			return
 		self.current_node = self.current_node.parent
 	elif !self.current_node.children.empty():
 		self.current_node = self.current_node.children[to]
 	else:
-		printerr("(WW) Closed doors are not implemented yet")
-		printerr("(EE) Should not be entering closed doors!")
+		debug.printMsg(" Closed doors are not implemented yet", debug.msg_type.wrn, self.debug_mode)
+		debug.printMsg(" Should not be entering closed doors!", debug.msg_type.err, self.debug_mode)
 		return
 
 	emit_signal("moved", self.current_node.i_scene)
@@ -107,9 +109,9 @@ func start(id_tree = 0):
 		3:
 			self.current_node = self.CriptTree
 		0:
-			printerr("(WW) Main scene should have been added mannually")
+			debug.printMsg(" Main scene should have been added mannually", debug.msg_type.wrn, self.debug_mode)
 		_:
-			printerr("(EE) Invalid tree start")
+			debug.printMsg(" Invalid tree start", debug.msg_type.err, self.debug_mode)
 
 	emit_signal("moved", self.current_node.i_scene)
 
@@ -117,7 +119,7 @@ func start(id_tree = 0):
 # i_room - the info room of the new head
 func add_to_head(i_room):
 	if !i_room:
-		printerr("(EE) Cannot add a invalid room")
+		debug.printMsg(" Cannot add a invalid room", debug.msg_type.err, self.debug_mode)
 		exit(9)
 
 	var node = TreeMap.new(null, i_room, null, -1, 1, false)

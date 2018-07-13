@@ -4,8 +4,11 @@ const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
 export (String) var InitialRoom = "res://scene/Prelude.tscn"
 
+export (bool) var debug_mode = true
+
 func _ready():
 	randomize()
+	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("scene_exit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	#$CurrentScene.connect("changed_scene", $Player, "_entryOnRoom")
