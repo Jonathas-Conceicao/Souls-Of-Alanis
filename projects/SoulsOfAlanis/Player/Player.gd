@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal StateChanged
 signal DataUpdated
+signal SceneExit
 
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
@@ -28,13 +29,10 @@ var velocity = Vector2()
 var direction
 var flipped = false
 
-# ADDED
-signal scene_exit(exit_idx)
 var current_state = null
 
 const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allow for showing more items.
 var Backpack = []
-
 # Sould be used as a mutable list of reference (index) to Backpack's items
 var Equiped = [null, null, null] # Sword, Armor, Ring
 
@@ -323,7 +321,7 @@ func _on_SwordHit_area(area):
 		area._on_takeHit(self)
 	if area.has_method("_get_exit"):
 		var x = area._get_exit()
-		emit_signal("scene_exit", x)
+		emit_signal("SceneExit", self, x, self.Chests, self.StartedQuests, self.FinishedQuests)
 	return
 
 func _on_Stepping_body_entered(body):
