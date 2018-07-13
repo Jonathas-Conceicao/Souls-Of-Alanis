@@ -13,8 +13,8 @@ func _ready():
 
 	var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
 
-	$Map.add_to_head(start)
-	$Map.start()
+	#$Map.add_to_head(start)
+	$Map.start(2)
 
 	return
 
@@ -25,15 +25,11 @@ func _adjust_view(pos, sz):
 	var player = $Player
 	var camera = $CameraLimit
 
-	# TODO: solved the problem of player behind scene background
-	#self.remove_child(player)
-	#self.remove_child(camera)
+	player._state_change("Idle")
 
 	player.position = pos
 	camera.set_limits(sz.x, sz.y)
 
-	#self.add_child(player)
-	#self.add_child(camera)
 	$Player/Camera.update_limits()
 
 	return

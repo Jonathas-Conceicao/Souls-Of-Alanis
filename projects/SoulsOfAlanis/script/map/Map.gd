@@ -9,7 +9,6 @@ export (PoolStringArray) onready var P_ForestRooms = [
 "res://scene/forest/challenge/fchallenge_2.tscn",
 "res://scene/forest/connection/fconnection_1.tscn",
 "res://scene/forest/corridor/fcorridor_1.tscn",
-"res://scene/forest/objects/fchest.tscn",
 "res://scene/forest/ordinary/fordinary_1.tscn",
 "res://scene/forest/ordinary/fordinary_2.tscn",
 "res://scene/forest/ordinary/fordinary_3.tscn",
@@ -74,7 +73,7 @@ func _ready():
 
 	self.current_tree = self.CriptTree
 
-	pass
+	return
 
 # TODO: connect trees
 # to - indicates direction onto the tree
@@ -97,6 +96,8 @@ func walk(to = 0):
 	emit_signal("moved", self.current_node.i_scene)
 	return
 
+# start the map on a given tree
+# id_tree indictes the tree to start
 func start(id_tree = 0):
 	match id_tree:
 		1:
@@ -105,17 +106,20 @@ func start(id_tree = 0):
 			self.current_node = self.CastleTree
 		3:
 			self.current_node = self.CriptTree
-		_:
+		0:
 			printerr("(WW) Main scene should have been added mannually")
+		_:
+			printerr("(EE) Invalid tree start")
 
 	emit_signal("moved", self.current_node.i_scene)
 
+# add a given room to the head to the main tree
+# i_room - the info room of the new head
 func add_to_head(i_room):
 	if !i_room:
 		printerr("(EE) Cannot add a invalid room")
 		exit(9)
 
-#(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 	var node = TreeMap.new(null, i_room, null, -1, 1, false)
 	var cur = self.current_tree
 
@@ -125,9 +129,3 @@ func add_to_head(i_room):
 	self.current_node = node
 
 	return
-
-
-
-
-
-
