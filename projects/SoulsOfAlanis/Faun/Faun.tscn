@@ -22,10 +22,10 @@
 [ext_resource path="res://Faun/art/attack_13.png" type="Texture" id=20]
 [ext_resource path="res://Faun/art/attack_14.png" type="Texture" id=21]
 [ext_resource path="res://Faun/art/attack_15.png" type="Texture" id=22]
-[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=23]
-[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=24]
-[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=25]
-[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=26]
+[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=23]
+[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=24]
+[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=25]
+[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=26]
 [ext_resource path="res://Faun/art/death_5.png" type="Texture" id=27]
 [ext_resource path="res://Faun/art/death_6.png" type="Texture" id=28]
 [ext_resource path="res://Faun/art/death_7.png" type="Texture" id=29]
@@ -245,7 +245,12 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
@@ -253,11 +258,6 @@ animations = [ {
 "frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "Stagger",
 "speed": 5.0
 } ]
 
@@ -270,11 +270,11 @@ extents = Vector2( 25.3634, 30.194 )
 
 scale = Vector2( 5, 5 )
 input_pickable = false
-collision_layer = 5
-collision_mask = 2
+collision_layer = 8
+collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Tween" type="Tween" parent="." index="0"]
 

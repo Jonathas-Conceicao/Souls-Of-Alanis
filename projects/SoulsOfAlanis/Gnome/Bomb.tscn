@@ -1,19 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Gnome/Bomb.gd" type="Script" id=1]
-[ext_resource path="res://Gnome/art/bomb_1.png" type="Texture" id=2]
-[ext_resource path="res://Gnome/art/bomb_2.png" type="Texture" id=3]
-[ext_resource path="res://Gnome/art/bomb_3.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"frames": [ null, null ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"frames": [ null, null, null ],
 "loop": true,
 "name": "Explosion",
 "speed": 5.0
@@ -24,15 +21,15 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 9.52083
 
-[node name="Bomb" type="Area2D" index="0"]
+[node name="Bomb" type="Area2D"]
 
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = -1.0
 angular_damp = -1.0
-collision_layer = 4
-collision_mask = 2
+collision_layer = 8
+collision_mask = 3
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )

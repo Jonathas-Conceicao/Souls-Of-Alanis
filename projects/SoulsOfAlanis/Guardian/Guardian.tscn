@@ -245,14 +245,14 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "Death",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 31 ) ],
@@ -274,11 +274,11 @@ extents = Vector2( 20.1198, 51.8084 )
 [node name="Guardian" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 5
-collision_mask = 2
+collision_layer = 8
+collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Tween" type="Tween" parent="." index="0"]
 
@@ -290,7 +290,11 @@ playback/repeat = false
 playback/speed = 1.0
 _sections_unfolded = [ "playback" ]
 
-[node name="Pivot" type="Position2D" parent="." index="1"]
+[node name="DamageSpot" type="Position2D" parent="." index="1"]
+
+position = Vector2( -9.9887, -38.7657 )
+
+[node name="Pivot" type="Position2D" parent="." index="2"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -316,14 +320,14 @@ frames = SubResource( 7 )
 animation = "Walk"
 _sections_unfolded = [ "Transform" ]
 
-[node name="DamageSpot" type="Position2D" parent="." index="2"]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( 0, 3 )
 shape = SubResource( 8 )
 
 [node name="States" type="Node" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
