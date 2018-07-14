@@ -2,8 +2,6 @@ extends Node2D
 
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-export (String) var InitialRoom = "res://scene/Prelude.tscn"
-
 export (bool) var debug_mode = true
 
 func _init():
