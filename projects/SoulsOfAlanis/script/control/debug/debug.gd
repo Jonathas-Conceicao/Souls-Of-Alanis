@@ -2,13 +2,12 @@ extends Node2D
 
 enum msg_type { nrm = 0, dbg = 1, wrn = 2, err = 3 }
 
-var debug_mode = true
+const DEBUG_MODE = false
 
-func _init(dbg = true):
-	self.debug_mode = dbg
+func _init():
 	return
 
-func printMsg(msg, type = msg_type.wrn, debug = self.debug_mode, err = true):
+func printMsg(msg, type = msg_type.wrn, debug = DEBUG_MODE, err = true):
 	if err:
 		match type:
 			nrm:
@@ -18,8 +17,7 @@ func printMsg(msg, type = msg_type.wrn, debug = self.debug_mode, err = true):
 				if debug:
 					printerr("(DB) %s" % msg)
 			wrn:
-				if debug:
-					printerr("(WW) %s" % msg)
+				printerr("(WW) %s" % msg)
 			err:
 				printerr("(EE) %s" % msg)
 
@@ -32,8 +30,7 @@ func printMsg(msg, type = msg_type.wrn, debug = self.debug_mode, err = true):
 				if debug:
 					print("(DB) %s" % msg)
 			wrn:
-				if debug:
-					print("(WW) %s" % msg)
+				print("(WW) %s" % msg)
 			err:
 				print("(EE) %s" % msg)
 	return
