@@ -21,4 +21,4 @@ func exit(host):
 	return
 
 func update(host, delta):
-	return "Idle"
+	return "Idle" # TODO: BUG: @Jonathas animation bug on quick state swap when Jummping or Falling
