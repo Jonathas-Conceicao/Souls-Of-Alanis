@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/art/Player/Idle_RougueLegacyi1.png" type="Texture" id=2]
@@ -81,6 +81,7 @@
 [ext_resource path="res://Player/States/Swap.gd" type="Script" id=79]
 [ext_resource path="res://Player/States/Stagger.gd" type="Script" id=80]
 [ext_resource path="res://Player/States/PlayerMenu.gd" type="Script" id=81]
+[ext_resource path="res://Player/States/Interact.gd" type="Script" id=82]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -359,7 +360,6 @@ autostart = true
 
 [node name="Stepping" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -374,12 +374,31 @@ position = Vector2( 0, 39 )
 shape = SubResource( 9 )
 one_way_collision = true
 
-[node name="DamageSpot" type="Position2D" parent="." index="6"]
+[node name="Collision" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 89
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collision" index="0"]
+
+position = Vector2( 0, -5 )
+scale = Vector2( 1.07663, 2.75881 )
+shape = SubResource( 2 )
+
+[node name="DamageSpot" type="Position2D" parent="." index="7"]
 
 position = Vector2( -32, -50 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="States" type="Node" parent="." index="7"]
+[node name="States" type="Node" parent="." index="8"]
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
@@ -420,6 +439,10 @@ script = ExtResource( 80 )
 [node name="PlayerMenu" type="Node" parent="States" index="9"]
 
 script = ExtResource( 81 )
+
+[node name="Interact" type="Node" parent="States" index="10"]
+
+script = ExtResource( 82 )
 
 [connection signal="DataUpdated" from="." to="." method="_on_Player_DataUpdated"]
 

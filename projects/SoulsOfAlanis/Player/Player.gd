@@ -56,6 +56,7 @@ onready var state = {
 	# "Swap":     $States/Swap,
 	"Stagger":    $States/Stagger,
 	"PlayerMenu": $States/PlayerMenu,
+	"Interact":   $States/Interact,
 }
 
 var data
@@ -331,9 +332,6 @@ func _on_SwordHit_body(body):
 func _on_SwordHit_area(area):
 	if area != $Stepping && area.has_method("_on_takeHit"):
 		area._on_takeHit(self)
-	if area.has_method("_get_exit"):
-		var x = area._get_exit()
-		emit_signal("SceneExit", self, x)
 	return
 
 func _on_Stepping_body_entered(body):
