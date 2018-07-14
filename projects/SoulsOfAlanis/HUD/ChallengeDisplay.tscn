@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://HUD/ChalengeDisplay.gd" type="Script" id=1]
+[ext_resource path="res://HUD/ChallengeDisplay.gd" type="Script" id=1]
 [ext_resource path="res://GUI/art/DialogBox.png" type="Texture" id=2]
 [ext_resource path="res://HUD/art/Challenge_Alert.png" type="Texture" id=3]
 [ext_resource path="res://HUD/art/Challenge_succ.png" type="Texture" id=4]
@@ -8,7 +8,7 @@
 [ext_resource path="res://art/font/Joystix_medium.tres" type="DynamicFont" id=6]
 
 
-[node name="ChalengeDisplay" type="CanvasLayer" index="0"]
+[node name="ChallengeDisplay" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -17,7 +17,7 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 state = 0
-description = "Chalenge Message"
+description = "Challenge Message"
 
 [node name="NPPainel" type="NinePatchRect" parent="." index="0"]
 
@@ -146,7 +146,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 6 )
-text = "Chalenge Message"
+text = "Challenge Message"
 align = 1
 valign = 1
 autowrap = true
