@@ -6,7 +6,7 @@ export (String) var InitialRoom = "res://scene/Prelude.tscn"
 
 func _ready():
 	randomize()
-	$Player.connect("scene_exit", $Map, "walk")
+	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	#$CurrentScene.connect("changed_scene", $Player, "_entryOnRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
@@ -32,5 +32,5 @@ func _adjust_view(pos, sz):
 	#self.add_child(player)
 	#self.add_child(camera)
 	$Player/Camera.update_limits()
-
+	
 	return

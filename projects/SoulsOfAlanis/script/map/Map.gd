@@ -81,7 +81,7 @@ func _ready():
 # -1 - go back to parent
 # 0 - children at most left
 # N - children at most right
-func walk(to = 0):
+func walk(player = null, to = 0):
 	if to == -1:
 		if !self.current_node.parent:
 			printerr("(WW) Cannot go back to null parent (this is expected on Prelude only!")

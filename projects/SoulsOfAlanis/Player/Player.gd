@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal StateChanged
 signal DataUpdated
+signal SceneExit
 
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
@@ -28,15 +29,21 @@ var velocity = Vector2()
 var direction
 var flipped = false
 
-# ADDED
-signal scene_exit(exit_idx)
 var current_state = null
 
 const BACKPACK_LIMIT = 15 # Change this requires change in Inventory'art to allow for showing more items.
 var Backpack = []
-
 # Sould be used as a mutable list of reference (index) to Backpack's items
 var Equiped = [null, null, null] # Sword, Armor, Ring
+
+###
+# Lists to store info related to rooms,
+# objectes added will be found by a get_uniqueID() method.
+# The lists have a add method, but remove methods are not necessary
+###
+var Chests = []         # List of opened chests
+var StartedQuests = []  # List of started quests
+var FinishedQuests = [] # List of finished quests
 
 onready var state = {
 	"Idle":       $States/Idle,
@@ -49,6 +56,7 @@ onready var state = {
 	# "Swap":     $States/Swap,
 	"Stagger":    $States/Stagger,
 	"PlayerMenu": $States/PlayerMenu,
+	"Interact":   $States/Interact,
 }
 
 var data
@@ -171,6 +179,52 @@ func drop_from_Backpack(index): # TODO: BUG: @Jonathas Items order semas strange
 	self.Backpack.remove(index)
 	return
 
+# WARNING: Private method, see find methods below
+func find_id_in(uniqueID, list):
+	var index = 0
+	for item in list:
+		if uniqueID == item.get_uniqueID():
+			return index
+		index += 1
+		pass
+	return -1
+
+func find_in_Backpack(uniqueID):
+	return self.find_id_in(uniqueID, self.Backpack)
+
+func find_in_Chests(uniqueID):
+	return self.find_id_in(uniqueID, self.Chests)
+
+func find_in_StartedQuests(uniqueID):
+	return self.find_id_in(uniqueID, self.StartedQuests)
+
+func find_in_FinishedQuests(uniqueID):
+	return self.find_id_in(uniqueID, self.FinishedQuests)
+
+func add_to_Chests(obj):
+	self.Chests.push_front(obj)
+	return
+
+func add_to_StartedQuests(obj):
+	self.StartedQuests.push_front(obj)
+	return
+
+func add_to_FinishedQuests(obj):
+	self.FinishedQuests.push_front(obj)
+	return
+
+func get_from_BackPack(index):
+	return self.Backpack[index]
+
+func get_from_Chests(index):
+	return self.Chests[index]
+
+func get_from_StartedQuests(index):
+	return self.StartedQuests[index]
+
+func get_from_FinishedQuests(index):
+	return self.FinishedQuests[index]
+
 # var control = 0
 func processDebug():
 	# _state_change("Idle")
@@ -249,9 +303,9 @@ func _on_takeDamage(agressor, attack):
 	emit_signal("DataUpdated", self)
 	var damageDisplay = DamageShower.instance()
 	damageDisplay.init(self,
-						 $DamageSpot.get_position(),
-						 Vector2(1.5, 1.5),
-						 damage)
+					   $DamageSpot.get_position(),
+					   Vector2(1.5, 1.5),
+					   damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
 	print("Player recived ", damage, " from: ", agressor.get_name())
 	_state_change("Stagger")
@@ -278,9 +332,6 @@ func _on_SwordHit_body(body):
 func _on_SwordHit_area(area):
 	if area != $Stepping && area.has_method("_on_takeHit"):
 		area._on_takeHit(self)
-	if area.has_method("_get_exit"):
-		var x = area._get_exit()
-		emit_signal("scene_exit", x)
 	return
 
 func _on_Stepping_body_entered(body):
