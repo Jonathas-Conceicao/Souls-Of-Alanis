@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-enum Type {Sword, Armor, Ring, Consumable}
+enum Type {Sword, Armor, Ring, Consumable, Scroll}
 
 const UP = Vector2(0,-1)
 const GRAVITY = 10
@@ -49,6 +49,8 @@ func gen_texture_res():
 			res += "Ring_ItemBody_" + String(self.sprite_id) + ".png"
 		Type.Consumable:
 			res += "Consumable_ItemBody_" + String(self.sprite_id) + ".png"
+		Type.Scroll:
+			res += "Scroll_ItemBody.png"
 	var check = File.new()
 	var ok = check.file_exists(res)
 	if ok:
