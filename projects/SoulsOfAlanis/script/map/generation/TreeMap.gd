@@ -11,6 +11,7 @@ var parent		= null     # Its entry point
 var children	= []       # Its exists points
 var high		= 0.0
 var any_closed	= false  # if it a not fully open scene
+var boss_parent = null
 
 # shoud be mannually called only for the level generation
 # Creats the entire tree
@@ -46,11 +47,21 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 					var i_new_scene = gen.pick(any, half, self.i_scene.room_type)
 					self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
 				else:
-					# TODO: added boss room here
 					debug.printMsg("~~~~(%s/%s)out of luck (%s -> X)" % [ i, n_exit, self.high ], debug.msg_type.dbg)
 					debug.printMsg("~~~~closed room", debug.msg_type.dbg)
 					self.any_closed = true
 					self.children = [] # closed scene
+
+					if !gen.has_boss:
+						if randi() % 10 == 0:
+							debug.printMsg("Boss room added randomly", debug.msg_type.dbg)
+							self.children.append(gen.bossRoom())
+							gen.has_boss = true
+							pass
+						else:
+							gen.set_boss_parent(self)
+							pass
+					pass
 				pass
 			pass
 		pass

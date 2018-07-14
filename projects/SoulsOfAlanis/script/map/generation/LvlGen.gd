@@ -3,20 +3,22 @@ const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
 const MAX_TRY   = 5
 const N_ROOM    = 15
-const DEF_ROOM  = "res://scene/map/tests/DummyRoom.tscn"
 
 enum RoomType {loot, ordinary, connection, mission, challenge, final, any, avoid}
 enum Half { first, second , any }
 
 export (int) var def_max_rep = 10
 
-var i_rooms = Array() # InfoRoom array, with repetition
-var count = 0
+var i_rooms 	= Array() # InfoRoom array, with repetition
+var count 		= 0
+var boss_room 	= TreeMap.new(null, debug.i_Prelude, null, 0, 1, false)
+var boss_parent = null setget set_boss_parent, get_boss_parent
+var has_boss 	= false
 
 # Receives the list of scenes for that level
 # func init_rooms(rooms_path = []):
 # PUBLIC
-func _init(rooms_path = []):
+func _init(rooms_path = [], boss_room = null):
 	var f = File.new()
 	var has_conn_room = false
 	# validation
@@ -72,6 +74,13 @@ func _init(rooms_path = []):
 
 	if !has_conn_room:
 		debug.printMsg(" It is probably necessary that the system have at least one connection room", debug.msg_type.wrn)
+	
+	if !boss_room:
+		debug.printMsg(" Boss room not defined, this is probably a mistake", debug.msg_type.err)
+	else:
+		debug.printMsg(" Boss room instanciation not implemented yet", debug.msg_type.err)
+		#TODO self.boss_room = ...
+	
 	return
 
 # Randomly choosen a scene
@@ -108,14 +117,32 @@ func pick(type = any, half = any, avoid = final, n_try = MAX_TRY, force = false)
 func createTree(generate = true, path_room = null, size = null):
 	var f = File.new()
 
+	var head = null
 	if generate:
 		var r = self.pick()
-		return TreeMap.new(self, r, null, 0, r.n_exit, true)
+		head = TreeMap.new(self, r, null, 0, r.n_exit, true)			
 	else:
 		if (!f.file_exists(path_room)) || (!load(path_room).can_instance() || !size):
 			debug.printMsg(" Invalid default initial room info", debug.msg_type.err)
 			exit(2)
 			return null
 		debug.printMsg(" How did you determinated the room size?", debug.msg_type.wrn)
-		return TreeMap.new(self, InfoRoom.new(path_room, ordinary, first, 1, size), null)
+		head = TreeMap.new(self, InfoRoom.new(path_room, ordinary, first, 1, size), null)
+	pass
+	if !self.has_boss:
+		debug.printMsg("Boss room added staticly", debug.msg_type.wrn)
+		self.boss_parent.children.append(self.bossRoom())
+		self.has_boss = true
+
+	return head
+
+func set_boss_parent(parent):
+	boss_parent = parent
 	return
+
+func get_boss_parent():
+	return boss_parent
+
+func bossRoom():
+	return self.boss_room
+	
