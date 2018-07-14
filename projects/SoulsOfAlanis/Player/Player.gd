@@ -212,6 +212,18 @@ func add_to_FinishedQuests(obj):
 	self.FinishedQuests.push_front(obj)
 	return
 
+func get_from_BackPack(index):
+	return self.Backpack[index]
+
+func get_from_Chests(index):
+	return self.Chests[index]
+
+func get_from_StartedQuests(index):
+	return self.StartedQuests[index]
+
+func get_from_FinishedQuests(index):
+	return self.FinishedQuests[index]
+
 # var control = 0
 func processDebug():
 	# _state_change("Idle")
