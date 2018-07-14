@@ -7,9 +7,6 @@ func enter(host):
 	return
 
 func handle_input(host, event):
-	if event.is_action_pressed("player_interact"):
-		return "Interact"
-
 	# Handle attack
 	if event.is_action_pressed("player_attack"):
 		return "Attack"
