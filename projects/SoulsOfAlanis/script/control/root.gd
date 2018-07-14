@@ -6,7 +6,7 @@ export (String) var InitialRoom = "res://scene/Prelude.tscn"
 
 func _ready():
 	randomize()
-	$Player.connect("scene_exit", $Map, "walk")
+	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	#$CurrentScene.connect("changed_scene", $Player, "_entryOnRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")

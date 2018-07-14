@@ -5,7 +5,7 @@
 [ext_resource path="res://art/project-art/forest/opened_chest.png" type="Texture" id=3]
 [ext_resource path="res://sound/forest/object/chest/chest.ogg" type="AudioStream" id=4]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -20,13 +20,13 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SegmentShape2D" id=1]
+[sub_resource type="SegmentShape2D" id=2]
 
 custom_solver_bias = 0.0
 a = Vector2( 0, 0 )
 b = Vector2( 0, 10 )
 
-[node name="fchest" type="Node"]
+[node name="fchest" type="Node" index="0"]
 
 [node name="Open_chest_area" type="Area2D" parent="." index="0"]
 
@@ -46,7 +46,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Open_chest_area" index="0"]
 
 scale = Vector2( 3, 3 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "closed"
 playing = true
 _sections_unfolded = [ "Transform" ]
@@ -55,7 +55,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -6.77715, -8.75501 )
 scale = Vector2( 24.1121, 4.7763 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Open_chest_area" index="2"]
 
@@ -83,8 +83,13 @@ max_lines_visible = -1
 
 stream = ExtResource( 4 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[connection signal="body_entered" from="Open_chest_area" to="Open_chest_area" method="_on_Open_chest_area_body_entered"]
+
+[connection signal="body_exited" from="Open_chest_area" to="Open_chest_area" method="_on_Open_chest_area_body_exited"]
 
 
