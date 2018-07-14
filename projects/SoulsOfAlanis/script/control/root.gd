@@ -9,7 +9,7 @@ export (bool) var debug_mode = true
 func _ready():
 	randomize()
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
-	$Player.connect("scene_exit", $Map, "walk")
+	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	#$CurrentScene.connect("changed_scene", $Player, "_entryOnRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
@@ -34,5 +34,4 @@ func _adjust_view(pos, sz):
 	camera.set_limits(sz.x, sz.y)
 
 	$Player/Camera.update_limits()
-
 	return

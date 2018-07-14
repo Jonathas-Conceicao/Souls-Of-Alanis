@@ -10,6 +10,14 @@ var ItemData
 export (Type) var type
 export (int, 0, 4) var Sprite_Id
 export (String) var Item_Description
+export (int) var uniqueID = -1
+
+func init(t, s, d, uid = -1):
+	self.set_type(t)
+	self.set_sprite_id(s)
+	self.set_description(d)
+	self.set_uniqueID(uid)
+	return
 
 func gen_InventoryView():
 	var nIV = InventoryView.instance()
@@ -41,6 +49,13 @@ func set_data(data):
 	self.ItemData = data
 	add_child(data)
 	return
+
+func set_uniqueID(nid):
+	self.uniqueID = nid
+	return
+
+func get_uniqueID():
+	return self.uniqueID
 
 func get_data():
 	return self.ItemData
