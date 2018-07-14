@@ -7,13 +7,6 @@ func enter(host):
 	return
 
 func handle_input(host, event):
-	# if   event.is_action_pressed("player_select_weapon_0"):
-	# 	return "Swap"
-	# elif event.is_action_pressed("player_select_weapon_1"):
-	# 	return "Swap"
-	# elif event.is_action_pressed("player_select_weapon_2"):
-	# 	return "Swap"
-
 	# Handle attack
 	if event.is_action_pressed("player_attack"):
 		return "Attack"

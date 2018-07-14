@@ -9,6 +9,8 @@ var cur_hp        # Current HP
 var cur_stamina   # Current Stamina
 var cur_carryLoad # Current CarryLoad
 
+var speedBonus
+
 var defense # Defense's instance
 
 const Defense = preload("Defense.gd") # Class reference
@@ -24,6 +26,7 @@ func _init(hp = 1, stamina = 1, carryLoad =1, xp_gain = 1):
 	self.cur_hp        = self.hp
 	self.cur_stamina   = self.stamina
 	self.cur_carryLoad = self.carryLoad
+	self.speedBonus = 0
 	defense = Defense.new(0, 0, 0)
 	self.add_child(defense)
 	return self
@@ -107,3 +110,9 @@ func getStamina():
 ###
 func getMaxStamina():
 	return self.stamina
+
+###
+# return: speed bonus
+###
+func getSpeedBonus():
+	return self.speedBonus

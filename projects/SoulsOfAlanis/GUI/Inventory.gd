@@ -256,7 +256,6 @@ func _on_Inventory_finished_interaction(obj, action, index):
 		print("Inventory should close now")
 	return
 
-
 func _on_Close_pressed():
 	emit_signal("finished_interaction", self, -1, -1)
 	return

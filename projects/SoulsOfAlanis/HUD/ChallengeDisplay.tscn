@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://HUD/ChallengeDisplay.gd" type="Script" id=1]
+[ext_resource path="res://GUI/art/DialogBox.png" type="Texture" id=2]
+[ext_resource path="res://HUD/art/Challenge_Alert.png" type="Texture" id=3]
+[ext_resource path="res://HUD/art/Challenge_succ.png" type="Texture" id=4]
+[ext_resource path="res://HUD/art/Challenge_fail.png" type="Texture" id=5]
+[ext_resource path="res://art/font/Joystix_medium.tres" type="DynamicFont" id=6]
+
+
+[node name="ChallengeDisplay" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+state = 0
+description = "Challenge Message"
+
+[node name="NPPainel" type="NinePatchRect" parent="." index="0"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -411.0
+margin_top = 9.0
+margin_right = -9.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Container" type="HBoxContainer" parent="NPPainel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0
+margin_top = 18.0
+margin_right = -18.0
+margin_bottom = -18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="StatusDisplay" type="CenterContainer" parent="NPPainel/Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="OnGoing" type="TextureRect" parent="NPPainel/Container/StatusDisplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="Concluded" type="TextureRect" parent="NPPainel/Container/StatusDisplay" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="Failed" type="TextureRect" parent="NPPainel/Container/StatusDisplay" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="Message" type="Label" parent="NPPainel/Container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 52.0
+margin_right = 366.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+text = "Challenge Message"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+

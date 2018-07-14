@@ -7,9 +7,9 @@ const NO_DESCRIPTION = "No description"
 const N_SPRITES = 5
 const CONSUMABLE_DES = [
 	"Temporary damage bonus",
-	"Stamina regeneration potion",
+	"Temporary stamina bonus",
 	"Temporary defense bonus",
-	"HP regeneration potion",
+	"HP potion",
 	"Temporary speed bonus"]
 
 const Item = preload("res://Items/Item.gd")
