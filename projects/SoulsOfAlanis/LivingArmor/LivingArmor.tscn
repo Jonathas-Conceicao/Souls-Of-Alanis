@@ -5,18 +5,18 @@
 [ext_resource path="res://LivingArmor/art/attack_1.png" type="Texture" id=3]
 [ext_resource path="res://LivingArmor/art/attack_2.png" type="Texture" id=4]
 [ext_resource path="res://LivingArmor/art/attack_3.png" type="Texture" id=5]
-[ext_resource path="res://LivingArmor/art/block_1.png" type="Texture" id=6]
-[ext_resource path="res://LivingArmor/art/death_1.png" type="Texture" id=7]
-[ext_resource path="res://LivingArmor/art/death_2.png" type="Texture" id=8]
-[ext_resource path="res://LivingArmor/art/death_3.png" type="Texture" id=9]
-[ext_resource path="res://LivingArmor/art/death_4.png" type="Texture" id=10]
-[ext_resource path="res://LivingArmor/art/walk_1.png" type="Texture" id=11]
-[ext_resource path="res://LivingArmor/art/walk_2.png" type="Texture" id=12]
-[ext_resource path="res://LivingArmor/art/walk_3.png" type="Texture" id=13]
-[ext_resource path="res://LivingArmor/art/walk_4.png" type="Texture" id=14]
-[ext_resource path="res://LivingArmor/art/walk_5.png" type="Texture" id=15]
-[ext_resource path="res://LivingArmor/art/stagg_1.png" type="Texture" id=16]
-[ext_resource path="res://LivingArmor/art/stagg_2.png" type="Texture" id=17]
+[ext_resource path="res://LivingArmor/art/stagg_1.png" type="Texture" id=6]
+[ext_resource path="res://LivingArmor/art/stagg_2.png" type="Texture" id=7]
+[ext_resource path="res://LivingArmor/art/death_1.png" type="Texture" id=8]
+[ext_resource path="res://LivingArmor/art/death_2.png" type="Texture" id=9]
+[ext_resource path="res://LivingArmor/art/death_3.png" type="Texture" id=10]
+[ext_resource path="res://LivingArmor/art/death_4.png" type="Texture" id=11]
+[ext_resource path="res://LivingArmor/art/walk_1.png" type="Texture" id=12]
+[ext_resource path="res://LivingArmor/art/walk_2.png" type="Texture" id=13]
+[ext_resource path="res://LivingArmor/art/walk_3.png" type="Texture" id=14]
+[ext_resource path="res://LivingArmor/art/walk_4.png" type="Texture" id=15]
+[ext_resource path="res://LivingArmor/art/walk_5.png" type="Texture" id=16]
+[ext_resource path="res://LivingArmor/art/block_1.png" type="Texture" id=17]
 [ext_resource path="res://LivingArmor/States/Idle.gd" type="Script" id=18]
 [ext_resource path="res://LivingArmor/States/Stagger.gd" type="Script" id=19]
 [ext_resource path="res://LivingArmor/States/Walk.gd" type="Script" id=20]
@@ -224,24 +224,24 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Block",
+"name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 17 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "Stagger",
+"name": "Block",
 "speed": 5.0
 } ]
 
@@ -253,8 +253,8 @@ extents = Vector2( 55.2207, 72.9397 )
 [node name="LivingArmor" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 5
-collision_mask = 2
+collision_layer = 8
+collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]

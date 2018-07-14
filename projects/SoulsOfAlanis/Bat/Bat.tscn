@@ -1,14 +1,14 @@
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Bat/Bat.gd" type="Script" id=1]
-[ext_resource path="res://Bat/batstag1.png" type="Texture" id=2]
-[ext_resource path="res://Bat/batstag2.png" type="Texture" id=3]
-[ext_resource path="res://Bat/batstag3.png" type="Texture" id=4]
-[ext_resource path="res://Bat/batstag4.png" type="Texture" id=5]
-[ext_resource path="res://Bat/bat1.png" type="Texture" id=6]
-[ext_resource path="res://Bat/bat2.png" type="Texture" id=7]
-[ext_resource path="res://Bat/bat3.png" type="Texture" id=8]
-[ext_resource path="res://Bat/bat4.png" type="Texture" id=9]
+[ext_resource path="res://Bat/bat1.png" type="Texture" id=2]
+[ext_resource path="res://Bat/bat2.png" type="Texture" id=3]
+[ext_resource path="res://Bat/bat3.png" type="Texture" id=4]
+[ext_resource path="res://Bat/bat4.png" type="Texture" id=5]
+[ext_resource path="res://Bat/batstag1.png" type="Texture" id=6]
+[ext_resource path="res://Bat/batstag2.png" type="Texture" id=7]
+[ext_resource path="res://Bat/batstag3.png" type="Texture" id=8]
+[ext_resource path="res://Bat/batstag4.png" type="Texture" id=9]
 [ext_resource path="res://Bat/death_1.png" type="Texture" id=10]
 [ext_resource path="res://Bat/death_2.png" type="Texture" id=11]
 [ext_resource path="res://Bat/death_3.png" type="Texture" id=12]
@@ -25,7 +25,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Death"
 length = 0.5
@@ -56,9 +56,8 @@ tracks/1/keys = {
 "values": [ 0, 7 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "Fly"
 length = 1.0
 loop = true
 step = 0.1
@@ -87,9 +86,8 @@ tracks/1/keys = {
 "values": [ 0, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Stagger"
 length = 0.5
 loop = false
 step = 0.1
@@ -118,17 +116,17 @@ tracks/1/keys = {
 "values": [ 0, 3 ]
 }
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Stagger",
+"name": "Fly",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Fly",
+"name": "Stagger",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
@@ -140,13 +138,17 @@ animations = [ {
 [node name="Bat" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 5
-collision_mask = 2
+collision_layer = 8
+collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Tween" type="Tween" parent="." index="0"]
+[node name="DamageSpot" type="Position2D" parent="." index="0"]
+
+position = Vector2( 0.263519, -17.8987 )
+
+[node name="Tween" type="Tween" parent="." index="1"]
 
 repeat = false
 playback_process_mode = 1
@@ -155,16 +157,12 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Energy" type="Timer" parent="." index="1"]
+[node name="Energy" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
-
-[node name="DamageSpot" type="Position2D" parent="." index="2"]
-
-position = Vector2( 0, -15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
@@ -181,16 +179,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 5 )
-anims/Fly = SubResource( 2 )
-anims/Stagger = SubResource( 3 )
+anims/Death = SubResource( 2 )
+anims/Fly = SubResource( 3 )
+anims/Stagger = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="1"]
 
-frames = SubResource( 4 )
-animation = "Death"
-frame = 7
+frames = SubResource( 5 )
+animation = "Fly"
 
 [node name="States" type="Node" parent="." index="5"]
 
