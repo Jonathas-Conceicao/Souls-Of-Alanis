@@ -9,7 +9,8 @@ func _ready():
 
 # Changes the current rom
 # i_room - the info room to change to
-func changeRoom(i_room):
+func changeRoom(i_room, to, listOpenChest, listStartedQuests, listFinishedQuests):
+	#TODO: adjust room chest/special items and NPCs according with the list
 	# if there is any child, remove
 	match self.get_child_count():
 		1:
@@ -17,7 +18,6 @@ func changeRoom(i_room):
 			var oldroom = self.get_child(0)
 			self.remove_child(oldroom)
 			oldroom.queue_free()
-			#print("(DB) Removed")
 		0:
 			debug.printMsg("Generating first scene", debug.wrn, self.debug_mode)
 

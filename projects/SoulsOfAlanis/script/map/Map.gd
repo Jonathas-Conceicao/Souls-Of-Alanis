@@ -57,31 +57,36 @@ func _ready():
 	## FOREST
 	gen = LvlGen.new(self.P_ForestRooms)
 	self.ForestTree = gen.createTree(null, true)
-	# TODO: randomly chose one
-	## this.one.child[closed].child = boss_room
+	# TODO: 
+## generate Forest boss room
+## add it to the tree (some random final node)
+## interlink with next tree
 
 	## CASTLE
 	gen = LvlGen.new(P_CastleRooms)
 	self.CastleTree = gen.createTree(null, true)
-
-	# TODO: randomly chose one
-	## this.one.child[closed].child = boss_room
+	# TODO:
+	## generate Castle boss room
+	## add it to the tree (some random final node)
+	## interlink with next tree
 
 	## CRIPT
 	gen = LvlGen.new(P_CriptRooms)
 	self.CriptTree = gen.createTree(null, true)
-	# TODO: randomly chose one
-	## this.one.child[closed].child = boss_room
+
+	## generate Castle boss room
+	## add it to the tree (some random final node)
+	## interlink with next tree
 
 	#self.current_tree = self.FlorestTree
-
 	return
 
 # TODO: connect trees
+# player - pretty self explanatory
 # to - indicates direction onto the tree
-# -1 - go back to parent
-# 0 - children at most left
-# N - children at most right
+#  -1: go back to parent
+#   0:  children at most left
+#   N: children at most right
 func walk(player = null, to = 0):
 	if to == -1:
 		if !self.current_node.parent:
@@ -95,7 +100,7 @@ func walk(player = null, to = 0):
 		debug.printMsg(" Should not be entering closed doors!", debug.msg_type.err, self.debug_mode)
 		return
 
-	emit_signal("moved", self.current_node.i_scene)
+	emit_signal("moved", self.current_node.i_scene, player.Chests, player.StartedQuests, player.FinishedQuests)
 	return
 
 # start the map on a given tree
