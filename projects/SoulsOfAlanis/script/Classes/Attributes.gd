@@ -157,6 +157,12 @@ func getMaxStamina():
 	return self.power.getMaxStamina()
 
 ###
+# return: speed bonus
+###
+func getSpeedBonus():
+	return self.power.getSpeedBonus()
+
+###
 # Discounts a value from the HP
 # return:
 ###

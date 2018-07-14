@@ -20,22 +20,23 @@ func _init(type = HP, value = 1, duration = 0):
 	self.duration = duration
 	return self
 
+func getDuration():
+	return self.duration
+
 func apply(data):
 	match self.type:
 		Consumables.Damage:
 			data.set_damageBonus(Attack.new(Attack.Slash, self.value))
 		Consumables.Stamina:
 			data.attributes.power.stamina += value
-			# data.attributes.power.cur_stamina += value
 		Consumables.Defense:
 			var defense = Defense.new(value, value, value)
 			data.attributes.power.defense.add(defense)
 			defense.queue_free()
 		Consumables.HP:
-			data.attributes.power.hp += value
-			# data.attributes.power.cur_hp += value
+			data.attributes.power.increaseHP(value)
 		Consumables.Speed:
-			data.attributes.power.carryLoad += value
+			data.attributes.power.speedBonus += value
 	return
 
 func takeBack(data):
@@ -51,8 +52,7 @@ func takeBack(data):
 			data.attributes.power.defense.add(defense)
 			defense.queue_free()
 		Consumables.HP:
-			data.attributes.power.hp -= value
-			# data.attributes.power.cur_hp += value
+			pass
 		Consumables.Speed:
-			data.attributes.power.carryLoad -= value
+			data.attributes.power.speedBonus -= value
 	return

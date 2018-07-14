@@ -14,6 +14,7 @@ const StarterArmor = preload("res://Items/predefined/StarterArmor.gd")
 
 const DamageShower = preload("res://HUD/Damage.tscn")
 
+const ItemTimer = preload("res://Items/ItemTimer.tscn")
 const Item = preload("res://Items/Item.gd")
 
 const UP = Vector2(0,-1)
@@ -161,6 +162,7 @@ func use_from_Backpack(index):
 			i = 2 # Ring Slot
 		item.Type.Consumable:
 			item.get_data().apply(self.data)
+			self.trigger_itemDuration(item, item.get_data().getDuration())
 			ok = false
 			self.Backpack.remove(index)
 	if ok: # If data swap was made, update internal state
@@ -254,9 +256,10 @@ func update_flip():
 func update_speed():
 	var carryPerc = calcPercentage(data.getMaxCarryLoad(), data.getCarryLoad())
 	var nspeed = calcSpeed(carryPerc)
+	var bonusSpeed = self.data.getSpeedBonus()
 	$Animation.set_speed_scale(nspeed)
 	$Sword/Animation.set_speed_scale(nspeed)
-	self.SPEED = self.BASE_SPEED * nspeed;
+	self.SPEED = (self.BASE_SPEED * nspeed) + bonusSpeed;
 	return
 
 func calcSpeed(percentage):
@@ -286,6 +289,22 @@ func getData():
 	data.append(["Stamina", self.data.getStamina()])
 	data.append(["Energy", self.energy])
 	return data
+
+func trigger_itemDuration(item, duration):
+	var newTimer = ItemTimer.instance()
+	item.add_child(newTimer)
+	newTimer.set_item(item)
+	newTimer.set_wait_time(duration)
+	newTimer.set_one_shot(true)
+	newTimer.connect("ItemTimeout", self, "_on_ItemTimeout")
+	newTimer.start()
+	return
+
+func _on_ItemTimeout(item):
+	item.get_data().takeBack(self.data)
+	item.queue_free()
+	emit_signal("DataUpdated", self)
+	return
 
 func _on_Animation_animation_finished(anim_name):
 	var ns = current_state._on_animation_finished(self, anim_name)

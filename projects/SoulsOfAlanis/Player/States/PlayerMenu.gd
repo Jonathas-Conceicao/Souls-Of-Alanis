@@ -8,6 +8,7 @@ var info
 var readyToLeave = false
 
 func enter(host):
+	host.set_animation("Idle")
 	readyToLeave = false
 	self.inv = Inventory.instance()
 	self.info = PlayerInfo.instance()
@@ -15,6 +16,7 @@ func enter(host):
 	host.add_child(self.info)
 	self.update_all(host)
 	self.inv.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
+	host.connect("DataUpdated", self, "update_all")
 	# No need for info signal if focused == false
 	# self.info.connect("finished_interaction", self, "_on_Inventory_finished_interaction")
 	return
@@ -22,6 +24,7 @@ func enter(host):
 func exit(host):
 	self.inv.queue_free()
 	self.info.queue_free()
+	host.disconnect("DataUpdated", self, "update_all")
 	return
 
 func update(host, delta):
@@ -55,5 +58,4 @@ func _on_Inventory_finished_interaction(inv, action, index):
 		host.use_from_Backpack(index)
 	else:
 		host.drop_from_Backpack(index)
-	self.update_all(host)
 	return

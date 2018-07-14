@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Items/ItemTimer.gd" type="Script" id=1]
+
+[node name="ItemTimer" type="Timer" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+script = ExtResource( 1 )
+
+[connection signal="timeout" from="." to="." method="_on_ItemTimer_timeout"]
+
+

@@ -128,6 +128,12 @@ func getStamina():
 func getMaxStamina():
 	return self.attributes.getMaxStamina()
 
+###
+# return: speed bonus
+###
+func getSpeedBonus():
+	return self.attributes.getSpeedBonus()
+
 # Calculates the real defense of the Hero
 # based on requipaments and attributes
 # return: new Defense's instance
