@@ -52,19 +52,21 @@ onready var current_node = null #TreeMap
 
 signal moved(idx) #Indicates player moved on map
 
+# PUBLIC
 func _ready():
+	randomize() #UNCOMMENT TO RAND MAP
 	var gen = null
 	## FOREST
 	gen = LvlGen.new(self.P_ForestRooms)
-	self.ForestTree = gen.createTree(null, true)
+	self.ForestTree = gen.createTree()
 	# TODO: 
-## generate Forest boss room
-## add it to the tree (some random final node)
-## interlink with next tree
+	## generate Forest boss room
+	## add it to the tree (some random final node)
+	## interlink with next tree
 
 	## CASTLE
 	gen = LvlGen.new(P_CastleRooms)
-	self.CastleTree = gen.createTree(null, true)
+	self.CastleTree = gen.createTree()
 	# TODO:
 	## generate Castle boss room
 	## add it to the tree (some random final node)
@@ -72,13 +74,13 @@ func _ready():
 
 	## CRIPT
 	gen = LvlGen.new(P_CriptRooms)
-	self.CriptTree = gen.createTree(null, true)
-
+	self.CriptTree = gen.createTree()
+	# TODO:
 	## generate Castle boss room
 	## add it to the tree (some random final node)
 	## interlink with next tree
 
-	#self.current_tree = self.FlorestTree
+	#self.current_tree = self.ForestTree
 	return
 
 # TODO: connect trees
@@ -87,6 +89,7 @@ func _ready():
 #  -1: go back to parent
 #   0:  children at most left
 #   N: children at most right
+# SIGNAL connection <- player SceneExit
 func walk(player = null, to = 0):
 	if to == -1:
 		if !self.current_node.parent:
@@ -105,6 +108,7 @@ func walk(player = null, to = 0):
 
 # start the map on a given tree
 # id_tree indictes the tree to start
+# PUBLIC
 func start(id_tree = 0):
 	match id_tree:
 		1:
@@ -117,12 +121,14 @@ func start(id_tree = 0):
 			debug.printMsg(" Main scene should have been added mannually", debug.msg_type.wrn, self.debug_mode)
 		_:
 			debug.printMsg(" Invalid tree start", debug.msg_type.err, self.debug_mode)
+			exit(10)
 
-	emit_signal("moved", self.current_node.i_scene)
+	emit_signal("moved", self.current_node.i_scene, [], [], [])
 	return
 
 # add a given room to the head to the main tree
 # i_room - the info room of the new head
+# PUBLIC <- be carefull
 func add_to_head(i_room):
 	if !i_room:
 		debug.printMsg(" Cannot add a invalid room", debug.msg_type.err, self.debug_mode)

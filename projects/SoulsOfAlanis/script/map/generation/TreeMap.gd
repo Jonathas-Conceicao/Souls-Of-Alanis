@@ -19,11 +19,11 @@ var any_closed	= false  # if it a not fully open scene
 # p       - this node parent
 # high    - this node high
 # n_exit  - number of exits on this scene, also max number of children
+# PUBLIC
 func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
-	#
 	# scene must exists, otherwise, what is my purpose?
-	if !i_sc.scene:
-		debug.printMsg("no scene. \nwhat is my purpose?", debug.msg_type.err)
+	if !gen || !i_sc.scene:
+		debug.printMsg("no generator or no scene. \nwhat is my purpose?", debug.msg_type.err)
 		return null
 
 	self.i_scene  = i_sc
@@ -31,24 +31,27 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 	self.high     = high
 
 	debug.printMsg("Generating node high = %s for scene = %s" % [high, i_sc.scene], debug.msg_type.dbg)
-
 	if create_child:
 		for i in range(0, n_exit):
-			debug.printMsg("    generating child %s/%s on high %s" % [i+1, n_exit, high], debug.msg_type.dbg)
 			if (self.high <= MIN_HIGH):
-				debug.printMsg("    per min high (%s)" % self.high, debug.msg_type.dbg)
+				debug.printMsg("~~~~per min high (%s)" % self.high, debug.msg_type.dbg)
+				debug.printMsg("~~~~generating its child %s/%s on high %s\n" % [i+1, n_exit, high], debug.msg_type.dbg)
 				var i_new_scene = gen.pick(any, first, self.i_scene.room_type)
 				self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
 			else:
 				if (randi() % (self.high - MIN_HIGH) == 0): # 1/1, 1/2, 1/3, ...
-					var half = any if (self.i_scene.half == Half.first) else Half.second
+					debug.printMsg("~~~~(%s/%s) full of luck (%s -> %s)" % [ i, n_exit, self.high, self.high +1], debug.msg_type.dbg)
+					debug.printMsg("~~~~generating its child %s/%s on high %s\n" % [i+1, n_exit, high], debug.msg_type.dbg)
+					var half = any if (self.i_scene.half != Half.second) else Half.second
 					var i_new_scene = gen.pick(any, half, self.i_scene.room_type)
 					self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
 				else:
 					# TODO: added boss room here
-					debug.printMsg(" Closed room", debug.msg_type.dbg)
+					debug.printMsg("~~~~(%s/%s)out of luck (%s -> X)" % [ i, n_exit, self.high ], debug.msg_type.dbg)
+					debug.printMsg("~~~~closed room", debug.msg_type.dbg)
 					self.any_closed = true
 					self.children = [] # closed scene
+				pass
 			pass
 		pass
 	return

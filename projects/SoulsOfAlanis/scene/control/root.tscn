@@ -10,7 +10,7 @@
 
 script = ExtResource( 1 )
 InitialRoom = "res://scene/Prelude.tscn"
-debug_mode = false
+debug_mode = true
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
@@ -22,7 +22,7 @@ debug_mode = true
 [node name="Map" type="Node2D" parent="." index="2"]
 
 script = ExtResource( 4 )
-debug_mode = true
+debug_mode = false
 P_BoosRoomForest = "res://scene/castle/connection/forest/connection/fconnection_1.tscn"
 P_ForestRooms = null
 P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"

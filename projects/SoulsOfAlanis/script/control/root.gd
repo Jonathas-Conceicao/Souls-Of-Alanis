@@ -6,18 +6,20 @@ export (String) var InitialRoom = "res://scene/Prelude.tscn"
 
 export (bool) var debug_mode = true
 
+func _init():
+	#randomize() #UNCOMMENT TO RAND IT ALL
+	return
+
 func _ready():
 	randomize()
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
-	#$CurrentScene.connect("changed_scene", $Player, "_entryOnRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
 
-	var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
-
+	#var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
 	#$Map.add_to_head(start)
-	$Map.start(3)
+	$Map.start(2)
 
 	return
 
