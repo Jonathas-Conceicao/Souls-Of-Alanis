@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=11]
 [ext_resource path="res://GUI/art/signpost.png" type="Texture" id=12]
 [ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=13]
+[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -26,7 +27,6 @@ extents = Vector2( 82, 10 )
 
 [sub_resource type="DynamicFontData" id=3]
 
-hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=4]
@@ -37,13 +37,21 @@ use_filter = false
 font_data = SubResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="VillageHope" type="Node2D" index="0"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-editor/display_folded = true
 modulate = Color( 0.816406, 0.714355, 0.714355, 1 )
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
@@ -120,7 +128,6 @@ texture = ExtResource( 6 )
 
 [node name="TileMap2" type="TileMap" parent="TileMap" index="1"]
 
-editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -187,7 +194,6 @@ _sections_unfolded = [ "Region" ]
 
 [node name="TileMap3" type="TileMap" parent="TileMap/TileMap2" index="3"]
 
-editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -270,7 +276,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 38, 232, 0, 39, 244, 0, 65551, 149, 0, 65552, 150, 0, 65553, 150, 0, 65554, 150, 0, 65555, 152, 0, 65574, 233, 0, 65575, 245, 0, 65577, 18, 0, 131087, 161, 0, 131088, 154, 0, 131089, 155, 0, 131090, 155, 0, 131091, 155, 0, 131092, 156, 0, 131094, 18, 0, 131101, 18, 0, 131112, 1610612977, 0, 131113, 1610612977, 0, 131114, 1610612977, 0, 131115, 1610612977, 0, 196608, 277, 0, 196609, 277, 0, 196610, 277, 0, 196611, 277, 0, 196612, 278, 0, 196624, 258, 0, 262157, 256, 0, 262158, 256, 0, 262159, 256, 0, 262160, 258, 0, 262169, 165, 0, 327681, 20, 0, 327696, 261, 0, 327698, 165, 0, 327700, 141, 0, 327703, 19, 0, 327705, 166, 0, 327721, 214, 0, 327722, 215, 0, 327723, 216, 0, 393216, 319, 0, 393217, 23, 0, 393218, 320, 0, 393231, 26, 0, 393232, 158, 0, 393233, 158, 0, 393234, 166, 0, 393236, 145, 0, 393237, 255, 0, 393238, 256, 0, 393239, 256, 0, 393240, 256, 0, 393241, 256, 0, 393242, 256, 0, 393246, 214, 0, 393247, 215, 0, 393248, 216, 0, 393252, 324, 0, 393256, 175, 0, 458752, 322, 0, 458753, 322, 0, 458754, 323, 0, 458767, 153, 0, 458768, 159, 0, 458769, 163, 0, 458770, 159, 0, 458771, 164, 0, 458773, 258, 0, 458774, 265, 0, 458775, 259, 0, 458776, 259, 0, 458777, 184, 0, 458778, 259, 0, 458779, 296, 0, 458780, 308, 0, 458788, 325, 0, 458791, 177, 0, 458792, 178, 0, 524303, 30, 0, 524309, 258, 0, 524310, 259, 0, 524311, 318, 0, 524312, 319, 0, 524313, 320, 0, 524315, 297, 0, 524316, 309, 0, 524321, 220, 0, 524322, 222, 0, 524324, 325, 0, 524325, 318, 0, 524326, 319, 0, 524327, 320, 0, 524328, 222, 0, 589836, 314, 0, 589839, 30, 0, 589845, 261, 0, 589846, 262, 0, 589847, 321, 0, 589848, 322, 0, 589849, 323, 0, 589850, 262, 0, 589851, 312, 0, 589852, 314, 0, 589860, 327, 0, 589861, 321, 0, 589862, 322, 0, 589863, 323, 0, 589865, 5, 0, 589869, 15, 0, 655394, 18, 0 )
+tile_data = PoolIntArray( 38, 232, 0, 39, 244, 0, 41, 168, 0, 44, 168, 0, 65551, 149, 0, 65552, 150, 0, 65553, 150, 0, 65554, 150, 0, 65555, 152, 0, 65574, 233, 0, 65575, 245, 0, 65577, 18, 0, 131087, 161, 0, 131088, 154, 0, 131089, 155, 0, 131090, 155, 0, 131091, 155, 0, 131092, 156, 0, 131094, 18, 0, 131101, 18, 0, 131112, 1610612977, 0, 131113, 1610612977, 0, 131114, 1610612977, 0, 131115, 1610612977, 0, 196608, 277, 0, 196609, 277, 0, 196610, 277, 0, 196611, 277, 0, 196612, 278, 0, 196624, 258, 0, 262157, 256, 0, 262158, 256, 0, 262159, 256, 0, 262160, 258, 0, 262169, 165, 0, 327681, 20, 0, 327696, 261, 0, 327698, 165, 0, 327700, 141, 0, 327703, 19, 0, 327705, 166, 0, 327721, 214, 0, 327722, 215, 0, 327723, 216, 0, 393216, 319, 0, 393217, 23, 0, 393218, 320, 0, 393231, 26, 0, 393232, 158, 0, 393233, 158, 0, 393234, 166, 0, 393236, 145, 0, 393237, 255, 0, 393238, 256, 0, 393239, 256, 0, 393240, 256, 0, 393241, 256, 0, 393242, 256, 0, 393246, 214, 0, 393247, 215, 0, 393248, 216, 0, 393252, 324, 0, 393256, 175, 0, 458752, 322, 0, 458753, 322, 0, 458754, 323, 0, 458767, 153, 0, 458768, 159, 0, 458769, 163, 0, 458770, 159, 0, 458771, 164, 0, 458773, 258, 0, 458774, 265, 0, 458775, 259, 0, 458776, 259, 0, 458777, 184, 0, 458778, 259, 0, 458779, 296, 0, 458780, 308, 0, 458788, 325, 0, 458791, 177, 0, 458792, 178, 0, 524303, 30, 0, 524309, 258, 0, 524310, 259, 0, 524311, 318, 0, 524312, 319, 0, 524313, 320, 0, 524315, 297, 0, 524316, 309, 0, 524321, 220, 0, 524322, 222, 0, 524324, 325, 0, 524325, 318, 0, 524326, 319, 0, 524327, 320, 0, 524328, 222, 0, 589836, 314, 0, 589839, 30, 0, 589845, 261, 0, 589846, 262, 0, 589847, 321, 0, 589848, 322, 0, 589849, 323, 0, 589850, 262, 0, 589851, 312, 0, 589852, 314, 0, 589860, 327, 0, 589861, 321, 0, 589862, 322, 0, 589863, 323, 0, 589865, 5, 0, 589869, 15, 0, 655394, 18, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="InteractAreaDoor2" type="Area2D" parent="TileMap/TileMap2/TileMap3/TileMap4" index="1"]
@@ -384,6 +390,38 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="RoofSecretArea" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 1349, 23 )
+scale = Vector2( 5.89062, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoofSecretArea" index="0"]
+
+position = Vector2( 135.95, 114 )
+rotation = 3.14159
+scale = Vector2( 13.5265, 1 )
+shape = SubResource( 5 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_entered"]
 
