@@ -8,9 +8,15 @@
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
+enabled = true
+
+[node name="NPPainel" parent="." index="0"]
+
+visible = false
 
 [node name="RedButton" parent="NPPainel" index="1"]
 
+visible = false
 _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Main" type="RichTextLabel" parent="NPPainel" index="3"]

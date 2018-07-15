@@ -1,0 +1,3 @@
+extends AnimationPlayer
+
+signal finished_cinematic
