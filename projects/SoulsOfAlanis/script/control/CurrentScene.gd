@@ -5,7 +5,7 @@ signal changed_scene #when load a new scene
 export (bool) var debug_mode = true
 
 func _ready():
-	debug.printMsg("Current Scene started")
+	debug.printMsg("Current Scene started", debug.msg_type.nrm, self.debug_mode)
 	return
 
 # Changes the current rom
@@ -29,11 +29,11 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
 	if room.has_method("listNPC"):
 		for i in room.listNPC:
 			if !i.has_method("get_uniqueID"):
-				debug.printMsg("Every NPC should have a get_uniqueID method", debug.msg_type.err)
+				debug.printMsg("Every NPC should have a get_uniqueID method", debug.msg_type.err, self.debug_mode)
 				exit(100)
 			pass
 			if !i.has_method("enabled"):
-				debug.printMsg("Every NPC should have a enabled method", debug.msg_type.err)
+				debug.printMsg("Every NPC should have a enabled method", debug.msg_type.err, self.debug_mode)
 				exit(101)
 			pass
 

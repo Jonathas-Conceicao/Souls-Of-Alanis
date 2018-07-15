@@ -3,7 +3,7 @@ extends Node2D
 enum RoomType {loot, ordinary, connection, mission, challenge, final, any, avoid}
 enum Half { first, second , any }
 
-enum msg_type { nrm = 0, dbg = 1, wrn = 2, err = 3 }
+enum msg_type { nrm, dbg, wrn, err	 }
 
 const DEBUG_MODE = false
 var i_Prelude = preload("res://script/map/InfoRoom.gd").new("res://scene/Prelude.tscn", RoomType.ordinary, Half.first, 1, Vector2(2,4.2))
@@ -11,7 +11,7 @@ var i_Prelude = preload("res://script/map/InfoRoom.gd").new("res://scene/Prelude
 func _init():
 	return
 
-func printMsg(msg, type = msg_type.wrn, debug = DEBUG_MODE, err = true):
+func printMsg(msg, type = msg_type.nrm, debug = DEBUG_MODE, err = true):
 	if err:
 		match type:
 			nrm:
@@ -24,6 +24,8 @@ func printMsg(msg, type = msg_type.wrn, debug = DEBUG_MODE, err = true):
 				printerr("(WW) %s" % msg)
 			err:
 				printerr("(EE) %s" % msg)
+			_:
+				printerr("(UK) %s" % msg)
 
 	else:
 		match type:
