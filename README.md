@@ -251,20 +251,8 @@ Dynamic activities schedule
 	- Aranha
 	- Múmia
 
-- Armas
-	- Lança
-	- Machado
-
 - Main Menu & Esc Menu
 
 - Main Bosses
-	- Fauno
 	- Beholder
 	- Mago
-
-- Sistema de upgrade
-	- Personagem
-	- Itens
-	- Criaturas
-
-- Itens consumíveis
