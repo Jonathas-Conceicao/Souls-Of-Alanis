@@ -5,11 +5,11 @@ signal changed_scene #when load a new scene
 export (bool) var debug_mode = true
 
 func _ready():
-	pass
+	return
 
 # Changes the current rom
 # i_room - the info room to change to
-func changeRoom(i_room, to, listOpenChest, listStartedQuests, listFinishedQuests):
+func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
 	#TODO: adjust room chest/special items and NPCs according with the list
 	# if there is any child, remove
 	match self.get_child_count():
