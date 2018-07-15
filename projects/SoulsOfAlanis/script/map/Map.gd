@@ -59,28 +59,26 @@ func _ready():
 	## FOREST
 	gen = LvlGen.new(self.P_ForestRooms)
 	self.ForestTree = gen.createTree()
-	# TODO: 
-	## generate Forest boss room
-	## add it to the tree (some random final node)
-	## interlink with next tree
+	var boss_node = gen.boss_parent.children.back()
 
 	## CASTLE
 	gen = LvlGen.new(P_CastleRooms)
 	self.CastleTree = gen.createTree()
-	# TODO:
-	## generate Castle boss room
-	## add it to the tree (some random final node)
-	## interlink with next tree
-
+	## pass: Forest -> Castle
+	boss_node.children.append(self.CastleTree)
+	boss_node = gen.boss_parent.children.back()
+	
 	## CRIPT
 	gen = LvlGen.new(P_CriptRooms)
 	self.CriptTree = gen.createTree()
-	# TODO:
-	## generate Castle boss room
-	## add it to the tree (some random final node)
-	## interlink with next tree
+	## pass: Castle -> Cript
+	boss_node.children.append(self.CriptTree)
+	boss_node = gen.boss_parent.children.back()
 
-	#self.current_tree = self.ForestTree
+	## LOOP
+	## pass: Cript -> Forest
+	boss_node.children.append(self.ForestTree)
+
 	return
 
 # TODO: connect trees

@@ -22,9 +22,10 @@ var boss_parent = null
 # n_exit  - number of exits on this scene, also max number of children
 # PUBLIC
 func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
+	randomize()
 	# scene must exists, otherwise, what is my purpose?
-	if !gen || !i_sc.scene:
-		debug.printMsg("no generator or no scene. \nwhat is my purpose?", debug.msg_type.err)
+	if !i_sc.scene:
+		debug.printMsg("No scene. \nwhat is my purpose?", debug.msg_type.err)
 		return null
 
 	self.i_scene  = i_sc
@@ -38,6 +39,7 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 				debug.printMsg("~~~~per min high (%s)" % self.high, debug.msg_type.dbg)
 				debug.printMsg("~~~~generating its child %s/%s on high %s\n" % [i+1, n_exit, high], debug.msg_type.dbg)
 				var i_new_scene = gen.pick(any, first, self.i_scene.room_type)
+					
 				self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
 			else:
 				if (randi() % (self.high - MIN_HIGH) == 0): # 1/1, 1/2, 1/3, ...
@@ -57,10 +59,15 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 							debug.printMsg("Boss room added randomly", debug.msg_type.dbg)
 							self.children.append(gen.bossRoom())
 							gen.has_boss = true
+							gen.boss_parent = self
 							pass
 						else:
-							gen.set_boss_parent(self)
+							if !gen.boss_parent:
+								debug.printMsg("Boss room is set", debug.msg_type.dbg)
+								gen.boss_parent = self
 							pass
+					else:
+						debug.printMsg("Lvl already has boss room", debug.msg_type.dbg)
 					pass
 				pass
 			pass
