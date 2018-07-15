@@ -26,6 +26,7 @@ extents = Vector2( 82, 10 )
 
 [sub_resource type="DynamicFontData" id=3]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=4]
@@ -351,6 +352,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 13 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+_sections_unfolded = [ "Axis Stretch", "Patch Margin" ]
 
 [node name="Label" type="Label" parent="LocalName" index="0"]
 
