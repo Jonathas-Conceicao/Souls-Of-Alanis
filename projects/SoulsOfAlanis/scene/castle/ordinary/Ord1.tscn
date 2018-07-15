@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/castle/ordinary/Ord1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scene/castle/ordinary/RandomItemDrop.gd" type="Script" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -372,4 +374,18 @@ position = Vector2( 341.852, 480.251 )
 
 position = Vector2( 2796.75, 493.321 )
 
+[node name="fchest" parent="." index="9" instance=ExtResource( 8 )]
 
+editor/display_folded = true
+
+[node name="Open_chest_area" parent="fchest" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1514, 524 )
+
+[node name="GhostBill" parent="." index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 1226.95, 489.016 )
+
+
+[editable path="fchest"]
