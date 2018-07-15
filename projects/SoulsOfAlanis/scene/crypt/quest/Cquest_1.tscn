@@ -120,19 +120,7 @@ tile_data = PoolIntArray(  )
 
 [node name="GhostBill" parent="." index="2" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-
-[node name="Area2D" parent="GhostBill" index="0"]
-
-position = Vector2( 509.58, 380.49 )
-
-[node name="NPPainel" parent="GhostBill/Area2D/TextBox" index="0"]
-
-visible = false
-
-[node name="AnimatedSprite" parent="GhostBill/Area2D" index="2"]
-
-flip_h = true
+position = Vector2( 510.738, 381.452 )
 
 [node name="Background" type="Sprite" parent="." index="3"]
 
@@ -149,4 +137,3 @@ position = Vector2( 42.5312, 359.707 )
 
 
 [editable path="GhostBill"]
-[editable path="GhostBill/Area2D/TextBox"]
