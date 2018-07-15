@@ -1,0 +1,3189 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/tiles/village/tile_village_street.png" type="Texture" id=1]
+[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/tiles/village/tile_village_house.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.3265, 0 )
+
+[sub_resource type="SegmentShape2D" id=4]
+
+custom_solver_bias = 0.0
+a = Vector2( 12.9684, -13.2174 )
+b = Vector2( -46.6527, 46.2607 )
+
+[sub_resource type="SegmentShape2D" id=6]
+
+custom_solver_bias = 0.0
+a = Vector2( -45.3052, -45.2174 )
+b = Vector2( 13.3052, 12.1739 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19, 5.66675 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.1111, 0.25 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13, 2 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9, 0 )
+
+[node name="VillageTileset" type="Node" index="0"]
+
+[node name="FloorStreet" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -32, 32 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_street_1" type="Sprite" parent="FloorStreet" index="0"]
+
+editor/display_folded = true
+position = Vector2( 24, 40 )
+scale = Vector2( 0.49, 0.49 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 32, 32 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorStreet/floor_street_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorStreet/floor_street_1/StaticBody2D" index="0"]
+
+position = Vector2( 0, -13.2653 )
+scale = Vector2( 1, 0.264521 )
+shape = SubResource( 5 )
+
+[node name="floor_street_2" type="Sprite" parent="FloorStreet" index="1"]
+
+editor/display_folded = true
+position = Vector2( 40, 40 )
+scale = Vector2( 0.49, 0.49 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 32, 32, 32 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorStreet/floor_street_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorStreet/floor_street_2/StaticBody2D" index="0"]
+
+position = Vector2( 0, -13.2653 )
+scale = Vector2( 1, 0.264521 )
+shape = SubResource( 5 )
+
+[node name="floor_street_3" type="Sprite" parent="FloorStreet" index="2"]
+
+editor/display_folded = true
+position = Vector2( 56, 40 )
+scale = Vector2( 0.49, 0.49 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 32, 32, 32 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorStreet/floor_street_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorStreet/floor_street_3/StaticBody2D" index="0"]
+
+position = Vector2( 0, -13.2653 )
+scale = Vector2( 1, 0.264521 )
+shape = SubResource( 5 )
+
+[node name="floor_street_4" type="Sprite" parent="FloorStreet" index="3"]
+
+editor/display_folded = true
+position = Vector2( 72, 40 )
+scale = Vector2( 0.49, 0.49 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 32, 32 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorStreet/floor_street_4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorStreet/floor_street_4/StaticBody2D" index="0"]
+
+position = Vector2( 0, -13.2653 )
+scale = Vector2( 1, 0.264521 )
+shape = SubResource( 5 )
+
+[node name="floor_street_5" type="Sprite" parent="FloorStreet" index="4"]
+
+editor/display_folded = true
+position = Vector2( 72, 40 )
+scale = Vector2( 0.49, 0.49 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 32, 32 )
+_sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorStreet/floor_street_5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorStreet/floor_street_5/StaticBody2D" index="0"]
+
+position = Vector2( 0, -13.2653 )
+scale = Vector2( 1, 0.264521 )
+shape = SubResource( 5 )
+
+[node name="LadderStreet" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ladder_street_l_1" type="Sprite" parent="LadderStreet" index="0"]
+
+editor/display_folded = true
+position = Vector2( 15.8333, 16.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 160, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LadderStreet/ladder_street_l_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderStreet/ladder_street_l_1/StaticBody2D" index="0"]
+
+rotation = 3.14159
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ladder_street_l_2" type="Sprite" parent="LadderStreet" index="1"]
+
+editor/display_folded = true
+position = Vector2( 47.8334, 16.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LadderStreet/ladder_street_l_2" index="0"]
+
+position = Vector2( -6.10352e-05, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderStreet/ladder_street_l_2/StaticBody2D2" index="0"]
+
+rotation = 3.14159
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ladder_street_l_3" type="Sprite" parent="LadderStreet" index="2"]
+
+position = Vector2( 15.8334, 47.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 160, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ladder_street_l_4" type="Sprite" parent="LadderStreet" index="3"]
+
+position = Vector2( 47.8334, 47.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ladder_street_r_1" type="Sprite" parent="LadderStreet" index="4"]
+
+editor/display_folded = true
+position = Vector2( 111.833, 16.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 0, 32, 32 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LadderStreet/ladder_street_r_1" index="0"]
+
+position = Vector2( -6.10352e-05, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderStreet/ladder_street_r_1/StaticBody2D2" index="0"]
+
+position = Vector2( 31.4947, 32 )
+shape = SubResource( 6 )
+
+[node name="ladder_street_r_2" type="Sprite" parent="LadderStreet" index="5"]
+
+editor/display_folded = true
+position = Vector2( 144.833, 16.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LadderStreet/ladder_street_r_2" index="0"]
+
+position = Vector2( -6.10352e-05, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderStreet/ladder_street_r_2/StaticBody2D2" index="0"]
+
+position = Vector2( 31.4947, 32 )
+shape = SubResource( 6 )
+
+[node name="ladder_street_r_3" type="Sprite" parent="LadderStreet" index="6"]
+
+position = Vector2( 111.833, 47.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ladder_street_r_4" type="Sprite" parent="LadderStreet" index="7"]
+
+position = Vector2( 144.833, 47.3333 )
+scale = Vector2( 0.989584, 0.958334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LampStreet" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lamp_street_left" type="Sprite" parent="LampStreet" index="0"]
+
+position = Vector2( 16, 176 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="lamp_street_middle" type="Sprite" parent="LampStreet" index="1"]
+
+editor/display_folded = true
+position = Vector2( 48, 176 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LampStreet/lamp_street_middle" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LampStreet/lamp_street_middle/StaticBody2D" index="0"]
+
+position = Vector2( -8.34465e-07, -10.4906 )
+rotation = 3.14159
+scale = Vector2( 1.04545, 0.263051 )
+shape = SubResource( 7 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="lamp_street_right" type="Sprite" parent="LampStreet" index="2"]
+
+position = Vector2( 80, 176 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="lamp_street_bottom" type="Sprite" parent="LampStreet" index="3"]
+
+position = Vector2( 48, 208 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="BackgroundStreet" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background_street" type="Sprite" parent="BackgroundStreet" index="0"]
+
+position = Vector2( 112, 177 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Misc" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="plant_street" type="Sprite" parent="Misc" index="0"]
+
+position = Vector2( 144, 177 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wtf_this_object (is_a_window)" type="Sprite" parent="Misc" index="1"]
+
+position = Vector2( 592, 112 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_brown_1" type="Sprite" parent="Misc" index="2"]
+
+position = Vector2( 657, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_brown_2" type="Sprite" parent="Misc" index="3"]
+
+position = Vector2( 656, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_yellow_1" type="Sprite" parent="Misc" index="4"]
+
+position = Vector2( 688, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_yellow_2" type="Sprite" parent="Misc" index="5"]
+
+position = Vector2( 688, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_white_1" type="Sprite" parent="Misc" index="6"]
+
+position = Vector2( 720, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="flowers_white_2" type="Sprite" parent="Misc" index="7"]
+
+position = Vector2( 720, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="House" type="Node2D" parent="." index="5"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SupportWall" type="Node2D" parent="House" index="0"]
+
+editor/display_folded = true
+
+[node name="Brown" type="Node2D" parent="House/SupportWall" index="0"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="support_wall_1" type="Sprite" parent="House/SupportWall/Brown" index="0"]
+
+position = Vector2( 272, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_2" type="Sprite" parent="House/SupportWall/Brown" index="1"]
+
+position = Vector2( 272, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_3" type="Sprite" parent="House/SupportWall/Brown" index="2"]
+
+position = Vector2( 304, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_4" type="Sprite" parent="House/SupportWall/Brown" index="3"]
+
+position = Vector2( 336, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_5" type="Sprite" parent="House/SupportWall/Brown" index="4"]
+
+position = Vector2( 272, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_6" type="Sprite" parent="House/SupportWall/Brown" index="5"]
+
+position = Vector2( 304, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_7" type="Sprite" parent="House/SupportWall/Brown" index="6"]
+
+position = Vector2( 368, 209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_8" type="Sprite" parent="House/SupportWall/Brown" index="7"]
+
+position = Vector2( 368, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_9" type="Sprite" parent="House/SupportWall/Brown" index="8"]
+
+position = Vector2( 368, 209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_10" type="Sprite" parent="House/SupportWall/Brown" index="9"]
+
+position = Vector2( 400, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_11" type="Sprite" parent="House/SupportWall/Brown" index="10"]
+
+position = Vector2( 400, 209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_12" type="Sprite" parent="House/SupportWall/Brown" index="11"]
+
+position = Vector2( 432, 209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_13" type="Sprite" parent="House/SupportWall/Brown" index="12"]
+
+position = Vector2( 432, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_14" type="Sprite" parent="House/SupportWall/Brown" index="13"]
+
+position = Vector2( 464, 209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_15" type="Sprite" parent="House/SupportWall/Brown" index="14"]
+
+position = Vector2( 464, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_16" type="Sprite" parent="House/SupportWall/Brown" index="15"]
+
+position = Vector2( 304, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_17" type="Sprite" parent="House/SupportWall/Brown" index="16"]
+
+position = Vector2( 304, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_18" type="Sprite" parent="House/SupportWall/Brown" index="17"]
+
+position = Vector2( 304, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_19" type="Sprite" parent="House/SupportWall/Brown" index="18"]
+
+position = Vector2( 272, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_20" type="Sprite" parent="House/SupportWall/Brown" index="19"]
+
+position = Vector2( 272, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_21" type="Sprite" parent="House/SupportWall/Brown" index="20"]
+
+position = Vector2( 304, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_22" type="Sprite" parent="House/SupportWall/Brown" index="21"]
+
+position = Vector2( 368, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_23" type="Sprite" parent="House/SupportWall/Brown" index="22"]
+
+position = Vector2( 368, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_24" type="Sprite" parent="House/SupportWall/Brown" index="23"]
+
+position = Vector2( 400, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_25" type="Sprite" parent="House/SupportWall/Brown" index="24"]
+
+position = Vector2( 400, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_26" type="Sprite" parent="House/SupportWall/Brown" index="25"]
+
+position = Vector2( 432, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_27" type="Sprite" parent="House/SupportWall/Brown" index="26"]
+
+position = Vector2( 432, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_28" type="Sprite" parent="House/SupportWall/Brown" index="27"]
+
+position = Vector2( 464, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_29" type="Sprite" parent="House/SupportWall/Brown" index="28"]
+
+position = Vector2( 464, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_30" type="Sprite" parent="House/SupportWall/Brown" index="29"]
+
+position = Vector2( 368, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_31" type="Sprite" parent="House/SupportWall/Brown" index="30"]
+
+position = Vector2( 368, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_32" type="Sprite" parent="House/SupportWall/Brown" index="31"]
+
+position = Vector2( 368, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_33" type="Sprite" parent="House/SupportWall/Brown" index="32"]
+
+position = Vector2( 496, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_34" type="Sprite" parent="House/SupportWall/Brown" index="33"]
+
+position = Vector2( 496, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_35" type="Sprite" parent="House/SupportWall/Brown" index="34"]
+
+position = Vector2( 528, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_36" type="Sprite" parent="House/SupportWall/Brown" index="35"]
+
+position = Vector2( 560, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 256, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_37" type="Sprite" parent="House/SupportWall/Brown" index="36"]
+
+position = Vector2( 528, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_38" type="Sprite" parent="House/SupportWall/Brown" index="37"]
+
+position = Vector2( 560, 208 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Yellow" type="Node2D" parent="House/SupportWall" index="1"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="support_wall_39" type="Sprite" parent="House/SupportWall/Yellow" index="0"]
+
+position = Vector2( 16, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_40" type="Sprite" parent="House/SupportWall/Yellow" index="1"]
+
+position = Vector2( 16, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_41" type="Sprite" parent="House/SupportWall/Yellow" index="2"]
+
+position = Vector2( 16, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_42" type="Sprite" parent="House/SupportWall/Yellow" index="3"]
+
+position = Vector2( 48, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_43" type="Sprite" parent="House/SupportWall/Yellow" index="4"]
+
+position = Vector2( 48, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_44" type="Sprite" parent="House/SupportWall/Yellow" index="5"]
+
+position = Vector2( 48, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_45" type="Sprite" parent="House/SupportWall/Yellow" index="6"]
+
+position = Vector2( 48, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_46" type="Sprite" parent="House/SupportWall/Yellow" index="7"]
+
+position = Vector2( 48, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_47" type="Sprite" parent="House/SupportWall/Yellow" index="8"]
+
+position = Vector2( 16, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_48" type="Sprite" parent="House/SupportWall/Yellow" index="9"]
+
+position = Vector2( 16, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_49" type="Sprite" parent="House/SupportWall/Yellow" index="10"]
+
+position = Vector2( 80, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_50" type="Sprite" parent="House/SupportWall/Yellow" index="11"]
+
+position = Vector2( 112, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_51" type="Sprite" parent="House/SupportWall/Yellow" index="12"]
+
+position = Vector2( 112, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_52" type="Sprite" parent="House/SupportWall/Yellow" index="13"]
+
+position = Vector2( 144, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_53" type="Sprite" parent="House/SupportWall/Yellow" index="14"]
+
+position = Vector2( 144, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_54" type="Sprite" parent="House/SupportWall/Yellow" index="15"]
+
+position = Vector2( 176, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_55" type="Sprite" parent="House/SupportWall/Yellow" index="16"]
+
+position = Vector2( 176, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_56" type="Sprite" parent="House/SupportWall/Yellow" index="17"]
+
+position = Vector2( 208, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_57" type="Sprite" parent="House/SupportWall/Yellow" index="18"]
+
+position = Vector2( 208, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_58" type="Sprite" parent="House/SupportWall/Yellow" index="19"]
+
+position = Vector2( 112, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_59" type="Sprite" parent="House/SupportWall/Yellow" index="20"]
+
+position = Vector2( 112, 367 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_60" type="Sprite" parent="House/SupportWall/Yellow" index="21"]
+
+position = Vector2( 144, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_61" type="Sprite" parent="House/SupportWall/Yellow" index="22"]
+
+position = Vector2( 144, 367 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_62" type="Sprite" parent="House/SupportWall/Yellow" index="23"]
+
+position = Vector2( 176, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_63" type="Sprite" parent="House/SupportWall/Yellow" index="24"]
+
+position = Vector2( 176, 367 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_64" type="Sprite" parent="House/SupportWall/Yellow" index="25"]
+
+position = Vector2( 208, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_65" type="Sprite" parent="House/SupportWall/Yellow" index="26"]
+
+position = Vector2( 208, 367 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_66" type="Sprite" parent="House/SupportWall/Yellow" index="27"]
+
+position = Vector2( 240, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_67" type="Sprite" parent="House/SupportWall/Yellow" index="28"]
+
+position = Vector2( 240, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_68" type="Sprite" parent="House/SupportWall/Yellow" index="29"]
+
+position = Vector2( 240, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 512, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_69" type="Sprite" parent="House/SupportWall/Yellow" index="30"]
+
+position = Vector2( 112, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_70" type="Sprite" parent="House/SupportWall/Yellow" index="31"]
+
+position = Vector2( 112, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_71" type="Sprite" parent="House/SupportWall/Yellow" index="32"]
+
+position = Vector2( 144, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_72" type="Sprite" parent="House/SupportWall/Yellow" index="33"]
+
+position = Vector2( 144, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_73" type="Sprite" parent="House/SupportWall/Yellow" index="34"]
+
+position = Vector2( 176, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_74" type="Sprite" parent="House/SupportWall/Yellow" index="35"]
+
+position = Vector2( 176, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_75" type="Sprite" parent="House/SupportWall/Yellow" index="36"]
+
+position = Vector2( 208, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_76" type="Sprite" parent="House/SupportWall/Yellow" index="37"]
+
+position = Vector2( 208, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="White" type="Node2D" parent="House/SupportWall" index="2"]
+
+editor/display_folded = true
+
+[node name="support_wall_77" type="Sprite" parent="House/SupportWall/White" index="0"]
+
+position = Vector2( 16, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_78" type="Sprite" parent="House/SupportWall/White" index="1"]
+
+position = Vector2( 16, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_79" type="Sprite" parent="House/SupportWall/White" index="2"]
+
+position = Vector2( 16, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_80" type="Sprite" parent="House/SupportWall/White" index="3"]
+
+position = Vector2( 48, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_81" type="Sprite" parent="House/SupportWall/White" index="4"]
+
+position = Vector2( 80, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_82" type="Sprite" parent="House/SupportWall/White" index="5"]
+
+position = Vector2( 48, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_83" type="Sprite" parent="House/SupportWall/White" index="6"]
+
+position = Vector2( 48, 592 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_84" type="Sprite" parent="House/SupportWall/White" index="7"]
+
+position = Vector2( 48, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_85" type="Sprite" parent="House/SupportWall/White" index="8"]
+
+position = Vector2( 48, 656 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_86" type="Sprite" parent="House/SupportWall/White" index="9"]
+
+position = Vector2( 16, 592 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_87" type="Sprite" parent="House/SupportWall/White" index="10"]
+
+position = Vector2( 16, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_88" type="Sprite" parent="House/SupportWall/White" index="11"]
+
+position = Vector2( 112, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_89" type="Sprite" parent="House/SupportWall/White" index="12"]
+
+position = Vector2( 112, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_90" type="Sprite" parent="House/SupportWall/White" index="13"]
+
+position = Vector2( 144, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_91" type="Sprite" parent="House/SupportWall/White" index="14"]
+
+position = Vector2( 144, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_92" type="Sprite" parent="House/SupportWall/White" index="15"]
+
+position = Vector2( 176, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_93" type="Sprite" parent="House/SupportWall/White" index="16"]
+
+position = Vector2( 176, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_94" type="Sprite" parent="House/SupportWall/White" index="17"]
+
+position = Vector2( 208, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_95" type="Sprite" parent="House/SupportWall/White" index="18"]
+
+position = Vector2( 208, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_96" type="Sprite" parent="House/SupportWall/White" index="19"]
+
+position = Vector2( 112, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_97" type="Sprite" parent="House/SupportWall/White" index="20"]
+
+position = Vector2( 112, 593 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_98" type="Sprite" parent="House/SupportWall/White" index="21"]
+
+position = Vector2( 144, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_99" type="Sprite" parent="House/SupportWall/White" index="22"]
+
+position = Vector2( 176, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_100" type="Sprite" parent="House/SupportWall/White" index="23"]
+
+position = Vector2( 208, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_101" type="Sprite" parent="House/SupportWall/White" index="24"]
+
+position = Vector2( 144, 593 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_102" type="Sprite" parent="House/SupportWall/White" index="25"]
+
+position = Vector2( 176, 593 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_103" type="Sprite" parent="House/SupportWall/White" index="26"]
+
+position = Vector2( 208, 593 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_104" type="Sprite" parent="House/SupportWall/White" index="27"]
+
+position = Vector2( 240, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_105" type="Sprite" parent="House/SupportWall/White" index="28"]
+
+position = Vector2( 240, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_106" type="Sprite" parent="House/SupportWall/White" index="29"]
+
+position = Vector2( 240, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 768, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_107" type="Sprite" parent="House/SupportWall/White" index="30"]
+
+position = Vector2( 112, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_108" type="Sprite" parent="House/SupportWall/White" index="31"]
+
+position = Vector2( 112, 656 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_109" type="Sprite" parent="House/SupportWall/White" index="32"]
+
+position = Vector2( 144, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_110" type="Sprite" parent="House/SupportWall/White" index="33"]
+
+position = Vector2( 144, 656 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_111" type="Sprite" parent="House/SupportWall/White" index="34"]
+
+position = Vector2( 176, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_112" type="Sprite" parent="House/SupportWall/White" index="35"]
+
+position = Vector2( 176, 656 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_113" type="Sprite" parent="House/SupportWall/White" index="36"]
+
+position = Vector2( 208, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_114" type="Sprite" parent="House/SupportWall/White" index="37"]
+
+position = Vector2( 208, 656 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="support_wall_115" type="Sprite" parent="House/SupportWall/White" index="38"]
+
+position = Vector2( 176, 624 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Roof" type="Node2D" parent="House" index="1"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Red" type="Node2D" parent="House/Roof" index="0"]
+
+editor/display_folded = true
+
+[node name="roof_left_red_1" type="Sprite" parent="House/Roof/Red" index="0"]
+
+editor/display_folded = true
+position = Vector2( 272, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Red/roof_left_red_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Red/roof_left_red_1/StaticBody2D" index="0"]
+
+position = Vector2( 11, -15.1538 )
+scale = Vector2( 1.30769, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_red_2" type="Sprite" parent="House/Roof/Red" index="1"]
+
+editor/display_folded = true
+position = Vector2( 304, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Red/roof_middle_red_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Red/roof_middle_red_2/StaticBody2D" index="0"]
+
+position = Vector2( -0.499997, -15.1538 )
+scale = Vector2( 1.73077, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_red_3" type="Sprite" parent="House/Roof/Red" index="2"]
+
+position = Vector2( 369, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_red_3" type="Sprite" parent="House/Roof/Red" index="3"]
+
+editor/display_folded = true
+position = Vector2( 336, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Red/roof_right_red_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Red/roof_right_red_3/StaticBody2D" index="0"]
+
+position = Vector2( -7.49998, -15.1538 )
+scale = Vector2( 0.800848, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_left_red_4" type="Sprite" parent="House/Roof/Red" index="4"]
+
+position = Vector2( 272, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_middle_red_5" type="Sprite" parent="House/Roof/Red" index="5"]
+
+position = Vector2( 304, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_red_6" type="Sprite" parent="House/Roof/Red" index="6"]
+
+position = Vector2( 336, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_red_7" type="Sprite" parent="House/Roof/Red" index="7"]
+
+position = Vector2( 368, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Blue" type="Node2D" parent="House/Roof" index="1"]
+
+editor/display_folded = true
+
+[node name="roof_left_blue_1" type="Sprite" parent="House/Roof/Blue" index="0"]
+
+editor/display_folded = true
+position = Vector2( 432, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Blue/roof_left_blue_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Blue/roof_left_blue_1/StaticBody2D" index="0"]
+
+position = Vector2( 11, -15.1538 )
+scale = Vector2( 1.30769, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_blue_2" type="Sprite" parent="House/Roof/Blue" index="1"]
+
+editor/display_folded = true
+position = Vector2( 464, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Blue/roof_middle_blue_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Blue/roof_middle_blue_2/StaticBody2D" index="0"]
+
+position = Vector2( -0.499997, -15.1538 )
+scale = Vector2( 1.73077, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_blue_7" type="Sprite" parent="House/Roof/Blue" index="2"]
+
+position = Vector2( 528, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_blue_3" type="Sprite" parent="House/Roof/Blue" index="3"]
+
+editor/display_folded = true
+position = Vector2( 496, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Blue/roof_right_blue_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Blue/roof_right_blue_3/StaticBody2D" index="0"]
+
+position = Vector2( -7.49998, -15.1538 )
+scale = Vector2( 0.800848, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_left_blue_4" type="Sprite" parent="House/Roof/Blue" index="4"]
+
+position = Vector2( 432, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_middle_blue_5" type="Sprite" parent="House/Roof/Blue" index="5"]
+
+position = Vector2( 464, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_blue_6" type="Sprite" parent="House/Roof/Blue" index="6"]
+
+position = Vector2( 497, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_blue_7" type="Sprite" parent="House/Roof/Blue" index="7"]
+
+position = Vector2( 529, 80 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Brown" type="Node2D" parent="House/Roof" index="2"]
+
+editor/display_folded = true
+
+[node name="roof_left_brown_1" type="Sprite" parent="House/Roof/Brown" index="0"]
+
+editor/display_folded = true
+position = Vector2( 272, 112 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Brown/roof_left_brown_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Brown/roof_left_brown_1/StaticBody2D" index="0"]
+
+position = Vector2( 11, -15.1538 )
+scale = Vector2( 1.30769, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_brown_2" type="Sprite" parent="House/Roof/Brown" index="1"]
+
+editor/display_folded = true
+position = Vector2( 304, 112 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Brown/roof_middle_brown_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Brown/roof_middle_brown_2/StaticBody2D" index="0"]
+
+position = Vector2( -0.499997, -15.1538 )
+scale = Vector2( 1.73077, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_middle_brown_3" type="Sprite" parent="House/Roof/Brown" index="2"]
+
+position = Vector2( 368, 112 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_brown_3" type="Sprite" parent="House/Roof/Brown" index="3"]
+
+editor/display_folded = true
+position = Vector2( 336, 112 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Roof/Brown/roof_right_brown_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Roof/Brown/roof_right_brown_3/StaticBody2D" index="0"]
+
+position = Vector2( -7.49998, -15.1538 )
+scale = Vector2( 0.800848, 0.615385 )
+shape = SubResource( 8 )
+
+[node name="roof_left_brown_4" type="Sprite" parent="House/Roof/Brown" index="4"]
+
+position = Vector2( 272, 144 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 160, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_middle_brown_5" type="Sprite" parent="House/Roof/Brown" index="5"]
+
+position = Vector2( 304, 144 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 160, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_brown_6" type="Sprite" parent="House/Roof/Brown" index="6"]
+
+position = Vector2( 336, 144 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 160, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="roof_right_brown_7" type="Sprite" parent="House/Roof/Brown" index="7"]
+
+position = Vector2( 368, 144 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 160, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Misc" type="Node2D" parent="House" index="2"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="chimney_top" type="Sprite" parent="House/Misc" index="0"]
+
+editor/display_folded = true
+position = Vector2( 592, 49 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Misc/chimney_top" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Misc/chimney_top/StaticBody2D" index="0"]
+
+position = Vector2( 0, 2 )
+rotation = 3.14159
+shape = SubResource( 9 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="House/Misc/chimney_top/StaticBody2D" index="1"]
+
+position = Vector2( -2.28116, 8.34235 )
+rotation = 3.14159
+scale = Vector2( 0.0335328, 4.80793 )
+shape = SubResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chimney_bottom" type="Sprite" parent="House/Misc" index="1"]
+
+position = Vector2( 592, 81 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Window" type="Node2D" parent="House" index="3"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Brown" type="Node2D" parent="House/Window" index="0"]
+
+editor/display_folded = true
+
+[node name="Small" type="Node2D" parent="House/Window/Brown" index="0"]
+
+editor/display_folded = true
+
+[node name="window_1" type="Sprite" parent="House/Window/Brown/Small" index="0"]
+
+position = Vector2( 528, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_2" type="Sprite" parent="House/Window/Brown/Small" index="1"]
+
+position = Vector2( 560, 240 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 288, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Medium" type="Node2D" parent="House/Window/Brown" index="1"]
+
+editor/display_folded = true
+
+[node name="window_3" type="Sprite" parent="House/Window/Brown/Medium" index="0"]
+
+position = Vector2( 560, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_4" type="Sprite" parent="House/Window/Brown/Medium" index="1"]
+
+position = Vector2( 528, 272 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_5" type="Sprite" parent="House/Window/Brown/Medium" index="2"]
+
+position = Vector2( 560, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_6" type="Sprite" parent="House/Window/Brown/Medium" index="3"]
+
+position = Vector2( 528, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_7" type="Sprite" parent="House/Window/Brown/Medium" index="4"]
+
+position = Vector2( 592, 273 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 320, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_8" type="Sprite" parent="House/Window/Brown/Medium" index="5"]
+
+position = Vector2( 592, 304 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 352, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Big" type="Node2D" parent="House/Window/Brown" index="2"]
+
+editor/display_folded = true
+
+[node name="window_17" type="Sprite" parent="House/Window/Brown/Big" index="0"]
+
+position = Vector2( 688, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 384, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_18" type="Sprite" parent="House/Window/Brown/Big" index="1"]
+
+position = Vector2( 656, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 384, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_19" type="Sprite" parent="House/Window/Brown/Big" index="2"]
+
+position = Vector2( 656, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 416, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_20" type="Sprite" parent="House/Window/Brown/Big" index="3"]
+
+position = Vector2( 688, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 416, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_21" type="Sprite" parent="House/Window/Brown/Big" index="4"]
+
+position = Vector2( 720, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_22" type="Sprite" parent="House/Window/Brown/Big" index="5"]
+
+position = Vector2( 720, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 416, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_23" type="Sprite" parent="House/Window/Brown/Big" index="6"]
+
+position = Vector2( 752, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 384, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_24" type="Sprite" parent="House/Window/Brown/Big" index="7"]
+
+position = Vector2( 752, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 416, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Yellow" type="Node2D" parent="House/Window" index="1"]
+
+editor/display_folded = true
+
+[node name="Small" type="Node2D" parent="House/Window/Yellow" index="0"]
+
+editor/display_folded = true
+
+[node name="window_9" type="Sprite" parent="House/Window/Yellow/Small" index="0"]
+
+position = Vector2( 528, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_10" type="Sprite" parent="House/Window/Yellow/Small" index="1"]
+
+position = Vector2( 560, 336 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 544, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Medium" type="Node2D" parent="House/Window/Yellow" index="1"]
+
+editor/display_folded = true
+
+[node name="window_11" type="Sprite" parent="House/Window/Yellow/Medium" index="0"]
+
+position = Vector2( 560, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_12" type="Sprite" parent="House/Window/Yellow/Medium" index="1"]
+
+position = Vector2( 528, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_13" type="Sprite" parent="House/Window/Yellow/Medium" index="2"]
+
+position = Vector2( 560, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_14" type="Sprite" parent="House/Window/Yellow/Medium" index="3"]
+
+position = Vector2( 528, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_15" type="Sprite" parent="House/Window/Yellow/Medium" index="4"]
+
+position = Vector2( 592, 368 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 576, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_16" type="Sprite" parent="House/Window/Yellow/Medium" index="5"]
+
+position = Vector2( 592, 400 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 608, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Big" type="Node2D" parent="House/Window/Yellow" index="2"]
+
+editor/display_folded = true
+
+[node name="window_25" type="Sprite" parent="House/Window/Yellow/Big" index="0"]
+
+position = Vector2( 657, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 640, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_26" type="Sprite" parent="House/Window/Yellow/Big" index="1"]
+
+position = Vector2( 689, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 640, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_27" type="Sprite" parent="House/Window/Yellow/Big" index="2"]
+
+position = Vector2( 657, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 672, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_28" type="Sprite" parent="House/Window/Yellow/Big" index="3"]
+
+position = Vector2( 689, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 672, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_29" type="Sprite" parent="House/Window/Yellow/Big" index="4"]
+
+position = Vector2( 720, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 640, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_30" type="Sprite" parent="House/Window/Yellow/Big" index="5"]
+
+position = Vector2( 720, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 672, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_31" type="Sprite" parent="House/Window/Yellow/Big" index="6"]
+
+position = Vector2( 752, 432 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 640, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_32" type="Sprite" parent="House/Window/Yellow/Big" index="7"]
+
+position = Vector2( 752, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 672, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="White" type="Node2D" parent="House/Window" index="2"]
+
+editor/display_folded = true
+
+[node name="Small" type="Node2D" parent="House/Window/White" index="0"]
+
+editor/display_folded = true
+
+[node name="window_33" type="Sprite" parent="House/Window/White/Small" index="0"]
+
+position = Vector2( 528, 433 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_34" type="Sprite" parent="House/Window/White/Small" index="1"]
+
+position = Vector2( 560, 433 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 800, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Medium" type="Node2D" parent="House/Window/White" index="1"]
+
+editor/display_folded = true
+
+[node name="window_35" type="Sprite" parent="House/Window/White/Medium" index="0"]
+
+position = Vector2( 560, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_36" type="Sprite" parent="House/Window/White/Medium" index="1"]
+
+position = Vector2( 560, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_37" type="Sprite" parent="House/Window/White/Medium" index="2"]
+
+position = Vector2( 528, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_38" type="Sprite" parent="House/Window/White/Medium" index="3"]
+
+position = Vector2( 528, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_39" type="Sprite" parent="House/Window/White/Medium" index="4"]
+
+position = Vector2( 592, 464 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 832, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_40" type="Sprite" parent="House/Window/White/Medium" index="5"]
+
+position = Vector2( 592, 496 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 864, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Big" type="Node2D" parent="House/Window/White" index="2"]
+
+editor/display_folded = true
+
+[node name="window_40" type="Sprite" parent="House/Window/White/Big" index="0"]
+
+position = Vector2( 656, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 896, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_41" type="Sprite" parent="House/Window/White/Big" index="1"]
+
+position = Vector2( 688, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 896, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_42" type="Sprite" parent="House/Window/White/Big" index="2"]
+
+position = Vector2( 656, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 928, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_43" type="Sprite" parent="House/Window/White/Big" index="3"]
+
+position = Vector2( 688, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 928, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_44" type="Sprite" parent="House/Window/White/Big" index="4"]
+
+position = Vector2( 720, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 896, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_45" type="Sprite" parent="House/Window/White/Big" index="5"]
+
+position = Vector2( 720, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 928, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_46" type="Sprite" parent="House/Window/White/Big" index="6"]
+
+position = Vector2( 752, 528 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 896, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="window_47" type="Sprite" parent="House/Window/White/Big" index="7"]
+
+position = Vector2( 752, 560 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 928, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Platform" type="Node2D" parent="House" index="4"]
+
+editor/display_folded = true
+position = Vector2( 664, 212 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Brown" type="Node2D" parent="House/Platform" index="0"]
+
+editor/display_folded = true
+
+[node name="platform_left_1" type="Sprite" parent="House/Platform/Brown" index="0"]
+
+editor/display_folded = true
+position = Vector2( -8, -4 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 384, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Brown/platform_left_1" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Brown/platform_left_1/StaticBody2D" index="0"]
+
+position = Vector2( 7, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_bottom_1" type="Sprite" parent="House/Platform/Brown" index="1"]
+
+editor/display_folded = true
+position = Vector2( 24, -4 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 384, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Brown/platform_bottom_1" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Brown/platform_bottom_1/StaticBody2D" index="0"]
+
+position = Vector2( 1.5, -14 )
+rotation = 3.14159
+scale = Vector2( 1.45833, 1 )
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_right_right_1" type="Sprite" parent="House/Platform/Brown" index="2"]
+
+editor/display_folded = true
+position = Vector2( 56, -4 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 384, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Brown/platform_right_right_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Brown/platform_right_right_1/StaticBody2D" index="0"]
+
+position = Vector2( -8, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Yellow" type="Node2D" parent="House/Platform" index="1"]
+
+editor/display_folded = true
+
+[node name="platform_left_2" type="Sprite" parent="House/Platform/Yellow" index="0"]
+
+editor/display_folded = true
+position = Vector2( -8, 28 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 640, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Yellow/platform_left_2" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Yellow/platform_left_2/StaticBody2D" index="0"]
+
+position = Vector2( 7, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_bottom_2" type="Sprite" parent="House/Platform/Yellow" index="1"]
+
+editor/display_folded = true
+position = Vector2( 24, 28 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 640, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Yellow/platform_bottom_2" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Yellow/platform_bottom_2/StaticBody2D" index="0"]
+
+position = Vector2( 1.5, -14 )
+rotation = 3.14159
+scale = Vector2( 1.45833, 1 )
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_right_right_2" type="Sprite" parent="House/Platform/Yellow" index="2"]
+
+editor/display_folded = true
+position = Vector2( 56, 28 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 640, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/Yellow/platform_right_right_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/Yellow/platform_right_right_2/StaticBody2D" index="0"]
+
+position = Vector2( -8, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="White" type="Node2D" parent="House/Platform" index="2"]
+
+editor/display_folded = true
+
+[node name="platform_left_3" type="Sprite" parent="House/Platform/White" index="0"]
+
+editor/display_folded = true
+position = Vector2( -8, 60 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 896, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/White/platform_left_3" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/White/platform_left_3/StaticBody2D" index="0"]
+
+position = Vector2( 7, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_bottom_3" type="Sprite" parent="House/Platform/White" index="1"]
+
+editor/display_folded = true
+position = Vector2( 24, 60 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 896, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/White/platform_bottom_3" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/White/platform_bottom_3/StaticBody2D" index="0"]
+
+position = Vector2( 1.5, -14 )
+rotation = 3.14159
+scale = Vector2( 1.45833, 1 )
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_right_right_3" type="Sprite" parent="House/Platform/White" index="2"]
+
+editor/display_folded = true
+position = Vector2( 56, 60 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 896, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House/Platform/White/platform_right_right_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Platform/White/platform_right_right_3/StaticBody2D" index="0"]
+
+position = Vector2( -8, -14 )
+rotation = 3.14159
+shape = SubResource( 10 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door" type="Node2D" parent="House" index="5"]
+
+[node name="Brown" type="Node2D" parent="House/Door" index="0"]
+
+editor/display_folded = true
+
+[node name="door_brown_top_1_1" type="Sprite" parent="House/Door/Brown" index="0"]
+
+position = Vector2( 16, 720 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 192, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="door_brown_bottom_1_1" type="Sprite" parent="House/Door/Brown" index="1"]
+
+position = Vector2( 16, 752 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="door_brown_bottom_2_1" type="Sprite" parent="House/Door/Brown" index="2"]
+
+position = Vector2( 48, 752 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 224, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Yellow" type="Node2D" parent="House/Door" index="1"]
+
+editor/display_folded = true
+
+[node name="door_yellow_top_1_1" type="Sprite" parent="House/Door/Yellow" index="0"]
+
+position = Vector2( 80, 721 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 448, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="door_yellow_bottom_1_1" type="Sprite" parent="House/Door/Yellow" index="1"]
+
+position = Vector2( 80, 753 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="door_yellow_bottom_2_1" type="Sprite" parent="House/Door/Yellow" index="2"]
+
+position = Vector2( 112, 753 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 480, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="White" type="Node2D" parent="House/Door" index="2"]
+
+[node name="door_white_top" type="Sprite" parent="House/Door/White" index="0"]
+
+position = Vector2( 144, 721 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 704, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="door_white_bottom" type="Sprite" parent="House/Door/White" index="1"]
+
+position = Vector2( 144, 753 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 736, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Wall" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 332, 466 )
+
+[node name="Stone" type="Node2D" parent="Wall" index="0"]
+
+editor/display_folded = true
+
+[node name="wall_stone_1" type="Sprite" parent="Wall/Stone" index="0"]
+
+position = Vector2( 4, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_2" type="Sprite" parent="Wall/Stone" index="1"]
+
+position = Vector2( 4, 30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_3" type="Sprite" parent="Wall/Stone" index="2"]
+
+position = Vector2( 4, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_4" type="Sprite" parent="Wall/Stone" index="3"]
+
+position = Vector2( 36, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_5" type="Sprite" parent="Wall/Stone" index="4"]
+
+position = Vector2( 68, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_6" type="Sprite" parent="Wall/Stone" index="5"]
+
+position = Vector2( 36, 30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_7" type="Sprite" parent="Wall/Stone" index="6"]
+
+position = Vector2( 68, 30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_8" type="Sprite" parent="Wall/Stone" index="7"]
+
+position = Vector2( 100, 30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_9" type="Sprite" parent="Wall/Stone" index="8"]
+
+position = Vector2( 100, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_10" type="Sprite" parent="Wall/Stone" index="9"]
+
+position = Vector2( 36, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_11" type="Sprite" parent="Wall/Stone" index="10"]
+
+position = Vector2( 68, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_12" type="Sprite" parent="Wall/Stone" index="11"]
+
+position = Vector2( 100, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_13" type="Sprite" parent="Wall/Stone" index="12"]
+
+position = Vector2( 132, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_14" type="Sprite" parent="Wall/Stone" index="13"]
+
+position = Vector2( 132, 30 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_15" type="Sprite" parent="Wall/Stone" index="14"]
+
+position = Vector2( 132, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_16" type="Sprite" parent="Wall/Stone" index="15"]
+
+position = Vector2( 164, -2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 992, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_17" type="Sprite" parent="Wall/Stone" index="16"]
+
+position = Vector2( 164, -34 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_18" type="Sprite" parent="Wall/Stone" index="17"]
+
+position = Vector2( 164, 62 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1024, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_19" type="Sprite" parent="Wall/Stone" index="18"]
+
+position = Vector2( 36, 94 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_20" type="Sprite" parent="Wall/Stone" index="19"]
+
+position = Vector2( 68, 94 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_stone_21" type="Sprite" parent="Wall/Stone" index="20"]
+
+position = Vector2( 100, 94 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 960, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Beige" type="Node2D" parent="Wall" index="1"]
+
+editor/display_folded = true
+
+[node name="wall_beige_1" type="Sprite" parent="Wall/Beige" index="0"]
+
+position = Vector2( 4, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_2" type="Sprite" parent="Wall/Beige" index="1"]
+
+position = Vector2( 4, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_3" type="Sprite" parent="Wall/Beige" index="2"]
+
+position = Vector2( 4, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_4" type="Sprite" parent="Wall/Beige" index="3"]
+
+position = Vector2( 36, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_5" type="Sprite" parent="Wall/Beige" index="4"]
+
+position = Vector2( 68, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_6" type="Sprite" parent="Wall/Beige" index="5"]
+
+position = Vector2( 100, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_7" type="Sprite" parent="Wall/Beige" index="6"]
+
+position = Vector2( 36, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_8" type="Sprite" parent="Wall/Beige" index="7"]
+
+position = Vector2( 68, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_9" type="Sprite" parent="Wall/Beige" index="8"]
+
+position = Vector2( 100, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_10" type="Sprite" parent="Wall/Beige" index="9"]
+
+position = Vector2( 36, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_11" type="Sprite" parent="Wall/Beige" index="10"]
+
+position = Vector2( 68, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_12" type="Sprite" parent="Wall/Beige" index="11"]
+
+position = Vector2( 100, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_13" type="Sprite" parent="Wall/Beige" index="12"]
+
+position = Vector2( 132, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_14" type="Sprite" parent="Wall/Beige" index="13"]
+
+position = Vector2( 132, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_15" type="Sprite" parent="Wall/Beige" index="14"]
+
+position = Vector2( 132, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_16" type="Sprite" parent="Wall/Beige" index="15"]
+
+position = Vector2( 164, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_17" type="Sprite" parent="Wall/Beige" index="16"]
+
+position = Vector2( 164, 158 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1088, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_18" type="Sprite" parent="Wall/Beige" index="17"]
+
+position = Vector2( 164, 190 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1120, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_19" type="Sprite" parent="Wall/Beige" index="18"]
+
+position = Vector2( 196, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_20" type="Sprite" parent="Wall/Beige" index="19"]
+
+position = Vector2( 228, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_beige_21" type="Sprite" parent="Wall/Beige" index="20"]
+
+position = Vector2( 260, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Brick" type="Node2D" parent="Wall" index="2"]
+
+editor/display_folded = true
+
+[node name="wall_brick_1" type="Sprite" parent="Wall/Brick" index="0"]
+
+position = Vector2( 4, 254 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_2" type="Sprite" parent="Wall/Brick" index="1"]
+
+position = Vector2( 4, 286 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1184, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_3" type="Sprite" parent="Wall/Brick" index="2"]
+
+position = Vector2( 4, 318 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1216, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_4" type="Sprite" parent="Wall/Brick" index="3"]
+
+position = Vector2( 36, 254 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_5" type="Sprite" parent="Wall/Brick" index="4"]
+
+position = Vector2( 68, 254 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_6" type="Sprite" parent="Wall/Brick" index="5"]
+
+position = Vector2( 100, 254 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_7" type="Sprite" parent="Wall/Brick" index="6"]
+
+position = Vector2( 36, 286 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1184, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_8" type="Sprite" parent="Wall/Brick" index="7"]
+
+position = Vector2( 68, 286 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1184, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_9" type="Sprite" parent="Wall/Brick" index="8"]
+
+position = Vector2( 100, 286 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1184, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_10" type="Sprite" parent="Wall/Brick" index="9"]
+
+position = Vector2( 36, 318 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 1216, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_11" type="Sprite" parent="Wall/Brick" index="10"]
+
+position = Vector2( 68, 318 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 1216, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_12" type="Sprite" parent="Wall/Brick" index="11"]
+
+position = Vector2( 100, 318 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 1216, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_13" type="Sprite" parent="Wall/Brick" index="12"]
+
+position = Vector2( 132, 254 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_14" type="Sprite" parent="Wall/Brick" index="13"]
+
+position = Vector2( 132, 286 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1184, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_15" type="Sprite" parent="Wall/Brick" index="14"]
+
+position = Vector2( 132, 318 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 160, 1216, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_16" type="Sprite" parent="Wall/Brick" index="15"]
+
+position = Vector2( 164, 255 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_17" type="Sprite" parent="Wall/Brick" index="16"]
+
+position = Vector2( 196, 255 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_18" type="Sprite" parent="Wall/Brick" index="17"]
+
+position = Vector2( 228, 255 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 1152, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_19" type="Sprite" parent="Wall/Brick" index="18"]
+
+position = Vector2( 4, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_20" type="Sprite" parent="Wall/Brick" index="19"]
+
+position = Vector2( 4, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="wall_brick_21" type="Sprite" parent="Wall/Brick" index="20"]
+
+position = Vector2( 4, 126 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1056, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+
