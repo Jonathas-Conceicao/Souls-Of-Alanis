@@ -7,11 +7,11 @@
 [ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud2.png" type="Texture" id=5]
 [ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud3.png" type="Texture" id=6]
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=7]
-[ext_resource path="res://art/project-art/png/HUD/lpc-hanging-signs.png" type="Texture" id=8]
+[ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=8]
 [ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=9]
 [ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=10]
 [ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=11]
-[ext_resource path="res://art/project-art/png/HUD/signpost.png" type="Texture" id=12]
+[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=12]
 [ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -19,21 +19,21 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 82, 10 )
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=3]
 
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 2 )
+font_data = SubResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="VillageHope" type="Node2D" index="0"]
@@ -322,7 +322,7 @@ texture = ExtResource( 12 )
 
 position = Vector2( 1354.5, 267.25 )
 scale = Vector2( 0.17941, 1.13462 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="InteractionSign" type="Sprite" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="2"]
 
@@ -368,7 +368,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "village Hope"
 align = 1
 uppercase = true
