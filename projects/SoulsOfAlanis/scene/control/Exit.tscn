@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://script/control/Exit.gd" type="Script" id=1]
+[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Exit" type="Area2D" index="0"]
+[node name="Exit" type="Area2D"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -25,5 +27,18 @@ ExitIndex = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+
+[node name="InteractionSign" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 16.7512, -26.4776 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Exit_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_Exit_body_exited"]
 
 
