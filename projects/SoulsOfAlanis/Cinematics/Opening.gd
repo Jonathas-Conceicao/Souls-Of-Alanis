@@ -13,4 +13,12 @@ var texts = [ "The Tutor has just told her a tale, one about a mighty warrior wh
 func _ready():
 	self.init(self.s, self.introText, self.texts)
 	._ready()
+	self.start("Intro")
+	return
+
+func enabeled(b):
+	$Background.visible = b
+	$Alanis.visible = b
+	$FirePlace.visible = b
+	$TextBox.enabeled(b)
 	return
