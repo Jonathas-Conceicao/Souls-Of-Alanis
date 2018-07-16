@@ -16,7 +16,7 @@ func call_interaction(host, array):
 	var sig
 	for obj in array:
 		if obj.has_method("_on_player_interaction"):
-			sig = obj._on_player_interaction(self)
+			sig = obj._on_player_interaction(host)
 			if sig:
 				self.readyToLeave += 1
 				obj.connect(sig, self, "_on_obj_finished_interaction")
