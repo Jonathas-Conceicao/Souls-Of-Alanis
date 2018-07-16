@@ -13,13 +13,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="fquest_1" type="Node"]
+[node name="fquest_1" type="Node2D"]
 
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 700 ],
-"_edit_vertical_guides_": [ 900 ]
-}
 NumExit = 1
 
 [node name="background" type="Sprite" parent="." index="0"]
@@ -101,10 +97,10 @@ max_lines_visible = -1
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 1112.23, 592.2 )
+position = Vector2( 1113.9, 625.604 )
 
 [node name="EntryPoint" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 45.959, 554.79 )
+position = Vector2( 27.587, 581.513 )
 
 

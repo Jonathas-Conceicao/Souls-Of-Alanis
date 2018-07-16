@@ -7,7 +7,7 @@ func _ready():
 	return
 
 func getNumExit():
-	return 0
+	return 1
 
 func getSceneType():
 	return RoomType.ordinary

@@ -85,14 +85,15 @@ bus = "Master"
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 155.586, 994.235 )
+position = Vector2( 181.495, 1021.99 )
 
 [node name="Exit2" parent="." index="4" instance=ExtResource( 4 )]
 
+position = Vector2( 1213.14, 800.159 )
 ExitIndex = 1
 
 [node name="EntryPoint" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 34.0693, 529.561 )
+position = Vector2( 37.4097, 557.954 )
 
 

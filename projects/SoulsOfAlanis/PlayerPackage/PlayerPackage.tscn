@@ -44,8 +44,8 @@ transform = Transform2D( 1.2, 0, 0, 1.2, 0, 0 )
 
 script = ExtResource( 4 )
 
-[connection signal="DataUpdated" from="." to="DIE" method="die"]
-
 [connection signal="DataUpdated" from="." to="HUD" method="_on_Target_DataUpdated"]
+
+[connection signal="DataUpdated" from="." to="DIE" method="die"]
 
 

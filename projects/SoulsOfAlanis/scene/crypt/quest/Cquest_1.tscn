@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/crypt/quest/Cquest_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=3]
 [ext_resource path="res://art/project-art/crypt/tileset/parallaxBG-interior1.png" type="Texture" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 
-[node name="Cquest_1" type="Node2D" index="0"]
+[node name="Cquest_1" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -38,6 +39,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="GroundAndWalls" type="TileMap" parent="." index="1"]
 
+editor/display_folded = true
 scale = Vector2( 3, 3 )
 mode = 0
 tile_set = ExtResource( 2 )
@@ -55,7 +57,7 @@ collision_layer = 1
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 655360, 5, 0, 655361, 5, 0, 655362, 5, 0, 655363, 5, 0, 655364, 5, 0, 655365, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 655370, 5, 0, 720896, 5, 0, 720897, 5, 0, 720898, 5, 0, 720899, 5, 0, 720900, 5, 0, 720901, 5, 0, 720902, 5, 0, 720903, 5, 0, 720904, 5, 0, 720905, 5, 0, 720906, 5, 0, 786432, 5, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 5, 0, 786438, 5, 0, 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 851972, 5, 0, 851973, 5, 0, 851974, 5, 0, 851975, 5, 0, 851976, 5, 0, 851977, 5, 0, 851978, 5, 0, 917504, 5, 0, 917505, 5, 0, 917506, 5, 0, 917507, 5, 0, 917508, 5, 0, 917509, 5, 0, 917510, 5, 0, 917511, 5, 0, 917512, 5, 0, 917513, 5, 0, 917514, 5, 0 )
+tile_data = PoolIntArray( 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 655360, 5, 0, 655361, 5, 0, 655362, 5, 0, 655363, 5, 0, 655364, 5, 0, 655365, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 655370, 5, 0, 655376, 5, 0, 720896, 5, 0, 720897, 5, 0, 720898, 5, 0, 720899, 5, 0, 720900, 5, 0, 720901, 5, 0, 720902, 5, 0, 720903, 5, 0, 720904, 5, 0, 720905, 5, 0, 720906, 5, 0, 720912, 5, 0, 786432, 5, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 5, 0, 786438, 5, 0, 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 786444, 2, 0, 786445, 2, 0, 786446, 2, 0, 786447, 2, 0, 786448, 5, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 851972, 5, 0, 851973, 5, 0, 851974, 5, 0, 851975, 5, 0, 851976, 5, 0, 851977, 5, 0, 851978, 5, 0, 851979, 5, 0, 851980, 5, 0, 851981, 5, 0, 851982, 5, 0, 851983, 5, 0, 851984, 5, 0, 917504, 5, 0, 917505, 5, 0, 917506, 5, 0, 917507, 5, 0, 917508, 5, 0, 917509, 5, 0, 917510, 5, 0, 917511, 5, 0, 917512, 5, 0, 917513, 5, 0, 917514, 5, 0, 917515, 5, 0, 917516, 5, 0, 917517, 5, 0, 917518, 5, 0, 917519, 5, 0, 917520, 5, 0 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Details" type="TileMap" parent="GroundAndWalls" index="0"]
@@ -120,6 +122,7 @@ tile_data = PoolIntArray(  )
 
 [node name="GhostBill" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 510.738, 381.452 )
 
 [node name="Background" type="Sprite" parent="." index="3"]
@@ -134,6 +137,11 @@ _sections_unfolded = [ "Region", "Transform" ]
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 42.5312, 359.707 )
+
+[node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 678.731, 520.839 )
+scale = Vector2( 3, 3 )
 
 
 [editable path="GhostBill"]

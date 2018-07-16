@@ -76,11 +76,11 @@ texture = ExtResource( 4 )
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 55.8804, 475.562 )
+position = Vector2( 43.2928, 525.913 )
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 1749.11, 524.939 )
+position = Vector2( 1680.95, 566.201 )
 
 [node name="SpawnArea2D" type="Container" parent="." index="4"]
 
@@ -127,7 +127,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_editor_icon": ExtResource( 8 )
 }
-MobList = [ "res://Gnome/Gnome.tscn" ]
+MobList = [ "res://Goblic/Goblic.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false

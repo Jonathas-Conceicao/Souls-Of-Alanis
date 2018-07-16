@@ -10,13 +10,9 @@
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
 [ext_resource path="res://HUD/ChallengeDisplay.tscn" type="PackedScene" id=9]
 
-[node name="fchallenge_2" type="Node"]
+[node name="fchallenge_2" type="Node2D"]
 
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 700 ],
-"_edit_vertical_guides_": [ 900, 1800 ]
-}
 NumExit = 1
 
 [node name="middle_background" type="Sprite" parent="." index="0"]
@@ -54,6 +50,7 @@ __meta__ = {
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -61,18 +58,15 @@ bus = "Master"
 [node name="fchest" parent="." index="3" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-
-[node name="Open_chest_area" parent="fchest" index="0"]
-
-position = Vector2( 1068.1, 344.874 )
+position = Vector2( 602.513, 344.581 )
 
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 33.3535, 487.513 )
+position = Vector2( 24.3095, 388.029 )
 
 [node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 1061.06, 493.04 )
+position = Vector2( 1063.72, 341.902 )
 
 [node name="SpawnArea2D" type="Container" parent="." index="6"]
 

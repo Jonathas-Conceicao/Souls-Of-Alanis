@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://script/control/root.gd" type="Script" id=1]
 [ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=2]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/map/Map.gd" type="Script" id=4]
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cinematics/Opening.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 script = ExtResource( 1 )
 debug_mode = true
@@ -32,6 +33,10 @@ P_CriptRooms = null
 
 [node name="CameraLimit" parent="." index="3" instance=ExtResource( 5 )]
 
+[node name="Opening" parent="." index="4" instance=ExtResource( 6 )]
+
 [connection signal="tree_exiting" from="." to="." method="_on_root_tree_exiting"]
+
+[connection signal="finished_cinematic" from="Opening" to="." method="_on_Opening_finished_cinematic"]
 
 

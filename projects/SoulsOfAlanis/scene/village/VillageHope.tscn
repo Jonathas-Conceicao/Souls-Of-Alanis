@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=16]
 [ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=17]
 [ext_resource path="res://scene/NPC/OldThief/OldThief.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -31,6 +33,7 @@ extents = Vector2( 82, 10 )
 
 [sub_resource type="DynamicFontData" id=3]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=4]
@@ -53,6 +56,7 @@ extents = Vector2( 58, 10 )
 
 [sub_resource type="DynamicFontData" id=7]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=8]
@@ -74,12 +78,11 @@ position = Vector2( -2, -2 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
-"_edit_vertical_guides_": [  ]
+"_edit_vertical_guides_": [ 2878.42 ]
 }
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-editor/display_folded = true
 modulate = Color( 0.816406, 0.714355, 0.714355, 1 )
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
@@ -107,6 +110,7 @@ __meta__ = {
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap" index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -265,7 +269,6 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="TileMap5" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4" index="0"]
 
-editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -314,7 +317,6 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="InteractAreaDoor2" type="Area2D" parent="TileMap/TileMap2/TileMap3/TileMap4" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1391.5, 238 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -427,6 +429,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 stream = ExtResource( 15 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0
 attenuation = 1.0
@@ -521,6 +524,14 @@ shape = SubResource( 9 )
 
 position = Vector2( 94, 2.84024 )
 scale = Vector2( 1, 0.378698 )
+
+[node name="Exit" parent="." index="6" instance=ExtResource( 19 )]
+
+position = Vector2( 2786.54, 513.901 )
+
+[node name="EntryPoint" parent="." index="7" instance=ExtResource( 20 )]
+
+position = Vector2( 32.4402, 417.192 )
 
 [connection signal="body_entered" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_entered"]
 

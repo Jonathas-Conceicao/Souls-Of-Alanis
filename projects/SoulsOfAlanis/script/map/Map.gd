@@ -125,12 +125,18 @@ func start(id_tree = 0):
 # add a given room to the head to the main tree
 # i_room - the info room of the new head
 # PUBLIC <- be carefull
-func add_to_head(i_room):
+func add_to_head(i_room, id_tree = 1):
 	if !i_room:
 		debug.printMsg(" Cannot add a invalid room", debug.msg_type.err, self.debug_mode)
 		exit(9)
 
-	self.current_node = self.CastleTree
+	match id_tree:
+		1:
+			self.current_node = self.ForestTree
+		3:
+			self.current_node = self.CriptTree
+		_:
+			self.current_node = self.CastleTree
 	var node = TreeMap.new(null, i_room, null, -1, 1, false)
 
 	self.current_node.parent = node

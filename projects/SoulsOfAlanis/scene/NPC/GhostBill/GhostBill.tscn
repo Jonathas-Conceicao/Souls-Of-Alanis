@@ -90,6 +90,8 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_exited" from="InteractAreaBill" to="InteractAreaBill" method="_on_InteractArea_body_exited"]
 
+[connection signal="finished_dialog" from="InteractAreaBill/TextBox" to="InteractAreaBill" method="_on_TextBox_finished_dialog"]
+
 [connection signal="animation_finished" from="InteractAreaBill/AnimatedSprite" to="InteractAreaBill" method="_on_AnimatedSprite_animation_finished"]
 
 

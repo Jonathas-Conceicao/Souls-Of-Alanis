@@ -59,6 +59,8 @@ _sections_unfolded = [ "Region", "Visibility" ]
 
 [node name="TextBox" parent="InteractAreaThief" index="2" instance=ExtResource( 3 )]
 
+Position = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractAreaThief" index="3"]
 
 position = Vector2( -7.76317, 5.28913 )
@@ -77,6 +79,8 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="body_entered" from="InteractAreaThief" to="InteractAreaThief" method="_on_InteractArea_body_entered"]
 
 [connection signal="body_exited" from="InteractAreaThief" to="InteractAreaThief" method="_on_InteractArea_body_exited"]
+
+[connection signal="finished_dialog" from="InteractAreaThief/TextBox" to="InteractAreaThief" method="_on_TextBox_finished_dialog"]
 
 [connection signal="animation_finished" from="InteractAreaThief/AnimatedSprite" to="InteractAreaThief" method="_on_AnimatedSprite_animation_finished"]
 

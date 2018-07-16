@@ -13,12 +13,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 58.8331, 10 )
 
-[node name="fspoils_2" type="Node"]
+[node name="fspoils_2" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 700 ],
-"_edit_vertical_guides_": [ 900, 1800 ]
+"_edit_vertical_guides_": [ 1125.64 ]
 }
 NumExit = 1
 
@@ -57,14 +56,7 @@ __meta__ = {
 [node name="fchest" parent="." index="2" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-
-[node name="Open_chest_area" parent="fchest" index="0"]
-
-position = Vector2( 1090.6, 372.224 )
-
-[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
-
-pitch_scale = 1.0
+position = Vector2( 392.737, 418.481 )
 
 [node name="Area_exited" type="Area2D" parent="." index="3"]
 
@@ -115,11 +107,11 @@ bus = "Master"
 
 [node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 584.07, 360.009 )
+position = Vector2( 1042.18, 384.129 )
 
 [node name="EntryPoint" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 41.8826, 447.609 )
+position = Vector2( 35.731, 459.912 )
 
 
 [editable path="fchest"]

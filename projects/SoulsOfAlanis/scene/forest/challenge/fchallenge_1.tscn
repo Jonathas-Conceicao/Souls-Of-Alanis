@@ -11,6 +11,7 @@
 
 [sub_resource type="DynamicFontData" id=1]
 
+hinting = 2
 font_path = "res://art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=2]
@@ -26,12 +27,12 @@ _sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 1101.64, 679.909 )
 
-[node name="fchallenge_1" type="Node2D"]
+[node name="fchallenge_1" type="Node2D" index="0"]
 
 position = Vector2( 7.78149, 770.355 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 700, 1400, 2100, 2800, 3500 ],
+"_edit_horizontal_guides_": [ 700, 1400, 2100, 2800, 3500, 3243.15 ],
 "_edit_vertical_guides_": [ 900, 1800, 2700 ]
 }
 NumExit = 2
@@ -93,6 +94,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -117,15 +119,11 @@ __meta__ = {
 
 [node name="fchest" parent="Area2D" index="1" instance=ExtResource( 5 )]
 
-[node name="Open_chest_area" parent="Area2D/fchest" index="0"]
-
-editor/display_folded = true
-position = Vector2( 2042.4, 1607.52 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -136,11 +134,11 @@ position = Vector2( 147.945, 44.1193 )
 
 [node name="Exit" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 74.3604, 2310.89 )
+position = Vector2( 84.6881, 2336.7 )
 
 [node name="Exit2" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 1916.21, 1990.57 )
+position = Vector2( 1969.88, 1613.04 )
 
 [node name="ChallengeDisplay" parent="." index="8" instance=ExtResource( 8 )]
 

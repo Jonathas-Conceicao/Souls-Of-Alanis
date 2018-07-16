@@ -11,7 +11,7 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=10]
 
-[node name="Ord1" type="Node2D" index="0"]
+[node name="Ord1" type="Node2D"]
 
 position = Vector2( 463.055, 16.9836 )
 script = ExtResource( 1 )

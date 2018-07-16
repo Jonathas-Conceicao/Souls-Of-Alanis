@@ -14,7 +14,7 @@ func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(4.5, 2.8)
+	return Vector2(4.7, 2.7)
 	
 func _ready():
 	$ChallengeDisplay.set_text("Don't Jump")

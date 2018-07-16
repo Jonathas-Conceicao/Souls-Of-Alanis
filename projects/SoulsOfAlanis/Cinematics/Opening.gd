@@ -10,6 +10,11 @@ var texts = [ "The Tutor has just told her a tale, one about a mighty warrior wh
 				"That way only a brave knight of pure heart could retrieve the wishing orb.",
 				"Now, Alanis is about to fall asleep, I wonder what would she dream of."]
 
+func _input(event):
+	if event.is_action_pressed("player_debug"):
+		emit_signal("finished_cinematic", self)
+	return
+
 func _ready():
 	self.init(self.s, self.introText, self.texts)
 	._ready()

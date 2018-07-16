@@ -12,7 +12,7 @@
 [ext_resource path="res://Cinematics/art/Intro_FireArea_4.png" type="Texture" id=10]
 [ext_resource path="res://Cinematics/art/Intro_FireArea_5.png" type="Texture" id=11]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
@@ -21,7 +21,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
@@ -30,7 +30,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Opening" index="0" instance=ExtResource( 1 )]
+[node name="Opening" instance=ExtResource( 1 )]
 
 anims/Intro = ExtResource( 2 )
 script = ExtResource( 3 )
@@ -43,14 +43,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Alanis" type="AnimatedSprite" parent="." index="1"]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Idle"
 offset = Vector2( 450, 350 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="FirePlace" type="AnimatedSprite" parent="." index="2"]
 
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "Intro"
 offset = Vector2( 450, 350 )
 _sections_unfolded = [ "Transform" ]

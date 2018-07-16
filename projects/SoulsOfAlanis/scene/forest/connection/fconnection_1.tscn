@@ -8,13 +8,9 @@
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
 
-[node name="fconnection_1" type="Node"]
+[node name="fconnection_1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 700 ],
-"_edit_vertical_guides_": [ 900, 1800 ]
-}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -49,13 +45,12 @@ __meta__ = {
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 21.5, 461.5 )
-scale = Vector2( 2.17187, 4.76562 )
+position = Vector2( 19.8298, 486.553 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 1178.08, 446.797 )
-scale = Vector2( 2.17178, 12.8387 )
+position = Vector2( 1160.46, 519.805 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="SpawnArea2D" type="Container" parent="." index="4"]
@@ -64,10 +59,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 655.0
-margin_top = 198.0
-margin_right = 695.0
-margin_bottom = 238.0
+margin_left = 351.0
+margin_top = 147.0
+margin_right = 851.0
+margin_bottom = 362.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
