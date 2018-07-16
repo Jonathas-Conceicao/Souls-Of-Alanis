@@ -99,8 +99,8 @@ func walk(player = null, to = 0):
 		debug.printMsg(" Closed doors are not implemented yet", debug.msg_type.wrn, self.debug_mode)
 		debug.printMsg(" Should not be entering closed doors!", debug.msg_type.err, self.debug_mode)
 		return
-
-	emit_signal("moved", self.current_node.i_scene, player.Chests, player.StartedQuests, player.FinishedQuests)
+	
+	emit_signal("moved", self.current_node.i_scene, player.Chests, player.StartedQuests, player.FinishedQuests, self.current_node.parent == null, to == -1)
 	return
 
 # start the map on a given tree
@@ -119,8 +119,7 @@ func start(id_tree = 0):
 		_:
 			debug.printMsg(" Invalid tree start", debug.msg_type.err, self.debug_mode)
 			exit(10)
-
-	emit_signal("moved", self.current_node.i_scene, [], [], [])
+	emit_signal("moved", self.current_node.i_scene, [], [], [], self.current_node.parent == null)
 	return
 
 # add a given room to the head to the main tree

@@ -10,7 +10,7 @@ func _ready():
 
 # Changes the current rom
 # i_room - the info room to change to
-func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
+func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, blocked_entry = false, to_parent = 0):
 	#TODO: adjust room chest/special items and NPCs according with the list
 	# if there is any child, remove
 	match self.get_child_count():
@@ -25,6 +25,9 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
 	# creates new scene and change
 	var room_path = i_room.scene
 	var room = load(room_path).instance()
+	
+	if blocked_entry:
+		room.get_node("EntryPoint").blocked = true
 
 	self.add_child(room)
 	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
@@ -76,6 +79,10 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
 		debug.printMsg("Every room should have a listChests method!", debug.msg_type.err)
 	pass
 
-	var ep = room.find_node("EntryPoint")
+	var ep
+	if to_parent:
+		ep = room.find_node("Exit")
+	else:
+		ep = room.find_node("EntryPoint")
 	self.emit_signal("changed_scene", ep.position, i_room.size)
 	return
