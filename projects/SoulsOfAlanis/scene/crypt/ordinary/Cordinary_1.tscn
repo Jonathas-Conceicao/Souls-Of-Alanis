@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/crypt/ordinary/Cordinary_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://sound/The Crypt Loop.wav" type="AudioStream" id=3]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
 
-[node name="Cordinary_1" type="Node2D" index="0"]
+[node name="Cordinary_1" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -122,7 +124,6 @@ tile_data = PoolIntArray(  )
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -135,5 +136,55 @@ position = Vector2( 2692.14, 577.99 )
 
 position = Vector2( 89.4181, 448.742 )
 scale = Vector2( 3, 3 )
+
+[node name="SpawnArea2D" type="Container" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 165.0
+margin_top = 158.0
+margin_right = 205.0
+margin_bottom = 198.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_icon": ExtResource( 7 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+[node name="SpawnArea2D2" type="Container" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 561.0
+margin_top = 526.0
+margin_right = 601.0
+margin_bottom = 566.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_icon": ExtResource( 7 )
+}
+MobList = [ "res://Guardian/Guardian.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
 
 

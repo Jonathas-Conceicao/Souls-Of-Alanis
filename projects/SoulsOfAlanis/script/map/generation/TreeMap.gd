@@ -39,7 +39,7 @@ func _init(gen, i_sc, p, high = 0, n_exit = 1, create_child = true):
 				debug.printMsg("~~~~per min high (%s)" % self.high, debug.msg_type.dbg)
 				debug.printMsg("~~~~generating its child %s/%s on high %s\n" % [i+1, n_exit, high], debug.msg_type.dbg)
 				var i_new_scene = gen.pick(any, first, self.i_scene.room_type)
-					
+
 				self.children.append(get_script().new(gen, i_new_scene, self, self.high + 1, i_new_scene.n_exit))
 			else:
 				if (randi() % (self.high - MIN_HIGH) == 0): # 1/1, 1/2, 1/3, ...

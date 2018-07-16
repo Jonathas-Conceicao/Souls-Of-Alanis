@@ -19,7 +19,7 @@ func _ready():
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
 
 	#var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
-	$Map.add_to_head(i_Ord1)		
+	$Map.add_to_head(i_Ord1)
 	$Map.start()
 
 	return

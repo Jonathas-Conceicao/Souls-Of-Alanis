@@ -34,7 +34,10 @@ func _on_Open_chest_area_body_exited(body):
 func enabled(t = true):
 	if !t:
 		STATE_CHEST = "OPENED"
-		# TODO: MAKE THE CHEST SHOW AS OPENED!
+		$AnimatedSprite.play("opened")
+	else:
+		STATE_CHEST = "CLOSED"
+		$AnimatedSprite.play("closed")
 	return null# self
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f

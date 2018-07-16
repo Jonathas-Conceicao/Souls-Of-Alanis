@@ -66,7 +66,7 @@ func _ready():
 	## pass: Forest -> Castle
 	boss_node.children.append(self.CastleTree)
 	boss_node = gen.boss_parent.children.back()
-	
+
 	## CRIPT
 	gen = LvlGen.new(P_CriptRooms)
 	self.CriptTree = gen.createTree()
@@ -99,7 +99,7 @@ func walk(player = null, to = 0):
 		debug.printMsg(" Closed doors are not implemented yet", debug.msg_type.wrn, self.debug_mode)
 		debug.printMsg(" Should not be entering closed doors!", debug.msg_type.err, self.debug_mode)
 		return
-	
+
 	emit_signal("moved", self.current_node.i_scene, player.Chests, player.StartedQuests, player.FinishedQuests, self.current_node.parent == null, to == -1)
 	return
 

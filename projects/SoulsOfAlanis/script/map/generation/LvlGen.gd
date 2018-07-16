@@ -74,7 +74,7 @@ func _init(rooms_path = [], boss_room = null):
 
 	if !has_conn_room:
 		debug.printMsg(" It is probably necessary that the system have at least one connection room", debug.msg_type.wrn)
-	
+
 	if !boss_room:
 		debug.printMsg(" Boss room not defined, this is probably a mistake", debug.msg_type.err)
 		debug.printMsg("Using default", debug.msg_type.wrn)
@@ -82,7 +82,7 @@ func _init(rooms_path = [], boss_room = null):
 	else:
 		debug.printMsg(" Boss room instanciation not implemented yet", debug.msg_type.err)
 		#TODO self.boss_room = ...
-	
+
 	return
 
 # Randomly choosen a scene
@@ -139,7 +139,7 @@ func createTree(generate = true, path_room = null, size = null):
 		self.boss_parent.children.append(self.bossRoom())
 		self.has_boss = true
 	pass
-	
+
 	return head
 
 func bossRoom():

@@ -6,7 +6,7 @@
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
 
-[node name="Cspoils_1" type="Node2D" index="0"]
+[node name="Cspoils_1" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -76,10 +76,6 @@ editor/display_folded = true
 [node name="Open_chest_area" parent="fchest" index="0"]
 
 position = Vector2( 836.393, 444.94 )
-
-[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
-
-pitch_scale = 1.0
 
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
 

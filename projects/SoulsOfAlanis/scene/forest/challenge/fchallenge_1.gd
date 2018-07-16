@@ -15,3 +15,7 @@ func getSceneHalf():
 
 func getSize():
 	return Vector2(4.5, 2.8)
+	
+func _ready():
+	$ChallengeDisplay.set_text("Don't Jump")
+	$ChallengeDisplay/NPPainel/Container/Message.set_text("Don't Jump")

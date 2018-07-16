@@ -25,13 +25,13 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	# creates new scene and change
 	var room_path = i_room.scene
 	var room = load(room_path).instance()
-	
+
 	if blocked_entry:
 		room.get_node("EntryPoint").blocked = true
 
 	self.add_child(room)
 	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
-	
+
 	if room.has_method("listNPC"):
 		debug.printMsg("Scene %s has method listNPC" % i_room.scene, true)
 		for i in room.listNPC():

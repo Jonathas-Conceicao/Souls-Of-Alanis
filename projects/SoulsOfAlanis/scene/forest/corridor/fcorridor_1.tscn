@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/corridor/fcorridor_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
 
 [node name="fcorridor_1" type="Node2D" index="0"]
 
@@ -56,5 +58,55 @@ position = Vector2( 1155.55, 372.595 )
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 60.4993, 521.172 )
+
+[node name="SpawnArea2D2" type="Container" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 607.0
+margin_top = 287.0
+margin_right = 647.0
+margin_bottom = 327.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Goblin/Goblin.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+[node name="SpawnArea2D" type="Container" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 585.0
+margin_top = 96.9977
+margin_right = 625.0
+margin_bottom = 136.998
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
 
 

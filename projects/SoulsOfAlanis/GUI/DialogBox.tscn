@@ -9,6 +9,7 @@
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 enabled = false
+state = 0
 
 [node name="NPPainel" parent="." index="0"]
 
@@ -52,5 +53,14 @@ scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

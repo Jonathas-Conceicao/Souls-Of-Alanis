@@ -31,7 +31,6 @@ func _on_InteractArea_body_entered(body):
 	else:
 		$NoHasQuest.show()
 
-
 func _on_InteractArea_body_exited(body):
 	if body.get_name() == "Player":	
 		$HasQuest.hide()

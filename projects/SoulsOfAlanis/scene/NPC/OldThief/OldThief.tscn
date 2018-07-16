@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scene/NPC/OldThief/InteractAreaThief.gd" type="Script" id=1]
+[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=2]
+[ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-1.png" type="Texture" id=4]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-2.png" type="Texture" id=5]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-3.png" type="Texture" id=6]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-4.png" type="Texture" id=7]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-5.png" type="Texture" id=8]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-6.png" type="Texture" id=9]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-7.png" type="Texture" id=10]
+[ext_resource path="res://art/project-art/png/Characters/OldThief/oldman-idle/oldman-idle-8.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 7.0
+} ]
+
+[node name="GhostBill" type="Node2D"]
+
+[node name="InteractAreaThief" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="HasQuest" type="Sprite" parent="InteractAreaThief" index="0"]
+
+visible = false
+position = Vector2( 21, -52 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 226, 64.5, 31, 31.75 )
+_sections_unfolded = [ "Region" ]
+
+[node name="NoHasQuest" type="Sprite" parent="InteractAreaThief" index="1"]
+
+visible = false
+position = Vector2( 21, -52 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 226.25, 31.75, 32, 32 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="TextBox" parent="InteractAreaThief" index="2" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractAreaThief" index="3"]
+
+position = Vector2( -7.76317, 5.28913 )
+scale = Vector2( 4.03271, 4.83925 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="InteractAreaThief" index="4"]
+
+position = Vector2( 0, 4.2352 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 2
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="InteractAreaThief" to="InteractAreaThief" method="_on_InteractArea_body_entered"]
+
+[connection signal="body_exited" from="InteractAreaThief" to="InteractAreaThief" method="_on_InteractArea_body_exited"]
+
+[connection signal="animation_finished" from="InteractAreaThief/AnimatedSprite" to="InteractAreaThief" method="_on_AnimatedSprite_animation_finished"]
+
+

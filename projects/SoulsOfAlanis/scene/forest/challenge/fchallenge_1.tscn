@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scene/forest/challenge/fchallenge_1.gd" type="Script" id=1]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://scene/forest/challenge/Area2D.gd" type="Script" id=3]
-[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://scene/forest/challenge/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://HUD/ChallengeDisplay.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 
-hinting = 2
 font_path = "res://art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=2]
@@ -35,11 +36,17 @@ __meta__ = {
 }
 NumExit = 2
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 1812.84, 854.866 )
+scale = Vector2( 9.67213, 13.5202 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
 
 scale = Vector2( 3, 3 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -60,7 +67,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="." index="1"]
+[node name="Label" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -84,8 +91,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -93,7 +101,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -107,37 +115,34 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="fchest" parent="Area2D" index="1" instance=ExtResource( 4 )]
+[node name="fchest" parent="Area2D" index="1" instance=ExtResource( 5 )]
 
 [node name="Open_chest_area" parent="Area2D/fchest" index="0"]
 
 editor/display_folded = true
 position = Vector2( 2042.4, 1607.52 )
 
-[node name="Open_se" parent="Area2D/fchest/Open_chest_area" index="3"]
-
-pitch_scale = 1.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
+[node name="EntryPoint" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 147.945, 44.1193 )
 
-[node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Exit" parent="." index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 74.3604, 2310.89 )
 
-[node name="Exit2" parent="." index="6" instance=ExtResource( 6 )]
+[node name="Exit2" parent="." index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 1916.21, 1990.57 )
+
+[node name="ChallengeDisplay" parent="." index="8" instance=ExtResource( 8 )]
 
 
 [editable path="Area2D/fchest"]
