@@ -10,6 +10,11 @@ func _ready():
 	$TextBox.set_dialog(self.speacker, self.introText)
 	for text in self.texts:
 		$TextBox.add_dialog(text)
+	self.start("Intro")
+	return
+
+func start(s):
+	play(s)
 	$TextBox.enabeled(true)
 	return
 
