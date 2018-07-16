@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/crypt/connection/Cconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/parallaxBG-interior1.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
 
-[node name="Cconnection_1" type="Node2D" index="0"]
+[node name="Cconnection_1" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -134,5 +136,55 @@ position = Vector2( 1626.8, 577.104 )
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 62.8032, 516.945 )
+
+[node name="SpawnArea2D" type="Container" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 432.0
+margin_top = 585.0
+margin_right = 472.0
+margin_bottom = 625.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_icon": ExtResource( 7 )
+}
+MobList = [ "res://Guardian/Guardian.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+[node name="SpawnArea2D2" type="Container" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1021.0
+margin_top = 266.0
+margin_right = 1061.0
+margin_bottom = 306.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_icon": ExtResource( 7 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
 
 

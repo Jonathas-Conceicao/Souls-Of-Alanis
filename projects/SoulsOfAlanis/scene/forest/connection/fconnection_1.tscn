@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/forest/connection/fconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
 
 [node name="fconnection_1" type="Node"]
 
@@ -55,5 +57,30 @@ scale = Vector2( 2.17187, 4.76562 )
 position = Vector2( 1178.08, 446.797 )
 scale = Vector2( 2.17178, 12.8387 )
 _sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="SpawnArea2D" type="Container" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 655.0
+margin_top = 198.0
+margin_right = 695.0
+margin_bottom = 238.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_editor_icon": ExtResource( 7 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 3
+FlyEnabled = true
 
 

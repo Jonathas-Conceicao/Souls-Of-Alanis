@@ -19,7 +19,6 @@ NumExit = 1
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
@@ -56,10 +55,6 @@ editor/display_folded = true
 [node name="Open_chest_area" parent="fchest" index="0"]
 
 position = Vector2( 1073.93, 395.726 )
-
-[node name="Open_se" parent="fchest/Open_chest_area" index="3"]
-
-pitch_scale = 1.0
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 4 )]
 
