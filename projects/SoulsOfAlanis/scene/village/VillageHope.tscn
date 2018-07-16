@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -10,10 +10,14 @@
 [ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=8]
 [ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=9]
 [ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=10]
-[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=11]
-[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=12]
-[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=13]
-[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=14]
+[ext_resource path="res://scene/NPC/Andre/Andre.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=12]
+[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=13]
+[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=14]
+[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=15]
+[ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=16]
+[ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=17]
+[ext_resource path="res://scene/NPC/OldThief/OldThief.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -42,6 +46,28 @@ _sections_unfolded = [ "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 58, 10 )
+
+[sub_resource type="DynamicFontData" id=7]
+
+font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 10
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="VillageHope" type="Node2D" index="0"]
 
 position = Vector2( -2, -2 )
@@ -53,6 +79,7 @@ __meta__ = {
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+editor/display_folded = true
 modulate = Color( 0.816406, 0.714355, 0.714355, 1 )
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
@@ -238,6 +265,7 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="TileMap5" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4" index="0"]
 
+editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -257,7 +285,13 @@ format = 1
 tile_data = PoolIntArray( 38, 232, 0, 39, 244, 0, 65551, 149, 0, 65552, 150, 0, 65553, 150, 0, 65554, 150, 0, 65555, 152, 0, 65574, 233, 0, 65575, 245, 0, 65577, 18, 0, 131087, 161, 0, 131088, 154, 0, 131089, 155, 0, 131090, 155, 0, 131091, 155, 0, 131092, 156, 0, 131094, 18, 0, 131101, 18, 0, 131112, 1610612977, 0, 131113, 1610612977, 0, 131114, 1610612977, 0, 131115, 1610612977, 0, 196608, 277, 0, 196609, 277, 0, 196610, 277, 0, 196611, 277, 0, 196612, 278, 0, 196624, 258, 0, 262157, 256, 0, 262158, 256, 0, 262159, 256, 0, 262160, 258, 0, 262169, 165, 0, 327681, 20, 0, 327696, 261, 0, 327698, 165, 0, 327700, 141, 0, 327703, 19, 0, 327705, 166, 0, 327721, 214, 0, 327722, 215, 0, 327723, 216, 0, 393216, 319, 0, 393217, 23, 0, 393218, 320, 0, 393231, 26, 0, 393232, 158, 0, 393233, 158, 0, 393234, 166, 0, 393236, 145, 0, 393237, 255, 0, 393238, 256, 0, 393239, 256, 0, 393240, 256, 0, 393241, 256, 0, 393242, 256, 0, 393246, 214, 0, 393247, 215, 0, 393248, 216, 0, 393252, 324, 0, 393256, 175, 0, 458752, 322, 0, 458753, 322, 0, 458754, 323, 0, 458767, 153, 0, 458768, 159, 0, 458769, 163, 0, 458770, 159, 0, 458771, 164, 0, 458773, 258, 0, 458774, 265, 0, 458775, 259, 0, 458776, 259, 0, 458777, 259, 0, 458778, 259, 0, 458779, 296, 0, 458780, 308, 0, 458788, 325, 0, 458791, 177, 0, 458792, 178, 0, 524303, 30, 0, 524309, 258, 0, 524310, 259, 0, 524311, 259, 0, 524312, 259, 0, 524313, 266, 0, 524315, 297, 0, 524316, 309, 0, 524321, 220, 0, 524322, 222, 0, 524324, 325, 0, 524325, 318, 0, 524326, 319, 0, 524327, 320, 0, 524328, 222, 0, 589836, 314, 0, 589839, 30, 0, 589845, 261, 0, 589846, 262, 0, 589847, 262, 0, 589848, 262, 0, 589849, 262, 0, 589850, 262, 0, 589851, 312, 0, 589852, 314, 0, 589860, 327, 0, 589861, 321, 0, 589862, 322, 0, 589863, 323, 0, 589865, 5, 0, 589869, 15, 0, 655394, 18, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
-[node name="TileMap6" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="0"]
+[node name="Andre" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="0" instance=ExtResource( 11 )]
+
+position = Vector2( 1298.5, 475.5 )
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="TileMap6" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="1"]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -317,12 +351,12 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="EntranceSign" type="Sprite" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="0"]
 
 position = Vector2( 1354.5, 272.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="1"]
 
@@ -341,7 +375,6 @@ _sections_unfolded = [ "Region" ]
 
 [node name="LocalName" type="NinePatchRect" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -356,7 +389,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
@@ -382,7 +415,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
-text = "Hope's Village"
+text = "Hope village"
 align = 1
 uppercase = true
 percent_visible = 1.0
@@ -392,7 +425,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 autoplay = true
 max_distance = 2000.0
@@ -422,6 +455,73 @@ shape = SubResource( 5 )
 one_way_collision = true
 _sections_unfolded = [ "Transform" ]
 
+[node name="ComingSoonArea" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 1798, 617 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComingSoonArea" index="0"]
+
+position = Vector2( -7, 7 )
+shape = SubResource( 6 )
+
+[node name="Label" type="Label" parent="ComingSoonArea" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -11.0
+margin_top = -31.0
+margin_right = 133.0
+margin_bottom = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Coming soon!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ThiefAnimationLimit" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 2316, 54.5 )
+scale = Vector2( 1, 2.64062 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThiefAnimationLimit" index="0"]
+
+position = Vector2( -192, 2.84024 )
+scale = Vector2( 1.53846, 2.95676 )
+shape = SubResource( 9 )
+
+[node name="Thief" parent="ThiefAnimationLimit" index="1" instance=ExtResource( 18 )]
+
+position = Vector2( 94, 2.84024 )
+scale = Vector2( 1, 0.378698 )
+
 [connection signal="body_entered" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_entered"]
 
 [connection signal="body_exited" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_exited"]
@@ -433,5 +533,11 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="body_entered" from="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" to="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" method="_on_InteractionAreaSign_body_entered"]
 
 [connection signal="body_exited" from="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" to="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" method="_on_InteractionAreaSign_body_exited"]
+
+[connection signal="body_entered" from="ComingSoonArea" to="ComingSoonArea" method="_on_ComingSoonArea_body_entered"]
+
+[connection signal="body_exited" from="ComingSoonArea" to="ComingSoonArea" method="_on_ComingSoonArea_body_exited"]
+
+[connection signal="body_entered" from="ThiefAnimationLimit" to="ThiefAnimationLimit" method="_on_ThiefAnimationLimit_body_entered"]
 
 
