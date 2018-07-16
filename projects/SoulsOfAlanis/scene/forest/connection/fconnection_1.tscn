@@ -6,7 +6,7 @@
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 
-[node name="fconnection_1" type="Node" index="0"]
+[node name="fconnection_1" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -47,10 +47,13 @@ __meta__ = {
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 34.0811, 515.761 )
+position = Vector2( 21.5, 461.5 )
+scale = Vector2( 2.17187, 4.76562 )
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 1140.58, 520.305 )
+position = Vector2( 1178.08, 446.797 )
+scale = Vector2( 2.17178, 12.8387 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 

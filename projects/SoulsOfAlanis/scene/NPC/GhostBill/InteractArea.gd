@@ -23,3 +23,15 @@ func _on_TextBox_finished_dialog(obj):
 	$TextBox.enabeled(false)
 	emit_signal("finished_dialog", self)
 		
+
+func _on_InteractArea_body_entered(body):
+	if body.find_in_Backpack(0) == -1:
+		$HasQuest.show()
+	else:
+		$NoHasQuest.show()
+
+
+func _on_InteractArea_body_exited(body):
+	if body.get_name() == "Player":	
+		$HasQuest.hide()
+		$NoHasQuest.hide()
