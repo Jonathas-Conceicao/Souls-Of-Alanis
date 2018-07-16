@@ -13,7 +13,7 @@ func _on_player_interaction(host):
 	$AnimatedSprite.set_flip_h(true)
 	$AnimatedSprite.play()
 	$TextBox.enabeled(true)
-	host.add_to_StartedQuests(self)
+	host.add_to_StartedQuests(self.get_uniqueID())
 	return "finished_dialog"
 
 func _on_AnimatedSprite_animation_finished():
@@ -40,12 +40,3 @@ func _on_InteractArea_body_exited(body):
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
 func get_uniqueID():
 	return global_ids.unique_ids.npc_ghost_bill
-
-# FOR NPCS
-# enabled = false <=> already visited, no NPC on this scene anymore
-# enabled = true <=> no visited yet, show NPC on this scene
-func enabled(t = true):
-	if !t:
-		# TODO: disable the NPC, maybe make him invisible?
-		return
-	return

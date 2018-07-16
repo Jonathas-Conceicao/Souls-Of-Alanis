@@ -10,8 +10,7 @@ func _ready():
 func _on_player_interaction(host):
 	$AnimatedSprite.play()
 	$TextBox.enabeled(true)
-	host.add_to_Chests(self)
-	host.add_to_Chests(self)
+	host.add_to_Chests(self.get_uniqueID())
 	return "finished_dialog"
 
 func _on_AnimatedSprite_animation_finished():
@@ -23,14 +22,12 @@ func _on_TextBox_finished_dialog(obj):
 	emit_signal("finished_dialog", self)
 
 ##ADDED
-# FOR NPCS
-# enabled = false <=> already visited, no NPC on this scene anymore
-# enabled = true <=> no visited yet, show NPC on this scene
-#func enabled(t = true):
-#	if !t:
-#		remove_child(self)
-#		self.queue_free()
-#	return self
+func enabled(t = true):
+	if !t:
+		#TODO show a open chest
+		#remove after proper implementation
+		.enabled(t)
+	return
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
 func get_uniqueID():
