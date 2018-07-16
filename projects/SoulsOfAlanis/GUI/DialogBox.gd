@@ -1,11 +1,22 @@
 extends "res://GUI/TextBox.gd"
 
-var texts = []
+enum State {Idle, Working}
+
 export(bool) var enabled = true
+export(State) var state = 0
+
+var texts = []
+var lastTextSize = 0
+onready var Main = $NPPainel/Main
+onready var GButton = $NPPainel/GreenButton
+onready var RButton = $NPPainel/RedButton
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		self.next_text()
+		if state == Idle:
+			self.next_text()
+		else:
+			self.show_all()
 	return
 
 func _ready():
@@ -18,8 +29,10 @@ func update():
 	return
 
 func enabeled(b):
+	Main.set_visible_characters(0)
 	self.enabled = b
 	self.update()
+	self.update_state()
 	return
 
 func set_dialog(name, text):
@@ -45,11 +58,41 @@ func next_text():
 	next = texts.pop_front()
 	if next:
 		set_text(next)
+		Main.set_visible_characters(0)
+		self.update_state()
 	else:
 		emit_signal("finished_dialog", self)
 	return
 
 func set_text(text):
-	$NPPainel/Main.clear()
-	$NPPainel/Main.add_text(text)
+	Main.clear()
+	Main.add_text(text)
 	return
+
+func show_more():
+	var visible = Main.get_visible_characters()
+	Main.set_visible_characters(visible + 1)
+	return
+
+func show_all():
+	Main.set_visible_characters(-1)
+	return
+
+func update_state():
+	var visible = Main.get_visible_characters()
+	var length = Main.get_text().length()
+	if not self.enabled || visible == -1 || visible == length:
+		self.state = Idle
+		RButton.visible = false
+		GButton.visible = true
+		$Timer.stop()
+	else:
+		self.state = Working
+		self.show_more()
+		GButton.visible = false
+		RButton.visible = true
+		$Timer.start()
+	return
+
+func _on_Timer_timeout():
+	self.update_state()
