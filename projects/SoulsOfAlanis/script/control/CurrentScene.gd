@@ -41,9 +41,11 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests):
 				return null
 			pass
 
-			if listStartedQuests.find(i) != -1:
-				# DISABLE IT
-				i.enabled(false)
+			for j in listStartedQuests:
+				#if i.get_uniqueID() == j:
+				if listStartedQuests.find(i.get_uniqueID()) != -1:
+					# DISABLE IT
+					i.enabled(false)
 			pass
 		pass
 	else:
