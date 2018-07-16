@@ -26,9 +26,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, 0 )
 b = Vector2( 0, 10 )
 
-[node name="fchest" type="Node" index="0"]
-
-[node name="Open_chest_area" type="Area2D" parent="." index="0"]
+[node name="Open_chest_area" type="Area2D" index="0"]
 
 position = Vector2( 126.904, 79.9423 )
 input_pickable = true
@@ -43,7 +41,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Open_chest_area" index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
@@ -51,13 +49,13 @@ animation = "closed"
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Open_chest_area" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -6.77715, -8.75501 )
 scale = Vector2( 24.1121, 4.7763 )
 shape = SubResource( 2 )
 
-[node name="Label" type="Label" parent="Open_chest_area" index="2"]
+[node name="Label" type="Label" parent="." index="2"]
 
 visible = false
 anchor_left = 0.0
@@ -79,7 +77,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Open_se" type="AudioStreamPlayer" parent="Open_chest_area" index="3"]
+[node name="Open_se" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -88,8 +86,8 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="body_entered" from="Open_chest_area" to="Open_chest_area" method="_on_Open_chest_area_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Open_chest_area_body_entered"]
 
-[connection signal="body_exited" from="Open_chest_area" to="Open_chest_area" method="_on_Open_chest_area_body_exited"]
+[connection signal="body_exited" from="." to="." method="_on_Open_chest_area_body_exited"]
 
 

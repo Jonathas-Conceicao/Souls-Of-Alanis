@@ -2,22 +2,25 @@ extends Node2D
 
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
+var i_Ord1 = preload("res://script/map/InfoRoom.gd").new("res://scene/castle/ordinary/Ord1.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 4))
+
 export (bool) var debug_mode = true
+export (bool) var rand = false
 
 func _init():
-	#randomize() #UNCOMMENT TO RAND IT ALL
+	if rand:
+		randomize()
 	return
 
 func _ready():
-	randomize()
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
 
 	#var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
-	#$Map.add_to_head(start)
-	$Map.start(2)
+	$Map.add_to_head(i_Ord1)		
+	$Map.start()
 
 	return
 

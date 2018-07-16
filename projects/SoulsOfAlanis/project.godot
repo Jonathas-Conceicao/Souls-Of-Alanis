@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 debug="*res://script/control/debug/debug.gd"
+global_ids="*res://script/control/global_ids.gd"
 
 [display]
 

@@ -54,7 +54,6 @@ signal moved(idx) #Indicates player moved on map
 
 # PUBLIC
 func _ready():
-	randomize() #UNCOMMENT TO RAND MAP
 	var gen = null
 	## FOREST
 	gen = LvlGen.new(self.P_ForestRooms)
@@ -132,12 +131,11 @@ func add_to_head(i_room):
 		debug.printMsg(" Cannot add a invalid room", debug.msg_type.err, self.debug_mode)
 		exit(9)
 
+	self.current_node = self.CastleTree
 	var node = TreeMap.new(null, i_room, null, -1, 1, false)
-	var cur = self.current_tree
 
-	self.current_tree.parent = node
-	node.children.insert(0, cur)
-	self.current_tree = node
+	self.current_node.parent = node
+	node.children.insert(0, self.current_node)
 	self.current_node = node
 
 	return

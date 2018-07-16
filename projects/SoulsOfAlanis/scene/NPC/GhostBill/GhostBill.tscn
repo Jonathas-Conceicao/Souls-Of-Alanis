@@ -38,9 +38,7 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[node name="GhostBill" type="Node2D"]
-
-[node name="InteractArea" type="Area2D" parent="." index="0"]
+[node name="InteractArea" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -51,7 +49,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 
-[node name="HasQuest" type="Sprite" parent="InteractArea" index="0"]
+[node name="HasQuest" type="Sprite" parent="." index="0"]
 
 visible = false
 position = Vector2( 21, -52 )
@@ -60,7 +58,7 @@ region_enabled = true
 region_rect = Rect2( 226, 64.5, 31, 31.75 )
 _sections_unfolded = [ "Region" ]
 
-[node name="NoHasQuest" type="Sprite" parent="InteractArea" index="1"]
+[node name="NoHasQuest" type="Sprite" parent="." index="1"]
 
 visible = false
 position = Vector2( 21, -52 )
@@ -69,15 +67,15 @@ region_enabled = true
 region_rect = Rect2( 226.25, 31.75, 32, 32 )
 _sections_unfolded = [ "Region", "Visibility" ]
 
-[node name="TextBox" parent="InteractArea" index="2" instance=ExtResource( 3 )]
+[node name="TextBox" parent="." index="2" instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -7.76317, 5.28913 )
 scale = Vector2( 4.03271, 4.83925 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="InteractArea" index="4"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="4"]
 
 position = Vector2( 0, 4.2352 )
 scale = Vector2( 3, 3 )
@@ -86,12 +84,12 @@ animation = "idle"
 frame = 1
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="InteractArea" to="InteractArea" method="_on_InteractArea_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_InteractArea_body_entered"]
 
-[connection signal="body_exited" from="InteractArea" to="InteractArea" method="_on_InteractArea_body_exited"]
+[connection signal="body_exited" from="." to="." method="_on_InteractArea_body_exited"]
 
-[connection signal="finished_dialog" from="InteractArea/TextBox" to="InteractArea" method="_on_TextBox_finished_dialog"]
+[connection signal="finished_dialog" from="TextBox" to="." method="_on_TextBox_finished_dialog"]
 
-[connection signal="animation_finished" from="InteractArea/AnimatedSprite" to="InteractArea" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 
 

@@ -10,6 +10,7 @@
 
 script = ExtResource( 1 )
 debug_mode = true
+rand = false
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
