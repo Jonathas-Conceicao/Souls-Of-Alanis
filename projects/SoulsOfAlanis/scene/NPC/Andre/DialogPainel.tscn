@@ -3,7 +3,7 @@
 [ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=1]
 [ext_resource path="res://art/project-art/fonts/joystix/tt/joystix monospace.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=11]
 
 script/source = "extends \"res://GUI/TextBox.gd\"
 
@@ -42,7 +42,7 @@ func set_text(text):
 	$DialogPainel/Text.add_text(text)
 	return"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 20
 use_mipmaps = false
@@ -50,45 +50,45 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=2]
 
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 3 )
+font_data = SubResource( 2 )
 _sections_unfolded = [ "Font" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 
 size = 0
 use_mipmaps = false
 use_filter = false
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id=5]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=6]
 
 font_path = "res://art/fonts/joystix/ot/joystix monospace.otf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 7 )
+font_data = SubResource( 6 )
 
-[sub_resource type="Theme" id=9]
+[sub_resource type="Theme" id=8]
 
-default_font = SubResource( 8 )
+default_font = SubResource( 7 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -223,8 +223,8 @@ ItemList/constants/hseparation = 4
 ItemList/constants/icon_margin = 4
 ItemList/constants/line_separation = 2
 ItemList/constants/vseparation = 2
-ItemList/fonts/font = SubResource( 5 )
-ItemList/styles/bg = SubResource( 6 )
+ItemList/fonts/font = SubResource( 4 )
+ItemList/styles/bg = SubResource( 5 )
 ItemList/styles/bg_focus = null
 ItemList/styles/cursor = null
 ItemList/styles/cursor_unfocused = null
@@ -479,16 +479,16 @@ WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = null
 _sections_unfolded = [ "ItemList", "ItemList/colors", "ItemList/fonts", "ItemList/styles", "WindowDialog/colors" ]
 
-[sub_resource type="DynamicFontData" id=10]
+[sub_resource type="DynamicFontData" id=9]
 
 font_path = "res://art/fonts/joystix/ot/joystix monospace.otf"
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 10 )
+font_data = SubResource( 9 )
 _sections_unfolded = [ "Font" ]
 
 [node name="TextBox" type="CanvasLayer"]
@@ -498,7 +498,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = SubResource( 1 )
+script = SubResource( 11 )
 Position = 0
 HIGHT = 180
 NUMBER_CHAR = 305
@@ -543,7 +543,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Andre:"
 autowrap = true
 uppercase = true
@@ -568,7 +568,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -602,8 +602,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 9 )
-custom_fonts/font = SubResource( 11 )
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 items = [ "Yes", null, false, "          No", null, false ]
 select_mode = 0
 allow_reselect = false
