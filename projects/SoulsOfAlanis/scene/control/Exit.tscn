@@ -10,7 +10,6 @@ extents = Vector2( 10, 10 )
 
 [node name="Exit" type="Area2D"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -23,6 +22,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 ExitIndex = 0
+Blocked = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
