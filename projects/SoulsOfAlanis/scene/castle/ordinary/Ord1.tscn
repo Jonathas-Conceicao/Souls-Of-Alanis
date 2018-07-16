@@ -2,24 +2,20 @@
 
 [ext_resource path="res://scene/castle/ordinary/Ord1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=3]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=4]
-[ext_resource path="res://scene/castle/ordinary/RandomItemDrop.gd" type="Script" id=5]
+[ext_resource path="res://art/project-art/tileset/castle_1.1.tres" type="TileSet" id=3]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=4]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=5]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 44.1838, 42.4335 )
-
-[node name="Ord1" type="Node2D"]
+[node name="Ord1" type="Node2D" index="0"]
 
 position = Vector2( 463.055, 16.9836 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ 700.0, 1400.0 ],
 "_edit_vertical_guides_": [ 900.0, 1800.0, 2700.0, 3600.0 ]
@@ -149,6 +145,26 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -32, 4, 0, -20, 4, 0, -8, 4, 0, -65532, 4, 0, -65520, 4, 0, -65508, 4, 0, -65496, 4, 0, -65484, 4, 0, -65472, 4, 0, -65460, 4, 0, -65448, 4, 0, -65436, 4, 0, -65424, 4, 0, -65412, 4, 0, -65400, 4, 0, -65388, 4, 0, -65376, 4, 0, -65364, 4, 0, -65352, 4, 0, 262112, 34, 0, 196803, 34, 0, 524256, 34, 0, 786627, 34, 0, 917472, 34, 0, 1179616, 34, 0, 1376451, 34, 0, 1703904, 34, 0, 1638448, 46, 0, 1638595, 34, 0, 3997664, 34, 0, 3932353, 34, 0, 4325344, 34, 0, 4522177, 34, 0, 4653024, 34, 0, 4653249, 34, 0, 4784096, 34, 0, 4849632, 34, 0 )
 
+[node name="TileMap" type="TileMap" parent="Walls16_background" index="5"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 458755, 45, 0, 458765, 536870957, 0, 458779, 45, 0, 458789, 536870957, 0, 458803, 45, 0, 458813, 536870957, 0, 458827, 45, 0, 458837, 536870957, 0, 458851, 45, 0, 458861, 536870957, 0, 458899, 45, 0, 458909, 536870957, 0, 589827, -1610612690, 0, 589837, -1610612690, 0, 589851, -1610612690, 0, 589861, -1610612690, 0, 589875, -1610612690, 0, 589885, -1610612690, 0, 589899, -1610612690, 0, 589909, -1610612690, 0, 589923, -1610612690, 0, 589933, -1610612690, 0, 589971, -1610612690, 0, 589981, -1610612690, 0, 851971, -1610612690, 0, 851995, -1610612690, 0, 852019, -1610612690, 0, 852043, -1610612690, 0, 852067, -1610612690, 0, 852115, -1610612690, 0, 983043, -1610612690, 0, 983067, -1610612690, 0, 983091, -1610612690, 0, 983115, -1610612690, 0, 983139, -1610612690, 0, 983187, -1610612690, 0, 1114125, -1610612690, 0, 1114149, -1610612690, 0, 1114173, -1610612690, 0, 1114197, -1610612690, 0, 1114221, -1610612690, 0, 1114269, -1610612690, 0, 1245187, -1610612690, 0, 1245211, -1610612690, 0, 1245235, -1610612690, 0, 1245259, -1610612690, 0, 1245283, -1610612690, 0, 1245331, -1610612690, 0, 1376269, -1610612690, 0, 1376293, -1610612690, 0, 1376317, -1610612690, 0, 1376341, -1610612690, 0, 1376365, -1610612690, 0, 1376413, -1610612690, 0, 1769475, 45, 0, 1769485, 536870957, 0, 1769499, 45, 0, 1769509, 536870957, 0, 1769523, 45, 0, 1769533, 536870957, 0, 1769547, 45, 0, 1769557, 536870957, 0, 1769571, 45, 0, 1769581, 536870957, 0, 1769619, 45, 0, 1769629, 536870957, 0 )
+
 [node name="Walls16_back-darker" type="TileMap" parent="." index="1"]
 
 editor/display_folded = true
@@ -236,7 +252,6 @@ tile_data = PoolIntArray( 4194314, 29, 0, 4259853, 536870941, 0, 4325529, 30, 0,
 
 [node name="Ground" type="TileMap" parent="." index="2"]
 
-editor/display_folded = true
 scale = Vector2( 2, 2 )
 mode = 0
 tile_set = ExtResource( 2 )
@@ -277,6 +292,26 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -341713019, 6, 0, 1179632, 32, 0, 1179633, 32, 0, 1179634, 32, 0, 1179635, 32, 0, 1179636, 32, 0, 1179637, 32, 0, 1179638, 32, 0, 1179639, 32, 0, 1179640, 32, 0, 1179641, 32, 0, 1179642, 32, 0, 1179643, 32, 0, 1179644, 32, 0, 1179645, 32, 0, 1179646, 32, 0, 1179647, 32, 0, 1114112, 32, 0, 1114113, 32, 0, 1114114, 32, 0, 1114115, 32, 0, 1114116, 32, 0, 1114117, 32, 0, 1114118, 32, 0, 1114119, 32, 0, 1114120, 32, 0, 1114121, 32, 0, 1114122, 32, 0, 1114123, 32, 0, 1114124, 32, 0, 1114125, 32, 0, 1114126, 32, 0, 1114127, 32, 0, 1114128, 32, 0, 1114129, 32, 0, 1114130, 32, 0, 1114131, 32, 0, 1114132, 32, 0, 1114133, 32, 0, 1114134, 32, 0, 1114135, 32, 0, 1114136, 32, 0, 1114137, 32, 0, 1114138, 32, 0, 1114139, 32, 0, 1114140, 32, 0, 1114141, 32, 0, 1114142, 32, 0, 1114143, 32, 0, 1114144, 32, 0, 1114145, 32, 0, 1114146, 32, 0, 1114147, 32, 0, 1114148, 32, 0, 1114149, 32, 0, 1114150, 32, 0, 1114151, 32, 0, 1114152, 32, 0, 1114153, 32, 0, 1114154, 32, 0, 1114155, 32, 0, 1114156, 32, 0, 1114157, 32, 0, 1114158, 32, 0, 1114159, 32, 0, 1114160, 32, 0, 1114161, 32, 0, 1114162, 32, 0, 1114163, 32, 0, 1114164, 32, 0, 1114165, 32, 0, 1114166, 32, 0, 1114167, 32, 0, 1114168, 32, 0, 1114185, 32, 0, 1114186, 32, 0, 1114187, 32, 0, 1114188, 32, 0, 1114189, 32, 0, 1114190, 32, 0, 1114191, 32, 0, 1114192, 32, 0, 1114193, 32, 0, 1114194, 32, 0, 1114195, 32, 0, 1114196, 32, 0, 1114197, 32, 0, 1114198, 32, 0, 1114199, 32, 0, 1114200, 32, 0, 1114201, 32, 0, 1114202, 32, 0, 1114203, 32, 0, 1114204, 32, 0, 1114205, 32, 0, 1114206, 32, 0, 1114207, 32, 0, 1114208, 32, 0, 1114209, 32, 0, 1245168, 32, 0, 1179704, 32, 0, 1179721, 32, 0, 1179745, 32, 0, 1310704, 32, 0, 1245240, 32, 0, 1245257, 32, 0, 1245281, 32, 0, 1376240, 32, 0, 1310776, 32, 0, 1310793, 32, 0, 1310817, 32, 0, 1441776, 32, 0, 1376312, 32, 0, 1376329, 32, 0, 1376353, 32, 0, 1507312, 32, 0, 1441848, 32, 0, 1441865, 32, 0, 1441889, 32, 0, 1572848, 32, 0, 1507384, 32, 0, 1507401, 32, 0, 1507425, 32, 0, 1638384, 32, 0, 1572920, 32, 0, 1572937, 32, 0, 1572961, 32, 0, 1703920, 32, 0, 1638456, 32, 0, 1638473, 32, 0, 1638497, 32, 0, 1769456, 32, 0, 1703992, 32, 0, 1704009, 32, 0, 1704033, 32, 0, 1834992, 32, 0, 1769528, 32, 0, 1769545, 32, 0, 1769569, 32, 0, 1900528, 32, 0, 1835064, 32, 0, 1835081, 32, 0, 1835105, 32, 0, 1966064, 32, 0, 1900600, 32, 0, 1900617, 32, 0, 1900641, 32, 0, 2031600, 32, 0, 1966177, 32, 0, 2097136, 32, 0, 2031713, 32, 0, 2162672, 32, 0, 2097249, 32, 0, 2228208, 32, 0, 2162785, 32, 0, 2293744, 32, 0, 2228321, 32, 0, 2359280, 32, 0, 2293762, 46, 0, 2293857, 32, 0, 2424816, 32, 0, 2359393, 32, 0, 2490352, 32, 0, 2424929, 32, 0, 2555888, 32, 0, 2490465, 32, 0, 2621424, 32, 0, 2556001, 32, 0, 2686960, 32, 0, 2686961, 32, 0, 2686962, 32, 0, 2686963, 32, 0, 2686964, 32, 0, 2686965, 32, 0, 2686966, 32, 0, 2686967, 32, 0, 2686968, 32, 0, 2686969, 32, 0, 2686970, 32, 0, 2686971, 32, 0, 2686972, 32, 0, 2686973, 32, 0, 2686974, 32, 0, 2686975, 32, 0, 2621440, 32, 0, 2621441, 32, 0, 2621442, 32, 0, 2621443, 32, 0, 2621444, 32, 0, 2621445, 32, 0, 2621446, 32, 0, 2621447, 32, 0, 2621448, 32, 0, 2621449, 32, 0, 2621450, 32, 0, 2621451, 32, 0, 2621452, 32, 0, 2621453, 32, 0, 2621454, 32, 0, 2621455, 32, 0, 2621456, 32, 0, 2621457, 32, 0, 2621458, 32, 0, 2621459, 32, 0, 2621460, 32, 0, 2621461, 32, 0, 2621462, 32, 0, 2621463, 32, 0, 2621464, 32, 0, 2621465, 32, 0, 2621466, 32, 0, 2621467, 32, 0, 2621468, 32, 0, 2621469, 32, 0, 2621470, 32, 0, 2621471, 32, 0, 2621472, 32, 0, 2621473, 32, 0, 2621474, 32, 0, 2621475, 32, 0, 2621476, 32, 0, 2621477, 32, 0, 2621478, 32, 0, 2621479, 32, 0, 2621480, 32, 0, 2621481, 32, 0, 2621482, 32, 0, 2621483, 32, 0, 2621484, 32, 0, 2621485, 32, 0, 2621486, 32, 0, 2621487, 32, 0, 2621488, 32, 0, 2621489, 32, 0, 2621490, 32, 0, 2621491, 32, 0, 2621492, 32, 0, 2621493, 32, 0, 2621494, 32, 0, 2621495, 32, 0, 2621496, 32, 0, 2621497, 32, 0, 2621498, 32, 0, 2621499, 32, 0, 2621500, 32, 0, 2621501, 32, 0, 2621502, 32, 0, 2621503, 32, 0, 2621504, 32, 0, 2621505, 32, 0, 2621506, 32, 0, 2621507, 32, 0, 2621508, 32, 0, 2621509, 32, 0, 2621510, 32, 0, 2621511, 32, 0, 2621512, 32, 0, 2621513, 32, 0, 2621514, 32, 0, 2621515, 32, 0, 2621516, 32, 0, 2621517, 32, 0, 2621518, 32, 0, 2621519, 32, 0, 2621520, 32, 0, 2621521, 32, 0, 2621522, 32, 0, 2621523, 32, 0, 2621524, 32, 0, 2621525, 32, 0, 2621526, 32, 0, 2621527, 32, 0, 2621528, 32, 0, 2621529, 32, 0, 2621530, 32, 0, 2621531, 32, 0, 2621532, 32, 0, 2621533, 32, 0, 2621534, 32, 0, 2621535, 32, 0, 2621536, 32, 0, 2621537, 32, 0, 2752496, 32, 0, 2687073, 32, 0, 2818032, 32, 0, 2752609, 32, 0, 2883568, 32, 0, 2818145, 32, 0, 2949104, 32, 0, 2883681, 32, 0, 3014640, 32, 0, 2949217, 32, 0 )
 
+[node name="TileMap" type="TileMap" parent="Ground" index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 786423, 48, 0, 2228366, 49, 0, 2752626, 48, 0, 3211406, 49, 0, 3866738, 49, 0, 3866742, 49, 0, 4325513, 48, 0, 4718710, 49, 0 )
+
 [node name="Pilar_background" type="TileMap" parent="." index="3"]
 
 modulate = Color( 0.398438, 0.35329, 0.275482, 1 )
@@ -305,19 +340,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2162.0
-margin_top = 951.0
-margin_right = 2262.0
-margin_bottom = 991.0
+margin_left = -283.0
+margin_top = 977.0
+margin_right = -183.0
+margin_bottom = 1017.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 4 )
+"_editor_icon": ExtResource( 5 )
 }
 MobList = [ "res://Faun/Faun.tscn" ]
 Mob = null
@@ -330,83 +365,47 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = -460.0
-margin_top = 1101.0
-margin_right = -96.0
-margin_bottom = 1204.0
+margin_left = 486.0
+margin_top = 917.0
+margin_right = 3056.0
+margin_bottom = 1197.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 4 )
+"_editor_icon": ExtResource( 5 )
 }
-MobList = [ "res://Bat/Bat.tscn" ]
+MobList = [ "res://Bat/Bat.tscn", "res://Goblin/Goblin.tscn[", "res://Guardian/Guardian.tscn" ]
 Mob = null
-TotMobCap = 3
+TotMobCap = 10
 FlyEnabled = true
 
-[node name="RandomItemDrop" type="Area2D" parent="." index="6"]
-
-editor/display_folded = true
-position = Vector2( 1897.95, 367.016 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 32
-collision_mask = 5
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomItemDrop" index="0"]
-
-position = Vector2( -0.000244141, -1.85062 )
-shape = SubResource( 1 )
-
-[node name="TileMap" type="TileMap" parent="RandomItemDrop" index="1"]
-
-mode = 0
-tile_set = null
-cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell" ]
-
-[node name="fchest" parent="." index="7" instance=ExtResource( 6 )]
+[node name="fchest" parent="." index="6" instance=ExtResource( 6 )]
 
 editor/display_folded = true
 position = Vector2( 1716.01, 494.342 )
 
-[node name="GhostBill" parent="." index="8" instance=ExtResource( 7 )]
+[node name="GhostBill" parent="." index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 3016.85, 481.937 )
 
-[node name="EntryPoint" parent="." index="9" instance=ExtResource( 8 )]
+[node name="EntryPoint" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 85.4175, 451.052 )
 
-[node name="Exit" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Exit" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 2796.75, 493.321 )
+
+[node name="Node2D" parent="." index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 3001.35, 1217.01 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
 
 
 [editable path="fchest"]

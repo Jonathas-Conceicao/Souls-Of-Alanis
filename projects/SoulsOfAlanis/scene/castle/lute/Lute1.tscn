@@ -2,18 +2,19 @@
 
 [ext_resource path="res://scene/castle/lute/Lute1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
-[ext_resource path="res://art/project-art/tileset/castle_1.1.tres" type="TileSet" id=3]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=6]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=7]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=8]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=9]
+[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/project-art/tileset/castle_1.1.tres" type="TileSet" id=4]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
+[ext_resource path="res://scene/utils/BookshelfSmall.tscn" type="PackedScene" id=9]
 
 [node name="Lute1" type="Node2D" index="0"]
 
 position = Vector2( -11.247, -5.96777 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ -0.135559, 700.85, 1402.18 ],
 "_edit_vertical_guides_": [ 899.36, 1800.62, 2683.85 ]
@@ -141,11 +142,16 @@ collision_layer = 16
 collision_mask = 3
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 1310849, 1, 0, 1310853, 1, 0, 4784132, 26, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Collision" ]
+
+[node name="Node2D" parent="Background/Itens" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 993.296, 162.848 )
 
 [node name="Ground" type="TileMap" parent="." index="2"]
 
+editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -230,7 +236,7 @@ tile_data = PoolIntArray( 196608, 32, 0, 196609, 32, 0, 196610, 32, 0, 196611, 3
 [node name="TileMap" type="TileMap" parent="Ground" index="3"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -242,26 +248,20 @@ collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
-collision_mask = 1
+collision_mask = 0
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 852026, 1073741854, 0, 917561, 1073741854, 0, 1048611, 30, 0, 1048629, 536870957, 0, 1114142, 1610612766, 0, 1114143, 29, 0, 1114144, 29, 0, 1114145, 29, 0, 1114148, 30, 0, 1179679, 1610612766, 0, 1179680, 29, 0, 1179681, 29, 0, 1179682, 29, 0, 1179685, 30, 0, 1245216, 1610612766, 0, 1245217, 29, 0, 1245218, 29, 0, 1245219, 29, 0, 1245222, 30, 0, 1310753, 1610612766, 0, 1310754, 29, 0, 1310755, 29, 0, 1310756, 29, 0, 1310759, 30, 0, 1310769, 536870957, 0, 1376290, 1610612766, 0, 1376291, 29, 0, 1376292, 29, 0, 1376293, 29, 0, 1376313, 30, 0, 1441827, 1610612766, 0, 1441828, 29, 0, 1441829, 29, 0, 1441830, 29, 0, 1441850, 30, 0, 1507364, 1610612766, 0, 1507365, 29, 0, 1507366, 29, 0, 1572901, 1610612766, 0, 1572902, 29, 0, 1572903, 29, 0, 1572907, 536870957, 0, 1638437, 536870942, 0, 1638438, 29, 0, 1638439, 29, 0, 1703972, 536870942, 0, 1703973, 29, 0, 1835057, 536870957, 0, 2097205, 536870957, 0, 2359353, 536870957, 0, 2490431, 536870942, 0, 2555915, 536870942, 0, 2555942, 30, 0, 2555966, 536870942, 0, 2621477, 1610612766, 0, 2621488, 30, 0, 2621499, 536870942, 0, 2687021, 1610612766, 0, 2687025, 30, 0, 2687034, 536870942, 0, 2687038, 1073741854, 0, 2752558, 1610612766, 0, 2752562, 30, 0, 2752569, 536870942, 0, 2752573, 1073741854, 0, 2818095, 1610612766, 0, 2818108, 1073741854, 0 )
 
-[node name="EntryPoint" parent="." index="3" instance=ExtResource( 4 )]
+[node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 2591.25, 295.968 )
 
-[node name="Exit" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 236.774, 452.023 )
 
-[node name="Player" parent="." index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 561.247, 405.968 )
-
-[node name="CameraLimit" parent="." index="6" instance=ExtResource( 7 )]
-
-[node name="SpawnArea2D2" type="Container" parent="." index="7"]
+[node name="SpawnArea2D2" type="Container" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -277,16 +277,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 9 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Guardian/Guardian.tscn", "res://Goblin/Goblin.tscn", "res://LivingArmor/LivingArmor.tscn" ]
 Mob = null
 TotMobCap = 5
 FlyEnabled = false
 
-[node name="SpawnArea2D" type="Container" parent="." index="8"]
+[node name="SpawnArea2D" type="Container" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -302,13 +302,19 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 9 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Bat/Bat.tscn", "res://Ghost/Ghost.tscn" ]
 Mob = null
 TotMobCap = 5
 FlyEnabled = true
+
+[node name="BookShelfSmall" parent="." index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 89.0036, 1225.63 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
 
 

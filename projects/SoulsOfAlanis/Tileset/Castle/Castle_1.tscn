@@ -37,22 +37,22 @@ extents = Vector2( 16, 16 )
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4, 36 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
@@ -67,7 +67,7 @@ extents = Vector2( 17, 17 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 16 )
 
-[node name="Castle" type="Node2D"]
+[node name="Castle" type="Node2D" index="0"]
 
 [node name="oga_castle_1-32x32" type="Sprite" parent="." index="0"]
 
@@ -660,7 +660,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2_small/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Rock2_Detail1" type="Sprite" parent="." index="30"]
 
@@ -683,7 +683,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2_Detail1/StaticBody2D" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SRockFloor" type="Sprite" parent="." index="31"]
@@ -707,7 +707,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SRockFloor/StaticBody2D" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="Bench" type="Sprite" parent="." index="32"]
 
@@ -833,7 +833,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2/StaticBody2D" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 10 )
 
 [node name="Rock2_Sairs" type="Sprite" parent="." index="40"]
 
@@ -959,6 +959,7 @@ polygon = PoolVector2Array( -31, -8, -31, 8, 32, 8, 32, -8 )
 
 [node name="rock_win3" type="Sprite" parent="." index="46"]
 
+editor/display_folded = true
 position = Vector2( 594, 74 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -983,6 +984,7 @@ polygon = PoolVector2Array( -31, -8, -31, 8, 32, 8, 32, -8 )
 
 [node name="spikes" type="Sprite" parent="." index="47"]
 
+editor/display_folded = true
 position = Vector2( 593, 119 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -1007,6 +1009,7 @@ polygon = PoolVector2Array( -31, 21, -31, 6, -29, 5, -28, -17, -23, -12, -21, 5,
 
 [node name="plataform1" type="Sprite" parent="." index="48"]
 
+editor/display_folded = true
 position = Vector2( 610, 203 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -1031,6 +1034,7 @@ polygon = PoolVector2Array( -47, -6, -47, 2, -41, 8, 39, 8, 47, 2, 47, -6, 44, -
 
 [node name="plataform2" type="Sprite" parent="." index="49"]
 
+editor/display_folded = true
 position = Vector2( 578, 235 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -1052,5 +1056,29 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -13, -9, 13, -9, 15, -7, 15, 2, 9, 9, -7, 9, -16, 0, -16, -6, -13, -9 )
+
+[node name="plataform3" type="Sprite" parent="." index="50"]
+
+position = Vector2( 723, 70 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 79, 6, 163, 124 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plataform3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="plataform3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -81, -36, 78, -36, 78, 24, -75, 24 )
 
 
