@@ -12,6 +12,12 @@ func _on_Target_DataUpdated(host):
 	self.setStamina(staminaP)
 	return
 
+func enabeled(b):
+	$Background.visible = false
+	$HealthBar.visible = false
+	$StaminaBar.visible = false
+	$CenterContainer.visible = false
+
 func calcPercentage(h, l):
 	return (l*100)/h
 
