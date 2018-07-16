@@ -8,11 +8,15 @@
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
-enabled = true
+enabled = false
 
 [node name="NPPainel" parent="." index="0"]
 
 visible = false
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_top = 10.0
+margin_bottom = 190.0
 
 [node name="RedButton" parent="NPPainel" index="1"]
 

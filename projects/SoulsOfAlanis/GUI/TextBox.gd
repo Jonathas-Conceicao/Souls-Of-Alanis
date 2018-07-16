@@ -1,7 +1,8 @@
+tool
 extends CanvasLayer
 
 enum POSITION {Up, Down}
-export(POSITION) var Position = POSITION.Down
+export(POSITION) var Position = 0
 export var HIGHT = 180
 export var NUMBER_CHAR = 305
 export var MARGIN = 10
