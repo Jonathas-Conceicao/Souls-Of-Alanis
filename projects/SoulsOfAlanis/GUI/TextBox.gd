@@ -1,4 +1,3 @@
-tool
 extends CanvasLayer
 
 enum POSITION {Up, Down}
