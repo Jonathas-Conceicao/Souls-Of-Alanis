@@ -26,7 +26,7 @@ func _on_TextBox_finished_dialog(obj):
 		
 
 func _on_InteractArea_body_entered(body):
-	if body.find_in_Backpack(0) == -1:
+	if body.StartedQuests.find(self.get_uniqueID()) != -1:
 		$HasQuest.show()
 	else:
 		$NoHasQuest.show()
