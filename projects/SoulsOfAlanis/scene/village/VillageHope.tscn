@@ -1,22 +1,21 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
-[ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://art/frogatto-cloud-example.png" type="Texture" id=3]
-[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud01.png" type="Texture" id=4]
-[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud2.png" type="Texture" id=5]
-[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud3.png" type="Texture" id=6]
-[ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=7]
-[ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=8]
-[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=9]
-[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=10]
-[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=11]
-[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=12]
-[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=13]
-[ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=14]
-[ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=15]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=17]
+[ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://art/frogatto-cloud-example.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud01.png" type="Texture" id=3]
+[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud2.png" type="Texture" id=4]
+[ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud3.png" type="Texture" id=5]
+[ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=6]
+[ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=7]
+[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=8]
+[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=9]
+[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=10]
+[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=11]
+[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=12]
+[ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=13]
+[ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=14]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -70,7 +69,6 @@ extents = Vector2( 10, 10 )
 [node name="VillageHope" type="Node2D" index="0"]
 
 position = Vector2( -2, -2 )
-script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_vertical_guides_": [ 2878.42 ]
@@ -82,7 +80,7 @@ modulate = Color( 0.816406, 0.714355, 0.714355, 1 )
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -129,29 +127,29 @@ _sections_unfolded = [ "Motion" ]
 show_behind_parent = true
 position = Vector2( 642, 383 )
 scale = Vector2( 3.21, 2.56666 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Cloud_1" type="Sprite" parent="TileMap/ParallaxBackground/ParallaxLayer" index="1"]
 
 position = Vector2( 378, 78 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation" ]
 
 [node name="Cloud_2" type="Sprite" parent="TileMap/ParallaxBackground/ParallaxLayer" index="2"]
 
 position = Vector2( 571, 257 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="Cloud_3" type="Sprite" parent="TileMap/ParallaxBackground/ParallaxLayer" index="3"]
 
 position = Vector2( 839, 98 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="TileMap2" type="TileMap" parent="TileMap" index="1"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -172,7 +170,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 [node name="BlacksmithSign" type="Sprite" parent="TileMap/TileMap2" index="0"]
 
 position = Vector2( 1328, 464 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -188,7 +186,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/InteractAreaDoor" index="0"]
 
@@ -201,7 +199,7 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 23, -5.5 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -209,7 +207,7 @@ _sections_unfolded = [ "Region" ]
 [node name="TileMap3" type="TileMap" parent="TileMap/TileMap2" index="2"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -230,7 +228,7 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 [node name="TileMap4" type="TileMap" parent="TileMap/TileMap2/TileMap3" index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -251,7 +249,7 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 [node name="TileMap5" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4" index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -272,7 +270,7 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 [node name="TileMap6" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -300,7 +298,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractAreaDoor2" index="0"]
 
@@ -313,7 +311,7 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 23, -5.5 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -328,12 +326,12 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="EntranceSign" type="Sprite" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="0"]
 
 position = Vector2( 1354.5, 272.5 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="1"]
 
@@ -345,7 +343,7 @@ shape = SubResource( 2 )
 
 visible = false
 position = Vector2( 1366, 239.5 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -366,7 +364,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
@@ -402,7 +400,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 autoplay = true
 max_distance = 38878.0
@@ -443,7 +441,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComingSoonArea" index="0"]
 
@@ -485,7 +483,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ThiefAnimationLimit" index="0"]
 
@@ -493,11 +491,11 @@ position = Vector2( -192, 2.84024 )
 scale = Vector2( 1.53846, 2.95676 )
 shape = SubResource( 9 )
 
-[node name="Exit" parent="." index="6" instance=ExtResource( 16 )]
+[node name="Exit" parent="." index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 2786.54, 513.901 )
 
-[node name="EntryPoint" parent="." index="7" instance=ExtResource( 17 )]
+[node name="EntryPoint" parent="." index="7" instance=ExtResource( 16 )]
 
 position = Vector2( 32.4402, 417.192 )
 
