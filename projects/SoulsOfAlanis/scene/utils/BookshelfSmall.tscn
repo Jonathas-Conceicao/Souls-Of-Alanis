@@ -8,9 +8,19 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 28 )
 
-[node name="BookShelfSmall" type="Node2D" index="0"]
+[node name="BookShelfSmall" type="Area2D" index="0"]
 
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 7
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -19,20 +29,7 @@ region_enabled = true
 region_rect = Rect2( 97, 330.125, 32.5, 54.5 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 32
-collision_mask = 5
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
 
