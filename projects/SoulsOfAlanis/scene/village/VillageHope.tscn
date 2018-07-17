@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -6,20 +6,17 @@
 [ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud01.png" type="Texture" id=4]
 [ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud2.png" type="Texture" id=5]
 [ext_resource path="res://art/project-art/village/opp4_village_tiles/environment/background/bg objects/bg_cloud3.png" type="Texture" id=6]
-[ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=8]
-[ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=9]
-[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=10]
-[ext_resource path="res://scene/NPC/Andre/Andre.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=12]
-[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=13]
-[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=14]
-[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=15]
-[ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=16]
-[ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=17]
-[ext_resource path="res://scene/NPC/OldThief/OldThief.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=20]
+[ext_resource path="res://GUI/art/lpc-hanging-signs.png" type="Texture" id=7]
+[ext_resource path="res://scene/village/InteractAreaDoor.gd" type="Script" id=8]
+[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=9]
+[ext_resource path="res://scene/village/InteractionAreaSign.gd" type="Script" id=10]
+[ext_resource path="res://GUI/art/signpost.png" type="Texture" id=11]
+[ext_resource path="res://art/project-art/png/HUD/DialogBox.png" type="Texture" id=12]
+[ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=13]
+[ext_resource path="res://scene/village/ComingSoonArea.gd" type="Script" id=14]
+[ext_resource path="res://scene/village/ThiefAnimationLimit.gd" type="Script" id=15]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -81,7 +78,6 @@ __meta__ = {
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-editor/display_folded = true
 modulate = Color( 0.816406, 0.714355, 0.714355, 1 )
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
@@ -154,7 +150,6 @@ texture = ExtResource( 6 )
 
 [node name="TileMap2" type="TileMap" parent="TileMap" index="1"]
 
-editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -174,20 +169,15 @@ format = 1
 tile_data = PoolIntArray( 131075, 19, 0, 131092, 29, 0, 131093, 237, 0, 131095, 235, 0, 196608, 29, 0, 196609, 29, 0, 196610, 29, 0, 196611, 29, 0, 196612, 39, 0, 196619, 26, 0, 196623, 30, 0, 262148, 40, 0, 262155, 252, 0, 262156, 255, 0, 262157, 29, 0, 262158, 29, 0, 262159, 29, 0, 327681, 280, 0, 327682, 214, 0, 327684, 40, 0, 327691, 253, 0, 327692, 258, 0, 327693, 264, 0, 327694, 259, 0, 327695, 259, 0, 327700, 141, 0, 393217, 280, 0, 393220, 40, 0, 393227, 253, 0, 393228, 258, 0, 393229, 259, 0, 393230, 259, 0, 393231, 259, 0, 393234, 158, 0, 393235, 160, 0, 458756, 54, 0, 458763, 253, 0, 458764, 258, 0, 458765, 266, 0, 458766, 259, 0, 458767, 259, 0, 458771, 163, 0, 458772, 164, 0, 458795, 229, 0, 524289, 18, 0, 524299, 253, 0, 524300, 258, 0, 524301, 259, 0, 524302, 259, 0, 524303, 259, 0, 589834, 312, 0, 589835, 253, 0, 589836, 258, 0, 589837, 259, 0, 589838, 259, 0, 589839, 259, 0, 589865, 5, 0, 655375, 18, 0, 655389, 9, 0, 655392, 13, 0, 655393, 2, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 720925, 18, 0, 720926, 10, 0, 786463, 9, 0, 786470, 324, 0, 852000, 10, 0, 852006, 325, 0, 917536, 18, 0, 917537, 9, 0, 917542, 325, 0, 917546, 229, 0, 983074, 10, 0, 983078, 327, 0, 983082, 230, 0, 1048576, 17, 0, 1048577, 17, 0, 1048578, 17, 0, 1048579, 17, 0, 1048580, 17, 0, 1048581, 17, 0, 1048582, 17, 0, 1048583, 17, 0, 1048584, 17, 0, 1048585, 17, 0, 1048586, 17, 0, 1048587, 17, 0, 1048588, 17, 0, 1048589, 17, 0, 1048590, 17, 0, 1048591, 17, 0, 1048592, 17, 0, 1048593, 17, 0, 1048594, 17, 0, 1048595, 17, 0, 1048596, 17, 0, 1048597, 17, 0, 1048598, 17, 0, 1048599, 17, 0, 1048600, 17, 0, 1048601, 17, 0, 1048602, 17, 0, 1048603, 17, 0, 1048604, 17, 0, 1048605, 17, 0, 1048606, 17, 0, 1048607, 17, 0, 1048608, 17, 0, 1048609, 17, 0, 1048610, 12, 0, 1048611, 1, 0, 1048612, 1, 0, 1048613, 1, 0, 1048614, 1, 0, 1048615, 1, 0, 1048616, 1, 0, 1048617, 1, 0, 1048618, 1, 0, 1048619, 1, 0, 1114154, 17, 0, 1114155, 17, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="GhostBill" parent="TileMap/TileMap2" index="0" instance=ExtResource( 7 )]
-
-position = Vector2( 375.5, 292.5 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="BlacksmithSign" type="Sprite" parent="TileMap/TileMap2" index="1"]
+[node name="BlacksmithSign" type="Sprite" parent="TileMap/TileMap2" index="0"]
 
 position = Vector2( 1328, 464 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
-[node name="InteractAreaDoor" type="Area2D" parent="TileMap/TileMap2" index="2"]
+[node name="InteractAreaDoor" type="Area2D" parent="TileMap/TileMap2" index="1"]
 
 editor/display_folded = true
 position = Vector2( 1360.5, 461.5 )
@@ -198,7 +188,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/InteractAreaDoor" index="0"]
 
@@ -211,12 +201,12 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 23, -5.5 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
-[node name="TileMap3" type="TileMap" parent="TileMap/TileMap2" index="3"]
+[node name="TileMap3" type="TileMap" parent="TileMap/TileMap2" index="2"]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -279,13 +269,7 @@ format = 1
 tile_data = PoolIntArray( 38, 232, 0, 39, 244, 0, 65551, 149, 0, 65552, 150, 0, 65553, 150, 0, 65554, 150, 0, 65555, 152, 0, 65574, 233, 0, 65575, 245, 0, 65577, 18, 0, 131087, 161, 0, 131088, 154, 0, 131089, 155, 0, 131090, 155, 0, 131091, 155, 0, 131092, 156, 0, 131094, 18, 0, 131101, 18, 0, 131112, 1610612977, 0, 131113, 1610612977, 0, 131114, 1610612977, 0, 131115, 1610612977, 0, 196608, 277, 0, 196609, 277, 0, 196610, 277, 0, 196611, 277, 0, 196612, 278, 0, 196624, 258, 0, 262157, 256, 0, 262158, 256, 0, 262159, 256, 0, 262160, 258, 0, 262169, 165, 0, 327681, 20, 0, 327696, 261, 0, 327698, 165, 0, 327700, 141, 0, 327703, 19, 0, 327705, 166, 0, 327721, 214, 0, 327722, 215, 0, 327723, 216, 0, 393216, 319, 0, 393217, 23, 0, 393218, 320, 0, 393231, 26, 0, 393232, 158, 0, 393233, 158, 0, 393234, 166, 0, 393236, 145, 0, 393237, 255, 0, 393238, 256, 0, 393239, 256, 0, 393240, 256, 0, 393241, 256, 0, 393242, 256, 0, 393246, 214, 0, 393247, 215, 0, 393248, 216, 0, 393252, 324, 0, 393256, 175, 0, 458752, 322, 0, 458753, 322, 0, 458754, 323, 0, 458767, 153, 0, 458768, 159, 0, 458769, 163, 0, 458770, 159, 0, 458771, 164, 0, 458773, 258, 0, 458774, 265, 0, 458775, 259, 0, 458776, 259, 0, 458777, 259, 0, 458778, 259, 0, 458779, 296, 0, 458780, 308, 0, 458788, 325, 0, 458791, 177, 0, 458792, 178, 0, 524303, 30, 0, 524309, 258, 0, 524310, 259, 0, 524311, 259, 0, 524312, 259, 0, 524313, 266, 0, 524315, 297, 0, 524316, 309, 0, 524321, 220, 0, 524322, 222, 0, 524324, 325, 0, 524325, 318, 0, 524326, 319, 0, 524327, 320, 0, 524328, 222, 0, 589836, 314, 0, 589839, 30, 0, 589845, 261, 0, 589846, 262, 0, 589847, 262, 0, 589848, 262, 0, 589849, 262, 0, 589850, 262, 0, 589851, 312, 0, 589852, 314, 0, 589860, 327, 0, 589861, 321, 0, 589862, 322, 0, 589863, 323, 0, 589865, 5, 0, 589869, 15, 0, 655394, 18, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
-[node name="Andre" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="0" instance=ExtResource( 11 )]
-
-position = Vector2( 1298.5, 475.5 )
-scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="TileMap6" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="1"]
+[node name="TileMap6" type="TileMap" parent="TileMap/TileMap2/TileMap3/TileMap4/TileMap5" index="0"]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -316,7 +300,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractAreaDoor2" index="0"]
 
@@ -329,7 +313,7 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 23, -5.5 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -344,12 +328,12 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="EntranceSign" type="Sprite" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="0"]
 
 position = Vector2( 1354.5, 272.5 )
-texture = ExtResource( 13 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap2/TileMap3/TileMap4/InteractionAreaSign" index="1"]
 
@@ -361,7 +345,7 @@ shape = SubResource( 2 )
 
 visible = false
 position = Vector2( 1366, 239.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
@@ -382,7 +366,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 12 )
 patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
@@ -418,7 +402,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 autoplay = true
 max_distance = 38878.0
@@ -459,7 +443,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 16 )
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComingSoonArea" index="0"]
 
@@ -492,7 +476,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="ThiefAnimationLimit" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 2316, 54.5 )
 scale = Vector2( 1, 2.64062 )
 input_pickable = true
@@ -502,7 +485,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 17 )
+script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ThiefAnimationLimit" index="0"]
 
@@ -510,16 +493,11 @@ position = Vector2( -192, 2.84024 )
 scale = Vector2( 1.53846, 2.95676 )
 shape = SubResource( 9 )
 
-[node name="Thief" parent="ThiefAnimationLimit" index="1" instance=ExtResource( 18 )]
-
-position = Vector2( 94, 2.84024 )
-scale = Vector2( 1, 0.378698 )
-
-[node name="Exit" parent="." index="6" instance=ExtResource( 19 )]
+[node name="Exit" parent="." index="6" instance=ExtResource( 16 )]
 
 position = Vector2( 2786.54, 513.901 )
 
-[node name="EntryPoint" parent="." index="7" instance=ExtResource( 20 )]
+[node name="EntryPoint" parent="." index="7" instance=ExtResource( 17 )]
 
 position = Vector2( 32.4402, 417.192 )
 
