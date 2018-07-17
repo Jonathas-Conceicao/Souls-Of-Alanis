@@ -3,11 +3,11 @@
 [ext_resource path="res://scene/forest/corridor/fcorridor_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=4]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=5]
+[ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=6]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=8]
 
 [node name="fcorridor_1" type="Node2D" index="0"]
 
@@ -41,25 +41,10 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 458767, 54, 0, 458768, 3, 0, 458769, 6, 0, 524304, 14, 0, 524305, 21, 0, 589835, 54, 0, 589836, 53, 0, 589837, 53, 0, 589838, 55, 0, 589840, 14, 0, 589841, 22, 0, 589842, 25, 0, 655368, 59, 0, 655369, 61, 0, 655376, 14, 0, 655377, 22, 0, 655382, 4, 0, 655384, 5, 0, 720898, 5, 0, 720902, 4, 0, 720904, 60, 0, 720905, 62, 0, 720912, 14, 0, 720913, 22, 0, 720914, 27, 0, 720916, 1, 0, 720917, 2, 0, 720918, 3, 0, 720919, 3, 0, 720920, 3, 0, 786432, 1, 0, 786433, 2, 0, 786434, 3, 0, 786435, 2, 0, 786436, 3, 0, 786437, 2, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 2, 0, 786442, 6, 0, 786448, 14, 0, 786449, 22, 0, 786451, 24, 0, 786452, 16, 0, 786453, 8, 0, 786454, 13, 0, 786455, 8, 0, 786456, 13, 0, 851968, 536870934, 0, 851969, 8, 0, 851970, 9, 0, 851971, 8, 0, 851972, 14, 0, 851973, 8, 0, 851974, 9, 0, 851975, 9, 0, 851976, 9, 0, 851977, 8, 0, 851978, 22, 0, 851979, 25, 0, 851984, 14, 0, 851985, 22, 0, 851988, 16, 0, 851989, 16, 0, 851990, 11, 0, 851991, 11, 0, 851992, 11, 0, 917504, 536870934, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 9, 0, 917514, 22, 0, 917515, 25, 0, 917524, 16, 0, 917525, 18, 0, 917526, 11, 0, 917527, 11, 0, 917528, 11, 0, 983040, 536870934, 0, 983041, 9, 0, 983042, 9, 0, 983043, 13, 0, 983044, 9, 0, 983045, 9, 0, 983046, 9, 0, 983047, 13, 0, 983048, 9, 0, 983049, 9, 0, 983050, 22, 0, 983059, 26, 0, 983060, 16, 0, 983061, 18, 0, 983062, 11, 0, 983063, 11, 0, 983064, 11, 0, 1048596, 16, 0, 1048597, 18, 0, 1048598, 14, 0, 1048599, 11, 0, 1048600, 15, 0 )
+tile_data = PoolIntArray( 65535, 1610612754, 0, 25, 18, 0, 131071, 1610612754, 0, 65561, 18, 0, 196607, 1610612754, 0, 131097, 18, 0, 262143, 1610612754, 0, 196633, 18, 0, 327679, 1610612754, 0, 262169, 18, 0, 393215, 1610612754, 0, 327705, 18, 0, 458751, 1610612754, 0, 393241, 18, 0, 524287, 1610612754, 0, 458767, 54, 0, 458768, 3, 0, 458769, 6, 0, 458777, 18, 0, 589823, 1610612754, 0, 524304, 14, 0, 524305, 21, 0, 524313, 18, 0, 655359, 1610612754, 0, 589835, 54, 0, 589836, 53, 0, 589837, 53, 0, 589838, 55, 0, 589840, 14, 0, 589841, 22, 0, 589842, 25, 0, 589849, 18, 0, 720895, 1610612754, 0, 655368, 59, 0, 655369, 61, 0, 655376, 14, 0, 655377, 22, 0, 655382, 4, 0, 655384, 5, 0, 655385, 18, 0, 786431, 1610612754, 0, 720898, 5, 0, 720902, 4, 0, 720904, 60, 0, 720905, 62, 0, 720912, 14, 0, 720913, 22, 0, 720914, 27, 0, 720916, 1, 0, 720917, 2, 0, 720918, 3, 0, 720919, 3, 0, 720920, 3, 0, 720921, 18, 0, 851967, 1610612754, 0, 786432, 1, 0, 786433, 2, 0, 786434, 3, 0, 786435, 2, 0, 786436, 3, 0, 786437, 2, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 2, 0, 786442, 6, 0, 786448, 14, 0, 786449, 22, 0, 786451, 24, 0, 786452, 16, 0, 786453, 8, 0, 786454, 13, 0, 786455, 8, 0, 786456, 13, 0, 786457, 18, 0, 917503, 1610612754, 0, 851968, 536870934, 0, 851969, 8, 0, 851970, 9, 0, 851971, 8, 0, 851972, 14, 0, 851973, 8, 0, 851974, 9, 0, 851975, 9, 0, 851976, 9, 0, 851977, 8, 0, 851978, 22, 0, 851979, 25, 0, 851984, 14, 0, 851985, 22, 0, 851988, 16, 0, 851989, 16, 0, 851990, 11, 0, 851991, 11, 0, 851992, 11, 0, 851993, 18, 0, 983039, 1610612754, 0, 917504, 536870934, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 9, 0, 917514, 22, 0, 917515, 25, 0, 917524, 16, 0, 917525, 18, 0, 917526, 11, 0, 917527, 11, 0, 917528, 11, 0, 917529, 18, 0, 1048575, 1610612754, 0, 983040, 536870934, 0, 983041, 9, 0, 983042, 9, 0, 983043, 13, 0, 983044, 9, 0, 983045, 9, 0, 983046, 9, 0, 983047, 13, 0, 983048, 9, 0, 983049, 9, 0, 983050, 22, 0, 983059, 26, 0, 983060, 16, 0, 983061, 18, 0, 983062, 11, 0, 983063, 11, 0, 983064, 11, 0, 983065, 18, 0, 1114111, 1610612754, 0, 1048596, 16, 0, 1048597, 18, 0, 1048598, 14, 0, 1048599, 11, 0, 1048600, 15, 0, 1048601, 18, 0, 1179647, 1610612754, 0, 1114137, 18, 0, 1245183, -1610612718, 0, 1179648, -1610612718, 0, 1179649, -1610612718, 0, 1179650, -1610612718, 0, 1179651, -1610612718, 0, 1179652, -1610612718, 0, 1179653, -1610612718, 0, 1179654, -1610612718, 0, 1179655, -1610612718, 0, 1179656, -1610612718, 0, 1179657, -1610612718, 0, 1179658, -1610612718, 0, 1179659, -1610612718, 0, 1179660, -1610612718, 0, 1179661, -1610612718, 0, 1179662, -1610612718, 0, 1179663, -1610612718, 0, 1179664, -1610612718, 0, 1179665, -1610612718, 0, 1179666, -1610612718, 0, 1179667, -1610612718, 0, 1179668, -1610612718, 0, 1179669, -1610612718, 0, 1179670, -1610612718, 0, 1179671, -1610612718, 0, 1179672, -1610612718, 0, 1179673, -1610612718, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="middle_background" type="Sprite" parent="." index="2"]
-
-position = Vector2( 599.702, 386.384 )
-scale = Vector2( 3.19355, 3.55428 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 1153.5, 419.758 )
-
-[node name="EntryPoint" parent="." index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 12.4342, 460.104 )
-
-[node name="SpawnArea2D2" type="Container" parent="." index="5"]
+[node name="SpawnArea2D2" type="Container" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -75,38 +60,56 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 7 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 8 )
+"_editor_icon": ExtResource( 5 )
 }
 MobList = [ "res://Goblin/Goblin.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false
 
-[node name="SpawnArea2D" type="Container" parent="." index="6"]
+[node name="SpawnArea2D" type="Container" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 585.0
-margin_top = 96.9977
-margin_right = 625.0
-margin_bottom = 136.998
+margin_left = 1.0
+margin_top = -2.0
+margin_right = 1212.0
+margin_bottom = 246.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 7 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 8 )
+"_editor_icon": ExtResource( 5 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false
+
+[node name="middle_background" type="Sprite" parent="." index="4"]
+
+position = Vector2( 599.702, 386.384 )
+scale = Vector2( 3.19355, 3.55428 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Exit" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 1170.73, 416.999 )
+scale = Vector2( 2.21075, 6.47206 )
+
+[node name="EntryPoint" parent="." index="6" instance=ExtResource( 8 )]
+
+visible = false
+position = Vector2( 26.3187, 442.511 )
+scale = Vector2( 1.84161, 1 )
 
 
