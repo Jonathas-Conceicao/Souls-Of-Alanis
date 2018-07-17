@@ -4,7 +4,7 @@ extends Node2D
 enum unique_ids {
 	chest,
 	breakable_wall,
-	breakable_bookshelvf,
+	breakable_bookshelf,
 	npc_ghost_bill,
 	npc_andre,
 	npc_mage
