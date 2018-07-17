@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scene/utils/BookshelfSmall.gd" type="Script" id=1]
+[ext_resource path="res://scene/utils/Bookshelf.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/png/rooms/castle/oga_Hyptosis.Zabin.DanielCook/oga_castle_1-32x32.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
