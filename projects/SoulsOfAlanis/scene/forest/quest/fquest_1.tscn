@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/quest/fquest_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/forest/quest/DoorInteraction.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27.2777, 27.9155 )
 
 [node name="fquest_1" type="Node2D" index="0"]
 
@@ -58,5 +64,24 @@ scale = Vector2( 2.53125, 8.58996 )
 
 position = Vector2( 40.6385, 581.513 )
 scale = Vector2( 2.50528, 1 )
+
+[node name="DoorInteraction" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorInteraction" index="0"]
+
+position = Vector2( 725.748, 623.393 )
+scale = Vector2( 1, 1.75155 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="DoorInteraction" to="DoorInteraction" method="_on_DoorInteraction_body_entered"]
 
 

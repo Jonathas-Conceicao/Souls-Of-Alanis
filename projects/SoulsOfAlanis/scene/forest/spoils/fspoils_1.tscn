@@ -6,7 +6,7 @@
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 
-[node name="fspoils_1" type="Node2D" index="0"]
+[node name="fspoils_1" type="Node2D"]
 
 script = ExtResource( 1 )
 NumExit = 1
@@ -46,6 +46,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="fchest" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 773.553, 399.498 )
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 4 )]
