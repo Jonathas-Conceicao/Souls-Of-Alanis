@@ -2,7 +2,7 @@ extends Node2D
 
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-var i_Ord1 = preload("res://script/map/InfoRoom.gd").new("res://scene/village/VillageHope.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 3.2))
+var i_Ord1 = preload("res://script/map/InfoRoom.gd").new("res://scene/village/VillageHope.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(3.2, 3.2))
 
 export (bool) var debug_mode = true
 export (bool) var rand = false
