@@ -111,10 +111,12 @@ tile_data = PoolIntArray(  )
 
 [node name="Exit" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 716.903, 560.691 )
+position = Vector2( 716.903, 588.831 )
+scale = Vector2( 1, 5.841 )
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 257.833, 134.105 )
+position = Vector2( 315.996, 134.105 )
+scale = Vector2( 1.74558, 1 )
 
 

@@ -1,16 +1,12 @@
 extends Node2D
 
-func _ready():
-	$LocalName.show()
-#	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_LEFT, 0)
-#	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_RIGHT, 2880)
-#	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_BOTTOM, 1152)
-#	get_tree().get_current_scene().get_node("Player").get_node("Camera2D").set_limit(MARGIN_TOP, 0)
-	return
-
-func getSize():
-	return Vector2(2, 3.3)
-	
 func _input(event):
-	if event.is_pressed():
-		$LocalName.hide()
+	if event.is_action_pressed("disabled_NPC"):
+		$GhostBill.set_disabled()
+		$Andre.set_disabled()
+		$OldThief.set_disabled()
+		
+	if event.is_action_pressed("enabled_NPC"):
+		$GhostBill.set_enabled()
+		$Andre.set_enabled()
+		$OldThief.set_enabled()

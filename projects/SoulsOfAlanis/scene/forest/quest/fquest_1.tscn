@@ -1,19 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/forest/quest/fquest_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=3]
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://scene/forest/quest/Enter_house.gd" type="Script" id=5]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[node name="fquest_1" type="Node2D"]
+[node name="fquest_1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 NumExit = 1
@@ -49,58 +43,20 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 24, 18, 0, 65560, 18, 0, 131096, 18, 0, 196632, 18, 0, 262157, 67, 0, 262168, 18, 0, 327704, 18, 0, 393240, 18, 0, 458776, 18, 0, 524312, 18, 0, 589848, 18, 0, 655384, 18, 0, 720920, 18, 0, 786456, 18, 0, 851992, 18, 0, 917504, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 3, 0, 917518, 3, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 3, 0, 917527, 3, 0, 917528, 3, 0, 983040, 12, 0, 983041, 12, 0, 983042, 12, 0, 983043, 12, 0, 983044, 12, 0, 983045, 12, 0, 983046, 12, 0, 983047, 12, 0, 983048, 12, 0, 983049, 12, 0, 983050, 12, 0, 983051, 12, 0, 983052, 12, 0, 983053, 12, 0, 983054, 12, 0, 983055, 12, 0, 983056, 12, 0, 983057, 12, 0, 983058, 12, 0, 983059, 12, 0, 983060, 12, 0, 983061, 12, 0, 983062, 12, 0, 983063, 12, 0, 983064, 12, 0 )
+tile_data = PoolIntArray( -1, 1610612754, 0, -65536, -1073741806, 0, -65535, -1073741806, 0, -65534, -1073741806, 0, -65533, -1073741806, 0, -65532, -1073741806, 0, -65531, -1073741806, 0, -65530, -1073741806, 0, -65529, -1073741806, 0, -65528, -1073741806, 0, -65527, -1073741806, 0, -65526, -1073741806, 0, -65525, -1073741806, 0, -65524, -1073741806, 0, -65523, -1073741806, 0, -65522, -1073741806, 0, -65521, -1073741806, 0, -65520, -1073741806, 0, -65519, -1073741806, 0, -65518, -1073741806, 0, -65517, -1073741806, 0, -65516, -1073741806, 0, -65515, -1073741806, 0, -65514, -1073741806, 0, -65513, -1073741806, 0, -65512, -1073741806, 0, 65535, 1610612754, 0, 24, 18, 0, 131071, 1610612754, 0, 65560, 18, 0, 196607, 1610612754, 0, 131096, 18, 0, 262143, 1610612754, 0, 196632, 18, 0, 327679, 1610612754, 0, 262157, 67, 0, 262168, 18, 0, 393215, 1610612754, 0, 327704, 18, 0, 458751, 1610612754, 0, 393240, 18, 0, 524287, 1610612754, 0, 458776, 18, 0, 589823, 1610612754, 0, 524312, 18, 0, 655359, 1610612754, 0, 589848, 18, 0, 720895, 1610612754, 0, 655384, 18, 0, 786431, 1610612754, 0, 720920, 18, 0, 851967, 1610612754, 0, 786456, 18, 0, 917503, 1610612754, 0, 851992, 18, 0, 983039, 1610612754, 0, 917504, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 3, 0, 917518, 3, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 3, 0, 917527, 3, 0, 917528, 3, 0, 983040, 12, 0, 983041, 12, 0, 983042, 12, 0, 983043, 12, 0, 983044, 12, 0, 983045, 12, 0, 983046, 12, 0, 983047, 12, 0, 983048, 12, 0, 983049, 12, 0, 983050, 12, 0, 983051, 12, 0, 983052, 12, 0, 983053, 12, 0, 983054, 12, 0, 983055, 12, 0, 983056, 12, 0, 983057, 12, 0, 983058, 12, 0, 983059, 12, 0, 983060, 12, 0, 983061, 12, 0, 983062, 12, 0, 983063, 12, 0, 983064, 12, 0 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Enter_house" type="Area2D" parent="." index="3"]
+[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 709.606, 585.703 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 5 )
+position = Vector2( 1125, 588.097 )
+scale = Vector2( 2.53125, 8.58996 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enter_house" index="0"]
+[node name="EntryPoint" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 19.0167, 37.9754 )
-scale = Vector2( 2.99368, 4.76687 )
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="Enter_house" index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -38.0
-margin_top = -36.0
-margin_right = 121.0
-margin_bottom = -22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Balãozinho aparece aqui!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 1113.9, 625.604 )
-
-[node name="EntryPoint" parent="." index="5" instance=ExtResource( 7 )]
-
-position = Vector2( 27.587, 581.513 )
+position = Vector2( 40.6385, 581.513 )
+scale = Vector2( 2.50528, 1 )
 
 

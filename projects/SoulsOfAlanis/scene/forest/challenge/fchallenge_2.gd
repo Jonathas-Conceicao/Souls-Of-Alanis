@@ -18,4 +18,3 @@ func getSize():
 	
 func _ready():
 	$ChallengeDisplay.set_text("Kill all the enemies")
-	$ChallengeDisplay/NPPainel/Container/Message.set_text("Kill all the enemies")
