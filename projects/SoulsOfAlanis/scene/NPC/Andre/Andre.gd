@@ -1,11 +1,10 @@
 extends Node2D
 
-func set_disabled():
+func set_enabled(value):
+	if value:
+		$InteractAreaAndre/AnimatedSprite.hide()
+		$InteractAreaAndre/CollisionShape2D.set_disabled(true)
 	
-	$InteractAreaAndre/AnimatedSprite.hide()
-	$InteractAreaAndre/CollisionShape2D.set_disabled(true)
-	
-func set_enabled():
-	
-	$InteractAreaAndre/AnimatedSprite.show()
-	$InteractAreaAndre/CollisionShape2D.set_disabled(false)
+	else:
+		$InteractAreaAndre/AnimatedSprite.show()
+		$InteractAreaAndre/CollisionShape2D.set_disabled(false)
