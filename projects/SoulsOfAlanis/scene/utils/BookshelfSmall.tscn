@@ -10,17 +10,18 @@ extents = Vector2( 16, 28 )
 
 [node name="BookShelfSmall" type="Area2D" index="0"]
 
+scale = Vector2( 2, 2 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 8
+collision_layer = 16
 collision_mask = 7
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

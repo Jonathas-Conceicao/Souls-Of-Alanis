@@ -1,5 +1,9 @@
 extends "res://script/Classes/Unique.gd"
 
+func _on_takeDamage(agressor, attack):
+	._on_takeDamage(agressor, attack)
+	return
+
 # disables the Unique
 func use():
 	debug.printMsg("Implement a \"use\" function", debug.msg_type.err)
