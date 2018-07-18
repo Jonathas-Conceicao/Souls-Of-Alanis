@@ -26,9 +26,9 @@ func set_values():
 
 func gen_data():
 	var equipData = Armor.new(self.WEIGHT,
-							  self.SLASH,
-							  self.IMPACT,
-							  self.THRUST)
+								self.SLASH,
+								self.IMPACT,
+								self.THRUST)
 	return equipData
 
 

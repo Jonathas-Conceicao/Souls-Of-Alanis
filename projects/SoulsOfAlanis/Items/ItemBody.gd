@@ -73,6 +73,6 @@ func disabled(b):
 	return
 
 func _on_Area_body_entered(body):
-	if body.has_method("_on_item_pickUp"):
+	if self.ready && body.has_method("_on_item_pickUp"):
 		emit_signal("picked_up", self, body)
 	return
