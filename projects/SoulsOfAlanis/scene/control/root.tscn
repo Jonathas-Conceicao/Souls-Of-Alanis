@@ -7,19 +7,25 @@
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cinematics/Opening.tscn" type="PackedScene" id=6]
 
+[node name="root" type="Node2D" index="0"]
 
-[node name="root" type="Node2D"]
-
+position = Vector2( 451.901, 437.953 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0, 700.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0 ]
+}
 debug_mode = true
 rand = false
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
 script = ExtResource( 2 )
-debug_mode = true
+blocked = false
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -2.78943, 0 )
 
 [node name="Map" type="Node2D" parent="." index="2"]
 
