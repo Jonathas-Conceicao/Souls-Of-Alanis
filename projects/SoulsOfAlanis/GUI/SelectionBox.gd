@@ -5,6 +5,8 @@ const ItemSelection = preload("ItemSelection.tscn")
 var itemList
 var selected
 
+signal item_selected
+
 func test_ready():
 	self.set_dialog("Speaker", "A long text telling a how story about the amazing number of options you can  choose in this dialog box")
 	self.add_item("Yes")
@@ -17,7 +19,7 @@ func test_ready():
 func _ready():
 	self.update_selected()
 
-	# self.test_ready()
+	self.test_ready()
 	return
 
 func showItens():
@@ -60,7 +62,8 @@ func select_prev_item():
 	return
 
 func select_current_item():
-	emit_signal("finished_dialog", self, selected)
+	print("Option selected: ", self.selected)
+	emit_signal("item_selected", self, selected)
 	return
 
 func add_item(text):
@@ -77,7 +80,6 @@ func clear_items():
 
 func _on_SelectionBox_finished_dialog(obj):
 	if $NPPainel/ItemList.visible:
-		print("Option selected: ", self.selected)
 		self.select_current_item()
 	else:
 		self.showItens()
