@@ -2,6 +2,12 @@ extends Area2D
 
 const ItemFactory = preload("res://script/tools/RandomItemGenerator.gd")
 
+const SItens = [
+	preload("res://Items/predefined/StarterSword.gd"),
+	preload("res://Items/predefined/StarterArmor.gd")
+]
+
+
 enum state {
 	used   = 0,
 	unused = 1,
@@ -11,20 +17,20 @@ enum state {
 var current_state = state.unused
 
 # called by agressor (player)
-# PUBLIC
-func _on_takeDamage(agressor, attack):
+# GENERIC
+func _on_takeHit(agressor):
 	if self.current_state != used && agressor.get_name() == "Player":
 		use()
-		drop()
 	return
 
 # disables the Unique
 # GENERIC
 func use(supress = false):
 	if !supress:
-		debug.printMsg("Implement a \"use\" function", debug.msg_type.err)
+		debug.printMsg("Implement a \"use\" function", debug.msg_type.wrn)
 	self.current_state = state.used
-	self.enabled(false)
+	self.set_enabled(false)
+	drop()
 	return
 
 # drops a random item
@@ -46,7 +52,7 @@ func drop(supress = false):
 # enabled = false <=> already visited, no NPC on this scene anymore
 # enabled = true <=> no visited yet, show NPC on this scene
 # GENERIC
-func enabled(t = true, supress = false):
+func set_enabled(t = true, supress = false):
 	if !supress:
 		debug.printMsg("Implement a \"drop\" function", debug.msg_type.wrn)
 
@@ -58,5 +64,4 @@ func enabled(t = true, supress = false):
 # GENERIC
 func get_uniqueID():
 	debug.printMsg("Implement the \"drop\" function", debug.msg_type.wrn)
-
 	return null
