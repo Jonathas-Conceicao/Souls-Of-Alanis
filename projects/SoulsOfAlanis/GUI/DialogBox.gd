@@ -33,6 +33,7 @@ func enabeled(b):
 	self.enabled = b
 	self.update()
 	self.update_state()
+	set_process_input(b)
 	return
 
 func set_dialog(name, text):

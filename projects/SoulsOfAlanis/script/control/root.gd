@@ -2,7 +2,8 @@ extends Node2D
 
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-var i_Ord1 = preload("res://script/map/InfoRoom.gd").new("res://scene/village/VillageHope.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 3.2))
+var i_Ord1 = preload("res://script/map/InfoRoom.gd").new("res://scene/castle/ordinary/Ord1.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 3.2))
+var i_Village = preload("res://script/map/InfoRoom.gd").new("res://scene/village/VillageHope.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 3.2))
 
 export (bool) var debug_mode = true
 export (bool) var rand = false
@@ -15,7 +16,7 @@ func _init():
 func _ready():
 	$Player.visible = false
 	$Player/HUD.enabeled(false)
-	
+
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
@@ -47,7 +48,7 @@ func _on_Opening_finished_cinematic(obj):
 
 	$Player.visible = true
 	$Player/HUD.enabeled(true)
-	
+
 	$Map.add_to_head(i_Ord1)
 	$Map.start()
 	return

@@ -1,24 +1,31 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://script/control/root.gd" type="Script" id=1]
-[ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=2]
+[ext_resource path="res://script/control/EntryPoint.gd" type="Script" id=2]
 [ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/map/Map.gd" type="Script" id=4]
 [ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cinematics/Opening.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
+position = Vector2( 451.901, 437.953 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0, 700.0 ],
+"_edit_vertical_guides_": [ 0.0, 900.0 ]
+}
 debug_mode = true
 rand = false
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
 script = ExtResource( 2 )
-debug_mode = true
+blocked = false
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -2.78943, 0 )
 
 [node name="Map" type="Node2D" parent="." index="2"]
 

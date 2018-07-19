@@ -2,6 +2,10 @@ extends Area2D
 
 export var blocked = false
 
+func _ready():
+	$InteractionSign.visible = false
+	return
+
 func _get_exit():
 	return -1
 

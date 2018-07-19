@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scene/ChangeScene.gd" type="Script" id=1]
-[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=2]
-[ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=3]
+[ext_resource path="res://script/control/EntryPoint.gd" type="Script" id=1]
+[ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
+[ext_resource path="res://art/project-art/png/HUD/ImanorBalloonx2.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 80 )
 
-[node name="EntryPoint" type="Area2D"]
+[node name="EntryPoint" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -21,27 +21,15 @@ collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
 blocked = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
-shape = SubResource( 1 )
-
-[node name="InteractionSign" type="Sprite" parent="." index="1"]
-
-visible = false
-position = Vector2( 16.4903, -38.7165 )
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 224, 64, 32, 32 )
-_sections_unfolded = [ "Region" ]
-
-[node name="TileMap" type="TileMap" parent="." index="2"]
-
-position = Vector2( -22, 0 )
+position = Vector2( -23.2687, -11.0803 )
 scale = Vector2( 2, 2 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 20, 48 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -57,6 +45,19 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -65536, 48, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="InteractionSign" type="Sprite" parent="." index="1"]
+
+position = Vector2( 31.7472, -71.3777 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 224, 64, 32, 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_EntryPoint_body_entered"]

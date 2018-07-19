@@ -3,6 +3,10 @@ extends Area2D
 export (int) var ExitIndex = 0
 export (bool) var Blocked = false
 
+func _ready():
+	$InteractionSign.visible = false
+	return
+
 func _get_exit():
 	return self.ExitIndex
 

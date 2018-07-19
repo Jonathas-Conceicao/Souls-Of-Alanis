@@ -17,5 +17,9 @@ func getSize():
 	return Vector2(4.7, 2.7)
 	
 func _ready():
-	$ChallengeDisplay.set_text("Don't Jump")
-	$ChallengeDisplay/NPPainel/Container/Message.set_text("Don't Jump")
+	
+	$ChallengeDisplay.set_text("don't jump")
+	
+func _input(event):
+	if event.is_action_pressed("ui_up"):
+		#$ChallengeDisplay.set_state()
