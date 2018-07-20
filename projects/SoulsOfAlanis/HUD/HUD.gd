@@ -13,10 +13,10 @@ func _on_Target_DataUpdated(host):
 	return
 
 func enabeled(b):
-	$Background.visible = false
-	$HealthBar.visible = false
-	$StaminaBar.visible = false
-	$CenterContainer.visible = false
+	$Background.visible = b
+	$HealthBar.visible = b
+	$StaminaBar.visible = b
+	$CenterContainer.visible = b
 
 func calcPercentage(h, l):
 	return (l*100)/h

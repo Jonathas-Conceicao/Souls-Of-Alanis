@@ -4,7 +4,7 @@ const Item = preload("res://Items/Item.gd")
 const Weapon = preload("res://script/Classes/Weapon.gd")
 
 # Data values
-const WEIGHT = 3
+const WEIGHT = 5
 const DAMAGE = 5
 
 # Sprite values

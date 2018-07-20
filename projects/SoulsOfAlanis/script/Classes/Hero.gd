@@ -27,6 +27,26 @@ func _init():
 	ring       = null
 	return self
 
+
+###
+# Checks if there's enough stamina for an Attack, and if so, consumes it
+###
+func tryAttack():
+	var cost = self.attackCost()
+	if cost > self.getStamina():
+		return false
+	self.decreaseStamina(cost)
+	return true
+
+func attackCost():
+	var maxCL = self.getMaxCarryLoad()
+	var CL = self.getCarryLoad()
+	print("Values:", maxCL, " ", CL, " ", calcPercentage(maxCL, CL))
+	return self.calcPercentage(maxCL, CL) * self.getMaxStamina()
+
+func calcPercentage(h, l):
+	return ((l*100)/h)/100.0
+
 ###
 # Increases Stamina, bounded by the Max value
 # value -> Value to be incremented
@@ -35,7 +55,7 @@ func increaseStamina(value):
 	return self.attributes.increaseStamina(value);
 
 ###
-# Decreases Stamina, bounded by the Max value
+# Decreases Stamina, bounded by the min value
 # value -> Value to be incremented
 ###
 func decreaseStamina(value):
@@ -151,9 +171,10 @@ func genDefense():
 # attributes and the current weapon
 # return: new Attack's instance
 ###
-func genAttack():
-	var attack = weapon.genAttack()
+func genAttack(dir=null):
+	var attack = weapon.genAttack(dir)
 	var attAttack = attributes.genAttack(weapon.getAttackType())
+	# add_child(attack)
 	attack.add(attAttack)
 	if damageBonus != null:
 		attack.forceAdd(damageBonus)

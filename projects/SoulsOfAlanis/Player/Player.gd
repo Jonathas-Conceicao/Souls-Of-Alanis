@@ -227,22 +227,7 @@ func get_from_StartedQuests(index):
 func get_from_FinishedQuests(index):
 	return self.FinishedQuests[index]
 
-# var control = 0
 func processDebug():
-	# _state_change("Idle")
-	# data.attributes.power.stamina += 10
-	# data.attributes.strength += 1
-	# data.attributes.power.updateCurrent()
-	# print("Strength       :", data.attributes.strength)
-	# print("Current Stamina:", data.getStamina())
-	# print("Max     Stamina:", data.getMaxStamina())
-	# self._on_takeDamage(self, Attack.new(Attack.Slash, control))
-	# control += 5
-	# if control >= 20: control = 0
-	# # var Cam = self.get_node("Camera2D")
-	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
-	# for i in range(0, 4):
-	# 	self.data.levelUp()
 	return
 
 func update_flip():
@@ -312,9 +297,10 @@ func _on_Animation_animation_finished(anim_name):
 	return
 
 func _on_Energy_timeout():
-	var energy_per_tick = max(1, data.getMaxStamina() / 30)
-	data.increaseStamina(energy_per_tick)
-	emit_signal("DataUpdated", self)
+	if self.current_state != $States/Attack:
+		var energy_per_tick = max(1, data.getMaxStamina() / 30)
+		data.increaseStamina(energy_per_tick)
+		emit_signal("DataUpdated", self)
 	return
 
 func _on_takeDamage(agressor, attack):
@@ -344,9 +330,13 @@ func _on_item_pickUp(I):
 
 func _on_SwordHit_body(body):
 	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
+		var attack = data.genAttack(self.genPushBack(body))
 		body._on_takeDamage(self, attack)
 	return
+
+func genPushBack(body):
+	var v = body.get_position() - self.get_position()
+	return v.normalized()
 
 func _on_SwordHit_area(area):
 	if area != $Stepping && area.has_method("_on_takeHit"):
