@@ -3,8 +3,8 @@
 [resource]
 
 resource_name = "Intro"
-length = 1.0
-loop = true
+length = 2.0
+loop = false
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Opening/FirePlace:playing")
@@ -16,18 +16,18 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Opening/FirePlace:frame")
+tracks/1/path = NodePath("Opening/TextBox/NPPainel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 5 ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 

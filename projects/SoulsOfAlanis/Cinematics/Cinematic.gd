@@ -29,5 +29,13 @@ func enabeled(b):
 	return
 
 func _on_TextBox_finished_dialog(box):
-	emit_signal("finished_cinematic", self)
+	if !has_animation("Outro"):
+		emit_signal("finished_cinematic", self)
+	else:
+		self.play("Outro")
+	return
+
+func _on_Self_animation_finished(anim_name):
+	if anim_name == "Outro":
+		emit_signal("finished_cinematic", self)
 	return
