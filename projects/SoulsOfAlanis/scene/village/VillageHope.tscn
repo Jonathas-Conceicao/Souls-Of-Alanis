@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -17,11 +17,7 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=16]
 [ext_resource path="res://sound/village/abeth.wav" type="AudioStream" id=17]
-[ext_resource path="res://scene/NPC/Andre/Andre.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scene/NPC/Andre/Andre.gd" type="Script" id=19]
-[ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scene/NPC/OldThief/OldThief.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scene/NPC/OldThief/OldThief.gd" type="Script" id=22]
+[ext_resource path="res://Sorcerer/SorcererNPC.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -40,6 +36,7 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="DynamicFontData" id=4]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=5]
@@ -62,6 +59,7 @@ extents = Vector2( 58, 10 )
 
 [sub_resource type="DynamicFontData" id=8]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=9]
@@ -549,26 +547,16 @@ position = Vector2( 63, 352 )
 
 stream = ExtResource( 17 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 max_distance = 2816.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Andre" parent="." index="8" instance=ExtResource( 18 )]
+[node name="SorcererNPC" parent="." index="8" instance=ExtResource( 18 )]
 
-position = Vector2( 2649, 955 )
-script = ExtResource( 19 )
-
-[node name="GhostBill" parent="." index="9" instance=ExtResource( 20 )]
-
-position = Vector2( 51, 2139 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="OldThief" parent="." index="10" instance=ExtResource( 21 )]
-
-position = Vector2( 2405, 61 )
-script = ExtResource( 22 )
+position = Vector2( 344.74, 431.231 )
 
 [connection signal="body_entered" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_entered"]
 
