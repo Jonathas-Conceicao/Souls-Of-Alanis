@@ -4,7 +4,7 @@ const Item = preload("res://Items/Item.gd")
 const Armor = preload("res://script/Classes/Armor.gd")
 
 # Data values
-const WEIGHT = 5
+const WEIGHT = 3
 const SLASH  = 5
 const IMPACT = 5
 const THRUST = 5
