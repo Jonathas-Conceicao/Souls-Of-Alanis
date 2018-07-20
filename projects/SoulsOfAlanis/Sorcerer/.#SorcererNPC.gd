@@ -1,1 +1,0 @@
-Jonathas@Jonathas-Linux.14880:1532025583

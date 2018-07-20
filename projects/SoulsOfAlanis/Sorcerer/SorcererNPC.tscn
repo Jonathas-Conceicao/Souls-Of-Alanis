@@ -1,32 +1,28 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sorcerer/SorcererNPC.gd" type="Script" id=1]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful1.png" type="Texture" id=2]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful2.png" type="Texture" id=3]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful3.png" type="Texture" id=4]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=5]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Blink.png" type="Texture" id=6]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Blink.png" type="Texture" id=2]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful1.png" type="Texture" id=3]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful2.png" type="Texture" id=4]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful3.png" type="Texture" id=5]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=6]
 [ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
 "name": "Idle",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "Greet",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": false,
-"name": "Blink",
-"speed": 5.0
+"speed": 3.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -56,25 +52,16 @@ animation = "Idle"
 
 position = Vector2( 40, -40 )
 
-[node name="BlinkTimer" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 5.0
-one_shot = false
-autostart = true
-
-[node name="Collision" type="CollisionShape2D" parent="." index="3"]
+[node name="Collision" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -56, 16 )
 shape = SubResource( 2 )
 
-[node name="DialogBox" parent="." index="4" instance=ExtResource( 8 )]
+[node name="DialogBox" parent="." index="3" instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="." to="." method="_on_Self_body_entered"]
 
 [connection signal="body_exited" from="." to="." method="_on_Self_body_exited"]
-
-[connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 
 [connection signal="finished_dialog" from="DialogBox" to="." method="_on_DialogBox_finished_dialog"]
 
