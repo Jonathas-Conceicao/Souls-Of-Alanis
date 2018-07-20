@@ -4,6 +4,7 @@ var vitality
 var strength
 var agility
 var wisdom
+
 var level
 var update = 0 # Used for the clock lvl up
 

@@ -1,5 +1,6 @@
 extends Sprite
 
+const X_BALLOON = 3
 const HEART_BALLOON = 6
 const TRIPLE_DOT_BALLOON = 13
 const EXCLAMATION_BALLOON = 21

@@ -4,7 +4,9 @@ var attributes # Hero's attributes
 var armor      # Hero's current Armor
 var ring       # Hero's current Ring
 var weapon     # Hero's current Weapon
-#var trails
+
+var xp_points
+var cur_xp_points
 
 var damageBonus = null # Attack instance for direct damage bonus to all attacks
 
@@ -25,8 +27,9 @@ func _init():
 	self.add_child(weapon)
 	armor      = null
 	ring       = null
+	self.xp_points = 10
+	self.cur_xp_points = 0
 	return self
-
 
 ###
 # Checks if there's enough stamina for an Attack, and if so, consumes it
@@ -46,6 +49,34 @@ func attackCost():
 
 func calcPercentage(h, l):
 	return ((l*100)/h)/100.0
+
+func increaseXP(value):
+	self.cur_xp_points += value
+	return
+
+func storedLevels():
+	return int(self.cur_xp_points/self.xp_points)
+
+###
+# Increace Hero's level by one
+###
+func levelUp(selectedAttribute):
+	# Update XP points
+	self.cur_xp_points -= self.xp_points
+	self.setLevel(self.getLevel() + 1)
+	match selectedAttribute:
+		0:
+			self.attributes.vitality += 1
+		1:
+			self.attributes.strength += 1
+		2:
+			self.attributes.agility  += 1
+		3:
+			self.attributes.wisdom   += 1
+		_:
+			pass
+	self.attributes.updatePower()
+	return
 
 ###
 # Increases Stamina, bounded by the Max value
@@ -216,10 +247,3 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
-
-###
-# Increace Hero's level by one
-###
-func levelUp():
-	self.attributes.increment()
-	return

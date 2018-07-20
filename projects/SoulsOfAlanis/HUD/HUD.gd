@@ -8,8 +8,10 @@ func _on_Target_DataUpdated(host):
 	var stMax = data.getMaxStamina()
 	var stCur = data.getStamina()
 	var staminaP = calcPercentage(stMax, stCur)
+	var lvl = data.storedLevels()
 	self.setHP(hpP)
 	self.setStamina(staminaP)
+	self.setLevel(lvl)
 	return
 
 func enabeled(b):
@@ -20,6 +22,9 @@ func enabeled(b):
 
 func calcPercentage(h, l):
 	return (l*100)/h
+
+func setLevel(l):
+	$CenterContainer/SoulsCount.set_text(str(l))
 
 func setHP(hp):
 	$HealthBar.set_value(hp)

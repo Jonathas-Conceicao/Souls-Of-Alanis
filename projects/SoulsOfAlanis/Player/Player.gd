@@ -229,6 +229,8 @@ func get_from_FinishedQuests(index):
 	return self.FinishedQuests[index]
 
 func processDebug():
+	self.data.increaseXP(10)
+	emit_signal("DataUpdated", self)
 	return
 
 func update_flip():
