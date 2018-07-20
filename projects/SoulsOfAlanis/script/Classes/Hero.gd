@@ -113,6 +113,20 @@ func setWeapon(weapon):
 	return ok
 
 ###
+# Sets a new level for the Hero (unsed only for display)
+# l -> Level
+###
+func setLevel(l):
+	self.attributes.setLevel(l)
+	return
+
+###
+# Get Hero's level
+###
+func getLevel():
+	return self.attributes.getLevel()
+
+###
 # return: current carry load
 ###
 func getCarryLoad():

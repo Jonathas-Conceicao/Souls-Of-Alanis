@@ -76,7 +76,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="VillageHope" type="Node2D" index="0"]
+[node name="VillageHope" type="Node2D"]
 
 position = Vector2( -2, -2 )
 script = ExtResource( 1 )

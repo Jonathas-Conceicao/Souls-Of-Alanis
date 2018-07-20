@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal DamegeTaken
 signal StateChanged
 signal DataUpdated
 signal SceneExit
@@ -298,12 +299,15 @@ func _on_Animation_animation_finished(anim_name):
 
 func _on_Energy_timeout():
 	if self.current_state != $States/Attack:
-		var energy_per_tick = max(1, data.getMaxStamina() / 30)
+		var energy_per_tick = max(0.3, data.getMaxStamina() / 30)
 		data.increaseStamina(energy_per_tick)
 		emit_signal("DataUpdated", self)
 	return
 
 func _on_takeDamage(agressor, attack):
+	if self.current_state == $States/Stagger:
+		attack.queue_free()
+		return
 	var damage = data.takeAttack(attack)
 	emit_signal("DataUpdated", self)
 	var damageDisplay = DamageShower.instance()
@@ -312,10 +316,12 @@ func _on_takeDamage(agressor, attack):
 						 Vector2(1.5, 1.5),
 						 damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
-	print("Player recived ", damage, " from: ", agressor.get_name())
-	_state_change("Stagger")
-	var dp = calcPercentage(self.data.getMaxHP(), damage)
-	current_state.setKnockBack(self, dp, attack.direction)
+	if damage > 0:
+		emit_signal("DamegeTaken", self, damage)
+		print("Player recived ", damage, " from: ", agressor.get_name())
+		_state_change("Stagger")
+		var dp = calcPercentage(self.data.getMaxHP(), damage)
+		current_state.setKnockBack(self, dp, attack.direction)
 	return
 
 func calcPercentage(h, l):
@@ -335,7 +341,7 @@ func _on_SwordHit_body(body):
 	return
 
 func genPushBack(body):
-	var v = body.get_position() - self.get_position()
+	var v = body.get_global_position() - self.get_global_position()
 	return v.normalized()
 
 func _on_SwordHit_area(area):

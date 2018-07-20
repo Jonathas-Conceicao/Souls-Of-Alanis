@@ -4,6 +4,7 @@ var vitality
 var strength
 var agility
 var wisdom
+var level
 var update = 0 # Used for the clock lvl up
 
 var power # Attribute's Power instance
@@ -17,12 +18,14 @@ const Attack = preload("Attack.gd") # Class reference
 # s -> strength
 # a -> agility
 # w -> wisdom
+# l -> level
 ###
-func _init(v = 1, s = 1, a = 1, w = 1):
+func _init(v = 1, s = 1, a = 1, w = 1, l = 0):
 	self.vitality = v
 	self.strength = s
 	self.agility  = a
 	self.wisdom   = w
+	self.level    = l
 	power = Power.new()
 	self.add_child(power)
 	updatePower()
@@ -45,6 +48,7 @@ func increment(n=1):
 				self.wisdom   += 1
 		update = (update+1) % 4
 	updatePower()
+	self.level += 1
 	return
 
 ###
@@ -119,6 +123,20 @@ func increaseHP(value):
 ###
 func decreaseHP(value):
 	return self.power.decreaseHP(value)
+
+###
+# Sets a new level
+# l -> Level
+###
+func setLevel(l):
+	self.level = l
+	return
+
+###
+# Get creature's level
+###
+func getLevel():
+	return self.level
 
 ###
 # return: the current carry load
