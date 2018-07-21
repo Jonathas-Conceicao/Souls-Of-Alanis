@@ -18,8 +18,6 @@ func _input(event):
 		emit_signal("finished_interaction", Down)
 	elif event.is_action_pressed("ui_accept"):
 		emit_signal("finished_interaction", 2)
-	elif event.is_action_pressed("ui_cancel"):
-		emit_signal("finished_interaction", -1)
 	return
 
 func test_ready():

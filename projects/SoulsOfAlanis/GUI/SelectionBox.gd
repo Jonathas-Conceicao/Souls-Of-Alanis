@@ -22,6 +22,12 @@ func _ready():
 	# self.test_ready()
 	return
 
+func enabeled(b):
+	if not b:
+		$NPPainel/ItemList.visible = false
+	.enabeled(b)
+	return
+
 func showItens():
 	$NPPainel/ItemList.visible = true
 	self.update_selected()
@@ -36,6 +42,8 @@ func _input(event):
 
 func update_selected():
 	self.itemList = $NPPainel/ItemList.get_children()
+	for item in itemList:
+		item.selected(false)
 	if self.itemList:
 		self.itemList[0].selected(true)
 	self.selected = 0

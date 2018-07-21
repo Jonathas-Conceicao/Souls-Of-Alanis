@@ -6,6 +6,11 @@ var selected = 0
 var attributes
 var attributesSize
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		emit_signal("finished_interaction",  self, -1, 0)
+	return
+
 func test_ready():
 	self.focused(false)
 	self.init([3, 1, 3, 1],
@@ -17,8 +22,14 @@ func _ready():
 	$Animation.play("Intro")
 	self.updateAtributes()
 	self.focused(self.focused)
+	self.enabled(self.focused)
 
 	# self.test_ready()
+	return
+
+func enabled(b):
+	$Background.visible = b
+	set_process_input(b)
 	return
 
 func updateAtributes():
@@ -47,6 +58,7 @@ func focused(b):
 	self.focused = b
 	for att in self.attributes:
 		att.focused(b)
+		att.selected(false)
 	if b:
 		attributes[self.selected].selected(true)
 	return
@@ -74,4 +86,8 @@ func _on_PlayerInfo_finished_interaction(obj, who, val):
 		print("PlayerInfo should close now")
 	else:
 		print(self.attributes[who].get_name(), " incremented by:", val)
+	return
+
+func _on_Close_pressed():
+	emit_signal("finished_interaction",  self, -1, 0)
 	return
