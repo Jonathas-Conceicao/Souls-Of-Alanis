@@ -17,13 +17,15 @@ const greetText = [
 
 const introNoHelp = "The only help I can give you at this moment is to pray for the god above to guide your way."
 const noHelpText  = []
-const introHelp   = "I can help you, buddy."
-const canHelpText = ["So, tell me, will you accept my aid?"]
+const introHelp   = "I feel some power sleeping within you, hero."
+const canHelpText = ["Your body carries the souls of the enemies you've concurred.",
+					 "I can guide your spirit so you can overcome your next challenges.",
+					 "So, tell me, will you accept my aid?"]
 const options = ["Yes", "No"]
 
-const introPostHelp = "Estás mais forte, arrombadx"
+const introPostHelp = "Go on now, Hero, fulfill your destiny!"
 const postHelpText = []
-const introNoPostHelp = "Vai lá morrer então, trouxa"
+const introNoPostHelp = "I understand, I will be here if you need me."
 const postNoHelpText = []
 
 var host
