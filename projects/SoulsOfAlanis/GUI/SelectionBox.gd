@@ -19,7 +19,7 @@ func test_ready():
 func _ready():
 	self.update_selected()
 
-	self.test_ready()
+	#self.test_ready()
 	return
 
 func showItens():
