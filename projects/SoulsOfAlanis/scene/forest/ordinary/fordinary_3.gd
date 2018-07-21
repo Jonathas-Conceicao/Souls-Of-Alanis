@@ -11,7 +11,7 @@ func getSceneType():
 	return RoomType.ordinary
 	
 func getSceneHalf():
-	return 
+	return Half.first
 
 func getSize():
-	return Vector2(2, 2)
+	return Vector2(2, 25)

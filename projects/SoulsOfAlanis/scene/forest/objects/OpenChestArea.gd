@@ -5,11 +5,11 @@ var STATE_CHEST = "CLOSED"
 const new_item = preload("res://Items/predefined/StarterSword.gd")
 
 func show_popUp():
-	$Label.show()
+	#$Label.show()
 	return
 
 func hide_popUp():
-	$Label.hide()
+	#$Label.hide()
 	return
 
 func _on_player_interaction(host):
