@@ -13,19 +13,20 @@
 
 [node name="fchallenge_2" type="Node2D" index="0"]
 
+position = Vector2( 46, 0 )
 script = ExtResource( 1 )
 NumExit = 1
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 601.523, 329.905 )
-scale = Vector2( 6.25048, 3.09986 )
+position = Vector2( 554.54, 329.905 )
+scale = Vector2( 6.73989, 3.09986 )
 texture = ExtResource( 2 )
 
 [node name="MiddleBackground" type="Sprite" parent="." index="1"]
 
-position = Vector2( 601.465, 330.044 )
-scale = Vector2( 3.13364, 3.08983 )
+position = Vector2( 555.317, 330.044 )
+scale = Vector2( 3.37399, 3.08983 )
 texture = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="." index="2"]

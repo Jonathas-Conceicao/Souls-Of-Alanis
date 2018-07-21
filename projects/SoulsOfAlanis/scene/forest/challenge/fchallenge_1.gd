@@ -28,7 +28,7 @@ func _input(event):
 		$ChallengeDisplay.update_text()
 		$ChallengeDisplay.set_state(2)
 		$ChallengeDisplay.update_state()
-		$Open_chest_area/CollisionShape2D.set_disabled(true)
+		$OpenChestArea/CollisionShape2D.set_disabled(true)
 		$WinArea.set_enabled(false)
 
 func _on_WinArea_challenge_completed():
