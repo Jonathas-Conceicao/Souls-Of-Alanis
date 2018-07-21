@@ -8,7 +8,7 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=7]
 
-[node name="fspoils_2" type="Node2D"]
+[node name="fspoils_2" type="Node2D" index="0"]
 
 position = Vector2( 46, 0 )
 script = ExtResource( 1 )
