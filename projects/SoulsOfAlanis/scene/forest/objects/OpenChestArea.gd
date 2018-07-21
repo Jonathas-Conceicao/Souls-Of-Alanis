@@ -2,6 +2,8 @@ extends "res://script/Classes/Unique.gd"
 
 var STATE_CHEST = "CLOSED"
 
+const new_item = preload("res://Items/predefined/StarterSword.gd")
+
 func show_popUp():
 	$Label.show()
 	return
@@ -16,6 +18,10 @@ func _on_player_interaction(host):
 		$AnimatedSprite.play("opened")
 		self.hide_popUp()
 		STATE_CHEST = "OPENED"
+		var ni = new_item.new()
+		var ib = ni.gen_ItemBody()
+		add_child(ib)
+		ib.spawn()
 		host.add_to_StartedQuests(self)
 	return
 
