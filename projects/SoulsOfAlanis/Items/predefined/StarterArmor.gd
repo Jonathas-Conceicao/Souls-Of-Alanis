@@ -13,7 +13,7 @@ const THRUST = 5
 const DESCRIPTION = "A basic aromor"
 const SPRITE_ID = 0
 
-func _ready():
+func _init():
 	self.set_values()
 	return
 
