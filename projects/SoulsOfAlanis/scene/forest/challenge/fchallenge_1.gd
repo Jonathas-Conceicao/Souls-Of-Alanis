@@ -14,12 +14,26 @@ func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(4.7, 2.7)
+	return Vector2(4.6, 2.7)
 	
 func _ready():
-	
 	$ChallengeDisplay.set_text("don't jump")
+	$ChallengeDisplay.update_text()
+	$ChallengeDisplay.set_state(0)
+	$ChallengeDisplay.update_state()
 	
 func _input(event):
-	if event.is_action_pressed("ui_up"):
-		#$ChallengeDisplay.set_state()
+	if event.is_action_pressed("player_jump"):
+		$ChallengeDisplay.set_text("Failed!")
+		$ChallengeDisplay.update_text()
+		$ChallengeDisplay.set_state(2)
+		$ChallengeDisplay.update_state()
+		$Open_chest_area/CollisionShape2D.set_disabled(true)
+		$WinArea.set_enabled(false)
+
+func _on_WinArea_challenge_completed():
+	$ChallengeDisplay.set_text("Completed!")
+	$ChallengeDisplay.update_text()
+	$ChallengeDisplay.set_state(1)
+	$ChallengeDisplay.update_state()
+	self.set_process_input(false)
