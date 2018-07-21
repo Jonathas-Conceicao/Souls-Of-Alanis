@@ -11,10 +11,10 @@ func getNumExit():
 	return NumExit
 	
 func getSceneType():	
-	return RoomType.any
+	return RoomType.connection
 	
 func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(1, 1.4)
+	return Vector2(1, 1.35)

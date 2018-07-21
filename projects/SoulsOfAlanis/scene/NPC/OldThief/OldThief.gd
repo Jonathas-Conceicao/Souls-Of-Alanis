@@ -8,3 +8,6 @@ func set_enabled(value):
 	else:
 		$InteractAreaThief/AnimatedSprite.show()
 		$InteractAreaThief/CollisionShape2D.set_disabled(false)
+		
+func get_uniqueID():
+	return global_ids.unique_id.npc_old_thief

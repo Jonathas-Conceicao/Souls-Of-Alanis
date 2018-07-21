@@ -14,7 +14,7 @@ func getSceneType():
 	return RoomType.quest
 	
 func getSceneHalf():
-	return 
+	return Half.first
 
 func getSize():
-	return Vector2(1, 1.2)
+	return Vector2(1, 1.3)
