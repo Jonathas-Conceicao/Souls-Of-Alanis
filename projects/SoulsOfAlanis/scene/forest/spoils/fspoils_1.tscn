@@ -52,7 +52,7 @@ position = Vector2( 942.553, 395.498 )
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 22.4269, 344.552 )
+position = Vector2( 29.4269, 423.552 )
 scale = Vector2( 2.12957, 1 )
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 5 )]
