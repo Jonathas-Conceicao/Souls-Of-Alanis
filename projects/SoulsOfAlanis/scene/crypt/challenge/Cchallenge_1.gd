@@ -26,8 +26,6 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("player_attack"):
-		$ChallengeDisplay.set_text("Failed!")
-		$ChallengeDisplay.update_text()
 		$ChallengeDisplay.set_state(2)
 		$ChallengeDisplay.update_state()
 		$fchest/CollisionShape2D.set_disabled(true)
