@@ -11,6 +11,7 @@
 
 [node name="fconnection_1" type="Node2D" index="0"]
 
+position = Vector2( 41, 0 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 2509.01 ]
@@ -104,6 +105,7 @@ FlyEnabled = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="4"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -118,8 +120,8 @@ scroll_ignore_camera_zoom = true
 
 [node name="Background" type="Sprite" parent="ParallaxBackground" index="0"]
 
-position = Vector2( 1185.32, 397.175 )
-scale = Vector2( 13.7527, 3.72446 )
+position = Vector2( 1228.6, 397.175 )
+scale = Vector2( 14.2036, 3.72446 )
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
@@ -131,8 +133,8 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="MiddleBackground" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 575.944, 397.385 )
-scale = Vector2( 3.77433, 3.69417 )
+position = Vector2( 625.797, 397.385 )
+scale = Vector2( 4.03398, 3.69417 )
 texture = ExtResource( 8 )
 
 

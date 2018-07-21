@@ -14,4 +14,4 @@ func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(1.1, 2.8)
+	return Vector2(1.09, 2.8)
