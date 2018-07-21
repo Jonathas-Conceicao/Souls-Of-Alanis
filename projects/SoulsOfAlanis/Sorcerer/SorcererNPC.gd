@@ -7,7 +7,7 @@ const SorcererNPCIdentifier = preload("SorcererNPCIdentifier.gd")
 const npcName = "Priest"
 const introText = "Greetings young traveler!"
 const welcomeText = [
-	" I am the priest of this little village, and I want to let you know you are very welcome.",
+	"I am the priest of this little village, and I want to let you know you are very welcome.",
 	"If you're an adventurer seeking the Orb of Wishes, know the forest that leads to the Castle can be treacherous.",
 	"It is said that only a Knight pure of heart can find his or hers way through the castle."
 ]
@@ -15,24 +15,27 @@ const greetText = [
 	"I've heard of overloded motherboard, but this is ridiculous"
 ]
 
-const noHelpText  = ["The only help I can give you at this moment is to pray for the god above to guide your way."]
+const introNoHelp = "The only help I can give you at this moment is to pray for the god above to guide your way."
+const noHelpText  = []
 const introHelp   = "I can help you, buddy."
 const canHelpText = ["So, tell me, will you accept my aid?"]
 const options = ["Yes", "No"]
 
-const postHelpText = ["Estás mais forte, arrombadx"]
-const postNoHelpText = ["Vai lá morrer então, trouxa"]
+const introPostHelp = "Estás mais forte, arrombadx"
+const postHelpText = []
+const introNoPostHelp = "Vai lá morrer então, trouxa"
+const postNoHelpText = []
 
 var host
 
 func _ready():
 	$Balloon.enabled(false)
-	self.set_dialog($WelcomeBox, welcomeText)
-	self.set_dialog($GreetBox, greetText)
-	self.set_dialog($NoHelpBox, noHelpText)
+	self.set_dialog($WelcomeBox, introText, welcomeText)
+	self.set_dialog($GreetBox, introText, greetText)
+	self.set_dialog($NoHelpBox, introNoHelp, noHelpText)
 	self.set_options($CanHelpBox, introHelp, canHelpText, options)
-	self.set_dialog($PostHelp, postHelpText)
-	self.set_dialog($PostNoHelp, postNoHelpText)
+	self.set_dialog($PostHelp, introPostHelp, postHelpText)
+	self.set_dialog($PostNoHelp, introNoPostHelp, postNoHelpText)
 	$Sprite.play("Idle")
 	return
 
@@ -44,13 +47,15 @@ func _on_player_interaction(host):
 		var aux = SorcererNPCIdentifier.new()
 		host.add_child(aux)
 		host.add_to_StartedQuests(aux)
-		$WelcomeBox.enabeled(true)
+		$WelcomeBox.enabled(true)
 	else:
-		$GreetBox.enabeled(true)
+		$GreetBox.enabled(true)
+	var data = host.get_data_for_display()
+	$PlayerInfo.init(data[0], data[1])
 	return "finished_dialog"
 
-func set_dialog(box, texts):
-	box.set_dialog(npcName, introText)
+func set_dialog(box, intro, texts):
+	box.set_dialog(npcName, intro)
 	box.add_lines(texts)
 	return
 
@@ -61,11 +66,11 @@ func set_options(box, intro, texts, options):
 	return
 
 func dialogSwap(fromBox, toBox = null):
-	fromBox.enabeled(false)
+	fromBox.enabled(false)
 	if fromBox.has_method("focused"): fromBox.focused(false)
 	$Sprite.play("Greet")
 	if toBox != null:
-		toBox.enabeled(true)
+		toBox.enabled(true)
 		if toBox.has_method("focused"): toBox.focused(true)
 	else:
 		emit_signal("finished_dialog", self)

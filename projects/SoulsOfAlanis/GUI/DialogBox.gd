@@ -28,7 +28,7 @@ func update():
 	set_process_input(self.enabled)
 	return
 
-func enabeled(b):
+func enabled(b):
 	Main.set_visible_characters(0)
 	self.enabled = b
 	self.update()

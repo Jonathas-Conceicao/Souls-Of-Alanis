@@ -21,11 +21,11 @@ func _ready():
 
 func start(s):
 	play(s)
-	$TextBox.enabeled(true)
+	$TextBox.enabled(true)
 	return
 
-func enabeled(b):
-	$TextBox.enabeled(b)
+func enabled(b):
+	$TextBox.enabled(b)
 	return
 
 func _on_TextBox_finished_dialog(box):

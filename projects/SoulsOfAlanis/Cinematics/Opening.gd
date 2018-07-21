@@ -21,9 +21,9 @@ func _ready():
 	self.start("Intro")
 	return
 
-func enabeled(b):
+func enabled(b):
 	$Background.visible = b
 	$Alanis.visible = b
 	$FirePlace.visible = b
-	$TextBox.enabeled(b)
+	$TextBox.enabled(b)
 	return

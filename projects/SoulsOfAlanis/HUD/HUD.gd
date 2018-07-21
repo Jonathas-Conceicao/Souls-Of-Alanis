@@ -14,7 +14,7 @@ func _on_Target_DataUpdated(host):
 	self.setLevel(lvl)
 	return
 
-func enabeled(b):
+func enabled(b):
 	$Background.visible = b
 	$HealthBar.visible = b
 	$StaminaBar.visible = b

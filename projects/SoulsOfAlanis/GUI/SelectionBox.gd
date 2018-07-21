@@ -13,7 +13,7 @@ func test_ready():
 	self.add_item("No")
 	self.add_item("Maybe")
 	self.add_item("No way, hosay!")
-	self.enabeled(true)
+	self.enabled(true)
 	return
 
 func _ready():
@@ -22,10 +22,10 @@ func _ready():
 	# self.test_ready()
 	return
 
-func enabeled(b):
+func enabled(b):
 	if not b:
 		$NPPainel/ItemList.visible = false
-	.enabeled(b)
+	.enabled(b)
 	return
 
 func showItens():
