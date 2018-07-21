@@ -17,4 +17,7 @@ func getSize():
 	return Vector2(1, 1.2)
 	
 func _ready():
-	$ChallengeDisplay.set_text("Kill all the enemies")
+	$ChallengeDisplay.set_text("Don't take damage!")
+	$ChallengeDisplay.update_text()
+	$ChallengeDisplay.set_state(0)
+	$ChallengeDisplay.update_state()
