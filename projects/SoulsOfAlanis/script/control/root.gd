@@ -14,7 +14,7 @@ func _init():
 
 func _ready():
 	$Player.visible = false
-	$Player/HUD.enabeled(false)
+	$Player/HUD.enabled(false)
 	
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
@@ -42,11 +42,11 @@ func _adjust_view(pos, sz):
 
 
 func _on_Opening_finished_cinematic(obj):
-	$Opening.enabeled(false)
+	$Opening.enabled(false)
 	$Opening.queue_free()
 
 	$Player.visible = true
-	$Player/HUD.enabeled(true)
+	$Player/HUD.enabled(true)
 	
 	$Map.add_to_head(i_Ord1)
 	$Map.start()

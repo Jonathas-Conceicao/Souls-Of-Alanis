@@ -30,5 +30,7 @@ func _init(w = 0, t = Attack.Slash, d = 1):
 ###
 # return: new Attack's instance
 ###
-func genAttack():
-	return (Attack.new(damageType, damage))
+func genAttack(dir = null):
+	if dir:
+		return Attack.new(self.damageType, self.damage, dir.x, dir.y)
+	return Attack.new(self.damageType, self.damage)

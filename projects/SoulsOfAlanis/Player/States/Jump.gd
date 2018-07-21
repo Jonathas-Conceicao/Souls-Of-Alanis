@@ -7,10 +7,6 @@ func enter(host):
 	return
 
 func handle_input(host, event):
-	# Handle interaction
-	if event.is_action_pressed("player_interact"):
-		return "Interact"
-
 	# Handle attack
 	if event.is_action_pressed("player_attack"):
 		return "Attack"
@@ -19,7 +15,7 @@ func update(host, delta):
 	host.velocity.y += host.GRAVITY
 	if Input.is_action_pressed("player_jump"):
 		if host.energy >= 20:
-			host.velocity.y -= 20
+			host.velocity.y -= 23
 			host.energy     -= 20
 			host.velocity.y -= host.GRAVITY
 			host.emit_signal("DataUpdated", host)

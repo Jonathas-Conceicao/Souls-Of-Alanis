@@ -11,7 +11,7 @@ const DAMAGE = 5
 const DESCRIPTION = "A basic sword"
 const SPRITE_ID = 0
 
-func _ready():
+func _init():
 	self.set_values()
 	return
 

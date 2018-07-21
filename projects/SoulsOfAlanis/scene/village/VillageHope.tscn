@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scene/village/VillageHope.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/village/tileset/VillageTileset.tres" type="TileSet" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scene/NPC/OldThief/OldThief.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scene/NPC/OldThief/OldThief.gd" type="Script" id=22]
+[ext_resource path="res://Sorcerer/SorcererNPC.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -40,6 +41,7 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="DynamicFontData" id=4]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=5]
@@ -62,6 +64,7 @@ extents = Vector2( 58, 10 )
 
 [sub_resource type="DynamicFontData" id=8]
 
+hinting = 2
 font_path = "res://art/project-art/fonts/joystix/tt/joystix monospace.ttf"
 
 [sub_resource type="DynamicFont" id=9]
@@ -79,7 +82,6 @@ extents = Vector2( 10, 10 )
 
 [node name="VillageHope" type="Node2D" index="0"]
 
-position = Vector2( -2, -2 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
@@ -523,6 +525,7 @@ position = Vector2( 63, 352 )
 
 stream = ExtResource( 17 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 max_distance = 2816.0
 attenuation = 1.0
@@ -543,6 +546,11 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 2405, 61 )
 script = ExtResource( 22 )
+
+[node name="SorcererNPC" parent="." index="11" instance=ExtResource( 23 )]
+
+position = Vector2( 352, 428 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [connection signal="body_entered" from="TileMap/TileMap2/InteractAreaDoor" to="TileMap/TileMap2/InteractAreaDoor" method="_on_InteractAreaDoor_body_entered"]
 

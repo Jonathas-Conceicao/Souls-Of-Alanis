@@ -9,7 +9,7 @@ func _ready():
 
 func _on_player_interaction(host):
 	$AnimatedSprite.play()
-	$TextBox.enabeled(true)
+	$TextBox.enabled(true)
 	host.add_to_Chests(self.get_uniqueID())
 	return "finished_dialog"
 
@@ -18,7 +18,7 @@ func _on_AnimatedSprite_animation_finished():
 	return
 
 func _on_TextBox_finished_dialog(obj):
-	$TextBox.enabeled(false)
+	$TextBox.enabled(false)
 	emit_signal("finished_dialog", self)
 
 ##ADDED

@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sorcerer/SorcererNPC.gd" type="Script" id=1]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Blink.png" type="Texture" id=2]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful1.png" type="Texture" id=3]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful2.png" type="Texture" id=4]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful3.png" type="Texture" id=5]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=6]
+[ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/SelectionBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GUI/PlayerInfo.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Greet",
+"speed": 3.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 80, 64 )
+
+[node name="SorcererNPC" type="Area2D" index="0"]
+
+position = Vector2( 2, 4 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="Balloon" parent="." index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 40, -40 )
+
+[node name="Collision" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -56, 16 )
+shape = SubResource( 2 )
+
+[node name="WelcomeBox" parent="." index="3" instance=ExtResource( 8 )]
+
+Position = 1
+
+[node name="GreetBox" parent="." index="4" instance=ExtResource( 8 )]
+
+Position = 1
+
+[node name="NoHelpBox" parent="." index="5" instance=ExtResource( 8 )]
+
+Position = 1
+
+[node name="CanHelpBox" parent="." index="6" instance=ExtResource( 9 )]
+
+Position = 1
+
+[node name="PostHelp" parent="." index="7" instance=ExtResource( 8 )]
+
+Position = 1
+
+[node name="PostNoHelp" parent="." index="8" instance=ExtResource( 8 )]
+
+Position = 1
+
+[node name="PlayerInfo" parent="." index="9" instance=ExtResource( 10 )]
+
+[connection signal="body_entered" from="." to="." method="_on_Self_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_Self_body_exited"]
+
+[connection signal="finished_dialog" from="WelcomeBox" to="." method="_on_First_finished_dialog"]
+
+[connection signal="finished_dialog" from="GreetBox" to="." method="_on_First_finished_dialog"]
+
+[connection signal="finished_dialog" from="NoHelpBox" to="." method="_on_NoHelpBox_finished_dialog"]
+
+[connection signal="item_selected" from="CanHelpBox" to="." method="_on_CanHelpBox_item_selected"]
+
+[connection signal="finished_dialog" from="PostHelp" to="." method="_on_PostHelp_finished_dialog"]
+
+[connection signal="finished_dialog" from="PostNoHelp" to="." method="_on_PostNoHelp_finished_dialog"]
+
+[connection signal="finished_interaction" from="PlayerInfo" to="." method="_on_PlayerInfo_finished_interaction"]
+
+

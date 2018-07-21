@@ -117,7 +117,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="AttributesContainer" type="VBoxContainer" parent="Background" index="2"]
 
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -278,6 +277,8 @@ anims/Intro = SubResource( 1 )
 blend_times = [  ]
 
 [connection signal="finished_interaction" from="." to="." method="_on_PlayerInfo_finished_interaction"]
+
+[connection signal="pressed" from="Background/Close" to="." method="_on_Close_pressed"]
 
 [connection signal="finished_interaction" from="Background/AttributesContainer/Vitality" to="." method="_on_Attribute_finished_interaction"]
 
