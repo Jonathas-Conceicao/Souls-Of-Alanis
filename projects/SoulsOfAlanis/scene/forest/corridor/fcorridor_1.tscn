@@ -9,8 +9,9 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=8]
 
-[node name="fcorridor_1" type="Node2D"]
+[node name="fcorridor_1" type="Node2D" index="0"]
 
+position = Vector2( 46, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 NumExit = 1
@@ -103,8 +104,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Exit" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 1170.73, 416.999 )
-scale = Vector2( 2.21075, 6.47206 )
+position = Vector2( 1222.7, 392.382 )
+scale = Vector2( 2.21075, 8.58805 )
 
 [node name="EntryPoint" parent="." index="6" instance=ExtResource( 8 )]
 
