@@ -19,7 +19,7 @@ func test_ready():
 func _ready():
 	self.update_selected()
 
-	self.test_ready()
+	# self.test_ready()
 	return
 
 func showItens():
@@ -71,6 +71,11 @@ func add_item(text):
 	item.set_text(text)
 	item.selected(false)
 	$NPPainel/ItemList.add_child(item)
+	return
+
+func add_items(texts):
+	for txt in texts:
+		self.add_item(txt)
 	return
 
 func clear_items():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sorcerer/SorcererNPC.gd" type="Script" id=1]
 [ext_resource path="res://Sorcerer/art/Sorcerer_Blink.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=6]
 [ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/SelectionBox.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -59,10 +60,14 @@ shape = SubResource( 2 )
 
 [node name="DialogBox" parent="." index="3" instance=ExtResource( 8 )]
 
+[node name="SelectionBox" parent="." index="4" instance=ExtResource( 9 )]
+
 [connection signal="body_entered" from="." to="." method="_on_Self_body_entered"]
 
 [connection signal="body_exited" from="." to="." method="_on_Self_body_exited"]
 
 [connection signal="finished_dialog" from="DialogBox" to="." method="_on_DialogBox_finished_dialog"]
+
+[connection signal="item_selected" from="SelectionBox" to="." method="_on_SelectionBox_item_selected"]
 
 

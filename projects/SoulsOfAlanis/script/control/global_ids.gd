@@ -7,5 +7,6 @@ enum unique_ids {
 	breakable_bookshelvf,
 	npc_ghost_bill,
 	npc_andre,
-	npc_mage
+	npc_mage,
+	npc_sorcerer
 }
