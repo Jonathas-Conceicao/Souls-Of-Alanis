@@ -10,7 +10,7 @@ func _ready():
 
 # Changes the current rom
 # i_room - the info room to change to
-func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, blocked_entry = false, to_parent = 0):
+func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, blocked_entry = false, to_parent = false):
 	#TODO: adjust room chest/special items and NPCs according with the list
 	# if there is any child, remove
 	match self.get_child_count():
@@ -25,12 +25,12 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	# creates new scene and change
 	var room_path = i_room.scene
 	var room = load(room_path).instance()
-	#room.position = Vector2(0,0)
+	room.set_global_position(Vector2(0, 0))
 	if blocked_entry:
 		room.get_node("EntryPoint").blocked = true
 
 	self.add_child(room)
-	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
+	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
 
 	if room.has_method("listNPC"):
 		debug.printMsg("Scene %s has method listNPC" % i_room.scene, debug.msg_type.nrm)
@@ -84,6 +84,6 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 		ep = room.find_node("Exit")
 	else:
 		ep = room.find_node("EntryPoint")
-	ep = Vector2(ep.position.y + room.position.x, ep.position.y + room.position.y)
+	ep = Vector2(ep.position.x, ep.position.y)
 	self.emit_signal("changed_scene", ep, i_room.size)
 	return
