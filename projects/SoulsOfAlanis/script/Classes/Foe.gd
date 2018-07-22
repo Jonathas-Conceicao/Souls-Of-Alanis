@@ -142,8 +142,8 @@ func genDefense():
 ###
 # Generate's creature's attack based on it's attributes
 ###
-func genAttack():
-	return attributes.genAttack(attackType)
+func genAttack(dir=null):
+	return attributes.genAttack(attackType, dir)
 
 ###
 # Calculates the damage taken, discounts the current HP

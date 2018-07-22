@@ -70,7 +70,7 @@ func updatePower():
 # attackType -> Attack's type
 # return: new Attack instance
 ###
-func genAttack(attackType):
+func genAttack(attackType, dir=null):
 	var damage = 0
 	match attackType:
 		Attack.Slash:
@@ -79,7 +79,7 @@ func genAttack(attackType):
 			damage = influence(0, 3, 0, 0)
 		Attack.Thrust:
 			damage = influence(0, 1, 1, 0)
-	return (Attack.new(attackType, damage))
+	return (Attack.new(attackType, damage, dir.x if dir else 0, dir.y if dir else 0))
 
 ###
 # Tries to change an item based on it's weight
