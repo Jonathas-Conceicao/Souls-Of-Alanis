@@ -329,6 +329,12 @@ func _on_takeDamage(agressor, attack):
 func calcPercentage(h, l):
 	return (l*100)/h
 
+func _on_creatureStateeChanged(state):
+	if state.get_name() == "Death":
+		var foe = state.get_parent().get_parent()
+		self.data.increaseXP(foe.data.getXP())
+	return
+
 func _on_item_pickUp(I):
 	if self.Backpack.size() < self.BACKPACK_LIMIT:
 		self.Backpack.push_back(I)

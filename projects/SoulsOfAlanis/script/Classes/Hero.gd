@@ -51,7 +51,7 @@ func calcPercentage(h, l):
 	return ((l*100)/h)/100.0
 
 func increaseXP(value):
-	self.cur_xp_points += value
+	self.cur_xp_points += value + self.attributes.wisdom
 	return
 
 func storedLevels():

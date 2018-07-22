@@ -8,6 +8,8 @@ var ring       # Creature's ring  (can be null)
 var attackType # Creature's Attack's type
 var type       # Creature's type
 
+var xp_points # Experience points given by then Foe upon death
+
 const Attributes = preload("Attributes.gd")
 const Armor      = preload("Armor.gd")
 const Ring       = preload("Ring.gd")
@@ -17,13 +19,14 @@ const Attack     = preload("Attack.gd")
 ###
 # Constructor
 ###
-func _init(at = Attack.Slash, tp = FoeType.Ground):
+func _init(at = Attack.Slash, tp = FoeType.Ground, xp = 1):
 	attributes = Attributes.new()
 	self.add_child(attributes)
 	armor      = null
 	ring       = null
 	attackType = at
 	type       = tp
+	self.xp_points = xp
 	return self
 
 ###
@@ -67,6 +70,18 @@ func setArmor(armor):
 func setRing(ring):
 	self.ring = ring
 	return
+
+###
+# Sets the XP points to be given upon death
+###
+func setXP(xp):
+	self.xp_points = xp
+
+###
+# return: XP points given
+###
+func getXP():
+	return self.xp_points
 
 ###
 # return: current carry load
