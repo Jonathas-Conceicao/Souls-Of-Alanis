@@ -6,7 +6,6 @@ enum Half { first, second , any }
 enum msg_type { nrm, dbg, wrn, err	 }
 
 const DEBUG_MODE = false
-var i_Prelude = preload("res://script/map/InfoRoom.gd").new("res://scene/Prelude.tscn", RoomType.ordinary, Half.first, 1, Vector2(2,4.2))
 
 func _init():
 	return
@@ -14,15 +13,15 @@ func _init():
 func printMsg(msg, type = msg_type.nrm, debug = DEBUG_MODE, err = true):
 	if err:
 		match type:
-			nrm:
+			msg_type.nrm:
 				if debug:
 					printerr("-> %s" % msg)
-			dbg:
+			msg_type.dbg:
 				if debug:
 					printerr("(DB) %s" % msg)
-			wrn:
+			msg_type.wrn:
 				printerr("(WW) %s" % msg)
-			err:
+			msg_type.err:
 				printerr("(EE) %s" % msg)
 			_:
 				printerr("(UK) %s" % msg)

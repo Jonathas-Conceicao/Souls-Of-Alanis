@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scene/crypt/boss/BossRoomCrypt.gd" type="Script" id=1]
 [ext_resource path="res://scene/crypt/boss/Torchs.gd" type="Script" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scene/crypt/boss/CloseDoorArea.gd" type="Script" id=23]
 [ext_resource path="res://art/project-art/crypt/tileset/twilight-tiles.png" type="Texture" id=24]
+[ext_resource path="res://sound/crypt/boss/Blackmoor Colossus (No Vocals).ogg" type="AudioStream" id=25]
+[ext_resource path="res://sound/crypt/boss/1.Unknown place.ogg" type="AudioStream" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -68,6 +70,7 @@ script = ExtResource( 2 )
 position = Vector2( 151, 239 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
+frame = 7
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Torchs" index="1"]
@@ -75,7 +78,7 @@ playing = true
 position = Vector2( 939, 239 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Torchs" index="2"]
@@ -83,7 +86,7 @@ playing = true
 position = Vector2( 311, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="Torchs" index="3"]
@@ -91,7 +94,6 @@ playing = true
 position = Vector2( 1099, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Torchs" index="4"]
@@ -99,7 +101,6 @@ playing = true
 position = Vector2( 468, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Torchs" index="5"]
@@ -107,7 +108,6 @@ playing = true
 position = Vector2( 1256, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Torchs" index="6"]
@@ -115,7 +115,7 @@ playing = true
 position = Vector2( 627, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Torchs" index="7"]
@@ -123,7 +123,7 @@ playing = true
 position = Vector2( 1415, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Torchs" index="8"]
@@ -131,7 +131,7 @@ playing = true
 position = Vector2( 792, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 5
+frame = 3
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Torchs" index="9"]
@@ -139,7 +139,7 @@ playing = true
 position = Vector2( 1580, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 6
+frame = 5
 playing = true
 
 [node name="GambyWindows" type="Node2D" parent="Torchs" index="10"]
@@ -535,7 +535,7 @@ position = Vector2( 344, 584 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 8
+frame = 7
 playing = true
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="TopGamby/TileMap" index="5"]
@@ -544,7 +544,7 @@ position = Vector2( 752, 624 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 8
+frame = 6
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="TopGamby/TileMap" index="6"]
@@ -553,7 +553,7 @@ position = Vector2( 544, 680 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 7
+frame = 5
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="TopGamby/TileMap" index="7"]
@@ -562,7 +562,7 @@ position = Vector2( 320, 744 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 6
+frame = 4
 playing = true
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 22 )]
@@ -572,7 +572,6 @@ position = Vector2( 34, 256 )
 
 [node name="CloseDoorArea" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 2018, 1586.5 )
 scale = Vector2( 1.84375, 8.29687 )
 input_pickable = true
@@ -967,6 +966,26 @@ position = Vector2( -1.62695, -0.241058 )
 shape = SubResource( 4 )
 disabled = true
 
+[node name="BossTheme" type="AudioStreamPlayer2D" parent="CloseDoorArea" index="3"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+autoplay = false
+max_distance = 38877.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AreaTheme" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [connection signal="body_entered" from="TopGamby/TileMap/TorchsControl/TorchArea" to="TopGamby/TileMap/TorchsControl/TorchArea" method="_on_TorchArea_body_entered"]
 
 [connection signal="body_entered" from="TopGamby/TileMap/TorchsControl/TorchArea2" to="TopGamby/TileMap/TorchsControl/TorchArea2" method="_on_TorchArea_body_entered"]
@@ -978,5 +997,7 @@ disabled = true
 [connection signal="body_entered" from="TopGamby/TileMap/TorchsControl/TorchArea5" to="TopGamby/TileMap/TorchsControl/TorchArea5" method="_on_TorchArea_body_entered"]
 
 [connection signal="body_entered" from="CloseDoorArea" to="CloseDoorArea" method="_on_CloseDoorArea_body_entered"]
+
+[connection signal="body_entered" from="CloseDoorArea" to="." method="_on_CloseDoorArea_body_entered"]
 
 

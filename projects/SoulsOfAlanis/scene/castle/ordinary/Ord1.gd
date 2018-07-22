@@ -1,8 +1,5 @@
 extends "res://script/Classes/Scene.gd"
 
-enum RoomType {loot, ordinary, connection, mission, challenge, final, any, avoid}
-enum Half { first, second , any }
-
 func getSceneType():
 	return ordinary
 

@@ -10,7 +10,7 @@ func _ready():
 
 # Changes the current rom
 # i_room - the info room to change to
-func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, blocked_entry = false, to_parent = 0):
+func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, blocked_entry = false, to_parent = false):
 	#TODO: adjust room chest/special items and NPCs according with the list
 	# if there is any child, remove
 	match self.get_child_count():
@@ -25,22 +25,22 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	# creates new scene and change
 	var room_path = i_room.scene
 	var room = load(room_path).instance()
-
+	room.set_global_position(Vector2(0, 0))
 	if blocked_entry:
 		room.get_node("EntryPoint").blocked = true
 
 	self.add_child(room)
-	debug.printMsg("Changed to scene: %s (%s)" % [room, room_path], debug.dbg, self.debug_mode)
+	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
 
 	if room.has_method("listNPC"):
-		debug.printMsg("Scene %s has method listNPC" % i_room.scene, true)
+		debug.printMsg("Scene %s has method listNPC" % i_room.scene, debug.msg_type.nrm)
 		for i in room.listNPC():
 			if !i.has_method("get_uniqueID"):
 				debug.printMsg("Every NPC should have a get_uniqueID method", debug.msg_type.err, self.debug_mode)
 				return null
 			pass
-			if !i.has_method("enabled"):
-				debug.printMsg("Every NPC should have a enabled method", debug.msg_type.err, self.debug_mode)
+			if !i.has_method("set_enabled"):
+				debug.printMsg("Every NPC should have a set_enabled method", debug.msg_type.err, self.debug_mode)
 				return null
 			pass
 
@@ -56,23 +56,23 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	pass
 
 	if room.has_method("listChests"):
-		debug.printMsg("Scene %s has method listChests" % i_room.scene, true)
+		debug.printMsg("Scene %s has method listChests" % i_room.scene, debug.msg_type.nrm)
 		for i in room.listChests():
 			if !i.has_method("get_uniqueID"):
 				debug.printMsg("Every chest/breakable stuff should have a get_uniqueID method", debug.msg_type.err)
-				exit(10)
+				return null
 			pass
-			if !i.has_method("enabled"):
-				debug.printMsg("Every chest/breakable should have a enabled method", debug.msg_type.err)
-				exit(11)
+			if !i.has_method("set_enabled"):
+				debug.printMsg("Every chest/breakable should have a set_enabled method", debug.msg_type.err)
+				return null
 			pass
 
 			if listOpenChest.find(i.get_uniqueID) != -1:
 				# DISABLE IT
-				i.enabled(false)
+				i.set_enabled(false)
 			else:
 				# ENABLED
-				i.enabled(true)
+				i.set_enabled(true)
 			pass
 		pass
 	else:
@@ -84,5 +84,6 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 		ep = room.find_node("Exit")
 	else:
 		ep = room.find_node("EntryPoint")
-	self.emit_signal("changed_scene", ep.position, i_room.size)
+	ep = Vector2(ep.position.x, ep.position.y)
+	self.emit_signal("changed_scene", ep, i_room.size)
 	return

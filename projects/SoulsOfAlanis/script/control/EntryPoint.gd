@@ -1,6 +1,9 @@
-extends Area2D
+extends Node2D
 
 export var blocked = false
+
+func _ready():
+	return
 
 func _get_exit():
 	return -1

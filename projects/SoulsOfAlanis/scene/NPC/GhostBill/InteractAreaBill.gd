@@ -23,7 +23,7 @@ func _on_AnimatedSprite_animation_finished():
 func _on_TextBox_finished_dialog(obj):
 	$TextBox.enabled(false)
 	emit_signal("finished_dialog", self)
-		
+
 
 func _on_InteractArea_body_entered(body):
 	if body.StartedQuests.find(self.get_uniqueID()) != -1:
@@ -32,7 +32,7 @@ func _on_InteractArea_body_entered(body):
 		$NoHasQuest.show()
 
 func _on_InteractArea_body_exited(body):
-	if body.get_name() == "Player":	
+	if body.get_name() == "Player":
 		$HasQuest.hide()
 		$NoHasQuest.hide()
 

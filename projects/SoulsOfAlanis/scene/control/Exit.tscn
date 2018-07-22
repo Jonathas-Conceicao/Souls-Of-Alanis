@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10, 80 )
 
-[node name="Exit" type="Area2D"]
+[node name="Exit" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -24,18 +24,21 @@ _sections_unfolded = [ "Collision" ]
 ExitIndex = 0
 Blocked = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-shape = SubResource( 1 )
+position = Vector2( 35.327, -65.6194 )
 
 [node name="InteractionSign" type="Sprite" parent="." index="1"]
 
-visible = false
-position = Vector2( 16.7512, -26.4776 )
+position = Vector2( 35.327, -65.6194 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Exit_body_entered"]
 

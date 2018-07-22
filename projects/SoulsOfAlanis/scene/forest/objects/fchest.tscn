@@ -28,7 +28,6 @@ b = Vector2( 0, 10 )
 
 [node name="Open_chest_area" type="Area2D"]
 
-position = Vector2( 126.904, 79.9423 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -37,6 +36,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }

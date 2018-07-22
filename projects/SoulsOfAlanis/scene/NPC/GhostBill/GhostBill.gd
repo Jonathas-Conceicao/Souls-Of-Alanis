@@ -10,4 +10,4 @@ func set_enabled(value):
 		$InteractAreaBill/CollisionShape2D.set_disabled(false)
 
 func get_uniqueID():
-	return global_ids.unique_id.npc_ghost_bill
+	return global_ids.unique_ids.npc_ghost_bill
