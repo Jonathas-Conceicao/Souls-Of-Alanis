@@ -15,8 +15,7 @@ func init(s, i, t):
 
 func _ready():
 	$TextBox.set_dialog(self.s, self.i)
-	for text in self.t:
-		$TextBox.add_dialog(text)
+	$TextBox.add_lines(self.t)
 	return
 
 func start(s):

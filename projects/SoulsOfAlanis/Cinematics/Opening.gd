@@ -23,7 +23,7 @@ func _ready():
 
 func enabled(b):
 	$Background.visible = b
-	$Alanis.visible = b
-	$FirePlace.visible = b
+	$Background/Alanis.visible = b
+	$Background/FirePlace.visible = b
 	$TextBox.enabled(b)
 	return
