@@ -23,8 +23,8 @@ func handle_input(host, command):
 	match command:
 		0: self.direction = Left
 		1: self.direction = Right
-		2: self.direction = Left if direction == Left else Right
-		3: return "Seek"
-		4: return "Destroy"
+		2: return "Seek"
+		3: return "Destroy"
+		_: pass
 	self.bounces += 1
 	return

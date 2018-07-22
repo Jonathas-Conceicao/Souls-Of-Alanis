@@ -18,11 +18,13 @@ var current_state
 var data
 
 var flipped = false
+var seek
 
 onready var state = {
 	"Lost":       $States/Lost,
 	"Seek":       $States/Seek,
 	"Destroy":    $States/Destroy,
+	"DeathFromAbove": $States/DeathFromAbove,
 }
 
 func _ready():
@@ -96,3 +98,16 @@ func _on_takeDamage(agressor, attack):
 
 func calcPercentage(h, l):
 	return (l*100)/h
+
+func _on_Finder_body_entered(body):
+	if body.get_name() == "Player":
+		self.seek = body
+		var s = current_state.handle_input(self, 2)
+		if s:
+			_state_change(s)
+	return
+
+func _on_Animation_animation_finished(anim_name):
+	var ns = current_state._on_animation_finished(self, anim_name)
+	if ns: _state_change(ns)
+	return
