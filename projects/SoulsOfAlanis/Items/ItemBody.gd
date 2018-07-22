@@ -24,10 +24,18 @@ func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += self.GRAVITY
 	else:
-		self.ready = true
+		self.updateReady()
 		self.velocity.x = 0
 		self.velocity.y = 40
 	move_and_slide(self.velocity, UP)
+	return
+
+func updateReady():
+	if not ready:
+		self.ready = true
+		var bodies = $Area.get_overlapping_bodies()
+		for body in bodies:
+			self._on_Area_body_entered(body)
 	return
 
 func set_type(t):
