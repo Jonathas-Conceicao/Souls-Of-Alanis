@@ -5,6 +5,7 @@ enum Half { first, second , any }
 
 func _ready():
 	$Torchs.burn_baby_burn()
+	$AreaTheme.play()
 	
 #func listNPC():
 #	return null
@@ -20,3 +21,7 @@ func getNumExit():
 	
 func getSize():
 	return Vector2(2.5, 2.8)
+
+func _on_CloseDoorArea_body_entered(body):
+	if body.get_name() == "Player":
+		$AreaTheme.stop()
