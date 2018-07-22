@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/forest/quest/fquest_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/NPC/Andre/Andre.tscn" type="PackedScene" id=7]
 
-[node name="fquest_1" type="Node2D" index="0"]
+[node name="fquest_1" type="Node2D"]
 
 position = Vector2( 35, 0 )
 script = ExtResource( 1 )
@@ -52,12 +53,16 @@ __meta__ = {
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 1175.35, 576.018 )
-scale = Vector2( 2.53125, 1.36849 )
+position = Vector2( 1175.35, 582.962 )
+scale = Vector2( 2.53125, 8.58804 )
 
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 42.6238, 674.505 )
 scale = Vector2( 2.50528, 1 )
+
+[node name="Andre" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 828.422, 600.71 )
 
 

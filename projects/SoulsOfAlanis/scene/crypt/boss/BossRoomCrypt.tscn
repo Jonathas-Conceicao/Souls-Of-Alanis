@@ -56,7 +56,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 8.13562, 10 )
 
-[node name="BossRoomCrypt" type="Node2D" index="0"]
+[node name="BossRoomCrypt" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -70,7 +70,7 @@ script = ExtResource( 2 )
 position = Vector2( 151, 239 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 7
+frame = 4
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Torchs" index="1"]
@@ -78,7 +78,7 @@ playing = true
 position = Vector2( 939, 239 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
+frame = 6
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Torchs" index="2"]
@@ -86,7 +86,7 @@ playing = true
 position = Vector2( 311, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
+frame = 6
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="Torchs" index="3"]
@@ -94,6 +94,7 @@ playing = true
 position = Vector2( 1099, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Torchs" index="4"]
@@ -101,6 +102,7 @@ playing = true
 position = Vector2( 468, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
+frame = 5
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Torchs" index="5"]
@@ -108,6 +110,7 @@ playing = true
 position = Vector2( 1256, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Torchs" index="6"]
@@ -115,7 +118,7 @@ playing = true
 position = Vector2( 627, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
+frame = 6
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Torchs" index="7"]
@@ -123,7 +126,7 @@ playing = true
 position = Vector2( 1415, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 1
+frame = 7
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Torchs" index="8"]
@@ -131,7 +134,7 @@ playing = true
 position = Vector2( 792, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 3
+frame = 8
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Torchs" index="9"]
@@ -139,7 +142,7 @@ playing = true
 position = Vector2( 1580, 240 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 5
+frame = 1
 playing = true
 
 [node name="GambyWindows" type="Node2D" parent="Torchs" index="10"]
@@ -535,7 +538,7 @@ position = Vector2( 344, 584 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 7
+frame = 3
 playing = true
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="TopGamby/TileMap" index="5"]
@@ -544,7 +547,7 @@ position = Vector2( 752, 624 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 6
+frame = 2
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="TopGamby/TileMap" index="6"]
@@ -553,7 +556,7 @@ position = Vector2( 544, 680 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="TopGamby/TileMap" index="7"]
@@ -562,7 +565,7 @@ position = Vector2( 320, 744 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "BurnBabyBurn"
-frame = 4
+frame = 1
 playing = true
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 22 )]

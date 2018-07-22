@@ -10,10 +10,18 @@ func getSceneHalf():
 	return Half.first
 
 func getMaxRep():
-	return 3
+	return 1
 
 func getNumExit():
 	return 1
+	
+func listNPC():
+	pass
+	
+func listChest():
+	var array = .listChest()
+	array.append($fchest)
+	return array
 	
 func getSize():
 	return Vector2(1, 1.07)

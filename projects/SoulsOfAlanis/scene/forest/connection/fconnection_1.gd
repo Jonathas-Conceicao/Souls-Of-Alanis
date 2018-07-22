@@ -12,6 +12,15 @@ func getSceneType():
 
 func getSceneHalf():
 	return Half.first
+	
+func getMaxRep():
+	return 2
+	
+func listNPC():
+	pass
+	
+func listChest():
+	pass
 
 func getSize():
 	return Vector2(1.09, 2.8)
