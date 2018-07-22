@@ -5,9 +5,9 @@ const Armor = preload("res://script/Classes/Armor.gd")
 
 # Data values
 const WEIGHT = 3
-const SLASH  = 1
-const IMPACT = 1
-const THRUST = 1
+const SLASH  = 0
+const IMPACT = 0
+const THRUST = 0
 
 # Sprite values
 const DESCRIPTION = "A basic aromor"

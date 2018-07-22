@@ -5,7 +5,7 @@ const Weapon = preload("res://script/Classes/Weapon.gd")
 
 # Data values
 const WEIGHT = 3
-const DAMAGE = 1
+const DAMAGE = 3
 
 # Sprite values
 const DESCRIPTION = "A basic sword"
