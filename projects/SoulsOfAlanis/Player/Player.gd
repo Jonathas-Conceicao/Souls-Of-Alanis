@@ -30,6 +30,7 @@ var velocity = Vector2()
 
 var direction
 var flipped = false
+var damage_bypass = false
 
 var current_state = null
 
@@ -306,7 +307,7 @@ func _on_Energy_timeout():
 	return
 
 func _on_takeDamage(agressor, attack):
-	if self.current_state == $States/Stagger:
+	if self.current_state == $States/Stagger || self.damage_bypass:
 		attack.queue_free()
 		return
 	var damage = data.takeAttack(attack)
@@ -327,6 +328,10 @@ func _on_takeDamage(agressor, attack):
 
 func calcPercentage(h, l):
 	return (l*100)/h
+
+func damageByPass(b):
+	self.damage_bypass = b
+	return
 
 func _on_creatureStateeChanged(state):
 	if state.get_name() == "Death":

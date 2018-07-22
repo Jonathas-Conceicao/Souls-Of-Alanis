@@ -42,9 +42,7 @@ func tryAttack():
 	return true
 
 func attackCost():
-	var maxCL = self.getMaxCarryLoad()
-	var CL = self.getCarryLoad()
-	return self.calcPercentage(maxCL, CL) * self.getMaxStamina()
+	return self.weapon.getWeight() if weapon != null else 5
 
 func calcPercentage(h, l):
 	return ((l*100)/h)/100.0

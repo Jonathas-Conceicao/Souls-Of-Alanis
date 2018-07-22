@@ -56,9 +56,9 @@ func increment(n=1):
 # Update de power values
 ###
 func updatePower():
-	power.hp             = influence(15, 0, 0, 0)
+	power.hp             = influence(10, 0, 0, 0)
 	power.carryLoad      = influence(0, 10, 0, 0)
-	power.stamina        = influence(0, 0, 10, 0)
+	power.stamina        = influence(0, 0, 5, 0)
 	power.defense.slash  = influence(1, 1, 1, 0)
 	power.defense.impact = influence(2, 2, 0, 0)
 	power.defense.thrust = influence(2, 0, 2, 0)
@@ -74,11 +74,11 @@ func genAttack(attackType, dir=null):
 	var damage = 0
 	match attackType:
 		Attack.Slash:
-			damage = influence(0, 0, 3, 0)
+			damage = influence(0, 0, 12, 0)
 		Attack.Impact:
-			damage = influence(0, 3, 0, 0)
+			damage = influence(0, 12, 0, 0)
 		Attack.Thrust:
-			damage = influence(0, 1, 1, 0)
+			damage = influence(0, 6, 6, 0)
 	return (Attack.new(attackType, damage, dir.x if dir else 0, dir.y if dir else 0))
 
 ###

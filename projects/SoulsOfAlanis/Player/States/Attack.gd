@@ -3,6 +3,7 @@ extends 'State.gd'
 var ok = true
 
 func enter(host):
+	host.get_node("ExtraAnimation").play("Normal")
 	host.set_animation("Attacking")
 	ok = host.data.tryAttack()
 	host.emit_signal("DataUpdated", host)
