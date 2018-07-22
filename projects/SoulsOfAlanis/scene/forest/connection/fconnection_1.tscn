@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/connection/fconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=7]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=8]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 
 [node name="fconnection_1" type="Node2D" index="0"]
 
@@ -75,8 +74,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Exit" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 2482.8, 683.757 )
-scale = Vector2( 1.69048, 1.10737 )
+position = Vector2( 2482.8, 660.563 )
+scale = Vector2( 1.69048, 6.23281 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="SpawnArea2D" type="Container" parent="." index="3"]
@@ -137,35 +136,5 @@ _sections_unfolded = [ "Motion" ]
 position = Vector2( 625.797, 397.385 )
 scale = Vector2( 4.03398, 3.69417 )
 texture = ExtResource( 8 )
-
-[node name="Player" parent="." index="5" instance=ExtResource( 9 )]
-
-position = Vector2( 147.844, 513.269 )
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="9"]
-
-position = Vector2( 5.57901, -6.10352e-05 )
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
 
 

@@ -6,7 +6,7 @@
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 
-[node name="fspoils_1" type="Node2D"]
+[node name="fspoils_1" type="Node2D" index="0"]
 
 position = Vector2( 45, 0 )
 script = ExtResource( 1 )
@@ -57,8 +57,8 @@ scale = Vector2( 2.12957, 1 )
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 1131.11, 381.99 )
-scale = Vector2( 2.02549, 1.74892 )
+position = Vector2( 1131.11, 369.667 )
+scale = Vector2( 2.02549, 6.24584 )
 
 
 [editable path="fchest"]

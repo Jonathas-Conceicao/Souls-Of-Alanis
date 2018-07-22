@@ -4,8 +4,8 @@ export var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
-func _ready():
-	pass
+func getMaxRep():
+	return 3
 	
 func getNumExit():
 	return NumExit
