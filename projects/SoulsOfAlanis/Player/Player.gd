@@ -4,6 +4,7 @@ signal DamegeTaken
 signal StateChanged
 signal DataUpdated
 signal SceneExit
+signal PauseMenu
 
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
@@ -81,7 +82,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("player_debug"):
 		processDebug()
-
+	elif event.is_action_pressed("player_menu"):
+		emit_signal("PauseMenu", self)
 	var new_state = current_state.handle_input(self, event)
 	if new_state:
 		_state_change(new_state)
