@@ -49,11 +49,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="InteractionSign" type="Sprite" parent="." index="1"]
 
+visible = false
 position = Vector2( 31.7472, -71.3777 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 224, 64, 32, 32 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 

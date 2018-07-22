@@ -1,9 +1,8 @@
-extends Area2D
+extends Node2D
 
 export var blocked = false
 
 func _ready():
-	$InteractionSign.visible = false
 	return
 
 func _get_exit():
