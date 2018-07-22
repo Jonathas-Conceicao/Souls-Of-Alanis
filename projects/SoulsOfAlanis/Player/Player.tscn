@@ -78,10 +78,9 @@
 [ext_resource path="res://Player/States/Leep.gd" type="Script" id=76]
 [ext_resource path="res://Player/States/Climb.gd" type="Script" id=77]
 [ext_resource path="res://Player/States/Attack.gd" type="Script" id=78]
-[ext_resource path="res://Player/States/Swap.gd" type="Script" id=79]
-[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=80]
-[ext_resource path="res://Player/States/PlayerMenu.gd" type="Script" id=81]
-[ext_resource path="res://Player/States/Interact.gd" type="Script" id=82]
+[ext_resource path="res://Player/States/Stagger.gd" type="Script" id=79]
+[ext_resource path="res://Player/States/PlayerMenu.gd" type="Script" id=80]
+[ext_resource path="res://Player/States/Interact.gd" type="Script" id=81]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -433,21 +432,17 @@ script = ExtResource( 77 )
 
 script = ExtResource( 78 )
 
-[node name="Swap" type="Node" parent="States" index="7"]
+[node name="Stagger" type="Node" parent="States" index="8"]
 
 script = ExtResource( 79 )
 
-[node name="Stagger" type="Node" parent="States" index="8"]
+[node name="PlayerMenu" type="Node" parent="States" index="9"]
 
 script = ExtResource( 80 )
 
-[node name="PlayerMenu" type="Node" parent="States" index="9"]
-
-script = ExtResource( 81 )
-
 [node name="Interact" type="Node" parent="States" index="10"]
 
-script = ExtResource( 82 )
+script = ExtResource( 81 )
 
 [connection signal="DataUpdated" from="." to="." method="_on_Player_DataUpdated"]
 

@@ -55,7 +55,6 @@ onready var state = {
 	"Leep":       $States/Leep,
 	"Climb":      $States/Climb,
 	"Attack":     $States/Attack,
-	# "Swap":     $States/Swap,
 	"Stagger":    $States/Stagger,
 	"PlayerMenu": $States/PlayerMenu,
 	"Interact":   $States/Interact,
@@ -132,7 +131,7 @@ func give_starting_items():
 	self.data.setArmor(sa.get_data())
 	return
 
-func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
+func get_Backpack_views():
 	var views = []
 	for item in self.Backpack:
 		views.push_back(item.gen_InventoryView())
@@ -175,7 +174,7 @@ func use_from_Backpack(index):
 	emit_signal("DataUpdated", self)
 	return
 
-func drop_from_Backpack(index): # TODO: BUG: @Jonathas Items order semas stranger after a few removes, might be related to invisible items bug
+func drop_from_Backpack(index):
 	if index > (self.Backpack.size() - 1):
 		return
 	self.Backpack[index].queue_free()

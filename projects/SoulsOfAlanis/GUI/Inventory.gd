@@ -48,67 +48,10 @@ func _input(event):
 		self.state_change()
 	return
 
-func test_ready():
-	var i1 = InventoryItem.instance()
-	var i2 = InventoryItem.instance()
-	var i3 = InventoryItem.instance()
-	var i4 = InventoryItem.instance()
-	var i5 = InventoryItem.instance()
-	var i6 = InventoryItem.instance()
-	var i7 = InventoryItem.instance()
-
-	var e1 = InventoryItem.instance()
-
-	i1.init(InventoryItemS.Type.Scroll, "Quest: find meaning in life", 0)
-	i2.init(InventoryItemS.Type.Armor , "A basic aromor" , 0)
-	i3.init(InventoryItemS.Type.Ring  , "A red ring"     , 3)
-	i4.init(InventoryItemS.Type.Sword , "A prety Sword"  , 4)
-	i5.init(InventoryItemS.Type.Ring  , "Another Ring"   , 1)
-	i6.init(InventoryItemS.Type.Ring  , "A ring with a really, really, reaaaly long description for testing", 0)
-	i7.init(InventoryItemS.Type.Sword , "A basic sword"  , 0)
-
-	e1.init(InventoryItemS.Type.Sword , "The Starter Sword", 2)
-
-	var exItemList = [i1, i7, i3, i4, i5, i2, i6] # TODO: BUG: @Jonathas Last item in lsit seams to be invisible
-	self.init(exItemList, [e1, null, null])
-	return
-
-func test_ready_2():
-	var item = Item.new()
-	item.set_type(item.Type.Sword)
-	item.set_sprite_id(4)
-	item.set_description("Magestic Sword")
-	var iv   = item.gen_InventoryView()
-	self.init([iv])
-	return
-
-func test_ready_3():
-	randomize()
-	var item = load("res://script/tools/RandomItemGenerator.gd").generateEquipament(1)
-	var iv   = item.gen_InventoryView()
-	self.init([iv])
-	return
-
-func test_ready_4():
-	randomize()
-	var item = load("res://script/tools/RandomItemGenerator.gd").generateConsumable(1)
-	var iv   = item.gen_InventoryView()
-	self.init([iv])
-	return
-
-func test_ready_5():
-	randomize()
-	var item = load("res://script/tools/RandomItemGenerator.gd").generateAny(1)
-	var iv   = item.gen_InventoryView()
-	self.init([iv])
-	return
-
-func _ready(): # TODO: #Jonathas Delete old ready tests
+func _ready():
 	self.selection_reset()
 	self.buttom_reset()
 	$Animation.play("Intro")
-
-	# self.test_ready()
 	return
 
 func init(invList, equipList = [null, null, null]):
@@ -216,7 +159,7 @@ func display_items():
 		$Background/ItemsContainer.add_child(item)
 		self.set_item_pos(item, i, j)
 		j = (j + 1)
-		i = int(j /  5)
+		i = i + int(j /  5)
 		j %= COLUMNS
 	return
 

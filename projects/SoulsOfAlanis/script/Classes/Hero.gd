@@ -44,7 +44,6 @@ func tryAttack():
 func attackCost():
 	var maxCL = self.getMaxCarryLoad()
 	var CL = self.getCarryLoad()
-	print("Values:", maxCL, " ", CL, " ", calcPercentage(maxCL, CL))
 	return self.calcPercentage(maxCL, CL) * self.getMaxStamina()
 
 func calcPercentage(h, l):
