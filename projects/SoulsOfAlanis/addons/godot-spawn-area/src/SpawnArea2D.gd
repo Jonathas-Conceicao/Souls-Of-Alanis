@@ -17,7 +17,7 @@ func _ready():
   place_mob(pick_rand())
   place_mob(pick_rand())
 
-  pass
+  return
 
 func pick_rand():
   var path = self.MobList[randi() % self.MobList.size()]
@@ -37,8 +37,8 @@ func place_mob(mobClass):
 
   var mob = mobClass.instance()
   add_child(mob)
-
-  
+  var player = get_tree().get_root().get_node("root").get_node("Player")
+  mob.connect("StateChanged", player, "_on_creatureStateeChanged")
 
 #	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))
 #	var l_y = rand_range(0,                        (rect_size.y) - (mob.get_size().y/2))

@@ -12,7 +12,7 @@ const welcomeText = [
 	"It is said that only a Knight pure of heart can find his or hers way through the castle."
 ]
 const greetText = [
-	"I've heard of overloded motherboard, but this is ridiculous"
+	"It is good to see you again."
 ]
 
 const introNoHelp = "The only help I can give you at this moment is to pray for the god above to guide your way."
