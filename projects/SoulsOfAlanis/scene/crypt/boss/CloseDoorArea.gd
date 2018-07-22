@@ -6,3 +6,4 @@ func _on_CloseDoorArea_body_entered(body):
 		$DoorControlRight/StaticBody2D/CollisionShape2D.set_disabled(false)
 		$DoorControlLeft.set_visible(true)
 		$DoorControlLeft/StaticBody2D/CollisionShape2D.set_disabled(false)
+		$BossTheme.play()
