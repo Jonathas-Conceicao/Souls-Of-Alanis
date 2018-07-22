@@ -13,3 +13,6 @@ func _input(event):
 		
 	if event.is_pressed():
 		$LocalName.hide()
+
+func getSize():
+	return Vector2(2, 3.1)
