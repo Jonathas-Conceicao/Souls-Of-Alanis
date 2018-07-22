@@ -13,13 +13,19 @@ func test_ready():
 	self.add_item("No")
 	self.add_item("Maybe")
 	self.add_item("No way, hosay!")
-	self.enabeled(true)
+	self.enabled(true)
 	return
 
 func _ready():
 	self.update_selected()
 
-	self.test_ready()
+	# self.test_ready()
+	return
+
+func enabled(b):
+	if not b:
+		$NPPainel/ItemList.visible = false
+	.enabled(b)
 	return
 
 func showItens():
@@ -36,6 +42,8 @@ func _input(event):
 
 func update_selected():
 	self.itemList = $NPPainel/ItemList.get_children()
+	for item in itemList:
+		item.selected(false)
 	if self.itemList:
 		self.itemList[0].selected(true)
 	self.selected = 0
@@ -71,6 +79,11 @@ func add_item(text):
 	item.set_text(text)
 	item.selected(false)
 	$NPPainel/ItemList.add_child(item)
+	return
+
+func add_items(texts):
+	for txt in texts:
+		self.add_item(txt)
 	return
 
 func clear_items():

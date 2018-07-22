@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Util/art/ImanorBalloonx2.png" type="Texture" id=1]
+[ext_resource path="res://Util/Balloon.gd" type="Script" id=2]
+
+[node name="Balloon" type="Sprite" index="0"]
+
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+script = ExtResource( 2 )
+balloon = 13
+
+

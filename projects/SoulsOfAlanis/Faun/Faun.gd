@@ -44,7 +44,7 @@ onready var state = {
 }
 
 func _ready():
-    data = Foe.new()
+    data = self.newData()
     self.add_child(data)
     velocity.y = 40 # base velocity to detect "is_on_floor"
     current_state = state["Walk"]
@@ -54,6 +54,13 @@ func _ready():
 
     set_process(true)
     return
+
+func newData():
+	var data = Foe.new(Attack.Thrust)
+	data.attributes.vitality += 3
+	data.attributes.strength += 4
+	data.attributes.agility  += 4
+	return data
 
 func _physics_process(delta):
 	var new_state = current_state.update(self, delta)

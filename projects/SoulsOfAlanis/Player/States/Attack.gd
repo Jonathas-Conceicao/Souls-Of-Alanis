@@ -1,18 +1,26 @@
 extends 'State.gd'
 
+var ok = true
+
 func enter(host):
+	host.get_node("ExtraAnimation").play("Normal")
 	host.set_animation("Attacking")
+	ok = host.data.tryAttack()
+	host.emit_signal("DataUpdated", host)
 	return
 
 func handle_input(host, event):
-	if host.is_on_floor() && host.velocity.y >= 0:
-		if event.is_action_pressed("player_jump"):
-			return "Jump"
-		if event.is_action_pressed("player_leep_right") || event.is_action_pressed("player_leep_left"):
-			return "Leep"
+	if ok:
+		if host.is_on_floor() && host.velocity.y >= 0:
+			if event.is_action_pressed("player_jump"):
+				return "Jump"
+			if event.is_action_pressed("player_leep_right") || event.is_action_pressed("player_leep_left"):
+				return "Leep"
 	return
 
 func update(host, delta):
+	if !ok:
+		return "Idle"
 	if   Input.is_action_pressed("player_right"):
 		host.velocity.x = host.SPEED
 	elif Input.is_action_pressed("player_left"):

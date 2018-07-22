@@ -37,4 +37,5 @@ func exit(host):
 	var PSprite = host.get_node("Sprite")
 	SSprite.set_modulate(Color(1, 1, 1, 1))
 	PSprite.set_modulate(Color(1, 1, 1, 1))
+	host.get_node("ExtraAnimation").play("Immune")
 	return

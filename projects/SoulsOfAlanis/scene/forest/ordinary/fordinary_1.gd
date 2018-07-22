@@ -6,6 +6,9 @@ enum Half { first, second, any }
 
 func getNumExit():
 	return NumExit
+	
+func getMaxRep():
+	return 2
 
 func getSceneType():
 	return RoomType.ordinary
@@ -14,4 +17,4 @@ func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(2, 2)
+	return Vector2(2, 2.07)

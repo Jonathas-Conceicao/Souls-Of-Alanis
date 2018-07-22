@@ -16,8 +16,8 @@ func _init():
 
 func _ready():
 	$Player.visible = false
-	$Player/HUD.enabeled(false)
-
+	$Player/HUD.enabled(false)
+	
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
@@ -44,11 +44,10 @@ func _adjust_view(pos, sz):
 
 
 func _on_Opening_finished_cinematic(obj):
-	$Opening.enabeled(false)
+	$Opening.enabled(false)
 	$Opening.queue_free()
 
 	$Player.visible = true
-	$Player/HUD.enabeled(true)
 
 	var start = InfoRoom.new(self.StartScene)
 

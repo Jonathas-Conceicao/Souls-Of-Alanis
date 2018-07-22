@@ -15,19 +15,26 @@ func init(s, i, t):
 
 func _ready():
 	$TextBox.set_dialog(self.s, self.i)
-	for text in self.t:
-		$TextBox.add_dialog(text)
+	$TextBox.add_lines(self.t)
 	return
 
 func start(s):
 	play(s)
-	$TextBox.enabeled(true)
+	$TextBox.enabled(true)
 	return
 
-func enabeled(b):
-	$TextBox.enabeled(b)
+func enabled(b):
+	$TextBox.enabled(b)
 	return
 
 func _on_TextBox_finished_dialog(box):
-	emit_signal("finished_cinematic", self)
+	if !has_animation("Outro"):
+		emit_signal("finished_cinematic", self)
+	else:
+		self.play("Outro")
+	return
+
+func _on_Self_animation_finished(anim_name):
+	if anim_name == "Outro":
+		emit_signal("finished_cinematic", self)
 	return

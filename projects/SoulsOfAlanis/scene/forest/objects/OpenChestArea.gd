@@ -2,14 +2,14 @@ extends "res://script/Classes/Unique.gd"
 
 var STATE_CHEST = "CLOSED"
 
-const NovoItem = preload("res://Items/predefined/StarterSword.gd")
+const new_item = preload("res://Items/predefined/StarterSword.gd")
 
 func show_popUp():
-	$Label.show()
+	#$Label.show()
 	return
 
 func hide_popUp():
-	$Label.hide()
+	#$Label.hide()
 	return
 
 func _on_player_interaction(host):
@@ -18,7 +18,7 @@ func _on_player_interaction(host):
 		$AnimatedSprite.play("opened")
 		self.hide_popUp()
 		STATE_CHEST = "OPENED"
-		var ni = NovoItem.new()
+		var ni = new_item.new()
 		var ib = ni.gen_ItemBody()
 		add_child(ib)
 		ib.spawn()

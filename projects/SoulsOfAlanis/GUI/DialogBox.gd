@@ -28,7 +28,7 @@ func update():
 	set_process_input(self.enabled)
 	return
 
-func enabeled(b):
+func enabled(b):
 	Main.set_visible_characters(0)
 	self.enabled = b
 	self.update()
@@ -44,6 +44,11 @@ func set_dialog(name, text):
 
 func add_dialog(text):
 	self.gen_list(text)
+	return
+
+func add_lines(texts):
+	for txt in texts:
+		self.add_dialog(txt)
 	return
 
 func gen_list(text):

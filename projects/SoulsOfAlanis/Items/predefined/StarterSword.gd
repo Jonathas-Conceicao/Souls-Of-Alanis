@@ -5,13 +5,13 @@ const Weapon = preload("res://script/Classes/Weapon.gd")
 
 # Data values
 const WEIGHT = 3
-const DAMAGE = 5
+const DAMAGE = 3
 
 # Sprite values
 const DESCRIPTION = "A basic sword"
 const SPRITE_ID = 0
 
-func _ready():
+func _init():
 	self.set_values()
 	return
 
@@ -23,6 +23,6 @@ func set_values():
 	return
 
 func gen_data():
-	var equipData = Weapon.new(self.WEIGHT, 0, self.DAMAGE)
+	var equipData = Weapon.new(self.WEIGHT, 2, self.DAMAGE)
 	return equipData
 

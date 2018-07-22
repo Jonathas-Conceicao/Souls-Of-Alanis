@@ -1,7 +1,7 @@
-[gd_resource type="TileSet" load_steps=11 format=2]
+[gd_resource type="TileSet" load_steps=12 format=2]
 
-[ext_resource path="res://art/forest_sunny/tileset.png" type="Texture" id=1]
-[ext_resource path="res://art/forest_sunny/props.png" type="Texture" id=2]
+[ext_resource path="res://art/project-art/forest/tileset/tileset.png" type="Texture" id=1]
+[ext_resource path="res://art/project-art/forest/props.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=8]
 
@@ -16,17 +16,17 @@ extents = Vector2( 7.46517, 7.70439 )
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 8.6729, 8.62225 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 7.45572 )
+extents = Vector2( 7.89282, 7.45572 )
 
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 2.77719 )
+extents = Vector2( 7.14639, 1.98761 )
 
 [sub_resource type="SegmentShape2D" id=4]
 
@@ -42,12 +42,16 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
+extents = Vector2( 10, 3.50446 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
 [resource]
 
 0/name = "Sprite"
-0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 16, 0, 16, 16 )
@@ -72,7 +76,7 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 0.805447, 0, 0, 0.788865, 7.94052, 8.25525 )
+"shape_transform": Transform2D( 0.686547, 0, 0, 0.788865, 9.18483, 8.25525 )
 } ]
 2/name = "floor_2"
 2/texture = ExtResource( 1 )
@@ -86,7 +90,7 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 0.800109, 0, 0, 0.788415, 8.05506, 8.12754 )
+"shape_transform": Transform2D( 0.800109, 0, 0, 0.286924, 8.05506, 7.8781 )
 } ]
 3/name = "floor_3"
 3/texture = ExtResource( 1 )
@@ -100,7 +104,7 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 0.806136, 0, 0, 0.785762, 7.97672, 8.225 )
+"shape_transform": Transform2D( 0.806136, 0, 0, 0.286924, 7.97672, 8.0101 )
 } ]
 4/name = "f_plant_1"
 4/texture = ExtResource( 1 )
@@ -132,10 +136,9 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 0.806136, 0, 0, 0.785762, 7.97672, 8.225 )
+"shape_transform": Transform2D( 0.692282, 0, 0, 0.785762, 7.874, 8.225 )
 } ]
 7/name = "floor_5"
-7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 112, 64, 16, 16 )
@@ -145,7 +148,7 @@ extents = Vector2( 10, 10 )
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 9 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 0.394338, 0, 0, 0.783352, 3.77458, 8.25634 )
 } ]
 8/name = "floor_down_1"
@@ -709,12 +712,12 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 7 ),
-"shape_transform": Transform2D( 0.800325, 0, 0, 0.295843, 8.01847, 2.9972 )
+"shape_transform": Transform2D( 0.74455, 0, 0, 0.227618, 8.74355, 2.43672 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 7 ),
-"shape_transform": Transform2D( 0.419729, 0, 0, 0.783752, 4.11771, 8.16099 )
+"shape_transform": Transform2D( 0.0384616, 0, 0, 3.93706, 5.5644, 18.5306 )
 } ]
 60/name = "block_1_2"
 60/texture = ExtResource( 1 )
@@ -727,7 +730,7 @@ extents = Vector2( 10, 10 )
 60/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 7 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 0.306452, 0, 0, 0.799305, 3.06392, 8.02767 )
 } ]
 61/name = "block_1_3"
@@ -775,7 +778,7 @@ extents = Vector2( 10, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 7 ),
-"shape_transform": Transform2D( 0.800325, 0, 0, 0.295843, 8.01847, 2.9972 )
+"shape_transform": Transform2D( 0.800325, 0, 0, 0.227618, 8.01847, 2.43672 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -857,7 +860,6 @@ extents = Vector2( 10, 10 )
 69/navigation_offset = Vector2( 8, 8 )
 69/shapes = [  ]
 70/name = "lamp2"
-70/texture = ExtResource( 2 )
 70/tex_offset = Vector2( 0, 0 )
 70/modulate = Color( 1, 1, 1, 1 )
 70/region = Rect2( 64, 96, 48, 64 )

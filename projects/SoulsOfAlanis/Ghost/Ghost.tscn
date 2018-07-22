@@ -1,23 +1,24 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Ghost/Ghost.gd" type="Script" id=1]
 [ext_resource path="res://Ghost/art/fly_1.png" type="Texture" id=2]
 [ext_resource path="res://Ghost/art/fly_2.png" type="Texture" id=3]
-[ext_resource path="res://Ghost/art/fly_3.png" type="Texture" id=4]
-[ext_resource path="res://Ghost/art/fly_4.png" type="Texture" id=5]
-[ext_resource path="res://Ghost/art/fly_5.png" type="Texture" id=6]
-[ext_resource path="res://Ghost/art/fly_6.png" type="Texture" id=7]
-[ext_resource path="res://Ghost/art/fly_8.png" type="Texture" id=8]
-[ext_resource path="res://Ghost/art/fly_9.png" type="Texture" id=9]
-[ext_resource path="res://Ghost/art/fly_10.png" type="Texture" id=10]
-[ext_resource path="res://Ghost/art/death_1.png" type="Texture" id=11]
-[ext_resource path="res://Ghost/art/death_2.png" type="Texture" id=12]
-[ext_resource path="res://Ghost/art/death_3.png" type="Texture" id=13]
-[ext_resource path="res://Ghost/art/death_4.png" type="Texture" id=14]
-[ext_resource path="res://Ghost/art/death_5.png" type="Texture" id=15]
+[ext_resource path="res://Ghost/art/death_1.png" type="Texture" id=4]
+[ext_resource path="res://Ghost/art/death_2.png" type="Texture" id=5]
+[ext_resource path="res://Ghost/art/death_3.png" type="Texture" id=6]
+[ext_resource path="res://Ghost/art/death_4.png" type="Texture" id=7]
+[ext_resource path="res://Ghost/art/death_5.png" type="Texture" id=8]
+[ext_resource path="res://Ghost/art/fly_3.png" type="Texture" id=9]
+[ext_resource path="res://Ghost/art/fly_4.png" type="Texture" id=10]
+[ext_resource path="res://Ghost/art/fly_5.png" type="Texture" id=11]
+[ext_resource path="res://Ghost/art/fly_6.png" type="Texture" id=12]
+[ext_resource path="res://Ghost/art/fly_8.png" type="Texture" id=13]
+[ext_resource path="res://Ghost/art/fly_9.png" type="Texture" id=14]
+[ext_resource path="res://Ghost/art/fly_10.png" type="Texture" id=15]
 [ext_resource path="res://Ghost/States/Stagger.gd" type="Script" id=16]
 [ext_resource path="res://Ghost/States/Fly.gd" type="Script" id=17]
 [ext_resource path="res://Ghost/States/Death.gd" type="Script" id=18]
+[ext_resource path="res://Util/DamegeAreaFix.tscn" type="PackedScene" id=19]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -119,23 +120,29 @@ tracks/1/keys = {
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "Fly",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Fly",
+"speed": 5.0
 } ]
 
-[node name="Ghost" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=6]
+
+custom_solver_bias = 0.0
+radius = 27.0
+height = 30.0
+
+[node name="Ghost" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 128
@@ -211,6 +218,12 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="Area2D" parent="." index="7" instance=ExtResource( 19 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 6 )
 
 [connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 

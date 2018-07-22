@@ -4,7 +4,9 @@ var attributes # Hero's attributes
 var armor      # Hero's current Armor
 var ring       # Hero's current Ring
 var weapon     # Hero's current Weapon
-#var trails
+
+var xp_points
+var cur_xp_points
 
 var damageBonus = null # Attack instance for direct damage bonus to all attacks
 
@@ -25,7 +27,53 @@ func _init():
 	self.add_child(weapon)
 	armor      = null
 	ring       = null
+	self.xp_points = 10
+	self.cur_xp_points = 0
 	return self
+
+###
+# Checks if there's enough stamina for an Attack, and if so, consumes it
+###
+func tryAttack():
+	var cost = self.attackCost()
+	if cost > self.getStamina():
+		return false
+	self.decreaseStamina(cost)
+	return true
+
+func attackCost():
+	return self.weapon.getWeight() if weapon != null else 5
+
+func calcPercentage(h, l):
+	return ((l*100)/h)/100.0
+
+func increaseXP(value):
+	self.cur_xp_points += value + self.attributes.wisdom
+	return
+
+func storedLevels():
+	return int(self.cur_xp_points/self.xp_points)
+
+###
+# Increace Hero's level by one
+###
+func levelUp(selectedAttribute):
+	# Update XP points
+	self.cur_xp_points -= self.xp_points
+	self.setLevel(self.getLevel() + 1)
+	match selectedAttribute:
+		0:
+			self.attributes.vitality += 1
+		1:
+			self.attributes.strength += 1
+		2:
+			self.attributes.agility  += 1
+		3:
+			self.attributes.wisdom   += 1
+		_:
+			pass
+	self.attributes.updatePower()
+	return
 
 ###
 # Increases Stamina, bounded by the Max value
@@ -35,7 +83,7 @@ func increaseStamina(value):
 	return self.attributes.increaseStamina(value);
 
 ###
-# Decreases Stamina, bounded by the Max value
+# Decreases Stamina, bounded by the min value
 # value -> Value to be incremented
 ###
 func decreaseStamina(value):
@@ -91,6 +139,20 @@ func setWeapon(weapon):
 	if ok:
 		self.weapon = weapon
 	return ok
+
+###
+# Sets a new level for the Hero (unsed only for display)
+# l -> Level
+###
+func setLevel(l):
+	self.attributes.setLevel(l)
+	return
+
+###
+# Get Hero's level
+###
+func getLevel():
+	return self.attributes.getLevel()
 
 ###
 # return: current carry load
@@ -151,9 +213,10 @@ func genDefense():
 # attributes and the current weapon
 # return: new Attack's instance
 ###
-func genAttack():
-	var attack = weapon.genAttack()
+func genAttack(dir=null):
+	var attack = weapon.genAttack(dir)
 	var attAttack = attributes.genAttack(weapon.getAttackType())
+	# add_child(attack)
 	attack.add(attAttack)
 	if damageBonus != null:
 		attack.forceAdd(damageBonus)
@@ -181,10 +244,3 @@ func takeAttack(attack):
 	defense.queue_free()
 	attributes.takeDamage(damage)
 	return damage
-
-###
-# Increace Hero's level by one
-###
-func levelUp():
-	self.attributes.increment()
-	return

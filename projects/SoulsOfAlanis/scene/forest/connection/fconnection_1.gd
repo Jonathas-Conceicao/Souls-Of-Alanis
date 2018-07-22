@@ -1,6 +1,6 @@
 extends Node
 
-var NumExit = 2
+var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
@@ -14,4 +14,4 @@ func getSceneHalf():
 	return Half.first
 
 func getSize():
-	return Vector2(1, 3.2)
+	return Vector2(1.09, 2.8)

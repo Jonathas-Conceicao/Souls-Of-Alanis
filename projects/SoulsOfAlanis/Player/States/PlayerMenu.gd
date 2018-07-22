@@ -46,6 +46,7 @@ func update_inventory(host):
 func update_info(host):
 	var data = host.get_data_for_display()
 	self.info.focused(false)
+	self.info.enabled(true)
 	self.info.init(data[0], data[1])
 	return
 

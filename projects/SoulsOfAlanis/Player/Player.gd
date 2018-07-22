@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
+signal DamegeTaken
 signal StateChanged
 signal DataUpdated
 signal SceneExit
+signal PauseMenu
 
 const Hero = preload("res://script/Classes/Hero.gd")
 const Attack = preload("res://script/Classes/Attack.gd")
@@ -29,6 +31,7 @@ var velocity = Vector2()
 
 var direction
 var flipped = false
+var damage_bypass = false
 
 var current_state = null
 
@@ -54,7 +57,6 @@ onready var state = {
 	"Leep":       $States/Leep,
 	"Climb":      $States/Climb,
 	"Attack":     $States/Attack,
-	# "Swap":     $States/Swap,
 	"Stagger":    $States/Stagger,
 	"PlayerMenu": $States/PlayerMenu,
 	"Interact":   $States/Interact,
@@ -80,7 +82,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("player_debug"):
 		processDebug()
-
+	elif event.is_action_pressed("player_menu"):
+		emit_signal("PauseMenu", self)
 	var new_state = current_state.handle_input(self, event)
 	if new_state:
 		_state_change(new_state)
@@ -131,7 +134,7 @@ func give_starting_items():
 	self.data.setArmor(sa.get_data())
 	return
 
-func get_Backpack_views(): # TODO: BUG: @Jonathas Items are not showing after 7th slot
+func get_Backpack_views():
 	var views = []
 	for item in self.Backpack:
 		views.push_back(item.gen_InventoryView())
@@ -174,7 +177,7 @@ func use_from_Backpack(index):
 	emit_signal("DataUpdated", self)
 	return
 
-func drop_from_Backpack(index): # TODO: BUG: @Jonathas Items order semas stranger after a few removes, might be related to invisible items bug
+func drop_from_Backpack(index):
 	if index > (self.Backpack.size() - 1):
 		return
 	self.Backpack[index].queue_free()
@@ -227,22 +230,9 @@ func get_from_StartedQuests(index):
 func get_from_FinishedQuests(index):
 	return self.FinishedQuests[index]
 
-# var control = 0
 func processDebug():
-	# _state_change("Idle")
-	# data.attributes.power.stamina += 10
-	# data.attributes.strength += 1
-	# data.attributes.power.updateCurrent()
-	# print("Strength       :", data.attributes.strength)
-	# print("Current Stamina:", data.getStamina())
-	# print("Max     Stamina:", data.getMaxStamina())
-	# self._on_takeDamage(self, Attack.new(Attack.Slash, control))
-	# control += 5
-	# if control >= 20: control = 0
-	# # var Cam = self.get_node("Camera2D")
-	# Cam.zoom = (Cam.zoom - Vector2(0.1, 0.1))
-	# for i in range(0, 4):
-	# 	self.data.levelUp()
+	self.data.increaseXP(10)
+	emit_signal("DataUpdated", self)
 	return
 
 func update_flip():
@@ -312,12 +302,16 @@ func _on_Animation_animation_finished(anim_name):
 	return
 
 func _on_Energy_timeout():
-	var energy_per_tick = max(1, data.getMaxStamina() / 30)
-	data.increaseStamina(energy_per_tick)
-	emit_signal("DataUpdated", self)
+	if self.current_state != $States/Attack:
+		var energy_per_tick = max(0.3, data.getMaxStamina() / 30)
+		data.increaseStamina(energy_per_tick)
+		emit_signal("DataUpdated", self)
 	return
 
 func _on_takeDamage(agressor, attack):
+	if self.current_state == $States/Stagger || self.damage_bypass:
+		attack.queue_free()
+		return
 	var damage = data.takeAttack(attack)
 	emit_signal("DataUpdated", self)
 	var damageDisplay = DamageShower.instance()
@@ -326,14 +320,26 @@ func _on_takeDamage(agressor, attack):
 						 Vector2(1.5, 1.5),
 						 damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
-	print("Player recived ", damage, " from: ", agressor.get_name())
-	_state_change("Stagger")
-	var dp = calcPercentage(self.data.getMaxHP(), damage)
-	current_state.setKnockBack(self, dp, attack.direction)
+	if damage > 0:
+		emit_signal("DamegeTaken", self, damage)
+		print("Player recived ", damage, " from: ", agressor.get_name())
+		_state_change("Stagger")
+		var dp = calcPercentage(self.data.getMaxHP(), damage)
+		current_state.setKnockBack(self, dp, attack.direction)
 	return
 
 func calcPercentage(h, l):
 	return (l*100)/h
+
+func damageByPass(b):
+	self.damage_bypass = b
+	return
+
+func _on_creatureStateeChanged(state):
+	if state.get_name() == "Death":
+		var foe = state.get_parent().get_parent()
+		self.data.increaseXP(foe.data.getXP())
+	return
 
 func _on_item_pickUp(I):
 	if self.Backpack.size() < self.BACKPACK_LIMIT:
@@ -344,9 +350,13 @@ func _on_item_pickUp(I):
 
 func _on_SwordHit_body(body):
 	if body != self && body.has_method("_on_takeDamage"):
-		var attack = data.genAttack()
+		var attack = data.genAttack(self.genPushBack(body))
 		body._on_takeDamage(self, attack)
 	return
+
+func genPushBack(body):
+	var v = body.get_global_position() - self.get_global_position()
+	return v.normalized()
 
 func _on_SwordHit_area(area):
 	if area != $Stepping && area.has_method("_on_takeHit"):

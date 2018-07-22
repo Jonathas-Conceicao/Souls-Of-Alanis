@@ -1,24 +1,25 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Bat/Bat.gd" type="Script" id=1]
-[ext_resource path="res://Bat/bat1.png" type="Texture" id=2]
-[ext_resource path="res://Bat/bat2.png" type="Texture" id=3]
-[ext_resource path="res://Bat/bat3.png" type="Texture" id=4]
-[ext_resource path="res://Bat/bat4.png" type="Texture" id=5]
-[ext_resource path="res://Bat/batstag1.png" type="Texture" id=6]
-[ext_resource path="res://Bat/batstag2.png" type="Texture" id=7]
-[ext_resource path="res://Bat/batstag3.png" type="Texture" id=8]
-[ext_resource path="res://Bat/batstag4.png" type="Texture" id=9]
-[ext_resource path="res://Bat/death_1.png" type="Texture" id=10]
-[ext_resource path="res://Bat/death_2.png" type="Texture" id=11]
-[ext_resource path="res://Bat/death_3.png" type="Texture" id=12]
-[ext_resource path="res://Bat/death_4.png" type="Texture" id=13]
-[ext_resource path="res://Bat/death_5.png" type="Texture" id=14]
-[ext_resource path="res://Bat/death_6.png" type="Texture" id=15]
-[ext_resource path="res://Bat/death_7.png" type="Texture" id=16]
+[ext_resource path="res://Bat/batstag1.png" type="Texture" id=2]
+[ext_resource path="res://Bat/batstag2.png" type="Texture" id=3]
+[ext_resource path="res://Bat/batstag3.png" type="Texture" id=4]
+[ext_resource path="res://Bat/batstag4.png" type="Texture" id=5]
+[ext_resource path="res://Bat/death_1.png" type="Texture" id=6]
+[ext_resource path="res://Bat/death_2.png" type="Texture" id=7]
+[ext_resource path="res://Bat/death_3.png" type="Texture" id=8]
+[ext_resource path="res://Bat/death_4.png" type="Texture" id=9]
+[ext_resource path="res://Bat/death_5.png" type="Texture" id=10]
+[ext_resource path="res://Bat/death_6.png" type="Texture" id=11]
+[ext_resource path="res://Bat/death_7.png" type="Texture" id=12]
+[ext_resource path="res://Bat/bat1.png" type="Texture" id=13]
+[ext_resource path="res://Bat/bat2.png" type="Texture" id=14]
+[ext_resource path="res://Bat/bat3.png" type="Texture" id=15]
+[ext_resource path="res://Bat/bat4.png" type="Texture" id=16]
 [ext_resource path="res://Bat/States/Stagger.gd" type="Script" id=17]
 [ext_resource path="res://Bat/States/Fly.gd" type="Script" id=18]
 [ext_resource path="res://Bat/States/Death.gd" type="Script" id=19]
+[ext_resource path="res://Util/DamegeAreaFix.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -121,21 +122,26 @@ tracks/1/keys = {
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Fly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Fly",
+"speed": 5.0
 } ]
 
-[node name="Bat" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 21, 18 )
+
+[node name="Bat" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 8
@@ -209,6 +215,12 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="Area2D" parent="." index="7" instance=ExtResource( 20 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 6 )
 
 [connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 

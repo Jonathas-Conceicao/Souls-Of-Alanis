@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Faun/Faun.gd" type="Script" id=1]
 [ext_resource path="res://Faun/art/idle_1.png" type="Texture" id=2]
@@ -22,29 +22,30 @@
 [ext_resource path="res://Faun/art/attack_13.png" type="Texture" id=20]
 [ext_resource path="res://Faun/art/attack_14.png" type="Texture" id=21]
 [ext_resource path="res://Faun/art/attack_15.png" type="Texture" id=22]
-[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=23]
-[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=24]
-[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=25]
-[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=26]
-[ext_resource path="res://Faun/art/death_5.png" type="Texture" id=27]
-[ext_resource path="res://Faun/art/death_6.png" type="Texture" id=28]
-[ext_resource path="res://Faun/art/death_7.png" type="Texture" id=29]
-[ext_resource path="res://Faun/art/death_8.png" type="Texture" id=30]
-[ext_resource path="res://Faun/art/death_9.png" type="Texture" id=31]
-[ext_resource path="res://Faun/art/walk_1.png" type="Texture" id=32]
-[ext_resource path="res://Faun/art/walk_2.png" type="Texture" id=33]
-[ext_resource path="res://Faun/art/walk_3.png" type="Texture" id=34]
-[ext_resource path="res://Faun/art/walk_4.png" type="Texture" id=35]
-[ext_resource path="res://Faun/art/walk_5.png" type="Texture" id=36]
-[ext_resource path="res://Faun/art/walk_6.png" type="Texture" id=37]
-[ext_resource path="res://Faun/art/walk_7.png" type="Texture" id=38]
-[ext_resource path="res://Faun/art/walk_8.png" type="Texture" id=39]
+[ext_resource path="res://Faun/art/walk_1.png" type="Texture" id=23]
+[ext_resource path="res://Faun/art/walk_2.png" type="Texture" id=24]
+[ext_resource path="res://Faun/art/walk_3.png" type="Texture" id=25]
+[ext_resource path="res://Faun/art/walk_4.png" type="Texture" id=26]
+[ext_resource path="res://Faun/art/walk_5.png" type="Texture" id=27]
+[ext_resource path="res://Faun/art/walk_6.png" type="Texture" id=28]
+[ext_resource path="res://Faun/art/walk_7.png" type="Texture" id=29]
+[ext_resource path="res://Faun/art/walk_8.png" type="Texture" id=30]
+[ext_resource path="res://Faun/art/death_3.png" type="Texture" id=31]
+[ext_resource path="res://Faun/art/death_4.png" type="Texture" id=32]
+[ext_resource path="res://Faun/art/death_1.png" type="Texture" id=33]
+[ext_resource path="res://Faun/art/death_2.png" type="Texture" id=34]
+[ext_resource path="res://Faun/art/death_5.png" type="Texture" id=35]
+[ext_resource path="res://Faun/art/death_6.png" type="Texture" id=36]
+[ext_resource path="res://Faun/art/death_7.png" type="Texture" id=37]
+[ext_resource path="res://Faun/art/death_8.png" type="Texture" id=38]
+[ext_resource path="res://Faun/art/death_9.png" type="Texture" id=39]
 [ext_resource path="res://Faun/States/Idle.gd" type="Script" id=40]
 [ext_resource path="res://Faun/States/Stagger.gd" type="Script" id=41]
 [ext_resource path="res://Faun/States/Walk.gd" type="Script" id=42]
 [ext_resource path="res://Faun/States/Death.gd" type="Script" id=43]
 [ext_resource path="res://Faun/States/Attack.gd" type="Script" id=44]
 [ext_resource path="res://Faun/States/Attack2.gd" type="Script" id=45]
+[ext_resource path="res://Util/DamegeAreaFix.tscn" type="PackedScene" id=46]
 
 [sub_resource type="Animation" id=1]
 
@@ -245,19 +246,19 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Death",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -266,7 +267,12 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 25.3634, 30.194 )
 
-[node name="Faun" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.4, 31.4 )
+
+[node name="Faun" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 5, 5 )
 input_pickable = false
@@ -288,6 +294,7 @@ _sections_unfolded = [ "playback" ]
 
 [node name="Pivot" type="Position2D" parent="." index="1"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Animation" type="AnimationPlayer" parent="Pivot" index="0"]
@@ -321,6 +328,8 @@ shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="States" type="Node" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
@@ -417,6 +426,14 @@ process_mode = 1
 wait_time = 8.0
 one_shot = false
 autostart = true
+
+[node name="Area2D" parent="." index="13" instance=ExtResource( 46 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, 23 )
+shape = SubResource( 9 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 

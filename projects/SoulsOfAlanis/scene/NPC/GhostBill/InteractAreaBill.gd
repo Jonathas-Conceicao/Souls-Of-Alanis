@@ -12,7 +12,7 @@ func _ready():
 func _on_player_interaction(host):
 	$AnimatedSprite.set_flip_h(true)
 	$AnimatedSprite.play()
-	$TextBox.enabeled(true)
+	$TextBox.enabled(true)
 	host.add_to_StartedQuests(self.get_uniqueID())
 	return "finished_dialog"
 
@@ -21,7 +21,7 @@ func _on_AnimatedSprite_animation_finished():
 	return
 
 func _on_TextBox_finished_dialog(obj):
-	$TextBox.enabeled(false)
+	$TextBox.enabled(false)
 	emit_signal("finished_dialog", self)
 
 
