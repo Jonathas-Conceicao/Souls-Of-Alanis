@@ -23,7 +23,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 700, 1400, 2100, 2800, 3500, 3243.15 ],
 "_edit_vertical_guides_": [ 900, 1800, 2700 ]
 }
-NumExit = 2
+NumExit = 1
 
 [node name="Background" type="Sprite" parent="." index="0"]
 

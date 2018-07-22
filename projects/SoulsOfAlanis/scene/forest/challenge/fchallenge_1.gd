@@ -1,6 +1,6 @@
 extends Node
 
-export var NumExit = 2
+export var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
@@ -24,8 +24,6 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed("player_jump"):
-		$ChallengeDisplay.set_text("Failed!")
-		$ChallengeDisplay.update_text()
 		$ChallengeDisplay.set_state(2)
 		$ChallengeDisplay.update_state()
 		$OpenChestArea/CollisionShape2D.set_disabled(true)
