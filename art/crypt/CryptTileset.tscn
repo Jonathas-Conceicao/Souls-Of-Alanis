@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 7.07139, 7.1356 )
+extents = Vector2( 7.07139, 6.63403 )
 
 [node name="CryptTileset" type="Node"]
 
@@ -102,11 +102,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="floor_1_22" type="Sprite" parent="floor" index="3"]
 
+editor/display_folded = true
 position = Vector2( 86.8454, 44.8249 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 160, 96, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Offset" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -328,7 +329,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="floor_1_19" type="Sprite" parent="floor" index="12"]
 
-editor/display_folded = true
 position = Vector2( 83.8454, 82.8249 )
 texture = ExtResource( 1 )
 region_enabled = true
