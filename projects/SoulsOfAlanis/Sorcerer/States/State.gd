@@ -3,16 +3,17 @@
 ##
 extends Node
 
+enum Direction {Left, Right}
+
 # Initialize the state
 func enter(host):
-	host.set_animation("Idle")
 	return
 
 # Clean up the state
 func exit(host):
 	return
 
-func handle_inputIA(host, event):
+func handle_input(host, command):
 	return
 
 # On physic process

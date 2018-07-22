@@ -11,15 +11,16 @@ const DamageShower = preload("res://HUD/Damage.tscn")
 const UP = Vector2(0,-1)
 const GRAVITY = 10
 const FLIPPING_SCALE = Vector2(-1, 1)
-const BASE_SPEED = 300
+const SPEED = 250
 
 var velocity = Vector2(0, 0)
 var current_state
 var data
 
-var flipped
+var flipped = false
 
 onready var state = {
+	"Lost":       $States/Lost,
 	"Seek":       $States/Seek,
 	"Destroy":    $States/Destroy,
 }
@@ -29,7 +30,7 @@ func _ready():
 	self.add_child(data)
 	velocity.y = 40 # base velocity to detect "is_on_floor"
 
-	current_state = state["Seek"]
+	current_state = state["Lost"]
 	current_state.enter(self)
 	emit_signal("StateChanged", current_state)
 	emit_signal("DataUpdated", self)
@@ -43,8 +44,13 @@ func newData():
 	data.attributes.strength += 6
 	data.attributes.agility  += 6
 	return data
-	
+
 func _physics_process(delta):
+	if $Eyes/Right.is_colliding() || !$Eyes/FRight.is_colliding():
+		current_state.handle_input(self, 0)
+	elif $Eyes/Left.is_colliding() || !$Eyes/FLeft.is_colliding():
+		current_state.handle_input(self, 1)
+
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
@@ -52,7 +58,7 @@ func _physics_process(delta):
 	return
 
 func update_flip():
-	if velocity.x >= 0 == flipped:
+	if velocity.x >= 0 != flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		flipped = not flipped
 	return
