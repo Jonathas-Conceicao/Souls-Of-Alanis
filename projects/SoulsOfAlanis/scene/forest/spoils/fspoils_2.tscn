@@ -70,8 +70,8 @@ bus = "Master"
 
 [node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 1177.87, 315.089 )
-scale = Vector2( 2.03007, 1.60563 )
+position = Vector2( 1177.87, 322.35 )
+scale = Vector2( 2.03007, 8.30109 )
 
 [node name="EntryPoint" parent="." index="6" instance=ExtResource( 7 )]
 

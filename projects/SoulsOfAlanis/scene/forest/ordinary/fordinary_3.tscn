@@ -7,7 +7,7 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
 
-[node name="fordinary_3" type="Node2D"]
+[node name="fordinary_3" type="Node2D" index="0"]
 
 position = Vector2( 26, 36 )
 script = ExtResource( 1 )
@@ -96,8 +96,8 @@ scale = Vector2( 2.48695, 9.14926 )
 
 [node name="Exit2" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 2000.03, 1347.64 )
-scale = Vector2( 3.07005, 1.64914 )
+position = Vector2( 2000.03, 1359.44 )
+scale = Vector2( 3.07005, 6.47155 )
 ExitIndex = 1
 
 [node name="EntryPoint" parent="." index="5" instance=ExtResource( 6 )]
