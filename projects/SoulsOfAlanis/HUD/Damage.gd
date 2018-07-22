@@ -2,7 +2,7 @@ extends CanvasItem
 
 func init(host, position, scale, value):
 	self.set_as_toplevel(true)
-	self.set_position(host.get_position() + position)
+	self.set_global_position(host.get_global_position() + position)
 	self.setValue(value)
 	self.set_scale(Vector2(1.5, 1.5))
 	return
