@@ -269,7 +269,18 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_9" type="Sprite" parent="floor" index="10"]
+[node name="floor_1_23" type="Sprite" parent="floor" index="10"]
+
+position = Vector2( 104.845, 63.8249 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 128, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="floor_1_9" type="Sprite" parent="floor" index="11"]
 
 editor/display_folded = true
 position = Vector2( 65.8454, 63.8249 )
@@ -298,7 +309,7 @@ scale = Vector2( 0.808094, 0.816914 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="floor_1_18" type="Sprite" parent="floor" index="11"]
+[node name="floor_1_18" type="Sprite" parent="floor" index="12"]
 
 editor/display_folded = true
 position = Vector2( 83.8454, 63.8249 )
@@ -327,7 +338,7 @@ scale = Vector2( 0.808094, 0.816914 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="floor_1_19" type="Sprite" parent="floor" index="12"]
+[node name="floor_1_19" type="Sprite" parent="floor" index="13"]
 
 position = Vector2( 83.8454, 82.8249 )
 texture = ExtResource( 1 )
@@ -355,7 +366,7 @@ scale = Vector2( 0.808094, 0.816914 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="floor_1_20" type="Sprite" parent="floor" index="13"]
+[node name="floor_1_20" type="Sprite" parent="floor" index="14"]
 
 editor/display_folded = true
 position = Vector2( 83.8454, 101.825 )
@@ -384,7 +395,7 @@ scale = Vector2( 0.808094, 0.816914 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="floor_1_10" type="Sprite" parent="floor" index="14"]
+[node name="floor_1_10" type="Sprite" parent="floor" index="15"]
 
 position = Vector2( 45.8454, 82.8249 )
 texture = ExtResource( 1 )
@@ -395,7 +406,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_11" type="Sprite" parent="floor" index="15"]
+[node name="floor_1_11" type="Sprite" parent="floor" index="16"]
 
 position = Vector2( 65.8454, 82.8249 )
 texture = ExtResource( 1 )
@@ -406,7 +417,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_12" type="Sprite" parent="floor" index="16"]
+[node name="floor_1_12" type="Sprite" parent="floor" index="17"]
 
 position = Vector2( 45.8454, 101.825 )
 texture = ExtResource( 1 )
@@ -417,7 +428,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_13" type="Sprite" parent="floor" index="17"]
+[node name="floor_1_13" type="Sprite" parent="floor" index="18"]
 
 position = Vector2( 65.8454, 101.825 )
 texture = ExtResource( 1 )
@@ -428,7 +439,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_14" type="Sprite" parent="floor" index="18"]
+[node name="floor_1_14" type="Sprite" parent="floor" index="19"]
 
 position = Vector2( 8.84538, 83.8249 )
 texture = ExtResource( 1 )
@@ -439,7 +450,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_15" type="Sprite" parent="floor" index="19"]
+[node name="floor_1_15" type="Sprite" parent="floor" index="20"]
 
 position = Vector2( 26.8454, 83.8249 )
 texture = ExtResource( 1 )
@@ -450,7 +461,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_16" type="Sprite" parent="floor" index="20"]
+[node name="floor_1_16" type="Sprite" parent="floor" index="21"]
 
 position = Vector2( 8.84538, 101.825 )
 texture = ExtResource( 1 )
@@ -461,7 +472,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="floor_1_17" type="Sprite" parent="floor" index="21"]
+[node name="floor_1_17" type="Sprite" parent="floor" index="22"]
 
 position = Vector2( 26.8454, 101.825 )
 texture = ExtResource( 1 )

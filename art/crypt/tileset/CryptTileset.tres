@@ -10,7 +10,7 @@ extents = Vector2( 10, 7.1356 )
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 7.07139, 7.1356 )
+extents = Vector2( 7.07139, 6.63403 )
 
 [resource]
 
@@ -291,4 +291,13 @@ extents = Vector2( 7.07139, 7.1356 )
 "shape": SubResource( 1 ),
 "shape_transform": Transform2D( 0.808094, 0, 0, 0.816914, 7.91967, 7.89419 )
 } ]
+23/name = "floor_1_23"
+23/texture = ExtResource( 1 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 192, 128, 16, 16 )
+23/is_autotile = false
+23/occluder_offset = Vector2( 8, 8 )
+23/navigation_offset = Vector2( 8, 8 )
+23/shapes = [  ]
 
