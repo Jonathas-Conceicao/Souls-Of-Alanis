@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Souls of Alanis"
-run/main_scene="res://scene/control/root.tscn"
+run/main_scene="res://scene/menu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
