@@ -1,32 +1,33 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Mushroom/Mushroom.gd" type="Script" id=1]
-[ext_resource path="res://Mushroom/mushroom2.png" type="Texture" id=2]
-[ext_resource path="res://Mushroom/death_2.png" type="Texture" id=3]
-[ext_resource path="res://Mushroom/death_3.png" type="Texture" id=4]
-[ext_resource path="res://Mushroom/death_4.png" type="Texture" id=5]
-[ext_resource path="res://Mushroom/death_5.png" type="Texture" id=6]
-[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=7]
+[ext_resource path="res://Mushroom/mushroom.png" type="Texture" id=2]
+[ext_resource path="res://Mushroom/mushroom2.png" type="Texture" id=3]
+[ext_resource path="res://Mushroom/death_2.png" type="Texture" id=4]
+[ext_resource path="res://Mushroom/death_3.png" type="Texture" id=5]
+[ext_resource path="res://Mushroom/death_4.png" type="Texture" id=6]
+[ext_resource path="res://Mushroom/death_5.png" type="Texture" id=7]
 [ext_resource path="res://Mushroom/States/Stagger.gd" type="Script" id=8]
 [ext_resource path="res://Mushroom/States/Walk.gd" type="Script" id=9]
 [ext_resource path="res://Mushroom/States/Death.gd" type="Script" id=10]
+[ext_resource path="res://Util/DamegeAreaFix.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Death",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Walk",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -122,7 +123,12 @@ tracks/1/keys = {
 "values": [ 0, 0 ]
 }
 
-[node name="Mushroom" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27, 24 )
+
+[node name="Mushroom" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 8
@@ -154,10 +160,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Pivot" type="Position2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="Body" type="AnimatedSprite" parent="Pivot" index="0"]
 
 frames = SubResource( 1 )
-animation = "Death"
+animation = "Walk"
 
 [node name="Animation" type="AnimationPlayer" parent="Pivot" index="1"]
 
@@ -172,6 +180,8 @@ anims/Walk = SubResource( 4 )
 blend_times = [  ]
 
 [node name="States" type="Node" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Stagger" type="Node" parent="States" index="0"]
 
@@ -222,6 +232,12 @@ exclude_parent = true
 cast_to = Vector2( 0, 5 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" parent="." index="9" instance=ExtResource( 11 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 5 )
 
 [connection signal="animation_finished" from="Pivot/Animation" to="." method="_on_Animation_animation_finished"]
 
