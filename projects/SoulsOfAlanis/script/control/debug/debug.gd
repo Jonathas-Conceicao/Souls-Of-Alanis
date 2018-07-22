@@ -6,7 +6,6 @@ enum Half { first, second , any }
 enum msg_type { nrm, dbg, wrn, err	 }
 
 const DEBUG_MODE = false
-var i_Prelude = preload("res://script/map/InfoRoom.gd").new("res://scene/Prelude.tscn", RoomType.ordinary, Half.first, 1, Vector2(2,4.2))
 
 func _init():
 	return
