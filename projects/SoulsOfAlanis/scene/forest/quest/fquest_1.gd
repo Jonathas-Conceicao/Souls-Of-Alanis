@@ -1,4 +1,4 @@
-extends Node
+extends "res://script/Classes/Scene.gd"
 
 export var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }

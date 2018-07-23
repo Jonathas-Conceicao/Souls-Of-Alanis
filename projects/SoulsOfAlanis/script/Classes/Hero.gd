@@ -23,13 +23,22 @@ const Attack     = preload("Attack.gd")
 func _init():
 	attributes = Attributes.new()
 	self.add_child(attributes)
-	weapon     = Weapon.new(0, Attack.Impact, 1) # Player must always have an weapon
+	weapon     = Weapon.new(0, Attack.Impact, 1) # Hero must always have an weapon
 	self.add_child(weapon)
 	armor      = null
 	ring       = null
 	self.xp_points = 10
 	self.cur_xp_points = 0
 	return self
+
+func clean():
+	self.armor = null
+	self.ring = null
+	self.weapon = Weapon.new(0, Attack.Impact, 1) # Player must always have an weapon
+	self.attributes.updatePower()
+	self.attributes.power.cur_carryLoad = 0
+	return
+
 
 ###
 # Checks if there's enough stamina for an Attack, and if so, consumes it
