@@ -14,6 +14,12 @@ func getMaxRep():
 
 func getNumExit():
 	return 1
+	
+func listNPC():
+	pass
+	
+func listChest():
+	pass
 
 func getSize():
 	return Vector2(1, 2.13)
