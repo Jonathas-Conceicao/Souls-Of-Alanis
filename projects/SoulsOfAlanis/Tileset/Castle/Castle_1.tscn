@@ -837,6 +837,7 @@ shape = SubResource( 10 )
 
 [node name="Rock2_Sairs" type="Sprite" parent="." index="40"]
 
+editor/display_folded = true
 position = Vector2( 266.287, 488 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -932,6 +933,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 96, 117 )
 build_mode = 0
 polygon = PoolVector2Array( -128, -128, -65, -128, -65, -105, -128, -105 )
+one_way_collision = true
 
 [node name="rock_win2" type="Sprite" parent="." index="45"]
 
@@ -956,10 +958,10 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -31, -8, -31, 8, 32, 8, 32, -8 )
+one_way_collision = true
 
 [node name="rock_win3" type="Sprite" parent="." index="46"]
 
-editor/display_folded = true
 position = Vector2( 594, 74 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -981,6 +983,7 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -31, -8, -31, 8, 32, 8, 32, -8 )
+one_way_collision = true
 
 [node name="spikes" type="Sprite" parent="." index="47"]
 
@@ -1009,7 +1012,6 @@ polygon = PoolVector2Array( -31, 21, -31, 6, -29, 5, -28, -17, -23, -12, -21, 5,
 
 [node name="plataform1" type="Sprite" parent="." index="48"]
 
-editor/display_folded = true
 position = Vector2( 610, 203 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -1031,10 +1033,10 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -47, -6, -47, 2, -41, 8, 39, 8, 47, 2, 47, -6, 44, -9, -44, -9 )
+one_way_collision = true
 
 [node name="plataform2" type="Sprite" parent="." index="49"]
 
-editor/display_folded = true
 position = Vector2( 578, 235 )
 texture = ExtResource( 6 )
 region_enabled = true
@@ -1056,9 +1058,11 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -13, -9, 13, -9, 15, -7, 15, 2, 9, 9, -7, 9, -16, 0, -16, -6, -13, -9 )
+one_way_collision = true
 
 [node name="plataform3" type="Sprite" parent="." index="50"]
 
+editor/display_folded = true
 position = Vector2( 723, 70 )
 texture = ExtResource( 6 )
 region_enabled = true
