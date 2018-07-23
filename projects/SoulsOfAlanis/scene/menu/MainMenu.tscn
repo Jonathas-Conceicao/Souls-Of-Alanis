@@ -1,22 +1,48 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scene/menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://scene/control/root.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Cinematics/CreditsBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://art/project-art/png/Menus/mainmenu_backgound-NOTFREE.png" type="Texture" id=4]
-[ext_resource path="res://art/project-art/png/LogoExport.png" type="Texture" id=5]
-[ext_resource path="res://scene/control/StartGameButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scene/control/CreditsButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/control/ExitButton.tscn" type="PackedScene" id=8]
-[ext_resource path="res://art/project-art/fonts/codeman38_press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://scene/menu/FadeIn.gd" type="Script" id=10]
+[ext_resource path="res://Cinematics/art/Intro_base_scene.png" type="Texture" id=4]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_0.png" type="Texture" id=5]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_1.png" type="Texture" id=6]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_2.png" type="Texture" id=7]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_3.png" type="Texture" id=8]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_4.png" type="Texture" id=9]
+[ext_resource path="res://Cinematics/art/Intro_FireArea_5.png" type="Texture" id=10]
+[ext_resource path="res://Cinematics/art/Intro_Alanis_0.png" type="Texture" id=11]
+[ext_resource path="res://art/project-art/png/Menus/mainmenu_backgound-NOTFREE.png" type="Texture" id=12]
+[ext_resource path="res://art/project-art/png/LogoExport.png" type="Texture" id=13]
+[ext_resource path="res://scene/control/StartGameButton.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scene/control/CreditsButton.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scene/control/ExitButton.tscn" type="PackedScene" id=16]
+[ext_resource path="res://art/project-art/fonts/codeman38_press-start-2p/PressStart2P.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://scene/menu/FadeIn.gd" type="Script" id=18]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 12
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
+font_data = ExtResource( 17 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=2]
@@ -70,6 +96,20 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 4
 
+[node name="FirePlace" type="AnimatedSprite" parent="TextureRect" index="0"]
+
+position = Vector2( 450, 350 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 5
+playing = true
+
+[node name="Alanis" type="AnimatedSprite" parent="TextureRect" index="1"]
+
+position = Vector2( 450, 350 )
+frames = SubResource( 4 )
+animation = "default"
+
 [node name="TextureRect2" type="TextureRect" parent="." index="1"]
 
 visible = false
@@ -83,7 +123,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 12 )
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="2"]
@@ -111,7 +151,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 660.0
+margin_left = 100.0
+margin_right = 760.0
 margin_bottom = 47.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -119,7 +160,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 13 )
 stretch_mode = 7
 _sections_unfolded = [ "Margin", "Rect" ]
 
@@ -140,7 +181,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 3
 alignment = 1
 
-[node name="NewGame" parent="VBoxContainer/Options" index="0" instance=ExtResource( 6 )]
+[node name="NewGame" parent="VBoxContainer/Options" index="0" instance=ExtResource( 14 )]
 
 margin_top = 172.0
 margin_right = 660.0
@@ -148,7 +189,7 @@ margin_bottom = 212.0
 size_flags_horizontal = 1
 _sections_unfolded = [ "Rect", "Size Flags", "Textures", "custom_colors", "custom_styles" ]
 
-[node name="Credits" parent="VBoxContainer/Options" index="1" instance=ExtResource( 7 )]
+[node name="Credits" parent="VBoxContainer/Options" index="1" instance=ExtResource( 15 )]
 
 margin_top = 216.0
 margin_right = 660.0
@@ -156,7 +197,7 @@ margin_bottom = 256.0
 size_flags_horizontal = 1
 _sections_unfolded = [ "Hint", "Rect", "Size Flags", "custom_styles" ]
 
-[node name="Exit" parent="VBoxContainer/Options" index="2" instance=ExtResource( 8 )]
+[node name="Exit" parent="VBoxContainer/Options" index="2" instance=ExtResource( 16 )]
 
 margin_top = 260.0
 margin_right = 660.0
@@ -207,7 +248,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0 )
-script = ExtResource( 10 )
+script = ExtResource( 18 )
 
 [node name="transition" type="AnimationPlayer" parent="FadeIn" index="0"]
 
