@@ -328,12 +328,11 @@ func _on_takeDamage(agressor, attack):
 						 Vector2(1.5, 1.5),
 						 damage)
 	self.add_child(damageDisplay) # The label frees it self when finished
-	if damage > 0:
-		emit_signal("DamegeTaken", self, damage)
-		print("Player recived ", damage, " from: ", agressor.get_name())
-		_state_change("Stagger")
-		var dp = calcPercentage(self.data.getMaxHP(), damage)
-		current_state.setKnockBack(self, dp, attack.direction)
+	emit_signal("DamegeTaken", self, damage)
+	print("Player recived ", damage, " from: ", agressor.get_name())
+	_state_change("Stagger")
+	var dp = calcPercentage(self.data.getMaxHP(), damage)
+	current_state.setKnockBack(self, dp, attack.direction)
 	return
 
 func calcPercentage(h, l):
