@@ -20,7 +20,7 @@ func listNPC():
 	array.append($GhostBill)
 	return array
 
-func listChest():
-	var array = .listChest()
+func listChests():
+	var array = .listChests()
 	array.append($fchest)
 	return array
