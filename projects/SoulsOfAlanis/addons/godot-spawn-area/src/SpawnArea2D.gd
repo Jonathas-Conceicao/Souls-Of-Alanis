@@ -37,12 +37,12 @@ func place_mob(mobClass):
 	add_child(mob)
 ## error protection for design time
 	var treeroot = get_tree().get_root()
-	if !treeroot:
+	if treeroot:
 		var rootnode = treeroot.get_node("root")
-		if !rootnode:
+		if rootnode:
 			var player = rootnode.get_node("Player")
-			if !player:
-				mob.connect("StateChanged", player, "_on_creatureStateeChanged")        
+			if player:
+				mob.connect("StateChanged", player, "_on_creatureStateeChanged")
 
 #	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))
 #	var l_y = rand_range(0,                        (rect_size.y) - (mob.get_size().y/2))
