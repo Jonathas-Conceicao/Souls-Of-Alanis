@@ -29,7 +29,7 @@ export (PoolStringArray) onready var P_CastleRooms = [
 "res://scene/castle/ordinary/Ord2.tscn"
 ]
 
-export (String) onready var P_BoosRoomCript = "res://scene/crypt/connection/Cconnection_1.tscn"
+export (String) onready var P_BoosRoomCript = "res://scene/crypt/boss/BossRoomCrypt.tscn"
 export (PoolStringArray) onready var P_CriptRooms= [
 "res://scene/crypt/challenge/Cchallenge_1.tscn",
 "res://scene/crypt/connection/Cconnection_1.tscn",
@@ -132,7 +132,7 @@ func start(id_tree = 0):
 func add_to_head(i_room, id_tree = 1):
 	if !i_room:
 		debug.printMsg(" Cannot add a invalid room", debug.msg_type.err, self.debug_mode)
-		exit(9)
+		return
 
 	match id_tree:
 		1:

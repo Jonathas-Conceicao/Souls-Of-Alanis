@@ -4,6 +4,8 @@ var STATE_CHEST = "CLOSED"
 
 const new_item = preload("res://Items/predefined/StarterSword.gd")
 
+var ChestID = preload("res://scene/utils/ChestID.gd")
+
 func show_popUp():
 	#$Label.show()
 	return
@@ -22,7 +24,7 @@ func _on_player_interaction(host):
 		var ib = ni.gen_ItemBody()
 		add_child(ib)
 		ib.spawn()
-		host.add_to_StartedQuests(self)
+		host.add_to_StartedQuests(ChestID.new())
 	return
 
 func _on_Open_chest_area_body_entered(body):
@@ -48,4 +50,7 @@ func enabled(t = true):
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
 func get_uniqueID():
-	return global_ids.unique_ids.chest
+	var aux = ChestID.new()
+	var auxID = aux.get_uniqueID()
+	aux.queue_free()
+	return auxID
