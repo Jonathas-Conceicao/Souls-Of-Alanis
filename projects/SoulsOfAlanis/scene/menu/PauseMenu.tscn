@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/menu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://scene/control/Continue.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/control/StartGameButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/control/ExitButton.tscn" type="PackedScene" id=4]
+
+[node name="PauseMenu" type="CanvasLayer"]
+
+pause_mode = 2
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Rect" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 322.0
+margin_top = 286.0
+margin_right = 578.0
+margin_bottom = 414.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="ContinueButton" parent="VBoxContainer" index="0" instance=ExtResource( 2 )]
+
+margin_right = 256.0
+rect_min_size = Vector2( 256, 40 )
+size_flags_vertical = 1
+_sections_unfolded = [ "Pause", "Rect", "Size Flags", "custom_styles" ]
+
+[node name="NewGameButton" parent="VBoxContainer" index="1" instance=ExtResource( 3 )]
+
+margin_top = 44.0
+margin_right = 256.0
+margin_bottom = 84.0
+size_flags_vertical = 1
+
+[node name="ExitButton" parent="VBoxContainer" index="2" instance=ExtResource( 4 )]
+
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 128.0
+size_flags_vertical = 1
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+
+
+[editable path="VBoxContainer/ContinueButton"]
+[editable path="VBoxContainer/NewGameButton"]
+[editable path="VBoxContainer/ExitButton"]
