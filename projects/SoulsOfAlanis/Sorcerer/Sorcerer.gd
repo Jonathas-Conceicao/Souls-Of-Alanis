@@ -42,7 +42,7 @@ func _ready():
 
 func newData():
 	var data = Foe.new(Attack.Thrust)
-	data.attributes.vitality += 4
+	data.attributes.vitality += 6
 	data.attributes.strength += 6
 	data.attributes.agility  += 6
 	return data
@@ -93,9 +93,6 @@ func _on_takeDamage(agressor, attack):
 	self.add_child(damageDisplay)
 	print("Sorcerer recieved ", damage,
 		  " from: ", agressor.get_name())
-	# _state_change("Stagger")
-	# var dp = calcPercentage(self.data.getMaxHP(), damage)
-	# current_state.setKnockBack(self, dp, attack.direction)
 	return
 
 func calcPercentage(h, l):
