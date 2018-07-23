@@ -13,7 +13,7 @@ func getMaxRep():
 	return 3
 
 func getNumExit():
-	return 1
+	return 2
 
 func getSize():
 	return Vector2(4, 3)
