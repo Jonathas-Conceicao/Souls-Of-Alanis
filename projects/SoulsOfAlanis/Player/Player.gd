@@ -78,6 +78,17 @@ func _ready():
 	set_process_input(true)
 	return
 
+func clean():
+	for item in self.Backpack:
+		item.queue_free()
+	self.Backpack = []
+	self.data.clean()
+	for eq in self.Equiped:
+		if eq != null: eq.queue_free()
+	self.Equiped = [null, null, null]
+	self.give_starting_items()
+	return
+
 func _input(event):
 	if event.is_action_pressed("player_debug"):
 		processDebug()
@@ -230,8 +241,7 @@ func get_from_FinishedQuests(index):
 	return self.FinishedQuests[index]
 
 func processDebug():
-	self.data.increaseXP(10)
-	emit_signal("DataUpdated", self)
+	self.clean()
 	return
 
 func update_flip():

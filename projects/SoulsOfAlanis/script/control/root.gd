@@ -48,6 +48,7 @@ func _on_Opening_finished_cinematic(obj):
 	$Opening.queue_free()
 
 	$Player.visible = true
+	$Player/HUD.enabled(true)
 
 	var start = InfoRoom.new(self.StartScene)
 
