@@ -1,7 +1,7 @@
 extends Control
 
-export (PackedScene) var StartScene = null
-export (PackedScene) var CreditScene = null
+export (PackedScene) var StartScene = preload("res://scene/control/root.tscn")
+export (PackedScene) var CreditScene = preload("res://Cinematics/CreditsBlock.tscn")
 
 func _ready():
 	#$Closing.enabled(false)
