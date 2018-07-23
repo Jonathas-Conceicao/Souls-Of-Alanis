@@ -65,3 +65,9 @@ func set_enabled(t = true, supress = false):
 func get_uniqueID():
 	debug.printMsg("Implement the \"drop\" function", debug.msg_type.wrn)
 	return null
+
+func listNPC():
+	return []
+
+func listChests():
+	return []
