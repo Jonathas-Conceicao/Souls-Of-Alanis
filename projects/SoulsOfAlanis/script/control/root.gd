@@ -22,6 +22,7 @@ func _ready():
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
 	$Player.connect("PauseMenu", self, "_open_PauseMenu")
+	$Player/DIE.connect("ReloadGame", self, "_reload_Game")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
 
@@ -33,12 +34,25 @@ func _open_PauseMenu(call):
 	var pmenu = self.PauseMenu.instance()
 	get_tree().set_pause(true)
 	pmenu.connect("finished_interation", self, "_close_PauseMenu")
+	pmenu.connect("ReloadGame", self, "_reload_Game")
 	add_child(pmenu)
 	return
 
 func _close_PauseMenu(menu):
 	get_tree().set_pause(false)
 	menu.queue_free()
+	return
+
+func _reload_Game(call, free_call = false):
+	if free_call:
+		call.queue_free()
+	$Player.clean()
+	$Map._generate()
+	
+	var start = InfoRoom.new(self.StartScene)
+
+	$Map.add_to_head(start)
+	$Map.start()
 	return
 
 # Used to adjust camera and its stuff
