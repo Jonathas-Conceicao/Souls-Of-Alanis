@@ -54,6 +54,10 @@ signal moved(idx) #Indicates player moved on map
 
 # PUBLIC
 func _ready():
+	_generate()
+	return
+
+func _generate():
 	var gen = null
 	## FOREST
 	gen = LvlGen.new(self.P_ForestRooms)
