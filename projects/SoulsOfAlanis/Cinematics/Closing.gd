@@ -17,10 +17,14 @@ func _ready():
 	return
 
 func enabled(b):
-	$Background.visible = b
-	$Alanis.visible = b
-	$FirePlace.visible = b
-	$TextBox.enabled(b)
+	if $Background != null:
+		$Background.visible = b
+	if $Background/Alanis != null:
+		$Background/Alanis.visible = b
+	if $Background/FirePlace != null:
+		$Background/FirePlace.visible = b
+	if $TextBox != null:
+		$TextBox.enabled(b)
 	return
 
 func _on_CreditsBlock_finished_dialog():
