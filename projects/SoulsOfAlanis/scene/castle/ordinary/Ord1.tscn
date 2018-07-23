@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/castle/ordinary/Ord1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/png/rooms/castle/iio_parallax_mountain_pack/parallax_mountain_pack/parallax-mountain.png" type="Texture" id=2]
@@ -7,12 +7,11 @@
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
 [ext_resource path="res://scene/NPC/GhostBill/GhostBill.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scene/utils/BookshelfSmall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/utils/BookshelfSmall.tscn" type="PackedScene" id=10]
 
-[node name="Ord1" type="Node2D"]
+[node name="Ord1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -417,37 +416,27 @@ script = ExtResource( 5 )
 __meta__ = {
 "_editor_icon": ExtResource( 6 )
 }
-MobList = [ "res://Bat/Bat.tscn", "res://Goblin/Goblin.tscn[", "res://Guardian/Guardian.tscn" ]
+MobList = [ "res://Bat/Bat.tscn", "res://Goblin/Goblin.tscn", "res://Guardian/Guardian.tscn" ]
 Mob = null
 TotMobCap = 10
 FlyEnabled = true
 
 [node name="GhostBill" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( 3509.13, 1238.75 )
+position = Vector2( 1161.84, 502.217 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="fchest" parent="." index="9" instance=ExtResource( 8 )]
-
-editor/display_folded = true
-position = Vector2( 2143.83, 516.377 )
-
-[node name="Open_se" parent="fchest" index="2"]
-
-pitch_scale = 1.0
-
-[node name="EntryPoint" parent="." index="10" instance=ExtResource( 9 )]
+[node name="EntryPoint" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 87.5881, 488.579 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Exit" parent="." index="11" instance=ExtResource( 10 )]
+[node name="Exit" parent="." index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 3201.24, 505.233 )
 
-[node name="BookShelfSmall" parent="." index="12" instance=ExtResource( 11 )]
+[node name="BookShelfSmall" parent="." index="11" instance=ExtResource( 10 )]
 
-position = Vector2( 751.905, 497.795 )
+position = Vector2( 3478.5, 1237.3 )
 
 
-[editable path="fchest"]

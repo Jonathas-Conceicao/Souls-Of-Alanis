@@ -22,5 +22,5 @@ func listNPC():
 
 func listChests():
 	var array = .listChests()
-	array.append($fchest)
+	array.append($BookShelfSmall)
 	return array

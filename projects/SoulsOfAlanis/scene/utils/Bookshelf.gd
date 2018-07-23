@@ -1,10 +1,15 @@
 extends "res://script/Classes/Unique.gd"
 
+var BookshelfID = preload("res://scene/utils/BookshelfID.gd")
 
 # GENERIC
 func _on_takeHit(agressor):
 	if self.current_state != used && agressor.get_name() == "Player":
 		use()
+		if self.current_state == state.used:
+			var aux = BookshelfID.new()
+			agressor.add_child(aux)
+			agressor.add_to_Chests(aux)
 	return
 
 # disables the Unique
@@ -45,5 +50,7 @@ func set_enabled(t = true, supress = false):
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
 func get_uniqueID():
-	return global_ids.unique_ids.breakable_bookshelf
-
+	var aux = BookshelfID.new()
+	var auxID = aux.get_uniqueID()
+	aux.queue_free()
+	return auxID
