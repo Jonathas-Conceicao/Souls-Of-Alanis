@@ -5,7 +5,7 @@ export (bool) var debug_mode = true
 const LvlGen = preload("res://script/map/generation/LvlGen.gd")
 const TreeMap = preload("res://script/map/generation/TreeMap.gd")
 
-export (String) onready var P_BoosRoomForest = 	"res://scene/castle/connection/forest/connection/fconnection_1.tscn"
+export (String) onready var P_BoosRoomForest = "res://scene/forest/connection/fconnection_1.tscn"
 export (PoolStringArray) onready var P_ForestRooms = [
 "res://scene/forest/challenge/fchallenge_1.tscn",
 "res://scene/forest/challenge/fchallenge_2.tscn",
@@ -19,7 +19,7 @@ export (PoolStringArray) onready var P_ForestRooms = [
 "res://scene/forest/spoils/fspoils_2.tscn"
 ]
 
-export (String) onready var P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"
+export (String) onready var P_BoosRoomCastle = "res://scene/castle/ordinary/Ord1.tscn"
 export (PoolStringArray) onready var P_CastleRooms = [
 "res://scene/castle/challenge/Challenge1.tscn",
 "res://scene/castle/challenge/Challenge2.tscn",
@@ -29,7 +29,7 @@ export (PoolStringArray) onready var P_CastleRooms = [
 "res://scene/castle/ordinary/Ord2.tscn"
 ]
 
-export (String) onready var P_BoosRoomCript = 	"res://scene/castle/connection/crypt/connection/Cconnection_1.tscn"
+export (String) onready var P_BoosRoomCript = "res://scene/crypt/connection/Cconnection_1.tscn"
 export (PoolStringArray) onready var P_CriptRooms= [
 "res://scene/crypt/challenge/Cchallenge_1.tscn",
 "res://scene/crypt/connection/Cconnection_1.tscn",
@@ -60,19 +60,19 @@ func _ready():
 func _generate():
 	var gen = null
 	## FOREST
-	gen = LvlGen.new(self.P_ForestRooms)
+	gen = LvlGen.new(self.P_ForestRooms, P_BoosRoomForest)
 	self.ForestTree = gen.createTree()
 	var boss_node = gen.boss_parent.children.back()
 
 	## CASTLE
-	gen = LvlGen.new(P_CastleRooms)
+	gen = LvlGen.new(P_CastleRooms, P_BoosRoomCastle)
 	self.CastleTree = gen.createTree()
 	## pass: Forest -> Castle
 	boss_node.children.append(self.CastleTree)
 	boss_node = gen.boss_parent.children.back()
 
 	## CRIPT
-	gen = LvlGen.new(P_CriptRooms)
+	gen = LvlGen.new(P_CriptRooms, P_BoosRoomCript)
 	self.CriptTree = gen.createTree()
 	## pass: Castle -> Cript
 	boss_node.children.append(self.CriptTree)

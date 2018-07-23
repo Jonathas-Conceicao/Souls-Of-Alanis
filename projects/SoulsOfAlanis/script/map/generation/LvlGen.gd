@@ -1,7 +1,7 @@
 const TreeMap   = preload("res://script/map/generation/TreeMap.gd")
 const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 
-var i_Prelude = preload("res://script/map/InfoRoom.gd").new("res://scene/Prelude.tscn")
+var i_Prelude = InfoRoom.new("res://scene/Prelude.tscn")
 
 const MAX_TRY   = 5
 const N_ROOM    = 15
@@ -44,9 +44,8 @@ func _init(rooms_path = [], boss_room = null):
 		debug.printMsg("Using default", debug.msg_type.wrn)
 		self.boss_room = TreeMap.new(null, self.i_Prelude, null, 0, 1, false)
 	else:
-		debug.printMsg(" Boss room instanciation not implemented yet", debug.msg_type.err)
-		#TODO self.boss_room = ...
-
+		#debug.printMsg(" Boss room instanciation not implemented yet", debug.msg_type.err)
+		self.boss_room = TreeMap.new(null,InfoRoom.new(boss_room), null, 0, 1, false)
 	return
 
 # Randomly choosen a scene
@@ -67,7 +66,7 @@ func pick(type = debug.RoomType.any, half = debug.Half.any, avoid = debug.RoomTy
 	while (n_try != 0):
 		var i_room = self.i_rooms[randi() % i_rooms.size()]
 		n_try -= 1
-		
+
 		if force || ( ( (type == debug.RoomType.any) || (i_room.room_type == type) ) && ( i_room.room_type != avoid ) && ( (half == debug.Half.any) || (i_room.half == half) ) ):
 			if i_room.room_type != debug.RoomType.connection && self.i_rooms.size() > 1:
 				self.i_rooms.erase(i_room)

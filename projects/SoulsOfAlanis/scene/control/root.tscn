@@ -33,11 +33,11 @@ debug_mode = true
 
 script = ExtResource( 5 )
 debug_mode = false
-P_BoosRoomForest = "res://scene/castle/connection/forest/connection/fconnection_1.tscn"
+P_BoosRoomForest = "res://scene/forest/connection/fconnection_1.tscn"
 P_ForestRooms = null
-P_BoosRoomCastle = "res://scene/castle/connection/Connection1.tscn"
+P_BoosRoomCastle = "res://scene/castle/ordinary/Ord1.tscn"
 P_CastleRooms = null
-P_BoosRoomCript = "res://scene/castle/connection/crypt/connection/Cconnection_1.tscn"
+P_BoosRoomCript = "res://scene/crypt/connection/Cconnection_1.tscn"
 P_CriptRooms = null
 
 [node name="CameraLimit" parent="." index="3" instance=ExtResource( 6 )]
