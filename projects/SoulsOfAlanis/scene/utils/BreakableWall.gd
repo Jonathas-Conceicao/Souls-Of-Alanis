@@ -1,5 +1,7 @@
 extends "res://script/Classes/Unique.gd"
 
+var BreakableWallID = preload("res://scene/utils/BreakableWallID.gd")
+
 # disables the Unique
 # GENERIC
 func use():
@@ -28,4 +30,7 @@ func enabled(t = true):
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
 func get_uniqueID():
-	return global_ids.unique_ids.breakable_wall
+	var aux = BreakableWallID.new()
+	var auxID = aux.get_uniqueID()
+	aux.queue_free()
+	return auxID
