@@ -1,27 +1,15 @@
 extends "State.gd"
 
-var direction
-
 func enter(host):
-	self.direction = Left if host.flipped else Right
-	host.set_animation("Moving")
-	return
-
-func update(host, delta):
-	if direction == Right:
-		host.velocity.x = host.SPEED
-	else:
-		host.velocity.x = -host.SPEED
-	host.velocity.y += host.GRAVITY
-	host.velocity.y = max(40, host.velocity.y)
+	host.set_animation("Idle")
+	host.velocity.x = 0
+	host.velocity.y = 40
 	host.update_flip()
 	return
 
 func handle_input(host, command):
 	match command:
-		0: self.direction = Left
-		1: self.direction = Right
-		2: return "Seek"
-		3: return "Destroy"
+		0: return "Seek"
+		1: return "Destroy"
 		_: pass
 	return

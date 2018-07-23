@@ -50,15 +50,23 @@ func newData():
 func _physics_process(delta):
 	for body in $DamegeArea.get_overlapping_bodies():
 		self.deathTo(body, self.aux_pos())
-	if $Eyes/Right.is_colliding() || !$Eyes/FRight.is_colliding():
-		current_state.handle_input(self, 0)
-	elif $Eyes/Left.is_colliding() || !$Eyes/FLeft.is_colliding():
-		current_state.handle_input(self, 1)
 	
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
 	move_and_slide(velocity, UP)
+	return
+
+func init(host):
+	self.seek = host
+	self._state_change("Seek")
+	return
+
+func enabled(b):
+	visible = b
+	for collision in $DamegeArea.get_children():
+		collision.disabled = !b
+		collision.visible = b
 	return
 
 func update_flip():
