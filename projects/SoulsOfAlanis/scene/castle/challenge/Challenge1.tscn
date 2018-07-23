@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/castle/challenge/Challenge1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
@@ -7,12 +7,10 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=8]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scene/utils/Chest.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/utils/Chest.tscn" type="PackedScene" id=9]
 
-[node name="Challenge1" type="Node2D"]
+[node name="Challenge1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -212,25 +210,19 @@ Mob = null
 TotMobCap = 1
 FlyEnabled = false
 
-[node name="Player" parent="." index="8" instance=ExtResource( 8 )]
-
-position = Vector2( 292.199, 265.635 )
-
-[node name="CameraLimit" parent="." index="9" instance=ExtResource( 9 )]
-
-[node name="Bookshelf" parent="." index="10" instance=ExtResource( 10 )]
+[node name="Bookshelf" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 277.113, 2501.58 )
 scale = Vector2( 2, 2 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Exit2" parent="." index="11" instance=ExtResource( 5 )]
+[node name="Exit2" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 226.168, 1055.42 )
 _sections_unfolded = [ "Collision", "Transform" ]
 ExitIndex = 1
 
-[node name="Chest" parent="." index="12" instance=ExtResource( 11 )]
+[node name="Chest" parent="." index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 1045.63, 600.085 )
 
