@@ -32,7 +32,7 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	self.add_child(room)
 	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
 
- 	## workaround :p
+	## workaround :p
 	var listNPC = null
 	if room.has_method("listNPC"):
 		listNPC = room.listNPC()
@@ -41,29 +41,28 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	pass
 	if listNPC != null:
 		debug.printMsg("Scene %s has method listNPC" % i_room.scene, debug.msg_type.nrm)
-		for i in room.listNPC():
-			if !i.has_method("get_uniqueID"):
+		for sc_npc in room.listNPC():
+			if !sc_npc.has_method("get_uniqueID"):
 				debug.printMsg("Every NPC should have a get_uniqueID method", debug.msg_type.err, self.debug_mode)
 				return null
 			pass
-			if !i.has_method("set_enabled"):
+			if !sc_npc.has_method("set_enabled"):
 				debug.printMsg("Every NPC should have a set_enabled method", debug.msg_type.err, self.debug_mode)
 				return null
 			pass
 
-			for j in listStartedQuests:
-				#if i.get_uniqueID() == j:
-				if listStartedQuests.find(i.get_uniqueID()) != -1:
-					# DISABLE IT
-					i.enabled(false)
-			pass
+			for pl_npc in listStartedQuests:
+				if pl_npc.get_uniqueID() == sc_npc.get_uniqueID():
+					sc_npc.set_enabled(false)
+					continue
+			sc_npc.set_enabled(true)
 		pass
 	else:
 		debug.printMsg("Every room should have a listNPC, even an empty one!", debug.msg_type.err)
 	pass
 
 	var listChest = null
-	if room.has_method("listChsests"):
+	if room.has_method("listChests"):
 		listChest = room.listChests()
 	else:
 		debug.printMsg("Every room should have a listChests method!", debug.msg_type.err)
@@ -81,13 +80,12 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 				return null
 			pass
 
-			if listOpenChest.find(i.get_uniqueID) != -1:
-				# DISABLE IT
-				i.set_enabled(false)
-			else:
-				# ENABLED
-				i.set_enabled(true)
+			for oc in listOpenChest:
+				if oc.get_uniqueID() == i.get_uniqueID():
+					i.set_enabled(false)
+					continue
 			pass
+			i.set_enabled(true)
 		pass
 	else:
 		debug.printMsg("Every room should have a listChests, even an empty one!", debug.msg_type.err)
