@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sorcerer/SorcererBossNPC.gd" type="Script" id=1]
+[ext_resource path="res://Sorcerer/art/SorcererNPC.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 312, 64 )
+
+[node name="SorcererBossNPC" type="Area2D" index="0"]
+
+scale = Vector2( -1, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = ExtResource( 2 )
+animation = "Idle"
+
+[node name="Balloon" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 32, -48 )
+balloon = 21
+
+[node name="Collision" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -64, 16 )
+shape = SubResource( 1 )
+
+[node name="DialogBox" parent="." index="3" instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="." to="." method="_on_Self_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_Self_body_exited"]
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+
+[connection signal="finished_dialog" from="DialogBox" to="." method="_on_DialogBox_finished_dialog"]
+
+

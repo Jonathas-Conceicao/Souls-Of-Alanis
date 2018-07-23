@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://script/control/root.gd" type="Script" id=1]
-[ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=2]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=3]
-[ext_resource path="res://script/map/Map.gd" type="Script" id=4]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Cinematics/Opening.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/menu/PauseMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/control/CurrentScene.gd" type="Script" id=3]
+[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=4]
+[ext_resource path="res://script/map/Map.gd" type="Script" id=5]
+[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cinematics/Opening.tscn" type="PackedScene" id=7]
 
 [node name="root" type="Node2D" index="0"]
 
+position = Vector2( -0.336182, 1.86444 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -16,19 +18,20 @@ __meta__ = {
 "_edit_vertical_guides_": [ 0.0, 900.0 ]
 }
 StartScene = "res://scene/village/VillageHope.tscn"
+PauseMenu = ExtResource( 2 )
 debug_mode = true
-rand = false
+rand = true
 
 [node name="CurrentScene" type="Node2D" parent="." index="0"]
 
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 debug_mode = true
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 4 )]
 
 [node name="Map" type="Node2D" parent="." index="2"]
 
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 debug_mode = false
 P_BoosRoomForest = "res://scene/castle/connection/forest/connection/fconnection_1.tscn"
 P_ForestRooms = null
@@ -37,9 +40,9 @@ P_CastleRooms = null
 P_BoosRoomCript = "res://scene/castle/connection/crypt/connection/Cconnection_1.tscn"
 P_CriptRooms = null
 
-[node name="CameraLimit" parent="." index="3" instance=ExtResource( 5 )]
+[node name="CameraLimit" parent="." index="3" instance=ExtResource( 6 )]
 
-[node name="Opening" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Opening" parent="." index="4" instance=ExtResource( 7 )]
 
 [connection signal="tree_exiting" from="." to="." method="_on_root_tree_exiting"]
 

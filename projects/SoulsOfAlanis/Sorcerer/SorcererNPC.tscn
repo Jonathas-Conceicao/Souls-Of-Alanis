@@ -1,15 +1,24 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sorcerer/SorcererNPC.gd" type="Script" id=1]
 [ext_resource path="res://Sorcerer/art/Sorcerer_Blink.png" type="Texture" id=2]
 [ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful1.png" type="Texture" id=3]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful2.png" type="Texture" id=4]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful3.png" type="Texture" id=5]
-[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=6]
-[ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=8]
-[ext_resource path="res://GUI/SelectionBox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GUI/PlayerInfo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition1.png" type="Texture" id=4]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition2.png" type="Texture" id=5]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition3.png" type="Texture" id=6]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition4.png" type="Texture" id=7]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition5.png" type="Texture" id=8]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition6.png" type="Texture" id=9]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition7.png" type="Texture" id=10]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition8.png" type="Texture" id=11]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition9.png" type="Texture" id=12]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful2.png" type="Texture" id=13]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful3.png" type="Texture" id=14]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Peaceful4.png" type="Texture" id=15]
+[ext_resource path="res://Util/Balloon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GUI/DialogBox.tscn" type="PackedScene" id=17]
+[ext_resource path="res://GUI/SelectionBox.tscn" type="PackedScene" id=18]
+[ext_resource path="res://GUI/PlayerInfo.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -19,7 +28,12 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Transform",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "Greet",
 "speed": 3.0
@@ -51,7 +65,7 @@ _sections_unfolded = [ "Collision" ]
 frames = SubResource( 1 )
 animation = "Idle"
 
-[node name="Balloon" parent="." index="1" instance=ExtResource( 7 )]
+[node name="Balloon" parent="." index="1" instance=ExtResource( 16 )]
 
 position = Vector2( 40, -40 )
 
@@ -60,31 +74,31 @@ position = Vector2( 40, -40 )
 position = Vector2( -56, 16 )
 shape = SubResource( 2 )
 
-[node name="WelcomeBox" parent="." index="3" instance=ExtResource( 8 )]
+[node name="WelcomeBox" parent="." index="3" instance=ExtResource( 17 )]
 
 Position = 1
 
-[node name="GreetBox" parent="." index="4" instance=ExtResource( 8 )]
+[node name="GreetBox" parent="." index="4" instance=ExtResource( 17 )]
 
 Position = 1
 
-[node name="NoHelpBox" parent="." index="5" instance=ExtResource( 8 )]
+[node name="NoHelpBox" parent="." index="5" instance=ExtResource( 17 )]
 
 Position = 1
 
-[node name="CanHelpBox" parent="." index="6" instance=ExtResource( 9 )]
+[node name="CanHelpBox" parent="." index="6" instance=ExtResource( 18 )]
 
 Position = 1
 
-[node name="PostHelp" parent="." index="7" instance=ExtResource( 8 )]
+[node name="PostHelp" parent="." index="7" instance=ExtResource( 17 )]
 
 Position = 1
 
-[node name="PostNoHelp" parent="." index="8" instance=ExtResource( 8 )]
+[node name="PostNoHelp" parent="." index="8" instance=ExtResource( 17 )]
 
 Position = 1
 
-[node name="PlayerInfo" parent="." index="9" instance=ExtResource( 10 )]
+[node name="PlayerInfo" parent="." index="9" instance=ExtResource( 19 )]
 
 [connection signal="body_entered" from="." to="." method="_on_Self_body_entered"]
 

@@ -29,7 +29,6 @@ var BASE_ENERGY = 180
 var energy = BASE_ENERGY
 var velocity = Vector2()
 
-var direction
 var flipped = false
 var damage_bypass = false
 
@@ -236,11 +235,10 @@ func processDebug():
 	return
 
 func update_flip():
-	direction = velocity.x >= 0
-	if direction == flipped:
+	if velocity.x >= 0 == flipped:
 		$Sprite.apply_scale(FLIPPING_SCALE)
 		$Sword.animation_flip()
-		flipped = !direction
+		flipped = not flipped
 	return
 
 func update_speed():
