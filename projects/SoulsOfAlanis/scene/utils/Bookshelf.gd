@@ -31,19 +31,16 @@ func drop(one_in = 1, supress = false):
 		ni = ItemFactory.generateAny(1)
 	pass
 	if randi() % one_in == 0:
-		print("Lucky")
 		var ib = ni.gen_ItemBody()
+		ib.scale = Vector2(1/self.scale.x, 1/self.scale.x)
 		self.add_child(ib)
 		ib.spawn()
 	pass
 	return
 
 func set_enabled(t = true, supress = false):
-	if !supress:
-		debug.printMsg("Implement a \"set_enabled\" function", debug.msg_type.wrn)
-
 	if !t:
-		self.visible = false
+		$Sprite.visible = false
 	return
 
 # define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
