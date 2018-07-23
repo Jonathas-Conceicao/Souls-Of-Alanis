@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/castle/challenge/Challenge1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/tileset/castle_1.tres" type="TileSet" id=2]
 [ext_resource path="res://art/project-art/tileset/castle_1.1.tres" type="TileSet" id=3]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
-[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scene/utils/Chest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/project-art/tileset/CastleTile2.tres" type="TileSet" id=4]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
+[ext_resource path="res://scene/utils/BookshelfBig.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/utils/Chest.tscn" type="PackedScene" id=10]
 
 [node name="Challenge1" type="Node2D" index="0"]
 
@@ -99,13 +100,34 @@ collision_layer = 1
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 262146, 30, 0, 327683, 30, 0, 393220, 30, 0, 393250, 536870942, 0, 458785, 536870942, 0, 524320, 536870942, 0, 589855, 536870942, 0, 655386, 536870961, 0, 655387, 536870961, 0, 786444, 536870961, 0, 786445, 536870961, 0, 786453, 536870961, 0, 786454, 536870961, 0, 786455, 536870961, 0, 851998, 536870958, 0, 851999, 536870958, 0, 917512, 536870961, 0, 983067, 536870958, 0, 1114143, 536870958, 0, 1179662, 536870942, 0, 1245197, 536870942, 0, 1245210, 536870958, 0, 1310732, 536870942, 0, 1376267, 536870942, 0, 1376278, 536870958, 0, 1376285, 536870961, 0, 1376286, 536870961, 0, 1376289, 536870942, 0, 1441824, 536870942, 0, 1507359, 536870942, 0, 1572893, 536870942, 0, 1638427, 536870942, 0, 1703939, 30, 0, 1703962, 536870942, 0, 1769495, 536870942, 0, 1835012, 30, 0, 1835030, 536870942, 0, 1900549, 30, 0, 1900565, 536870942, 0, 1966086, 30, 0, 2031623, 30, 0, 2031627, 536870961, 0, 2031628, 536870961, 0, 2097160, 30, 0, 2097170, 536870961, 0, 2097171, 536870961, 0, 2228234, 536870961, 0, 2228235, 536870961, 0, 2359310, 536870961, 0, 2359311, 536870958, 0, 2359312, 536870961, 0, 2490377, 536870961, 0, 2490378, 536870961, 0, 2490379, 536870961, 0, 2490388, 536870961, 0, 2490389, 536870958, 0, 2490390, 536870961, 0, 2490391, 536870958, 0, 2621446, 30, 0, 2621467, 536870942, 0, 2621473, 30, 0, 2686983, 30, 0, 2687002, 536870942, 0, 2687004, 1073741854, 0, 2687008, 1610612766, 0, 2687010, 30, 0, 2752540, 30, 0, 2752544, 536870942, 0 )
+tile_data = PoolIntArray( 131082, 30, 0, 131099, 536870942, 0, 196620, 30, 0, 262157, 30, 0, 262170, 536870942, 0, 327697, 30, 0, 327705, 536870942, 0, 393217, 1610612766, 0, 393238, 536870942, 0, 393250, 536870942, 0, 458754, 1610612766, 0, 458773, 536870942, 0, 458785, 536870942, 0, 458787, 1073741854, 0, 524292, 1610612766, 0, 524306, 30, 0, 524308, 536870942, 0, 524320, 536870942, 0, 524322, 1073741854, 0, 589828, 536870942, 0, 589855, 536870942, 0, 589857, 1073741854, 0, 655392, 30, 0, 720931, 30, 0, 786465, 1610612766, 0, 786468, 30, 0, 852002, 1610612766, 0, 917539, 1610612766, 0, 983050, 45, 0, 1179656, 45, 0, 1179662, 536870942, 0, 1179684, 1073741854, 0, 1245186, 536870942, 0, 1245197, 536870942, 0, 1245200, 1073741854, 0, 1245202, 536870942, 0, 1310721, 536870942, 0, 1310724, 1073741854, 0, 1310732, 536870942, 0, 1310735, 1073741854, 0, 1310737, 536870942, 0, 1310738, 536870942, 0, 1310755, 1073741854, 0, 1376259, 1073741854, 0, 1376267, 536870942, 0, 1376270, 1073741854, 0, 1376272, 536870942, 0, 1441794, 1073741854, 0, 1441805, 1073741854, 0, 1441807, 536870942, 0, 1441808, 536870942, 0, 1507339, 1073741854, 0, 1507342, 536870942, 0, 1507359, 536870942, 0, 1507361, 1073741854, 0, 1572877, 536870942, 0, 1572893, 536870942, 0, 1572896, 1073741854, 0, 1638412, 536870942, 0, 1638430, 1073741854, 0, 1703939, 30, 0, 1703962, 536870942, 0, 1703964, 1073741854, 0, 1769473, 1610612766, 0, 1769499, 1073741854, 0, 1835010, 1610612766, 0, 1835012, 30, 0, 1835032, 1073741854, 0, 1900547, 1610612766, 0, 1900567, 1073741854, 0, 1966084, 1610612766, 0, 1966102, 1073741854, 0, 2031621, 1610612766, 0, 2031623, 30, 0, 2097158, 1610612766, 0, 2097160, 30, 0, 2162695, 1610612766, 0, 2162723, 30, 0, 2228260, 30, 0, 2293798, 30, 0, 2621446, 30, 0, 2621467, 536870942, 0, 2621473, 30, 0, 2686983, 30, 0, 2687002, 536870942, 0, 2687004, 1073741854, 0, 2687008, 1610612766, 0, 2687010, 30, 0, 2752540, 30, 0, 2752544, 536870942, 0 )
 
-[node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TileMap" type="TileMap" parent="Ground" index="2"]
 
-position = Vector2( 2458.36, 293.912 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 524317, 48, 0, 720921, 47, 0, 786443, 48, 0, 786444, 48, 0, 786445, 48, 0, 851989, 47, 0, 851996, 45, 0, 851998, 45, 0, 983065, 45, 0, 1114141, 45, 0, 1245208, 45, 0, 1376277, 45, 0, 1376285, 48, 0, 1376286, 48, 0, 2031627, 48, 0, 2031628, 48, 0, 2097169, 48, 0, 2097170, 48, 0, 2097171, 48, 0, 2228233, 48, 0, 2228234, 48, 0, 2359309, 45, 0, 2359312, 48, 0, 2490377, 48, 0, 2490378, 48, 0, 2490379, 48, 0, 2490387, 45, 0, 2490389, 45, 0 )
+_sections_unfolded = [ "Cell" ]
 
-[node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
+[node name="EntryPoint" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 2460, 300 )
+
+[node name="Exit" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 2435.9, 2625.61 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -126,9 +148,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 7 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
@@ -151,9 +173,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 7 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
@@ -176,9 +198,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 7 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Bat/Bat.tscn", "res://Ghost/Ghost.tscn" ]
 Mob = null
@@ -201,28 +223,28 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
-"_editor_icon": ExtResource( 7 )
+"_editor_icon": ExtResource( 8 )
 }
 MobList = [ "res://Goblin/Goblin.tscn", "res://Guardian/Guardian.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false
 
-[node name="Bookshelf" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Bookshelf" parent="." index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 277.113, 2501.58 )
 scale = Vector2( 2, 2 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Exit2" parent="." index="9" instance=ExtResource( 5 )]
+[node name="Exit2" parent="." index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 226.168, 1055.42 )
 _sections_unfolded = [ "Collision", "Transform" ]
 ExitIndex = 1
 
-[node name="Chest" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Chest" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 1045.63, 600.085 )
 

@@ -227,7 +227,7 @@ tile_data = PoolIntArray( 65561, 536870942, 0, 65584, 1610612766, 0, 65586, 30, 
 
 position = Vector2( 98.2877, 598.33 )
 scale = Vector2( 0.8, 0.8 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 5 )]
 
