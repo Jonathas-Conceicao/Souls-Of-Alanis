@@ -352,10 +352,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 82.0
-margin_top = 1031.0
-margin_right = 1508.0
-margin_bottom = 1236.0
+margin_left = 56.0
+margin_top = 1027.0
+margin_right = 1482.0
+margin_bottom = 1232.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -366,9 +366,9 @@ script = ExtResource( 5 )
 __meta__ = {
 "_editor_icon": ExtResource( 6 )
 }
-MobList = [ "res://Bat/Bat.tscn", "res://Ghost/Ghost.tscn", "res://Guardian/Guardian.tscn" ]
+MobList = [ "res://Bat/Bat.tscn", "res://Ghost/Ghost.tscn", "res://Guardian/Guardian.tscn", "res://Goblin/Goblin.tscn" ]
 Mob = null
-TotMobCap = 10
+TotMobCap = 6
 FlyEnabled = false
 
 [node name="SpawnArea2D3" type="Container" parent="." index="6"]
@@ -377,10 +377,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2924.0
-margin_top = 314.0
-margin_right = 3652.0
-margin_bottom = 519.0
+margin_left = 1261.0
+margin_top = 307.0
+margin_right = 1989.0
+margin_bottom = 512.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -393,7 +393,7 @@ __meta__ = {
 }
 MobList = [ "res://Bat/Bat.tscn", "res://Ghost/Ghost.tscn", "res://Guardian/Guardian.tscn" ]
 Mob = null
-TotMobCap = 10
+TotMobCap = 3
 FlyEnabled = false
 
 [node name="SpawnArea2D2" type="Container" parent="." index="7"]
@@ -423,7 +423,7 @@ FlyEnabled = true
 
 [node name="GhostBill" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( 1161.84, 502.217 )
+position = Vector2( 3535.49, 501 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EntryPoint" parent="." index="9" instance=ExtResource( 8 )]

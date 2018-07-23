@@ -148,6 +148,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Ground" type="TileMap" parent="." index="2"]
 
+editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -281,7 +282,7 @@ position = Vector2( 236.774, 452.023 )
 
 position = Vector2( 2546.38, 320.749 )
 scale = Vector2( 2, 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="SpawnArea2D2" type="Container" parent="." index="6"]
 
@@ -289,8 +290,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 411.0
-margin_top = 1066.0
+margin_left = 140.0
+margin_top = 973.0
 margin_right = 1220.0
 margin_bottom = 1166.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -314,10 +315,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1151.0
-margin_top = 146.0
-margin_right = 1591.0
-margin_bottom = 516.0
+margin_left = 1298.0
+margin_top = 187.0
+margin_right = 1794.0
+margin_bottom = 1109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

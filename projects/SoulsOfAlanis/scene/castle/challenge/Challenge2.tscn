@@ -175,7 +175,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_editor_icon": ExtResource( 11 )
 }
-MobList = [ "res://Bat/Bat.tscn", "res://Guardian/Guardian.tscn" ]
+MobList = [ "res://Bat/Bat.tscn", "res://Guardian/Guardian.tscn", "res://Goblib/Goblin.tscn" ]
 Mob = null
 TotMobCap = 4
 FlyEnabled = false
