@@ -1,0 +1,356 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://Sorcerer/Sorcerer.gd" type="Script" id=1]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Idle1.png" type="Texture" id=2]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Idle2.png" type="Texture" id=3]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition1.png" type="Texture" id=5]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition2.png" type="Texture" id=6]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition3.png" type="Texture" id=7]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition4.png" type="Texture" id=8]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition5.png" type="Texture" id=9]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition6.png" type="Texture" id=10]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition7.png" type="Texture" id=11]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition8.png" type="Texture" id=12]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Transition9.png" type="Texture" id=13]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking1.png" type="Texture" id=14]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking2.png" type="Texture" id=15]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking3.png" type="Texture" id=16]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking4.png" type="Texture" id=17]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking5.png" type="Texture" id=18]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving1.png" type="Texture" id=19]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving2.png" type="Texture" id=20]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving3.png" type="Texture" id=21]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving4.png" type="Texture" id=22]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving5.png" type="Texture" id=23]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Moving6.png" type="Texture" id=24]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking6.png" type="Texture" id=25]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking7.png" type="Texture" id=26]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking8.png" type="Texture" id=27]
+[ext_resource path="res://Sorcerer/art/Sorcerer_Attacking9.png" type="Texture" id=28]
+[ext_resource path="res://Sorcerer/SorcererThunder.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Sorcerer/States/Lost.gd" type="Script" id=30]
+[ext_resource path="res://Sorcerer/States/Seek.gd" type="Script" id=31]
+[ext_resource path="res://Sorcerer/States/Destroy.gd" type="Script" id=32]
+[ext_resource path="res://Sorcerer/States/DeathFromAbove.gd" type="Script" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "Transition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "DeathFromAbove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Moving",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Attacking",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Attacking"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Attacking" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 6, 9, 12 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DamegeArea/CollisionPolygon2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DamegeArea/CollisionPolygon2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "DeathFromAbove"
+length = 0.9
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "DeathFromAbove" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 4, 8 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "callThunder"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 1.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 1.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Moving" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 5 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 24, 62 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28, 66 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 76, 10 )
+
+[node name="Sorcerer" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 8
+collision_mask = 3
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="Animation" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Attacking = SubResource( 2 )
+anims/DeathFromAbove = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Moving = SubResource( 6 )
+blend_times = [  ]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 6, 22 )
+shape = SubResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DamageSpot" type="Position2D" parent="." index="3"]
+
+position = Vector2( 34, -44 )
+
+[node name="DamegeArea" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 6, 22 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="ContactArea" type="CollisionShape2D" parent="DamegeArea" index="0"]
+
+shape = SubResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamegeArea" index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( -28, 44, -48, 44, -74, 30, -98, -12, -98, -30, -96, -68, -84, -80, -6, -104, -6, -66, -28, -66 )
+disabled = true
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Thunder" parent="." index="5" instance=ExtResource( 29 )]
+
+collision_layer = 8
+collision_mask = 2
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="PlayerCast" type="Area2D" parent="." index="6"]
+
+position = Vector2( 6, 17 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCast" index="0"]
+
+shape = SubResource( 12 )
+
+[node name="States" type="Node" parent="." index="7"]
+
+_sections_unfolded = [ "Pause" ]
+
+[node name="Lost" type="Node" parent="States" index="0"]
+
+script = ExtResource( 30 )
+
+[node name="Seek" type="Node" parent="States" index="1"]
+
+script = ExtResource( 31 )
+
+[node name="Destroy" type="Node" parent="States" index="2"]
+
+script = ExtResource( 32 )
+
+[node name="DeathFromAbove" type="Node" parent="States" index="3"]
+
+script = ExtResource( 33 )
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
+
+[connection signal="body_entered" from="DamegeArea" to="." method="_on_DamegeArea_body_entered"]
+
+[connection signal="body_entered" from="Thunder" to="." method="_on_Thunder_body_entered"]
+
+[connection signal="body_entered" from="PlayerCast" to="." method="_on_PlayerCast_body_entered"]
+
+

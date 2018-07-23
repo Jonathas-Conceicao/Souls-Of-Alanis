@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sorcerer/SorcererBossPackage.gd" type="Script" id=1]
+[ext_resource path="res://Sorcerer/SorcererBossNPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sorcerer/Sorcerer.tscn" type="PackedScene" id=3]
+
+[node name="SorcererBossPackage" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="SorcererBossNPC" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Sorcerer" parent="." index="1" instance=ExtResource( 3 )]
+
+[connection signal="finished_dialog" from="SorcererBossNPC" to="." method="_on_SorcererBossNPC_finished_dialog"]
+
+
