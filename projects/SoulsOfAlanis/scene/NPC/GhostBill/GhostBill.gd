@@ -1,7 +1,7 @@
 extends Node2D
 
 func set_enabled(value):
-	if value:
+	if !value:
 		$InteractAreaBill/AnimatedSprite.hide()
 		$InteractAreaBill/CollisionShape2D.set_disabled(true)
 

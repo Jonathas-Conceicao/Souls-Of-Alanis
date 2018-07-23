@@ -1,5 +1,7 @@
 extends "res://script/Classes/Unique.gd"
 
+var GhostBillNPCIdentifier = preload("res://scene/NPC/GhostBill/GhostBillNPCIdentifier.gd")
+
 signal finished_dialog
 
 func _ready():
@@ -13,7 +15,11 @@ func _on_player_interaction(host):
 	$AnimatedSprite.set_flip_h(true)
 	$AnimatedSprite.play()
 	$TextBox.enabled(true)
-	host.add_to_StartedQuests(self.get_uniqueID())
+	
+	var aux = GhostBillNPCIdentifier.new()
+	host.add_child(aux)
+	host.add_to_StartedQuests(aux)
+	
 	return "finished_dialog"
 
 func _on_AnimatedSprite_animation_finished():
@@ -36,6 +42,3 @@ func _on_InteractArea_body_exited(body):
 		$HasQuest.hide()
 		$NoHasQuest.hide()
 
-# define by @Jonathas on #1489c0194c6679ffb9a2fd2535a71261e958245f
-func get_uniqueID():
-	return global_ids.unique_ids.npc_ghost_bill
