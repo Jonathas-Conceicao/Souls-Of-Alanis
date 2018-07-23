@@ -1,11 +1,9 @@
 extends "State.gd"
 
 var direction
-var bounces
 
 func enter(host):
 	self.direction = Left if host.flipped else Right
-	self.bounces = 0
 	host.set_animation("Moving")
 	return
 
@@ -26,5 +24,4 @@ func handle_input(host, command):
 		2: return "Seek"
 		3: return "Destroy"
 		_: pass
-	self.bounces += 1
 	return

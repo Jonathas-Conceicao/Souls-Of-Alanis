@@ -48,11 +48,13 @@ func newData():
 	return data
 
 func _physics_process(delta):
+	for body in $DamegeArea.get_overlapping_bodies():
+		self.deathTo(body, self.aux_pos())
 	if $Eyes/Right.is_colliding() || !$Eyes/FRight.is_colliding():
 		current_state.handle_input(self, 0)
 	elif $Eyes/Left.is_colliding() || !$Eyes/FLeft.is_colliding():
 		current_state.handle_input(self, 1)
-
+	
 	var new_state = current_state.update(self, delta)
 	if new_state:
 		_state_change(new_state)
@@ -61,7 +63,7 @@ func _physics_process(delta):
 
 func update_flip():
 	if velocity.x >= 0 != flipped:
-		$Sprite.apply_scale(FLIPPING_SCALE)
+		self.apply_scale(FLIPPING_SCALE)
 		flipped = not flipped
 	return
 
@@ -99,6 +101,21 @@ func _on_takeDamage(agressor, attack):
 func calcPercentage(h, l):
 	return (l*100)/h
 
+func callThunder():
+	if seek && current_state.has_method("callThunder"):
+		self.current_state.callThunder(self, seek)
+	return
+
+func deathTo(body, pos):
+	if body != self && body.has_method("_on_takeDamage"):
+		var attack = data.genAttack(self.genPushBack(body, pos))
+		body._on_takeDamage(self, attack)
+	return
+
+func genPushBack(body, pos):
+	var v = body.get_global_position() - pos
+	return v.normalized()
+
 func _on_Finder_body_entered(body):
 	if body.get_name() == "Player":
 		self.seek = body
@@ -107,7 +124,22 @@ func _on_Finder_body_entered(body):
 			_state_change(s)
 	return
 
+func _on_PlayerCast_body_entered(body):
+	if body.get_name() == "Player":
+		var ns = current_state.handle_input(self, 3)
+		if ns: _state_change(ns)
+	return
+
 func _on_Animation_animation_finished(anim_name):
 	var ns = current_state._on_animation_finished(self, anim_name)
 	if ns: _state_change(ns)
 	return
+
+func _on_Thunder_body_entered(body):
+	self.deathTo(body, $Thunder.get_global_position())
+
+func _on_DamegeArea_body_entered(body):
+	self.deathTo(body, self.aux_pos())
+
+func aux_pos():
+	return self.get_global_position() - Vector2(0, - 100)

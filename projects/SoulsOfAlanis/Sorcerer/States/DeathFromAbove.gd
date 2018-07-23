@@ -12,3 +12,9 @@ func update(host, delta):
 
 func _on_animation_finished(host, anim_name):
 	return "Seek"
+
+func callThunder(host, seek):
+	var t = host.get_node("Thunder")
+	t.set_global_position(seek.get_global_position())
+	t.get_node("Animation").play("default")
+	return

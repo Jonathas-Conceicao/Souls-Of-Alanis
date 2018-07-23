@@ -16,3 +16,9 @@ func update(host, delta):
 	host.velocity.y = max(40, host.velocity.y)
 	host.update_flip()
 	return
+
+func handle_input(host, command):
+	match command:
+		3: return "Destroy"
+		_: pass
+	return
