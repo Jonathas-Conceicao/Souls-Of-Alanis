@@ -11,11 +11,9 @@ var MobCap = 0
 
 func _ready():
 	randomize()
-
-	place_mob(pick_rand())
-	place_mob(pick_rand())
-	place_mob(pick_rand())
-	place_mob(pick_rand())
+	
+	while self.MobCap < self.TotMobCap:
+		place_mob(pick_rand())
 
 	return
 
@@ -30,18 +28,19 @@ func pick_rand():
 func place_mob(mobClass):
 	if (mobClass == null) || (!mobClass.can_instance()):
 		return
-	if self.MobCap >= self.TotMobCap:
+	if self.MobCap > self.TotMobCap:
 		return
+	self.MobCap += 1
 
 	var mob = mobClass.instance()
 	add_child(mob)
 ## error protection for design time
 	var treeroot = get_tree().get_root()
-	if !treeroot:
+	if treeroot:
 		var rootnode = treeroot.get_node("root")
-		if !rootnode:
+		if rootnode:
 			var player = rootnode.get_node("Player")
-			if !player:
+			if 	player:
 				mob.connect("StateChanged", player, "_on_creatureStateeChanged")
 
 #	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))
