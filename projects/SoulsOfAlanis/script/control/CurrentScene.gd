@@ -32,7 +32,14 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	self.add_child(room)
 	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
 
+ 	## workaround :p
+	var listNPC = null
 	if room.has_method("listNPC"):
+		listNPC = room.listNPC()
+	else:
+		debug.printMsg("Every room should have a listNPC method!", debug.msg_type.err)
+	pass
+	if listNPC != null:
 		debug.printMsg("Scene %s has method listNPC" % i_room.scene, debug.msg_type.nrm)
 		for i in room.listNPC():
 			if !i.has_method("get_uniqueID"):
@@ -52,12 +59,19 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 			pass
 		pass
 	else:
-		debug.printMsg("Every room should have a listNPC method!", debug.msg_type.err)
+		debug.printMsg("Every room should have a listNPC, even an empty one!", debug.msg_type.err)
 	pass
 
-	if room.has_method("listChests"):
+	var listChest = null
+	if room.has_method("listChsests"):
+		listChest = room.listChests()
+	else:
+		debug.printMsg("Every room should have a listChests method!", debug.msg_type.err)
+	pass
+	if listChest != null:
 		debug.printMsg("Scene %s has method listChests" % i_room.scene, debug.msg_type.nrm)
-		for i in room.listChests():
+		
+		for i in listChest:
 			if !i.has_method("get_uniqueID"):
 				debug.printMsg("Every chest/breakable stuff should have a get_uniqueID method", debug.msg_type.err)
 				return null
@@ -76,7 +90,7 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 			pass
 		pass
 	else:
-		debug.printMsg("Every room should have a listChests method!", debug.msg_type.err)
+		debug.printMsg("Every room should have a listChests, even an empty one!", debug.msg_type.err)
 	pass
 
 	var ep
