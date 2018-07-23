@@ -5,6 +5,7 @@ const InfoRoom  = preload("res://script/map/InfoRoom.gd")
 #var i_Ord1 = InfoRoom.new("res://scene/castle/ordinary/Ord1.tscn", debug.RoomType.ordinary, debug.Half.first, 1, Vector2(2, 4))
 
 export (String) var StartScene = "res://scene/village/VillageHope.tscn"
+export (PackedScene) var PauseMenu = preload("res://scene/menu/PauseMenu.tscn")
 
 export (bool) var debug_mode = true
 export (bool) var rand = false
@@ -20,11 +21,24 @@ func _ready():
 	
 	debug.printMsg("Initizaling", debug.msg_type.nrm, self.debug_mode)
 	$Player.connect("SceneExit", $Map, "walk")
+	$Player.connect("PauseMenu", self, "_open_PauseMenu")
 	$Map.connect("moved", $CurrentScene, "changeRoom")
 	$CurrentScene.connect("changed_scene", self, "_adjust_view")
 
 	#var start = InfoRoom.new(self.InitialRoom, null, null, 1, Vector2(2,4.2))
 
+	return
+
+func _open_PauseMenu(call):
+	var pmenu = self.PauseMenu.instance()
+	get_tree().set_pause(true)
+	pmenu.connect("finished_interation", self, "_close_PauseMenu")
+	add_child(pmenu)
+	return
+
+func _close_PauseMenu(menu):
+	get_tree().set_pause(false)
+	menu.queue_free()
 	return
 
 # Used to adjust camera and its stuff

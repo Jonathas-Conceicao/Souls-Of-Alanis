@@ -7,7 +7,7 @@
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 
-[node name="fordinary_2" type="Node2D" index="0"]
+[node name="fordinary_2" type="Node2D"]
 
 position = Vector2( 0, 270 )
 script = ExtResource( 1 )

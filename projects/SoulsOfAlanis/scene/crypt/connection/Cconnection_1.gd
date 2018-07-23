@@ -4,16 +4,22 @@ enum RoomType {loot, ordinary, connection, mission, challenge, final, any, avoid
 enum Half { first, second , any }
 
 func getSceneType():
-	return connection
+	return RoomType.connection
 
 func getSceneHalf():
-	return first
+	return Half.first
 
 func getMaxRep():
 	return 3
 
 func getNumExit():
 	return 1
+	
+func listNPC():
+	pass
+	
+func listChest():
+	pass
 
 func getSize():
 	return Vector2(1, 2)

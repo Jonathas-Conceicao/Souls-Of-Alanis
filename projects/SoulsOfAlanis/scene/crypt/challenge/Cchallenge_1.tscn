@@ -8,7 +8,7 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://HUD/ChallengeDisplay.tscn" type="PackedScene" id=7]
 
-[node name="Cchallenge_1" type="Node2D" index="0"]
+[node name="Cchallenge_1" type="Node2D"]
 
 position = Vector2( 48, 0 )
 script = ExtResource( 1 )
@@ -129,8 +129,6 @@ position = Vector2( 887.375, 167.802 )
 scale = Vector2( 1.80501, 1.3885 )
 
 [node name="ChallengeDisplay" parent="." index="5" instance=ExtResource( 7 )]
-
-[connection signal="challenge_completed" from="fchest" to="." method="_on_fchest_challenge_completed"]
 
 
 [editable path="fchest"]

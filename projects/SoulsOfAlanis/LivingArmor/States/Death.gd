@@ -2,6 +2,7 @@ extends 'State.gd'
 
 func enter(host):
 	host.set_animation("Death")
+	host.set_collision_layer(2)
 	host.velocity.x = 0
 	host.velocity.y = 0
 	return

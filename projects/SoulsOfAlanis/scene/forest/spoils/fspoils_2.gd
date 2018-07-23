@@ -14,7 +14,18 @@ func getSceneType():
 	return RoomType.loot
 	
 func getSceneHalf():
-	return 
+	return Half.any
+	
+func getMaxRep():
+	return 1
+
+func listNPC():
+	pass
+	
+func listChest():
+	var array = .listChest()
+	array.append($fchest)
+	return array 
 
 func getSize():
 	return Vector2(1, 1.37)
