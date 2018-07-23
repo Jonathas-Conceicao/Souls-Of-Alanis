@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_3.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=3]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
 
 [node name="fordinary_3" type="Node2D" index="0"]
 
-position = Vector2( 26, 36 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ 700, 1400 ],
 "_edit_vertical_guides_": [ 900, 1800 ]
@@ -19,6 +21,7 @@ NumExit = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -60,7 +63,7 @@ texture = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
-position = Vector2( 14.5071, 364.301 )
+position = Vector2( 34.5067, 364.301 )
 scale = Vector2( 3, 3 )
 mode = 0
 tile_set = ExtResource( 4 )
@@ -91,18 +94,90 @@ bus = "Master"
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( -6.71153, 986.974 )
+editor/display_folded = true
+position = Vector2( -30.7116, 987.974 )
 scale = Vector2( 2.48695, 9.14926 )
+
+[node name="InteractionSign" parent="Exit" index="1"]
+
+position = Vector2( 22.8202, -7.26974 )
+scale = Vector2( 1, 0.23526 )
 
 [node name="Exit2" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 2000.03, 1359.44 )
+editor/display_folded = true
+position = Vector2( 2020.03, 1359.44 )
 scale = Vector2( 3.07005, 6.47155 )
 ExitIndex = 1
 
+[node name="InteractionSign" parent="Exit2" index="1"]
+
+position = Vector2( -19.2036, -9.16098 )
+scale = Vector2( 0.623199, 0.267396 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Region" ]
+
 [node name="EntryPoint" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 37.6083, 654.926 )
+editor/display_folded = true
+position = Vector2( 31.6083, 572.926 )
 scale = Vector2( 3.41067, 1.00585 )
 
+[node name="TileMap" parent="EntryPoint" index="0"]
 
+visible = false
+
+[node name="SpawnArea2D" type="Container" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 983.0
+margin_top = 82.0
+margin_right = 1717.0
+margin_bottom = 460.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+[node name="SpawnArea2D2" type="Container" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1132.0
+margin_top = 995.0
+margin_right = 1580.0
+margin_bottom = 1214.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+
+[editable path="Exit"]
+[editable path="Exit2"]
+[editable path="EntryPoint"]

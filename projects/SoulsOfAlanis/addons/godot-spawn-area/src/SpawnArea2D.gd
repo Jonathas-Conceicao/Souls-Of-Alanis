@@ -40,7 +40,7 @@ func place_mob(mobClass):
 		var rootnode = treeroot.get_node("root")
 		if rootnode:
 			var player = rootnode.get_node("Player")
-			if 	player:
+			if player:
 				mob.connect("StateChanged", player, "_on_creatureStateeChanged")
 
 #	var l_x = rand_range(0 + (mob.get_size().x/2), (rect_size.x) - (mob.get_size().x/2))

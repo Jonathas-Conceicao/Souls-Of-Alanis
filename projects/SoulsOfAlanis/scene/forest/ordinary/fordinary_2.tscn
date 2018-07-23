@@ -1,33 +1,36 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=3]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
 
-[node name="fordinary_2" type="Node2D"]
+[node name="fordinary_2" type="Node2D" index="0"]
 
-position = Vector2( 0, 270 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 NumExit = 1
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 530.745, 358.118 )
+position = Vector2( 535.746, 646.118 )
 scale = Vector2( 6.47743, 3.22036 )
 texture = ExtResource( 2 )
 
 [node name="MiddleBackground" type="Sprite" parent="." index="1"]
 
-position = Vector2( 528.919, 359.675 )
+position = Vector2( 533.92, 647.675 )
 scale = Vector2( 3.23596, 3.01851 )
 texture = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 
-position = Vector2( 42.9993, 0 )
+editor/display_folded = true
+position = Vector2( 48, 288 )
 scale = Vector2( 3, 3 )
 mode = 0
 tile_set = ExtResource( 4 )
@@ -71,12 +74,83 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 56.5858, 895.742 )
-scale = Vector2( 2.00361, 1 )
+editor/display_folded = true
+position = Vector2( 31.8168, 814.8 )
+scale = Vector2( 2.42563, 1.19459 )
+
+[node name="TileMap" parent="EntryPoint" index="0"]
+
+visible = false
+
+[node name="InteractionSign" parent="EntryPoint" index="1"]
+
+visible = true
+position = Vector2( 31.7472, -80.5927 )
+scale = Vector2( 1, 1.57594 )
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 1168.83, -119.786 )
-scale = Vector2( 2.19007, 6.95825 )
+editor/display_folded = true
+position = Vector2( 1173.98, 170.095 )
+scale = Vector2( 2.19007, 6.33842 )
+
+[node name="InteractionSign" parent="Exit" index="1"]
+
+position = Vector2( -24.3716, -10.7242 )
+scale = Vector2( 1, 0.342816 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="SpawnArea2D" type="Container" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 225.0
+margin_top = 756.0
+margin_right = 749.0
+margin_bottom = 900.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Goblin/Goblin.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
+
+[node name="SpawnArea2D2" type="Container" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 566.0
+margin_top = 365.0
+margin_right = 1090.0
+margin_bottom = 509.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
 
 
+[editable path="EntryPoint"]
+[editable path="Exit"]
