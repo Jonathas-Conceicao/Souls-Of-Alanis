@@ -1,5 +1,8 @@
 extends Node2D
 
+var GhostBillNPCIdentifier = preload("res://scene/NPC/GhostBill/GhostBillNPCIdentifier.gd")
+
+
 func set_enabled(value):
 	if !value:
 		$InteractAreaBill/AnimatedSprite.hide()
@@ -10,4 +13,7 @@ func set_enabled(value):
 		$InteractAreaBill/CollisionShape2D.set_disabled(false)
 
 func get_uniqueID():
-	return global_ids.unique_ids.npc_ghost_bill
+	var aux = GhostBillNPCIdentifier.new()
+	var auxID = aux.get_uniqueID()
+	aux.queue_free()
+	return auxID
