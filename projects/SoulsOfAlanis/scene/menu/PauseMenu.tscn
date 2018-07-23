@@ -37,24 +37,21 @@ _sections_unfolded = [ "Margin" ]
 
 [node name="ContinueButton" parent="VBoxContainer" index="0" instance=ExtResource( 2 )]
 
-margin_left = 4.0
-margin_right = 260.0
+margin_right = 256.0
 rect_min_size = Vector2( 256, 40 )
 _sections_unfolded = [ "Pause", "Rect", "Size Flags", "custom_styles" ]
 
 [node name="NewGameButton" parent="VBoxContainer" index="1" instance=ExtResource( 3 )]
 
-margin_left = 4.0
 margin_top = 44.0
-margin_right = 260.0
+margin_right = 256.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 256, 40 )
 
 [node name="ExitButton" parent="VBoxContainer" index="2" instance=ExtResource( 4 )]
 
-margin_left = 4.0
 margin_top = 88.0
-margin_right = 288.0
+margin_right = 256.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 256, 40 )
 

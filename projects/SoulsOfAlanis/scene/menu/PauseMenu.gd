@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal finished_interation
+signal ReloadGame
 
 func _ready():
 	pass
@@ -14,4 +15,5 @@ func _on_ContinueButton_pressed():
 	return
 
 func _on_NewGameButton_pressed():
+	emit_signal("ReloadGame", self, true)
 	return
