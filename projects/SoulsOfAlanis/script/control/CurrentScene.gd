@@ -29,9 +29,6 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	if blocked_entry:
 		room.get_node("EntryPoint").blocked = true
 
-	self.add_child(room)
-	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
-
 	## workaround :p
 	var listNPC = null
 	if room.has_method("listNPC"):
@@ -41,7 +38,7 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 	pass
 	if listNPC != null:
 		debug.printMsg("Scene %s has method listNPC" % i_room.scene, debug.msg_type.nrm)
-		for sc_npc in room.listNPC():
+		for sc_npc in listNPC:
 			if !sc_npc.has_method("get_uniqueID"):
 				debug.printMsg("Every NPC should have a get_uniqueID method", debug.msg_type.err, self.debug_mode)
 				return null
@@ -51,11 +48,13 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 				return null
 			pass
 
+			var found = false
 			for pl_npc in listStartedQuests:
 				if pl_npc.get_uniqueID() == sc_npc.get_uniqueID():
+					found = true
 					sc_npc.set_enabled(false)
-					continue
-			sc_npc.set_enabled(true)
+			if !found:
+				sc_npc.set_enabled(true)
 		pass
 	else:
 		debug.printMsg("Every room should have a listNPC, even an empty one!", debug.msg_type.err)
@@ -80,16 +79,23 @@ func changeRoom(i_room, listOpenChest, listStartedQuests, listFinishedQuests, bl
 				return null
 			pass
 
+			var found = false
 			for oc in listOpenChest:
 				if oc.get_uniqueID() == i.get_uniqueID():
+					found = true
 					i.set_enabled(false)
 					continue
 			pass
-			i.set_enabled(true)
+			if !found:
+				i.set_enabled(true)
+
 		pass
 	else:
 		debug.printMsg("Every room should have a listChests, even an empty one!", debug.msg_type.err)
 	pass
+
+	self.add_child(room)
+	debug.printMsg("Changed to scene: %s (%s) - %s" % [room, room_path, i_room.size], debug.dbg, self.debug_mode)
 
 	var ep
 	if to_parent:
