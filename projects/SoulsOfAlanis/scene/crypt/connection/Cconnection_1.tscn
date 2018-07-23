@@ -1,16 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/crypt/connection/Cconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/parallaxBG-interior1.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=3]
-[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=6]
-[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=7]
-[ext_resource path="res://Guardian/Guardian.tscn" type="PackedScene" id=8]
-[ext_resource path="res://LivingArmor/LivingArmor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
+[ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
 
-[node name="Cconnection_1" type="Node2D"]
+[node name="Cconnection_1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -66,7 +64,7 @@ collision_layer = 1
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1, 6, 0, 65535, 6, 0, 7, 4, 0, 11, 10, 0, 12, 1610612738, 0, 13, 1610612738, 0, 14, 1610612738, 0, 15, 1610612738, 0, 16, 1610612738, 0, 17, 1610612738, 0, 18, 1610612738, 0, 19, 1610612738, 0, 20, 1610612738, 0, 21, 1610612738, 0, 22, 1610612738, 0, 23, 1610612738, 0, 24, 1610612738, 0, 25, 1610612738, 0, 26, 1610612738, 0, 27, 1610612738, 0, 28, 1610612738, 0, 29, 1610612738, 0, 30, 1610612738, 0, 31, 1610612738, 0, 32, 1610612738, 0, 33, 1610612738, 0, 34, 1610612738, 0, 35, 1610612738, 0, 36, 1610612738, 0, 37, 11, 0, 131071, 6, 0, 65543, 4, 0, 65547, 6, 0, 65573, 4, 0, 196607, 6, 0, 131079, 4, 0, 131083, 6, 0, 131109, 4, 0, 262143, 6, 0, 196615, 4, 0, 196619, 6, 0, 196645, 4, 0, 327679, 6, 0, 262151, 4, 0, 262155, 6, 0, 262181, 4, 0, 393215, 6, 0, 327687, 4, 0, 327691, 6, 0, 327717, 4, 0, 458751, 6, 0, 393223, 4, 0, 393227, 6, 0, 393253, 4, 0, 524287, 6, 0, 458759, 4, 0, 458763, 6, 0, 458789, 4, 0, 589823, 6, 0, 524295, 4, 0, 524299, 6, 0, 524325, 4, 0, 655358, 6, 0, 655359, 5, 0, 589831, 4, 0, 589835, 6, 0, 589861, 4, 0, 720894, 6, 0, 720895, 5, 0, 655367, 7, 0, 655368, 8, 0, 655369, 8, 0, 655370, 8, 0, 655371, 9, 0, 655386, 0, 0, 655387, 2, 0, 655388, 2, 0, 655389, 3, 0, 655398, 4, 0, 786430, 6, 0, 786431, 5, 0, 720922, 7, 0, 720923, 8, 0, 720924, 8, 0, 720925, 9, 0, 720934, 4, 0, 851966, 6, 0, 851967, 5, 0, 786451, 1, 0, 786452, 2, 0, 786453, 2, 0, 786454, 2, 0, 786455, 3, 0, 786470, 4, 0, 917503, 6, 0, 851968, 2, 0, 851969, 2, 0, 851970, 3, 0, 851987, 4, 0, 851991, 6, 0, 852006, 4, 0, 917504, 5, 0, 917505, 5, 0, 917506, 16, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 17, 0, 917524, 5, 0, 917525, 5, 0, 917526, 5, 0, 917527, 16, 0, 917528, 2, 0, 917529, 2, 0, 917530, 2, 0, 917531, 2, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 2, 0, 917536, 2, 0, 917537, 2, 0, 917538, 2, 0, 917539, 2, 0, 917540, 2, 0, 917541, 13, 0 )
+tile_data = PoolIntArray( -1, 6, 0, 65535, 6, 0, 7, 4, 0, 11, 10, 0, 12, 1610612738, 0, 13, 1610612738, 0, 14, 1610612738, 0, 15, 1610612738, 0, 16, 1610612738, 0, 17, 1610612738, 0, 18, 1610612738, 0, 19, 1610612738, 0, 20, 1610612738, 0, 21, 1610612738, 0, 22, 1610612738, 0, 23, 1610612738, 0, 24, 1610612738, 0, 25, 1610612738, 0, 26, 1610612738, 0, 27, 1610612738, 0, 28, 1610612738, 0, 29, 1610612738, 0, 30, 1610612738, 0, 31, 1610612738, 0, 32, 1610612738, 0, 33, 1610612738, 0, 34, 1610612738, 0, 35, 1610612738, 0, 36, 1610612738, 0, 37, 11, 0, 131071, 6, 0, 65543, 4, 0, 65547, 6, 0, 65573, 4, 0, 196607, 6, 0, 131079, 4, 0, 131083, 6, 0, 131109, 4, 0, 262143, 6, 0, 196615, 4, 0, 196619, 6, 0, 196645, 4, 0, 327679, 6, 0, 262151, 4, 0, 262155, 6, 0, 262181, 4, 0, 393215, 6, 0, 327687, 4, 0, 327691, 6, 0, 327717, 4, 0, 458751, 6, 0, 393223, 4, 0, 393227, 6, 0, 393253, 4, 0, 524287, 6, 0, 458759, 4, 0, 458763, 6, 0, 458789, 4, 0, 589823, 6, 0, 524295, 4, 0, 524299, 6, 0, 524325, 4, 0, 655359, 6, 0, 589831, 4, 0, 589835, 6, 0, 589861, 4, 0, 720895, 6, 0, 655367, 7, 0, 655368, 8, 0, 655369, 8, 0, 655370, 8, 0, 655371, 9, 0, 655386, 0, 0, 655387, 2, 0, 655388, 2, 0, 655389, 3, 0, 655397, 6, 0, 786431, 6, 0, 720922, 7, 0, 720923, 8, 0, 720924, 8, 0, 720925, 9, 0, 720933, 6, 0, 851967, 6, 0, 786451, 1, 0, 786452, 2, 0, 786453, 2, 0, 786454, 2, 0, 786455, 3, 0, 786469, 6, 0, 917503, 6, 0, 851968, 2, 0, 851969, 2, 0, 851970, 3, 0, 851987, 4, 0, 851991, 6, 0, 852005, 6, 0, 917504, 5, 0, 917505, 5, 0, 917506, 16, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 17, 0, 917524, 5, 0, 917525, 5, 0, 917526, 5, 0, 917527, 16, 0, 917528, 2, 0, 917529, 2, 0, 917530, 2, 0, 917531, 2, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 2, 0, 917536, 2, 0, 917537, 2, 0, 917538, 2, 0, 917539, 2, 0, 917540, 2, 0, 917541, 13, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -131,17 +129,12 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 
-[node name="Exit" parent="." index="2" instance=ExtResource( 4 )]
+[node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 1645.09, 580.843 )
-scale = Vector2( 2.68522, 2.03157 )
+position = Vector2( 40.444, 546.741 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 26.4422, 521.321 )
-scale = Vector2( 2.13628, 1.13675 )
-
-[node name="SpawnArea2D2" type="Container" parent="." index="4"]
+[node name="SpawnArea2D2" type="Container" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -157,26 +150,49 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 __meta__ = {
-"_editor_icon": ExtResource( 7 )
+"_editor_icon": ExtResource( 6 )
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
-TotMobCap = 1
+TotMobCap = 6
+FlyEnabled = true
+
+[node name="Exit" parent="." index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 1641.5, 592.219 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Exit2" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 739.956, 593.246 )
+_sections_unfolded = [ "Collision", "Transform" ]
+ExitIndex = 1
+
+[node name="SpawnArea2D" type="Container" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 158.0
+margin_top = 551.0
+margin_right = 879.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+MobList = [ "res://Guardian/Guardian.tscn", "res://Goblin/Goblin.tscn" ]
+Mob = null
+TotMobCap = 3
 FlyEnabled = false
-
-[node name="Guardian" parent="." index="5" instance=ExtResource( 8 )]
-
-position = Vector2( 485.376, 618.484 )
-
-[node name="LivingArmor" parent="." index="6" instance=ExtResource( 9 )]
-
-position = Vector2( 1341.26, 407.974 )
-
-[node name="Exit2" parent="." index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 1798.45, 573.052 )
-scale = Vector2( 1.61141, 2.01776 )
 
 

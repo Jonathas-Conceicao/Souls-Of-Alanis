@@ -5,16 +5,16 @@ enum Half { first, second, any }
 
 func getNumExit():
 	return 1
-	
+
 func getMaxRep():
-	return 0
+	return 1
 
 func getSceneType():
 	return RoomType.quest
 
 func getSceneHalf():
 	return Half.first
-	
+
 func listChest():
 	pass
 

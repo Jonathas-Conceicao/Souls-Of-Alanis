@@ -14,18 +14,18 @@ func getMaxRep():
 
 func getNumExit():
 	return 1
-	
+
 func listNPC():
 	pass
-	
+
 func listChest():
 	var array = .listChest()
 	array.append($fchest)
 	return array
-	
+
 func getSize():
-	return Vector2(1, 1.07)
-	
+	return Vector2(1, 1.1)
+
 func _ready():
 	$ChallengeDisplay.set_text("Don't attack!")
 	$ChallengeDisplay.update_text()
@@ -37,7 +37,7 @@ func _input(event):
 		$ChallengeDisplay.set_state(2)
 		$ChallengeDisplay.update_state()
 		$fchest/CollisionShape2D.set_disabled(true)
-		
+
 
 func _on_fchest_challenge_completed():
 	$ChallengeDisplay.set_text("Completed!")

@@ -13,11 +13,11 @@ func getMaxRep():
 	return 3
 
 func getNumExit():
-	return 1
-	
+	return 2
+
 func listNPC():
 	pass
-	
+
 func listChest():
 	pass
 

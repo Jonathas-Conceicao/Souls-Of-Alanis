@@ -8,7 +8,7 @@ func _ready():
 
 func getNumExit():
 	return 1
-	
+
 func getMaxRep():
 	return 1
 
@@ -17,10 +17,10 @@ func getSceneType():
 
 func getSceneHalf():
 	return Half.first
-	
+
 func listNPC():
 	pass
-	
+
 func listChest():
 	var array = .listChest()
 	array.append($fchest)

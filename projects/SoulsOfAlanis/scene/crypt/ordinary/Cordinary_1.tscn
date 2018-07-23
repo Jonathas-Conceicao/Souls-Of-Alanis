@@ -11,7 +11,7 @@
 [node name="Cordinary_1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ 700.0, 1400.0 ],
 "_edit_vertical_guides_": [ 900.0, 1800.0, 2700.0, 3600.0 ]
@@ -124,19 +124,20 @@ tile_data = PoolIntArray(  )
 
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 2707.27, 600.037 )
-scale = Vector2( 2.11106, 7.2789 )
+position = Vector2( 2653.01, 597.022 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EntryPoint" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 36.2318, 458.015 )
-scale = Vector2( 3, 3 )
+position = Vector2( 37.1343, 545.557 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="SpawnArea2D" type="Container" parent="." index="5"]
 
@@ -146,8 +147,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 165.0
 margin_top = 158.0
-margin_right = 205.0
-margin_bottom = 198.0
+margin_right = 634.0
+margin_bottom = 303.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -160,8 +161,8 @@ __meta__ = {
 }
 MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
-TotMobCap = 1
-FlyEnabled = false
+TotMobCap = 5
+FlyEnabled = true
 
 [node name="SpawnArea2D2" type="Container" parent="." index="6"]
 
@@ -169,7 +170,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 561.0
+margin_left = 163.0
 margin_top = 526.0
 margin_right = 601.0
 margin_bottom = 566.0
@@ -185,7 +186,7 @@ __meta__ = {
 }
 MobList = [ "res://Guardian/Guardian.tscn" ]
 Mob = null
-TotMobCap = 1
+TotMobCap = 3
 FlyEnabled = false
 
 
