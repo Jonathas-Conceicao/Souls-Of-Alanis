@@ -4,6 +4,10 @@ export var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
+#func _ready():
+#	$CameraLimit.set_limits(1, 1.32)
+#	$Player/Camera.update_limits()
+
 func getNumExit():
 	return NumExit
 	

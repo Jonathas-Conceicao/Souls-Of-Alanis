@@ -17,7 +17,7 @@ func getMaxRep():
 	return 0
 	
 func listChest():
-	pass
+	return []
 	
 func listNPC():
 	var array = .listNPC()

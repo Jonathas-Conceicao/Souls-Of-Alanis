@@ -1,17 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/forest/spoils/fspoils_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=3]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scene/forest/objects/fchest.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=8]
+[ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=9]
 
-[node name="fspoils_2" type="Node2D"]
+[node name="fspoils_2" type="Node2D" index="0"]
 
-position = Vector2( 46, 0 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_vertical_guides_": [ 1125.64 ]
 }
@@ -19,19 +21,19 @@ NumExit = 1
 
 [node name="background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 555.992, 216.311 )
+position = Vector2( 602.992, 238.311 )
 scale = Vector2( 6.72719, 4.06095 )
 texture = ExtResource( 2 )
 
 [node name="MiddleBackground" type="Sprite" parent="." index="1"]
 
-position = Vector2( 558.834, 331.401 )
+position = Vector2( 605.834, 353.401 )
 scale = Vector2( 3.36685, 3.40689 )
 texture = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 
-position = Vector2( 0, -1415 )
+position = Vector2( 46.9992, -1393 )
 scale = Vector2( 3, 3 )
 mode = 0
 tile_set = ExtResource( 4 )
@@ -51,14 +53,11 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 1966079, 1610612754, 0, 1900544, -1610612727, 0, 1900545, -1610612727, 0, 1900546, -1610612727, 0, 1900547, -1610612727, 0, 1900548, -1610612727, 0, 1900549, -1610612727, 0, 1900550, -1610612727, 0, 1900551, -1610612727, 0, 1900552, -1610612727, 0, 1900553, -1610612727, 0, 1900554, -1610612727, 0, 1900555, -1610612727, 0, 1900556, -1610612727, 0, 1900557, -1610612727, 0, 1900558, -1610612727, 0, 1900559, -1610612727, 0, 1900560, -1610612727, 0, 1900561, -1610612727, 0, 1900562, -1610612727, 0, 1900563, -1610612727, 0, 1900564, -1610612727, 0, 1900565, -1610612727, 0, 1900566, -1610612727, 0, 1900567, -1610612727, 0, 1900568, 18, 0, 2031615, 1610612754, 0, 1966080, -1610612714, 0, 1966081, -1610612714, 0, 1966082, -1610612714, 0, 1966083, -1610612714, 0, 1966084, -1610612714, 0, 1966085, -1610612714, 0, 1966086, -1610612714, 0, 1966087, -1610612714, 0, 1966088, -1610612714, 0, 1966089, -1610612714, 0, 1966090, -1610612714, 0, 1966091, -1610612714, 0, 1966092, -1610612714, 0, 1966093, -1610612714, 0, 1966094, -1610612714, 0, 1966095, -1610612714, 0, 1966096, -1610612714, 0, 1966097, -1610612714, 0, 1966098, -1610612714, 0, 1966099, -1610612714, 0, 1966100, -1610612714, 0, 1966101, -1610612714, 0, 1966102, -1610612714, 0, 1966103, -1610612714, 0, 1966104, 18, 0, 2097151, 1610612754, 0, 2031640, 18, 0, 2162687, 1610612754, 0, 2097176, 18, 0, 2228223, 1610612754, 0, 2162712, -1610612722, 0, 2293759, 1610612754, 0, 2228249, -1610612722, 0, 2359295, 1610612754, 0, 2293785, -1610612722, 0, 2424831, -1610612722, 0, 2359321, -1610612722, 0, 2490366, -1610612722, 0, 2424844, 5, 0, 2424857, -1610612722, 0, 2555902, -1610612722, 0, 2490376, 4, 0, 2490379, 59, 0, 2490380, 61, 0, 2490389, 53, 0, 2490390, 53, 0, 2490391, 54, 0, 2490392, -1610612722, 0, 2621438, -1610612722, 0, 2555911, 63, 0, 2555912, 65, 0, 2555915, 60, 0, 2555916, 62, 0, 2555928, 18, 0, 2686974, -1610612722, 0, 2621447, 64, 0, 2621448, 66, 0, 2621464, 18, 0, 2752511, -1610612722, 0, 2686976, 3, 0, 2686977, 3, 0, 2686978, 3, 0, 2686979, 3, 0, 2686980, 2, 0, 2686981, 6, 0, 2686991, 56, 0, 2686992, 57, 0, 2686993, 58, 0, 2687000, 18, 0, 2818047, 1610612754, 0, 2752512, 9, 0, 2752513, 9, 0, 2752514, 14, 0, 2752515, 9, 0, 2752516, 8, 0, 2752517, 20, 0, 2752518, 25, 0, 2752536, 18, 0, 2883583, 1610612754, 0, 2818048, 9, 0, 2818049, 9, 0, 2818050, 9, 0, 2818051, 9, 0, 2818052, 9, 0, 2818053, 22, 0, 2818072, 18, 0, 2949119, -1610612718, 0, 2883584, -1610612718, 0, 2883585, -1610612718, 0, 2883586, -1610612718, 0, 2883587, -1610612718, 0, 2883588, -1610612718, 0, 2883589, -1610612718, 0, 2883590, -1610612718, 0, 2883591, -1610612718, 0, 2883592, -1610612718, 0, 2883593, -1610612718, 0, 2883594, -1610612718, 0, 2883595, -1610612718, 0, 2883596, -1610612718, 0, 2883597, -1610612718, 0, 2883598, -1610612718, 0, 2883599, -1610612718, 0, 2883600, -1610612718, 0, 2883601, -1610612718, 0, 2883602, -1610612718, 0, 2883603, -1610612718, 0, 2883604, -1610612718, 0, 2883605, -1610612718, 0, 2883606, -1610612718, 0, 2883607, -1610612718, 0, 2883608, -1610612718, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="fchest" parent="." index="3" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 392.737, 418.481 )
+position = Vector2( 439.737, 440.481 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
@@ -70,12 +69,63 @@ bus = "Master"
 
 [node name="Exit" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 1177.87, 322.35 )
-scale = Vector2( 2.03007, 8.30109 )
+position = Vector2( 1226.68, 372.5 )
+scale = Vector2( 2.03007, 7.07812 )
+
+[node name="InteractionSign" parent="Exit" index="1"]
+
+position = Vector2( -34.2736, -14.3633 )
+scale = Vector2( 1.27708, 0.269692 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="CollisionShape2D" parent="Exit" index="2"]
+
+position = Vector2( 0, -4.57253 )
+scale = Vector2( 1, 1.05575 )
 
 [node name="EntryPoint" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 32.3062, 553.912 )
+editor/display_folded = true
+position = Vector2( 20.9839, 476.822 )
+scale = Vector2( 1.98545, 1.20686 )
+
+[node name="TileMap" parent="EntryPoint" index="0"]
+
+visible = false
+
+[node name="InteractionSign" parent="EntryPoint" index="1"]
+
+visible = true
+position = Vector2( 34.8061, -78.9139 )
+scale = Vector2( 1.19118, 1.47101 )
+
+[node name="SpawnArea2D" type="Container" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 181.0
+margin_top = 135.0
+margin_right = 962.0
+margin_bottom = 331.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_icon": ExtResource( 9 )
+}
+MobList = [ "res://Bat/Bat.tscn" ]
+Mob = null
+TotMobCap = 1
+FlyEnabled = false
 
 
 [editable path="fchest"]
+[editable path="Exit"]
+[editable path="EntryPoint"]
