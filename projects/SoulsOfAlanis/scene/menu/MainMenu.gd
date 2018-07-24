@@ -4,17 +4,20 @@ export (PackedScene) var StartScene = preload("res://scene/control/root.tscn")
 export (PackedScene) var CreditScene = preload("res://Cinematics/CreditsBlock.tscn")
 
 func _ready():
-	#$Closing.enabled(false)
-	#$Closing.connect("finished_dialog", self, "_go_Back")
+	$Closing.enabled(false)
+	$Closing.connect("finished_cinematic", self, "_go_Back")
 	return
 
 func _go_Back(back_from):
-	#$Closing.enabled(false)
+	$Closing.enabled(false)
 	return
 
 func _on_Credits_pressed():
-	#$Closing.enabled(true)
-	#$Closing.start("Outro")
+	if not $Closing.is_playing():
+		$Closing.enabled(true)
+		$Closing.start("Outro")
+		$Closing.seek(0.5)
+	release_focus()
 	return
 
 func _on_Exit_pressed():

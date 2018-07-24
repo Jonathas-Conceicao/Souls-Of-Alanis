@@ -46,7 +46,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=2]
 
 resource_name = "Outro"
-length = 1.0
+length = 20.0
 loop = false
 step = 0.5
 tracks/0/type = "value"
@@ -88,6 +88,20 @@ tracks/2/keys = {
 }, {
 "args": [ true ],
 "method": "enabled"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Closing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "readyToLeave"
 } ]
 }
 
@@ -140,7 +154,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 4 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CreditsBlock" parent="." index="2" instance=ExtResource( 11 )]
