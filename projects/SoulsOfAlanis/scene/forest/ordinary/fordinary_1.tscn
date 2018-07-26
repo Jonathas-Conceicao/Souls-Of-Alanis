@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="fordinary_1" type="Node2D"]
 
@@ -90,7 +95,6 @@ visible = false
 
 [node name="InteractionSign" parent="EntryPoint" index="1"]
 
-visible = true
 position = Vector2( 31.7472, -84.2744 )
 scale = Vector2( 1, 1.80604 )
 _sections_unfolded = [ "Transform" ]
@@ -103,6 +107,7 @@ scale = Vector2( 2.8494, 6.71875 )
 
 [node name="InteractionSign" parent="Exit" index="1"]
 
+visible = false
 position = Vector2( -22.2344, -12.7522 )
 scale = Vector2( 0.74128, 0.319264 )
 flip_h = true
@@ -182,6 +187,52 @@ MobList = [ "res://Goblin/Goblin.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false
+
+[node name="MapCorrections" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="BlockCorrection1" type="StaticBody2D" parent="MapCorrections" index="0"]
+
+editor/display_folded = true
+position = Vector2( 800.721, 805.562 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCorrections/BlockCorrection1" index="0"]
+
+position = Vector2( 0, 31.4601 )
+scale = Vector2( 1, 4.59322 )
+shape = SubResource( 1 )
+
+[node name="BlockCorrection2" type="StaticBody2D" parent="MapCorrections" index="1"]
+
+editor/display_folded = true
+position = Vector2( 129.468, 273.361 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCorrections/BlockCorrection2" index="0"]
+
+position = Vector2( 0, 31.4601 )
+scale = Vector2( 1, 4.59322 )
+shape = SubResource( 1 )
 
 
 [editable path="EntryPoint"]

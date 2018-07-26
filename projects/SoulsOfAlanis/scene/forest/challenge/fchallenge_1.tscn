@@ -81,7 +81,6 @@ visible = false
 
 [node name="InteractionSign" parent="EntryPoint" index="1"]
 
-visible = true
 position = Vector2( 27.5611, -88.2417 )
 scale = Vector2( 1, 2.054 )
 
@@ -93,6 +92,7 @@ scale = Vector2( 3.32924, 9.29158 )
 
 [node name="InteractionSign" parent="Exit" index="1"]
 
+visible = false
 position = Vector2( 20.8437, -6.78351 )
 scale = Vector2( 0.807766, 0.212865 )
 
@@ -104,6 +104,7 @@ position = Vector2( 2034.04, 2421.19 )
 
 [node name="WinArea" type="Area2D" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 1882.27, 2462.72 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

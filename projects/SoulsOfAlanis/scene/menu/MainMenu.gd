@@ -32,3 +32,7 @@ func _on_NewGame_pressed():
 func _on_FadeIn_fade_finished():
 	get_tree().change_scene_to(StartScene)
 	return
+
+
+func _on_Controls_pressed():
+	pass

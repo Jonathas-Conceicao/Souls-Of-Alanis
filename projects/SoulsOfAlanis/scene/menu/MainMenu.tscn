@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="MainMenu" type="Control" index="0"]
+[node name="MainMenu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -102,6 +102,7 @@ stretch_mode = 4
 position = Vector2( 450, 350 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 5
 playing = true
 
 [node name="Alanis" type="AnimatedSprite" parent="TextureRect" index="1"]
@@ -128,6 +129,7 @@ stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -182,25 +184,37 @@ alignment = 1
 
 [node name="NewGame" parent="VBoxContainer/Options" index="0" instance=ExtResource( 14 )]
 
-margin_top = 172.0
+margin_top = 150.0
 margin_right = 660.0
-margin_bottom = 212.0
+margin_bottom = 190.0
 size_flags_horizontal = 1
 _sections_unfolded = [ "Rect", "Size Flags", "Textures", "custom_colors", "custom_styles" ]
 
-[node name="Credits" parent="VBoxContainer/Options" index="1" instance=ExtResource( 15 )]
+[node name="Controls" parent="VBoxContainer/Options" index="1" instance=ExtResource( 14 )]
 
-margin_top = 216.0
+margin_top = 194.0
 margin_right = 660.0
-margin_bottom = 256.0
+margin_bottom = 234.0
+size_flags_horizontal = 1
+_sections_unfolded = [ "Rect", "Size Flags", "Textures", "custom_colors", "custom_styles" ]
+
+[node name="Label" parent="VBoxContainer/Options/Controls" index="0"]
+
+text = "Controls"
+
+[node name="Credits" parent="VBoxContainer/Options" index="2" instance=ExtResource( 15 )]
+
+margin_top = 238.0
+margin_right = 660.0
+margin_bottom = 278.0
 size_flags_horizontal = 1
 _sections_unfolded = [ "Hint", "Rect", "Size Flags", "custom_styles" ]
 
-[node name="Exit" parent="VBoxContainer/Options" index="2" instance=ExtResource( 16 )]
+[node name="Exit" parent="VBoxContainer/Options" index="3" instance=ExtResource( 16 )]
 
-margin_top = 260.0
+margin_top = 282.0
 margin_right = 660.0
-margin_bottom = 300.0
+margin_bottom = 322.0
 rect_min_size = Vector2( 500, 40 )
 size_flags_horizontal = 1
 _sections_unfolded = [ "Hint", "Rect", "Size Flags", "custom_styles" ]
@@ -264,6 +278,8 @@ blend_times = [  ]
 
 [connection signal="pressed" from="VBoxContainer/Options/NewGame" to="." method="_on_NewGame_pressed"]
 
+[connection signal="pressed" from="VBoxContainer/Options/Controls" to="." method="_on_Controls_pressed"]
+
 [connection signal="pressed" from="VBoxContainer/Options/Credits" to="." method="_on_Credits_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/Options/Exit" to="." method="_on_Exit_pressed"]
@@ -273,3 +289,4 @@ blend_times = [  ]
 [connection signal="animation_finished" from="FadeIn/transition" to="FadeIn" method="_on_transition_animation_finished"]
 
 
+[editable path="VBoxContainer/Options/Controls"]

@@ -104,9 +104,9 @@ scale = Vector2( 2.48695, 9.14926 )
 
 [node name="InteractionSign" parent="Exit" index="1"]
 
-visible = false
-position = Vector2( 22.8202, -7.26974 )
-scale = Vector2( 1, 0.23526 )
+position = Vector2( 22.1486, -6.13874 )
+scale = Vector2( 0.623199, 0.176298 )
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" parent="Exit" index="2"]
 
@@ -122,11 +122,10 @@ ExitIndex = 1
 
 [node name="InteractionSign" parent="Exit2" index="1"]
 
-visible = false
 position = Vector2( -19.2036, -9.16098 )
 scale = Vector2( 0.623199, 0.267396 )
 flip_h = true
-_sections_unfolded = [ "Offset", "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="CollisionShape2D" parent="Exit2" index="2"]
 
@@ -142,6 +141,13 @@ scale = Vector2( 3.66093, 1.30542 )
 [node name="TileMap" parent="EntryPoint" index="0"]
 
 visible = false
+
+[node name="InteractionSign" parent="EntryPoint" index="1"]
+
+visible = true
+position = Vector2( 7.9586, -71.6679 )
+scale = Vector2( 0.36561, 1.01814 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="SpawnArea2D" type="Container" parent="." index="6"]
 

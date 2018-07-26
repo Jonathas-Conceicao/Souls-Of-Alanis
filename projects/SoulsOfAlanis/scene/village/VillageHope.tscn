@@ -417,7 +417,12 @@ scale = Vector2( 1.30356, 1 )
 
 [node name="EntryPoint" parent="." index="6" instance=ExtResource( 14 )]
 
-position = Vector2( 63, 352 )
+editor/display_folded = true
+position = Vector2( 63, 436 )
+
+[node name="TileMap" parent="EntryPoint" index="0"]
+
+visible = false
 
 [node name="VillageMusic" type="AudioStreamPlayer2D" parent="." index="7"]
 
@@ -452,3 +457,4 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 
 [editable path="Exit"]
+[editable path="EntryPoint"]

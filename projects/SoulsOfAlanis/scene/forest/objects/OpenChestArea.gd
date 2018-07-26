@@ -54,3 +54,8 @@ func get_uniqueID():
 	var auxID = aux.get_uniqueID()
 	aux.queue_free()
 	return auxID
+
+
+func _on_fchallenge_1_ChallengeFailed(body):
+	if body.get_name() == "Player":
+		$ChallengeFailedSign.show()

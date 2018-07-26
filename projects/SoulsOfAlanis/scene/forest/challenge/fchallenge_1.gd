@@ -4,9 +4,7 @@ export var NumExit = 1
 enum RoomType { loot, ordinary, connection, quest, challenge, final, any }
 enum Half { first, second, any }
 
-#func _ready():
-#	$CameraLimit.set_limits(4.6, 3.5)
-#	$Player/Camera.update_limits()
+signal ChallengeFailed
 
 func getNumExit():
 	return NumExit
@@ -32,6 +30,8 @@ func getSize():
 	return Vector2(4.6, 5)
 	
 func _ready():
+	#$CameraLimit.set_limits(4.6, 3.5)
+	#$Player/Camera.update_limits()
 	$ChallengeDisplay.set_text("don't jump")
 	$ChallengeDisplay.update_text()
 	$ChallengeDisplay.set_state(0)
