@@ -84,7 +84,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -29.5774, -10.5454 )
 scale = Vector2( 1, 0.303075 )
 flip_h = true
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Region" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 

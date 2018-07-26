@@ -7,4 +7,4 @@ func _input(event):
 		set_process_input(false)
 
 func getSize():
-	return Vector2(2, 3.1)
+	return Vector2(3.2, 3.2)

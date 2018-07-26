@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_1.gd" type="Script" id=1]
-[ext_resource path="res://art/project-art/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://art/project-art/forest/tileset/forest_sunny_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=3]
 [ext_resource path="res://art/project-art/forest/middleground.png" type="Texture" id=4]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=5]
@@ -44,6 +44,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -79,6 +80,7 @@ texture = ExtResource( 4 )
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 31, 806 )
 scale = Vector2( 2.33589, 1.08685 )
 
@@ -95,6 +97,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Exit" parent="." index="3" instance=ExtResource( 6 )]
 
+editor/display_folded = true
 position = Vector2( 1838.15, 798 )
 scale = Vector2( 2.8494, 6.71875 )
 
