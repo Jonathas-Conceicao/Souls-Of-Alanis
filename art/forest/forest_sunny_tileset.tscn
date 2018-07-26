@@ -1,22 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://art/project-art/forest/tileset/tileset.png" type="Texture" id=1]
 [ext_resource path="res://art/project-art/forest/props.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 7.46517, 7.70439 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 7.89282, 7.45572 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8.6729, 8.62225 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.89282, 7.45572 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -27,24 +22,23 @@ extents = Vector2( 7.78676, 2.50706 )
 
 [node name="floor" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="floor_1" type="Sprite" parent="floor" index="0"]
 
-editor/display_folded = true
-position = Vector2( 8, 24 )
+position = Vector2( 8, 120.558 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 48, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_1" index="0"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="floor/floor_1" index="0"]
 
+position = Vector2( -3.57628e-07, -0.557961 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -53,27 +47,28 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_1/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_1/StaticBody2D3" index="0"]
 
-position = Vector2( 1.18483, 0.255248 )
-scale = Vector2( 0.686547, 0.788865 )
-shape = SubResource( 1 )
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
+shape = SubResource( 3 )
 
 [node name="floor_2" type="Sprite" parent="floor" index="1"]
 
-editor/display_folded = true
-position = Vector2( 40.1597, 24.1219 )
+position = Vector2( 72, 120 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 48, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_2" index="0"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="floor/floor_2" index="0"]
 
+editor/display_folded = true
+position = Vector2( 3.57628e-07, 0 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -82,27 +77,29 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_2/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_2/StaticBody2D2" index="0"]
 
-position = Vector2( 0.0550641, -0.121901 )
-scale = Vector2( 0.800109, 0.286924 )
-shape = SubResource( 2 )
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
+shape = SubResource( 3 )
 
 [node name="floor_3" type="Sprite" parent="floor" index="2"]
 
 editor/display_folded = true
-position = Vector2( 71.6606, 23.9899 )
+position = Vector2( 56, 120 )
+z_as_relative = false
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 144, 48, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_3" index="0"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="floor/floor_3" index="0"]
 
+position = Vector2( 3.57628e-07, 0 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -111,11 +108,11 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_3/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_3/StaticBody2D3" index="0"]
 
-position = Vector2( -0.0232821, 0.0100993 )
-scale = Vector2( 0.806136, 0.286924 )
-shape = SubResource( 2 )
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
+shape = SubResource( 3 )
 
 [node name="floor_4" type="Sprite" parent="floor" index="3"]
 
@@ -132,6 +129,7 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_4" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -146,21 +144,25 @@ position = Vector2( -0.125998, 0.225003 )
 scale = Vector2( 0.692282, 0.785762 )
 shape = SubResource( 2 )
 
-[node name="floor_bottom_1" type="Sprite" parent="floor" index="4"]
+[node name="floor_5" type="Sprite" parent="floor" index="4"]
 
 editor/display_folded = true
-position = Vector2( 40, 88 )
+position = Vector2( 24, 120 )
+rotation = 4.71239
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 112, 16, 16 )
-_sections_unfolded = [ "Region" ]
+region_rect = Rect2( 160, 96, 16, 16 )
+_sections_unfolded = [ "Offset", "Transform" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_bottom_1" index="0"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="floor/floor_5" index="0"]
 
+editor/display_folded = true
+position = Vector2( -1, -4.45051e-07 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -169,13 +171,41 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_bottom_1/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_5/StaticBody2D4" index="0"]
 
-position = Vector2( 0.069709, -0.0281599 )
-scale = Vector2( 0.799074, 0.808587 )
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
 shape = SubResource( 3 )
 
-[node name="f_plant_1" type="Sprite" parent="floor" index="5"]
+[node name="floor_bottom_1" type="Sprite" parent="floor" index="5"]
+
+editor/display_folded = true
+position = Vector2( 40, 120 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 112, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="floor/floor_bottom_1" index="0"]
+
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_bottom_1/StaticBody2D5" index="0"]
+
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
+shape = SubResource( 3 )
+
+[node name="f_plant_1" type="Sprite" parent="floor" index="6"]
 
 position = Vector2( 39.6606, 7.9899 )
 texture = ExtResource( 1 )
@@ -187,7 +217,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="f_plant_2" type="Sprite" parent="floor" index="6"]
+[node name="f_plant_2" type="Sprite" parent="floor" index="7"]
 
 position = Vector2( 71.6606, 7.9899 )
 texture = ExtResource( 1 )
@@ -199,7 +229,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_1" type="Sprite" parent="floor" index="7"]
+[node name="floor_down_1" type="Sprite" parent="floor" index="8"]
 
 position = Vector2( 40, 40 )
 texture = ExtResource( 1 )
@@ -211,7 +241,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_2" type="Sprite" parent="floor" index="8"]
+[node name="floor_down_2" type="Sprite" parent="floor" index="9"]
 
 position = Vector2( 72, 40 )
 texture = ExtResource( 1 )
@@ -223,7 +253,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_3" type="Sprite" parent="floor" index="9"]
+[node name="floor_down_3" type="Sprite" parent="floor" index="10"]
 
 position = Vector2( 40, 56 )
 texture = ExtResource( 1 )
@@ -235,7 +265,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_4" type="Sprite" parent="floor" index="10"]
+[node name="floor_down_4" type="Sprite" parent="floor" index="11"]
 
 position = Vector2( 72, 56 )
 texture = ExtResource( 1 )
@@ -247,7 +277,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_5" type="Sprite" parent="floor" index="11"]
+[node name="floor_down_5" type="Sprite" parent="floor" index="12"]
 
 position = Vector2( 40, 72 )
 texture = ExtResource( 1 )
@@ -259,7 +289,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_down_plant_6" type="Sprite" parent="floor" index="12"]
+[node name="floor_down_plant_6" type="Sprite" parent="floor" index="13"]
 
 position = Vector2( 72, 72 )
 texture = ExtResource( 1 )
@@ -271,7 +301,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="floor_bottom_2" type="Sprite" parent="floor" index="13"]
+[node name="floor_bottom_2" type="Sprite" parent="floor" index="14"]
 
 position = Vector2( 72, 88 )
 texture = ExtResource( 1 )
@@ -345,18 +375,20 @@ shape = SubResource( 2 )
 
 [node name="wall_l_3" type="Sprite" parent="wall" index="2"]
 
-position = Vector2( 168, 56 )
+position = Vector2( 88.3223, 120.128 )
+rotation = 1.5708
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 96, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall/wall_l_3" index="0"]
+[node name="StaticBody2D5" type="StaticBody2D" parent="wall/wall_l_3" index="0"]
 
-position = Vector2( 1.04904e-05, -4.76837e-07 )
+position = Vector2( 0.872288, 0.32225 )
+rotation = -1.5708
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
@@ -365,13 +397,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall_l_3/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall_l_3/StaticBody2D5" index="0"]
 
-position = Vector2( -7.83205e-05, 1.62125e-05 )
-scale = Vector2( 3.67215, 4.20822 )
-shape = SubResource( 2 )
+position = Vector2( -5.72205e-06, 1.13858 )
+scale = Vector2( 3.42674, 3.34371 )
+shape = SubResource( 3 )
 
 [node name="wall_l_4" type="Sprite" parent="wall" index="3"]
 
@@ -460,36 +491,7 @@ position = Vector2( 3.9422, 0.0388193 )
 scale = Vector2( 0.407232, 0.800084 )
 shape = SubResource( 2 )
 
-[node name="wall_r_3" type="Sprite" parent="wall" index="6"]
-
-editor/display_folded = true
-position = Vector2( 104, 72 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 160, 96, 16, 16 )
-_sections_unfolded = [ "Region" ]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="wall/wall_r_3" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall_r_3/StaticBody2D" index="0"]
-
-position = Vector2( 3.9422, 0.0388193 )
-scale = Vector2( 0.407232, 0.800084 )
-shape = SubResource( 2 )
-
-[node name="wall_r_4" type="Sprite" parent="wall" index="7"]
+[node name="wall_r_4" type="Sprite" parent="wall" index="6"]
 
 editor/display_folded = true
 position = Vector2( 104, 88 )
@@ -517,7 +519,7 @@ position = Vector2( 3.9422, 0.0388193 )
 scale = Vector2( 0.407232, 0.800084 )
 shape = SubResource( 2 )
 
-[node name="wall_plant_1" type="Sprite" parent="wall" index="8"]
+[node name="wall_plant_1" type="Sprite" parent="wall" index="7"]
 
 position = Vector2( -8.33942, 39.9899 )
 texture = ExtResource( 1 )
@@ -529,7 +531,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="wall_plant_2" type="Sprite" parent="wall" index="9"]
+[node name="wall_plant_2" type="Sprite" parent="wall" index="8"]
 
 position = Vector2( 119.661, 39.9899 )
 texture = ExtResource( 1 )
@@ -541,7 +543,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="wall_plant_3" type="Sprite" parent="wall" index="10"]
+[node name="wall_plant_3" type="Sprite" parent="wall" index="9"]
 
 position = Vector2( -8.33942, 55.9899 )
 texture = ExtResource( 1 )
@@ -553,7 +555,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="wall_plant_4" type="Sprite" parent="wall" index="11"]
+[node name="wall_plant_4" type="Sprite" parent="wall" index="10"]
 
 position = Vector2( 119.661, 55.9899 )
 texture = ExtResource( 1 )
@@ -565,7 +567,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_1" type="Sprite" parent="wall" index="12"]
+[node name="back_wall_1" type="Sprite" parent="wall" index="11"]
 
 position = Vector2( 151.661, 87.9899 )
 texture = ExtResource( 1 )
@@ -577,7 +579,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_2" type="Sprite" parent="wall" index="13"]
+[node name="back_wall_2" type="Sprite" parent="wall" index="12"]
 
 position = Vector2( 167.661, 87.9899 )
 texture = ExtResource( 1 )
@@ -589,7 +591,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_3" type="Sprite" parent="wall" index="14"]
+[node name="back_wall_3" type="Sprite" parent="wall" index="13"]
 
 position = Vector2( 183.661, 87.9899 )
 texture = ExtResource( 1 )
@@ -601,7 +603,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_4" type="Sprite" parent="wall" index="15"]
+[node name="back_wall_4" type="Sprite" parent="wall" index="14"]
 
 position = Vector2( 199.661, 87.9899 )
 texture = ExtResource( 1 )
@@ -613,7 +615,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_5" type="Sprite" parent="wall" index="16"]
+[node name="back_wall_5" type="Sprite" parent="wall" index="15"]
 
 position = Vector2( 151.661, 103.99 )
 texture = ExtResource( 1 )
@@ -625,7 +627,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_6" type="Sprite" parent="wall" index="17"]
+[node name="back_wall_6" type="Sprite" parent="wall" index="16"]
 
 position = Vector2( 167.661, 103.99 )
 texture = ExtResource( 1 )
@@ -637,7 +639,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_7" type="Sprite" parent="wall" index="18"]
+[node name="back_wall_7" type="Sprite" parent="wall" index="17"]
 
 position = Vector2( 183.661, 103.99 )
 texture = ExtResource( 1 )
@@ -649,7 +651,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_8" type="Sprite" parent="wall" index="19"]
+[node name="back_wall_8" type="Sprite" parent="wall" index="18"]
 
 position = Vector2( 199.661, 103.99 )
 texture = ExtResource( 1 )
@@ -661,7 +663,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_9" type="Sprite" parent="wall" index="20"]
+[node name="back_wall_9" type="Sprite" parent="wall" index="19"]
 
 position = Vector2( 151.661, 119.99 )
 texture = ExtResource( 1 )
@@ -673,7 +675,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_10" type="Sprite" parent="wall" index="21"]
+[node name="back_wall_10" type="Sprite" parent="wall" index="20"]
 
 position = Vector2( 167.661, 119.99 )
 texture = ExtResource( 1 )
@@ -685,7 +687,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_11" type="Sprite" parent="wall" index="22"]
+[node name="back_wall_11" type="Sprite" parent="wall" index="21"]
 
 position = Vector2( 183.661, 119.99 )
 texture = ExtResource( 1 )
@@ -697,7 +699,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_12" type="Sprite" parent="wall" index="23"]
+[node name="back_wall_12" type="Sprite" parent="wall" index="22"]
 
 position = Vector2( 199.661, 119.99 )
 texture = ExtResource( 1 )
@@ -709,7 +711,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_13" type="Sprite" parent="wall" index="24"]
+[node name="back_wall_13" type="Sprite" parent="wall" index="23"]
 
 position = Vector2( 151.661, 135.99 )
 texture = ExtResource( 1 )
@@ -721,7 +723,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_14" type="Sprite" parent="wall" index="25"]
+[node name="back_wall_14" type="Sprite" parent="wall" index="24"]
 
 position = Vector2( 167.661, 135.99 )
 texture = ExtResource( 1 )
@@ -733,7 +735,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_15" type="Sprite" parent="wall" index="26"]
+[node name="back_wall_15" type="Sprite" parent="wall" index="25"]
 
 position = Vector2( 183.661, 135.99 )
 texture = ExtResource( 1 )
@@ -745,7 +747,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_16" type="Sprite" parent="wall" index="27"]
+[node name="back_wall_16" type="Sprite" parent="wall" index="26"]
 
 position = Vector2( 199.661, 135.99 )
 texture = ExtResource( 1 )
@@ -757,7 +759,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_17" type="Sprite" parent="wall" index="28"]
+[node name="back_wall_17" type="Sprite" parent="wall" index="27"]
 
 position = Vector2( 151.661, 151.99 )
 texture = ExtResource( 1 )
@@ -769,7 +771,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_18" type="Sprite" parent="wall" index="29"]
+[node name="back_wall_18" type="Sprite" parent="wall" index="28"]
 
 position = Vector2( 167.661, 151.99 )
 texture = ExtResource( 1 )
@@ -781,7 +783,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_19" type="Sprite" parent="wall" index="30"]
+[node name="back_wall_19" type="Sprite" parent="wall" index="29"]
 
 position = Vector2( 183.661, 151.99 )
 texture = ExtResource( 1 )
@@ -793,7 +795,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_20" type="Sprite" parent="wall" index="31"]
+[node name="back_wall_20" type="Sprite" parent="wall" index="30"]
 
 position = Vector2( 199.661, 151.99 )
 texture = ExtResource( 1 )
@@ -805,7 +807,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_21" type="Sprite" parent="wall" index="32"]
+[node name="back_wall_21" type="Sprite" parent="wall" index="31"]
 
 position = Vector2( 231.661, 151.99 )
 texture = ExtResource( 1 )
@@ -817,7 +819,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_22" type="Sprite" parent="wall" index="33"]
+[node name="back_wall_22" type="Sprite" parent="wall" index="32"]
 
 position = Vector2( 247.661, 151.99 )
 texture = ExtResource( 1 )
@@ -829,7 +831,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_23" type="Sprite" parent="wall" index="34"]
+[node name="back_wall_23" type="Sprite" parent="wall" index="33"]
 
 position = Vector2( 263.661, 151.99 )
 texture = ExtResource( 1 )
@@ -841,7 +843,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_24" type="Sprite" parent="wall" index="35"]
+[node name="back_wall_24" type="Sprite" parent="wall" index="34"]
 
 position = Vector2( 279.661, 151.99 )
 texture = ExtResource( 1 )
@@ -853,7 +855,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_25" type="Sprite" parent="wall" index="36"]
+[node name="back_wall_25" type="Sprite" parent="wall" index="35"]
 
 position = Vector2( 295.661, 151.99 )
 texture = ExtResource( 1 )
@@ -865,7 +867,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="back_wall_26" type="Sprite" parent="wall" index="37"]
+[node name="back_wall_26" type="Sprite" parent="wall" index="36"]
 
 position = Vector2( 311.661, 151.99 )
 texture = ExtResource( 1 )
@@ -876,7 +878,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="back_wall_27" type="Sprite" parent="wall" index="38"]
+[node name="back_wall_27" type="Sprite" parent="wall" index="37"]
 
 position = Vector2( 311.661, 151.99 )
 texture = ExtResource( 1 )

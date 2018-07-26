@@ -9,8 +9,9 @@
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
 
-[node name="fordinary_2" type="Node2D" index="0"]
+[node name="fordinary_2" type="Node2D"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 NumExit = 1
