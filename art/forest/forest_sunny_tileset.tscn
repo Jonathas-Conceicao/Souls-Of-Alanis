@@ -55,6 +55,7 @@ shape = SubResource( 3 )
 
 [node name="floor_2" type="Sprite" parent="floor" index="1"]
 
+editor/display_folded = true
 position = Vector2( 72, 120 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -375,6 +376,7 @@ shape = SubResource( 2 )
 
 [node name="wall_l_3" type="Sprite" parent="wall" index="2"]
 
+editor/display_folded = true
 position = Vector2( 88.3223, 120.128 )
 rotation = 1.5708
 texture = ExtResource( 1 )
@@ -435,19 +437,19 @@ shape = SubResource( 2 )
 
 [node name="wall_r_1" type="Sprite" parent="wall" index="4"]
 
-editor/display_folded = true
-position = Vector2( 104, 40 )
+position = Vector2( 151.935, 24.0645 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 160, 64, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall/wall_r_1" index="0"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="wall/wall_r_1" index="0"]
 
+position = Vector2( -0.540421, -0.421946 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -456,11 +458,11 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall_r_1/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall_r_1/StaticBody2D4" index="0"]
 
-position = Vector2( 3.9422, 0.0388193 )
-scale = Vector2( 0.407232, 0.800084 )
-shape = SubResource( 2 )
+position = Vector2( -0.155536, 1.13858 )
+scale = Vector2( 3.41342, 3.34371 )
+shape = SubResource( 3 )
 
 [node name="wall_r_2" type="Sprite" parent="wall" index="5"]
 
