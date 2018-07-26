@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/forest/ordinary/fordinary_2.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/forest/background.png" type="Texture" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=7]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=8]
-[ext_resource path="res://PlayerPackage/PlayerPackage.tscn" type="PackedScene" id=9]
-[ext_resource path="res://PlayerPackage/CameraLimit.tscn" type="PackedScene" id=10]
 
 [node name="fordinary_2" type="Node2D" index="0"]
 
@@ -75,6 +73,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="EntryPoint" parent="." index="3" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 31.8168, 814.8 )
 scale = Vector2( 2.42563, 1.19459 )
 
@@ -89,8 +88,9 @@ scale = Vector2( 1, 1.57594 )
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 1173.98, 170.095 )
-scale = Vector2( 2.19007, 6.33842 )
+editor/display_folded = true
+position = Vector2( 1184, 170.095 )
+scale = Vector2( 3, 6.33842 )
 
 [node name="InteractionSign" parent="Exit" index="1"]
 
@@ -154,12 +154,6 @@ MobList = [ "res://Bat/Bat.tscn" ]
 Mob = null
 TotMobCap = 1
 FlyEnabled = false
-
-[node name="Player" parent="." index="7" instance=ExtResource( 9 )]
-
-position = Vector2( 145.413, 883.839 )
-
-[node name="CameraLimit" parent="." index="8" instance=ExtResource( 10 )]
 
 
 [editable path="EntryPoint"]
