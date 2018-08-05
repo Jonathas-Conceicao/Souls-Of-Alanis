@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scene/crypt/connection/Cconnection_1.gd" type="Script" id=1]
 [ext_resource path="res://art/project-art/crypt/tileset/parallaxBG-interior1.png" type="Texture" id=2]
-[ext_resource path="res://art/project-art/crypt/tileset/CryptTileset.tres" type="TileSet" id=3]
+[ext_resource path="res://art/project-art/crypt/tileset/NewCryptTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scene/control/EntryPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-spawn-area/src/SpawnArea2D.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
@@ -19,6 +19,7 @@ __meta__ = {
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -47,6 +48,7 @@ texture = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
+position = Vector2( 34.9995, 0 )
 scale = Vector2( 3, 3 )
 mode = 0
 tile_set = ExtResource( 3 )
@@ -64,10 +66,7 @@ collision_layer = 1
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1, 6, 0, 65535, 6, 0, 7, 4, 0, 11, 10, 0, 12, 1610612738, 0, 13, 1610612738, 0, 14, 1610612738, 0, 15, 1610612738, 0, 16, 1610612738, 0, 17, 1610612738, 0, 18, 1610612738, 0, 19, 1610612738, 0, 20, 1610612738, 0, 21, 1610612738, 0, 22, 1610612738, 0, 23, 1610612738, 0, 24, 1610612738, 0, 25, 1610612738, 0, 26, 1610612738, 0, 27, 1610612738, 0, 28, 1610612738, 0, 29, 1610612738, 0, 30, 1610612738, 0, 31, 1610612738, 0, 32, 1610612738, 0, 33, 1610612738, 0, 34, 1610612738, 0, 35, 1610612738, 0, 36, 1610612738, 0, 37, 11, 0, 131071, 6, 0, 65543, 4, 0, 65547, 6, 0, 65573, 4, 0, 196607, 6, 0, 131079, 4, 0, 131083, 6, 0, 131109, 4, 0, 262143, 6, 0, 196615, 4, 0, 196619, 6, 0, 196645, 4, 0, 327679, 6, 0, 262151, 4, 0, 262155, 6, 0, 262181, 4, 0, 393215, 6, 0, 327687, 4, 0, 327691, 6, 0, 327717, 4, 0, 458751, 6, 0, 393223, 4, 0, 393227, 6, 0, 393253, 4, 0, 524287, 6, 0, 458759, 4, 0, 458763, 6, 0, 458789, 4, 0, 589823, 6, 0, 524295, 4, 0, 524299, 6, 0, 524325, 4, 0, 655359, 6, 0, 589831, 4, 0, 589835, 6, 0, 589861, 4, 0, 720895, 6, 0, 655367, 7, 0, 655368, 8, 0, 655369, 8, 0, 655370, 8, 0, 655371, 9, 0, 655386, 0, 0, 655387, 2, 0, 655388, 2, 0, 655389, 3, 0, 655397, 6, 0, 786431, 6, 0, 720922, 7, 0, 720923, 8, 0, 720924, 8, 0, 720925, 9, 0, 720933, 6, 0, 851967, 6, 0, 786451, 1, 0, 786452, 2, 0, 786453, 2, 0, 786454, 2, 0, 786455, 3, 0, 786469, 6, 0, 917503, 6, 0, 851968, 2, 0, 851969, 2, 0, 851970, 3, 0, 851987, 4, 0, 851991, 6, 0, 852005, 6, 0, 917504, 5, 0, 917505, 5, 0, 917506, 16, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 17, 0, 917524, 5, 0, 917525, 5, 0, 917526, 5, 0, 917527, 16, 0, 917528, 2, 0, 917529, 2, 0, 917530, 2, 0, 917531, 2, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 2, 0, 917536, 2, 0, 917537, 2, 0, 917538, 2, 0, 917539, 2, 0, 917540, 2, 0, 917541, 13, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+tile_data = PoolIntArray( -1, 5, 0, 65535, 5, 0, 7, 4, 0, 11, 23, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 7, 0, 19, 7, 0, 20, 7, 0, 21, 7, 0, 22, 7, 0, 23, 7, 0, 24, 7, 0, 25, 7, 0, 26, 7, 0, 27, 7, 0, 28, 7, 0, 29, 7, 0, 30, 7, 0, 31, 7, 0, 32, 7, 0, 33, 7, 0, 34, 7, 0, 35, 7, 0, 36, 7, 0, 37, 24, 0, 131071, 5, 0, 65543, 4, 0, 65547, 5, 0, 65573, 4, 0, 196607, 5, 0, 131079, 4, 0, 131083, 5, 0, 131109, 4, 0, 262143, 5, 0, 196615, 4, 0, 196619, 5, 0, 196645, 4, 0, 327679, 5, 0, 262151, 4, 0, 262155, 5, 0, 262181, 4, 0, 393215, 5, 0, 327687, 4, 0, 327691, 5, 0, 327717, 4, 0, 458751, 5, 0, 393223, 4, 0, 393227, 5, 0, 393253, 4, 0, 524287, 5, 0, 458759, 4, 0, 458763, 5, 0, 458789, 4, 0, 589823, 5, 0, 524295, 4, 0, 524299, 5, 0, 524325, 4, 0, 655359, 1610612738, 0, 589831, 4, 0, 589835, 5, 0, 589861, 4, 0, 720894, 1610612749, 0, 720895, 9, 0, 655367, 1610612739, 0, 655368, -1610612731, 0, 655369, -1610612731, 0, 655370, -1610612731, 0, 655371, -1610612733, 0, 655386, 13, 0, 655387, 13, 0, 655388, 13, 0, 655389, 13, 0, 655397, 4, 0, 786430, 1610612749, 0, 786431, 9, 0, 720925, 9, 0, 720933, 4, 0, 851966, 1610612749, 0, 851967, 9, 0, 786451, 2, 0, 786452, 14, 0, 786453, 14, 0, 786454, 14, 0, 786455, 3, 0, 786469, 4, 0, 917503, 14, 0, 851968, 14, 0, 851969, 14, 0, 851970, 3, 0, 851987, 4, 0, 851991, 5, 0, 852005, 4, 0, 983039, 9, 0, 917504, 9, 0, 917505, 9, 0, 917506, 25, 0, 917507, 14, 0, 917508, 14, 0, 917509, 14, 0, 917510, 14, 0, 917511, 14, 0, 917512, 14, 0, 917513, 14, 0, 917514, 14, 0, 917515, 14, 0, 917516, 14, 0, 917517, 14, 0, 917518, 14, 0, 917519, 14, 0, 917520, 14, 0, 917521, 14, 0, 917522, 14, 0, 917523, 26, 0, 917524, 9, 0, 917525, 9, 0, 917526, 9, 0, 917527, 25, 0, 917528, 14, 0, 917529, 14, 0, 917530, 14, 0, 917531, 14, 0, 917532, 14, 0, 917533, 14, 0, 917534, 14, 0, 917535, 14, 0, 917536, 14, 0, 917537, 14, 0, 917538, 14, 0, 917539, 14, 0, 917540, 14, 0, 917541, 26, 0 )
 
 [node name="Details" type="TileMap" parent="TileMap" index="0"]
 
@@ -131,8 +130,18 @@ tile_data = PoolIntArray(  )
 
 [node name="EntryPoint" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 40.444, 546.741 )
+editor/display_folded = true
+position = Vector2( 26.2307, 548.792 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="TileMap" parent="EntryPoint" index="0"]
+
+visible = false
+
+[node name="CollisionShape2D" parent="EntryPoint" index="2"]
+
+position = Vector2( -14.7219, 0 )
+scale = Vector2( 2.13246, 1 )
 
 [node name="SpawnArea2D2" type="Container" parent="." index="3"]
 
@@ -140,9 +149,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 768.0
+margin_left = 803.0
 margin_top = 52.0
-margin_right = 1443.0
+margin_right = 1478.0
 margin_bottom = 376.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -161,12 +170,14 @@ FlyEnabled = true
 
 [node name="Exit" parent="." index="4" instance=ExtResource( 7 )]
 
-position = Vector2( 1641.5, 592.219 )
+position = Vector2( 1641.76, 592.219 )
+scale = Vector2( 2.08569, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Exit2" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 739.956, 593.246 )
+position = Vector2( 742.966, 593.246 )
+scale = Vector2( 1.99969, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 ExitIndex = 1
 
@@ -176,10 +187,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 158.0
-margin_top = 551.0
-margin_right = 879.0
-margin_bottom = 640.0
+margin_left = 276.0
+margin_top = 521.0
+margin_right = 997.0
+margin_bottom = 610.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -196,3 +207,4 @@ TotMobCap = 3
 FlyEnabled = false
 
 
+[editable path="EntryPoint"]
