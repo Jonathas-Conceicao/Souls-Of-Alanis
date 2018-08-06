@@ -3,6 +3,10 @@ extends Node2D
 enum RoomType {loot, ordinary, connection, mission, challenge, final, any, avoid}
 enum Half { first, second , any }
 
+#func _ready():
+#	$CameraLimit.set_limits(1.25, 2.11)
+#	$Player/Camera.update_limits()
+
 func getSceneType():
 	return RoomType.connection
 
@@ -22,4 +26,4 @@ func listChest():
 	pass
 
 func getSize():
-	return Vector2(1, 2.13)
+	return Vector2(1.25, 2.11)

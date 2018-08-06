@@ -8,8 +8,9 @@
 [ext_resource path="res://addons/godot-spawn-area/art/bt_icon.png" type="Texture" id=6]
 [ext_resource path="res://scene/control/Exit.tscn" type="PackedScene" id=7]
 
-[node name="Cconnection_1" type="Node2D" index="0"]
+[node name="Cconnection_1" type="Node2D"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
