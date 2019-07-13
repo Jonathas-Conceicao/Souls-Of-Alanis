@@ -11,8 +11,6 @@ The [Hero's Journey](The_Monomyth.md) has some quick notes about the story struc
 
 Some of our tests and tech demos can be found on the [projects](projects/) folder.  
 
-Through the rest of the file we have some weekly-updated information about the current state of the project.  
-
 ## Game preview
 
 ![Game Preview](art/gif/gamepreview.gif)
