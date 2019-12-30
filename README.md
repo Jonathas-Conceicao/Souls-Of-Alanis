@@ -3,7 +3,7 @@ This is our repository for our Digital Games Course.
 
 ## The game
 
-The game we are developing is called **Souls of Alanis**, in this README you will find some information about it.  
+The game we are developing is called **Souls of Alanis**.  
 
 The [Storyboard](StoryBoard.md) has most of the games aspects and features that we propose to implement.  
 
