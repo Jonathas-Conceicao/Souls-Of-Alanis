@@ -13,4 +13,6 @@ Some of our tests and tech demos can be found on the [projects](projects/) folde
 
 ## Game preview
 
-![Game Preview](art/gif/gamepreview.gif)
+<p align="center">
+  <img src="art/gif/gamepreview.gif"/>
+</p>
